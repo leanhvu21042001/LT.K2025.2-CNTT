@@ -7,8 +7,10 @@
 
 :root {
   font-family: "Lora", "Segoe UI", Helvetica, sans-serif;
+  --body-font: "Lora";
   --main: #138CE8;
   --secondary: #cceeff;
+  --cover-font: "Be Vietnam Pro";
 }
 
 section {
@@ -61,7 +63,7 @@ h6 {
 
 /* only apply to the first occurrence of h1 */
 h1:nth-of-type(1) {
-  font-family: "Lora", "Segoe UI Semibold";
+  font-family: var(--body-font);
   color: #ffffff;
   background-color: var(--main);
   border-top: 0.3em solid var(--main);
@@ -114,7 +116,7 @@ img[alt~="center"] {
 /* title page - only to be used as for a single slide */
 /* <!-- _class: title --> */
 section.title>h1 {
-  font-family: "Lora", "Segoe UI Semibold";
+  font-family: var(--cover-font), "Segoe UI Semibold";
   color: #ffffff;
   background-color: var(--main);
   border-radius: 25px;
