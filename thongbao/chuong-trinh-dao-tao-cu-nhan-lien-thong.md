@@ -9,7 +9,6 @@
 - **Đối tượng áp dụng:** Từ khóa tuyển năm 2024
 - **Thời gian đào tạo**: 1,5 – 2 năm (04 học kỳ chính)
 - **Số tín chỉ**: tối thiểu 52 tín chỉ
-
 - **Tên văn bằng sau khi tốt nghiệp**:
   - Tiếng Việt: Cử nhân Công nghệ thông tin
   - Tiếng Anh: Bachelor of Science in Information Technology
@@ -51,8 +50,8 @@
 
 Lưu ý:
 
-- (*) Sinh viên chọn các môn chuyên ngành theo hướng dẫn tại mục 3.4.2.
-- (**) Sinh viên chọn hình thức tốt nghiệp theo hướng dẫn tại mục 3.5.
+- (\*) Sinh viên chọn các môn chuyên ngành theo hướng dẫn tại mục 3.4.2.
+- (\*\*) Sinh viên chọn hình thức tốt nghiệp theo hướng dẫn tại mục 3.5.
 
 ### 3.2. Phân bố các khối kiến thức
 
@@ -242,7 +241,7 @@ Kế hoạch giảng dạy mẫu được áp dụng cho kế hoạch học theo
 
 #### HK4
 
-* Sinh viên chọn 1 trong 3 hình thức sau (\**\*):
+* Sinh viên chọn 1 trong 3 hình thức sau (\*\*):
 
 | **Học kỳ** | **Mã môn** | **Tên môn học**                                              | **TC** | **LT** | **TH** |
 | ---------- | ---------- | ------------------------------------------------------------ | ------ | ------ | ------ |
