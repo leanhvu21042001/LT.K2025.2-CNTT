@@ -6,16 +6,19 @@
 @import "default";
 
 :root {
-  font-family: "CMU Sans Serif", "Segoe UI", Helvetica, sans-serif;
-  --main: #1f38c5;
-  --secondary: #141414;
+  font-family: "Lora", "Segoe UI", Helvetica, sans-serif;
+  --main: #138CE8;
+  --secondary: #cceeff;
 }
 
 section {
-  background-color: #ffffff;
-  /* bottom two-coloured bar in base64 svg */
-  background-image:
-    url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjUwbW0iIGhlaWdodD0iNS4zNTQ2bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI1MCA1LjM1NDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4zNDcgLTkxLjAyOCkiPgo8cmVjdCB4PSIyMC4zNDciIHk9IjkxLjAyOCIgd2lkdGg9IjEyNSIgaGVpZ2h0PSI1LjM1NDYiIGZpbGw9IiMxNDE0MTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLXdpZHRoPSIwIi8+CjxwYXRoIGQ9Im0xNDUuMzUgOTMuNzA1di0yLjY3NzNoMTI1djUuMzU0NmgtMTI1eiIgZmlsbD0iIzFmMzhjNSIgc3Ryb2tlLXdpZHRoPSIwIi8+CjwvZz4KPC9zdmc+);
+  /*A dim background color*/
+  background-color: #F5F5E7;
+  /* bottom two-colored bar in base svg */
+  /*Decoder: https://base64.guru/converter/decode/image*/
+  /*TODO: Update the background image to use the main color*/
+  /*TOOD: Insert the UIT logo into the background image*/
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjUwbW0iIGhlaWdodD0iNS4zNTQ2bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI1MCA1LjM1NDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4zNDcgLTkxLjAyOCkiPgo8cmVjdCB4PSIyMC4zNDciIHk9IjkxLjAyOCIgd2lkdGg9IjEyNSIgaGVpZ2h0PSI1LjM1NDYiIGZpbGw9IiMxNDE0MTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLXdpZHRoPSIwIi8+CjxwYXRoIGQ9Im0xNDUuMzUgOTMuNzA1di0yLjY3NzNoMTI1djUuMzU0NmgtMTI1eiIgZmlsbD0iIzFmMzhjNSIgc3Ryb2tlLXdpZHRoPSIwIi8+CjwvZz4KPC9zdmc+);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 150% 1em;
@@ -58,7 +61,7 @@ h6 {
 
 /* only apply to the first occurrence of h1 */
 h1:nth-of-type(1) {
-  font-family: "CMU Bright", "Segoe UI Semibold";
+  font-family: "Lora", "Segoe UI Semibold";
   color: #ffffff;
   background-color: var(--main);
   border-top: 0.3em solid var(--main);
@@ -67,7 +70,7 @@ h1:nth-of-type(1) {
   top: 0;
   right: 0;
   width: 100%;
-  height: 1.5em;
+  height: 1.6em;
   text-indent: 0.5em;
 }
 
@@ -95,7 +98,7 @@ section::after {
 
 /* inline math was too large wrt text */
 .katex {
-  font: normal 1.05em KaTeX_Main, "Times New Roman", serif
+  font: normal 1.05em KaTeX_Main, "Lora", "Times New Roman", serif
 }
 
 /* the "center" keyword centers the image - may break, careful */
@@ -109,7 +112,7 @@ img[alt~="center"] {
 /* title page - only to be used as for a single slide */
 /* <!-- _class: title --> */
 section.title>h1 {
-  font-family: "CMU Bright", "Segoe UI Semibold";
+  font-family: "Lora", "Segoe UI Semibold";
   color: #ffffff;
   background-color: var(--main);
   border-radius: 25px;
