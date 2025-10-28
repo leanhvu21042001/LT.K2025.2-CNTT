@@ -7,8 +7,10 @@
 
 :root {
   font-family: "Lora", "Segoe UI", Helvetica, sans-serif;
+  --body-font: "Lora";
   --main: #138CE8;
   --secondary: #cceeff;
+  --cover-font: "Be Vietnam Pro";
 }
 
 section {
@@ -18,7 +20,7 @@ section {
   /*Decoder: https://base64.guru/converter/decode/image*/
   /*TODO: Update the background image to use the main color*/
   /*TOOD: Insert the UIT logo into the background image*/
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjUwbW0iIGhlaWdodD0iNS4zNTQ2bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI1MCA1LjM1NDYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4zNDcgLTkxLjAyOCkiPgo8cmVjdCB4PSIyMC4zNDciIHk9IjkxLjAyOCIgd2lkdGg9IjEyNSIgaGVpZ2h0PSI1LjM1NDYiIGZpbGw9IiMxNDE0MTQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLXdpZHRoPSIwIi8+CjxwYXRoIGQ9Im0xNDUuMzUgOTMuNzA1di0yLjY3NzNoMTI1djUuMzU0NmgtMTI1eiIgZmlsbD0iIzFmMzhjNSIgc3Ryb2tlLXdpZHRoPSIwIi8+CjwvZz4KPC9zdmc+);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NTAiIGhlaWdodD0iMjAiPjxyZWN0IHdpZHRoPSI0NzUiIGhlaWdodD0iMjAiIGZpbGw9IiMxNzQxNDMiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHJ4PSIwIiByeT0iMCIgc3Ryb2tlPSIjZmZmIi8+PHJlY3Qgd2lkdGg9IjQ3NSIgaGVpZ2h0PSIyMCIgeD0iNDc1IiBmaWxsPSIjNDI3YTc2IiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2U9IiNmZmYiIHJ4PSIwIiByeT0iMCIgc3Ryb2tlLW9wYWNpdHk9IjEiLz48L3N2Zz4=);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 150% 1em;
@@ -35,7 +37,7 @@ header {
   width: 100%;
   right: 0;
   left: -51%;
-  color: white;
+  color: #E5E9C5;
 }
 
 footer {
@@ -47,7 +49,7 @@ footer {
   width: 100%;
   right: 0;
   left: 50.8%;
-  color: white;
+  color: #E5E9C5;
 }
 
 h1,
@@ -61,7 +63,7 @@ h6 {
 
 /* only apply to the first occurrence of h1 */
 h1:nth-of-type(1) {
-  font-family: "Lora", "Segoe UI Semibold";
+  font-family: var(--body-font);
   color: #ffffff;
   background-color: var(--main);
   border-top: 0.3em solid var(--main);
@@ -72,6 +74,8 @@ h1:nth-of-type(1) {
   width: 100%;
   height: 1.6em;
   text-indent: 0.5em;
+  /*Ensure the heading is always UPPERCASE*/
+  text-transform: uppercase;
 }
 
 code {
@@ -112,7 +116,7 @@ img[alt~="center"] {
 /* title page - only to be used as for a single slide */
 /* <!-- _class: title --> */
 section.title>h1 {
-  font-family: "Lora", "Segoe UI Semibold";
+  font-family: var(--cover-font), "Segoe UI Semibold";
   color: #ffffff;
   background-color: var(--main);
   border-radius: 25px;
