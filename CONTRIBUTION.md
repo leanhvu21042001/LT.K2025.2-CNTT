@@ -129,3 +129,15 @@ tags:
 ---
 ```
 
+## Các Quy Tắc Soạn Thảo
+
+### Fonts
+
+-   Sans: [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3?preview.text=GI%E1%BB%9AI%20THI%E1%BB%86U%20NG%C3%80NH%20C%C3%94NG%20NGH%E1%BB%86%20TH%C3%94NG%20TIN&query=Source+C) (ví dụ).
+-   Serif: [Lora](https://fonts.google.com/specimen/Lora?preview.text=GI%E1%BB%9AI%20THI%E1%BB%86U%20NG%C3%80NH%20C%C3%94NG%20NGH%E1%BB%86%20TH%C3%94NG%20TIN) (ví dụ) hoặc [Source Serif 4](https://fonts.google.com/specimen/Source+Serif+4?preview.text=GI%E1%BB%9AI%20THI%E1%BB%86U%20NG%C3%80NH%20C%C3%94NG%20NGH%E1%BB%86%20TH%C3%94NG%20TIN).
+-   Monospace: [Iosevka](https://typeof.net/Iosevka/) (khuyến nghị).
+
+### Công Thức Toán Học
+
+### Cross Referrence - Tham Chiếu Chéo
+
