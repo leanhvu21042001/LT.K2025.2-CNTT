@@ -5,7 +5,7 @@
 1. Clone this repo.
 2. Install [Obsidian](https://obsidian.md/).
 3. Open the repo folder as vault.
-4. Install necessary [tools](tools/tools.md) if needed.
+4. Install necessary [tools](tools.md) if needed.
 5. Enjoy.
 
 ## Contribution
