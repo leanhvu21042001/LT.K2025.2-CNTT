@@ -4,7 +4,7 @@
 
 ## Giới Thiệu
 
-Đây là gì?
+### Đây là gì?
 
 - Kho này là nơi quản lý các tài liệu và học liệu của lớp LT.K2025.2-CNTT, bao gồm:
     - Các thông báo.
@@ -13,26 +13,30 @@
     - Tài liệu/học liệu của các môn tương ứng.
     - Các tài nguyên khác (chung cho toàn kho, hoặc riêng của mỗi khóa học, vv..)
 
-Mục đích:
+### Mục đích
 
 * Vừa tập trung quản lý, nhất quán nội dung, vừa phân tán và chia sẻ.
 * Khả năng hợp tác (collaboration) giữa các bạn sinh viên, phân công công việc.
 
-Lưu ý:
+### Lưu ý
 
 - Mỗi bài tập nhóm có thể là riêng tư, nên cần có các repo riêng, hoặc tốt nhất là các branch riêng chỉ chia sẻ giữa các thành viên của nhóm.
 
-Cách tổ chức:
+### Cách tổ chức
 
 - Cây thư mục.
 - Tên file/folder sử dụng chữ thường, không khoảng trắng, không dấu, và không ký tự đặc biệt (ASCII), ví dụ: `251007-thong-bao-ve-ke-hoach-dao-tao`
 - Ngoại trừ:
     - Các cụm từ đặc biệt, ví dụ MÃ MÔN HỌC, nên để ở CHỮ HOA: `IE005`
     - Các cụm từ có nghĩa riêng, ví dụ: `GPU`, `CPU`, vv...
- 
-## Cách Dùng?
+
+### Cách dùng?
 
 - Check out [HOWTO](tools/HOWTO.md).
+
+### Đóng góp
+
+-   Vui lòng tham khảo [Hướng dẫn đóng góp](CONTRIBUTION.md).
 
 ## Thông báo
 
