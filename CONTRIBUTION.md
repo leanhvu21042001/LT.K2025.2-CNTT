@@ -139,5 +139,30 @@ tags:
 
 ### Công Thức Toán Học
 
+-   Dùng `$ ... $` cho các công thức ngắn: `$2x + 3y = 0$`, kết quả: $2x + 3y = 0$
+-   Luôn dùng `$$ ... $$` cho các công thức dài, ví dụ:
+
+Code:
+
+```latex
+A = B \quad \forall A, B \in M_{m \times n} (\mathbb{R}) \iff
+\begin{cases}
+a_{ij} = b_{ij} \\
+1 \le i \le m, 1 \le j \le n
+\end{cases}
+```
+
+
+
+Kết quả:
+$$
+A = B \quad \forall A, B \in M_{m \times n} (\mathbb{R}) \iff
+\begin{cases}
+a_{ij} = b_{ij} \\
+1 \le i \le m, 1 \le j \le n
+\end{cases}
+$$
+
+
 ### Cross Referrence - Tham Chiếu Chéo
 
