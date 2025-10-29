@@ -7,6 +7,24 @@
 - [https://obsidian.md/](https://obsidian.md/)
 - A Personal Knowledge Base (PKB) software.
 
+## MarkMap
+
+- Homepage: https://markmap.js.org/
+- Tạo mindmap từ Markdown.
+- Trích xuất SVG hoặc HTML.
+- Ví dụ:
+    - Download và mở trong trình duyệt: [khung-chuong-trinh-dao-tao.html](../thongbao/khung-chuong-trinh-dao-tao.html)
+    - (TODO: bổ sung ví dụ SVG)
+
+## MarkMind
+
+- Một plugin của Obsidian.
+- Tạo mindmap từ Markdown notes, tương tự với MarkMap, nhưng ngay bên trong Obsidian.
+- Homepage: https://github.com/MarkMindCkm/obsidian-markmind
+- Ví dụ:
+
+![MarkMind in action](assets/tools-markmind-example.png)
+
 ## Marpit
 
 - Homepage: https://marpit.marp.app/
