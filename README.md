@@ -2,11 +2,11 @@
 
 - A LT.K2025.2-CNTT Repo.
 
-## WHAT IS THIS
+## WHAT IS THIS?
 
 - A repo that stores all the LT.K2025.2-CNTT's materials.
 
-## HOW TO
+## HOW TO USE THIS REPO?
 
 - Check out [HOWTO](HOWTO.md).
 
