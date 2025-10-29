@@ -2,10 +2,13 @@
 
 - A LT.K2025.2-CNTT Repo.
 
-Đây là một kho/vault của https://obsidian.md/.
+## WHAT IS THIS
 
-- Clone.
-- "Open folder as vault".
+- A repo that stores all the LT.K2025.2-CNTT's materials.
+
+## HOW TO
+
+- Check out [HOWTO](HOWTO.md).
 
 ## Thông báo
 
@@ -18,7 +21,6 @@
 3. 2025 - 2026: Học Kỳ 3 (Chưa bổ sung)
 
 ## Chương Trình Đào Tạo Cử Nhân Liên Thông
-
 
 - [Chương trình đào tạo Cử nhân Liên thông Đại học ngành Công nghệ thông tin – Hình thức đào tạo từ xa (Áp dụng từ khoá tuyển 2024)](thongbao/chuong-trinh-dao-tao-cu-nhan-lien-thong.md).
 - Chi tiết:
