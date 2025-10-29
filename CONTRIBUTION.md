@@ -2,7 +2,7 @@
 
 Chào mừng, rất vui nếu bạn tham gia đóng góp!
 
-## Các Quy Tắc Chung về File
+## Các Quy Tắc Chung về Soạn Thảo File
 
 ### File Format (New Line) - Định Dạng File
 
@@ -70,4 +70,29 @@ Ví dụ 2: Dòng thứ 2 trống, và chỉ chứa duy nhất ký tự `\n` (kh
 Đây là ví dụ có EOF.
 
 ```
+
+## Các Quy Tắc về Đặt Tên File và Thư Mục
+
+-   Sắp xếp theo thứ tự:
+    -   **Numberic**: `01`, `02`, `03`, …
+        -   Lý do: có `0` ở trước để phân biệt `1` vs `10` khi sắp xếp, tránh trường hợp chúng cạnh nhau vì thực tế cách 9 đơn vị/file khác.
+    -   **Alphabet**: `a`, `b`, `c`, … `A`, `B`, `C`, …
+    -   **Date time**: 251025, 251026, … (`yymmdd` tương đương: 2025-10-25, 2025-10-26).
+        -   Lý do: Năm trước, tháng sau, ngày cuối cùng.
+        -   Chỉ dùng 2 ký tự cho Năm, vì không cần lo lắng nhầm lẫn đó là 2025, hay 1925, hay 2125, vì có lẽ chúng ta không sống đủ lâu để quan tâm 2125, và không đủ sớm để quan tâm 1925.
+-   Sử dụng chữ thường, không khoảng trắng, không có dấu tiếng Việt (hoặc bất kỳ tiếng khác), không ký tự đặc biệt (chỉ dùng bảng ASCII):
+    -   Ví dụ: `250105-huong-dan-sinh-vien-ra-vao-cong-thu-duc`
+
+Kết quả:
+
+-   Tạo thành một cấu trúc cây chặt chẽ với đường dẫn hoàn toàn liền mạch.
+-   Ví dụ:
+    -   `uit/courses/IE005/lectures/l01.pdf`
+    -   `uit/courses/IE005/reports/buoi-2/IE005-reports-buoi-2-Nhom-1.pdf`
+
+Ví dụ bổ sung:
+
+-   `ch01`, `ch02`, `ch03`, …
+-   `ch01a`, `ch01b`, `ch01c`, …
+-   Thư mục thông báo và các file bên trong được sắp xếp theo `yymmdd`.
 
