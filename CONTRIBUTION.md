@@ -164,5 +164,8 @@ a_{ij} = b_{ij} \\
 $$
 
 
-### Cross Referrence - Tham Chiếu Chéo
+### Cross Reference - Tham Chiếu Chéo
+
+-   Hạn chế sử dụng kiểu Wiki link `[[ ... ]]` để tham chiếu.
+-   Ưu tiên dùng kiểu link: `[abc](link)` để tăng tính tương tích với Markdown thuần.
 
