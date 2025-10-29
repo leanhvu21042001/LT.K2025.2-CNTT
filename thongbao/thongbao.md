@@ -1,6 +1,8 @@
 ---
 categories: THÔNG BÁO
 title: Các Thông Báo Liên Quan Đến LT.2025.2-CNTT
+tags:
+  - thongbao
 ---
 
 # Thông Báo
