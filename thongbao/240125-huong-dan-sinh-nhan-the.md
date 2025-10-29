@@ -1,3 +1,9 @@
+---
+categories: THÔNG BÁO
+tags:
+  - thongbao
+---
+
 # Hướng dẫn sinh viên nhận Thẻ sinh viên và Giấy báo trúng tuyển.
 
 - https://www.citd.vn/huong-dan-chuyen-doi-tin-chi-va-cong-nhan-ket-qua-hoc-tap-ap-dung-cho-sv-uit/

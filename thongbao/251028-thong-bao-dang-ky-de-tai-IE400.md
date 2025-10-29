@@ -1,3 +1,9 @@
+---
+categories: THÔNG BÁO
+tags:
+  - thongbao
+---
+
 # [CITD] Thông báo đăng ký đề tài môn Chuyên đề tốt nghiệp 4 TC – HK1 NH 2025 – 2026
 
 - https://www.citd.vn/citd-dang-ky-de-tai-mon-chuyen-de-tot-nghiep-4-tc-hk1-nh-2025-2026/

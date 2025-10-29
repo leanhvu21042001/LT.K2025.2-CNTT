@@ -1,3 +1,9 @@
+---
+categories: THÔNG BÁO
+tags:
+  - thongbao
+---
+
 # [THÔNG BÁO] Các mốc thời gian cần lưu ý cho sinh viên hệ Đào tạo Từ xa trong HK1 (2025 – 2026)
 
 * https://www.citd.vn/thong-bao-v-v-xac-nhan-dang-ky-hoc-phan-hk1-2025-2026-cua-sinh-vien-he-dao-tao-tu-xa/

@@ -1,3 +1,9 @@
+---
+categories: THÔNG BÁO
+tags:
+  - thongbao
+---
+
 # HƯỚNG DẪN SINH VIÊN RA VÀO TRƯỜNG TẠI CƠ SỞ CHÍNH THỦ ĐỨC
 
 - https://www.citd.vn/huong-dan-sinh-vien-ra-vao-truong-tai-co-so-thu-duc/
