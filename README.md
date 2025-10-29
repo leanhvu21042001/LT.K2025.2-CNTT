@@ -32,7 +32,7 @@ Cách tổ chức:
  
 ## Cách Dùng?
 
-- Check out [HOWTO](HOWTO.md).
+- Check out [HOWTO](tools/HOWTO.md).
 
 ## Thông báo
 
