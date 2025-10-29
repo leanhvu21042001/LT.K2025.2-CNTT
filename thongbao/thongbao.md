@@ -14,3 +14,5 @@ title: Các Thông Báo Liên Quan Đến LT.2025.2-CNTT
 - 251007: [Kế Hoạch Đào Tạo Học Kỳ 1, 2025 - 2026](251007-ke-hoach-hoc-ky-1-2025-2026.md)
 - 251007: [Xác Nhận Đăng Ký Học Phần Học Kỳ 1, 2025 - 2026](251007-xac-nhan-dang-ky-hoc-phan-hk1-2025-2026.md)
 - 251012: [V/v Cấp tài khoản và xem kết quả đăng ký học phần HK1 (2025 – 2026) dành cho tân sinh viên nhập học T9/2025](251012-cap-tai-khoan-va-xem-ket-qua-dang-ky-hoc-phan-hk1-2025-2026.md)
+- 251028: [Thông báo đăng ký đề tài môn Chuyên đề tốt nghiệp 4 TC – HK1 NH 2025 – 2026](251028-thong-bao-dang-ky-de-tai-IE400.md)
+
