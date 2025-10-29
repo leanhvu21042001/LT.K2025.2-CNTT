@@ -96,3 +96,31 @@ Ví dụ bổ sung:
 -   `ch01a`, `ch01b`, `ch01c`, …
 -   Thư mục thông báo và các file bên trong được sắp xếp theo `yymmdd`.
 
+## Git và Phân Nhánh
+
+## Thuộc Tính của File
+
+-   Luôn bổ sung thuộc tính của file nếu có.
+-   Sử dụng YAML header, hoặc File Property menu của Obsidian.
+
+Ví dụ:
+
+-   Mã môn: IE005
+-   Loại (của file) là Khóa học.
+-   Cung cấp bởi: UIT
+-   Tên môn.
+-   Tiêu đề.
+-   Tags.
+
+```yaml
+---
+id: IE005
+type: Course
+provider: UIT
+subject: Giới Thiệu Nghành Công Nghệ Thông Tin
+title: Bài 1. Giới Thiệu Nghành Công Nghệ Thông Tin
+tags:
+  - CNTT
+---
+```
+
