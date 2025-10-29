@@ -1,12 +1,36 @@
 # LT.K2025.2-CNTT
 
-- A LT.K2025.2-CNTT Repo.
-
-## WHAT IS THIS?
-
 - A repo that stores all the LT.K2025.2-CNTT's materials.
 
-## HOW TO USE THIS REPO?
+## Giới Thiệu
+
+Đây là gì?
+
+- Kho này là nơi quản lý các tài liệu và học liệu của lớp LT.K2025.2-CNTT, bao gồm:
+    - Các thông báo.
+    - Chương trình đào tạo.
+    - Kế hoạch đào tạo.
+    - Tài liệu/học liệu của các môn tương ứng.
+    - Các tài nguyên khác (chung cho toàn kho, hoặc riêng của mỗi khóa học, vv..)
+
+Mục đích:
+
+* Vừa tập trung quản lý, nhất quán nội dung, vừa phân tán và chia sẻ.
+* Khả năng hợp tác (collaboration) giữa các bạn sinh viên, phân công công việc.
+
+Lưu ý:
+
+- Mỗi bài tập nhóm có thể là riêng tư, nên cần có các repo riêng, hoặc tốt nhất là các branch riêng chỉ chia sẻ giữa các thành viên của nhóm.
+
+Cách tổ chức:
+
+- Cây thư mục.
+- Tên file/folder sử dụng chữ thường, không khoảng trắng, không dấu, và không ký tự đặc biệt (ASCII), ví dụ: `251007-thong-bao-ve-ke-hoach-dao-tao`
+- Ngoại trừ:
+    - Các cụm từ đặc biệt, ví dụ MÃ MÔN HỌC, nên để ở CHỮ HOA: `IE005`
+    - Các cụm từ có nghĩa riêng, ví dụ: `GPU`, `CPU`, vv...
+ 
+## Cách Dùng?
 
 - Check out [HOWTO](HOWTO.md).
 
@@ -16,11 +40,15 @@
 
 ## Kế Hoạch Đào Tạo Các Kỳ
 
+Truy cập các kế hoạch đào tạo của kỳ học tương ứng tại:
+
 1. [2025 - 2026: Học Kỳ 1](2025-2026-HK1.md) (Bấm để xem chi tiết)
 2. 2025 - 2026: Học Kỳ 2 (Chưa bổ sung)
 3. 2025 - 2026: Học Kỳ 3 (Chưa bổ sung)
 
 ## Chương Trình Đào Tạo Cử Nhân Liên Thông
+
+Xem lại/review khung chương trình đào tạo của lớp Liên Thông:
 
 - [Chương trình đào tạo Cử nhân Liên thông Đại học ngành Công nghệ thông tin – Hình thức đào tạo từ xa (Áp dụng từ khoá tuyển 2024)](thongbao/chuong-trinh-dao-tao-cu-nhan-lien-thong.md).
 - Chi tiết:
@@ -41,11 +69,17 @@ Hình ảnh gốc:
 
 ## Kế Hoạch Đào Tạo Tổng Quan
 
+Đây là kế hoạch đào tạo tổng quan của toàn khóa.
+
 - Code: [Mermaid](https://www.mermaidchart.com/play#pako:eNqFkjFLw1AUhf_KoVM7FNJqFbppFCOtBfUNDl1KjM0D-yKSCCIOnVwVRxFbShEEcVAQEsThif8j_8Tz0gptrZohIbzvnnvOve8s5wb7Xq6aKxaLTeUG6kC2q00FhL7X8apQXtBU2VkoO96hVJ455LEMDz3U0vgdTpDGfdfHx6XuBRD8CUZM2SpXUDSfJTi1EqrYXLesCvIbMk1uJITP70WERlv3lA-7IURhVGke0sKylpF3CFGcbDeCY9ApamvFshaQ_7hkY4ndNLmCiE5pTEHoxxl4c71klZC3P_uGvIPDImP5XrXn9CdM5e0ojQcKdf1Gx_qFpJCqMC9ieWyaRXYaDyOIYx27WEuTJ9RHWU90D4wfD0x8Cj-GEy3HaRany3fS5FbyzSH_ZDnNPd13sUutYUhN5qfDmn6YZk0Wsg2fLY-wxRhYpYsAZm6DTuZrRaEhuYh_Ui5QzjY9MxXbj071gxovcXJ83yfskHQ55OQqJJXt_Gie7mJms2Js1nz93ELdzEfNVM5sqGLWaTpcQ3f_ZM01fXWzkvLvJQiza7QWtDiICZ3c-RdbMCYZ)
 
 ![Kế Hoạch Đào Tạo Tổng Quan](thongbao/assets/ke-hoach-dao-tao.png)
 
-## Kế Hoạch Năm Học 2025 - 2026
+## Kế Hoạch Năm Học
+
+Kế hoạch năm học của các năm.
+
+### Năm Học 2025 - 2026
 
 - https://www.citd.vn/ke-hoach-nam-hoc/
 

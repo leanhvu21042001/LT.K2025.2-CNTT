@@ -7,6 +7,30 @@
 - [https://obsidian.md/](https://obsidian.md/)
 - A Personal Knowledge Base (PKB) software.
 
+## Marpit
+
+- Homepage: https://marpit.marp.app/
+- Markdown slide deck framework.
+
+How to:
+
+1. Install the `marp-cli`.
+2. Run the command:
+
+```bash
+marp --pdf-outline --allow-local-files -p --server path/to/md-folder/ --theme path/to/them-file.css
+```
+
+Ví dụ:
+
+```bash
+marp --pdf-outline --allow-local-files -p --server tools/marp/samples --theme tools/marp/themes/beam.css
+```
+
+In action:
+
+![Ví dụ về marp](assets/tools-marp-in-action-sample.png)
+
 ## Marp Slides (obsidian-marp-slides)
 
 * Name: [obsidian-marp-slides](https://github.com/samuele-cozzi/obsidian-marp-slides)
