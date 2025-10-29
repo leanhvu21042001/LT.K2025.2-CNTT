@@ -98,6 +98,11 @@ Ví dụ bổ sung:
 
 ## Git và Phân Nhánh
 
+-   Luôn phân nhánh khi cần thiết, có thể cân nhắc sử dụng git-flow.
+-   Quy tắt đặt tên nhánh: nhất quán, để gom vào chung cây phân nhánh.
+    -   `courses/course-id`: `courses/MA003`, `tools/IE005`, …
+    -   `tools/tool-name`: `tool/marp-slides`, `tools/obsidian`, …
+
 ## Thuộc Tính của File
 
 -   Luôn bổ sung thuộc tính của file nếu có.
