@@ -2,6 +2,8 @@
 url: https://www.citd.vn/thong-bao-v-v-cap-tai-khoan-va-xem-ket-qua-dang-ky-hoc-phan-hk1-2025-2026-danh-cho-tan-sinh-vien-nhap-hoc-t9-2025/
 title: V/v Cấp tài khoản và xem kết quả đăng ký học phần HK1 (2025 – 2026) dành cho tân sinh viên nhập học T9/2025
 categories: THÔNG BÁO
+tags:
+  - thongbao
 ---
 
 # [THÔNG BÁO] V/v Cấp tài khoản và xem kết quả đăng ký học phần HK1 (2025 – 2026) dành cho tân sinh viên nhập học T9/2025

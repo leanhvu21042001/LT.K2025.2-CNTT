@@ -2,6 +2,8 @@
 url: https://www.citd.vn/thong-bao-v-v-xac-nhan-dang-ky-hoc-phan-hk1-2025-2026-cua-sinh-vien-he-dao-tao-tu-xa/
 title: V/v Xác nhận Đăng ký học phần HK1 (2025 – 2026) của Sinh viên Hệ đào tạo Từ xa
 categories: THÔNG BÁO
+tags:
+  - thongbao
 ---
 
 # [THÔNG BÁO] V/v Xác nhận Đăng ký học phần HK1 (2025 – 2026) của Sinh viên Hệ đào tạo Từ xa
