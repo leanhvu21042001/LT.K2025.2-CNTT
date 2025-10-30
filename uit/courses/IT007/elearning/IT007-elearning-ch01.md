@@ -117,9 +117,50 @@ Q3.
 
 ### VIDEO: KIẾN TRÚC HỆ THỐNG MÁY TÍNH
 
+- [\[Hệ điều hành\] Chương 1.3: Kiến trúc hệ thống máy tính](https://www.youtube.com/watch?v=6sv-iFfB8lY)
+
+Nội dung:
+
 - SPM (Single-Processor Systems)
 - MS (Multiprocessor Systems)
 - CS (Clustered Systems)
+
+### Slide: Kiến trúc hệ thống máy tính
+
+- SPM (Single-Processor Systems)
+- MS (Multiprocessor Systems)
+    - symmetric systems
+    - dual
+    - NUMA (Non-Uniform Memory Access)
+- CS (Clustered Systems)
+
+### Quiz
+
+> [!NOTE]
+> Câu 7. Một con chip (vật lý) chứa một hoặc nhiều CPU là?
+> 
+> - [ ] Core (lõi/nhân)
+> - [x] Processor (bộ xử lý)
+> - [ ] Multicore (đa lõi)
+> - [ ] Multiprocessor (đa bộ xử lý)
+
+
+> [!NOTE]
+> Câu 8. Đặc điểm nào không phải là ưu điểm của hệ thống đa bộ xử lý?
+> 
+> - [x] Tiết kiệm năng lượng
+> - [ ] Kinh tế
+> - [ ] Tăng cường năng suất hệ thống
+> - [ ] Độ tin cậy cao
+
+
+> [!NOTE]
+> Câu 9. Trong hệ thống gom cụm bao gồm nhiều hệ thống làm việc với nhau thường chia sẻ không gian lưu trữ qua mạng loại nào?
+> 
+> - [ ] Wide Area Network - WAN
+> - [ ] Local Area Network - LAN
+> - [ ] Metropolitan Area Network – MAN
+> - [x] Storage Area Network - SAN
 
 ## 1.4: Các thao tác trong hệ điều hành
 
