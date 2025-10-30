@@ -137,3 +137,18 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Communication: email, talk, web browser.
 
 ## Cấu trúc hệ thống
+
+- Architects:
+    - Monolithic.
+    - Layered Approach.
+    - Microkernels.
+    - Modules.
+    - Hybrid Systems.
+- Monolithic:
+    - Original UNIX.
+    - Simple.
+    - Kernel:
+        - file system
+        - CPU scheduling
+        - memory management, etc.
+    - System programs.
