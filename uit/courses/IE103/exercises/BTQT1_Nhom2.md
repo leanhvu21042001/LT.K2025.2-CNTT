@@ -39,7 +39,7 @@ Thành viên của nhóm 2:
 
 ### Yêu cầu 1
 
-Hãy tổ chức các folder trên máy tính thể hiện tính khoa học với các hoạt động phổ biến của một sinh viên.
+**Hãy tổ chức các folder trên máy tính thể hiện tính khoa học với các hoạt động phổ biến của một sinh viên.**
 
 Cách tổ chức:
 
@@ -93,4 +93,32 @@ Ví dụ 3:
     - và môn này liên quan đến *database*, *SQL*, vv..
 
 ![BTQT1_03](assets/BTQT1_03.png)
+
+### Yêu Cầu 2
+
+### Yêu Cầu 3
+
+### Yêu Cầu 4
+
+**Sự khác nhau giữa việc lưu trữ dữ liệu trên CD và USB?**
+
+| No  | Đặc Tính             | CD                                                                                                                                                     | USB                                                                                                             |
+| --- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+|     | Tên gọi              | CD ROM (Read Only Memory)                                                                                                                              | USB Storage; Mass Storage                                                                                       |
+|     | Kích thước           | Cố định, khá lớn, đường kính khoảng 8-10cm.                                                                                                            | Nhiều loại, nhưng thường rất nhỏ, tiện lợi di chuyển, từ 2-4cm chiều dài trở lên.                               |
+|     | Quy cách lưu trữ     | Sử dụng các rãnh/track có độ lồi lõm khác nhau, phản xạ tia sáng để chuyển đổi thành tín hiệu điện.                                                    | Sử dụng các ô nhớ (memory cell) và kết hợp với bộ điều khiển (controller) để lưu trữ.                           |
+|     | Khả năng đọc         | Nhiều lần, phụ thuộc nhiều vào độ bền của chất phủ hóa học.                                                                                            | Nhiều, tới rất nhiều. Phụ thuộc vào chất lượng của ô nhớ và bộ điều khiển.                                      |
+|     | Khả năng ghi         | Một lần, rất ít trường hợp cho 2 lần. Phụ thuộc vào: chất phủ hóa học; chất lượng của rotor, vv.. thậm chí không thể hoàn thành quá trình ghi dữ liệu. | Nhiều, tới rất nhiều. Phụ thuộc vào chất lượng của ô nhớ và bộ điều khiển.                                      |
+|     | Kiểu lưu trữ         | Analog, quang học. Tuần tự, theo track.                                                                                                                | Điện tử. Ngẫu nhiên.                                                                                            |
+|     | Cách lưu trữ         | Cơ học (chuyển động quay), quang học (chiếu - thu phản xạ ánh sáng).                                                                                   | Điện tử                                                                                                         |
+|     | Cách truy cập        | Tuần tự, theo track.                                                                                                                                   | Ngẫu nhiên                                                                                                      |
+|     | Khả năng phân vùng   | Gần như không có.                                                                                                                                      | Phân vùng (partitioning) và Định dạng (format) tương tự một SSD/HDD.                                            |
+|     | Dung lượng           | Nhỏ, hạn chế, thường khoảng 650MB cho mộ CD.                                                                                                           | Lý thuyết là không hạn chế, từ hàng trăm MB tới hàng trăm GB thậm chí hơn. Chỉ giới hạn vì khả năng thương mại. |
+|     | Hướng nâng cấp       | CD cho phép ghi tiếp nối, nhiều lần. Hoặc DVD cho phép ghi nhiều track, hoặc/và nhiều mặt, nhằm tăng dung lượng. Blu-ray DVD.                          | Thay đổi chuẩn USB (1, 2, 3, 4), thay đổi Controller, thay đổi ô nhớ; tiệm cận tới SSD (thunderbolt, NVME).     |
+|     | Cách ghi dữ liệu     | Sử dụng ánh sáng quang học để đốt (burn) các chất phủ hóa học, tạo các rãnh/vết lõm cụ thể                                                             | Các tín hiệu điện được chuyển từ CPU/RAM tới controller (bộ điều khiển) và tới các ô nhớ (memory cell).         |
+|     | Cách đọc dữ liệu     | Cho đĩa quay quanh một trục, đầu đọc chiếu tia sáng (quang) và nhận lại phản xạ và chuyển thành tín hiệu điện. Cơ học + quang học.                     | Các tín hiệu điện được chuyển tới từ các ô nhớ tới controller và vào RAM/CPU.                                   |
+|     | Tốc độ               | Chậm, và phụ thuộc vào tốc độ quay của rotor.                                                                                                          | Nhanh tới rất nhanh; tùy phiên bản USB (1, 2, 3, 3.1, 3.2, 3.2Gen2, vv..) dung lượng                            |
+|     | Tính dễ tổn thương   | Dễ, cần bảo quản cẩn thận; dễ bị trầy xước bề mặt, gây lỗi quá trình đọc (phản xạ tia sáng).                                                           | Bền bỉ hơn rất nhiều, có thể chịu va đập, thậm chí kháng nước/lửa tùy tình huống.                               |
+|     | Các bảo quản         | Nơi khô ráo, tránh các bề mặt thô ráp, nên có túi mềm bọc ngoài.                                                                                       | Nơi khô ráo, không quá khắt khe trong bảo quản; ưu tiên tránh tiếp xúc môi trường khắc nghiệt, cực đoan.        |
+|     | Khả năng tương thích | Thấp, gần như chỉ còn tồn tại ở các thiết bị cũ, hoặc cấu hình đặc thù.                                                                                | Cao, rộng; có tính tương thích ngược, xuyên suốt quá trình phát triển của thiết bị điện tử.                     |
 
