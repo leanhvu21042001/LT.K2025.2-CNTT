@@ -116,6 +116,17 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - GUI
 ## Lời gọi hệ thống (system call)
 
+- Giao tiếp giữa tiến trình (process) và hệ điều hành (kernel), gọi đến các dịch vụ mà hệ điều hành cung cấp.
+- C/C++.
+- Truy cập thông qua API:
+    - Win32 API (Windows).
+    - POSIX API (POSIX-based).
+    - Java API (JVM).
+- Các phương pháp truyền thông số:
+    - Thank ghi (register).
+    - Qua một vùng nhớ (địa chỉ vùng nhớ được gửi qua register).
+    - Stack.
+
 ## Các chương trình hệ thống (system programs)
 
 ## Cấu trúc hệ thống
