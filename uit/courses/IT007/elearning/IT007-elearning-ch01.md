@@ -117,9 +117,89 @@ Q3.
 
 ### VIDEO: KIẾN TRÚC HỆ THỐNG MÁY TÍNH
 
+- [\[Hệ điều hành\] Chương 1.3: Kiến trúc hệ thống máy tính](https://www.youtube.com/watch?v=6sv-iFfB8lY)
+
+Nội dung:
+
 - SPM (Single-Processor Systems)
 - MS (Multiprocessor Systems)
 - CS (Clustered Systems)
 
+### Slide: Kiến trúc hệ thống máy tính
+
+- SPM (Single-Processor Systems)
+- MS (Multiprocessor Systems)
+    - symmetric systems
+    - dual
+    - NUMA (Non-Uniform Memory Access)
+- CS (Clustered Systems)
+
+### Quiz
+
+> [!NOTE]
+> Câu 7. Một con chip (vật lý) chứa một hoặc nhiều CPU là?
+> 
+> - [ ] Core (lõi/nhân)
+> - [x] Processor (bộ xử lý)
+> - [ ] Multicore (đa lõi)
+> - [ ] Multiprocessor (đa bộ xử lý)
+
+
+> [!NOTE]
+> Câu 8. Đặc điểm nào không phải là ưu điểm của hệ thống đa bộ xử lý?
+> 
+> - [x] Tiết kiệm năng lượng
+> - [ ] Kinh tế
+> - [ ] Tăng cường năng suất hệ thống
+> - [ ] Độ tin cậy cao
+
+
+> [!NOTE]
+> Câu 9. Trong hệ thống gom cụm bao gồm nhiều hệ thống làm việc với nhau thường chia sẻ không gian lưu trữ qua mạng loại nào?
+> 
+> - [ ] Wide Area Network - WAN
+> - [ ] Local Area Network - LAN
+> - [ ] Metropolitan Area Network – MAN
+> - [x] Storage Area Network - SAN
+
 ## 1.4: Các thao tác trong hệ điều hành
+
+### VIDEO: CÁC THAO TÁC TRONG HỆ ĐIỀU HÀNH
+
+- Youtube: https://www.youtube.com/watch?v=ePyfQHRfCxk
+
+Nội dung:
+
+- Đơn chương
+- Đa chương
+    - Đa nhiệm
+- Các chế độ hoạt động (bit mode)
+    - User mode: `1`
+    - Kernel mode `0`
+        - System calls
+- Lịch sử phát triển các hệ điều hành.
+- Quá trình phát triển của một số hệ điều hành.
+
+### Slide: Các thao tác trong hệ điều hành
+
+(nội dung ở đây)
+
+### Quiz: Các thao tác trong hệ điều hành
+
+> [!NOTE]
+> Chương trình Bootstrap làm nhiệm vụ nào trong các nhiệm vụ sau?
+> 
+> - [ ] Điều khiển ngắt của nhân
+> - [ ] Yêu cầu các dịch vụ của hệ điều hành
+> - [ ] Khởi động hệ thống nền
+> - [x] Khởi động hệ thống, nạp nhân
+
+
+> [!NOTE]
+> Đặc điểm nào sau đây KHÔNG phải là đặc điểm của hệ thống đa chương?
+> 
+> - [ ] Một công việc được chọn và chạy bởi bộ định thời công việc
+> - [ ] Khi một công việc phải chờ hệ điều hành chuyển sang thực thi công việc khác
+> - [x] Chương trình được thi hành tuần tự
+> - [ ] Nhiều công việc được nạp đồng thời vào bộ nhớ
 
