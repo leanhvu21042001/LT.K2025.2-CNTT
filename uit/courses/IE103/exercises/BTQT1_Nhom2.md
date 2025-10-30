@@ -5,11 +5,11 @@ title: Bài Tập Quá Trình 1 - Nhóm 2
 
 # IE103 - Bài Tập Quá Trình 1 - Nhóm 2
 
-- Mã Lớp:
-- Mã Môn:
-- Tên Môn:
-- Giảng Viên:
-- Nhóm:
+- Mã Lớp: IE103.F12.LT.CNTT
+- Mã Môn: IE103
+- Tên Môn: Quản Lý Thông Tin
+- Giảng Viên: ThS. Nguyễn Thành Luân
+- Nhóm: 2 (Omega)
 
 ## Nhóm 2 (Omega)
 
@@ -77,6 +77,7 @@ Kết quả:
 Ví dụ 1:
 
 ![Tổ Chức Thư Mục 01](assets/BTQT1_01.png)
+
 Ví dụ 2:
 
 ![Tổ Chức Thư Mục 02](assets/BTQT1_02.png)
@@ -90,7 +91,6 @@ Ví dụ 3:
     - có các nội dung tương ứng (ch01);
     - có bài tập tương ứng (BTQT1);
     - và môn này liên quan đến *database*, *SQL*, vv..
-
 
 ![BTQT1_03](assets/BTQT1_03.png)
 
