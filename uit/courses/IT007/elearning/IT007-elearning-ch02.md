@@ -92,6 +92,28 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 
 ## Các dịch vụ hệ điều hành cung cấp
 
+- Cấu trúc tổng quan của các dịch vụ của hệ điều hành.
+- Thực thi chương trình.
+- Thực hiện các thao tác I/O theo yêu cầu của chương trình.
+- Các thao tác trên hệ thống file.
+- Trao đổi thông in giữa các tiến trình:
+    - Chia sẻ bộ nhớ (shared memory).
+    - Chuyển thông điệp (message passing).
+- Phát hiện lỗi:
+    - Trong CPU, bộ nhớ, trên thiết bị I/O (dữ liệu hư, hết giấy, vv...).
+    - Do chương trình: logic (chia cho 0), truy cập đến bộ nhớ không cho phép, vv...
+- Cấp phát tài nguyên (resource allocation):
+    - Tài nguyên: Phần cứng.
+    - OS có các routing tương ứng.
+- Kế toán (accounting):
+    - Lưu vế user để tính phí hoặc đơn giản là để thống kê.
+- Bảo vệ (protection) và an ninh (security):
+    - Hai tiến trình khác nhau không được ảnh hưởng nhau.
+    - Kiểm soát được các truy xuất tài nguyên của hệ thống.
+    - Chỉ các user được phép sử dụng hệ thông mới truy cập được tài nguyên của hệ thống (username/password, etc.)
+- Giao diện người dùng:
+    - CLI
+    - GUI
 ## Lời gọi hệ thống (system call)
 
 ## Các chương trình hệ thống (system programs)
