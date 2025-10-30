@@ -129,4 +129,11 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 
 ## Các chương trình hệ thống (system programs)
 
+- File system management: create, delete, rename, list
+- Status:date, time, file system free space.
+- Editor: cat, ed.
+- Development: Compiler/assembler/interpreter.
+- Debugger: loader/debugger
+- Communication: email, talk, web browser.
+
 ## Cấu trúc hệ thống
