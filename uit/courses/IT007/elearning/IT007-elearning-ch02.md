@@ -152,3 +152,11 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - CPU scheduling
         - memory management, etc.
     - System programs.
+
+## Câu hỏi ôn tập chương 2
+
+1. Các thành phần chính của hệ điều hành?
+2. Các dịch vụ mà hệ điều hành cung cấp?
+3. Lời gọi hệ thống là gì? Nêu ví dụ.
+4. Có mấy dạng cấu trúc hệ điều hành? Kể tên.
+5. Tiến trình là gì? Các nhiệm vụ chính của thành phần quản lý tiến trình?
