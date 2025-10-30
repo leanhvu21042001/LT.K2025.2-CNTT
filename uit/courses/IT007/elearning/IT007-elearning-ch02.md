@@ -27,6 +27,69 @@ Chúng ta có thể xem xét hệ điều hành từ nhiều góc độ khác nh
 
 ## Các thành phần của hệ điều hành
 
+### VIDEO: THÀNH PHẦN QUẢN LÝ TIẾN TRÌNH
+
+Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nhằm cung cấp những cơ chế quản lý và khai thác hiệu quả các thành phần bên trong một hệ thống máy tính. Trong đó, quản lý tiến trình là thành phần đặc biệt quan trọng khi phụ trách quản lý và vận hành các công việc bên trong máy tính.
+
+- Quản lý tiến trình.
+    - Tiến trình là gì?
+    - Tiến trình khác chương trình ở điểm nào?
+    - Tiến trình cần gì để thực thi?
+    - Nhiệm vụ chính của quản lý tiến trình?
+        - Tạo/hủy tiến trình.
+        - Tạm dừng/tiếp tục thực thi tiến trình.
+        - Cung cấp các cơ chế:
+            - Đồng bộ hoạt động các tiến trình.
+            - Giao tiếp giữa các tiến trình.
+            - Khống chế tắc nghẽn.
+- Quản lý bộ nhớ chính.
+    - Bộ nhớ chính là gì?
+    - Tại sao cần quản lý bộ nhớ chính?
+    - Các nhiệm vụ chính:
+        - Theo dõi, quản lý các vùng nhớ trống và đã cấp phát.
+        - Quyết định sẽ nạp chương trình nào khi có vùng nhớ trống.
+        - Cấp phát và thu hồi các vùng nhớ khi cần thiết.
+- Quản lý file.
+    - Hệ thống file là gì?
+    - Các dịch vụ chính:
+        - Tạo và xóa file.
+        - Các thao tác xử lý file: copy/paste/move, ...
+        - "Ánh xạ" file vào thiết bị thứ cấp tương ứng.
+        - Sao lưu và phục hồi dữ liệu.
+- Quản lý hệ thống I/O.
+    - Abstract/che dấu sự khác biệt của các thiết bị I/O trước người dùng.
+    - Chức năng:
+        - Chơ chế: buffering, caching, spooling, ...
+        - Cung cấp giao diện chung đến các trình điều khiển thiết bị.
+        - Bộ điều khiển các thiết bị phần cứng.
+- Quản lý hệ thống lưu trữ thứ cấp.
+    - Hệ thống lưu trữ thứ cấp là gì? Khác biệt với bộ nhớ chính?
+    - Phương tiện (media) lưu trữ thông dụng là gì?
+    - Nhiệm vụ:
+        - Quản lý không gian trống trên đĩa (free space management).
+        - Cấp phát không gian lưu trữ (storage allocation).
+        - Định thời hoạt động cho đĩa (disk scheduling) $\to$ tối ưu tuổi thọ, năng lượng, hiệu năng.
+- Hệ thống bảo vệ.
+    - Đa người dùng, đa tiến trình.
+    - Kiểm soát tiến trình người dùng đăng nhập/xuất và sử dụng hệ thống.
+    - Kiểm soát việc truy cập các tài nguyên trong hệ thống.
+    - Bảo đảm những user/process chỉ được phép sử dụng các tài nguyên dành cho nó.
+    - Các nhiệm vụ:
+        - Cung cấp cơ chế kiểm soát đăng nhập/xuất.
+        - Phân định được sự truy cập tài nguyên hợp pháp và bất hợp pháp (authorized/unauthorized).
+        - Phương tiện thi hành các chính sách (enforcement of policies).
+- Hệ thống thông dịch lệnh.
+    - Là giao diện chủ yếu giữa người dùng và hệ điều hành.
+    - User login:
+        - Shell/CLI: dấu nhắc lệnh.
+        - Lệnh $\to$ bộ điều khiển lệnh $\to$ hệ điều hành.
+        - Các lệnh chủ yếu:
+            - Tạo/hủy/quản lý tiến trình.
+            - Kiểm soát I/O.
+            - Quản lý bộ nhớ thứ cấp.
+            - Quản lý bộ nhớ chính.
+            - Truy cập hệ thống file và cơ chế bảo mật.
+
 ## Các dịch vụ hệ điều hành cung cấp
 
 ## Lời gọi hệ thống (system call)
