@@ -201,7 +201,61 @@ Hình ảnh diễn giải trực quan:
 
 ### Yêu Cầu 3
 
-(Chưa bổ sung)
+**Cho biết các file quan trọng phổ biến nào mà một sinh viên cần backup.**
+
+Đánh giá:
+
+- Có thể mở rộng thêm khái niệm này, không chỉ các file mà các thông tin hoặc bất kỳ tài liệu/học liệu nào có ý nghĩa tới quá trình học của sinh viên.
+
+Quy tắc chung:
+
+- Lưu trữ ở nhiều nơi, có tính phân tán nhưng khả năng đồng bộ cao.
+    - Một bản lưu offline/online cho thường xuyên truy cập chỉnh sửa.
+    - Một bản lưu Online; có thể đồng bộ thời gian thực hoặc thường xuyên hoặc định kỳ.
+    - Một bản lưu offline (HDD rời, hoặc HDD khác/USB, vv..), đồng bộ định kỳ.
+- Phân loại và nhất quán theo loại, mục đích, vv.. theo quy tắc sắp xếp ở Yêu cầu 1 có đề cập.
+- Theo dõi được sự thay đổi qua thời gian, vì vậy cần/nên được quản lý bởi một Revision management software (Quản lý phiên bản).
+
+Các file/thông tin cần được lưu giữ:
+
+- Các thông tin chung liên quan đến quá trình học tập:
+    - Thông báo nhập học.
+    - Thông báo các mốc thời gian quan trọng.
+    - Khung chương trình học tập.
+    - Kế hoạch đào tạo.
+    - Thời Khóa Biểu.
+    - Và các tài liệu liên quan khác.
+    - Bảng điểm (có thể tách riêng thành mục Quá Trình hoặc Kết Quả Học Tập).
+- Các thông tin liên quan đến từng khóa học cụ thể:
+    - Các bài giảng.
+    - Các bài tập.
+    - Các bài lab.
+    - Các bài đọc thêm.
+    - Các bài luận, nghiên cứu, vv..
+    - Và các nội dung khác liên quan, phát sinh từ môn học, ví dụ Bảng phân công công việc, hình ảnh thực tập, vv...
+- Các thông tin liên quan cá nhân nhưng có liên hệ tới quá trình học:
+    - Hình ảnh, video quan trọng.
+    - Ảnh thẻ, ảnh/scan các chứng từ (biên lai nộp học phí, vv...).
+    - CV, portfolio.
+    - Có thể quản lý tập trung chung với các nội dung bên trên, hoặc tách riêng nhưng có liên kết tới, ví dụ sử dụng git submodule.
+- Các công cụ hỗ trợ quá trình học tập:
+    - Các phần mềm, công cụ khác.
+    - Quan trọng học: Cấu hình của các phần mềm đó nếu cần (ví dụ các `.dotfile`);
+    - Các tài liệu, dữ liệu liên quan đến các phần mềm được sử dụng.
+    - Các tài liệu, dữ liệu liên quan đến các bài tập, lab, được triển khai trên phần mềm.
+
+Các công cụ gợi ý cho mục đích lưu trữ/đồng bộ dữ liệu:
+
+| Tên            | Thể Loại          | Đánh giá                                                                                                           | Chi phí                                                                     |
+| -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| Google Drive   | Lưu Trữ           | Tiện lợi, dễ dùng. Nhưng không thể hoặc khó theo dõi phiên bản.                                                    | Miễn phí với dung lượng giới hạn.                                           |
+| `rsync`        | Đồng Bộ           | Dễ dùng với người đã quen, có thể sử dụng script để tối ưu hóa quy trình đồng bộ.                                  | Miễn phí, nguồn mở.                                                         |
+| FreeFileSync   | Đồng Bộ           | Dễ dùng, đặc biệt đối với người đã có khái niệm về `rsync`.                                                        | Miễn phí, nguồn mở.                                                         |
+| `git` + Github | Quản Lý Phiên Bản | `git` là về quản lý phiên bản, nhưng dùng chung với Github cho phép khả năng lưu trữ, đồng bộ và hợp tác.          | `git` là miễn phí, nguồn mở. Github có miễn phí với các chức năng giới hạn. |
+| Typora         | Editor            | Là một Markdown editor mạnh mẽ và đơn giản.                                                                        | 15$ sau thời gian dùng thử.                                                 |
+| Google Docs    | Word Processsor   | Thay thế bộ Microsoft Office nếu bạn cần. Kết hợp với Google Drive là một lựa chọn đem đến trải nghiệm cực kỳ tốt. | Miễn phí và có thể nâng cấp thành trả phí.                                  |
+| Obsidian       | PKM               | Rất dễ dùng, khả năng mở rộng về chức năng lớn.                                                                    | Miễn phí. Tương tự Github, có phiên bản trả phí với nhiều chức năng hơn.    |
+- PKM: Personal Knowledge Management.
 
 ### Yêu Cầu 4
 
