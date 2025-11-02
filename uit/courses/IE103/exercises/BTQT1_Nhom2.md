@@ -180,7 +180,24 @@ Kết quả:
 
 ### Yêu Cầu 2
 
-(Chưa bổ sung)
+**Hãy tổ chức các thư nhận và gửi trên gmail đảm bảo tính khoa học với các hoạt động phổ biến của một sinh viên.**
+
+Cách tổ chức:
+
+- Cùng với ý tưởng và các quy tắc trước đó về cách sắp xếp.
+- Từ từ tổng quan đến đơn vị
+    - String/Chữ: Sắp xếp theo Alphabet.
+    - Số/Numeric: Sắp xếp theo Bé Đến Lớn.
+    - Ngày Tháng: Sắp xếp theo Cũ tới Mới, chronologically.
+- Phân loại theo Mục Đích và Thể Loại, rồi Topic.
+    - Favorites chỉ nên chứa những cái thực và thường dùng nhất.
+    - Inbox nên được chia nhỏ ra tùy thể loại, mục đích.
+    - Archive là lưu trữ, nên được tách hẳn thành không gian riêng.
+    - Tương tự với Delete. Cơ bản là vì ý nghĩa, mục đích là hoàn toàn khác nhau, không có giao thoa.
+
+Hình ảnh diễn giải trực quan:
+
+![Outlook](assets/BTQT1-04-Email.png)
 
 ### Yêu Cầu 3
 
