@@ -77,11 +77,11 @@ Kết quả:
 
 Ví dụ 1:
 
-![Tổ Chức Thư Mục 01](assets/BTQT1_01.png)
+![Tổ Chức Thư Mục 01](assets/BTQT1-01.png)
 
 Ví dụ 2:
 
-![Tổ Chức Thư Mục 02](assets/BTQT1_02.png)
+![Tổ Chức Thư Mục 02](assets/BTQT1-02.png)
 
 Ví dụ 3:
 
@@ -93,7 +93,7 @@ Ví dụ 3:
     - có bài tập tương ứng (BTQT1);
     - và môn này liên quan đến *database*, *SQL*, vv..
 
-![BTQT1_03](assets/BTQT1_03.png)
+![BTQT1_03](assets/BTQT1-03.png)
 
 Ví dụ 4: Cây Thư Mục
 
