@@ -261,6 +261,8 @@ Các công cụ gợi ý cho mục đích lưu trữ/đồng bộ dữ liệu:
 
 **Sự khác nhau giữa việc lưu trữ dữ liệu trên CD và USB?**
 
+![](assets/BTQT1-YC4-USB-CD.png)
+
 #### So sánh nhanh
 
 | Đặc Tính                              | CD                                                                                                                                                                                                                                                                                     | USB                                                                                                                                                                                                                                                                                             |
