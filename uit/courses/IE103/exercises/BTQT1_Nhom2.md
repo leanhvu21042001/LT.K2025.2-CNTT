@@ -100,7 +100,7 @@ Ví dụ 4: Cây Thư Mục
 Lệnh:
 
 ```bash
-tree -L 6 -5 --dirsfirst
+tree -L 6 -C --dirsfirst
 ```
 
 Kết quả:
