@@ -77,11 +77,11 @@ Kết quả:
 
 Ví dụ 1:
 
-![Tổ Chức Thư Mục 01](assets/BTQT1-01.png)
+![Tổ Chức Thư Mục 01](assets/IE103-BTQT1-01.png)
 
 Ví dụ 2:
 
-![Tổ Chức Thư Mục 02](assets/BTQT1-02.png)
+![Tổ Chức Thư Mục 02](assets/IE103-BTQT1-02.png)
 
 Ví dụ 3:
 
@@ -93,7 +93,7 @@ Ví dụ 3:
     - có bài tập tương ứng (BTQT1);
     - và môn này liên quan đến *database*, *SQL*, vv..
 
-![BTQT1_03](assets/BTQT1-03.png)
+![BTQT1_03](assets/IE103-BTQT1-03.png)
 
 Ví dụ 4: Cây Thư Mục
 
@@ -197,7 +197,7 @@ Cách tổ chức:
 
 Hình ảnh diễn giải trực quan:
 
-![Outlook](assets/BTQT1-04-Email.png)
+![Outlook](assets/IE103-BTQT1-04-Email.png)
 
 ### Yêu Cầu 3
 
@@ -261,7 +261,7 @@ Các công cụ gợi ý cho mục đích lưu trữ/đồng bộ dữ liệu:
 
 **Sự khác nhau giữa việc lưu trữ dữ liệu trên CD và USB?**
 
-![](assets/BTQT1-YC4-USB-CD.png)
+![](assets/IE103-BTQT1-YC4-USB-CD.png)
 
 #### So sánh nhanh
 
@@ -300,5 +300,5 @@ Ví dụ nhanh về hình ảnh của:
 
 | CD ROM                         | USB SANDISK                            |
 | ------------------------------ | -------------------------------------- |
-| ![dvd-rom](assets/dvd-rom.png) | ![sandisk-usb](assets/sandisk-usb.png) |
+| ![dvd-rom](assets/IE103-dvd-rom.png) | ![sandisk-usb](assets/IE103-sandisk-usb.png) |
 
