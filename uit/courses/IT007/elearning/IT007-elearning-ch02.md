@@ -4,15 +4,13 @@ Hệ điều hành cung cấp môi trường để các chương trình có th�
 
 Chúng ta có thể xem xét hệ điều hành từ nhiều góc độ khác nhau. Góc độ đầu tiên tập trung vào các dịch vụ mà hệ điều hành cung cấp. Góc độ khác là tập trung vào cơ chế giao tiếp mà hệ điều hành cung cấp cho người dùng và lập trình viên. Hoặc trong một góc độ khác nữa tập trung vào các thành phần của hệ điều hành và các kết nối của nó.
 
-### Mục tiêu
-
-**Sau khi học xong chương này, sinh viên có thể:**
+Mục tiêu:
 
 - Liệt kê được các thành phần của hệ điều hành
 - Mô tả được các dịch vụ mà hệ điều hành cung cấp
 - Mô tả được các cấu trúc của hệ điều hành bao gồm: cấu trúc đơn giản, cấu trúc phân lớp, cấu trúc vi nhân, cấu trúc module, cấu trúc lai
 
-### Nội dung
+Nội dung:
 
 - Các thành phần của hệ điều hành
 - Các dịch vụ hệ điều hành cung cấp
@@ -20,7 +18,7 @@ Chúng ta có thể xem xét hệ điều hành từ nhiều góc độ khác nh
 - Các chương trình hệ thống (system programs)
 - Cấu trúc hệ thống
 
-### Trình bày
+Trình bày:
 
 - ThS. Phan Đình Duy
 - Giảng viên Khoa Kỹ thuật Máy tính
@@ -49,7 +47,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - Theo dõi, quản lý các vùng nhớ trống và đã cấp phát.
         - Quyết định sẽ nạp chương trình nào khi có vùng nhớ trống.
         - Cấp phát và thu hồi các vùng nhớ khi cần thiết.
-- Quản lý file.
+- Quản lý hệ thống file.
     - Hệ thống file là gì?
     - Các dịch vụ chính:
         - Tạo và xóa file.
@@ -169,7 +167,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - CLI
     - GUI
 
-#### Quiz: Các dịch vụ mà hệ điều hành cung cấp
+### Quiz: Các dịch vụ mà hệ điều hành cung cấp
 
 > [!NOTE]
 > Ý nào trong các ý sau KHÔNG phải là một dịch vụ do hệ điều hành cung cấp?
@@ -200,7 +198,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - Qua một vùng nhớ (địa chỉ vùng nhớ được gửi qua register).
     - Stack.
 
-#### Quiz: System Calls
+### Quiz: System Calls
 
 > [!NOTE]
 > Ý nào sao đây không phải là phương pháp truyền tham số khi sử dụng lời gọi hệ thống?
@@ -227,7 +225,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Debugger: loader/debugger
 - Communication: email, talk, web browser.
 
-#### Quiz: Các chương trình hệ thống
+### Quiz: Các chương trình hệ thống
 
 > [!NOTE]
 > Hoàn thiện định nghĩa sau bằng cách điền vào chỗ trống?
@@ -261,7 +259,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - memory management, etc.
     - System programs.
 
-#### Quiz: Cấu Trúc của Hệ Điều Hành
+### Quiz: Cấu Trúc của Hệ Điều Hành
 
 > [!NOTE]
 > Đặc điểm nào dưới đây là của cấu trúc vi nhân (microkernels)?
