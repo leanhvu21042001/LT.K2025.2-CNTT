@@ -201,6 +201,24 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - Qua một vùng nhớ (địa chỉ vùng nhớ được gửi qua register).
     - Stack.
 
+#### Quiz: System Calls
+
+> [!NOTE]
+> Ý nào sao đây không phải là phương pháp truyền tham số khi sử dụng lời gọi hệ thống?
+> 
+> - [ ] Qua một vùng nhớ, địa chỉ của vùng nhớ được gửi đến hệ điều hành qua thanh ghi
+> - [ ] Qua stack
+> - [x] Qua message
+> - [ ] Qua thanh ghi
+
+> [!NOTE]
+> Để giao tiếp giữa tiến trình và hệ điều hành thì dùng?
+> 
+> - [ ] Chương trình hệ thống
+> - [ ] Thông điệp
+> - [ ] Chương trình ứng dụng
+> - [x] Lời gọi hệ thống (System Calls)
+
 ## Các chương trình hệ thống (system programs)
 
 - File system management: create, delete, rename, list
