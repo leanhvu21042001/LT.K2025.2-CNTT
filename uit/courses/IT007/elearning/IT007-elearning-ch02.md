@@ -90,7 +90,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
             - Quản lý bộ nhớ chính.
             - Truy cập hệ thống file và cơ chế bảo mật.
 
-#### Quiz
+#### Quiz: Thành Phần Quản Lý Tiến Trình
 
 > [!NOTE]
 > Theo nội dung video bài giảng về các thành phần trong hệ điều hành mà các bạn vừa xem, thì thành phần nào không phải là một thành phần của hệ điều hành?
@@ -107,6 +107,42 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 > - [ ] Bộ nhớ
 > - [ ] Thanh ghi
 > - [ ] CPU
+
+#### Quiz: Thành Phần Quản Lý Bộ Nhớ
+
+> [!NOTE]
+> Chọn đáp án đúng theo thứ tự tăng dần về tốc độ truy cập của bộ nhớ?
+> 
+> - [ ] Cache, RAM, SSD, RAM
+> - [x] HDD, SSD, RAM, Cache
+> - [ ] RAM, SSD, Cache, HDD
+> - [ ] RAM, Cache, HDD, SSD
+
+> [!NOTE]
+> Quyết định sẽ nạp chương trình nào khi có vùng nhớ trống là chức năng của thành phần nào trong hệ điều hành?
+> 
+> - [ ] Quản lý tiến trình
+> - [ ] Quản lý hệ thống I/O
+> - [ ] Quản lý hệ thống lưu trữ thứ cấp
+> - [x] Quản lý bộ nhớ chính
+
+#### Quiz: Các Thành Phần Còn Lại
+
+> [!NOTE]
+> Hệ thống thông dịch lệnh (Shell/Terminal) là gì?
+> 
+> - [ ] Là giao diện chủ yếu giữa tiến trình và hệ điều hành
+> - [ ] Là giao diện chủ yếu giữa người dùng và tiến trình
+> - [x] Là giao diện chủ yếu giữa người dùng và hệ điều hành
+> - [ ] Là giao diện chủ yếu giữa người dùng và phần cứng máy tính
+
+> [!NOTE]
+> Cung cấp giao diện chung đến các trình điều khiển thiết bị là chức năng của thành phần nào trong hệ điều hành?
+> 
+> - [ ] Quản lý hệ thống lưu trữ thứ cấp
+> - [ ] Hệ thống bảo vệ
+> - [x] Quản lý hệ thống I/O
+> - [ ] Quản lý bộ nhớ chính
 
 ## Các dịch vụ hệ điều hành cung cấp
 
@@ -132,6 +168,26 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Giao diện người dùng:
     - CLI
     - GUI
+
+### Quiz: Các dịch vụ mà hệ điều hành cung cấp
+
+> [!NOTE]
+> Ý nào trong các ý sau KHÔNG phải là một dịch vụ do hệ điều hành cung cấp?
+> 
+> - [ ] Thực thi chương trình
+> - [ ] Phát hiện lỗi
+> - [x] Soạn thảo văn bản
+> - [ ] Cấp phát tài nguyên
+
+> [!NOTE]
+> Loại giao diện người dùng nào KHÔNG được trình bày trong video bài giảng về giao diện người dùng?
+> 
+> - [x] Giao diện Hand Gestures
+> - [ ] Giao diện Graphics User Interface (GUI)
+> - [ ] Giao diện Touch-screen
+> - [ ] Giao diện Command-Line (CLI)
+
+
 ## Lời gọi hệ thống (system call)
 
 - Giao tiếp giữa tiến trình (process) và hệ điều hành (kernel), gọi đến các dịch vụ mà hệ điều hành cung cấp.
