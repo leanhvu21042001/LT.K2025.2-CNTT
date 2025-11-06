@@ -246,15 +246,15 @@ Các file/thông tin cần được lưu giữ:
 
 Các công cụ gợi ý cho mục đích lưu trữ/đồng bộ dữ liệu:
 
-| Tên            | Thể Loại          | Đánh giá                                                     | Chi phí                                                      |
-| -------------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Google Drive   | Lưu Trữ           | Tiện lợi, dễ dùng. Nhưng không thể hoặc khó theo dõi phiên bản. | Miễn phí với dung lượng giới hạn.                            |
-| `rsync`        | Đồng Bộ           | Dễ dùng với người đã quen, có thể sử dụng script để tối ưu hóa quy trình đồng bộ. | Miễn phí, nguồn mở.                                          |
-| FreeFileSync   | Đồng Bộ           | Dễ dùng, đặc biệt đối với người đã có khái niệm về `rsync`.  | Miễn phí, nguồn mở.                                          |
-| `git` + Github | Quản Lý Phiên Bản | `git` là về quản lý phiên bản, nhưng dùng chung với Github cho phép khả năng lưu trữ, đồng bộ và hợp tác. | `git` là miễn phí, nguồn mở. Github có miễn phí với các chức năng giới hạn. |
-| Typora         | Editor            | Là một Markdown editor mạnh mẽ và đơn giản.                  | 15$ sau thời gian dùng thử.                                  |
-| Google Docs    | Word Processor    | Thay thế bộ Microsoft Office nếu bạn cần. Kết hợp với Google Drive là một lựa chọn đem đến trải nghiệm cực kỳ tốt. | Miễn phí và có thể nâng cấp thành trả phí.                   |
-| Obsidian       | PKM               | Rất dễ dùng, khả năng mở rộng về chức năng lớn.              | Miễn phí. Tương tự Github, có phiên bản trả phí với nhiều chức năng hơn. |
+| Tên            | Thể Loại          | Đánh giá                                                                                                           | Chi phí                                                                     |
+| -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
+| Google Drive   | Lưu Trữ           | Tiện lợi, dễ dùng. Nhưng không thể hoặc khó theo dõi phiên bản.                                                    | Miễn phí với dung lượng giới hạn.                                           |
+| `rsync`        | Đồng Bộ           | Dễ dùng với người đã quen, có thể sử dụng script để tối ưu hóa quy trình đồng bộ.                                  | Miễn phí, nguồn mở.                                                         |
+| FreeFileSync   | Đồng Bộ           | Dễ dùng, đặc biệt đối với người đã có khái niệm về `rsync`.                                                        | Miễn phí, nguồn mở.                                                         |
+| `git` + Github | Quản Lý Phiên Bản | `git` là về quản lý phiên bản, nhưng dùng chung với Github cho phép khả năng lưu trữ, đồng bộ và hợp tác.          | `git` là miễn phí, nguồn mở. Github có miễn phí với các chức năng giới hạn. |
+| Typora         | Editor            | Là một Markdown editor mạnh mẽ và đơn giản.                                                                        | 15$ sau thời gian dùng thử.                                                 |
+| Google Docs    | Word Processor    | Thay thế bộ Microsoft Office nếu bạn cần. Kết hợp với Google Drive là một lựa chọn đem đến trải nghiệm cực kỳ tốt. | Miễn phí và có thể nâng cấp thành trả phí.                                  |
+| Obsidian       | PKM               | Rất dễ dùng, khả năng mở rộng về chức năng lớn.                                                                    | Miễn phí. Tương tự Github, có phiên bản trả phí với nhiều chức năng hơn.    |
 - PKM: Personal Knowledge Management.
 
 ### Yêu Cầu 4
