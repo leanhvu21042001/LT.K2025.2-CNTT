@@ -261,6 +261,24 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - memory management, etc.
     - System programs.
 
+#### Quiz: Cấu Trúc của Hệ Điều Hành
+
+> [!NOTE]
+> Đặc điểm nào dưới đây là của cấu trúc vi nhân (microkernels)?
+> 
+> - [ ] Các module giao tiếp trực tiếp với nhau qua thanh ghi
+> - [ ] Hệ điều hành được phân chia thành nhiều lớp, lớp trên chỉ phụ thuộc lớp dưới
+> - [x] Một số chức năng của hệ điều hành được chuyển từ kernel space sang user space
+> - [ ] Mỗi module như là một phần của nhân
+
+> [!NOTE]
+> Hệ điều hành được xây dựng theo cấu trúc phân lớp (layer) KHÔNG có đặc điểm nào dưới đây?
+> 
+> - [ ] Hệ điều hành được phân chia thành nhiều lớp, lớp trên chỉ phụ thuộc lớp dưới
+> - [ ] Một lớp chỉ có thể gọi các hàm của lớp dưới và các hàm của nó được gọi bởi lớp trên
+> - [x] Các lớp giao tiếp với nhau qua cơ chế truyền thông điệp
+> - [ ] Lớp trên cùng là lớp giao tiếp với người dùng
+
 ## Câu hỏi ôn tập chương 2
 
 1. Các thành phần chính của hệ điều hành?
