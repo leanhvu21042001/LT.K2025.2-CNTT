@@ -90,6 +90,24 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
             - Quản lý bộ nhớ chính.
             - Truy cập hệ thống file và cơ chế bảo mật.
 
+#### Quiz
+
+> [!NOTE]
+> Theo nội dung video bài giảng về các thành phần trong hệ điều hành mà các bạn vừa xem, thì thành phần nào không phải là một thành phần của hệ điều hành?
+> 
+> - [ ] Quản lý file
+> - [ ] Quản lý tiến trình
+> - [ ] Hệ thống bảo vệ
+> - [x] Quản lý tiểu trình
+
+> [!NOTE]
+> Để hoàn thành công việc, một tiến trình KHÔNG bắt buộc phải có tài nguyên gì trong các tài nguyên phần cứng bên dưới?
+> 
+> - [x] Màn hình
+> - [ ] Bộ nhớ
+> - [ ] Thanh ghi
+> - [ ] CPU
+
 ## Các dịch vụ hệ điều hành cung cấp
 
 - Cấu trúc tổng quan của các dịch vụ của hệ điều hành.
