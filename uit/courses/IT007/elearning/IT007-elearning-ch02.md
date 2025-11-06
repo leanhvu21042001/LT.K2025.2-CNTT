@@ -169,7 +169,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - CLI
     - GUI
 
-### Quiz: Các dịch vụ mà hệ điều hành cung cấp
+#### Quiz: Các dịch vụ mà hệ điều hành cung cấp
 
 > [!NOTE]
 > Ý nào trong các ý sau KHÔNG phải là một dịch vụ do hệ điều hành cung cấp?
@@ -186,7 +186,6 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 > - [ ] Giao diện Graphics User Interface (GUI)
 > - [ ] Giao diện Touch-screen
 > - [ ] Giao diện Command-Line (CLI)
-
 
 ## Lời gọi hệ thống (system call)
 
@@ -227,6 +226,23 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Development: Compiler/assembler/interpreter.
 - Debugger: loader/debugger
 - Communication: email, talk, web browser.
+
+#### Quiz: Các chương trình hệ thống
+
+> [!NOTE]
+> Hoàn thiện định nghĩa sau bằng cách điền vào chỗ trống?
+> 
+> Người dùng chủ yếu làm việc thông qua các `_____`.
+> 
+> - system program
+
+> [!NOTE]
+> Theo video bài giảng về các chương trình hệ thống thì chức năng nào trong các đáp án sau KHÔNG phải là một chương trình hệ thống?
+> 
+> - [ ] Hỗ trợ ngôn ngữ lập trình
+> - [ ] Thông tin trạng thái
+> - [ ] Quản lý hệ thống file
+> - [x] Quản lý I/O
 
 ## Cấu trúc hệ thống
 
