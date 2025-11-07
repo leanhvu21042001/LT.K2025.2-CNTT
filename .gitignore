@@ -7,4 +7,5 @@
 
 # Objects/Build
 *.o
+*.out
 
