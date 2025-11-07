@@ -40,3 +40,8 @@ Nội dung:
 
 ## Tiểu trình
 
+## Báo Cáo
+
+Đề bài tiếp theo cho các bạn có thể nói là không phải cốt lõi môn học, và có thể chỉ có giá trị thường thức, không bổ béo gì cho lắm: Phân biệt Unix-like vs Unix-based. Tại sao các công ty vẫn dùng song song 2 hệ này.
+
+Phân tích nhanh: Linux (Unix-like) đi cùng GPL với các yêu cầu có thể tóm tắt đơn giản như sau: 1. Phải trích dẫn công lao (credits) của những người đã tham gia làm nên phần mềm đó. 2. Phải đóng góp ngược lại phần code nếu đã có thay đổi/bổ sung nếu họ phát triển một sản phẩm từ phần mềm đó. Mục 1 thì được, nhưng mục 2 thì rõ ràng các công ty họ khó mà đồng ý, vì khi đó phần code có thể là lợi thế cạnh tranh của họ lại phải đem ra cho cộng đồng. Trong khi đó, với Unix-based (một số họ BSD), doanh nghiệp có thể dùng thoải mái và làm bất kỳ điều gì họ muốn. Và, quan trọng hơn, tất cả đều là POSIX nên có thể port qua lại với một ít chỉnh sửa.
