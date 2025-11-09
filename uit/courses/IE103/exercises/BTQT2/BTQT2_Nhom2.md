@@ -229,27 +229,35 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
 
 ### Bảng Viết Tắt
 
-| Bài 2        | Quản lý Cửa hàng Xe máy     | Loại | Nơi Sử Dụng            |
-| ------------ | --------------------------- | ---- | ---------------------- |
-| MaDaiLy      | Mã Đại Lý                   |      | DAILY (Khóa chính)     |
-| MaNV         | Mã Nhân Viên                |      | NHANVIEN (Khóa chính)  |
-| NV_HANHCHANH | Nhân Viên Hành Chánh        |      | Bảng NV_HANHCHANH      |
-| NV_KYTHUAT   | Nhân Viên Kỹ Thuật          |      | Bảng NV_KYTHUAT        |
-| TrinhDoHV    | Trình Độ Học Vấn            |      | NV_HANHCHANH           |
-| SoNamKN      | Số Năm Kinh Nghiệm          |      | NV_KYTHUAT             |
-| MaKH         | Mã Khách Hàng               |      | KHACHHANG (Khóa chính) |
-| SoHD         | Số Hợp Đồng                 |      | HOPDONG (Khóa chính)   |
-| TienPhaiTT   | Tiền Phải Thanh Toán (Tổng) |      | HOPDONG                |
-| SoKhung      | Số Khung (xe)               |      | XE (Khóa chính)        |
-| MaTT         | Mã Thanh Toán               |      | THANHTOAN (Khóa chính) |
-| MaPhieuBH    | Mã Phiếu Bảo Hành           |      | BAOHANH (Khóa chính)   |
-| MaLK         | Mã Linh Kiện                |      | LINHKIEN (Khóa chính)  |
-| MaNV_Lap     | Mã Nhân Viên Lập (Hợp đồng) |      | HOPDONG (Khóa ngoại)   |
-| MaNV_KeToan  | Mã Nhân Viên Kế Toán        |      | HOPDONG (Khóa ngoại)   |
-| MaNV_Nhan    | Mã Nhân Viên Nhận (tiền)    |      | THANHTOAN (Khóa ngoại) |
-| MaKH_Tra     | Mã Khách Hàng Trả (tiền)    |      | THANHTOAN (Khóa ngoại) |
-| MaNV_KT      | Mã Nhân Viên Kỹ Thuật (BH)  |      | BAOHANH (Khóa ngoại)   |
-| CHITIET_BH   | Chi Tiết Bảo Hành           |      | Bảng CHITIET_BAOHANH   |
+| Bài 2           | Quản lý Cửa hàng Xe máy     | Loại     | Nơi Sử Dụng            |
+| --------------- | --------------------------- | -------- | ---------------------- |
+| DAILY           | Đại Lý                      | Entity   |                        |
+| NHANVIEN        | Nhân Viên                   | Entity   |                        |
+| KHACHHANG       | Khách Hàng                  | Entity   |                        |
+| HOPDONG         | Hợp Đồng                    | Entity   |                        |
+| XE              | Xe/Phương tiện/Sản phẩm     | Entity   |                        |
+| THANHTOAN       | Thanh Toán                  | Entity   |                        |
+| BAOHANH         | Bảo Hành                    | Entity   |                        |
+| CHITIET_BAOHANH | Chi Tiết Bảo Hành           | Entity   |                        |
+| NV_HANHCHANH    | Nhân Viên Hành Chánh        | Entity   | Bảng NV_HANHCHANH      |
+| NV_KYTHUAT      | Nhân Viên Kỹ Thuật          | Entity   | Bảng NV_KYTHUAT        |
+| MaDaiLy         | Mã Đại Lý                   | Property | DAILY (Khóa chính)     |
+| MaNV            | Mã Nhân Viên                | Property | NHANVIEN (Khóa chính)  |
+| TrinhDoHV       | Trình Độ Học Vấn            | Property | NV_HANHCHANH           |
+| SoNamKN         | Số Năm Kinh Nghiệm          | Property | NV_KYTHUAT             |
+| MaKH            | Mã Khách Hàng               | Property | KHACHHANG (Khóa chính) |
+| SoHD            | Số Hợp Đồng                 | Property | HOPDONG (Khóa chính)   |
+| TienPhaiTT      | Tiền Phải Thanh Toán (Tổng) | Property | HOPDONG                |
+| SoKhung         | Số Khung (xe)               | Property | XE (Khóa chính)        |
+| MaTT            | Mã Thanh Toán               | Property | THANHTOAN (Khóa chính) |
+| MaPhieuBH       | Mã Phiếu Bảo Hành           | Property | BAOHANH (Khóa chính)   |
+| MaLK            | Mã Linh Kiện                | Property | LINHKIEN (Khóa chính)  |
+| MaNV_Lap        | Mã Nhân Viên Lập (Hợp đồng) | Property | HOPDONG (Khóa ngoại)   |
+| MaNV_KeToan     | Mã Nhân Viên Kế Toán        | Property | HOPDONG (Khóa ngoại)   |
+| MaNV_Nhan       | Mã Nhân Viên Nhận (tiền)    | Property | THANHTOAN (Khóa ngoại) |
+| MaKH_Tra        | Mã Khách Hàng Trả (tiền)    | Property | THANHTOAN (Khóa ngoại) |
+| MaNV_KT         | Mã Nhân Viên Kỹ Thuật (BH)  | Property | BAOHANH (Khóa ngoại)   |
+| CHITIET_BH      | Chi Tiết Bảo Hành           | Property | Bảng CHITIET_BAOHANH   |
 
 ### Phân tích Thực thể và Mối kết hợp
 
