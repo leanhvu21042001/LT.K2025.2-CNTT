@@ -229,7 +229,7 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
 
 ### Bảng Viết Tắt
 
-| Bài 2           | Quản lý Cửa hàng Xe máy     | Loại     | Nơi Sử Dụng            |
+| Từ/Cụm Từ       | Diễn Giải                   | Loại     | Nơi Sử Dụng            |
 | --------------- | --------------------------- | -------- | ---------------------- |
 | DAILY           | Đại Lý                      | Entity   |                        |
 | NHANVIEN        | Nhân Viên                   | Entity   |                        |
@@ -296,7 +296,7 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
     - `XE`:
         - Sản phẩm.
     
-        - `SoKhung`, `SoSuon`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`
+        - `SoKhung`, `SoMay`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`
     
     - `THANHTOAN`:
         - Phiếu/lần thanh toán trả góp.
@@ -328,7 +328,7 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
         - 1 HOPDONG của (1,1) KHACHHANG.
     
     - `NV_HANHCHANH` - `HOPDONG (Lập HĐ)`: (1,n).
-        - 1 NV_HC lập (0,n) HOPDONG.
+        - 1 NV_HANHCHANH lập (0,n) HOPDONG.
     
         - 1 HOPDONG được lập bởi (1,1) NV_HC.
     
@@ -364,40 +364,35 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
     - `NV_KYTHUAT` - `BAOHANH`: (1,n).
         - 1 NV_KT thực hiện (0,n) BAOHANH.
     
-        - 1 BAOHANH do (1,1) NV_KT thực hiện.
+        - 1 BAOHANH do (1,n) NV_KT thực hiện.
     
-    - `BAOHANH` - `LINHKIEN`: (n,m).
+    - `BAOHANH` - `LINHKIEN`: (0,n).
         - 1 BAOHANH có thể cần (0,n) LINHKIEN.
-        - 1 LINHKIEN có thể dùng cho (0,n) BAOHANH.
+        - 1 LINHKIEN có thể dùng cho (0,1) BAOHANH.
         - Mối kết hợp `CHITIET_BH` có thuộc tính: `GiaTien` (cho linh kiện đó).
     
 
 ### Task 1: Mô hình ERD (Mức Quan niệm)
 
-- `[DAILY] ---(1,1)---<LAMVIEC>---(1,n)--- [NHANVIEN]`
-  
+- `[DAILY] ---(1,n)---<LAMVIEC>---(1,1)--- [NHANVIEN]`
 - `[NHANVIEN] --- (ISA) --- [NV_HANHCHANH]`
-  
 - `[NHANVIEN] --- (ISA) --- [NV_KYTHUAT]`
-  
-- `[KHACHHANG] ---(1,1)---<LAP_HD>---(1,n)--- [HOPDONG]`
-  
+- `[KHACHHANG] ---(1,n)---<LAP_HD>---(1,1)--- [HOPDONG]`
 - `[NV_HANHCHANH] ---(0,n)---<NV_LAP>---(1,1)--- [HOPDONG]`
-  
 - `[NV_HANHCHANH] ---(0,n)---<NV_KETOAN>---(1,1)--- [HOPDONG]`
-  
 - `[HOPDONG] ---(1,n)---<CHITIET_HD>---(1,1)--- [XE]`
-  
-- `[HOPDONG] ---(1,1)---<CO_TT>---(1,3)--- [THANHTOAN]`
-  
-- `[KHACHHANG] ---(1,1)---<YEUCAU_BH>---(0,n)--- [BAOHANH]`
-  
-- `[XE] ---(1,1)---<DUOC_BH>---(0,n)--- [BAOHANH]`
-  
-- `[NV_KYTHUAT] ---(1,1)---<THUCHIEN_BH>---(0,n)--- [BAOHANH]`
-  
-- `[BAOHANH] ---(0,n)---<CHITIET_BH>---(0,n)--- [LINHKIEN]`
-  - `CHITIET_BH` có thuộc tính: `GiaTien`.
+- `[HOPDONG] ---(1,3)---<CO_TT>---(1,1)--- [THANHTOAN]`
+- `[KHACHHANG] ---(0,n)---<YEUCAU_BH>---(1,1)--- [BAOHANH]`
+- `[XE] ---(0,n)---<DUOC_BH>---(1,1)--- [BAOHANH]`
+- `[NV_KYTHUAT] ---(0,n)---<THUCHIEN_BH>---(1,n)--- [BAOHANH]`
+- `[BAOHANH] ---(0,n)---<CHITIET_BH>---(0,1)--- [LINHKIEN]`
+  - `CHITIET_BH` property: `GiaTien`.
+
+Sơ đồ ERD (Chen notation):
+
+
+
+
 
 ### Task 2: Mô hình Class Diagram (Mức Quan niệm)
 
