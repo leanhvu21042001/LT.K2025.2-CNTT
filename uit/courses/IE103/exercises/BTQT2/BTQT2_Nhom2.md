@@ -72,56 +72,24 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
   * Hành chánh (chức vụ, thuộc phòng ban nào, Trình độ học vấn)
   * Kỹ thuật (chức vụ, bậc thợ, số năm kinh nghiệm).
 
-## Bài Làm
-
-Tài liệu này trình bày lời giải chi tiết cho 2 bài toán quản lý thông tin, bao gồm ba mô hình:
-
-1. **Mô hình ERD** (Entity-Relationship Diagram - Mô hình Thực thể Kết hợp)
-   
-2. **Mô hình CD** (Class Diagram - Mô hình Lớp)
-   
-3. **Mô hình Logic** (Chuyển đổi sang Lược đồ Quan hệ)
-
-## Bảng Chú giải Viết tắt
-
-|   |   |   |
-|---|---|---|
-|**Từ viết tắt**|**Diễn giải (Nghĩa)**|**Nơi sử dụng (Trong Mục 1.4 và 2.4)**|
-|**Bài 1**|**Quản lý Đề tài Tốt nghiệp**||
-|MaKhoa|Mã Khoa|KHOA, GIAOVIEN, SINHVIEN, HOIDONG, DETAI|
-|MaGV|Mã Giáo Viên|GIAOVIEN (Khóa chính)|
-|MaSV|Mã Sinh Viên|SINHVIEN (Khóa chính)|
-|MaDT|Mã Đề Tài|DETAI (Khóa chính)|
-|MaHD|Mã Hội Đồng|HOIDONG (Khóa chính)|
-|MaGV_CT|Mã Giáo Viên (làm Chủ Tịch)|HOIDONG (Khóa ngoại)|
-|MaGV_TK|Mã Giáo Viên (làm Thư Ký)|HOIDONG (Khóa ngoại)|
-|MaGVHD|Mã Giáo Viên Hướng Dẫn|DETAI (Khóa ngoại)|
-|MaGVPB|Mã Giáo Viên Phản Biện|DETAI (Khóa ngoại)|
-|DiemHD|Điểm (của) Giáo Viên Hướng Dẫn|THUCHIEN|
-|DiemPB|Điểm (của) Giáo Viên Phản Biện|THUCHIEN|
-|DiemCT|Điểm (của) Chủ Tịch Hội đồng|THUCHIEN|
-|**Bài 2**|**Quản lý Cửa hàng Xe máy**||
-|MaDaiLy|Mã Đại Lý|DAILY (Khóa chính)|
-|MaNV|Mã Nhân Viên|NHANVIEN (Khóa chính)|
-|NV_HANHCHANH|Nhân Viên Hành Chánh|Bảng NV_HANHCHANH|
-|NV_KYTHUAT|Nhân Viên Kỹ Thuật|Bảng NV_KYTHUAT|
-|TrinhDoHV|Trình Độ Học Vấn|NV_HANHCHANH|
-|SoNamKN|Số Năm Kinh Nghiệm|NV_KYTHUAT|
-|MaKH|Mã Khách Hàng|KHACHHANG (Khóa chính)|
-|SoHD|Số Hợp Đồng|HOPDONG (Khóa chính)|
-|TienPhaiTT|Tiền Phải Thanh Toán (Tổng)|HOPDONG|
-|SoKhung|Số Khung (xe)|XE (Khóa chính)|
-|MaTT|Mã Thanh Toán|THANHTOAN (Khóa chính)|
-|MaPhieuBH|Mã Phiếu Bảo Hành|BAOHANH (Khóa chính)|
-|MaLK|Mã Linh Kiện|LINHKIEN (Khóa chính)|
-|MaNV_Lap|Mã Nhân Viên Lập (Hợp đồng)|HOPDONG (Khóa ngoại)|
-|MaNV_KeToan|Mã Nhân Viên Kế Toán|HOPDONG (Khóa ngoại)|
-|MaNV_Nhan|Mã Nhân Viên Nhận (tiền)|THANHTOAN (Khóa ngoại)|
-|MaKH_Tra|Mã Khách Hàng Trả (tiền)|THANHTOAN (Khóa ngoại)|
-|MaNV_KT|Mã Nhân Viên Kỹ Thuật (BH)|BAOHANH (Khóa ngoại)|
-|CHITIET_BH|Chi Tiết Bảo Hành|Bảng CHITIET_BAOHANH|
-
 ## Bài toán 1: Quản lý Đề tài Tốt nghiệp
+
+### Bảng Viết Tắt
+
+| Từ viết tắt | Diễn giải (Nghĩa)              | Nơi sử dụng                              |
+| ----------- | ------------------------------ | ---------------------------------------- |
+| MaKhoa      | Mã Khoa                        | KHOA, GIAOVIEN, SINHVIEN, HOIDONG, DETAI |
+| MaGV        | Mã Giáo Viên                   | GIAOVIEN (Khóa chính)                    |
+| MaSV        | Mã Sinh Viên                   | SINHVIEN (Khóa chính)                    |
+| MaDT        | Mã Đề Tài                      | DETAI (Khóa chính)                       |
+| MaHD        | Mã Hội Đồng                    | HOIDONG (Khóa chính)                     |
+| MaGV_CT     | Mã Giáo Viên (làm Chủ Tịch)    | HOIDONG (Khóa ngoại)                     |
+| MaGV_TK     | Mã Giáo Viên (làm Thư Ký)      | HOIDONG (Khóa ngoại)                     |
+| MaGVHD      | Mã Giáo Viên Hướng Dẫn         | DETAI (Khóa ngoại)                       |
+| MaGVPB      | Mã Giáo Viên Phản Biện         | DETAI (Khóa ngoại)                       |
+| DiemHD      | Điểm (của) Giáo Viên Hướng Dẫn | THUCHIEN                                 |
+| DiemPB      | Điểm (của) Giáo Viên Phản Biện | THUCHIEN                                 |
+| DiemCT      | Điểm (của) Chủ Tịch Hội đồng   | THUCHIEN                                 |
 
 ### Phân tích Thực thể và Mối kết hợp
 
@@ -259,6 +227,30 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
     - Theo nghiệp vụ "đề tài lần 1 phải khác lần 2", một `SINHVIEN` không thể làm cùng 1 `DETAI` 2 lần. Do đó, khóa chính là cặp `(MaSV, MaDT)`. `LanBaoVe` (1 hay 2) chỉ là thuộc tính mô tả cho lần thực hiện đó của sinh viên.
 
 ## Bài toán 2: Quản lý Cửa hàng Xe máy
+
+### Bảng Viết Tắt
+
+| Bài 2        | Quản lý Cửa hàng Xe máy     | Nơi Sử Dụng            |
+| ------------ | --------------------------- | ---------------------- |
+| MaDaiLy      | Mã Đại Lý                   | DAILY (Khóa chính)     |
+| MaNV         | Mã Nhân Viên                | NHANVIEN (Khóa chính)  |
+| NV_HANHCHANH | Nhân Viên Hành Chánh        | Bảng NV_HANHCHANH      |
+| NV_KYTHUAT   | Nhân Viên Kỹ Thuật          | Bảng NV_KYTHUAT        |
+| TrinhDoHV    | Trình Độ Học Vấn            | NV_HANHCHANH           |
+| SoNamKN      | Số Năm Kinh Nghiệm          | NV_KYTHUAT             |
+| MaKH         | Mã Khách Hàng               | KHACHHANG (Khóa chính) |
+| SoHD         | Số Hợp Đồng                 | HOPDONG (Khóa chính)   |
+| TienPhaiTT   | Tiền Phải Thanh Toán (Tổng) | HOPDONG                |
+| SoKhung      | Số Khung (xe)               | XE (Khóa chính)        |
+| MaTT         | Mã Thanh Toán               | THANHTOAN (Khóa chính) |
+| MaPhieuBH    | Mã Phiếu Bảo Hành           | BAOHANH (Khóa chính)   |
+| MaLK         | Mã Linh Kiện                | LINHKIEN (Khóa chính)  |
+| MaNV_Lap     | Mã Nhân Viên Lập (Hợp đồng) | HOPDONG (Khóa ngoại)   |
+| MaNV_KeToan  | Mã Nhân Viên Kế Toán        | HOPDONG (Khóa ngoại)   |
+| MaNV_Nhan    | Mã Nhân Viên Nhận (tiền)    | THANHTOAN (Khóa ngoại) |
+| MaKH_Tra     | Mã Khách Hàng Trả (tiền)    | THANHTOAN (Khóa ngoại) |
+| MaNV_KT      | Mã Nhân Viên Kỹ Thuật (BH)  | BAOHANH (Khóa ngoại)   |
+| CHITIET_BH   | Chi Tiết Bảo Hành           | Bảng CHITIET_BAOHANH   |
 
 ### Phân tích Thực thể và Mối kết hợp
 
