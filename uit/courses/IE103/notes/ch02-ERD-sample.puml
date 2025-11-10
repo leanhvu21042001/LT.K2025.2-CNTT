@@ -1,0 +1,23 @@
+@startchen
+
+' skinparam monochrome true
+skinparam defaultFontName Iosevka
+' skinparam roundcorner 10
+
+entity KHOA {
+  Number <<key>>
+  Name
+}
+
+entity GIAOVIEN {
+  Code <<key>>
+}
+
+relationship QLGV {
+  Date
+}
+
+QLGV -(1,n)- KHOA
+QLGV -(0,1)- GIAOVIEN
+
+@endchen

@@ -1,0 +1,20 @@
+@startuml CDSample
+' skinparam classAttributeIconSize 10
+
+' skinparam monochrome true
+skinparam defaultFontName Iosevka
+
+class Student {
+  - mssv: string
+  - tenSV: string
+  + themSV()
+  + timSV()
+}
+
+class Lop {
+  - maLop: string
+  - tenLop: string
+}
+
+Student "1..*" -- "1" Lop : "belongs to"
+@enduml
