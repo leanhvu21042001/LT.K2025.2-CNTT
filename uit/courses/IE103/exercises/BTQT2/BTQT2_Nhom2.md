@@ -95,7 +95,7 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
 
 - **Thực thể (Entities):**
   - `KHOA`: Quản lý chung. (`MaKhoa`, `TenKhoa`)
-      
+    
     - `GIAOVIEN`: Hướng dẫn, phản biện, chủ tịch, thư ký. (`MaGV`, `TenGV`, `DiaChi`, `SDT`, `HocVi`, `ChuyenNganh`)
       
     - `SINHVIEN`: Thực hiện đề tài. (`MaSV`, `TenSV`, `Lop`,...)
@@ -103,7 +103,7 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
     - `DETAI`: Đối tượng được quản lý. (`MaDT`, `TenDT`, `ThoiGianBD`, `ThoiGianKT`)
       
     - `HOIDONG`: Nơi bảo vệ đề tài. (`MaHD`, `NgayBV`, `DiaChiBV`)
-    
+  
 - **Mối kết hợp (Relationships) và Bản số (Cardinality):**
   
     - **Phân tích bản số (Theo IE103 - Trang 23):** Ký hiệu bản số `(min, max)` đặt ở phía thực thể `A` sẽ mô tả số lượng của `B` tham gia vào mối quan hệ, và ngược lại.
@@ -261,116 +261,115 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
 
 ### Phân tích Thực thể và Mối kết hợp
 
-- **Thực thể (Entities):**
+#### Thực thể (Entities)
+
+- `DAILY`:
+  - Nơi cửa hàng hoạt động.
   
-    - `DAILY`:
-      - Nơi cửa hàng hoạt động.
-      
-      - `MaDaiLy`, `DiaChi`
-      
-    - `NHANVIEN`:
-        - Người làm việc (Chung).
-    
-        - `MaNV`, `TenNV`
-    
-    - `NV_HANHCHANH`:
-        - Loại NV (Kế thừa).
-    
-        - `ChucVu`, `PhongBan`, `TrinhDoHV`
-    
-    - `NV_KYTHUAT`:
-        - Loại NV (Kế thừa).
-    
-        - `ChucVu`, `BacTho`, `SoNamKN`
-    
-    - `KHACHHANG`:
-        - Người mua xe.
-    
-        - `MaKH`, `TenKH`, `DiaChi`, `SDT`
-    
-    - `HOPDONG`:
-        - Hóa đơn mua bán.
-    
-        - `SoHD`, `NgayHD`, `ThoiGianBH`, `TienPhaiTT`
-    
-    - `XE`:
-        - Sản phẩm.
-    
-        - `SoKhung`, `SoMay`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`
-    
-    - `THANHTOAN`:
-        - Phiếu/lần thanh toán trả góp.
-    
-        - `MaTT`, `NgayTra`, `SoTien`
-    
-    - `BAOHANH`:
-        - Phiếu nhận xét bảo hành.
-    
-        - `MaPhieuBH`, `LyDoBH`, `LoiThuocVe`, `GiaTienTong`
-    
-    - `LINHKIEN`:
-        - Linh kiện dùng khi bảo hành.
-        - `MaLK`, `TenLK`
-    
-- **Mối kết hợp (Relationships) và Bản số (Cardinality):**
+  - `MaDaiLy`, `DiaChi`
   
-    - `DAILY` - `NHANVIEN`: (1,n).
-      - 1 DAILY có (1,n) NHANVIEN.
+- `NHANVIEN`:
+    - Người làm việc (Chung).
+
+    - `MaNV`, `TenNV`
+
+- `NV_HANHCHANH`:
+    - Loại NV (Kế thừa).
+
+    - `ChucVu`, `PhongBan`, `TrinhDoHV`
+
+- `NV_KYTHUAT`:
+    - Loại NV (Kế thừa).
+
+    - `ChucVu`, `BacTho`, `SoNamKN`
+
+- `KHACHHANG`:
+    - Người mua xe.
+
+    - `MaKH`, `TenKH`, `DiaChi`, `SDT`
+
+- `HOPDONG`:
+    - Hóa đơn mua bán.
+
+    - `SoHD`, `NgayHD`, `ThoiGianBH`, `TienPhaiTT`
+
+- `XE`:
+    - Sản phẩm.
+
+    - `SoKhung`, `SoMay`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`
+
+- `THANHTOAN`:
+    - Phiếu/lần thanh toán trả góp.
+
+    - `MaTT`, `NgayTra`, `SoTien`
+
+- `BAOHANH`:
+    - Phiếu nhận xét bảo hành.
+
+    - `MaPhieuBH`, `LyDoBH`, `LoiThuocVe`, `GiaTienTong`
+
+- `LINHKIEN`:
+    - Linh kiện dùng khi bảo hành.
+    - `MaLK`, `TenLK`
+
+#### Mối quan hệ và Bản số:
+
+- `DAILY` - `NHANVIEN`: (1,n).
+  - 1 DAILY có (1,n) NHANVIEN.
+  
+  - 1 NHANVIEN làm tại (1,1) DAILY.
+  
+- `NHANVIEN` -> `NV_HANHCHANH`, `NV_KYTHUAT`:
+    - Kế thừa (ISA).
+
+- `KHACHHANG` - `HOPDONG`: (1,n).
+    - 1 KHACHHANG có (1,n) HOPDONG.
+
+    - 1 HOPDONG của (1,1) KHACHHANG.
+
+- `NV_HANHCHANH` - `HOPDONG (Lập HĐ)`: (1,n).
+    - 1 NV_HANHCHANH lập (0,n) HOPDONG.
+
+    - 1 HOPDONG được lập bởi (1,1) NV_HC.
+
+- `NV_HANHCHANH` - `HOPDONG (Kế toán)`: (1,n).
+    - 1 NV_HC (Kế toán) duyệt (0,n) HOPDONG.
+
+    - 1 HOPDONG được duyệt bởi (1,1) NV_HC (Kế toán).
+
+- `HOPDONG` - `XE`: (1,n).
+    - 1 HOPDONG có (1,n) XE.
+
+    - 1 XE (với SoKhung) chỉ thuộc (1,1) HOPDONG.
+
+- `HOPDONG` - `THANHTOAN`: (1,n).
+    - Nghiệp vụ: trả hết hay trả góp, nhiều nhất 3 lần cho mỗi hóa đơn.
       
-      - 1 NHANVIEN làm tại (1,1) DAILY.
+    - Để chuẩn hóa, ta không lưu `TienDaTT`, `NgayTra1`, `NgayTra2` trên `HOPDONG`. Thay vào đó, mọi lần thanh toán (kể cả lần 1) đều được ghi vào bảng `THANHTOAN`.
       
-    - `NHANVIEN` -> `NV_HANHCHANH`, `NV_KYTHUAT`:
-        - Kế thừa (ISA).
-    
-    - `KHACHHANG` - `HOPDONG`: (1,n).
-        - 1 KHACHHANG có (1,n) HOPDONG.
-    
-        - 1 HOPDONG của (1,1) KHACHHANG.
-    
-    - `NV_HANHCHANH` - `HOPDONG (Lập HĐ)`: (1,n).
-        - 1 NV_HANHCHANH lập (0,n) HOPDONG.
-    
-        - 1 HOPDONG được lập bởi (1,1) NV_HC.
-    
-    - `NV_HANHCHANH` - `HOPDONG (Kế toán)`: (1,n).
-        - 1 NV_HC (Kế toán) duyệt (0,n) HOPDONG.
-    
-        - 1 HOPDONG được duyệt bởi (1,1) NV_HC (Kế toán).
-    
-    - `HOPDONG` - `XE`: (1,n).
-        - 1 HOPDONG có (1,n) XE.
-    
-        - 1 XE (với SoKhung) chỉ thuộc (1,1) HOPDONG.
-    
-    - `HOPDONG` - `THANHTOAN`: (1,n).
-        - Nghiệp vụ: trả hết hay trả góp, nhiều nhất 3 lần cho mỗi hóa đơn.
-          
-        - Để chuẩn hóa, ta không lưu `TienDaTT`, `NgayTra1`, `NgayTra2` trên `HOPDONG`. Thay vào đó, mọi lần thanh toán (kể cả lần 1) đều được ghi vào bảng `THANHTOAN`.
-          
-        - 1 HOPDONG có (1,3) THANHTOAN.
-    
-        - 1 THANHTOAN thuộc (1,1) HOPDONG.
-    
-    - `KHACHHANG` - `BAOHANH`: (1,n).
-        - 1 KHACHHANG yêu cầu (0,n) BAOHANH.
-    
-        - 1 BAOHANH của (1,1) KHACHHANG.
-    
-    - `XE` - `BAOHANH`: (1,n).
-        - 1 XE được (0,n) BAOHANH.
-    
-        - 1 BAOHANH cho (1,1) XE.
-    
-    - `NV_KYTHUAT` - `BAOHANH`: (1,n).
-        - 1 NV_KT thực hiện (0,n) BAOHANH.
-    
-        - 1 BAOHANH do (1,n) NV_KT thực hiện.
-    
-    - `BAOHANH` - `LINHKIEN`: (0,n).
-        - 1 BAOHANH có thể cần (0,n) LINHKIEN.
-        - 1 LINHKIEN có thể dùng cho (0,1) BAOHANH.
-        - Mối kết hợp `CHITIET_BH` có thuộc tính: `GiaTien` (cho linh kiện đó).
-    
+    - 1 HOPDONG có (1,3) THANHTOAN.
+
+    - 1 THANHTOAN thuộc (1,1) HOPDONG.
+
+- `KHACHHANG` - `BAOHANH`: (1,n).
+    - 1 KHACHHANG yêu cầu (0,n) BAOHANH.
+
+    - 1 BAOHANH của (1,1) KHACHHANG.
+
+- `XE` - `BAOHANH`: (1,n).
+    - 1 XE được (0,n) BAOHANH.
+
+    - 1 BAOHANH cho (1,1) XE.
+
+- `NV_KYTHUAT` - `BAOHANH`: (1,n).
+    - 1 NV_KT thực hiện (0,n) BAOHANH.
+
+    - 1 BAOHANH do (1,n) NV_KT thực hiện.
+
+- `BAOHANH` - `LINHKIEN`: (0,n).
+    - 1 BAOHANH có thể cần (0,n) LINHKIEN.
+    - 1 LINHKIEN có thể dùng cho (0,1) BAOHANH.
+    - Mối kết hợp `CHITIET_BH` có thuộc tính: `GiaTien` (cho linh kiện đó).
 
 ### Task 1: Mô hình ERD (Mức Quan niệm)
 
@@ -386,7 +385,7 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
 - `[XE] ---(0,n)---<DUOC_BH>---(1,1)--- [BAOHANH]`
 - `[NV_KYTHUAT] ---(0,n)---<THUCHIEN_BH>---(1,n)--- [BAOHANH]`
 - `[BAOHANH] ---(0,n)---<CHITIET_BH>---(0,1)--- [LINHKIEN]`
-  - `CHITIET_BH` property: `GiaTien`.
+  - `CHITIET_BH` có thuộc tính: `GiaTien`.
 
 Sơ đồ ERD (Chen notation):
 
