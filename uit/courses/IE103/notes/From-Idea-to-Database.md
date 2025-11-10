@@ -12,6 +12,8 @@ Think of it like building a house:
 
 Database design is the **exact same**.
 
+[TOC]
+
 ## The 3-Step Design Workflow
 
 Everything in database design fits into one of these three steps, and each step is for a different **audience**.
@@ -38,13 +40,13 @@ This is the most important step for avoiding misunderstandings. We use two main 
 
 This is the best tool for designing a **database**. It is a *data-first* model, meaning it focuses *only* on the data we need to store. It has 3 key parts:
 
-1. **Entity (Thực Thể):** A "thing" you want to store. A noun.
+1. **Entity (Thực Thể):** A "thing" you want to store. A **noun**.
     - **Examples:** `SINHVIEN`, `MONHOC` (Subject), `GIAOVIEN` (Teacher).
     - **How we draw it:** A rectangle.
-2. **Attribute (Thuộc Tính):** A property of an entity. An adjective.
+2. **Attribute (Thuộc Tính):** A property of an entity. An **adjective**.
     - **Examples:** `HOTEN` (Full Name), `NGAYSINH` (Date of Birth).
     - **How we draw it:** An oval connected to the entity. We underline the Primary Key (e.g., `MSSV`).
-3. **Relationship (Mối Kết Hợp):** How two entities are connected. A verb.
+3. **Relationship (Mối Kết Hợp):** How two entities are connected. A **verb**.
     - **Examples:** A `SINHVIEN`... `THI` (takes)... a `MONHOC`.
     - **How we draw it:** A diamond connecting the entities.
 
@@ -58,7 +60,9 @@ This tells us the *business rules* of the relationship, using `(min, max)` notat
 
 **Example:** A `LOP` (Class) must have exactly one `GIAOVIEN` (Teacher) as its head. A `GIAOVIEN` can be the head of *zero or one* `LOP`.
 
-`GIAOVIEN` -- `(0,1)` -- (Homeroom) -- `(1,1)` -- `LOP`
+```ini
+GIAOVIEN -- (0,1) -- (Homeroom) -- (1,1) -- LOP
+```
 
 ### Tool #2: The Class Diagram (UML)
 
@@ -76,7 +80,9 @@ This diagram helps a developer plan their actual *code objects*.
 
 #### The Class Diagram's Superpower: Inheritance (Kế thừa)
 
-This is the key difference! A Class Diagram can easily show "is-a" relationships, which a basic ERD cannot.
+- This is the key difference!
+
+A Class Diagram can easily show "is-a" relationships, which a basic ERD (Chen notation) cannot.
 
 - `NV_KYTHUAT` (Technical Staff) **is a** `NHANVIEN` (Employee).
 - `NV_HANHCHANH` (Admin Staff) **is a** `NHANVIEN`.
@@ -114,7 +120,7 @@ This is the easy one.
 
 This is where the magic happens. You don't make tables for relationships... **you use Foreign Keys**.
 
-#### **Case 1: 1-to-Many (`1..n`)**
+#### Case 1: 1-to-Many (`1..n`)
 
 *The **"Many"** side gets the Foreign Key.*
 
@@ -124,7 +130,7 @@ This is where the magic happens. You don't make tables for relationships... **yo
     - `PHONGBAN (MAPB, TenPB)`
     - `NHANVIEN (MANV, TenNV, **MAPB**)`
 
-#### **Case 2: 1-to-1 (`1..1`)**
+#### Case 2: 1-to-1 (`1..1`)
 
 *You can put the Foreign Key in **either table**.*
 
@@ -134,7 +140,7 @@ This is where the magic happens. You don't make tables for relationships... **yo
     - `NHANVIEN (MANV, TenNV)`
     - `LYLICH (MALL, ChiTiet, **MANV**)`
 
-#### **Case 3: Many-to-Many (`n..n`)**
+#### Case 3: Many-to-Many (`n..n`)
 
 *You **MUST** create a **NEW table** (a "linking table").*
 
@@ -158,7 +164,7 @@ This is the **actual, physical code**. You take your "blueprint" (the Logical Mo
 
 Your Blueprint (Logical):
 
-LOP (MALOP, TENLOP, MAGV)
+LOP (<u>MALOP</u>, TENLOP, MAGV)
 
 **Your Building (Physical):**
 
