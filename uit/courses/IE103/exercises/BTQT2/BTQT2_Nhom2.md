@@ -320,8 +320,9 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
   - 1 NHANVIEN làm tại (1,1) DAILY.
   
 - `NHANVIEN` -> `NV_HANHCHANH`, `NV_KYTHUAT`:
-    - Kế thừa (ISA).
-
+    - Kế thừa (inherit).
+    - Nên tách riêng trong NHANVIEN, NV_HANHCHINH, NV_KYTHUAT trong ERD, chỉ biểu diễn mối quan hệ kế thừa trong Class Diagram.
+    
 - `KHACHHANG` - `HOPDONG`: (1,n).
     - 1 KHACHHANG có (1,n) HOPDONG.
 
@@ -470,8 +471,7 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
 1. **DAILY** (`MaDaiLy` (PK), `DiaChi`)
    
 2. **NHANVIEN** (`MaNV` (PK), `TenNV`, `MaDaiLy` (FK))
-   
-    - _Ghi chú (Kế thừa):_ Đây là bảng cha, chứa các thuộc tính chung.
+   - _Ghi chú (Kế thừa):_ Đây là bảng cha, chứa các thuộc tính chung.
     
 3. **NV_HANHCHANH** (`MaNV` (PK, FK), `ChucVu`, `PhongBan`, `TrinhDoHV`)
    
@@ -506,3 +506,4 @@ Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngo�
     - Khóa chính: (`MaPhieuBH`, `MaLK`)
       
     - Khóa ngoại: `MaPhieuBH` (tham chiếu BAOHANH), `MaLK` (tham chiếu LINHKIEN)
+
