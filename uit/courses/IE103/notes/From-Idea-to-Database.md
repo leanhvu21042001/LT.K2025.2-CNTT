@@ -191,3 +191,197 @@ Why not just skip to writing SQL?
 
 Following this process saves you from **costly mistakes**. It's much, much easier to change a drawing (Step 1) than it is to rebuild a live database (Step 3)!
 
+## PlantUML: From Sketch to Code
+
+Here are two practical examples showing the full workflow, with code for each step.
+
+### Example 1: The "1-to-Many" Relationship (Student-Class)
+
+**Business Rule:** A student *must* belong to exactly one class. A class can have *one or many* students.
+
+#### 1. Conceptual Sketch (ERD in PlantUML)
+
+This is for the "meeting room" to confirm the rule.
+
+```sql
+@startchen
+' A SINHVIEN must be in exactly 1 LOP
+' A LOP must have at least 1, but can have many, SINHVIEN
+skinparam defaultFontName "Inter"
+
+entity "SINHVIEN" as SV {
+  * MSSV
+  HOTEN
+}
+
+entity "LOP" as LOP {
+  * MALOP
+  TENLOP
+}
+
+relationship "Belongs To" as R_BT
+
+' (min,max) notation
+SV -(1,1)- R_BT
+LOP -(1,n)- R_BT
+@endchen
+```
+
+#### 2. Conceptual Sketch (Class Diagram in PlantUML)
+
+This is for the *developer* to plan their code.
+
+```sql
+@startuml
+skinparam classAttributeIconSize 0
+skinparam defaultFontName "Inter"
+
+class Lop {
+  - maLop: string
+  - tenLop: string
+  + themSinhVien(sv: SinhVien)
+}
+
+class SinhVien {
+  - mssv: string
+  - hoTen: string
+  + layDiemTB()
+}
+
+' "1" Lop has "1..*" (one or many) SinhVien
+' A SinhVien is in exactly "1" Lop
+Lop "1" -- "1..*" SinhVien : has
+@enduml
+```
+
+#### 3. Logical Blueprint (Text)
+
+This is for the *DBA* to plan the tables. We follow the "1-to-Many" rule: the "Many" side (`SINHVIEN`) gets the foreign key.
+
+```ini
+LOP (MALOP, TENLOP)
+SINHVIEN (MSSV, HOTEN, MALOP)
+```
+
+#### 4. Physical Build (SQL)
+
+The *DBA* and *Developer* use this final code.
+
+```ini
+-- The '1' side is created first
+CREATE TABLE LOP (
+    MALOP VARCHAR(10) PRIMARY KEY,
+    TENLOP NVARCHAR(100)
+);
+
+-- The 'Many' side is created next, referencing the '1' side
+CREATE TABLE SINHVIEN (
+    MSSV VARCHAR(10) PRIMARY KEY,
+    HOTEN NVARCHAR(100),
+    MALOP VARCHAR(10),
+    FOREIGN KEY (MALOP) REFERENCES LOP(MALOP)
+);
+```
+
+### Example 2: The "Many-to-Many" Relationship (Student-Subject)
+
+**Business Rule:** A student can take *many* subjects. A subject can be taken by *many* students. When a student takes a subject, they get a *grade*.
+
+#### 1. Conceptual Sketch (ERD in PlantUML)
+
+Note how the *relationship itself* (`THI`) has an attribute (`DIEM`).
+
+```sql
+@startchen
+' A SINHVIEN can THI (take) 1 or more MONHOC
+' A MONHOC can be taken by 1 or more SINHVIEN
+skinparam defaultFontName "Inter"
+
+entity "SINHVIEN" as SV {
+  * MSSV
+  HOTEN
+}
+
+entity "MONHOC" as MH {
+  * MAMH
+  TENMON
+}
+
+relationship "THI" as R_THI {
+  DIEM
+}
+
+SV -(1,n)- R_THI
+MH -(1,n)- R_THI
+@endchen
+```
+
+#### 2. Conceptual Sketch (Class Diagram in PlantUML)
+
+For the developer, this "Many-to-Many" is modeled as an **Association Class**. The `KetQua` class links `SinhVien` and `MonHoc`.
+
+```sql
+@startuml
+skinparam classAttributeIconSize 0
+skinparam defaultFontName "Inter"
+
+class SinhVien {
+  - mssv: string
+  - hoTen: string
+  + layKetQua()
+}
+
+class MonHoc {
+  - maMH: string
+  - tenMH: string
+}
+
+' The "KetQua" (Result) class links the two
+' It has its own attributes, like "diem"
+class KetQua {
+  - diem: float
+}
+
+SinhVien "1" -- "0..*" KetQua
+MonHoc "1" -- "0..*" KetQua
+@enduml
+```
+
+#### 3. Logical Blueprint (Text)
+
+For the *DBA*. We follow the "Many-to-Many" rule: create a **new linking table** (`THI` or `KETQUA`).
+
+```ini
+SINHVIEN (MSSV, HOTEN)
+MONHOC (MAMH, TENMON)
+THI (MSSV, MAMH, DIEM)
+```
+
+#### 4. Physical Build (SQL)
+
+The final code. Note the composite Primary Key in the `THI` table.
+
+```sql
+CREATE TABLE SINHVIEN (
+    MSSV VARCHAR(10) PRIMARY KEY,
+    HOTEN NVARCHAR(100)
+);
+
+CREATE TABLE MONHOC (
+    MAMH VARCHAR(10) PRIMARY KEY,
+    TENMON NVARCHAR(100)
+);
+
+-- This is the linking table
+CREATE TABLE THI (
+    MSSV VARCHAR(10),
+    MAMH VARCHAR(10),
+    DIEM FLOAT,
+    -- The Primary Key is the *combination* of the two keys
+    PRIMARY KEY (MSSV, MAMH),
+    
+    -- Set up both Foreign Keys
+    FOREIGN KEY (MSSV) REFERENCES SINHVIEN(MSSV),
+    FOREIGN KEY (MAMH) REFERENCES MONHOC(MAMH)
+);
+```
