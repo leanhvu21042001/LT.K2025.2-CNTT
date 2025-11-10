@@ -2,7 +2,17 @@
 
 ' skinparam monochrome true
 skinparam defaultFontName Iosevka
-!pragma ratio 1.0
+
+' !pragma ratio 1.0
+' The 'ratio' command can conflict with the layout engine's attempt to find the best fit.
+' The command below is the most effective way to get a compact layout.
+
+' ** THIS IS THE FIX **
+' Change the layout engine from the default 'dot' (which is hierarchical and gets wide)
+' to 'neato' (which uses a "spring model" to cluster related items together).
+' This almost always results in a more compact, less-wide diagram.
+!pragma layout neato
+
 ' skinparam roundcorner 10
 skinparam dpi 300
 
