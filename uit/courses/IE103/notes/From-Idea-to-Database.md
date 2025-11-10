@@ -203,27 +203,29 @@ Here are two practical examples showing the full workflow, with code for each st
 
 This is for the "meeting room" to confirm the rule.
 
-```sql
+```
 @startchen
 ' A SINHVIEN must be in exactly 1 LOP
 ' A LOP must have at least 1, but can have many, SINHVIEN
-skinparam defaultFontName "Inter"
 
-entity "SINHVIEN" as SV {
-  * MSSV
+entity SINHVIEN {
+  MSSV
   HOTEN
 }
 
-entity "LOP" as LOP {
-  * MALOP
+entity LOP {
+  MALOP
   TENLOP
 }
 
-relationship "Belongs To" as R_BT
+relationship R_BT {
+  Name
+}
 
 ' (min,max) notation
-SV -(1,1)- R_BT
+SINHVIEN -(1,1)- R_BT
 LOP -(1,n)- R_BT
+
 @endchen
 ```
 
@@ -267,7 +269,7 @@ SINHVIEN (MSSV, HOTEN, MALOP)
 
 The *DBA* and *Developer* use this final code.
 
-```ini
+```sql
 -- The '1' side is created first
 CREATE TABLE LOP (
     MALOP VARCHAR(10) PRIMARY KEY,
@@ -295,24 +297,24 @@ Note how the *relationship itself* (`THI`) has an attribute (`DIEM`).
 @startchen
 ' A SINHVIEN can THI (take) 1 or more MONHOC
 ' A MONHOC can be taken by 1 or more SINHVIEN
-skinparam defaultFontName "Inter"
+skinparam defaultFontName Iosevka
 
-entity "SINHVIEN" as SV {
-  * MSSV
+entity SINHVIEN {
+  MSSV<<key>>
   HOTEN
 }
 
-entity "MONHOC" as MH {
-  * MAMH
+entity MONHOC {
+  MAMH <<key>>
   TENMON
 }
 
-relationship "THI" as R_THI {
+relationship R_THI {
   DIEM
 }
 
-SV -(1,n)- R_THI
-MH -(1,n)- R_THI
+SINHVIEN -(1,n)- R_THI
+MONHOC -(1,n)- R_THI
 @endchen
 ```
 
