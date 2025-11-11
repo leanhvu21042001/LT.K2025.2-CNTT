@@ -570,39 +570,31 @@ ChiTietBaoHanh -- "1..*" LinhKien
 @enduml
 ```
 
-### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 2)
+### 4. Mô hình Logic
 
-Chúng ta có 3 cách chính để chuyển đổi kế thừa sang mô hình logic:
-
-1. **Một bảng duy nhất (Single Table):** 1 bảng `NHANVIEN` cho tất cả, các cột con (BacTho, TrinhDo) có thể `NULL`.
-2. **Bảng cho mỗi lớp cụ thể (Table per Concrete Class):** 2 bảng `NV_HANHCHANH`, `NV_KYTHUAT`. (Không khuyến khích).
-3. **Bảng cho mỗi lớp (Table per Subclass):** 3 bảng: `NHANVIEN` (chung), `NV_HANHCHANH` (riêng), `NV_KYTHUAT` (riêng).
-
-Chúng ta sẽ chọn phương án 3 (Table per Subclass) vì nó rõ ràng nhất.
-
-- `DAILY` (**MaDaily**, ViTri, ...)
-- `NHANVIEN` (**MaNV**, TenNV, ChucVu, *MaDaily*, LoaiNV)
-    - `LoaiNV` dùng để xác định là 'HC' hay 'KT'.
+- `DAILY` (<u>MaDaily</u>, ViTri, ...)
+- `NHANVIEN` (<u>MaNV</u>, TenNV, ChucVu, *MaDaily*, LoaiNV)
+    - `LoaiNV` dùng để xác định là 'HANHCHINH' hay 'KYTHUAT'.
     - `MaDaily` (FK) tham chiếu đến `DAILY(MaDaily)`.
-- `NV_HANHCHANH` (***MaNV***, TrinhDoHocVan, PhongBan)
+- `NV_HANHCHANH` (<u>MaNV</u>, TrinhDoHocVan, PhongBan)
     - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `NV_KYTHUAT` (***MaNV***, BacTho, SoNamKinhNghiem)
+- `NV_KYTHUAT` (<u>MaNV</u>, BacTho, SoNamKinhNghiem)
     - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `KHACHHANG` (**MaKH**, TenKH, DiaChi, SDT)
-- `HOADON` (**SoHD**, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
+- `KHACHHANG` (<u>MaKH</u>, TenKH, DiaChi, SDT)
+- `HOADON` (<u>SoHD</u>, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
     - `MaKH` (FK) tham chiếu đến `KHACHHANG(MaKH)`.
     - `MaNV_Lap` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
     - `MaNV_KeToan` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `XE` (***SoKhung***, ***SoSuon***, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
-    - Khóa chính (PK): (**SoKhung**, **SoSuon**).
+- `XE` (<u>SoKhung, SoSuon</u>, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
+    - Khóa chính (PK): (<u>SoKhung, SoSuon</u>).
     - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
-- `PHIEUTHANHTOAN` (**MaPTT**, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
+- `PHIEUTHANHTOAN` (<u>MaPTT</u>, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
     - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
     - `MaNV_NhanTien` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `BAOHANH` (**MaBH**, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
+- `BAOHANH` (<u>MaBH</u>, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
     - Khóa ngoại (FK) tham chiếu đến `XE(SoKhung, SoSuon)`.
-- `LINHKIEN` (**MaLK**, TenLK, DonGia)
-- `CHITIET_BAOHANH` (***MaBH***, ***MaLK***, LyDo, LoiThuocVe, GiaTien)
-    - Khóa chính (PK): (**MaBH**, **MaLK**).
+- `LINHKIEN` (<u>MaLK</u>, TenLK, DonGia)
+- `CHITIET_BAOHANH` (<u>MaBH, MaLK</u>, LyDo, LoiThuocVe, GiaTien)
+    - Khóa chính (PK): (<u>MaBH, MaLK</u>).
     - `MaBH` (FK) tham chiếu đến `BAOHANH(MaBH)`.
     - `MaLK` (FK) tham chiếu đến `LINHKIEN(MaLK)`.
