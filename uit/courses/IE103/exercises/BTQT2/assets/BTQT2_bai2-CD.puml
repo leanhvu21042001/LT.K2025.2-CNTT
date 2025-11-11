@@ -4,65 +4,79 @@
 skinparam defaultFontName "Iosevka"
 
 class DaiLy {
-  - maDaiLy: string
+  # maDaiLy: string
   - viTri: string
+  + themNhanVien()
+  + xoaNhanVien()
+  + themHopDong()
 }
 
 ' --- Inheritance ---
 abstract class NhanVien {
   # maNV: string
-  # tenNV: string
-  # chucVu: string
+  - tenNV: string
+  - chucVu: string
+  + nhanChucVu()
 }
 class NVHanhChanh extends NhanVien {
   - trinhDoHocVan: string
   - phongBan: string
+  + lapHopDong()
+  + duyetHopDong()
 }
 class NVKyThuat extends NhanVien {
   - bacTho: string
   - soNamKN: int
+  + thucHienBaoHanh()
 }
 ' ------------------
 
 class KhachHang {
-  - maKH: string
+  # maKH: string
   - tenKH: string
   - diaChi: string
   - sdt: string
+  + muaXe()
+  + yeuCauBaoHanh()
 }
 
 class HopDong {
-  - soHD: string
+  # soHD: string
   - ngayHD: Date
   - thoiGianBH: string
   - tienPhaiTT: float
   - tienDaTT: float
   - giamTru: float
+  + themXe()
+  + themPhieuThanhToan()
   + tinhTienConLai()
 }
 
 class Xe {
-  - soKhung: string
-  - soSuon: string
+  # soKhung: string
+  # soSuon: string
   - nuocSX: string
   - loaiXe: string
+  + themTieuSuBaoHanh()
 }
 
 class PhieuThanhToan {
-  - maPTT: string
+  # maPTT: string
   - ngayTra: Date
   - soTien: float
 }
 
 class BaoHanh {
-  - maBH: string
+  # maBH: string
   - ngayYeuCau: Date
   - soKhung: string
   - soSuon: string
+  + themChiTietBaoHanh()
+  + giaoChoNhanVien()
 }
 
 class LinhKien {
-  - maLK: string
+  # maLK: string
   - tenLK: string
 }
 
@@ -71,6 +85,7 @@ class ChiTietBaoHanh {
   - lyDo: string
   - loiThuocVe: string
   - giaTien: float
+  + themLinhKien()
 }
 
 ' --- Associations ---
