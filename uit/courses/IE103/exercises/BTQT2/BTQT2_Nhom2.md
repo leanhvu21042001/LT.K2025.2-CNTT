@@ -298,27 +298,22 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 
 ### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 1)
 
-- `KHOA` (**MaKhoa**, TenKhoa)
-- `GIANGVIEN` (**MaGV**, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
+- `KHOA` (<u>MaKhoa</u>, TenKhoa)
+- `GIANGVIEN` (<u>MaGV</u>, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
     - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
-- `HOIDONG` (**MaHD**, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
+- `HOIDONG` (<u>MaHD</u>, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
     - `MaGV_ChuTich` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaGV_ThuKy` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
-- `DETAI` (**MaDT**, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
+- `DETAI` (<u>MaDT</u>, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
     - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
     - `MaGV_HuongDan` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaGV_PhanBien` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
-- `SINHVIEN` (**MaSV**, TenSV, NamHoc, ...)
-- `THUCHIEN` (***MaSV***, ***MaDT***, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
-    - Khóa chính (PK): (**MaSV**, **MaDT**)
-    - *Ghi chú: Để hỗ trợ "bảo vệ 2 lần", khóa chính nên là (**MaSV**, **LanBaoVe**).*
-    - *Lược đồ đề xuất (Hỗ trợ 2 lần):*
-    - `THUCHIEN` (***MaSV***, ***LanBaoVe***, *MaDT*, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
-        - Khóa chính (PK): (**MaSV**, **LanBaoVe**)
-        - `MaSV` (FK) tham chiếu đến `SINHVIEN(MaSV)`.
-        - `MaDT` (FK) tham chiếu đến `DETAI(MaDT)`.
-        - Một ràng buộc `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
+- `SINHVIEN` (<u>MaSV</u>, TenSV, NamHoc, ...)
+- `THUCHIEN` (<u>MaSV, MaDT</u>, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
+    - Khóa chính (PK): (<u>MaSV</u>, <u>MaDT</u>)
+    - Ràng buộc: `LanBaoVe <= 2` .
+    - Ràng buộc: `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
 
 ## Bài 2: Quản Lý Bán Xe Máy
 
