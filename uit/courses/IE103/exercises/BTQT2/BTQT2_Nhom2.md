@@ -319,7 +319,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 
 ### 1. Phân tích yêu cầu (Bài 2)
 
-- **Thực thể (Entities):**
+- Thực thể (Entities):
     - `DAILY`: Nơi nhân viên làm việc.
     - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
     - `KHACHHANG`: Người mua xe.
@@ -328,11 +328,11 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
     - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
     - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
     - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
-- **Inheritance (Kế thừa):**
+- Inheritance (Kế thừa):
     - `NHANVIEN` là lớp cha.
     - `NV_HANHCHANH` là lớp con (có: TrinhDoHocVan, ThuocPhongBan).
     - `NV_KYTHUAT` là lớp con (có: BacTho, SoNamKinhNghiem).
-- **Mối quan hệ (Relationships):**
+- Mối quan hệ (Relationships):
     - `DAILY` (1) - (n) `NHANVIEN`: Một đại lý có nhiều nhân viên.
     - `NHANVIEN` (n) - `HOADON`: Một HĐ có 1 NV lập, 1 NV kế toán. Một NV có thể lập/duyệt nhiều HĐ.
     - `KHACHHANG` (1) - (n) `HOADON`: Một KH có thể có nhiều HĐ.
