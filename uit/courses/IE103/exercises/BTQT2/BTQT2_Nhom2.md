@@ -80,17 +80,17 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 - Thực thể (Entities):
     - `KHOA`: Đơn vị quản lý (VD: Khoa CNTT).
-    - `GIAOVIEN`: a) Người hướng dẫn, b) phản biện, c) chủ tịch, d) thư ký hội đồng.
+    - `GIANGVIEN`: a) Người hướng dẫn, b) phản biện, c) chủ tịch, d) thư ký hội đồng.
     - `HOIDONG`: Hội đồng khoa học (chấm điểm).
     - `DETAI`: Đề tài tốt nghiệp.
     - `SINHVIEN`: Sinh viên thực hiện đề tài.
 - Mối quan hệ (Relationships):
     - `KHOA` (1) - (n) `DETAI`: Một khoa có nhiều đề tài.
     - `KHOA` (1) - (n) `GIAOVIEN`: Một khoa có nhiều giảng viên (GV). Mỗi giảng viên thuộc một KHOA cụ thể.
-    - `GIAOVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): Một GV hướng dẫn nhiều đề tài. Mỗi đề tài *chỉ có 1* GV hướng dẫn.
-    - `GIAOVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): Một GV phản biện nhiều đề tài. Mỗi đề tài *chỉ có 1* GV phản biện.
-    - `GIAOVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): Một GV có thể làm chủ tịch nhiều HĐ. Mỗi HĐ *chỉ có 1* chủ tịch.
-    - `GIAOVIEN` (1) - (n) `HOIDONG` (THƯ KÝ): Một GV có thể làm thư ký nhiều HĐ. Mỗi HĐ *chỉ có 1* thư ký.
+    - `GIANGVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): Một GV hướng dẫn nhiều đề tài. Mỗi đề tài *chỉ có 1* GV hướng dẫn.
+    - `GIANGVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): Một GV phản biện nhiều đề tài. Mỗi đề tài *chỉ có 1* GV phản biện.
+    - `GIANGVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): Một GV có thể làm chủ tịch nhiều HĐ. Mỗi HĐ *chỉ có 1* chủ tịch.
+    - `GIANGVIEN` (1) - (n) `HOIDONG` (THƯ KÝ): Một GV có thể làm thư ký nhiều HĐ. Mỗi HĐ *chỉ có 1* thư ký.
     - `HOIDONG` (1) - (n) `DETAI`: Một HĐ chấm nhiều đề tài. Mỗi đề tài *chỉ thuộc 1* HĐ.
     - `SINHVIEN` (n) - (n) `DETAI` (THỰC HIỆN): Đây là mối quan hệ n-n.
         - Một `DETAI` có tối đa 3 `SINHVIEN`.
@@ -104,18 +104,18 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ```
 @startchen
-' Sơ đồ ERD cho Bài 1: Quản lý Đề tài
-skinparam defaultFontName "Inter"
+
+skinparam defaultFontName "Iosevka"
 !pragma layout neato
 
 ' --- Entities ---
 entity KHOA {
-  * MaKhoa
+  MaKhoa <<key>>
   TenKhoa
 }
 
-entity GIAOVIEN as GV {
-  * MaGV
+entity GIANGVIEN {
+  MaGV <<key>>
   TenGV
   DiaChi
   SDT
@@ -123,83 +123,91 @@ entity GIAOVIEN as GV {
   ChuyenNganh
 }
 
-entity HOIDONG as HD {
-  * MaHD
+entity HOIDONG {
+  MaHOIDONG <<key>>
   NgayBaoVe
   DiaChiCuThe
 }
 
-entity DETAI as DT {
-  * MaDT
+entity DETAI {
+  MaDT <<key>>
   TenDT
   TGBatDau
   TGKetThuc
 }
 
-entity SINHVIEN as SV {
-  * MaSV
-  TenSV
-  NamHoc (vd: 4)
+entity SINHVIEN {
+  MaSINHVIEN <<key>>
+  TenSINHVIEN
+  NamHoc
 }
 
 ' --- Relationships ---
 relationship THUOC {
   ' 1 Khoa co nhieu De Tai
 }
-KHOA -(1,n)- THUOC
-DT -(1,1)- THUOC
 
-relationship QUANLY_GV {
+KHOA -(1,n)- THUOC
+DETAI -(1,1)- THUOC
+
+relationship QUANLY_GIANGVIEN {
   ' 1 Khoa co nhieu Giao Vien
 }
-KHOA -(1,n)- QUANLY_GV
-GV -(1,1)- QUANLY_GV
+
+KHOA -(1,n)- QUANLY_GIANGVIEN
+GIANGVIEN -(1,1)- QUANLY_GIANGVIEN
 
 relationship HUONGDAN {
-  ' 1 GV huong dan nhieu De Tai
-  ' 1 De Tai chi co 1 GVHD
+  ' 1 GIANGVIEN huong dan nhieu De Tai
+  ' 1 De Tai chi co 1 GIANGVIENHOIDONG
 }
-GV -(1,n)- HUONGDAN
-DT -(1,1)- HUONGDAN
+
+GIANGVIEN -(1,n)- HUONGDAN
+DETAI -(1,1)- HUONGDAN
 
 relationship PHANBIEN {
-  ' 1 GV phan bien nhieu De Tai
-  ' 1 De Tai chi co 1 GVPB
+  ' 1 GIANGVIEN phan bien nhieu De Tai
+  ' 1 De Tai chi co 1 GIANGVIENPB
 }
-GV -(1,n)- PHANBIEN
-DT -(1,1)- PHANBIEN
+
+GIANGVIEN -(1,n)- PHANBIEN
+DETAI -(1,1)- PHANBIEN
 
 relationship CHAM_TAI {
   ' 1 Hoi Dong cham nhieu De Tai
-  ' 1 De Tai chi duoc cham boi 1 HD
+  ' 1 De Tai chi duoc cham boi 1 HOIDONG
 }
-HD -(1,n)- CHAM_TAI
-DT -(1,1)- CHAM_TAI
+
+HOIDONG -(1,n)- CHAM_TAI
+DETAI -(1,1)- CHAM_TAI
 
 relationship LAM_CHUTICH {
-  ' 1 GV la Chu Tich nhieu HD
-  ' 1 HD chi co 1 Chu Tich
+  ' 1 GIANGVIEN la Chu Tich nhieu HOIDONG
+  ' 1 HOIDONG chi co 1 Chu Tich
 }
-GV -(1,n)- LAM_CHUTICH
-HD -(1,1)- LAM_CHUTICH
+
+GIANGVIEN -(1,n)- LAM_CHUTICH
+HOIDONG -(1,1)- LAM_CHUTICH
 
 relationship LAM_THUKY {
-  ' 1 GV la Thu Ky nhieu HD
-  ' 1 HD chi co 1 Thu Ky
+  ' 1 GIANGVIEN la Thu Ky nhieu HOIDONG
+  ' 1 HOIDONG chi co 1 Thu Ky
 }
-GV -(1,n)- LAM_THUKY
-HD -(1,1)- LAM_THUKY
 
-relationship THUCHIEN as "THUC HIEN" {
-  ' Quan he n-n giua SV va DT
+GIANGVIEN -(1,n)- LAM_THUKY
+HOIDONG -(1,1)- LAM_THUKY
+
+relationship THUCHIEN {
+  ' Quan he n-n giua SINHVIEN va DETAI
   ' Luu diem va lan bao ve
-  Diem_GVHD
-  Diem_GVPB
+  Diem_GIANGVIENHOIDONG
+  Diem_GIANGVIENPB
   Diem_ChuTich
-  LanBaoVe (1 hoac 2)
+  LanBaoVe
 }
-SV -(1,2)- THUCHIEN ' 1 SV thuc hien max 2 lan
-DT -(1,3)- THUCHIEN ' 1 DT co max 3 SV
+
+SINHVIEN -(1,2)- THUCHIEN
+DETAI -(1,3)- THUCHIEN
 
 @endchen
 ```
@@ -281,15 +289,15 @@ HoiDong "0..*" -- "1" GiaoVien : "thư ký"
 ### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 1)
 
 - `KHOA` (**MaKhoa**, TenKhoa)
-- `GIAOVIEN` (**MaGV**, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
+- `GIANGVIEN` (**MaGV**, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
     - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
 - `HOIDONG` (**MaHD**, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
-    - `MaGV_ChuTich` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
-    - `MaGV_ThuKy` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+    - `MaGV_ChuTich` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+    - `MaGV_ThuKy` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
 - `DETAI` (**MaDT**, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
     - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
-    - `MaGV_HuongDan` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
-    - `MaGV_PhanBien` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+    - `MaGV_HuongDan` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+    - `MaGV_PhanBien` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
 - `SINHVIEN` (**MaSV**, TenSV, NamHoc, ...)
 - `THUCHIEN` (***MaSV***, ***MaDT***, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
