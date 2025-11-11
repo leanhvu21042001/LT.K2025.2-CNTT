@@ -472,93 +472,137 @@ LK -(1,n)- CHITIET_BH
 ### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 2)
 
 ```
-@startuml
-' Sơ đồ Class Diagram cho Bài 2
-skinparam classAttributeIconSize 0
+@startchen
+' Sơ đồ EER (Enhanced ER) cho Bài 2
+' Vi ERD co ban khong ho tro Ke thua (Inheritance),
+' chung ta su dung ky phap mo rong (EER) voi ky hieu "=>= d"
 skinparam defaultFontName "Inter"
+!pragma layout neato
 
-class Daily {
-  - maDaily: string
-  - viTri: string
+' --- Entities ---
+entity DAILY {
+  MaDaily <<key>>
+  ViTri
 }
 
-' --- Inheritance ---
-abstract class NhanVien {
-  # maNV: string
-  # tenNV: string
-  # chucVu: string
-}
-class NVHanhChanh extends NhanVien {
-  - trinhDoHocVan: string
-  - phongBan: string
-}
-class NVKyThuat extends NhanVien {
-  - bacTho: string
-  - soNamKN: int
-}
-' ------------------
-
-class KhachHang {
-  - maKH: string
-  - tenKH: string
-  - diaChi: string
-  - sdt: string
+entity NHANVIEN {
+  MaNV <<key>>
+  TenNV
+  ChucVu
 }
 
-class HoaDon {
-  - soHD: string
-  - ngayHD: Date
-  - thoiGianBH: string
-  - tienPhaiTT: float
-  - tienDaTT: float
-  - giamTru: float
-  + tinhTienConLai()
+entity NV_HANHCHANH {
+  TrinhDoHocVan
+  PhongBan
 }
 
-class Xe {
-  - soKhung: string
-  - soSuon: string
-  - nuocSX: string
-  - loaiXe: string
+entity NV_KYTHUAT {
+  BacTho
+  SoNamKinhNghiem
 }
 
-class PhieuThanhToan {
-  - maPTT: string
-  - ngayTra: Date
-  - soTien: float
+' --- EER Inheritance ---
+' d = disjoint (khong giao nhau)
+NHANVIEN =>= d { NV_HANHCHANH, NV_KYTHUAT }
+
+entity KHACHHANG {
+  MaKH <<key>>
+  TenKH
+  DiaChi
+  SDT
 }
 
-class BaoHanh {
-  - maBH: string
-  - ngayYeuCau: Date
+entity HOPDONG {
+  SoHD <<key>>
+  NgayHD
+  ThoiGianBH
+  TienPhaiTT
+  TienDaTT
+  GiamTru
 }
 
-class LinhKien {
-  - maLK: string
-  - tenLK: string
+entity XE {
+  SoKhung <<key>>
+  SoSuon <<key>>
+  NuocSX
+  LoaiXe
+  MauXe
+  SoPK
 }
 
-' --- Association Class ---
-class ChiTietBaoHanh {
-  - lyDo: string
-  - loiThuocVe: string
-  - giaTien: float
+entity PHIEUTHANHTOAN {
+  MaPTT <<key>>
+  NgayTra
+  SoTien
 }
 
-' --- Associations ---
-Daily "1" -- "0..*" NhanVien : "có"
+entity BAOHANH {
+  MaBH <<key>>
+  NgayYeuCau
+}
 
-KhachHang "1" -- "0..*" HoaDon : "mua"
-HoaDon "1" -- "1" NhanVien : "được lập bởi"
-HoaDon "1" -- "1" NhanVien : "được duyệt bởi (kế toán)"
-HoaDon "1" -- "1..*" Xe : "bao gồm"
-HoaDon "1" -- "1..3" PhieuThanhToan : "có"
+entity LINHKIEN {
+  MaLK <<key>>
+  TenLK
+}
 
-Xe "1" -- "0..*" BaoHanh : "yêu cầu"
-(BaoHanh, ChiTietBaoHanh) .. LinhKien
-BaoHanh "1" -- "0..*" (ChiTietBaoHanh)
-(ChiTietBaoHanh) -- "1..*" LinhKien
-@enduml
+' --- Relationships ---
+relationship LAM_TAI {
+}
+
+DAILY -(1,n)- LAM_TAI
+NHANVIEN -(1,1)- LAM_TAI
+
+relationship LAP_HD {
+}
+
+NHANVIEN -(1,n)- LAP_HD
+HOPDONG -(1,1)- LAP_HD
+
+relationship DUYET_HD {
+  ' NV Ke Toan
+}
+
+NHANVIEN -(1,n)- DUYET_HD
+HOPDONG -(1,1)- DUYET_HD
+
+relationship MUA {
+}
+
+KHACHHANG -(1,n)- MUA
+HOPDONG -(1,1)- MUA
+
+relationship GOM {
+  ' 1 HD co nhieu Xe
+}
+
+HOPDONG -(1,n)- GOM
+XE -(1,1)- GOM
+
+relationship TRA_GOP {
+  ' 1 HD co max 3 PTT
+}
+
+HOPDONG -(1,3)- TRA_GOP
+PHIEUTHANHTOAN -(1,1)- TRA_GOP
+
+relationship YEUCAU_BH {
+}
+
+XE -(1,n)- YEUCAU_BH
+BAOHANH -(1,1)- YEUCAU_BH
+
+relationship CHITIET_BH {
+  ' n-n giua BAOHANH va LINHKIEN
+  LyDo
+  LoiThuocVe
+  GiaTien
+}
+
+BAOHANH -(1,n)- CHITIET_BH
+LINHKIEN -(1,n)- CHITIET_BH
+
+@endchen
 ```
 
 ### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 2)
