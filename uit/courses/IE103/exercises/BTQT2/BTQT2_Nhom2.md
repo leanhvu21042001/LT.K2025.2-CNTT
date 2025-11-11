@@ -74,19 +74,19 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
 
 ## Bài 1: Quản Lý Đề Tài Tốt Nghiệp
 
-### 1. Phân tích yêu cầu (Bài 1)
+### 1. Phân tích yêu cầu
 
 Qua phân tích đề bài, chúng ta có thể xác định các thực thể và mối quan hệ chính sau:
 
-- **Thực thể (Entities):**
+- Thực thể (Entities):
     - `KHOA`: Đơn vị quản lý (VD: Khoa CNTT).
-    - `GIAOVIEN`: Người hướng dẫn, phản biện, chủ tịch, thư ký hội đồng.
+    - `GIAOVIEN`: a) Người hướng dẫn, b) phản biện, c) chủ tịch, d) thư ký hội đồng.
     - `HOIDONG`: Hội đồng khoa học (chấm điểm).
     - `DETAI`: Đề tài tốt nghiệp.
     - `SINHVIEN`: Sinh viên thực hiện đề tài.
-- **Mối quan hệ (Relationships):**
+- Mối quan hệ (Relationships):
     - `KHOA` (1) - (n) `DETAI`: Một khoa có nhiều đề tài.
-    - `KHOA` (1) - (n) `GIAOVIEN`: Một khoa có nhiều giáo viên (Giả định).
+    - `KHOA` (1) - (n) `GIAOVIEN`: Một khoa có nhiều giảng viên (GV). Mỗi giảng viên thuộc một KHOA cụ thể.
     - `GIAOVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): Một GV hướng dẫn nhiều đề tài. Mỗi đề tài *chỉ có 1* GV hướng dẫn.
     - `GIAOVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): Một GV phản biện nhiều đề tài. Mỗi đề tài *chỉ có 1* GV phản biện.
     - `GIAOVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): Một GV có thể làm chủ tịch nhiều HĐ. Mỗi HĐ *chỉ có 1* chủ tịch.
@@ -96,7 +96,7 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
         - Một `DETAI` có tối đa 3 `SINHVIEN`.
         - Một `SINHVIEN` có thể thực hiện tối đa 2 `DETAI` (lần 1 rớt, làm lại lần 2).
         - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết (`THUCHIEN`) để lưu điểm và thông tin lần bảo vệ.
-- **Thuộc tính quan trọng:**
+- Thuộc tính quan trọng:
     - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN` để lưu các điểm này.
     - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (ví dụ: bảng `THUCHIEN` có thể có thuộc tính `LanBaoVe`).
 
