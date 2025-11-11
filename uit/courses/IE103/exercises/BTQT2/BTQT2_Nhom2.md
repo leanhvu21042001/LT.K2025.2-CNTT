@@ -72,438 +72,515 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
   * Hành chánh (chức vụ, thuộc phòng ban nào, Trình độ học vấn)
   * Kỹ thuật (chức vụ, bậc thợ, số năm kinh nghiệm).
 
-## Bài toán 1: Quản lý Đề tài Tốt nghiệp
+## Bài 1: Quản Lý Đề Tài Tốt Nghiệp
 
-### Bảng Viết Tắt
+### 1. Phân tích yêu cầu (Bài 1)
 
-| Từ viết tắt | Diễn giải (Nghĩa)              | Nơi sử dụng                              |
-| ----------- | ------------------------------ | ---------------------------------------- |
-| MaKhoa      | Mã Khoa                        | KHOA, GIAOVIEN, SINHVIEN, HOIDONG, DETAI |
-| MaGV        | Mã Giáo Viên                   | GIAOVIEN (Khóa chính)                    |
-| MaSV        | Mã Sinh Viên                   | SINHVIEN (Khóa chính)                    |
-| MaDT        | Mã Đề Tài                      | DETAI (Khóa chính)                       |
-| MaHD        | Mã Hội Đồng                    | HOIDONG (Khóa chính)                     |
-| MaGV_CT     | Mã Giáo Viên (làm Chủ Tịch)    | HOIDONG (Khóa ngoại)                     |
-| MaGV_TK     | Mã Giáo Viên (làm Thư Ký)      | HOIDONG (Khóa ngoại)                     |
-| MaGVHD      | Mã Giáo Viên Hướng Dẫn         | DETAI (Khóa ngoại)                       |
-| MaGVPB      | Mã Giáo Viên Phản Biện         | DETAI (Khóa ngoại)                       |
-| DiemHD      | Điểm (của) Giáo Viên Hướng Dẫn | THUCHIEN                                 |
-| DiemPB      | Điểm (của) Giáo Viên Phản Biện | THUCHIEN                                 |
-| DiemCT      | Điểm (của) Chủ Tịch Hội đồng   | THUCHIEN                                 |
-
-### Phân tích Thực thể và Mối kết hợp
+Qua phân tích đề bài, chúng ta có thể xác định các thực thể và mối quan hệ chính sau:
 
 - **Thực thể (Entities):**
-  - `KHOA`: Quản lý chung. (`MaKhoa`, `TenKhoa`)
-    
-    - `GIAOVIEN`: Hướng dẫn, phản biện, chủ tịch, thư ký. (`MaGV`, `TenGV`, `DiaChi`, `SDT`, `HocVi`, `ChuyenNganh`)
-      
-    - `SINHVIEN`: Thực hiện đề tài. (`MaSV`, `TenSV`, `Lop`,...)
-      
-    - `DETAI`: Đối tượng được quản lý. (`MaDT`, `TenDT`, `ThoiGianBD`, `ThoiGianKT`)
-      
-    - `HOIDONG`: Nơi bảo vệ đề tài. (`MaHD`, `NgayBV`, `DiaChiBV`)
-  
-- **Mối kết hợp (Relationships) và Bản số (Cardinality):**
-  
-    - **Phân tích bản số (Theo IE103 - Trang 23):** Ký hiệu bản số `(min, max)` đặt ở phía thực thể `A` sẽ mô tả số lượng của `B` tham gia vào mối quan hệ, và ngược lại.
-      
-    - `KHOA` - `GIAOVIEN`: (1,n). 1 KHOA có (1,n) GIAOVIEN. 1 GIAOVIEN thuộc (1,1) KHOA.
-      
-    - `KHOA` - `SINHVIEN`: (1,n). 1 KHOA có (1,n) SINHVIEN. 1 SINHVIEN thuộc (1,1) KHOA.
-      
-    - `KHOA` - `DETAI`: (1,n). 1 KHOA quản lý (1,n) DETAI. 1 DETAI thuộc (1,1) KHOA.
-      
-    - `KHOA` - `HOIDONG`: (1,n). 1 KHOA lập (1,n) HOIDONG. 1 HOIDONG thuộc (1,1) KHOA.
-      
-    - `GIAOVIEN` - `DETAI (Hướng dẫn)`: (1,n). 1 GIAOVIEN hướng dẫn (0,n) DETAI. 1 DETAI được hướng dẫn bởi (1,1) GIAOVIEN.
-      
-    - `GIAOVIEN` - `DETAI (Phản biện)`: (1,n). 1 GIAOVIEN phản biện (0,n) DETAI. 1 DETAI được phản biện bởi (1,1) GIAOVIEN.
-      
-    - `GIAOVIEN` - `HOIDONG (Chủ tịch)`: (1,n). 1 GIAOVIEN làm chủ tịch (0,n) HOIDONG. 1 HOIDONG có (1,1) GIAOVIEN làm chủ tịch.
-      
-    - `GIAOVIEN` - `HOIDONG (Thư ký)`: (1,n). 1 GIAOVIEN làm thư ký (0,n) HOIDONG. 1 HOIDONG có (1,1) GIAOVIEN làm thư ký.
-      
-    - `HOIDONG` - `DETAI (Bảo vệ)`: (1,n). 1 HOIDONG chấm (1,n) DETAI. 1 DETAI bảo vệ tại (1,1) HOIDONG.
-      
-    - **`SINHVIEN` - `DETAI (Thực hiện)`**: (n,m).
-      
-        - Nghiệp vụ: 1 `SINHVIEN` làm tối đa 2 `DETAI` (lần 1, lần 2). => Bản số `(1,2)`.
-          
-        - Nghiệp vụ: 1 `DETAI` có tối đa 3 `SINHVIEN`. => Bản số `(1,3)`.
-          
-        - **Kết luận:** Mối kết hợp này có thuộc tính (`LanBaoVe`, `DiemHD`, `DiemPB`, `DiemCT`).
-          
+    - `KHOA`: Đơn vị quản lý (VD: Khoa CNTT).
+    - `GIAOVIEN`: Người hướng dẫn, phản biện, chủ tịch, thư ký hội đồng.
+    - `HOIDONG`: Hội đồng khoa học (chấm điểm).
+    - `DETAI`: Đề tài tốt nghiệp.
+    - `SINHVIEN`: Sinh viên thực hiện đề tài.
+- **Mối quan hệ (Relationships):**
+    - `KHOA` (1) - (n) `DETAI`: Một khoa có nhiều đề tài.
+    - `KHOA` (1) - (n) `GIAOVIEN`: Một khoa có nhiều giáo viên (Giả định).
+    - `GIAOVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): Một GV hướng dẫn nhiều đề tài. Mỗi đề tài *chỉ có 1* GV hướng dẫn.
+    - `GIAOVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): Một GV phản biện nhiều đề tài. Mỗi đề tài *chỉ có 1* GV phản biện.
+    - `GIAOVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): Một GV có thể làm chủ tịch nhiều HĐ. Mỗi HĐ *chỉ có 1* chủ tịch.
+    - `GIAOVIEN` (1) - (n) `HOIDONG` (THƯ KÝ): Một GV có thể làm thư ký nhiều HĐ. Mỗi HĐ *chỉ có 1* thư ký.
+    - `HOIDONG` (1) - (n) `DETAI`: Một HĐ chấm nhiều đề tài. Mỗi đề tài *chỉ thuộc 1* HĐ.
+    - `SINHVIEN` (n) - (n) `DETAI` (THỰC HIỆN): Đây là mối quan hệ n-n.
+        - Một `DETAI` có tối đa 3 `SINHVIEN`.
+        - Một `SINHVIEN` có thể thực hiện tối đa 2 `DETAI` (lần 1 rớt, làm lại lần 2).
+        - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết (`THUCHIEN`) để lưu điểm và thông tin lần bảo vệ.
+- **Thuộc tính quan trọng:**
+    - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN` để lưu các điểm này.
+    - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (ví dụ: bảng `THUCHIEN` có thể có thuộc tính `LanBaoVe`).
 
-### Task 1: Mô hình ERD (Mức Quan niệm)
-
-ERD theo ký hiệu Chen:
-
-- `[KHOA] ---(1,1)---<QL_GV>---(1,n)--- [GIAOVIEN]`
-  
-- `[KHOA] ---(1,1)---<QL_SV>---(1,n)--- [SINHVIEN]`
-  
-- `[KHOA] ---(1,1)---<QL_DT>---(1,n)--- [DETAI]`
-  
-- `[KHOA] ---(1,1)---<THANHLAP>---(1,n)--- [HOIDONG]`
-  
-- `[GIAOVIEN] ---(0,n)---<HUONGDAN>---(1,1)--- [DETAI]`
-  
-- `[GIAOVIEN] ---(0,n)---<PHANBIEN>---(1,1)--- [DETAI]`
-  
-- `[GIAOVIEN] ---(0,n)---<LAMCHUTICH>---(1,1)--- [HOIDONG]`
-  
-- `[GIAOVIEN] ---(0,n)---<LAMTHUKY>---(1,1)--- [HOIDONG]`
-  
-- `[HOIDONG] ---(1,n)---<BAOVE>---(1,1)--- [DETAI]`
-  
-- `[SINHVIEN] ---(1,3)---<THUCHIEN>---(1,2)--- [DETAI]`
-  - Mối kết hợp `THUCHIEN` có các thuộc tính: `LanBaoVe`, `DiemHD`, `DiemPB`, `DiemCT`.
-  
-
-### Task 2: Mô hình Class Diagram (Mức Quan niệm)
-
-(Sử dụng ký hiệu UML hoặc vẽ lại trong Draw.io)
-
-```ASN.1
-+-----------+ (1)  (QL)  (1..*) +-----------+
-|   KHOA    |-------------------| GIAOVIEN  |
-+-----------+                   +-----------+
-| -MaKhoa   | (1)  (QL)  (1..*) | -MaGV     |
-| -TenKhoa  |-------------------| -TenGV    |
-+-----------+ \                 | -...      |
-    |         \ (1) (QL) (1..*) +-----------+
-(1) | (QL)     \                / (0..*) | (0..*)
-    | (1..*)    \+-----------+ / (HD)   | (PB)
-    |            | SINHVIEN  |/ (1)     | (1)
-    |            +-----------+          |
-    |            | -MaSV     |          |
-    |            | -TenSV    |          |
-    |            +-----------+          |
-    |                | (1..3)           |
-    |                |                  |
-    | (1)       +-------------+ (1..2) +--------+
-    | (TL)      |  THUCHIEN   |--------| DETAI  |
-    | (1..*)    | (Assoc. Cls)|        +--------+
-    |           +-------------+        | -MaDT  |
-    |           | -LanBaoVe   |        | -TenDT |
-    |           | -DiemHD     |        | -...   |
-    |           | -DiemPB     |        +--------+
-    |           | -DiemCT     |            | (1)
-    |           +-------------+            | (BV)
-    |                                      | (1..*)
-+-----------+ (1)                  (1) +-----------+
-| HOIDONG   |------------------------| GIAOVIEN  | (CTich)
-+-----------+                        | (0..*)
-| -MaHD     | (1)                  (1) +-----------+
-| -NgayBV   |------------------------| GIAOVIEN  | (TKy)
-| -...      |                        | (0..*)
-+-----------+                        +-----------+
-    | (1..*)
-    | (BV)
-    | (1)
-+--------+
-| DETAI  |
-+--------+
-```
-
-### Task 3: Mô hình Logic (Mức Logic)
-
-Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngoại)
-
-1. **KHOA** (`MaKhoa` (PK), `TenKhoa`)
-   
-2. **GIAOVIEN** (`MaGV` (PK), `TenGV`, `DiaChi`, `SDT`, `HocVi`, `ChuyenNganh`, `MaKhoa` (FK))
-   
-3. **SINHVIEN** (`MaSV` (PK), `TenSV`, `Lop`, `MaKhoa` (FK))
-   
-4. **HOIDONG** (`MaHD` (PK), `NgayBV`, `DiaChiBV`, `MaKhoa` (FK), `MaGV_CT` (FK), `MaGV_TK` (FK))
-   
-5. **DETAI** (`MaDT` (PK), `TenDT`, `ThoiGianBD`, `ThoiGianKT`, `MaKhoa` (FK), `MaGVHD` (FK), `MaGVPB` (FK), `MaHD` (FK))
-   
-6. **THUCHIEN** (`MaSV` (PK, FK), `MaDT` (PK, FK), `LanBaoVe`, `DiemHD`, `DiemPB`, `DiemCT`)
-   
-    - Theo nghiệp vụ "đề tài lần 1 phải khác lần 2", một `SINHVIEN` không thể làm cùng 1 `DETAI` 2 lần. Do đó, khóa chính là cặp `(MaSV, MaDT)`. `LanBaoVe` (1 hay 2) chỉ là thuộc tính mô tả cho lần thực hiện đó của sinh viên.
-
-## Bài toán 2: Quản lý Cửa hàng Xe máy
-
-### Bảng Viết Tắt
-
-| Từ/Cụm Từ       | Diễn Giải                   | Loại     | Nơi Sử Dụng            |
-| --------------- | --------------------------- | -------- | ---------------------- |
-| DAILY           | Đại Lý                      | Entity   |                        |
-| NHANVIEN        | Nhân Viên                   | Entity   |                        |
-| KHACHHANG       | Khách Hàng                  | Entity   |                        |
-| HOPDONG         | Hợp Đồng                    | Entity   |                        |
-| XE              | Xe/Phương tiện/Sản phẩm     | Entity   |                        |
-| THANHTOAN       | Thanh Toán                  | Entity   |                        |
-| BAOHANH         | Bảo Hành                    | Entity   |                        |
-| CHITIET_BAOHANH | Chi Tiết Bảo Hành           | Entity   |                        |
-| NV_HANHCHANH    | Nhân Viên Hành Chánh        | Entity   | Bảng NV_HANHCHANH      |
-| NV_KYTHUAT      | Nhân Viên Kỹ Thuật          | Entity   | Bảng NV_KYTHUAT        |
-| MaDaiLy         | Mã Đại Lý                   | Property | DAILY (Khóa chính)     |
-| MaNV            | Mã Nhân Viên                | Property | NHANVIEN (Khóa chính)  |
-| TrinhDoHV       | Trình Độ Học Vấn            | Property | NV_HANHCHANH           |
-| SoNamKN         | Số Năm Kinh Nghiệm          | Property | NV_KYTHUAT             |
-| MaKH            | Mã Khách Hàng               | Property | KHACHHANG (Khóa chính) |
-| SoHD            | Số Hợp Đồng                 | Property | HOPDONG (Khóa chính)   |
-| TienPhaiTT      | Tiền Phải Thanh Toán (Tổng) | Property | HOPDONG                |
-| SoKhung         | Số Khung (xe)               | Property | XE (Khóa chính)        |
-| MaTT            | Mã Thanh Toán               | Property | THANHTOAN (Khóa chính) |
-| MaPhieuBH       | Mã Phiếu Bảo Hành           | Property | BAOHANH (Khóa chính)   |
-| MaLK            | Mã Linh Kiện                | Property | LINHKIEN (Khóa chính)  |
-| MaNV_Lap        | Mã Nhân Viên Lập (Hợp đồng) | Property | HOPDONG (Khóa ngoại)   |
-| MaNV_KeToan     | Mã Nhân Viên Kế Toán        | Property | HOPDONG (Khóa ngoại)   |
-| MaNV_Nhan       | Mã Nhân Viên Nhận (tiền)    | Property | THANHTOAN (Khóa ngoại) |
-| MaKH_Tra        | Mã Khách Hàng Trả (tiền)    | Property | THANHTOAN (Khóa ngoại) |
-| MaNV_KT         | Mã Nhân Viên Kỹ Thuật (BH)  | Property | BAOHANH (Khóa ngoại)   |
-| CHITIET_BH      | Chi Tiết Bảo Hành           | Property | Bảng CHITIET_BAOHANH   |
-
-### Phân tích Thực thể và Mối kết hợp
-
-#### Thực thể (Entities)
-
-- `DAILY`:
-  - Nơi cửa hàng hoạt động.
-  
-  - `MaDaiLy`, `DiaChi`
-  
-- `NHANVIEN`:
-    - Người làm việc (Chung).
-
-    - `MaNV`, `TenNV`
-
-- `NV_HANHCHANH`:
-    - Loại NV (Kế thừa).
-
-    - `ChucVu`, `PhongBan`, `TrinhDoHV`
-
-- `NV_KYTHUAT`:
-    - Loại NV (Kế thừa).
-
-    - `ChucVu`, `BacTho`, `SoNamKN`
-
-- `KHACHHANG`:
-    - Người mua xe.
-
-    - `MaKH`, `TenKH`, `DiaChi`, `SDT`
-
-- `HOPDONG`:
-    - Hóa đơn mua bán.
-
-    - `SoHD`, `NgayHD`, `ThoiGianBH`, `TienPhaiTT`
-
-- `XE`:
-    - Sản phẩm.
-
-    - `SoKhung`, `SoMay`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`
-
-- `THANHTOAN`:
-    - Phiếu/lần thanh toán trả góp.
-
-    - `MaTT`, `NgayTra`, `SoTien`
-
-- `BAOHANH`:
-    - Phiếu nhận xét bảo hành.
-
-    - `MaPhieuBH`, `LyDoBH`, `LoiThuocVe`, `GiaTienTong`
-
-- `LINHKIEN`:
-    - Linh kiện dùng khi bảo hành.
-    - `MaLK`, `TenLK`
-
-#### Mối quan hệ và Bản số:
-
-- `DAILY` - `NHANVIEN`: (1,n).
-  - 1 DAILY có (1,n) NHANVIEN.
-  
-  - 1 NHANVIEN làm tại (1,1) DAILY.
-  
-- `NHANVIEN` -> `NV_HANHCHANH`, `NV_KYTHUAT`:
-    - Kế thừa (inherit).
-    - Nên tách riêng trong NHANVIEN, NV_HANHCHINH, NV_KYTHUAT trong ERD, chỉ biểu diễn mối quan hệ kế thừa trong Class Diagram.
-    
-- `KHACHHANG` - `HOPDONG`: (1,n).
-    - 1 KHACHHANG có (1,n) HOPDONG.
-
-    - 1 HOPDONG của (1,1) KHACHHANG.
-
-- `NV_HANHCHANH` - `HOPDONG (Lập HĐ)`: (1,n).
-    - 1 NV_HANHCHANH lập (0,n) HOPDONG.
-
-    - 1 HOPDONG được lập bởi (1,1) NV_HC.
-
-- `NV_HANHCHANH` - `HOPDONG (Kế toán)`: (1,n).
-    - 1 NV_HC (Kế toán) duyệt (0,n) HOPDONG.
-
-    - 1 HOPDONG được duyệt bởi (1,1) NV_HC (Kế toán).
-
-- `HOPDONG` - `XE`: (1,n).
-    - 1 HOPDONG có (1,n) XE.
-
-    - 1 XE (với SoKhung) chỉ thuộc (1,1) HOPDONG.
-
-- `HOPDONG` - `THANHTOAN`: (1,n).
-    - Nghiệp vụ: trả hết hay trả góp, nhiều nhất 3 lần cho mỗi hóa đơn.
-      
-    - Để chuẩn hóa, ta không lưu `TienDaTT`, `NgayTra1`, `NgayTra2` trên `HOPDONG`. Thay vào đó, mọi lần thanh toán (kể cả lần 1) đều được ghi vào bảng `THANHTOAN`.
-      
-    - 1 HOPDONG có (1,3) THANHTOAN.
-
-    - 1 THANHTOAN thuộc (1,1) HOPDONG.
-
-- `KHACHHANG` - `BAOHANH`: (1,n).
-    - 1 KHACHHANG yêu cầu (0,n) BAOHANH.
-
-    - 1 BAOHANH của (1,1) KHACHHANG.
-
-- `XE` - `BAOHANH`: (1,n).
-    - 1 XE được (0,n) BAOHANH.
-
-    - 1 BAOHANH cho (1,1) XE.
-
-- `NV_KYTHUAT` - `BAOHANH`: (1,n).
-    - 1 NV_KT thực hiện (0,n) BAOHANH.
-
-    - 1 BAOHANH do (1,n) NV_KT thực hiện.
-
-- `BAOHANH` - `LINHKIEN`: (0,n).
-    - 1 BAOHANH có thể cần (0,n) LINHKIEN.
-    - 1 LINHKIEN có thể dùng cho (0,1) BAOHANH.
-    - Mối kết hợp `CHITIET_BH` có thuộc tính: `GiaTien` (cho linh kiện đó).
-
-### Task 1: Mô hình ERD (Mức Quan niệm)
-
-- `[DAILY] ---(1,n)---<LAMVIEC>---(1,1)--- [NHANVIEN]`
-- `[NHANVIEN] --- (ISA) --- [NV_HANHCHANH]`
-- `[NHANVIEN] --- (ISA) --- [NV_KYTHUAT]`
-- `[KHACHHANG] ---(1,n)---<LAP_HD>---(1,1)--- [HOPDONG]`
-- `[NV_HANHCHANH] ---(0,n)---<NV_LAP>---(1,1)--- [HOPDONG]`
-- `[NV_HANHCHANH] ---(0,n)---<NV_KETOAN>---(1,1)--- [HOPDONG]`
-- `[HOPDONG] ---(1,n)---<CHITIET_HD>---(1,1)--- [XE]`
-- `[HOPDONG] ---(1,3)---<CO_TT>---(1,1)--- [THANHTOAN]`
-- `[KHACHHANG] ---(0,n)---<YEUCAU_BH>---(1,1)--- [BAOHANH]`
-- `[XE] ---(0,n)---<DUOC_BH>---(1,1)--- [BAOHANH]`
-- `[NV_KYTHUAT] ---(0,n)---<THUCHIEN_BH>---(1,n)--- [BAOHANH]`
-- `[BAOHANH] ---(0,n)---<CHITIET_BH>---(0,1)--- [LINHKIEN]`
-  - `CHITIET_BH` có thuộc tính: `GiaTien`.
-
-Sơ đồ ERD (Chen notation):
-
-
-
-
-
-### Task 2: Mô hình Class Diagram (Mức Quan niệm)
+### 2. Mô hình ERD (PlantUML @startchen - Bài 1)
 
 ```
-+-----------+ (1)  (Làm việc) (1..*) +---------------+
-|   DAILY   |-----------------------|   NHANVIEN    | (Abstract)
-+-----------+                       +---------------+
-| -MaDaiLy  |                       | #MaNV         |
-| -DiaChi   |                       | #TenNV        |
-+-----------+                       +---------------+
-                                     /_\     /_\
-                                      |       |
-                         +---------------+   +---------------+
-                         | NV_HANHCHANH  |   | NV_KYTHUAT    |
-                         +---------------+   +---------------+
-                         | -ChucVu       |   | -ChucVu       |
-                         | -PhongBan     |   | -BacTho       |
-                         | -TrinhDoHV    |   | -SoNamKN      |
-                         +---------------+   +---------------+
-                                | (0..*)       | (0..*)
-(Lập) (1) | (KToán)(1)     | (THiện)
-          |                |
-+-----------+ (1) (Lập) (1..*) +-----------+
-| KHACHHANG |-------------------| HOPDONG   |
-+-----------+                   +-----------+
-| -MaKH     |                   | -SoHD     |
-| -TenKH    |                   | -TienPhaiTT |
-| -...      |                   | -...      |
-+-----------+                   +-----------+
-    | (1)                         | (1)
-    |                             | (1..3)
-    |                             |
-    | (Y/cầu)               (Có) / (Composition)
-    | (0..*)                     /
-    |                   +-----------+
-    |                   | THANHTOAN |
-    |                   +-----------+
-    |                   | -MaTT     |
-    |                   | -SoTien   |
-    |                   +-----------+
-    |
-+-----------+ (1) (BH) (0..*) +--------+
-| BAOHANH   |-----------------|   XE   |
-+-----------+                 +--------+
-| -MaPhieuBH|                 | -SoKhung |
-| -...      |                 | -...     |
-+-----------+                 +--------+
-    | (1)                         | (1)
-    | (BH)                        | (Chi tiết)
-    | (0..*)                      | (1..*)
-+---------------+               +-----------+
-| NV_KYTHUAT    |               | HOPDONG   |
-+---------------+               +-----------+
-    | (1)
-    |
-    | (0..*)
-+------------------+ (Association Class)
-|   CHITIET_BH     |
-+------------------+
-| -GiaTien         |
-+------------------+
-    | (1..*) | (1..*)
-    |        |
-+-----------+ +-----------+
-| BAOHANH   | | LINHKIEN  |
-+-----------+ +-----------+
-              | -MaLK     |
-              | -TenLK    |
-              +-----------+
+@startchen
+' Sơ đồ ERD cho Bài 1: Quản lý Đề tài
+skinparam defaultFontName "Inter"
+!pragma layout neato
+
+' --- Entities ---
+entity KHOA {
+  * MaKhoa
+  TenKhoa
+}
+
+entity GIAOVIEN as GV {
+  * MaGV
+  TenGV
+  DiaChi
+  SDT
+  HocVi
+  ChuyenNganh
+}
+
+entity HOIDONG as HD {
+  * MaHD
+  NgayBaoVe
+  DiaChiCuThe
+}
+
+entity DETAI as DT {
+  * MaDT
+  TenDT
+  TGBatDau
+  TGKetThuc
+}
+
+entity SINHVIEN as SV {
+  * MaSV
+  TenSV
+  NamHoc (vd: 4)
+}
+
+' --- Relationships ---
+relationship THUOC {
+  ' 1 Khoa co nhieu De Tai
+}
+KHOA -(1,n)- THUOC
+DT -(1,1)- THUOC
+
+relationship QUANLY_GV {
+  ' 1 Khoa co nhieu Giao Vien
+}
+KHOA -(1,n)- QUANLY_GV
+GV -(1,1)- QUANLY_GV
+
+relationship HUONGDAN {
+  ' 1 GV huong dan nhieu De Tai
+  ' 1 De Tai chi co 1 GVHD
+}
+GV -(1,n)- HUONGDAN
+DT -(1,1)- HUONGDAN
+
+relationship PHANBIEN {
+  ' 1 GV phan bien nhieu De Tai
+  ' 1 De Tai chi co 1 GVPB
+}
+GV -(1,n)- PHANBIEN
+DT -(1,1)- PHANBIEN
+
+relationship CHAM_TAI {
+  ' 1 Hoi Dong cham nhieu De Tai
+  ' 1 De Tai chi duoc cham boi 1 HD
+}
+HD -(1,n)- CHAM_TAI
+DT -(1,1)- CHAM_TAI
+
+relationship LAM_CHUTICH {
+  ' 1 GV la Chu Tich nhieu HD
+  ' 1 HD chi co 1 Chu Tich
+}
+GV -(1,n)- LAM_CHUTICH
+HD -(1,1)- LAM_CHUTICH
+
+relationship LAM_THUKY {
+  ' 1 GV la Thu Ky nhieu HD
+  ' 1 HD chi co 1 Thu Ky
+}
+GV -(1,n)- LAM_THUKY
+HD -(1,1)- LAM_THUKY
+
+relationship THUCHIEN as "THUC HIEN" {
+  ' Quan he n-n giua SV va DT
+  ' Luu diem va lan bao ve
+  Diem_GVHD
+  Diem_GVPB
+  Diem_ChuTich
+  LanBaoVe (1 hoac 2)
+}
+SV -(1,2)- THUCHIEN ' 1 SV thuc hien max 2 lan
+DT -(1,3)- THUCHIEN ' 1 DT co max 3 SV
+
+@endchen
 ```
 
-### Task 3: Mô hình Logic (Mức Logic)
+### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 1)
 
-Chuyển đổi sang Lược đồ Quan hệ. (PK: Khóa chính, FK: Khóa ngoại)
+```
+@startuml
+' Sơ đồ Class Diagram cho Bài 1
+skinparam classAttributeIconSize 0
+skinparam defaultFontName "Inter"
 
-1. **DAILY** (`MaDaiLy` (PK), `DiaChi`)
-   
-2. **NHANVIEN** (`MaNV` (PK), `TenNV`, `MaDaiLy` (FK))
-   - _Ghi chú (Kế thừa):_ Đây là bảng cha, chứa các thuộc tính chung.
-    
-3. **NV_HANHCHANH** (`MaNV` (PK, FK), `ChucVu`, `PhongBan`, `TrinhDoHV`)
-   
-    - _Ghi chú (Kế thừa):_ Tham chiếu đến `NHANVIEN`.
-    
-4. **NV_KYTHUAT** (`MaNV` (PK, FK), `ChucVu`, `BacTho`, `SoNamKN`)
-   
-    - _Ghi chú (Kế thừa):_ Tham chiếu đến `NHANVIEN`.
-    
-5. **KHACHHANG** (`MaKH` (PK), `TenKH`, `DiaChi`, `SDT`)
-   
-6. **LINHKIEN** (`MaLK` (PK), `TenLK`)
-   
-7. **HOPDONG** (`SoHD` (PK), `NgayHD`, `ThoiGianBH`, `TienPhaiTT`, `MaKH` (FK), `MaNV_Lap` (FK), `MaNV_KeToan` (FK))
-   
-    - _Ghi chú (Tinh chỉnh):_ Đã loại bỏ `TienDaTT`, `NgayTra1`, `NgayTra2` để đưa vào bảng `THANHTOAN`.
-    
-8. **XE** (`SoKhung` (PK), `SoSuon`, `SoPK`, `NuocSX`, `LoaiXe`, `MauXe`, `SoHD` (FK))
-   
-    - Khóa ngoại: `SoHD` (tham chiếu HOPDONG)
-    
-9. **THANHTOAN** (`MaTT` (PK), `NgayTra`, `SoTien`, `MaNV_Nhan` (FK), `MaKH_Tra` (FK), `SoHD` (FK))
-   
-    - Khóa ngoại: `SoHD` (tham chiếu HOPDONG)
-    
-10. **BAOHANH** (`MaPhieuBH` (PK), `LyDoBH`, `LoiThuocVe`, `GiaTienTong`, `MaKH` (FK), `SoKhung` (FK), `MaNV_KT` (FK))
-    
-    - Khóa ngoại: `MaKH`, `SoKhung`, `MaNV_KT`.
-    
-11. **CHITIET_BAOHANH** (`MaPhieuBH` (PK, FK), `MaLK` (PK, FK), `GiaTien`)
-    
-    - Khóa chính: (`MaPhieuBH`, `MaLK`)
-      
-    - Khóa ngoại: `MaPhieuBH` (tham chiếu BAOHANH), `MaLK` (tham chiếu LINHKIEN)
+class Khoa {
+  - maKhoa: string
+  - tenKhoa: string
+}
 
+class GiaoVien {
+  - maGV: string
+  - tenGV: string
+  - diaChi: string
+  - sdt: string
+  - hocVi: string
+  - chuyenNganh: string
+}
+
+class HoiDong {
+  - maHD: string
+  - ngayBaoVe: Date
+  - diaChi: string
+}
+
+class DeTai {
+  - maDT: string
+  - tenDT: string
+  - tgBatDau: Date
+  - tgKetThuc: Date
+}
+
+class SinhVien {
+  - maSV: string
+  - tenSV: string
+  + tinhDiemTB()
+}
+
+' Association Class cho quan he n-n
+' De luu diem cua tung SV cho tung DeTai
+class ThucHien {
+  - diemGVHD: float
+  - diemGVPB: float
+  - diemChuTich: float
+  - lanBaoVe: int
+}
+
+' --- Associations ---
+Khoa "1" -- "0..*" DeTai : "có"
+Khoa "1" -- "0..*" GiaoVien : "quản lý"
+
+' Quan he n-n giua SinhVien va DeTai
+(SinhVien, ThucHien) .. DeTai
+SinhVien "1..*" -- (ThucHien)
+(ThucHien) -- "1" DeTai
+' Ghi chu: 1 SV thuc hien 1 DeTai,
+' nhung co the thuc hien DeTai khac neu rot.
+' 1 DeTai co 1-3 SV.
+' SinhVien "1" -- "1..3" DeTai : "Thực hiện (1..3)"
+' -> Cach dung Association Class tot hon
+
+DeTai "0..*" -- "1" GiaoVien : "hướng dẫn"
+DeTai "0..*" -- "1" GiaoVien : "phản biện"
+DeTai "0..*" -- "1" HoiDong : "bảo vệ tại"
+
+HoiDong "0..*" -- "1" GiaoVien : "chủ tịch"
+HoiDong "0..*" -- "1" GiaoVien : "thư ký"
+
+@enduml
+```
+
+### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 1)
+
+- `KHOA` (**MaKhoa**, TenKhoa)
+- `GIAOVIEN` (**MaGV**, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
+    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
+- `HOIDONG` (**MaHD**, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
+    - `MaGV_ChuTich` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+    - `MaGV_ThuKy` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+- `DETAI` (**MaDT**, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
+    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
+    - `MaGV_HuongDan` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+    - `MaGV_PhanBien` (FK) tham chiếu đến `GIAOVIEN(MaGV)`.
+    - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
+- `SINHVIEN` (**MaSV**, TenSV, NamHoc, ...)
+- `THUCHIEN` (***MaSV***, ***MaDT***, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
+    - Khóa chính (PK): (**MaSV**, **MaDT**)
+    - *Ghi chú: Để hỗ trợ "bảo vệ 2 lần", khóa chính nên là (**MaSV**, **LanBaoVe**).*
+    - *Lược đồ đề xuất (Hỗ trợ 2 lần):*
+    - `THUCHIEN` (***MaSV***, ***LanBaoVe***, *MaDT*, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
+        - Khóa chính (PK): (**MaSV**, **LanBaoVe**)
+        - `MaSV` (FK) tham chiếu đến `SINHVIEN(MaSV)`.
+        - `MaDT` (FK) tham chiếu đến `DETAI(MaDT)`.
+        - Một ràng buộc `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
+
+## Bài 2: Quản Lý Bán Xe Máy
+
+### 1. Phân tích yêu cầu (Bài 2)
+
+- **Thực thể (Entities):**
+    - `DAILY`: Nơi nhân viên làm việc.
+    - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
+    - `KHACHHANG`: Người mua xe.
+    - `HOADON`: Hóa đơn bán xe (chứa 1 hoặc nhiều xe).
+    - `XE`: Thông tin xe (SoKhung, SoSuon là duy nhất).
+    - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
+    - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
+    - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
+- **Inheritance (Kế thừa):**
+    - `NHANVIEN` là lớp cha.
+    - `NV_HANHCHANH` là lớp con (có: TrinhDoHocVan, ThuocPhongBan).
+    - `NV_KYTHUAT` là lớp con (có: BacTho, SoNamKinhNghiem).
+- **Mối quan hệ (Relationships):**
+    - `DAILY` (1) - (n) `NHANVIEN`: Một đại lý có nhiều nhân viên.
+    - `NHANVIEN` (n) - `HOADON`: Một HĐ có 1 NV lập, 1 NV kế toán. Một NV có thể lập/duyệt nhiều HĐ.
+    - `KHACHHANG` (1) - (n) `HOADON`: Một KH có thể có nhiều HĐ.
+    - `HOADON` (1) - (n) `XE`: Một HĐ có thể mua 1 hoặc nhiều xe. Một xe (duy nhất) chỉ thuộc 1 HĐ.
+    - `HOADON` (1) - (1..3) `PHIEUTHANHTOAN`: Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
+    - `XE` (1) - (n) `BAOHANH`: Một xe có thể được bảo hành nhiều lần.
+    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG): Đây là quan hệ n-n, vì 1 phiếu BH có thể dùng nhiều linh kiện, 1 loại linh kiện có thể dùng cho nhiều phiếu BH. Cần 1 bảng liên kết `CHITIET_BAOHANH`.
+    - `CHITIET_BAOHANH` (bảng liên kết): Sẽ chứa LyDo, LoiThuocVe, GiaTien.
+
+### 2. Mô hình ERD (PlantUML @startchen EER - Bài 2)
+
+```
+@startchen
+' Sơ đồ EER (Enhanced ER) cho Bài 2
+' Vi ERD co ban khong ho tro Ke thua (Inheritance),
+' chung ta su dung ky phap mo rong (EER) voi ky hieu "=>= d"
+skinparam defaultFontName "Inter"
+!pragma layout neato
+
+' --- Entities ---
+entity DAILY {
+  * MaDaily
+  ViTri
+}
+
+entity NHANVIEN as NV {
+  * MaNV
+  TenNV
+  ChucVu
+}
+
+entity NV_HANHCHANH as NVHC {
+  TrinhDoHocVan
+  PhongBan
+}
+
+entity NV_KYTHUAT as NVKT {
+  BacTho
+  SoNamKinhNghiem
+}
+
+' --- EER Inheritance ---
+' d = disjoint (khong giao nhau)
+NV =>= d { NVHC, NVKT }
+
+entity KHACHHANG as KH {
+  * MaKH
+  TenKH
+  DiaChi
+  SDT
+}
+
+entity HOADON as HD {
+  * SoHD
+  NgayHD
+  ThoiGianBH
+  TienPhaiTT
+  TienDaTT
+  GiamTru (cho 2% hoac 5%)
+}
+
+entity XE {
+  * SoKhung
+  * SoSuon
+  NuocSX
+  LoaiXe
+  MauXe
+  SoPK
+}
+
+entity PHIEUTHANHTOAN as PTT {
+  * MaPTT
+  NgayTra
+  SoTien
+}
+
+entity BAOHANH as BH {
+  * MaBH
+  NgayYeuCau
+}
+
+entity LINHKIEN as LK {
+  * MaLK
+  TenLK
+}
+
+' --- Relationships ---
+relationship LAM_TAI {
+}
+DAILY -(1,n)- LAM_TAI
+NV -(1,1)- LAM_TAI
+
+relationship LAP_HD {
+}
+NV -(1,n)- LAP_HD
+HD -(1,1)- LAP_HD
+
+relationship DUYET_HD {
+  ' NV Ke Toan
+}
+NV -(1,"KeToan",n)- DUYET_HD
+HD -(1,1)- DUYET_HD
+
+relationship MUA {
+}
+KH -(1,n)- MUA
+HD -(1,1)- MUA
+
+relationship GOM {
+  ' 1 HD co nhieu Xe
+}
+HD -(1,n)- GOM
+XE -(1,1)- GOM
+
+relationship TRA_GOP {
+  ' 1 HD co max 3 PTT
+}
+HD -(1,3)- TRA_GOP
+PTT -(1,1)- TRA_GOP
+
+relationship YEUCAU_BH {
+}
+XE -(1,n)- YEUCAU_BH
+BH -(1,1)- YEUCAU_BH
+
+relationship CHITIET_BH {
+  ' n-n giua BAOHANH va LINHKIEN
+  LyDo
+  LoiThuocVe (Khach/SP)
+  GiaTien
+}
+BH -(1,n)- CHITIET_BH
+LK -(1,n)- CHITIET_BH
+@endchen
+```
+
+### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 2)
+
+```
+@startuml
+' Sơ đồ Class Diagram cho Bài 2
+skinparam classAttributeIconSize 0
+skinparam defaultFontName "Inter"
+
+class Daily {
+  - maDaily: string
+  - viTri: string
+}
+
+' --- Inheritance ---
+abstract class NhanVien {
+  # maNV: string
+  # tenNV: string
+  # chucVu: string
+}
+class NVHanhChanh extends NhanVien {
+  - trinhDoHocVan: string
+  - phongBan: string
+}
+class NVKyThuat extends NhanVien {
+  - bacTho: string
+  - soNamKN: int
+}
+' ------------------
+
+class KhachHang {
+  - maKH: string
+  - tenKH: string
+  - diaChi: string
+  - sdt: string
+}
+
+class HoaDon {
+  - soHD: string
+  - ngayHD: Date
+  - thoiGianBH: string
+  - tienPhaiTT: float
+  - tienDaTT: float
+  - giamTru: float
+  + tinhTienConLai()
+}
+
+class Xe {
+  - soKhung: string
+  - soSuon: string
+  - nuocSX: string
+  - loaiXe: string
+}
+
+class PhieuThanhToan {
+  - maPTT: string
+  - ngayTra: Date
+  - soTien: float
+}
+
+class BaoHanh {
+  - maBH: string
+  - ngayYeuCau: Date
+}
+
+class LinhKien {
+  - maLK: string
+  - tenLK: string
+}
+
+' --- Association Class ---
+class ChiTietBaoHanh {
+  - lyDo: string
+  - loiThuocVe: string
+  - giaTien: float
+}
+
+' --- Associations ---
+Daily "1" -- "0..*" NhanVien : "có"
+
+KhachHang "1" -- "0..*" HoaDon : "mua"
+HoaDon "1" -- "1" NhanVien : "được lập bởi"
+HoaDon "1" -- "1" NhanVien : "được duyệt bởi (kế toán)"
+HoaDon "1" -- "1..*" Xe : "bao gồm"
+HoaDon "1" -- "1..3" PhieuThanhToan : "có"
+
+Xe "1" -- "0..*" BaoHanh : "yêu cầu"
+(BaoHanh, ChiTietBaoHanh) .. LinhKien
+BaoHanh "1" -- "0..*" (ChiTietBaoHanh)
+(ChiTietBaoHanh) -- "1..*" LinhKien
+@enduml
+```
+
+### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 2)
+
+Chúng ta có 3 cách chính để chuyển đổi kế thừa sang mô hình logic:
+
+1. **Một bảng duy nhất (Single Table):** 1 bảng `NHANVIEN` cho tất cả, các cột con (BacTho, TrinhDo) có thể `NULL`.
+2. **Bảng cho mỗi lớp cụ thể (Table per Concrete Class):** 2 bảng `NV_HANHCHANH`, `NV_KYTHUAT`. (Không khuyến khích).
+3. **Bảng cho mỗi lớp (Table per Subclass):** 3 bảng: `NHANVIEN` (chung), `NV_HANHCHANH` (riêng), `NV_KYTHUAT` (riêng).
+
+Chúng ta sẽ chọn phương án 3 (Table per Subclass) vì nó rõ ràng nhất.
+
+- `DAILY` (**MaDaily**, ViTri, ...)
+- `NHANVIEN` (**MaNV**, TenNV, ChucVu, *MaDaily*, LoaiNV)
+    - `LoaiNV` dùng để xác định là 'HC' hay 'KT'.
+    - `MaDaily` (FK) tham chiếu đến `DAILY(MaDaily)`.
+- `NV_HANHCHANH` (***MaNV***, TrinhDoHocVan, PhongBan)
+    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `NV_KYTHUAT` (***MaNV***, BacTho, SoNamKinhNghiem)
+    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `KHACHHANG` (**MaKH**, TenKH, DiaChi, SDT)
+- `HOADON` (**SoHD**, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
+    - `MaKH` (FK) tham chiếu đến `KHACHHANG(MaKH)`.
+    - `MaNV_Lap` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+    - `MaNV_KeToan` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `XE` (***SoKhung***, ***SoSuon***, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
+    - Khóa chính (PK): (**SoKhung**, **SoSuon**).
+    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+- `PHIEUTHANHTOAN` (**MaPTT**, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
+    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+    - `MaNV_NhanTien` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `BAOHANH` (**MaBH**, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
+    - Khóa ngoại (FK) tham chiếu đến `XE(SoKhung, SoSuon)`.
+- `LINHKIEN` (**MaLK**, TenLK, DonGia)
+- `CHITIET_BAOHANH` (***MaBH***, ***MaLK***, LyDo, LoiThuocVe, GiaTien)
+    - Khóa chính (PK): (**MaBH**, **MaLK**).
+    - `MaBH` (FK) tham chiếu đến `BAOHANH(MaBH)`.
+    - `MaLK` (FK) tham chiếu đến `LINHKIEN(MaLK)`.
