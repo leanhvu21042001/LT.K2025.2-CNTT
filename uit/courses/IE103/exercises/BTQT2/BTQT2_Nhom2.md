@@ -214,15 +214,17 @@ DETAI -(1,3)- THUCHIEN
 
 ### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 1)
 
-```
+```sql
 @startuml
-' Sơ đồ Class Diagram cho Bài 1
-skinparam classAttributeIconSize 0
-skinparam defaultFontName "Inter"
+
+''skinparam classAttributeIconSize 0
+skinparam defaultFontName "Iosevka"
 
 class Khoa {
   - maKhoa: string
   - tenKhoa: string
+  + bonhiemTruongKhoa()
+  + cungcapDetai()
 }
 
 class GiangVien {
@@ -232,12 +234,16 @@ class GiangVien {
   - sdt: string
   - hocVi: string
   - chuyenNganh: string
+  + huongdanDT()
+  + phanbienDT()
 }
 
 class HoiDong {
   - maHD: string
   - ngayBaoVe: Date
   - diaChi: string
+  + bonhiemChuTich()
+  + bonhiemThuKy()
 }
 
 class DeTai {
@@ -245,6 +251,8 @@ class DeTai {
   - tenDT: string
   - tgBatDau: Date
   - tgKetThuc: Date
+  + getMaDT()
+  + getTenDT()
 }
 
 class SinhVien {
@@ -260,16 +268,18 @@ class ThucHien {
   - diemGVPB: float
   - diemChuTich: float
   - lanBaoVe: int
+  + tinhdiemTrungBinh(): float
+  + getLanBaoVe(): int
 }
 
 ' --- Associations ---
 Khoa "1" -- "0..*" DeTai : "có"
-Khoa "1" -- "0..*" GiaoVien : "quản lý"
+Khoa "1" -- "0..*" GiangVien : "quản lý"
 
 ' Quan he n-n giua SinhVien va DeTai
 (SinhVien, ThucHien) .. DeTai
-SinhVien "1..*" -- (ThucHien)
-(ThucHien) -- "1" DeTai
+SinhVien "1..*" -- ThucHien
+ThucHien -- "1" DeTai
 ' Ghi chu: 1 SV thuc hien 1 DeTai,
 ' nhung co the thuc hien DeTai khac neu rot.
 ' 1 DeTai co 1-3 SV.
