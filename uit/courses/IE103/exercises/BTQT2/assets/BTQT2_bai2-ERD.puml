@@ -2,60 +2,60 @@
 ' Sơ đồ EER (Enhanced ER) cho Bài 2
 ' Vi ERD co ban khong ho tro Ke thua (Inheritance),
 ' chung ta su dung ky phap mo rong (EER) voi ky hieu "=>= d"
-skinparam defaultFontName "Inter"
+skinparam defaultFontName "Iosevka"
 !pragma layout neato
 
 ' --- Entities ---
 entity DAILY {
-  MaDaily <<key>>
-  ViTri
+  ' MaDaily <<key>>
+  ' ViTri
 }
 
 entity NHANVIEN {
-  MaNV <<key>>
-  TenNV
-  ChucVu
+  ' MaNV <<key>>
+  ' TenNV
+  ' ChucVu
 }
 
 entity KHACHHANG {
-  MaKH <<key>>
-  TenKH
-  DiaChi
-  SDT
+  ' MaKH <<key>>
+  ' TenKH
+  ' DiaChi
+  ' SDT
 }
 
 entity HOPDONG {
-  SoHD <<key>>
-  NgayHD
-  ThoiGianBH
-  TienPhaiTT
-  TienDaTT
-  GiamTru
+  ' SoHD <<key>>
+  ' NgayHD
+  ' ThoiGianBH
+  ' TienPhaiTT
+  ' TienDaTT
+  ' GiamTru
 }
 
 entity XE {
-  SoKhung <<key>>
-  SoSuon <<key>>
-  NuocSX
-  LoaiXe
-  MauXe
-  SoPK
+  ' SoKhung <<key>>
+  ' SoSuon <<key>>
+  ' NuocSX
+  ' LoaiXe
+  ' MauXe
+  ' SoPK
 }
 
 entity PHIEUTHANHTOAN {
-  MaPTT <<key>>
-  NgayTra
-  SoTien
+  ' MaPTT <<key>>
+  ' NgayTra
+  ' SoTien
 }
 
 entity BAOHANH {
-  MaBH <<key>>
-  NgayYeuCau
+  ' MaBH <<key>>
+  ' NgayYeuCau
 }
 
 entity LINHKIEN {
-  MaLK <<key>>
-  TenLK
+  ' MaLK <<key>>
+  ' TenLK
 }
 
 ' --- Relationships ---
@@ -84,12 +84,12 @@ relationship MUA {
 KHACHHANG -(1,n)- MUA
 HOPDONG -(1,1)- MUA
 
-relationship GOM {
+relationship BAO_GOM {
   ' 1 HD co nhieu Xe
 }
 
-HOPDONG -(1,n)- GOM
-XE -(1,1)- GOM
+HOPDONG -(1,n)- BAO_GOM
+XE -(1,1)- BAO_GOM
 
 relationship TRA_GOP {
   ' 1 HD co max 3 PTT
@@ -106,9 +106,9 @@ BAOHANH -(1,1)- YEUCAU_BH
 
 relationship CHITIET_BH {
   ' n-n giua BAOHANH va LINHKIEN
-  LyDo
-  LoiThuocVe
-  GiaTien
+  ' LyDo
+  ' LoiThuocVe
+  ' GiaTien
 }
 
 BAOHANH -(1,n)- CHITIET_BH
