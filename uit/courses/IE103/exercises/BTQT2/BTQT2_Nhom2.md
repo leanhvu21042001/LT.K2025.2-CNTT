@@ -342,7 +342,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
     - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG): Đây là quan hệ n-n, vì 1 phiếu BH có thể dùng nhiều linh kiện, 1 loại linh kiện có thể dùng cho nhiều phiếu BH. Cần 1 bảng liên kết `CHITIET_BAOHANH`.
     - `CHITIET_BAOHANH` (bảng liên kết): Sẽ chứa LyDo, LoiThuocVe, GiaTien.
 
-### 2. Mô hình ERD (PlantUML @startchen EER - Bài 2)
+### 2. Mô hình ERD
 
 ```
 @startchen
@@ -478,7 +478,7 @@ LINHKIEN -(1,n)- CHITIET_BH
 @endchen
 ```
 
-### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 2)
+### 3. Mô hình Class Diagram
 
 ```
 @startuml
