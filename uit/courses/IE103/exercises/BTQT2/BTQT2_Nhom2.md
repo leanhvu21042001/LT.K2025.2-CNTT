@@ -225,7 +225,7 @@ class Khoa {
   - tenKhoa: string
 }
 
-class GiaoVien {
+class GiangVien {
   - maGV: string
   - tenGV: string
   - diaChi: string
@@ -276,12 +276,12 @@ SinhVien "1..*" -- (ThucHien)
 ' SinhVien "1" -- "1..3" DeTai : "Thực hiện (1..3)"
 ' -> Cach dung Association Class tot hon
 
-DeTai "0..*" -- "1" GiaoVien : "hướng dẫn"
-DeTai "0..*" -- "1" GiaoVien : "phản biện"
-DeTai "0..*" -- "1" HoiDong : "bảo vệ tại"
+DeTai "0..*" -- "1" GiangVien : "hướng dẫn"
+DeTai "0..*" -- "1" GiangVien : "phản biện"
+DeTai "0..*" -- "1" GiangVien : "bảo vệ tại"
 
-HoiDong "0..*" -- "1" GiaoVien : "chủ tịch"
-HoiDong "0..*" -- "1" GiaoVien : "thư ký"
+HoiDong "0..*" -- "1" GiangVien : "chủ tịch"
+HoiDong "0..*" -- "1" GiangVien : "thư ký"
 
 @enduml
 ```
