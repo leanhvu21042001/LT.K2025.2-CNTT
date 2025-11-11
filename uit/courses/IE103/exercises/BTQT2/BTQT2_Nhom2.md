@@ -354,118 +354,127 @@ skinparam defaultFontName "Inter"
 
 ' --- Entities ---
 entity DAILY {
-  * MaDaily
+  MaDaily <<key>>
   ViTri
 }
 
-entity NHANVIEN as NV {
-  * MaNV
+entity NHANVIEN {
+  MaNV <<key>>
   TenNV
   ChucVu
 }
 
-entity NV_HANHCHANH as NVHC {
+entity NV_HANHCHANH {
   TrinhDoHocVan
   PhongBan
 }
 
-entity NV_KYTHUAT as NVKT {
+entity NV_KYTHUAT {
   BacTho
   SoNamKinhNghiem
 }
 
 ' --- EER Inheritance ---
 ' d = disjoint (khong giao nhau)
-NV =>= d { NVHC, NVKT }
+NHANVIEN =>= d { NV_HANHCHANH, NV_KYTHUAT }
 
-entity KHACHHANG as KH {
-  * MaKH
+entity KHACHHANG {
+  MaKH <<key>>
   TenKH
   DiaChi
   SDT
 }
 
-entity HOADON as HD {
-  * SoHD
+entity HOPDONG {
+  SoHD <<key>>
   NgayHD
   ThoiGianBH
   TienPhaiTT
   TienDaTT
-  GiamTru (cho 2% hoac 5%)
+  GiamTru
 }
 
 entity XE {
-  * SoKhung
-  * SoSuon
+  SoKhung <<key>>
+  SoSuon <<key>>
   NuocSX
   LoaiXe
   MauXe
   SoPK
 }
 
-entity PHIEUTHANHTOAN as PTT {
-  * MaPTT
+entity PHIEUTHANHTOAN {
+  MaPTT <<key>>
   NgayTra
   SoTien
 }
 
-entity BAOHANH as BH {
-  * MaBH
+entity BAOHANH {
+  MaBH <<key>>
   NgayYeuCau
 }
 
-entity LINHKIEN as LK {
-  * MaLK
+entity LINHKIEN {
+  MaLK <<key>>
   TenLK
 }
 
 ' --- Relationships ---
 relationship LAM_TAI {
 }
+
 DAILY -(1,n)- LAM_TAI
-NV -(1,1)- LAM_TAI
+NHANVIEN -(1,1)- LAM_TAI
 
 relationship LAP_HD {
 }
-NV -(1,n)- LAP_HD
-HD -(1,1)- LAP_HD
+
+NHANVIEN -(1,n)- LAP_HD
+HOPDONG -(1,1)- LAP_HD
 
 relationship DUYET_HD {
   ' NV Ke Toan
 }
-NV -(1,"KeToan",n)- DUYET_HD
-HD -(1,1)- DUYET_HD
+
+NHANVIEN -(1,n)- DUYET_HD
+HOPDONG -(1,1)- DUYET_HD
 
 relationship MUA {
 }
-KH -(1,n)- MUA
-HD -(1,1)- MUA
+
+KHACHHANG -(1,n)- MUA
+HOPDONG -(1,1)- MUA
 
 relationship GOM {
   ' 1 HD co nhieu Xe
 }
-HD -(1,n)- GOM
+
+HOPDONG -(1,n)- GOM
 XE -(1,1)- GOM
 
 relationship TRA_GOP {
   ' 1 HD co max 3 PTT
 }
-HD -(1,3)- TRA_GOP
-PTT -(1,1)- TRA_GOP
+
+HOPDONG -(1,3)- TRA_GOP
+PHIEUTHANHTOAN -(1,1)- TRA_GOP
 
 relationship YEUCAU_BH {
 }
+
 XE -(1,n)- YEUCAU_BH
-BH -(1,1)- YEUCAU_BH
+BAOHANH -(1,1)- YEUCAU_BH
 
 relationship CHITIET_BH {
   ' n-n giua BAOHANH va LINHKIEN
   LyDo
-  LoiThuocVe (Khach/SP)
+  LoiThuocVe
   GiaTien
 }
-BH -(1,n)- CHITIET_BH
-LK -(1,n)- CHITIET_BH
+
+BAOHANH -(1,n)- CHITIET_BH
+LINHKIEN -(1,n)- CHITIET_BH
+
 @endchen
 ```
 
