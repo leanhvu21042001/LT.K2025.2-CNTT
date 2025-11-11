@@ -17,20 +17,6 @@ entity NHANVIEN {
   ChucVu
 }
 
-entity NV_HANHCHANH {
-  TrinhDoHocVan
-  PhongBan
-}
-
-entity NV_KYTHUAT {
-  BacTho
-  SoNamKinhNghiem
-}
-
-' --- EER Inheritance ---
-' d = disjoint (khong giao nhau)
-NHANVIEN =>= d { NV_HANHCHANH, NV_KYTHUAT }
-
 entity KHACHHANG {
   MaKH <<key>>
   TenKH
