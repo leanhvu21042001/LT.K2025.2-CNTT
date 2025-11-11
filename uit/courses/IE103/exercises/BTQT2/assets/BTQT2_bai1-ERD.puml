@@ -5,36 +5,36 @@ skinparam defaultFontName "Iosevka"
 
 ' --- Entities ---
 entity KHOA {
-  MaKhoa <<key>>
-  TenKhoa
+  ' MaKhoa <<key>>
+  ' TenKhoa
 }
 
 entity GIANGVIEN {
-  MaGV <<key>>
-  TenGV
-  DiaChi
-  SDT
-  HocVi
-  ChuyenNganh
+  ' MaGV <<key>>
+  ' TenGV
+  ' DiaChi
+  ' SDT
+  ' HocVi
+  ' ChuyenNganh
 }
 
 entity HOIDONG {
-  MaHOIDONG <<key>>
-  NgayBaoVe
-  DiaChiCuThe
+  ' MaHOIDONG <<key>>
+  ' NgayBaoVe
+  ' DiaChiCuThe
 }
 
 entity DETAI {
-  MaDT <<key>>
-  TenDT
-  TGBatDau
-  TGKetThuc
+  ' MaDT <<key>>
+  ' TenDT
+  ' TGBatDau
+  ' TGKetThuc
 }
 
 entity SINHVIEN {
-  MaSINHVIEN <<key>>
-  TenSINHVIEN
-  NamHoc
+  ' MaSINHVIEN <<key>>
+  ' TenSINHVIEN
+  ' NamHoc
 }
 
 ' --- Relationships ---
@@ -45,12 +45,12 @@ relationship THUOC {
 KHOA -(1,n)- THUOC
 DETAI -(1,1)- THUOC
 
-relationship QUANLY_GIANGVIEN {
+relationship QUANLY_GV {
   ' 1 Khoa co nhieu Giao Vien
 }
 
-KHOA -(1,n)- QUANLY_GIANGVIEN
-GIANGVIEN -(1,1)- QUANLY_GIANGVIEN
+KHOA -(1,n)- QUANLY_GV
+GIANGVIEN -(1,1)- QUANLY_GV
 
 relationship HUONGDAN {
   ' 1 GIANGVIEN huong dan nhieu De Tai
@@ -95,10 +95,10 @@ HOIDONG -(1,1)- LAM_THUKY
 relationship THUCHIEN {
   ' Quan he n-n giua SINHVIEN va DETAI
   ' Luu diem va lan bao ve
-  Diem_GIANGVIENHOIDONG
-  Diem_GIANGVIENPB
-  Diem_ChuTich
-  LanBaoVe
+  ' Diem_GIANGVIENHOIDONG
+  ' Diem_GIANGVIENPB
+  ' Diem_ChuTich
+  ' LanBaoVe
 }
 
 SINHVIEN -(1,2)- THUCHIEN
