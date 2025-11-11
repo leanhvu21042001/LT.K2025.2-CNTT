@@ -75,12 +75,13 @@ class ChiTietBaoHanh {
 DaiLy "1" -- "0..*" NhanVien : "có"
 
 KhachHang "1" -- "0..*" HopDong : "mua"
-HopDong "0..*" -- "1" NVHanhChanh : "được lập bởi"
-HopDong "0..*" -- "1" NVHanhChanh : "được duyệt bởi (kế toán)"
+HopDong "0..*" -- "1" NVHanhChanh : "nv lập hợp đồng"
+HopDong "0..*" -- "1" NVHanhChanh : "kế toán duyệt"
 HopDong "1" -- "1..*" Xe : "bao gồm"
 HopDong "1" -- "1..3" PhieuThanhToan : "có"
+NVKyThuat "1" -- "0..*" BaoHanh : "thực hiện"
 
-Xe "1" -- "0..*" BaoHanh : "yêu cầu"
+KhachHang "1" -- "0..*" BaoHanh : "yêu cầu"
 (BaoHanh, ChiTietBaoHanh) .. LinhKien
 BaoHanh "1" -- "0..*" ChiTietBaoHanh
 ChiTietBaoHanh -- "1..*" LinhKien
