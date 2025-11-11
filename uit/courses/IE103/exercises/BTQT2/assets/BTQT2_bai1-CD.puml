@@ -1,0 +1,79 @@
+@startuml
+
+''skinparam classAttributeIconSize 0
+skinparam defaultFontName "Iosevka"
+
+class Khoa {
+  - maKhoa: string
+  - tenKhoa: string
+  + bonhiemTruongKhoa()
+  + cungcapDetai()
+}
+
+class GiangVien {
+  - maGV: string
+  - tenGV: string
+  - diaChi: string
+  - sdt: string
+  - hocVi: string
+  - chuyenNganh: string
+  + huongdanDT()
+  + phanbienDT()
+}
+
+class HoiDong {
+  - maHD: string
+  - ngayBaoVe: Date
+  - diaChi: string
+  + bonhiemChuTich()
+  + bonhiemThuKy()
+}
+
+class DeTai {
+  - maDT: string
+  - tenDT: string
+  - tgBatDau: Date
+  - tgKetThuc: Date
+  + getMaDT()
+  + getTenDT()
+}
+
+class SinhVien {
+  - maSV: string
+  - tenSV: string
+  + tinhDiemTB()
+}
+
+' Association Class cho quan he n-n
+' De luu diem cua tung SV cho tung DeTai
+class ThucHien {
+  - diemGVHD: float
+  - diemGVPB: float
+  - diemChuTich: float
+  - lanBaoVe: int
+  + tinhdiemTrungBinh(): float
+  + getLanBaoVe(): int
+}
+
+' --- Associations ---
+Khoa "1" -- "0..*" DeTai : "có"
+Khoa "1" -- "0..*" GiangVien : "quản lý"
+
+' Quan he n-n giua SinhVien va DeTai
+(SinhVien, ThucHien) .. DeTai
+SinhVien "1..*" -- ThucHien
+ThucHien -- "1" DeTai
+' Ghi chu: 1 SV thuc hien 1 DeTai,
+' nhung co the thuc hien DeTai khac neu rot.
+' 1 DeTai co 1-3 SV.
+' SinhVien "1" -- "1..3" DeTai : "Thực hiện (1..3)"
+' -> Cach dung Association Class tot hon
+
+DeTai "0..*" -- "1" GiangVien : "hướng dẫn"
+DeTai "0..*" -- "1" GiangVien : "phản biện"
+DeTai "0..*" -- "1" GiangVien : "bảo vệ tại"
+
+HoiDong "0..*" -- "1" GiangVien : "chủ tịch"
+HoiDong "0..*" -- "1" GiangVien : "thư ký"
+
+@enduml
