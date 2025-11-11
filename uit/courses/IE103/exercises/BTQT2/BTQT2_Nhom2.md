@@ -74,7 +74,7 @@ Người ta cần tin học hoá khâu Quản lý mua bán tại cửa hàng bá
 
 ## Bài 1: Quản Lý Đề Tài Tốt Nghiệp
 
-### 1. Phân tích yêu cầu
+### 1. Phân Tích Yêu Cầu
 
 Qua phân tích đề bài, chúng ta có thể xác định các thực thể và mối quan hệ chính sau:
 
@@ -100,9 +100,9 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN` để lưu các điểm này.
     - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (ví dụ: bảng `THUCHIEN` có thể có thuộc tính `LanBaoVe`).
 
-### 2. Mô hình ERD (PlantUML @startchen - Bài 1)
+### 2. Mô hình ERD
 
-```
+```ini
 @startchen
 
 skinparam defaultFontName "Iosevka"
@@ -212,9 +212,9 @@ DETAI -(1,3)- THUCHIEN
 @endchen
 ```
 
-### 3. Mô hình Class Diagram (PlantUML @startuml - Bài 1)
+### 3. Mô hình Class Diagram
 
-```sql
+```ini
 @startuml
 
 ''skinparam classAttributeIconSize 0
@@ -296,7 +296,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 @enduml
 ```
 
-### 4. Mô hình Logic (Lược đồ Quan hệ - Bài 1)
+### 4. Mô hình Logic
 
 - `KHOA` (<u>MaKhoa</u>, TenKhoa)
 - `GIANGVIEN` (<u>MaGV</u>, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
@@ -317,7 +317,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 
 ## Bài 2: Quản Lý Bán Xe Máy
 
-### 1. Phân tích yêu cầu (Bài 2)
+### 1. Phân Tích Yêu Cầu
 
 - Thực thể (Entities):
     - `DAILY`: Nơi nhân viên làm việc.
@@ -344,7 +344,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 
 ### 2. Mô hình ERD
 
-```
+```ini
 @startchen
 ' Sơ đồ EER (Enhanced ER) cho Bài 2
 ' Vi ERD co ban khong ho tro Ke thua (Inheritance),
@@ -480,7 +480,7 @@ LINHKIEN -(1,n)- CHITIET_BH
 
 ### 3. Mô hình Class Diagram
 
-```
+```ini
 @startuml
 
 ''skinparam classAttributeIconSize 0
@@ -598,3 +598,6 @@ ChiTietBaoHanh -- "1..*" LinhKien
     - Khóa chính (PK): (<u>MaBH, MaLK</u>).
     - `MaBH` (FK) tham chiếu đến `BAOHANH(MaBH)`.
     - `MaLK` (FK) tham chiếu đến `LINHKIEN(MaLK)`.
+
+## Phụ Lục
+
