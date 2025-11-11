@@ -1,0 +1,131 @@
+@startchen
+' Sơ đồ EER (Enhanced ER) cho Bài 2
+' Vi ERD co ban khong ho tro Ke thua (Inheritance),
+' chung ta su dung ky phap mo rong (EER) voi ky hieu "=>= d"
+skinparam defaultFontName "Inter"
+!pragma layout neato
+
+' --- Entities ---
+entity DAILY {
+  MaDaily <<key>>
+  ViTri
+}
+
+entity NHANVIEN {
+  MaNV <<key>>
+  TenNV
+  ChucVu
+}
+
+entity NV_HANHCHANH {
+  TrinhDoHocVan
+  PhongBan
+}
+
+entity NV_KYTHUAT {
+  BacTho
+  SoNamKinhNghiem
+}
+
+' --- EER Inheritance ---
+' d = disjoint (khong giao nhau)
+NHANVIEN =>= d { NV_HANHCHANH, NV_KYTHUAT }
+
+entity KHACHHANG {
+  MaKH <<key>>
+  TenKH
+  DiaChi
+  SDT
+}
+
+entity HOPDONG {
+  SoHD <<key>>
+  NgayHD
+  ThoiGianBH
+  TienPhaiTT
+  TienDaTT
+  GiamTru
+}
+
+entity XE {
+  SoKhung <<key>>
+  SoSuon <<key>>
+  NuocSX
+  LoaiXe
+  MauXe
+  SoPK
+}
+
+entity PHIEUTHANHTOAN {
+  MaPTT <<key>>
+  NgayTra
+  SoTien
+}
+
+entity BAOHANH {
+  MaBH <<key>>
+  NgayYeuCau
+}
+
+entity LINHKIEN {
+  MaLK <<key>>
+  TenLK
+}
+
+' --- Relationships ---
+relationship LAM_TAI {
+}
+
+DAILY -(1,n)- LAM_TAI
+NHANVIEN -(1,1)- LAM_TAI
+
+relationship LAP_HD {
+}
+
+NHANVIEN -(1,n)- LAP_HD
+HOPDONG -(1,1)- LAP_HD
+
+relationship DUYET_HD {
+  ' NV Ke Toan
+}
+
+NHANVIEN -(1,n)- DUYET_HD
+HOPDONG -(1,1)- DUYET_HD
+
+relationship MUA {
+}
+
+KHACHHANG -(1,n)- MUA
+HOPDONG -(1,1)- MUA
+
+relationship GOM {
+  ' 1 HD co nhieu Xe
+}
+
+HOPDONG -(1,n)- GOM
+XE -(1,1)- GOM
+
+relationship TRA_GOP {
+  ' 1 HD co max 3 PTT
+}
+
+HOPDONG -(1,3)- TRA_GOP
+PHIEUTHANHTOAN -(1,1)- TRA_GOP
+
+relationship YEUCAU_BH {
+}
+
+XE -(1,n)- YEUCAU_BH
+BAOHANH -(1,1)- YEUCAU_BH
+
+relationship CHITIET_BH {
+  ' n-n giua BAOHANH va LINHKIEN
+  LyDo
+  LoiThuocVe
+  GiaTien
+}
+
+BAOHANH -(1,n)- CHITIET_BH
+LINHKIEN -(1,n)- CHITIET_BH
+
+@endchen
