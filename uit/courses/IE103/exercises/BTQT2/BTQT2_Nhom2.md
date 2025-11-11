@@ -482,12 +482,12 @@ LINHKIEN -(1,n)- CHITIET_BH
 
 ```
 @startuml
-' Sơ đồ Class Diagram cho Bài 2
-skinparam classAttributeIconSize 0
-skinparam defaultFontName "Inter"
 
-class Daily {
-  - maDaily: string
+''skinparam classAttributeIconSize 0
+skinparam defaultFontName "Iosevka"
+
+class DaiLy {
+  - maDaiLy: string
   - viTri: string
 }
 
@@ -514,7 +514,7 @@ class KhachHang {
   - sdt: string
 }
 
-class HoaDon {
+class HopDong {
   - soHD: string
   - ngayHD: Date
   - thoiGianBH: string
@@ -555,18 +555,18 @@ class ChiTietBaoHanh {
 }
 
 ' --- Associations ---
-Daily "1" -- "0..*" NhanVien : "có"
+DaiLy "1" -- "0..*" NhanVien : "có"
 
-KhachHang "1" -- "0..*" HoaDon : "mua"
-HoaDon "1" -- "1" NhanVien : "được lập bởi"
-HoaDon "1" -- "1" NhanVien : "được duyệt bởi (kế toán)"
-HoaDon "1" -- "1..*" Xe : "bao gồm"
-HoaDon "1" -- "1..3" PhieuThanhToan : "có"
+KhachHang "1" -- "0..*" HopDong : "mua"
+HopDong "1" -- "1" NhanVien : "được lập bởi"
+HopDong "1" -- "1" NhanVien : "được duyệt bởi (kế toán)"
+HopDong "1" -- "1..*" Xe : "bao gồm"
+HopDong "1" -- "1..3" PhieuThanhToan : "có"
 
 Xe "1" -- "0..*" BaoHanh : "yêu cầu"
 (BaoHanh, ChiTietBaoHanh) .. LinhKien
-BaoHanh "1" -- "0..*" (ChiTietBaoHanh)
-(ChiTietBaoHanh) -- "1..*" LinhKien
+BaoHanh "1" -- "0..*" ChiTietBaoHanh
+ChiTietBaoHanh -- "1..*" LinhKien
 @enduml
 ```
 
