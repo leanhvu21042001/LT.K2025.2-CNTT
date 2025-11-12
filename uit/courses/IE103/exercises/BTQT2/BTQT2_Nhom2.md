@@ -193,6 +193,10 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ### 2. Mô hình ERD
 
+- Sử dụng ER Chen notation.
+    - Không có quy tắc cho thừa kế (chỉ khả dụng trong EER).
+- Hạn chế biểu diễn thuộc tính để đơn giản sơ đồ.
+
 ![BTQT2_Bai2-ERD-Bai2-v2](assets/BTQT2_Bai2-ERD-Bai2-v2.png)
 
 ### 3. Mô hình Class Diagram
