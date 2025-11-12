@@ -106,6 +106,126 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - ERD Chen notation không hỗ trợ các ký hiệu kế thừa, nên chỉ biểu diễn quan hệ kế thừa tại CD.
     - Để đồ họa gọn gàng, sẽ chưa biểu diễn các thuộc tính ở ERD, chuyển qua biểu diễn tại CD.
 
+
+### 3. Mô hình Class Diagram
+
+
+### 4. Mô hình Logic
+
+- `KHOA` (<u>MaKhoa</u>, TenKhoa)
+- `GIANGVIEN` (<u>MaGV</u>, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
+    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
+- `HOIDONG` (<u>MaHD</u>, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
+    - `MaGV_ChuTich` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+    - `MaGV_ThuKy` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+- `DETAI` (<u>MaDT</u>, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
+    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
+    - `MaGV_HuongDan` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+    - `MaGV_PhanBien` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
+    - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
+- `SINHVIEN` (<u>MaSV</u>, TenSV, NamHoc, ...)
+- `THUCHIEN` (<u>MaSV, MaDT</u>, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
+    - Khóa chính (PK): (<u>MaSV</u>, <u>MaDT</u>)
+    - Ràng buộc: `LanBaoVe <= 2` .
+    - Ràng buộc: `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
+
+## Bài 2: Quản Lý Bán Xe Máy
+
+### 1. Phân Tích Yêu Cầu
+
+- Thực thể (Entities):
+    - `DAILY`: Nơi nhân viên làm việc.
+    - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
+    - `KHACHHANG`: Người mua xe.
+    - `HOPDONG`: Hợp đồng bán xe (chứa 1 hoặc nhiều xe).
+    - `XE`: Thông tin xe (`SoKhung`, `SoSuon` là duy nhất).
+    - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
+    - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
+    - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
+    - `PHONGBAN`: Phòng Ban, thuộc một đại lý cụ thể và có nhân viên cụ thể.
+    - `CHUCVU`: Chức vụ trong mỗi phòng ban.
+- Kế thừa (Inheritance):
+    - `NHANVIEN` là lớp cha: `ChucVu`, `PhongBan`.
+    - `NV_HANHCHANH` là lớp con cho nhân viên Hành Chánh: `TrinhDoHocVan`.
+    - `NV_KYTHUAT` là lớp con cho nhân Viên Kỹ Thuật: `BacTho`, `SoNamKinhNghiem`.
+- Mối quan hệ (Relationships):
+    - `DAILY` (1) - (n) `NHANVIEN`:
+        - Một đại lý có nhiều nhân viên.
+        - Một nhân viên chỉ làm việc tại một đại lý cụ thể.
+    - `DAILY (1) - (n) PHONGBAN`:
+        - Một đại lý có nhiều. phòng ban.
+        - Một phòng ban cụ thể thuộc một đại lý.
+    - `PHONGBAN (1) - (n) CHUCVU`:
+        - Một phòng ban có nhiều chức vụ.
+        - Một chức vụ thuộc một phòng ban.
+    - `CHUCVU (1) - (n) NHANVIEN`:
+        - Một chức vụ được gán cho 1 hoặc n nhân viên.
+        - Một nhân viên có thể nhận 1 hoặc n chức vụ.
+    - `NHANVIEN (1) - (n) HOPDONG`:
+        - Một HĐ có 1 NV lập, 1 NV kế toán.
+        - Một NV có thể lập/duyệt nhiều HĐ.
+    - `KHACHHANG` (1) - (n) `HOPDONG`:
+        - Một KH có thể có nhiều HĐ.
+        - Một HĐ chỉ thuộc một khách hàng.
+    - `HOPDONG` (1) - (n) `XE`:
+        - Một HĐ có thể mua 1 hoặc nhiều xe.
+        - Một xe cụ thể (duy nhất) chỉ thuộc 1 HĐ.
+    - `HOPDONG` (1) - (1..3) `PHIEUTHANHTOAN`:
+        - Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
+        - Mỗi phiếu thanh toán chỉ thuộc một HĐ cụ thể.
+    - `XE` (1) - (n) `BAOHANH`: Một xe có thể được bảo hành nhiều lần.
+    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG):
+        - Đây là quan hệ `n-n`, vì
+        - 1 phiếu BH có thể dùng nhiều linh kiện cả về loại và số lượng,
+        - 1 loại linh kiện có thể được dùng cho nhiều phiếu BH.
+        - Bảng liên kết `CHITIET_BAOHANH: Chứa LyDo, LoiThuocVe, GiaTien.
+    - `BAOHANH (1) - (n) NHANVIEN`: THỰC HIỆN BẢO HÀNH.
+        - Quan hệ `n-n`.
+        - Một lần bảo hành có thể thực hiện bởi nhiều nhân viên (Kỹ thuật).
+        - Một nhân viên có thể thực hiện nhiều yêu cầu bảo hành.
+        - Bảng liên kết `THUCHIEN_BH`: MaNV, MaBH
+
+### 2. Mô hình ERD
+
+
+### 3. Mô hình Class Diagram
+
+
+### 4. Mô hình Logic
+
+- `DAILY` (<u>MaDaily</u>, ViTri, ...)
+- `NHANVIEN` (<u>MaNV</u>, TenNV, ChucVu, *MaDaily*, LoaiNV)
+    - `LoaiNV` dùng để xác định là 'HANHCHINH' hay 'KYTHUAT'.
+    - `MaDaily` (FK) tham chiếu đến `DAILY(MaDaily)`.
+- `NV_HANHCHANH` (<u>MaNV</u>, TrinhDoHocVan, PhongBan)
+    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `NV_KYTHUAT` (<u>MaNV</u>, BacTho, SoNamKinhNghiem)
+    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `KHACHHANG` (<u>MaKH</u>, TenKH, DiaChi, SDT)
+- `HOADON` (<u>SoHD</u>, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
+    - `MaKH` (FK) tham chiếu đến `KHACHHANG(MaKH)`.
+    - `MaNV_Lap` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+    - `MaNV_KeToan` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `XE` (<u>SoKhung, SoSuon</u>, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
+    - Khóa chính (PK): (<u>SoKhung, SoSuon</u>).
+    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+- `PHIEUTHANHTOAN` (<u>MaPTT</u>, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
+    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+    - `MaNV_NhanTien` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
+- `BAOHANH` (<u>MaBH</u>, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
+    - Khóa ngoại (FK) tham chiếu đến `XE(SoKhung, SoSuon)`.
+- `LINHKIEN` (<u>MaLK</u>, TenLK, DonGia)
+- `CHITIET_BAOHANH` (<u>MaBH, MaLK</u>, LyDo, LoiThuocVe, GiaTien)
+    - Khóa chính (PK): (<u>MaBH, MaLK</u>).
+    - `MaBH` (FK) tham chiếu đến `BAOHANH(MaBH)`.
+    - `MaLK` (FK) tham chiếu đến `LINHKIEN(MaLK)`.
+
+## Phụ Lục
+
+### Bài 1. Quản Lý Đề Tài
+
+#### ERD - UML
+
 ```ini
 @startchen
 
@@ -216,7 +336,8 @@ DETAI -(1,3)- THUCHIEN
 @endchen
 ```
 
-### 3. Mô hình Class Diagram
+
+#### CD - UML
 
 ```ini
 @startuml
@@ -300,82 +421,10 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 @enduml
 ```
 
-### 4. Mô hình Logic
 
-- `KHOA` (<u>MaKhoa</u>, TenKhoa)
-- `GIANGVIEN` (<u>MaGV</u>, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
-    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
-- `HOIDONG` (<u>MaHD</u>, NgayBaoVe, DiaChiCuThe, *MaGV_ChuTich*, *MaGV_ThuKy*)
-    - `MaGV_ChuTich` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
-    - `MaGV_ThuKy` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
-- `DETAI` (<u>MaDT</u>, TenDT, TGBatDau, TGKetThuc, *MaKhoa*, *MaGV_HuongDan*, *MaGV_PhanBien*, *MaHD*)
-    - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
-    - `MaGV_HuongDan` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
-    - `MaGV_PhanBien` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
-    - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
-- `SINHVIEN` (<u>MaSV</u>, TenSV, NamHoc, ...)
-- `THUCHIEN` (<u>MaSV, MaDT</u>, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
-    - Khóa chính (PK): (<u>MaSV</u>, <u>MaDT</u>)
-    - Ràng buộc: `LanBaoVe <= 2` .
-    - Ràng buộc: `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
+### Bài 2. Quản Lý Đại Lý Bán Xe
 
-## Bài 2: Quản Lý Bán Xe Máy
-
-### 1. Phân Tích Yêu Cầu
-
-- Thực thể (Entities):
-    - `DAILY`: Nơi nhân viên làm việc.
-    - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
-    - `KHACHHANG`: Người mua xe.
-    - `HOPDONG`: Hợp đồng bán xe (chứa 1 hoặc nhiều xe).
-    - `XE`: Thông tin xe (`SoKhung`, `SoSuon` là duy nhất).
-    - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
-    - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
-    - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
-    - `PHONGBAN`: Phòng Ban, thuộc một đại lý cụ thể và có nhân viên cụ thể.
-    - `CHUCVU`: Chức vụ trong mỗi phòng ban.
-- Kế thừa (Inheritance):
-    - `NHANVIEN` là lớp cha: `ChucVu`, `PhongBan`.
-    - `NV_HANHCHANH` là lớp con cho nhân viên Hành Chánh: `TrinhDoHocVan`.
-    - `NV_KYTHUAT` là lớp con cho nhân Viên Kỹ Thuật: `BacTho`, `SoNamKinhNghiem`.
-- Mối quan hệ (Relationships):
-    - `DAILY` (1) - (n) `NHANVIEN`:
-        - Một đại lý có nhiều nhân viên.
-        - Một nhân viên chỉ làm việc tại một đại lý cụ thể.
-    - `DAILY (1) - (n) PHONGBAN`:
-        - Một đại lý có nhiều. phòng ban.
-        - Một phòng ban cụ thể thuộc một đại lý.
-    - `PHONGBAN (1) - (n) CHUCVU`:
-        - Một phòng ban có nhiều chức vụ.
-        - Một chức vụ thuộc một phòng ban.
-    - `CHUCVU (1) - (n) NHANVIEN`:
-        - Một chức vụ được gán cho 1 hoặc n nhân viên.
-        - Một nhân viên có thể nhận 1 hoặc n chức vụ.
-    - `NHANVIEN (1) - (n) HOPDONG`:
-        - Một HĐ có 1 NV lập, 1 NV kế toán.
-        - Một NV có thể lập/duyệt nhiều HĐ.
-    - `KHACHHANG` (1) - (n) `HOPDONG`:
-        - Một KH có thể có nhiều HĐ.
-        - Một HĐ chỉ thuộc một khách hàng.
-    - `HOPDONG` (1) - (n) `XE`:
-        - Một HĐ có thể mua 1 hoặc nhiều xe.
-        - Một xe cụ thể (duy nhất) chỉ thuộc 1 HĐ.
-    - `HOPDONG` (1) - (1..3) `PHIEUTHANHTOAN`:
-        - Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
-        - Mỗi phiếu thanh toán chỉ thuộc một HĐ cụ thể.
-    - `XE` (1) - (n) `BAOHANH`: Một xe có thể được bảo hành nhiều lần.
-    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG):
-        - Đây là quan hệ `n-n`, vì
-        - 1 phiếu BH có thể dùng nhiều linh kiện cả về loại và số lượng,
-        - 1 loại linh kiện có thể được dùng cho nhiều phiếu BH.
-        - Bảng liên kết `CHITIET_BAOHANH: Chứa LyDo, LoiThuocVe, GiaTien.
-    - `BAOHANH (1) - (n) NHANVIEN`: THỰC HIỆN BẢO HÀNH.
-        - Quan hệ `n-n`.
-        - Một lần bảo hành có thể thực hiện bởi nhiều nhân viên (Kỹ thuật).
-        - Một nhân viên có thể thực hiện nhiều yêu cầu bảo hành.
-        - Bảng liên kết `THUCHIEN_BH`: MaNV, MaBH
-
-### 2. Mô hình ERD
+#### ERD - UML
 
 ```ini
 @startchen
@@ -511,7 +560,8 @@ LINHKIEN -(1,n)- CHITIET_BH
 @endchen
 ```
 
-### 3. Mô hình Class Diagram
+
+#### CD - UML
 
 ```ini
 @startuml
@@ -602,35 +652,4 @@ BaoHanh "1" -- "0..*" ChiTietBaoHanh
 ChiTietBaoHanh -- "1..*" LinhKien
 @enduml
 ```
-
-### 4. Mô hình Logic
-
-- `DAILY` (<u>MaDaily</u>, ViTri, ...)
-- `NHANVIEN` (<u>MaNV</u>, TenNV, ChucVu, *MaDaily*, LoaiNV)
-    - `LoaiNV` dùng để xác định là 'HANHCHINH' hay 'KYTHUAT'.
-    - `MaDaily` (FK) tham chiếu đến `DAILY(MaDaily)`.
-- `NV_HANHCHANH` (<u>MaNV</u>, TrinhDoHocVan, PhongBan)
-    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `NV_KYTHUAT` (<u>MaNV</u>, BacTho, SoNamKinhNghiem)
-    - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `KHACHHANG` (<u>MaKH</u>, TenKH, DiaChi, SDT)
-- `HOADON` (<u>SoHD</u>, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
-    - `MaKH` (FK) tham chiếu đến `KHACHHANG(MaKH)`.
-    - `MaNV_Lap` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
-    - `MaNV_KeToan` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `XE` (<u>SoKhung, SoSuon</u>, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
-    - Khóa chính (PK): (<u>SoKhung, SoSuon</u>).
-    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
-- `PHIEUTHANHTOAN` (<u>MaPTT</u>, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
-    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
-    - `MaNV_NhanTien` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
-- `BAOHANH` (<u>MaBH</u>, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
-    - Khóa ngoại (FK) tham chiếu đến `XE(SoKhung, SoSuon)`.
-- `LINHKIEN` (<u>MaLK</u>, TenLK, DonGia)
-- `CHITIET_BAOHANH` (<u>MaBH, MaLK</u>, LyDo, LoiThuocVe, GiaTien)
-    - Khóa chính (PK): (<u>MaBH, MaLK</u>).
-    - `MaBH` (FK) tham chiếu đến `BAOHANH(MaBH)`.
-    - `MaLK` (FK) tham chiếu đến `LINHKIEN(MaLK)`.
-
-## Phụ Lục
 
