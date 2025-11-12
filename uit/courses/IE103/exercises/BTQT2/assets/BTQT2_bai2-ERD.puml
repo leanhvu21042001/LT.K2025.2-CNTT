@@ -71,12 +71,12 @@ entity LINHKIEN {
 
 ' --- Relationships ---
 
-relationship CHUCVU_NHANVIEN {
+relationship CHUCVU_NV {
   ' Nhan Vien co Chuc Vu
 }
 
-NHANVIEN -(1,n)- CHUCVU_NHANVIEN
-CHUCVU -(1,n)- CHUCVU_NHANVIEN
+NHANVIEN -(1,n)- CHUCVU_NV
+CHUCVU -(1,n)- CHUCVU_NV
 
 relationship CHUCVU_PHONGBAN {
   ' Chuc Vu thuoc Phong Ban
