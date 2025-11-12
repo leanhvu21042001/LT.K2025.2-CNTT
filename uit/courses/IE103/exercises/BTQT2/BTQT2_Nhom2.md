@@ -113,8 +113,8 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
         - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết để lưu điểm và thông tin lần bảo vệ.
         - Bảng `THUCHIEN_DETAI` thể hiện quan hệ này, `UNIQUE(SINHVIEN, DETAI)` để đảm bảo 2 lần là 2 đề tài khác nhau.
 - Thuộc tính quan trọng:
-    - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN_DETAI` để lưu các điểm này.
-    - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (bảng `THUCHIEN_DETAI` có thể có thuộc tính `LanBaoVe`).
+    - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Chúng ta cần bảng liên kết `THUCHIEN_DETAI` để lưu các điểm này.
+    - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, cấu trúc CSDL phải hỗ trợ nó (bảng `THUCHIEN_DETAI` có thuộc tính `LanBaoVe`).
 
 ### 2. Mô hình ERD
 
