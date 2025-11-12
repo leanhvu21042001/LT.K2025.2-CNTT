@@ -118,11 +118,11 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ### 2. Mô hình ERD
 
-
+![BTQT2-Bai1-ERD](assets/BTQT2-Bai1-ERD.png)
 
 ### 3. Mô hình Class Diagram
 
-
+![BTQT2-Bai1-CD](assets/BTQT2-Bai1-CD.png)
 
 
 ### 4. Mô hình Logic
