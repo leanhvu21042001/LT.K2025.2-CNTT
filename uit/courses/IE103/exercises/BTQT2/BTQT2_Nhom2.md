@@ -149,37 +149,43 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - `NV_HANHCHANH` là lớp con cho nhân viên Hành Chánh: `TrinhDoHocVan`.
     - `NV_KYTHUAT` là lớp con cho nhân Viên Kỹ Thuật: `BacTho`, `SoNamKinhNghiem`.
 - Mối quan hệ (Relationships):
-    - `DAILY` (1) - (n) `NHANVIEN`:
-        - Một đại lý có nhiều nhân viên.
-        - Một nhân viên chỉ làm việc tại một đại lý cụ thể.
-    - `DAILY (1) - (n) PHONGBAN`:
+    - `DAILY (1) - (n) PHONGBAN`: `PB_DAILY`
         - Một đại lý có nhiều. phòng ban.
         - Một phòng ban cụ thể thuộc một đại lý.
-    - `PHONGBAN (1) - (n) CHUCVU`:
+    - `PHONGBAN (1) - (n) NHANVIEN`: `NV_PB`
+        - Một phòng ban có nhiều nhân viên.
+        - Một nhân viên thuộc một phòng ban.
+        - Nhân viên thuộc đại lý nào có thể được suy ra từ nhân viên thuộc phòng ban nào.
+    - `PHONGBAN (1) - (n) CHUCVU`: `CV_PB`
         - Một phòng ban có nhiều chức vụ.
         - Một chức vụ thuộc một phòng ban.
-    - `CHUCVU (1) - (n) NHANVIEN`:
+    - `CHUCVU (n) - (n) NHANVIEN`: `CHUCVU_NV`
         - Một chức vụ được gán cho 1 hoặc n nhân viên.
         - Một nhân viên có thể nhận 1 hoặc n chức vụ.
-    - `NHANVIEN (1) - (n) HOPDONG`:
-        - Một HĐ có 1 NV lập, 1 NV kế toán.
-        - Một NV có thể lập/duyệt nhiều HĐ.
-    - `KHACHHANG` (1) - (n) `HOPDONG`:
+    - `NHANVIEN (1) - (n) HOPDONG`: `LAP_HD`
+        - Một HĐ có 1 NV lập.
+        - Một NV có thể lập nhiều HĐ.
+    - `NHANVIEN (1) - (n) HOPDONG`: `DUYET_HD`
+        - Một HĐ có 1 NV kế toán duyệt.
+        - Một NV có thể duyệt nhiều HĐ.
+    - `KHACHHANG` (1) - (n) `HOPDONG`: `MUA_HANG`
         - Một KH có thể có nhiều HĐ.
         - Một HĐ chỉ thuộc một khách hàng.
-    - `HOPDONG` (1) - (n) `XE`:
+    - `HOPDONG` (1) - (n) `XE`: `BAO_GOM`
         - Một HĐ có thể mua 1 hoặc nhiều xe.
         - Một xe cụ thể (duy nhất) chỉ thuộc 1 HĐ.
-    - `HOPDONG` (1) - (1..3) `PHIEUTHANHTOAN`:
+    - `HOPDONG` (1) - (1..3) `PHIEUTHANHTOAN`: `TRA_GOP`
         - Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
         - Mỗi phiếu thanh toán chỉ thuộc một HĐ cụ thể.
-    - `XE` (1) - (n) `BAOHANH`: Một xe có thể được bảo hành nhiều lần.
-    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG):
+    - `XE` (1) - (n) `BAOHANH`: `DUOC_BH`
+        - Một xe có thể được bảo hành nhiều lần.
+        - Một bảo hành chỉ định một xe cụ thể.
+    - `BAOHANH` (1) - (n) `LINHKIEN`:`CHITIET_BH`
         - Đây là quan hệ `n-n`, vì
         - 1 phiếu BH có thể dùng nhiều linh kiện cả về loại và số lượng,
         - 1 loại linh kiện có thể được dùng cho nhiều phiếu BH.
-        - Bảng liên kết `CHITIET_BAOHANH: Chứa LyDo, LoiThuocVe, GiaTien.
-    - `BAOHANH (1) - (n) NHANVIEN`: THỰC HIỆN BẢO HÀNH.
+        - Bảng liên kết `CHITIET_BH`: Chứa LyDo, LoiThuocVe, GiaTien.
+    - `BAOHANH (1) - (n) NHANVIEN`: `THUCHIEN_BH`.
         - Quan hệ `n-n`.
         - Một lần bảo hành có thể thực hiện bởi nhiều nhân viên (Kỹ thuật).
         - Một nhân viên có thể thực hiện nhiều yêu cầu bảo hành.
