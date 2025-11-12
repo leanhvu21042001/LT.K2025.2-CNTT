@@ -15,6 +15,10 @@ class DaiLy {
 class PhongBan {
   # maPB: string
   - tenPB: string
+  + themNhanVien()
+  + xoaNhanVien()
+  + themChucVu()
+  + giaoChucVu()
 }
 
 class ChucVu {
