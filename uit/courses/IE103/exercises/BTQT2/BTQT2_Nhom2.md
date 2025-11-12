@@ -235,8 +235,9 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 **Công cụ**:
 
-- PlantUML: 
-- PlantUML Editor:
+- PlantUML:  https://plantuml.com/er-diagram
+- PlantUML Editor: https://plantuml-editor.kkeisuke.com/#
+- Draw.io
 
 ### Bài 1. Quản Lý Đề Tài
 
