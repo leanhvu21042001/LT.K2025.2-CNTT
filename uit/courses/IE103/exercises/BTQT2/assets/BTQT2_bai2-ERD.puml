@@ -78,11 +78,11 @@ relationship DUYET_HD {
 NHANVIEN -(1,n)- DUYET_HD
 HOPDONG -(1,1)- DUYET_HD
 
-relationship MUA {
+relationship MUA_HANG {
 }
 
-KHACHHANG -(1,n)- MUA
-HOPDONG -(1,1)- MUA
+KHACHHANG -(1,n)- MUA_HANG
+HOPDONG -(1,1)- MUA_HANG
 
 relationship BAO_GOM {
   ' 1 HD co nhieu Xe
