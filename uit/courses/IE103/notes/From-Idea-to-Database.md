@@ -14,6 +14,12 @@ Database design is the **exact same**.
 
 [TOC]
 
+## Resources
+
+- [Database Management Systems CS 370](https://jcsites.juniata.edu/faculty/rhodes/dbms/syllabus.htm)
+    - [Three Level Database Architecture](https://jcsites.juniata.edu/faculty/rhodes/dbms/dbarch.htm)
+    - [The Entity-Relationship Model](https://jcsites.juniata.edu/faculty/rhodes/dbms/ermodel.htm)
+
 ## The 3-Step Design Workflow
 
 Everything in database design fits into one of these three steps, and each step is for a different **audience**.
