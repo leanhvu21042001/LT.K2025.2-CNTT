@@ -1,113 +1,94 @@
-@startuml "Bai 2. Class Diagram"
+@startuml "Bai 2. Class Diagram - v2 (Tuong ung ERD v2)"
 
-''skinparam classAttributeIconSize 0
+' Class Diagram nay da cap nhat
+' 1. Logic Ke thua (Inheritance)
+' 2. Cac moi quan he da chuan hoa (loai bo duong tat)
+' 3. Thêm các Association Class cho quan he n-n
+
+skinparam classAttributeIconSize 0
 skinparam defaultFontName "Iosevka"
 
-class DaiLy {
-  # maDaiLy: string
+class DAILY {
+  # maDaily: string
   - viTri: string
-  + themNhanVien()
-  + xoaNhanVien()
-  + themHopDong()
 }
 
-' --- Các Class mới dựa theo ERD ---
-class PhongBan {
+class PHONGBAN {
   # maPB: string
   - tenPB: string
-  + themNhanVien()
-  + xoaNhanVien()
-  + themChucVu()
-  + giaoChucVu()
 }
 
-class ChucVu {
+class CHUCVU {
   # maCV: string
   - tenCV: string
 }
 
-' --- Inheritance (Kế thừa) ---
-' NVKyThuat bay gio khong con giu 'chucVu' truc tiep
-abstract class NhanVien {
+' --- Inheritance (Ke thua) ---
+abstract class NHANVIEN {
   # maNV: string
   - tenNV: string
-  - chucVu: string
-  + nhanChucVu()
 }
-' NVHanhChanh khong con giu 'phongBan' truc tiep
-class NVHanhChanh extends NhanVien {
+class NVHanhChanh extends NHANVIEN {
   - trinhDoHocVan: string
   + lapHopDong()
   + duyetHopDong()
 }
-class NVKyThuat extends NhanVien {
+class NVKyThuat extends NHANVIEN {
   - bacTho: string
   - soNamKN: int
   + thucHienBaoHanh()
 }
 ' ------------------
 
-class KhachHang {
+class KHACHHANG {
   # maKH: string
   - tenKH: string
   - diaChi: string
   - sdt: string
-  + muaXe()
-  + yeuCauBaoHanh()
 }
 
-class HopDong {
+class HOPDONG {
   # soHD: string
   - ngayHD: Date
   - thoiGianBH: string
   - tienPhaiTT: float
   - tienDaTT: float
   - giamTru: float
-  + themXe()
-  + themPhieuThanhToan()
-  + tinhTienConLai()
 }
 
-class Xe {
+class XE {
   # soKhung: string
   # soSuon: string
   - nuocSX: string
   - loaiXe: string
-  + themTieuSuBaoHanh()
 }
 
-class PhieuThanhToan {
+class PHIEUTHANHTOAN {
   # maPTT: string
   - ngayTra: Date
   - soTien: float
 }
 
-class BaoHanh {
+class BAOHANH {
   # maBH: string
   - ngayYeuCau: Date
-  - soKhung: string
-  - soSuon: string
-  + themChiTietBaoHanh()
-  + giaoChoNhanVien()
 }
 
-class LinhKien {
+class LINHKIEN {
   # maLK: string
   - tenLK: string
 }
 
-' --- Association Classes (Dựa trên ERD mới) ---
+' --- Association Classes (Tuong ung quan he n-n) ---
 
-' ERD: CHUCVU_NHANVIEN (n-n)
+' ERD: CHUCVU_NV (n-n)
 class NhanChuc {
-  ' Luu thong tin ve chuc vu cua nhan vien
   - ngayNhanChuc: Date
 }
 
 ' ERD: THUCHIEN_BH (n-n)
-' Mot bao hanh co the do nhieu NV Ky Thuat thuc hien
-class ThucHienBaoHanh {
-  - ngayThucHien: Date
+class PhanCongBaoHanh {
+  - ngayPhanCong: Date
 }
 
 ' ERD: CHITIET_BH (n-n)
@@ -115,43 +96,40 @@ class ChiTietBaoHanh {
   - lyDo: string
   - loiThuocVe: string
   - giaTien: float
-  + themLinhKien()
 }
 
-' --- Associations ---
-DaiLy "1" -- "0..*" NhanVien : "có"
+' --- Associations (Moi quan he da chuan hoa) ---
 
-' --- Quan hệ mới theo ERD ---
-' ERD: NV_PHONGBAN (1-n)
-NhanVien "0..*" -- "1" PhongBan : "thuộc"
+' 1. Cau truc to chuc
+DAILY "1" -- "0..*" PHONGBAN : "có"
+PHONGBAN "1" -- "0..*" NHANVIEN : "có"
+PHONGBAN "1" -- "0..*" CHUCVU : "có"
+' Quan he n-n giua NHANVIEN va CHUCVU
+(NHANVIEN, NhanChuc) .. CHUCVU
+NHANVIEN "0..*" -- NhanChuc
+NhanChuc -- "0..*" CHUCVU
 
-' ERD: CHUCVU_PHONGBAN (1-n)
-ChucVu "0..*" -- "1" PhongBan : "thuộc"
+' 2. Quan he Nghiep Vu
+KHACHHANG "1" -- "0..*" HOPDONG : "mua"
 
-' ERD: CHUCVU_NHANVIEN (n-n)
-(NhanVien, NhanChuc) .. ChucVu
-NhanVien "0..*" -- NhanChuc
-NhanChuc -- "0..*" ChucVu
+' Hop dong duoc lap/duyet boi NV Hanh Chanh
+HOPDONG "0..*" -- "1" NVHanhChanh : "lập bởi"
+HOPDONG "0..*" -- "1" NVHanhChanh : "duyệt bởi"
 
-' --- Các quan hệ logic nghiệp vụ ---
-KhachHang "1" -- "0..*" HopDong : "mua xe"
-' Logic: Hop dong do NV Hanh Chanh dam nhiem
-HopDong "0..*" -- "1" NVHanhChanh : "kế toán duyệt"
-HopDong "0..*" -- "1" NVHanhChanh : "người lập"
-HopDong "1" -- "1..*" Xe : "bao gồm"
-HopDong "1" -- "1..3" PhieuThanhToan : "có"
+HOPDONG "1" -- "1..*" XE : "bao gồm"
+HOPDONG "1" -- "1..3" PHIEUTHANHTOAN : "có"
 
-' ERD: YEUCAU_BH (1-n)
-Xe "1" -- "0..*" BaoHanh : "yêu cầu"
-' ERD: CHITIET_BH (n-n)
-(BaoHanh, ChiTietBaoHanh) .. LinhKien
-BaoHanh "1" -- "0..*" ChiTietBaoHanh
-ChiTietBaoHanh -- "1..*" LinhKien
+' 3. Quan he Bao Hanh
+XE "1" -- "0..*" BAOHANH : "được bảo hành"
 
-' ERD: THUCHIEN_BH (n-n)
-' Logic: Bao hanh do NV Ky Thuat thuc hien
-(NVKyThuat, ThucHienBaoHanh) .. BaoHanh
-NVKyThuat "0..*" -- ThucHienBaoHanh
-ThucHienBaoHanh -- "0..*" BaoHanh
+' Quan he n-n giua BAOHANH va NVKyThuat
+(NVKyThuat, PhanCongBaoHanh) .. BAOHANH
+NVKyThuat "0..*" -- PhanCongBaoHanh
+PhanCongBaoHanh -- "1..*" BAOHANH
+
+' Quan he n-n giua BAOHANH va LINHKIEN
+(BAOHANH, ChiTietBaoHanh) .. LINHKIEN
+BAOHANH "1" -- "0..*" ChiTietBaoHanh
+ChiTietBaoHanh -- "1..*" LINHKIEN
 
 @enduml
