@@ -1,7 +1,9 @@
-@startuml
+@startuml "Bai 1. Class Diagram"
 
-''skinparam classAttributeIconSize 0
+'skinparam classAttributeIconSize 0
+skinparam backgroundcolor transparent
 skinparam defaultFontName "Iosevka"
+!pragma layout neato
 
 class Khoa {
   - maKhoa: string
