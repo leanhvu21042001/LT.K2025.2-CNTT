@@ -118,12 +118,11 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ### 2. Mô hình ERD
 
-- Lưu ý:
-    - ERD Chen notation không hỗ trợ các ký hiệu kế thừa, nên chỉ biểu diễn quan hệ kế thừa tại CD.
-    - Để đồ họa gọn gàng, sẽ chưa biểu diễn các thuộc tính ở ERD, chuyển qua biểu diễn tại CD.
 
 
 ### 3. Mô hình Class Diagram
+
+
 
 
 ### 4. Mô hình Logic
