@@ -1,21 +1,19 @@
-@startuml "Bai 2. Class Diagram - v2 (Tuong ung ERD v2)"
+@startuml "Bai 2. Class Diagram"
 
-' Class Diagram nay da cap nhat
-' 1. Logic Ke thua (Inheritance)
-' 2. Cac moi quan he da chuan hoa (loai bo duong tat)
-' 3. Thêm các Association Class cho quan he n-n
-
-skinparam classAttributeIconSize 0
+'skinparam classAttributeIconSize 0
 skinparam defaultFontName "Iosevka"
 
 class DAILY {
   # maDaily: string
   - viTri: string
+  + themPhongBan()
 }
 
 class PHONGBAN {
   # maPB: string
   - tenPB: string
+  + themNhanVien()
+  + themChucVu()
 }
 
 class CHUCVU {
@@ -27,6 +25,8 @@ class CHUCVU {
 abstract class NHANVIEN {
   # maNV: string
   - tenNV: string
+  + chucVu: string
+  + nhanChucVu()
 }
 class NVHanhChanh extends NHANVIEN {
   - trinhDoHocVan: string
@@ -45,6 +45,8 @@ class KHACHHANG {
   - tenKH: string
   - diaChi: string
   - sdt: string
+  + dangKyHopDong()
+  + yeuCauBaoHanh()
 }
 
 class HOPDONG {
@@ -54,6 +56,8 @@ class HOPDONG {
   - tienPhaiTT: float
   - tienDaTT: float
   - giamTru: float
+  + tinhTienConLai(): float
+  + lapPhieuThanhToan()
 }
 
 class XE {
@@ -72,6 +76,7 @@ class PHIEUTHANHTOAN {
 class BAOHANH {
   # maBH: string
   - ngayYeuCau: Date
+  + themChiTietBaoHanh()
 }
 
 class LINHKIEN {
@@ -96,6 +101,7 @@ class ChiTietBaoHanh {
   - lyDo: string
   - loiThuocVe: string
   - giaTien: float
+  + themLinhKien()
 }
 
 ' --- Associations (Moi quan he da chuan hoa) ---
