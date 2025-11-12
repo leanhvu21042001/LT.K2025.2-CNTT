@@ -328,19 +328,30 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
     - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
     - `KHACHHANG`: Người mua xe.
     - `HOPDONG`: Hợp đồng bán xe (chứa 1 hoặc nhiều xe).
-    - `XE`: Thông tin xe (SoKhung, SoSuon là duy nhất).
+    - `XE`: Thông tin xe (`SoKhung`, `SoSuon` là duy nhất).
     - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
     - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
     - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
+    - `PHONGBAN`: Phòng Ban, thuộc một đại lý cụ thể và có nhân viên cụ thể.
+    - `CHUCVU`: Chức vụ trong mỗi phòng ban.
 - Kế thừa (Inheritance):
-    - `NHANVIEN` là lớp cha.
-    - `NV_HANHCHANH` là lớp con (có: TrinhDoHocVan, ThuocPhongBan).
-    - `NV_KYTHUAT` là lớp con (có: BacTho, SoNamKinhNghiem).
+    - `NHANVIEN` là lớp cha: `ChucVu`, `PhongBan`.
+    - `NV_HANHCHANH` là lớp con cho nhân viên Hành Chánh: `TrinhDoHocVan`.
+    - `NV_KYTHUAT` là lớp con cho nhân Viên Kỹ Thuật: `BacTho`, `SoNamKinhNghiem`.
 - Mối quan hệ (Relationships):
     - `DAILY` (1) - (n) `NHANVIEN`:
         - Một đại lý có nhiều nhân viên.
         - Một nhân viên chỉ làm việc tại một đại lý cụ thể.
-    - `NHANVIEN` (1) - (n) `HOPDONG`:
+    - `DAILY (1) - (n) PHONGBAN`:
+        - Một đại lý có nhiều. phòng ban.
+        - Một phòng ban cụ thể thuộc một đại lý.
+    - `PHONGBAN (1) - (n) CHUCVU`:
+        - Một phòng ban có nhiều chức vụ.
+        - Một chức vụ thuộc một phòng ban.
+    - `CHUCVU (1) - (n) NHANVIEN`:
+        - Một chức vụ được gán cho 1 hoặc n nhân viên.
+        - Một nhân viên có thể nhận 1 hoặc n chức vụ.
+    - `NHANVIEN (1) - (n) HOPDONG`:
         - Một HĐ có 1 NV lập, 1 NV kế toán.
         - Một NV có thể lập/duyệt nhiều HĐ.
     - `KHACHHANG` (1) - (n) `HOPDONG`:
