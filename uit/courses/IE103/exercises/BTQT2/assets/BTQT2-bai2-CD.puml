@@ -1,9 +1,13 @@
 @startuml "Bai 2. Class Diagram"
 
+title "Bai 2. Class Diagram"
+
 'skinparam classAttributeIconSize 0
 skinparam backgroundcolor transparent
 skinparam defaultFontName "Iosevka"
 !pragma layout neato
+' skinparam nodesep 10
+skinparam ranksep 20
 
 class DAILY {
   # maDaily: string
@@ -86,8 +90,6 @@ class LINHKIEN {
   - tenLK: string
 }
 
-' --- Association Classes (Tuong ung quan he n-n) ---
-
 ' ERD: CHUCVU_NV (n-n)
 class NhanChuc {
   - ngayNhanChuc: Date
@@ -105,8 +107,6 @@ class ChiTietBaoHanh {
   - giaTien: float
   + themLinhKien()
 }
-
-' --- Associations (Moi quan he da chuan hoa) ---
 
 ' 1. Cau truc to chuc
 DAILY "1" -- "0..*" PHONGBAN : "có"

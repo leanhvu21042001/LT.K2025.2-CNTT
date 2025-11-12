@@ -1,9 +1,13 @@
 @startchen "Bai 2. EER Diagram"
 
+title "Bai 2. ER Diagram"
+
 ' ERD Chen notation khong ho tro Ke thua (Inheritance)
 skinparam backgroundcolor transparent
 skinparam defaultFontName "Iosevka"
 !pragma layout neato
+skinparam nodesep 10
+' skinparam ranksep 20
 
 ' --- Entities ---
 
