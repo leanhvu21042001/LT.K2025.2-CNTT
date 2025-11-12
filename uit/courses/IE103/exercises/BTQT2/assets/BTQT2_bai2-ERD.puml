@@ -78,19 +78,18 @@ relationship CHUCVU_NV {
 NHANVIEN -(1,n)- CHUCVU_NV
 CHUCVU -(1,n)- CHUCVU_NV
 
-relationship CHUCVU_PHONGBAN {
+relationship CV_PB {
   ' Chuc Vu thuoc Phong Ban
 }
 
-CHUCVU -(1,1)- CHUCVU_PHONGBAN
-PHONGBAN -(1,n)- CHUCVU_PHONGBAN
+CHUCVU -(1,1)- CV_PB
+PHONGBAN -(1,n)- CV_PB
 
-
-relationship NV_PHONGBAN {
+relationship NV_PB {
   ' Nhan Vien lam viec o Phong Ban
 }
-NHANVIEN -(1,1)- NV_PHONGBAN
-PHONGBAN -(1,n)- NV_PHONGBAN
+NHANVIEN -(1,1)- NV_PB
+PHONGBAN -(1,n)- NV_PB
 
 relationship THUOC {
   'Phong Ban thuoc Dai Ly
