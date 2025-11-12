@@ -327,24 +327,42 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
     - `DAILY`: Nơi nhân viên làm việc.
     - `NHANVIEN`: Người lập hóa đơn, kế toán, kỹ thuật.
     - `KHACHHANG`: Người mua xe.
-    - `HOADON`: Hóa đơn bán xe (chứa 1 hoặc nhiều xe).
+    - `HOPDONG`: Hợp đồng bán xe (chứa 1 hoặc nhiều xe).
     - `XE`: Thông tin xe (SoKhung, SoSuon là duy nhất).
     - `PHIEUTHANHTOAN`: Dùng cho các hóa đơn trả góp.
     - `BAOHANH`: Phiếu nhận xét khi khách yêu cầu bảo hành.
     - `LINHKIEN`: Các linh kiện được dùng trong bảo hành.
-- Inheritance (Kế thừa):
+- Kế thừa (Inheritance):
     - `NHANVIEN` là lớp cha.
     - `NV_HANHCHANH` là lớp con (có: TrinhDoHocVan, ThuocPhongBan).
     - `NV_KYTHUAT` là lớp con (có: BacTho, SoNamKinhNghiem).
 - Mối quan hệ (Relationships):
-    - `DAILY` (1) - (n) `NHANVIEN`: Một đại lý có nhiều nhân viên.
-    - `NHANVIEN` (n) - `HOADON`: Một HĐ có 1 NV lập, 1 NV kế toán. Một NV có thể lập/duyệt nhiều HĐ.
-    - `KHACHHANG` (1) - (n) `HOADON`: Một KH có thể có nhiều HĐ.
-    - `HOADON` (1) - (n) `XE`: Một HĐ có thể mua 1 hoặc nhiều xe. Một xe (duy nhất) chỉ thuộc 1 HĐ.
-    - `HOADON` (1) - (1..3) `PHIEUTHANHTOAN`: Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
+    - `DAILY` (1) - (n) `NHANVIEN`:
+        - Một đại lý có nhiều nhân viên.
+        - Một nhân viên chỉ làm việc tại một đại lý cụ thể.
+    - `NHANVIEN` (1) - (n) `HOPDONG`:
+        - Một HĐ có 1 NV lập, 1 NV kế toán.
+        - Một NV có thể lập/duyệt nhiều HĐ.
+    - `KHACHHANG` (1) - (n) `HOPDONG`:
+        - Một KH có thể có nhiều HĐ.
+        - Một HĐ chỉ thuộc một khách hàng.
+    - `HOPDONG` (1) - (n) `XE`:
+        - Một HĐ có thể mua 1 hoặc nhiều xe.
+        - Một xe cụ thể (duy nhất) chỉ thuộc 1 HĐ.
+    - `HOPDONG` (1) - (1..3) `PHIEUTHANHTOAN`:
+        - Một HĐ (nếu trả góp) có tối đa 3 phiếu thanh toán.
+        - Mỗi phiếu thanh toán chỉ thuộc một HĐ cụ thể.
     - `XE` (1) - (n) `BAOHANH`: Một xe có thể được bảo hành nhiều lần.
-    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG): Đây là quan hệ n-n, vì 1 phiếu BH có thể dùng nhiều linh kiện, 1 loại linh kiện có thể dùng cho nhiều phiếu BH. Cần 1 bảng liên kết `CHITIET_BAOHANH`.
-    - `CHITIET_BAOHANH` (bảng liên kết): Sẽ chứa LyDo, LoiThuocVe, GiaTien.
+    - `BAOHANH` (1) - (n) `LINHKIEN` (SỬ DỤNG):
+        - Đây là quan hệ `n-n`, vì
+        - 1 phiếu BH có thể dùng nhiều linh kiện cả về loại và số lượng,
+        - 1 loại linh kiện có thể được dùng cho nhiều phiếu BH.
+        - Bảng liên kết `CHITIET_BAOHANH: Chứa LyDo, LoiThuocVe, GiaTien.
+    - `BAOHANH (1) - (n) NHANVIEN`: THỰC HIỆN BẢO HÀNH.
+        - Quan hệ `n-n`.
+        - Một lần bảo hành có thể thực hiện bởi nhiều nhân viên (Kỹ thuật).
+        - Một nhân viên có thể thực hiện nhiều yêu cầu bảo hành.
+        - Bảng liên kết `THUCHIEN_BH`: MaNV, MaBH
 
 ### 2. Mô hình ERD
 
@@ -353,7 +371,7 @@ HoiDong "0..*" -- "1" GiangVien : "thư ký"
 ' Sơ đồ EER (Enhanced ER) cho Bài 2
 ' Vi ERD co ban khong ho tro Ke thua (Inheritance),
 ' chung ta su dung ky phap mo rong (EER) voi ky hieu "=>= d"
-skinparam defaultFontName "Inter"
+skinparam defaultFontName "Iosevka"
 !pragma layout neato
 
 ' --- Entities ---
