@@ -127,6 +127,8 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ### 4. Mô hình Logic
 
+Nhóm Bảng Chính:
+
 - `KHOA` (<u>MaKhoa</u>, TenKhoa)
 - `GIANGVIEN` (<u>MaGV</u>, TenGV, DiaChi, SDT, HocVi, ChuyenNganh, *MaKhoa*)
     - `MaKhoa` (FK) tham chiếu đến `KHOA(MaKhoa)`.
@@ -138,11 +140,17 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - `MaGV_HuongDan` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaGV_PhanBien` (FK) tham chiếu đến `GIANGVIEN(MaGV)`.
     - `MaHD` (FK) tham chiếu đến `HOIDONG(MaHD)`.
-- `SINHVIEN` (<u>MaSV</u>, TenSV, NamHoc, ...)
-- `THUCHIEN` (<u>MaSV, MaDT</u>, LanBaoVe, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
-    - Khóa chính (PK): (<u>MaSV</u>, <u>MaDT</u>)
-    - Ràng buộc: `LanBaoVe <= 2` .
-    - Ràng buộc: `UNIQUE(MaSV, MaDT)` để đảm bảo SV không làm cùng 1 đề tài 2 lần.
+- `SINHVIEN` (<u>MaSV</u>, TenSV, NamHoc)
+
+Bảng Liên Kết (Từ quan hệ m-n `THUCHIEN`):
+
+- `THUCHIEN_DETAI` (<u>MaSV</u>, <u>LanBaoVe</u>, *MaDT*, Diem_GVHD, Diem_GVPB, Diem_ChuTich)
+    - Khóa chính (PK): (<u>MaSV</u>, <u>LanBaoVe</u>)
+    - `MaSV` (FK) tham chiếu đến `SINHVIEN(MaSV)`.
+    - `MaDT` (FK) tham chiếu đến `DETAI(MaDT)`.
+    - Ràng buộc 1: `LanBaoVe` phải là 1 hoặc 2 (thực thi "tối đa 2 lần").
+    - Ràng buộc 2: `UNIQUE(MaSV, MaDT)` (thực thi "đề tài lần 1 phải khác lần 2").
+    - Ràng buộc 3: Cần logic đếm số lượng `MaDT` không quá 3 trong CSDL (thực thi "tối đa 3 sinh viên").
 
 ## Bài 2: Quản Lý Bán Xe Máy
 
