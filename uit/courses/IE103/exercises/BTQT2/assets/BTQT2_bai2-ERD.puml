@@ -91,18 +91,18 @@ relationship NV_PB {
 NHANVIEN -(1,1)- NV_PB
 PHONGBAN -(1,n)- NV_PB
 
-relationship THUOC {
-  'Phong Ban thuoc Dai Ly
+relationship PB_DAILY {
+  'Phong Ban PB_DAILY Dai Ly
 }
 
-DAILY -(1,n)- THUOC
-PHONGBAN -(1,1)- THUOC
+DAILY -(1,n)- PB_DAILY
+PHONGBAN -(1,1)- PB_DAILY
 
-relationship LAM_TAI {
+relationship LAM_VIEC {
 }
 
-DAILY -(1,n)- LAM_TAI
-NHANVIEN -(1,1)- LAM_TAI
+DAILY -(1,n)- LAM_VIEC
+NHANVIEN -(1,1)- LAM_VIEC
 
 relationship LAP_HD {
 }
@@ -147,8 +147,17 @@ relationship THUCHIEN_BH {
   ' 1 BH co nhieu Chi Tiet Bao Hanh
 }
 
+
 BAOHANH -(1,n)- THUCHIEN_BH
 NHANVIEN -(1,n)- THUCHIEN_BH
+
+relationship DUOC_BH {
+  ' 1 Xe co the yeu cau bao hanh nhieu lan
+  ' 1 Bao Hanh chi lien quan den 1 Xe
+}
+
+XE -(1,n)- DUOC_BH
+BAOHANH -(1,1)- DUOC_BH
 
 relationship CHITIET_BH {
   ' n-n giua BAOHANH va LINHKIEN
