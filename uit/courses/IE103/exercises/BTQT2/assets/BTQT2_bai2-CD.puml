@@ -11,16 +11,28 @@ class DaiLy {
   + themHopDong()
 }
 
-' --- Inheritance ---
+' --- Các Class mới dựa theo ERD ---
+class PhongBan {
+  # maPB: string
+  - tenPB: string
+}
+
+class ChucVu {
+  # maCV: string
+  - tenCV: string
+}
+
+' --- Inheritance (Kế thừa) ---
+' NVKyThuat bay gio khong con giu 'chucVu' truc tiep
 abstract class NhanVien {
   # maNV: string
   - tenNV: string
   - chucVu: string
   + nhanChucVu()
 }
+' NVHanhChanh khong con giu 'phongBan' truc tiep
 class NVHanhChanh extends NhanVien {
   - trinhDoHocVan: string
-  - phongBan: string
   + lapHopDong()
   + duyetHopDong()
 }
@@ -80,7 +92,21 @@ class LinhKien {
   - tenLK: string
 }
 
-' --- Association Class ---
+' --- Association Classes (Dựa trên ERD mới) ---
+
+' ERD: CHUCVU_NHANVIEN (n-n)
+class NhanChuc {
+  ' Luu thong tin ve chuc vu cua nhan vien
+  - ngayNhanChuc: Date
+}
+
+' ERD: THUCHIEN_BH (n-n)
+' Mot bao hanh co the do nhieu NV Ky Thuat thuc hien
+class ThucHienBaoHanh {
+  - ngayThucHien: Date
+}
+
+' ERD: CHITIET_BH (n-n)
 class ChiTietBaoHanh {
   - lyDo: string
   - loiThuocVe: string
@@ -91,16 +117,37 @@ class ChiTietBaoHanh {
 ' --- Associations ---
 DaiLy "1" -- "0..*" NhanVien : "có"
 
+' --- Quan hệ mới theo ERD ---
+' ERD: NV_PHONGBAN (1-n)
+NhanVien "0..*" -- "1" PhongBan : "thuộc"
+
+' ERD: CHUCVU_PHONGBAN (1-n)
+ChucVu "0..*" -- "1" PhongBan : "thuộc"
+
+' ERD: CHUCVU_NHANVIEN (n-n)
+(NhanVien, NhanChuc) .. ChucVu
+NhanVien "0..*" -- NhanChuc
+NhanChuc -- "0..*" ChucVu
+
+' --- Các quan hệ logic nghiệp vụ ---
 KhachHang "1" -- "0..*" HopDong : "mua xe"
+' Logic: Hop dong do NV Hanh Chanh dam nhiem
 HopDong "0..*" -- "1" NVHanhChanh : "kế toán duyệt"
 HopDong "0..*" -- "1" NVHanhChanh : "người lập"
-HopDong "1" -- "1..*" Xe : "bao gồm xe"
-HopDong "1" -- "1..3" PhieuThanhToan : "có phiếu thanh toán"
-NVKyThuat "1" -- "0..*" BaoHanh : "thực hiện"
+HopDong "1" -- "1..*" Xe : "bao gồm"
+HopDong "1" -- "1..3" PhieuThanhToan : "có"
 
-KhachHang "1" -- "0..*" BaoHanh : "yêu cầu bảo hành"
-BaoHanh "1" -- "1..*" Xe : "bảo hành cho xe"
+' ERD: YEUCAU_BH (1-n)
+Xe "1" -- "0..*" BaoHanh : "yêu cầu"
+' ERD: CHITIET_BH (n-n)
 (BaoHanh, ChiTietBaoHanh) .. LinhKien
-BaoHanh "1" -- "0..*" ChiTietBaoHanh: "nội dung công việc"
-ChiTietBaoHanh -- "1..*" LinhKien: "sử dụng linh kiện"
+BaoHanh "1" -- "0..*" ChiTietBaoHanh
+ChiTietBaoHanh -- "1..*" LinhKien
+
+' ERD: THUCHIEN_BH (n-n)
+' Logic: Bao hanh do NV Ky Thuat thuc hien
+(NVKyThuat, ThucHienBaoHanh) .. BaoHanh
+NVKyThuat "0..*" -- ThucHienBaoHanh
+ThucHienBaoHanh -- "0..*" BaoHanh
+
 @enduml
