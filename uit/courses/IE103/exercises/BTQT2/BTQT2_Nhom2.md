@@ -202,23 +202,26 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 ### 4. Mô hình Logic
 
 - `DAILY` (<u>MaDaily</u>, ViTri, ...)
-- `NHANVIEN` (<u>MaNV</u>, TenNV, ChucVu, *MaDaily*, LoaiNV)
-    - `LoaiNV` dùng để xác định là 'HANHCHINH' hay 'KYTHUAT'.
+- `PHONGBAN` (<u>MaPB</u>, TenPB)
+- `NHANVIEN` (<u>MaNV</u>, TenNV,  *MaPB*, *MaCV*, *MaDaily*, LoaiNV)
+    - `LoaiNV` dùng để xác định là '`HANHCHANH`' hay '`KYTHUAT`'.
     - `MaDaily` (FK) tham chiếu đến `DAILY(MaDaily)`.
-- `NV_HANHCHANH` (<u>MaNV</u>, TrinhDoHocVan, PhongBan)
+    - `MaCV` (FK) tham chiếu đến `CHUCVU(MaCV)`.
+    - `MaPB` (FK) tham chiếu đến `PHONGBAN(MaPB)`.
+- `NV_HANHCHANH` (<u>MaNV</u>, TrinhDoHocVan)
     - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
 - `NV_KYTHUAT` (<u>MaNV</u>, BacTho, SoNamKinhNghiem)
     - `MaNV` (PK, FK) tham chiếu đến `NHANVIEN(MaNV)`.
 - `KHACHHANG` (<u>MaKH</u>, TenKH, DiaChi, SDT)
-- `HOADON` (<u>SoHD</u>, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
+- `HOPDONG` (<u>SoHD</u>, NgayHD, ThoiGianBH, TienPhaiTT, TienDaTT, GiamTru, *MaKH*, *MaNV_Lap*, *MaNV_KeToan*)
     - `MaKH` (FK) tham chiếu đến `KHACHHANG(MaKH)`.
     - `MaNV_Lap` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
     - `MaNV_KeToan` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
 - `XE` (<u>SoKhung, SoSuon</u>, NuocSX, LoaiXe, MauXe, SoPK, *SoHD*)
     - Khóa chính (PK): (<u>SoKhung, SoSuon</u>).
-    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+    - `SoHD` (FK) tham chiếu đến `HOPDONG(SoHD)`.
 - `PHIEUTHANHTOAN` (<u>MaPTT</u>, NgayTra, SoTien, *SoHD*, *MaNV_NhanTien*)
-    - `SoHD` (FK) tham chiếu đến `HOADON(SoHD)`.
+    - `SoHD` (FK) tham chiếu đến `HOPDONG(SoHD)`.
     - `MaNV_NhanTien` (FK) tham chiếu đến `NHANVIEN(MaNV)`.
 - `BAOHANH` (<u>MaBH</u>, NgayYeuCau, *SoKhungXe*, *SoSuonXe*)
     - Khóa ngoại (FK) tham chiếu đến `XE(SoKhung, SoSuon)`.
@@ -232,7 +235,7 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 **Công cụ**:
 
-- PlantUML:
+- PlantUML: 
 - PlantUML Editor:
 
 ### Bài 1. Quản Lý Đề Tài
