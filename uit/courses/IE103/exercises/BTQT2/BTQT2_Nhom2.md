@@ -85,20 +85,36 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - `DETAI`: Đề tài tốt nghiệp.
     - `SINHVIEN`: Sinh viên thực hiện đề tài.
 - Mối quan hệ (Relationships):
-    - `KHOA` (1) - (n) `DETAI`: Một khoa có nhiều đề tài.
-    - `KHOA` (1) - (n) `GIAOVIEN`: Một khoa có nhiều giảng viên (GV). Mỗi giảng viên thuộc một KHOA cụ thể.
-    - `GIANGVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): Một GV hướng dẫn nhiều đề tài. Mỗi đề tài *chỉ có 1* GV hướng dẫn.
-    - `GIANGVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): Một GV phản biện nhiều đề tài. Mỗi đề tài *chỉ có 1* GV phản biện.
-    - `GIANGVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): Một GV có thể làm chủ tịch nhiều HĐ. Mỗi HĐ *chỉ có 1* chủ tịch.
-    - `GIANGVIEN` (1) - (n) `HOIDONG` (THƯ KÝ): Một GV có thể làm thư ký nhiều HĐ. Mỗi HĐ *chỉ có 1* thư ký.
-    - `HOIDONG` (1) - (n) `DETAI`: Một HĐ chấm nhiều đề tài. Mỗi đề tài *chỉ thuộc 1* HĐ.
-    - `SINHVIEN` (n) - (n) `DETAI` (THỰC HIỆN): Đây là mối quan hệ n-n.
+    - `KHOA` (1) - (n) `DETAI`: `QUANLY_DT`
+        - Một khoa có nhiều đề tài.
+        - Một đề tài thuộc một khoa cụ thể.
+    - `KHOA` (1) - (n) `GIANGVIEN`:`QUANLY_GV`
+        - Một khoa có nhiều giảng viên (GV).
+        - Mỗi giảng viên thuộc một KHOA cụ thể.
+    - `GIANGVIEN` (1) - (n) `DETAI` (HƯỚNG DẪN): `HUONGDAN`
+        - Một GV hướng dẫn nhiều đề tài.
+        - Mỗi đề tài *chỉ có 1* GV hướng dẫn.
+    - `GIANGVIEN` (1) - (n) `DETAI` (PHẢN BIỆN): `PHANBIEN`
+        - Một GV phản biện nhiều đề tài.
+        - Mỗi đề tài *chỉ có 1* GV phản biện.
+    - `GIANGVIEN` (1) - (n) `HOIDONG` (CHỦ TỊCH): `LAM_CHUTICH`
+        - Một GV có thể làm chủ tịch nhiều HĐ.
+        - Mỗi HĐ *chỉ có 1* chủ tịch.
+    - `GIANGVIEN` (1) - (n) `HOIDONG` (THƯ KÝ): `LAM_THUKY`
+        - Một GV có thể làm thư ký nhiều HĐ.
+        - Mỗi HĐ *chỉ có 1* thư ký.
+    - `HOIDONG` (1) - (n) `DETAI`: `CHAM_TAI` (Chấm Tại Hội Đồng)
+        - Một HĐ chấm nhiều đề tài.
+        - Mỗi đề tài *chỉ thuộc 1* HĐ.
+    - `SINHVIEN` (n) - (n) `DETAI` (THỰC HIỆN): `THUCHIEN`
+        - Đây là mối quan hệ n-n.
         - Một `DETAI` có tối đa 3 `SINHVIEN`.
         - Một `SINHVIEN` có thể thực hiện tối đa 2 `DETAI` (lần 1 rớt, làm lại lần 2).
-        - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết (`THUCHIEN`) để lưu điểm và thông tin lần bảo vệ.
+        - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết để lưu điểm và thông tin lần bảo vệ.
+        - Bảng `THUCHIEN_DETAI` thể hiện quan hệ này, `UNIQUE(SINHVIEN, DETAI)` để đảm bảo 2 lần là 2 đề tài khác nhau.
 - Thuộc tính quan trọng:
-    - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN` để lưu các điểm này.
-    - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (ví dụ: bảng `THUCHIEN` có thể có thuộc tính `LanBaoVe`).
+    - Điểm được cho bởi 3 người (GVHD, GVPB, Chủ tịch HĐ) và được cho *theo từng sinh viên*. Điều này củng cố việc chúng ta cần bảng liên kết `THUCHIEN_DETAI` để lưu các điểm này.
+    - Các quy tắc (SV < 5 điểm, bảo vệ 2 lần, đề tài khác nhau) là các *quy tắc nghiệp vụ (business logic)* sẽ được xử lý ở tầng ứng dụng, nhưng cấu trúc CSDL phải hỗ trợ nó (bảng `THUCHIEN_DETAI` có thể có thuộc tính `LanBaoVe`).
 
 ### 2. Mô hình ERD
 
@@ -194,8 +210,9 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 ### 2. Mô hình ERD
 
 - Sử dụng ER Chen notation.
-    - Không có quy tắc cho thừa kế (chỉ khả dụng trong EER).
+    - Không có quy tắc cho thừa kế (chỉ khả dụng trong EER), chuyển qua biểu diễn tại Class Diagram.
 - Hạn chế biểu diễn thuộc tính để đơn giản sơ đồ.
+    - Chuyển qua biểu diễn tại Class Diagram.
 
 ![BTQT2_Bai2-ERD-Bai2-v2](assets/BTQT2_Bai2-ERD-Bai2-v2.png)
 
