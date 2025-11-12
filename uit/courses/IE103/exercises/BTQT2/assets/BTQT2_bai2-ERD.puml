@@ -6,6 +6,7 @@ skinparam defaultFontName "Iosevka"
 !pragma layout neato
 
 ' --- Entities ---
+
 entity DAILY {
   ' MaDaily <<key>>
   ' ViTri
@@ -16,43 +17,16 @@ entity PHONGBAN {
   ' TenPB
 }
 
-relationship THUOC {
-  'Phong Ban thuoc Dai Ly
-}
-
-DAILY -(1,n)- THUOC
-PHONGBAN -(1,1)- THUOC
-
 entity NHANVIEN {
   ' MaNV <<key>>
   ' TenNV
   ' ChucVu
 }
 
-relationship NV_PHONGBAN {
-  ' Nhan Vien lam viec o Phong Ban
-}
-NHANVIEN -(1,1)- NV_PHONGBAN
-PHONGBAN -(1,n)- NV_PHONGBAN
-
 entity CHUCVU {
   ' MaCV <<key>>
   ' TenCV
 }
-
-relationship CHUCVU_NHANVIEN {
-  ' Nhan Vien co Chuc Vu
-}
-
-NHANVIEN -(1,n)- CHUCVU_NHANVIEN
-CHUCVU -(1,n)- CHUCVU_NHANVIEN
-
-relationship CHUCVU_PHONGBAN {
-  ' Chuc Vu thuoc Phong Ban
-}
-
-CHUCVU -(1,1)- CHUCVU_PHONGBAN
-PHONGBAN -(1,n)- CHUCVU_PHONGBAN
 
 entity KHACHHANG {
   ' MaKH <<key>>
@@ -96,6 +70,35 @@ entity LINHKIEN {
 }
 
 ' --- Relationships ---
+
+relationship CHUCVU_NHANVIEN {
+  ' Nhan Vien co Chuc Vu
+}
+
+NHANVIEN -(1,n)- CHUCVU_NHANVIEN
+CHUCVU -(1,n)- CHUCVU_NHANVIEN
+
+relationship CHUCVU_PHONGBAN {
+  ' Chuc Vu thuoc Phong Ban
+}
+
+CHUCVU -(1,1)- CHUCVU_PHONGBAN
+PHONGBAN -(1,n)- CHUCVU_PHONGBAN
+
+
+relationship NV_PHONGBAN {
+  ' Nhan Vien lam viec o Phong Ban
+}
+NHANVIEN -(1,1)- NV_PHONGBAN
+PHONGBAN -(1,n)- NV_PHONGBAN
+
+relationship THUOC {
+  'Phong Ban thuoc Dai Ly
+}
+
+DAILY -(1,n)- THUOC
+PHONGBAN -(1,1)- THUOC
+
 relationship LAM_TAI {
 }
 
@@ -138,7 +141,7 @@ PHIEUTHANHTOAN -(1,1)- TRA_GOP
 relationship YEUCAU_BH {
 }
 
-XE -(1,n)- YEUCAU_BH
+KHACHHANG -(1,n)- YEUCAU_BH
 BAOHANH -(1,1)- YEUCAU_BH
 
 relationship THUCHIEN_BH {
