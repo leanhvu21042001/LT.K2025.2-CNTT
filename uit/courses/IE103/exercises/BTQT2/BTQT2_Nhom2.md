@@ -222,6 +222,11 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
 
 ## Phụ Lục
 
+**Công cụ**:
+
+- PlantUML:
+- PlantUML Editor:
+
 ### Bài 1. Quản Lý Đề Tài
 
 #### ERD - UML
