@@ -106,8 +106,8 @@ Qua phân tích đề bài, chúng ta có thể xác định các thực thể v
     - `HOIDONG` (1) - (n) `DETAI`: `CHAM_TAI` (Chấm Tại Hội Đồng)
         - Một HĐ chấm nhiều đề tài.
         - Mỗi đề tài *chỉ thuộc 1* HĐ.
-    - `SINHVIEN` (n) - (n) `DETAI` (THỰC HIỆN): `THUCHIEN`
-        - Đây là mối quan hệ n-n.
+    - `SINHVIEN` (m) - (n) `DETAI` (THỰC HIỆN): `THUCHIEN`
+        - Đây là mối quan hệ m-n.
         - Một `DETAI` có tối đa 3 `SINHVIEN`.
         - Một `SINHVIEN` có thể thực hiện tối đa 2 `DETAI` (lần 1 rớt, làm lại lần 2).
         - Mối quan hệ này sẽ trở thành một bảng/thực thể liên kết để lưu điểm và thông tin lần bảo vệ.
