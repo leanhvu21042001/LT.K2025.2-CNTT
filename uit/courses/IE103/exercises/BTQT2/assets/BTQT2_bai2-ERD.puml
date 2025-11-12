@@ -104,6 +104,13 @@ relationship YEUCAU_BH {
 XE -(1,n)- YEUCAU_BH
 BAOHANH -(1,1)- YEUCAU_BH
 
+relationship THUCHIEN_BH {
+  ' 1 BH co nhieu Chi Tiet Bao Hanh
+}
+
+BAOHANH -(1,n)- THUCHIEN_BH
+NHANVIEN -(1,n)- THUCHIEN_BH
+
 relationship CHITIET_BH {
   ' n-n giua BAOHANH va LINHKIEN
   ' LyDo
