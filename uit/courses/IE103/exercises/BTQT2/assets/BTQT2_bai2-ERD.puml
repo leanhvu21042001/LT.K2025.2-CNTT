@@ -73,6 +73,8 @@ entity LINHKIEN {
 
 relationship CHUCVU_NV {
   ' Nhan Vien co Chuc Vu
+  ' 1 Nhan Vien co the giu nhieu Chuc Vu
+  ' 1 Chuc Vu duoc giao cho nhieu Nhan Vien
 }
 
 NHANVIEN -(1,n)- CHUCVU_NV
@@ -80,6 +82,8 @@ CHUCVU -(1,n)- CHUCVU_NV
 
 relationship CV_PB {
   ' Chuc Vu thuoc Phong Ban
+  ' 1 Phong Ban co nhieu Chuc Vu
+  ' 1 Chuc Vu chi thuoc ve 1 Phong Ban
 }
 
 CHUCVU -(1,1)- CV_PB
@@ -87,6 +91,8 @@ PHONGBAN -(1,n)- CV_PB
 
 relationship NV_PB {
   ' Nhan Vien lam viec o Phong Ban
+  ' 1 Phong Ban co nhieu Nhan Vien
+  ' 1 Nhan Vien chi lam viec o 1 Phong Ban
 }
 NHANVIEN -(1,1)- NV_PB
 PHONGBAN -(1,n)- NV_PB
