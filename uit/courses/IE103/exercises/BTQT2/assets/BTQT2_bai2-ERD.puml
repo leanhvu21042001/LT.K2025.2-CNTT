@@ -187,12 +187,14 @@ BAOHANH -(1,1)- DUOC_BH
 
 relationship CHITIET_BH {
   ' n-n giua BAOHANH va LINHKIEN
+  ' 1 Bao Hanh co the bao gom 0 hoac nhieu Linh Kien
+  ' 1 Linh Kien co the thuoc ve nhieu Bao Hanh
   ' LyDo
   ' LoiThuocVe
   ' GiaTien
 }
 
-BAOHANH -(1,n)- CHITIET_BH
-LINHKIEN -(1,n)- CHITIET_BH
+BAOHANH -(0,n)- CHITIET_BH
+LINHKIEN -(0,n)- CHITIET_BH
 
 @endchen
