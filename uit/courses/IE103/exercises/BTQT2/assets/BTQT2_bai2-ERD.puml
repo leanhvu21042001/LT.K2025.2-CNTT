@@ -107,15 +107,6 @@ relationship PB_DAILY {
 DAILY -(1,n)- PB_DAILY
 PHONGBAN -(1,1)- PB_DAILY
 
-relationship LAM_VIEC {
-  ' Nhan Vien lam viec o Dai Ly
-  ' 1 Dai Ly co nhieu Nhan Vien
-  ' 1 Nhan Vien chi lam viec o 1 Dai Ly
-}
-
-NHANVIEN -(1,1)- LAM_VIEC
-DAILY -(1,n)- LAM_VIEC
-
 relationship LAP_HD {
   ' NV Ban Hang/Hanh Chinh
   ' 1 NV lap nhieu HD
@@ -159,14 +150,6 @@ relationship TRA_GOP {
 
 HOPDONG -(1,3)- TRA_GOP
 PHIEUTHANHTOAN -(1,1)- TRA_GOP
-
-relationship YEUCAU_BH {
-  ' 1 KHACH co the yeu cau bao hanh nhieu lan
-  ' 1 Bao Hanh chi lien quan den 1 KHACH
-}
-
-KHACHHANG -(1,n)- YEUCAU_BH
-BAOHANH -(1,1)- YEUCAU_BH
 
 relationship THUCHIEN_BH {
   ' Nhan Vien Ky Thuat thuc hien bao hanh
