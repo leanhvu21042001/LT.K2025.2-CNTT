@@ -1,5 +1,6 @@
-@startchen
+@startchen "Bai 1. ER Diagram"
 
+skinparam backgroundcolor transparent
 skinparam defaultFontName "Iosevka"
 !pragma layout neato
 
