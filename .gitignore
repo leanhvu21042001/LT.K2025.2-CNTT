@@ -5,3 +5,7 @@
 .obsidian/workspace.json
 .obsidian/graph.json
 
+# Objects/Build
+*.o
+*.out
+

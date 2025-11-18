@@ -14,5 +14,6 @@
   "useMarkdownLinks": true,
   "newLinkFormat": "relative",
   "attachmentFolderPath": "./assets",
-  "tabSize": 4
+  "tabSize": 4,
+  "promptDelete": false
 }

@@ -1,0 +1,112 @@
+@startchen "Bai 1. ER Diagram"
+
+title "Bai 1. ER Diagram"
+
+skinparam backgroundcolor transparent
+skinparam defaultFontName "Iosevka"
+!pragma layout neato
+skinparam nodesep 10
+' skinparam ranksep 20
+
+' --- Entities ---
+entity KHOA {
+  ' MaKhoa <<key>>
+  ' TenKhoa
+}
+
+entity GIANGVIEN {
+  ' MaGV <<key>>
+  ' TenGV
+  ' DiaChi
+  ' SDT
+  ' HocVi
+  ' ChuyenNganh
+}
+
+entity HOIDONG {
+  ' MaHOIDONG <<key>>
+  ' NgayBaoVe
+  ' DiaChiCuThe
+}
+
+entity DETAI {
+  ' MaDT <<key>>
+  ' TenDT
+  ' TGBatDau
+  ' TGKetThuc
+}
+
+entity SINHVIEN {
+  ' MaSINHVIEN <<key>>
+  ' TenSINHVIEN
+  ' NamHoc
+}
+
+' --- Relationships ---
+relationship THUOC {
+  ' 1 Khoa co nhieu De Tai
+}
+
+KHOA -(1,n)- THUOC
+DETAI -(1,1)- THUOC
+
+relationship QUANLY_GV {
+  ' 1 Khoa co nhieu Giao Vien
+}
+
+KHOA -(1,n)- QUANLY_GV
+GIANGVIEN -(1,1)- QUANLY_GV
+
+relationship HUONGDAN {
+  ' 1 GIANGVIEN huong dan nhieu De Tai
+  ' 1 De Tai chi co 1 GIANGVIENHOIDONG
+}
+
+GIANGVIEN -(1,n)- HUONGDAN
+DETAI -(1,1)- HUONGDAN
+
+relationship PHANBIEN {
+  ' 1 GIANGVIEN phan bien nhieu De Tai
+  ' 1 De Tai chi co 1 GIANGVIENPB
+}
+
+GIANGVIEN -(1,n)- PHANBIEN
+DETAI -(1,1)- PHANBIEN
+
+relationship CHAM_TAI {
+  ' 1 Hoi Dong cham nhieu De Tai
+  ' 1 De Tai chi duoc cham boi 1 HOIDONG
+}
+
+HOIDONG -(1,n)- CHAM_TAI
+DETAI -(1,1)- CHAM_TAI
+
+relationship LAM_CHUTICH {
+  ' 1 GIANGVIEN la Chu Tich nhieu HOIDONG
+  ' 1 HOIDONG chi co 1 Chu Tich
+}
+
+GIANGVIEN -(1,n)- LAM_CHUTICH
+HOIDONG -(1,1)- LAM_CHUTICH
+
+relationship LAM_THUKY {
+  ' 1 GIANGVIEN la Thu Ky nhieu HOIDONG
+  ' 1 HOIDONG chi co 1 Thu Ky
+}
+
+GIANGVIEN -(1,n)- LAM_THUKY
+HOIDONG -(1,1)- LAM_THUKY
+
+relationship THUCHIEN {
+  ' Quan he n-n giua SINHVIEN va DETAI
+  ' Luu diem va lan bao ve
+  ' Diem_GIANGVIENHOIDONG
+  ' Diem_GIANGVIENPB
+  ' Diem_ChuTich
+  ' LanBaoVe
+}
+
+SINHVIEN -(1,2)- THUCHIEN
+DETAI -(1,3)- THUCHIEN
+
+@endchen

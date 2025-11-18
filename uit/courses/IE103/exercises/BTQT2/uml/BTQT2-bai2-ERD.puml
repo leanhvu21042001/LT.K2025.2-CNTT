@@ -1,0 +1,187 @@
+@startchen "Bai 2. EER Diagram"
+
+title "Bai 2. ER Diagram"
+
+' ERD Chen notation khong ho tro Ke thua (Inheritance)
+skinparam backgroundcolor transparent
+skinparam defaultFontName "Iosevka"
+!pragma layout neato
+skinparam nodesep 10
+' skinparam ranksep 20
+
+' --- Entities ---
+
+entity DAILY {
+  ' MaDaily <<key>>
+  ' ViTri
+}
+
+entity PHONGBAN {
+  ' MaPB <<key>>
+  ' TenPB
+}
+
+entity NHANVIEN {
+  ' MaNV <<key>>
+  ' TenNV
+  ' ChucVu
+}
+
+entity CHUCVU {
+  ' MaCV <<key>>
+  ' TenCV
+}
+
+entity KHACHHANG {
+  ' MaKH <<key>>
+  ' TenKH
+  ' DiaChi
+  ' SDT
+}
+
+entity HOPDONG {
+  ' SoHD <<key>>
+  ' NgayHD
+  ' ThoiGianBH
+  ' TienPhaiTT
+  ' TienDaTT
+  ' GiamTru
+}
+
+entity XE {
+  ' SoKhung <<key>>
+  ' SoSuon <<key>>
+  ' NuocSX
+  ' LoaiXe
+  ' MauXe
+  ' SoPK
+}
+
+entity PHIEUTHANHTOAN {
+  ' MaPTT <<key>>
+  ' NgayTra
+  ' SoTien
+}
+
+entity BAOHANH {
+  ' MaBH <<key>>
+  ' NgayYeuCau
+}
+
+entity LINHKIEN {
+  ' MaLK <<key>>
+  ' TenLK
+}
+
+' --- Relationships ---
+
+relationship CHUCVU_NV {
+  ' Nhan Vien co Chuc Vu
+  ' 1 Nhan Vien co the giu nhieu Chuc Vu
+  ' 1 Chuc Vu duoc giao cho nhieu Nhan Vien
+}
+
+NHANVIEN -(1,n)- CHUCVU_NV
+CHUCVU -(1,n)- CHUCVU_NV
+
+relationship CV_PB {
+  ' Chuc Vu thuoc Phong Ban
+  ' 1 Phong Ban co nhieu Chuc Vu
+  ' 1 Chuc Vu chi thuoc ve 1 Phong Ban
+}
+
+CHUCVU -(1,1)- CV_PB
+PHONGBAN -(1,n)- CV_PB
+
+relationship NV_PB {
+  ' Nhan Vien lam viec o Phong Ban
+  ' 1 Phong Ban co nhieu Nhan Vien
+  ' 1 Nhan Vien chi lam viec o 1 Phong Ban
+}
+
+NHANVIEN -(1,1)- NV_PB
+PHONGBAN -(1,n)- NV_PB
+
+relationship PB_DAILY {
+  ' Phong Ban thuoc Dai Ly
+  ' 1 Dai Ly co nhieu Phong Ban
+  ' 1 Phong Ban chi thuoc 1 Dai Ly
+}
+
+DAILY -(1,n)- PB_DAILY
+PHONGBAN -(1,1)- PB_DAILY
+
+relationship LAP_HD {
+  ' NV Ban Hang/Hanh Chinh
+  ' 1 NV lap nhieu HD
+  ' 1 HD chi duoc lap boi 1 NV
+}
+
+NHANVIEN -(1,n)- LAP_HD
+HOPDONG -(1,1)- LAP_HD
+
+relationship DUYET_HD {
+  ' NV Ke Toan
+  ' 1 NV duyet nhieu HD
+  ' 1 HD chi duoc duyet boi 1 NV
+}
+
+NHANVIEN -(1,n)- DUYET_HD
+HOPDONG -(1,1)- DUYET_HD
+
+relationship MUA_HANG {
+  ' Khach Hang mua hang va tao HD
+  ' 1 HD chi duoc mua boi 1 Khach Hang
+  ' 1 Khach Hang co the mua nhieu HD
+}
+
+KHACHHANG -(1,n)- MUA_HANG
+HOPDONG -(1,1)- MUA_HANG
+
+relationship BAO_GOM {
+  ' 1 HD co nhieu Xe
+  ' 1 Xe thuoc ve 1 HD
+}
+
+HOPDONG -(1,n)- BAO_GOM
+XE -(1,1)- BAO_GOM
+
+relationship TRA_GOP {
+  ' 1 HD co max 3 PTT
+  ' 1 PTT chi thuoc ve 1 HD
+  ' TienConLai = TienPhaiTT - TienDaTT
+}
+
+HOPDONG -(1,3)- TRA_GOP
+PHIEUTHANHTOAN -(1,1)- TRA_GOP
+
+relationship THUCHIEN_BH {
+  ' Nhan Vien Ky Thuat thuc hien bao hanh
+  ' 1 NV Ky Thuat thuc hien nhieu Bao Hanh
+  ' 1 Bao Hanh duoc thuc hien boi 1 hoac nhieu NV Ky Thuat
+}
+
+BAOHANH -(1,n)- THUCHIEN_BH
+NHANVIEN -(1,n)- THUCHIEN_BH
+
+relationship DUOC_BH {
+  ' 1 Xe co the yeu cau bao hanh nhieu lan
+  ' 1 Bao Hanh chi lien quan den 1 Xe
+}
+
+XE -(1,n)- DUOC_BH
+BAOHANH -(1,1)- DUOC_BH
+
+relationship CHITIET_BH {
+  ' n-n giua BAOHANH va LINHKIEN
+  ' 1 Bao Hanh co the bao gom 0 hoac nhieu Linh Kien
+  ' 1 Linh Kien co the thuoc ve nhieu Bao Hanh
+  ' LyDo
+  ' LoiThuocVe
+  ' GiaTien
+}
+
+BAOHANH -(0,n)- CHITIET_BH
+LINHKIEN -(0,n)- CHITIET_BH
+
+@endchen

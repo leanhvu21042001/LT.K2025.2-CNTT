@@ -4,15 +4,13 @@ Hệ điều hành cung cấp môi trường để các chương trình có th�
 
 Chúng ta có thể xem xét hệ điều hành từ nhiều góc độ khác nhau. Góc độ đầu tiên tập trung vào các dịch vụ mà hệ điều hành cung cấp. Góc độ khác là tập trung vào cơ chế giao tiếp mà hệ điều hành cung cấp cho người dùng và lập trình viên. Hoặc trong một góc độ khác nữa tập trung vào các thành phần của hệ điều hành và các kết nối của nó.
 
-### Mục tiêu
-
-**Sau khi học xong chương này, sinh viên có thể:**
+Mục tiêu:
 
 - Liệt kê được các thành phần của hệ điều hành
 - Mô tả được các dịch vụ mà hệ điều hành cung cấp
 - Mô tả được các cấu trúc của hệ điều hành bao gồm: cấu trúc đơn giản, cấu trúc phân lớp, cấu trúc vi nhân, cấu trúc module, cấu trúc lai
 
-### Nội dung
+Nội dung:
 
 - Các thành phần của hệ điều hành
 - Các dịch vụ hệ điều hành cung cấp
@@ -20,7 +18,7 @@ Chúng ta có thể xem xét hệ điều hành từ nhiều góc độ khác nh
 - Các chương trình hệ thống (system programs)
 - Cấu trúc hệ thống
 
-### Trình bày
+Trình bày:
 
 - ThS. Phan Đình Duy
 - Giảng viên Khoa Kỹ thuật Máy tính
@@ -49,7 +47,7 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - Theo dõi, quản lý các vùng nhớ trống và đã cấp phát.
         - Quyết định sẽ nạp chương trình nào khi có vùng nhớ trống.
         - Cấp phát và thu hồi các vùng nhớ khi cần thiết.
-- Quản lý file.
+- Quản lý hệ thống file.
     - Hệ thống file là gì?
     - Các dịch vụ chính:
         - Tạo và xóa file.
@@ -90,6 +88,60 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
             - Quản lý bộ nhớ chính.
             - Truy cập hệ thống file và cơ chế bảo mật.
 
+#### Quiz: Thành Phần Quản Lý Tiến Trình
+
+> [!NOTE]
+> Theo nội dung video bài giảng về các thành phần trong hệ điều hành mà các bạn vừa xem, thì thành phần nào không phải là một thành phần của hệ điều hành?
+> 
+> - [ ] Quản lý file
+> - [ ] Quản lý tiến trình
+> - [ ] Hệ thống bảo vệ
+> - [x] Quản lý tiểu trình
+
+> [!NOTE]
+> Để hoàn thành công việc, một tiến trình KHÔNG bắt buộc phải có tài nguyên gì trong các tài nguyên phần cứng bên dưới?
+> 
+> - [x] Màn hình
+> - [ ] Bộ nhớ
+> - [ ] Thanh ghi
+> - [ ] CPU
+
+#### Quiz: Thành Phần Quản Lý Bộ Nhớ
+
+> [!NOTE]
+> Chọn đáp án đúng theo thứ tự tăng dần về tốc độ truy cập của bộ nhớ?
+> 
+> - [ ] Cache, RAM, SSD, RAM
+> - [x] HDD, SSD, RAM, Cache
+> - [ ] RAM, SSD, Cache, HDD
+> - [ ] RAM, Cache, HDD, SSD
+
+> [!NOTE]
+> Quyết định sẽ nạp chương trình nào khi có vùng nhớ trống là chức năng của thành phần nào trong hệ điều hành?
+> 
+> - [ ] Quản lý tiến trình
+> - [ ] Quản lý hệ thống I/O
+> - [ ] Quản lý hệ thống lưu trữ thứ cấp
+> - [x] Quản lý bộ nhớ chính
+
+#### Quiz: Các Thành Phần Còn Lại
+
+> [!NOTE]
+> Hệ thống thông dịch lệnh (Shell/Terminal) là gì?
+> 
+> - [ ] Là giao diện chủ yếu giữa tiến trình và hệ điều hành
+> - [ ] Là giao diện chủ yếu giữa người dùng và tiến trình
+> - [x] Là giao diện chủ yếu giữa người dùng và hệ điều hành
+> - [ ] Là giao diện chủ yếu giữa người dùng và phần cứng máy tính
+
+> [!NOTE]
+> Cung cấp giao diện chung đến các trình điều khiển thiết bị là chức năng của thành phần nào trong hệ điều hành?
+> 
+> - [ ] Quản lý hệ thống lưu trữ thứ cấp
+> - [ ] Hệ thống bảo vệ
+> - [x] Quản lý hệ thống I/O
+> - [ ] Quản lý bộ nhớ chính
+
 ## Các dịch vụ hệ điều hành cung cấp
 
 - Cấu trúc tổng quan của các dịch vụ của hệ điều hành.
@@ -114,6 +166,25 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Giao diện người dùng:
     - CLI
     - GUI
+
+### Quiz: Các dịch vụ mà hệ điều hành cung cấp
+
+> [!NOTE]
+> Ý nào trong các ý sau KHÔNG phải là một dịch vụ do hệ điều hành cung cấp?
+> 
+> - [ ] Thực thi chương trình
+> - [ ] Phát hiện lỗi
+> - [x] Soạn thảo văn bản
+> - [ ] Cấp phát tài nguyên
+
+> [!NOTE]
+> Loại giao diện người dùng nào KHÔNG được trình bày trong video bài giảng về giao diện người dùng?
+> 
+> - [x] Giao diện Hand Gestures
+> - [ ] Giao diện Graphics User Interface (GUI)
+> - [ ] Giao diện Touch-screen
+> - [ ] Giao diện Command-Line (CLI)
+
 ## Lời gọi hệ thống (system call)
 
 - Giao tiếp giữa tiến trình (process) và hệ điều hành (kernel), gọi đến các dịch vụ mà hệ điều hành cung cấp.
@@ -127,6 +198,24 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
     - Qua một vùng nhớ (địa chỉ vùng nhớ được gửi qua register).
     - Stack.
 
+### Quiz: System Calls
+
+> [!NOTE]
+> Ý nào sao đây không phải là phương pháp truyền tham số khi sử dụng lời gọi hệ thống?
+> 
+> - [ ] Qua một vùng nhớ, địa chỉ của vùng nhớ được gửi đến hệ điều hành qua thanh ghi
+> - [ ] Qua stack
+> - [x] Qua message
+> - [ ] Qua thanh ghi
+
+> [!NOTE]
+> Để giao tiếp giữa tiến trình và hệ điều hành thì dùng?
+> 
+> - [ ] Chương trình hệ thống
+> - [ ] Thông điệp
+> - [ ] Chương trình ứng dụng
+> - [x] Lời gọi hệ thống (System Calls)
+
 ## Các chương trình hệ thống (system programs)
 
 - File system management: create, delete, rename, list
@@ -135,6 +224,23 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
 - Development: Compiler/assembler/interpreter.
 - Debugger: loader/debugger
 - Communication: email, talk, web browser.
+
+### Quiz: Các chương trình hệ thống
+
+> [!NOTE]
+> Hoàn thiện định nghĩa sau bằng cách điền vào chỗ trống?
+> 
+> Người dùng chủ yếu làm việc thông qua các `_____`.
+> 
+> - system program
+
+> [!NOTE]
+> Theo video bài giảng về các chương trình hệ thống thì chức năng nào trong các đáp án sau KHÔNG phải là một chương trình hệ thống?
+> 
+> - [ ] Hỗ trợ ngôn ngữ lập trình
+> - [ ] Thông tin trạng thái
+> - [ ] Quản lý hệ thống file
+> - [x] Quản lý I/O
 
 ## Cấu trúc hệ thống
 
@@ -152,6 +258,24 @@ Hệ điều hành được tổ hợp từ nhiều thành phần khác nhau nh�
         - CPU scheduling
         - memory management, etc.
     - System programs.
+
+### Quiz: Cấu Trúc của Hệ Điều Hành
+
+> [!NOTE]
+> Đặc điểm nào dưới đây là của cấu trúc vi nhân (microkernels)?
+> 
+> - [ ] Các module giao tiếp trực tiếp với nhau qua thanh ghi
+> - [ ] Hệ điều hành được phân chia thành nhiều lớp, lớp trên chỉ phụ thuộc lớp dưới
+> - [x] Một số chức năng của hệ điều hành được chuyển từ kernel space sang user space
+> - [ ] Mỗi module như là một phần của nhân
+
+> [!NOTE]
+> Hệ điều hành được xây dựng theo cấu trúc phân lớp (layer) KHÔNG có đặc điểm nào dưới đây?
+> 
+> - [ ] Hệ điều hành được phân chia thành nhiều lớp, lớp trên chỉ phụ thuộc lớp dưới
+> - [ ] Một lớp chỉ có thể gọi các hàm của lớp dưới và các hàm của nó được gọi bởi lớp trên
+> - [x] Các lớp giao tiếp với nhau qua cơ chế truyền thông điệp
+> - [ ] Lớp trên cùng là lớp giao tiếp với người dùng
 
 ## Câu hỏi ôn tập chương 2
 

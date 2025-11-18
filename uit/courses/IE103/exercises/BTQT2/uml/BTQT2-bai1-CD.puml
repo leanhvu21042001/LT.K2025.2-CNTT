@@ -1,0 +1,80 @@
+@startuml "Bai 1. Class Diagram"
+
+title "Bai 1. Class Diagram"
+
+'skinparam classAttributeIconSize 0
+skinparam backgroundcolor transparent
+skinparam defaultFontName "Iosevka"
+!pragma layout neato
+' skinparam nodesep 10
+skinparam ranksep 20
+
+class KHOA {
+  - maKhoa: string
+  - tenKhoa: string
+  + themGiangVien()
+  + themDeTai()
+  + taoHoiDong()
+}
+
+class GIANGVIEN {
+  - maGV: string
+  - tenGV: string
+  - diaChi: string
+  - sdt: string
+  - hocVi: string
+  - chuyenNganh: string
+}
+
+class HOIDONG {
+  - maHD: string
+  - ngayBaoVe: Date
+  - diaChi: string
+  + themThanhVien()
+  + bauChuTich()
+  + bauThuKy()
+}
+
+class DETAI {
+  - maDT: string
+  - tenDT: string
+  - tgBatDau: Date
+  - tgKetThuc: Date
+}
+
+class SINHVIEN {
+  - maSV: string
+  - tenSV: string
+  + nhanDeTai()
+  + tinhDiemTB()
+}
+
+' --- Association Class (cho quan he m-n THUCHIEN) ---
+' Day la noi luu tru diem va lan bao ve
+class ThucHien {
+  - diemGVHD: float
+  - diemGVPB: float
+  - diemChuTich: float
+  - lanBaoVe: int
+}
+
+' --- Associations (Cac moi quan he) ---
+
+KHOA "1" -- "0..*" DETAI : "quản lý"
+KHOA "1" -- "0..*" GIANGVIEN : "quản lý"
+
+' Cac vai tro (roles) cua GIANGVIEN
+DETAI "0..*" -- "1" GIANGVIEN : "GV hướng dẫn"
+DETAI "0..*" -- "1" GIANGVIEN : "GV phản biện"
+HOIDONG "0..*" -- "1" GIANGVIEN : "Chủ tịch"
+HOIDONG "0..*" -- "1" GIANGVIEN : "Thư ký"
+
+HOIDONG "1" -- "0..*" DETAI : "chấm"
+
+' --- Quan he m-n giua SINHVIEN va DETAI ---
+' Mot SINHVIEN co 1 toi 2 lan ThucHien
+' Mot DETAI co 1 toi 3 SinhVien (thong qua ThucHien)
+SINHVIEN "1" -- "1..2" ThucHien
+DETAI "1" -- "1..3" ThucHien
+
+@enduml

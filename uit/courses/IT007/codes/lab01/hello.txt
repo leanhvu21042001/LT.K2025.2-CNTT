@@ -1,0 +1,2 @@
+Đây là một file test có chứa chuỗi 'main()'
+

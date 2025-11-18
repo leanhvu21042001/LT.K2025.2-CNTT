@@ -1,0 +1,143 @@
+@startuml "Bai 2. Class Diagram"
+
+title "Bai 2. Class Diagram"
+
+'skinparam classAttributeIconSize 0
+skinparam backgroundcolor transparent
+skinparam defaultFontName "Iosevka"
+!pragma layout neato
+' skinparam nodesep 10
+skinparam ranksep 20
+
+class DAILY {
+  # maDaily: string
+  - viTri: string
+  + themPhongBan()
+}
+
+class PHONGBAN {
+  # maPB: string
+  - tenPB: string
+  + themNhanVien()
+  + themChucVu()
+}
+
+class CHUCVU {
+  # maCV: string
+  - tenCV: string
+}
+
+' --- Inheritance (Ke thua) ---
+abstract class NHANVIEN {
+  # maNV: string
+  - tenNV: string
+  + chucVu: string
+  + nhanChucVu()
+}
+class NVHanhChanh extends NHANVIEN {
+  - trinhDoHocVan: string
+  + lapHopDong()
+  + duyetHopDong()
+}
+class NVKyThuat extends NHANVIEN {
+  - bacTho: string
+  - soNamKN: int
+  + thucHienBaoHanh()
+}
+' ------------------
+
+class KHACHHANG {
+  # maKH: string
+  - tenKH: string
+  - diaChi: string
+  - sdt: string
+  + dangKyHopDong()
+  + yeuCauBaoHanh()
+}
+
+class HOPDONG {
+  # soHD: string
+  - ngayHD: Date
+  - thoiGianBH: string
+  - tienPhaiTT: float
+  - tienDaTT: float
+  - giamTru: float
+  + tinhTienConLai(): float
+  + lapPhieuThanhToan()
+}
+
+class XE {
+  # soKhung: string
+  # soSuon: string
+  - nuocSX: string
+  - loaiXe: string
+}
+
+class PHIEUTHANHTOAN {
+  # maPTT: string
+  - ngayTra: Date
+  - soTien: float
+}
+
+class BAOHANH {
+  # maBH: string
+  - ngayYeuCau: Date
+  + themChiTietBaoHanh()
+}
+
+class LINHKIEN {
+  # maLK: string
+  - tenLK: string
+}
+
+' ERD: CHUCVU_NV (n-n)
+class NhanChuc {
+  - ngayNhanChuc: Date
+}
+
+' ERD: THUCHIEN_BH (n-n)
+class PhanCongBaoHanh {
+  - ngayPhanCong: Date
+}
+
+' ERD: CHITIET_BH (n-n)
+class ChiTietBaoHanh {
+  - lyDo: string
+  - loiThuocVe: string
+  - giaTien: float
+  + themLinhKien()
+}
+
+' 1. Cau truc to chuc
+DAILY "1" -- "0..*" PHONGBAN : "có"
+PHONGBAN "1" -- "0..*" NHANVIEN : "có"
+PHONGBAN "1" -- "0..*" CHUCVU : "có"
+' Quan he n-n giua NHANVIEN va CHUCVU
+(NHANVIEN, NhanChuc) .. CHUCVU
+NHANVIEN "0..*" -- NhanChuc
+NhanChuc -- "0..*" CHUCVU
+
+' 2. Quan he Nghiep Vu
+KHACHHANG "1" -- "0..*" HOPDONG : "mua"
+
+' Hop dong duoc lap/duyet boi NV Hanh Chanh
+HOPDONG "0..*" -- "1" NVHanhChanh : "lập bởi"
+HOPDONG "0..*" -- "1" NVHanhChanh : "duyệt bởi"
+
+HOPDONG "1" -- "1..*" XE : "bao gồm"
+HOPDONG "1" -- "1..3" PHIEUTHANHTOAN : "có"
+
+' 3. Quan he Bao Hanh
+XE "1" -- "0..*" BAOHANH : "được bảo hành"
+
+' Quan he n-n giua BAOHANH va NVKyThuat
+(NVKyThuat, PhanCongBaoHanh) .. BAOHANH
+NVKyThuat "0..*" -- PhanCongBaoHanh
+PhanCongBaoHanh -- "1..*" BAOHANH
+
+' Quan he n-n giua BAOHANH va LINHKIEN
+(BAOHANH, ChiTietBaoHanh) .. LINHKIEN
+BAOHANH "1" -- "0..*" ChiTietBaoHanh
+ChiTietBaoHanh -- "1..*" LINHKIEN
+
+@enduml
