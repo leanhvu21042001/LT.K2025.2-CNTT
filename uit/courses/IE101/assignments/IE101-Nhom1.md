@@ -37,6 +37,7 @@ Học Kỳ: 1 (2025 - 2026)
 2. Giới Thiệu Đề Tài
 3. Thành Phần của Hạ Tầng
 4. Quy Trình Vận Hành
+5. Đánh Giá
 5. Kết Luận
 6. Hỏi Đáp
 
@@ -55,15 +56,19 @@ Học Kỳ: 1 (2025 - 2026)
 
 ---
 
-# Thành Phần của Hạ Tầng
+# Chương 2. Thành Phần của Hạ Tầng
 
 ---
 
-# Quy Trình Vận Hành
+# Chương 3.Quy Trình Vận Hành
 
 ---
 
-# Kết Luận
+# Chương 4. Đánh Giá
+
+---
+
+# Chương 5. Kết Luận
 
 ---
 
