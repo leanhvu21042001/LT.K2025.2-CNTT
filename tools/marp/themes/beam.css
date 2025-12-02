@@ -38,6 +38,7 @@ header {
   right: 0;
   left: -51%;
   color: #E5E9C5;
+  font-family: var(--cover-font);
 }
 
 footer {
@@ -50,6 +51,7 @@ footer {
   right: 0;
   left: 50.8%;
   color: #E5E9C5;
+  font-family: var(--cover-font);
 }
 
 h1,
