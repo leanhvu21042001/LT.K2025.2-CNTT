@@ -55,6 +55,13 @@
   )
 )
 
+#let info = (
+  title: "Bài Tập Thực Hành 1",
+  author: "Nhóm 2 (Omega)",
+  id: "25410000",
+  course: "IE103"
+)
+
 // TODO: Rounded border image
 
 #let university-assignment(
