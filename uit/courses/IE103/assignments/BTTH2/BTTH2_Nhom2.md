@@ -43,3 +43,19 @@ Cho lược đồ quan hệ sau:
 13. HOIDONG_GV(<u>MSHD, MSGV</u>)
 14. HOIDONG_DT(<u>MSHD, MSDT</u>, QUYETDINH)
 
+## Phần 1
+
+### Tạo CSDL
+
+Viết các câu lệnh SQL tạo các quan hệ trên với các kiểu dữ liệu mô tả trong  bảng sau (tạo các ràng buộc khóa chính, khóa ngoại tương ứng):
+
+| Quan Hệ  | Thuộc Tính                                     | Kiểu Dữ Liệu                                                 | Diễn Giải                                              |
+| -------- | ---------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
+| SINHVIEN | MSSV<br />TENSV<br />SODT<br />LOP<br />DIACHI | char(8)<br />nvarchar(30)<br />varchar(10)<br />char(10)<br />nchar(50) | PK<br />NOT NULL<br />NULL<br />NOT NULL<br />NOT NULL |
+|          |                                                |                                                              |                                                        |
+|          |                                                |                                                              |                                                        |
+
+
+
+## Phần 2
+
