@@ -454,17 +454,20 @@ Trigger là một thủ tục lưu trữ đặc biệt (special stored procedure
 
 #### Phân loại Trigger
 
-- **Theo thời điểm (Timing):**
-  - `BEFORE`: Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
+Trong chuẩn SQL và các hệ quản trị lớn (Oracle, SQL Server, PostgreSQL), Trigger được phân loại dựa trên thời điểm kích hoạt và cấp độ tác động.
 
-    - `AFTER`: Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
+### **Phân loại theo thời điểm (Timing)**
 
-    - `INSTEAD OF`: Thay thế lệnh gốc (Thường dùng cho View).
-
-- **Theo cấp độ (Scope):**
-  - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
-
-    - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
+1. **`BEFORE` Trigger:**
+    - Cơ chế: Chạy *trước* khi dữ liệu thực sự được ghi vào bảng.
+    - Mục đích: Dùng để xác thực dữ liệu (Validation) hoặc chuẩn hóa dữ liệu đầu vào.
+    - Đây là chốt chặn đầu tiên, nếu logic trong Before Trigger thất bại, lệnh SQL sẽ bị hủy bỏ ngay lập tức.
+2. **`AFTER` Trigger:**
+    - Cơ chế: Chạy *sau* khi dữ liệu đã được ghi vào bảng thành công (nhưng vẫn nằm trong transaction).
+    - Mục đích: Dùng để cập nhật các bảng khác (Cascading updates), gửi thông báo, hoặc ghi log kiểm toán.
+3. **`INSTEAD OF` Trigger:**
+    - Cơ chế: Thay thế hoàn toàn câu lệnh SQL gốc bằng logic được định nghĩa trong Trigger.
+    - Mục đích: Thường dùng cho View. Vì View là bảng ảo nên ta không thể INSERT trực tiếp vào View phức tạp. `INSTEAD OF` Trigger sẽ đón nhận dữ liệu đó và phân phối chúng vào các bảng gốc tương ứng một cách chính xác.
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
 
