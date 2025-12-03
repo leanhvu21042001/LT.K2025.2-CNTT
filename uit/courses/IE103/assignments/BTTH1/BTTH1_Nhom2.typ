@@ -33,7 +33,6 @@
 
 #include "quiz2.typ"
 
-
 = Bài 3. FAT32 vs NTFS. Windows File System.
 
 #include "quiz3.typ"
