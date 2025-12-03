@@ -276,15 +276,15 @@ Ví dụ:
 
 ![macos-fhs-file-operations](assets/macos-fhs-file-operations.png)
 
-## 3. Câu 3 (Hệ thống tập tin)
+## Câu 3 (Hệ thống tập tin)
 
-### 3.1. Câu Hỏi
+### Câu Hỏi
 
 Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh. HĐH dùng nguyên lý nào để khôi phục tập tin đã xóa?
 
-### 3.2. Bài Làm
+### Bài Làm
 
-#### a. Cách tổ chức dữ liệu (Windows)
+#### Cách tổ chức dữ liệu (Windows)
 
 Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
 
@@ -295,29 +295,31 @@ Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
 - **Lá:** Tệp tin (File).
   
 
-#### b. So sánh FAT32 và NTFS
+#### So sánh FAT32 và NTFS
 
-|   |   |   |
-|---|---|---|
 |**Đặc điểm**|**FAT32 (File Allocation Table 32)**|**NTFS (New Technology File System)**|
-|**Kích thước tệp tối đa**|**4 GB** (Không lưu được file ISO, Video 4K lớn).|**16 Exabytes** (Gần như vô hạn).|
+|---|---|---|
+|**Kích thước tệp tối đa**|**4 GB** (Không lưu được file ISO lớn, Video 4K lớn).|**16 Exabytes** (Gần như vô hạn).|
 |**Kích thước phân vùng**|Giới hạn phổ biến 2TB (Windows format giới hạn 32GB).|Hỗ trợ phân vùng cực lớn (8 Petabytes).|
 |**Bảo mật**|Không hỗ trợ phân quyền/mã hóa.|Hỗ trợ **ACL** (Phân quyền) và mã hóa **EFS**.|
 |**An toàn dữ liệu**|Dễ lỗi khi mất điện đột ngột.|Có **Journaling** (Ghi nhật ký) giúp phục hồi lỗi hệ thống.|
-|**Tương thích**|Cao (Windows, Mac, Linux, USB, Console).|Tối ưu cho Windows (Mac/Linux thường cần phần mềm để ghi).|
+|**Tương thích**|Cao (Windows, Mac, Linux, USB, Console).|Tối ưu cho Windows (Mac/Linux thường cần phần mềm riêng để ghi).|
 
-#### c. Nguyên lý khôi phục tệp tin đã xóa
+#### Nguyên lý khôi phục tệp tin đã xóa
 
 Khi xóa file (khỏi thùng rác), dữ liệu vật lý không mất đi ngay lập tức.
 
 1. **Đánh dấu:** Hệ điều hành chỉ sửa trạng thái trong bảng quản lý file (MFT trong NTFS) từ "Đang dùng" sang "Trống" (Free).
-   
+
 2. **Tồn tại:** Các bit dữ liệu vẫn nằm trên ổ cứng.
-   
+
 3. **Khôi phục:** Phần mềm chuyên dụng quét tìm các vùng được đánh dấu là "Free" này để phục hồi.
-   
+
 4. **Lưu ý:** Nếu ghi dữ liệu mới đè lên vùng "Free" đó (**Overwritten**), dữ liệu cũ sẽ mất vĩnh viễn.
-   
+
+Ví dụ:
+
+- `testdisk`: https://www.cgsecurity.org/wiki/TestDisk
 
 ## 4. Câu 4 (Trigger & View)
 
