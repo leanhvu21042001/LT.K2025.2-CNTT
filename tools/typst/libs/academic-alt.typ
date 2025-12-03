@@ -120,6 +120,7 @@
     #v(1em)
   ]
   
+  // TODO: Truncate long headings in the outline
   // Assignment Summary Box
   block(
     radius: 8pt,
@@ -144,7 +145,7 @@
         #v(0.8em)
         #outline(
           title: none,
-          indent: 1em,
+          indent: auto,
           depth: 2,
         )
       ],
