@@ -34,6 +34,8 @@
   )
 }
 
+// Rounded border table with lines
+
 #let rounded-table-lined(..args) = block(
   radius: 8pt,
   stroke: 1pt + luma(150), // Outer Border
@@ -50,6 +52,8 @@
     )
   )
 )
+
+// TODO: Rounded border image
 
 #let university-assignment(
   title: "Bài Tập Thực Hành",
