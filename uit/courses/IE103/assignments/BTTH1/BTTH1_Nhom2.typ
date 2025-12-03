@@ -20,7 +20,7 @@
 
 #figure(
   align(center)[
-  #table(
+  #rounded-table-lined(
     columns: (10%, 20%, 70%),
     align: (right,left,left,),
     table.header([#strong[No];], [#strong[MSSV];], [#strong[Họ và Tên];],),
