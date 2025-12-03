@@ -68,7 +68,7 @@ Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ li�
   - Quản lý dung lượng.
   - Bảo vệ dữ liệu (phân quyền).
 
-== Thuộc tính của Ổ đĩa, Thư mục và File
+== Ổ đĩa, Thư mục và File
 
 Bảng so sánh nhanh các thuộc tính của các đối tượng khác nhau.
 
@@ -157,7 +157,7 @@ Ví dụ:
   ]
 )
 
-== Các thao tác trên Folder, File
+== Các thao tác quản lý
 
 Finder cung cấp các nhóm chức năng chính:
 
