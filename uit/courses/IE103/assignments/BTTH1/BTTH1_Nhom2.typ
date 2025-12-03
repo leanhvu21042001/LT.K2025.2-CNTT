@@ -42,20 +42,20 @@
 
 #pagebreak()
 
-= Bài 1. GMail & Mail Group
+= Bài 1. GMail & Mail Group.
 
 #include "quiz1.typ"
 
-= Bài 2. Explorer/Finder
+= Bài 2. Explorer/Finder.
 
 #include "quiz2.typ"
 
 
-= Bài 3
+= Bài 3. FAT32 vs NTFS. Windows File System.
 
 #include "quiz3.typ"
 
-= Bài 4
+= Bài 4. Trigger & Views trong DBMS.
 
 #include "quiz4.typ"
 
