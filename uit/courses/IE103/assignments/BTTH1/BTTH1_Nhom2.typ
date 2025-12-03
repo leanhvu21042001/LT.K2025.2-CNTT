@@ -112,7 +112,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 == Dung lượng tối đa
 
-== Mail Group
+== Mail Group trong GMail
 
 === Cách tạo
 
