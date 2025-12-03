@@ -67,7 +67,7 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 - Công Việc
 
-#figure(image("assets/image-20251203125837221.png"),
+#figure(image("assets/1.3.2.1.2_CongViec.png"),
   caption: [
     Công Việc
   ]
@@ -75,7 +75,7 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 - Quan Trọng
 
-#figure(image("assets/image-20251203125853421.png"),
+#figure(image("assets/1.3.2.1.2_QuanTrong.png"),
   caption: [
     Quan Trọng
   ]
@@ -85,15 +85,15 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
-#figure(image("assets/image-20251203125912555.png"),
+#figure(image("assets/1.3.2.1.3_MailGroup_DanhBa.png"),
   caption: [
-    image-20251203125912555
+    Danh Bạ Mail Group
   ]
 )
 
-#figure(image("assets/image-20251203125917826.png"),
+#figure(image("assets/1.3.2.1.3_MailGroup_Send.png"),
   caption: [
-    image-20251203125917826
+    Gửi Mail tới Mail Group
   ]
 )
 
@@ -101,7 +101,7 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 Đã thực hiện tạo các nhãn: Giải Trí, Sức Khỏe, Thể Thao, Học Tập và di chuyển mail tương ứng.
 
-#figure(image("assets/image-20251203125939560.png"),
+#figure(image("assets/1.3.2.2_Email_Folders.png"),
   caption: [
     Sắp xếp emails với các label/thư mục tương ứng.
   ]
