@@ -507,3 +507,34 @@ Kết luận:
 - Không phải mọi RDBMS đều hỗ trợ Trigger.
 - Sự hỗ trợ này tỷ lệ thuận với quy mô và mục đích của hệ quản trị: Hệ thống càng lớn, càng hướng tới doanh nghiệp (Enterprise) thì hỗ trợ Trigger càng mạnh.
 - Các hệ thống nhúng hoặc hướng người dùng cá nhân thường cắt giảm hoặc thay thế tính năng này để tối ưu tài nguyên.
+
+### Ví dụ
+
+#### `AFTER` Trigger
+
+Miêu tả: Cho mỗi câu lệnh `INSERT` vào bảng `BankAccounts`, tạo một bản ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
+
+- Ai thực hiện?
+- Thực hiện gì?
+
+DBMS: PostgreSQL
+
+```sql
+-- Create an after-insert trigger for UserLogs
+CREATE FUNCTION after_insert_trigger_function()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Perform some action, like logging the insert
+    INSERT INTO UserLogs (account_number, action)
+    VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger to the BankAccounts table
+CREATE TRIGGER after_insert_trigger
+AFTER INSERT ON BankAccounts
+FOR EACH ROW
+EXECUTE PROCEDURE after_insert_trigger_function();
+```
+
