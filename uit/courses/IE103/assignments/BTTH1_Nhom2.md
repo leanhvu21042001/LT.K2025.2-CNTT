@@ -270,7 +270,11 @@ Finder cung cấp các nhóm chức năng chính:
     - **Tags:** Gán thẻ màu để tìm kiếm.
     - **Compress:** Nén file/folder thành `.zip` để tiện di chuyển hoặc copy.
 
+Ví dụ:
 
+- Thao tác trên File trong Menu ngữ cảnh.
+
+![macos-fhs-file-operations](assets/macos-fhs-file-operations.png)
 
 ## 3. Câu 3 (Hệ thống tập tin)
 
