@@ -136,92 +136,39 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 = Bài 2
 
-== Hardware Setup
-
-The following components were used:
-
-- Raspberry Pi 4 Model B
-- Red LED (2.1V forward voltage, 20mA forward current)
-- 220Ω current-limiting resistor
-- Breadboard for prototyping
-- Jumper wires for connections
-
-The LED was connected between GPIO pin 18 and ground, with the current-limiting resistor in series.
-
-== Software Implementation
-
-Two implementations were developed:
-
-1. **Python Implementation**: Using the `RPi.GPIO` library
-2. **C Implementation**: Using the `WiringPi` library
-
-Both programs implement the same functionality: blinking an LED at 1Hz (500ms on, 500ms off).
-
-== Code Examples
-
-The Python implementation:
-
-```python
-import RPi.GPIO as GPIO
-import time
-
-# Set up GPIO
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.OUT)
-
-try:
-    while True:
-        GPIO.output(18, GPIO.HIGH)  # Turn LED on
-        time.sleep(0.5)
-        GPIO.output(18, GPIO.LOW)   # Turn LED off
-        time.sleep(0.5)
-except KeyboardInterrupt:
-    GPIO.cleanup()
-```
-
-The C implementation:
-
-```c
-#include <wiringPi.h>
-#include <stdio.h>
-
-#define LED_PIN 18
-
-int main(void) {
-    wiringPiSetupGpio();
-    pinMode(LED_PIN, OUTPUT);
-    
-    while (1) {
-        digitalWrite(LED_PIN, HIGH);
-        delay(500);
-        digitalWrite(LED_PIN, LOW);
-        delay(500);
-    }
-    
-    return 0;
-}
-```
 
 = Bài 3
 
-Both implementations successfully controlled the LED with the following observations:
-
-- The LED blinked consistently at 1Hz
-- Visual timing appeared identical between implementations
-- The C implementation showed slightly more precise timing
-- Python implementation was easier to develop and debug
-
-== Performance Analysis
-
-Timing measurements were conducted using a logic analyzer:
-
-| Implementation | Average Period | Standard Deviation |
-|----------------|----------------|--------------------|
-| Python         | 1000.2ms       | ±2.1ms             |
-| C              | 999.8ms        | ±0.8ms             |
-
-The C implementation demonstrated more consistent timing, likely due to reduced overhead compared to Python's interpreted execution.
 
 = Bài 4
 
+== Ví Dụ
 
+=== `AFTER` Trigger Example
+
+Miêu tả: Cho mỗi câu lệnh `INSERT` vào bảng `BankAccounts`, tạo một bản
+ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
+
+- Ai thực hiện?
+- Thực hiện gì?
+
+DBMS: PostgreSQL:
+
+```sql
+-- Create an after-insert trigger for UserLogs
+CREATE FUNCTION after_insert_trigger_function()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Perform some action, like logging the insert
+    INSERT INTO UserLogs (account_number, action)
+    VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger to the BankAccounts table
+CREATE TRIGGER after_insert_trigger
+AFTER INSERT ON BankAccounts
+FOR EACH ROW
+EXECUTE PROCEDURE after_insert_trigger_function();
+```
