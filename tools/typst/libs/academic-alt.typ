@@ -43,8 +43,20 @@
   
   // Custom code block styling
   // TODO: Line Number
-  // TODO: Iosevka monofont
-  show raw.where(block: true): it => align(left)[
+
+  // Raw: font, and size
+  show raw: set text(font: "Iosevka", 1.2em)
+
+  // Inline-raw
+  show raw.where(block: false): box.with(
+    fill: luma(240),
+    inset: (x: 3pt, y: 0pt),
+    outset: (y: 3pt),
+    radius: 2pt,
+  )
+
+  // Code block
+  show raw.where(block: true): it => align(start)[
     #block(
       radius: 8pt,
       fill: luma(240),
