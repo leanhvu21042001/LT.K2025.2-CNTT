@@ -15,6 +15,8 @@
 //   date: datetime.today()
 // )
 
+// TODO: Roman page number for non-main content pages
+
 // Wrapper function for rounded tables
 #let rounded-table(..args) = {
   block(
