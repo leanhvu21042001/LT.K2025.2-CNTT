@@ -44,6 +44,9 @@
   // Custom code block styling
   // TODO: Line Number
 
+  // Rename "Figure" to "Mã nguồn" for code blocks
+  show figure.where(kind: raw): set figure(supplement: "Mã nguồn")
+
   // Raw: font, and size
   show raw: set text(font: "Iosevka", 1.2em)
 
@@ -221,6 +224,20 @@
     #outline(
       title: [Danh Sách Hình Ảnh], // Title: "List of Images"
       target: figure.where(kind: image), // Filter: Only show images
+    )
+  ]
+
+  // List of Code Snippets
+  block(
+    radius: 8pt,
+    fill: rgb(248, 250, 252),
+    stroke: 1pt + rgb(200, 220, 240),
+    inset: 1.5em,
+    width: 100%,
+  )[
+    #outline(
+      title: [Danh Sách Mã Nguồn], 
+      target: figure.where(kind: raw), // Targets figures containing code
     )
   ]
 
