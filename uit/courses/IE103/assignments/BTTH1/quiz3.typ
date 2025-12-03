@@ -67,9 +67,10 @@ Khi xóa một tệp tin (và dọn sạch Thùng rác), hệ điều hành #str
 
 Ví dụ:
 
-- Chương trình khôi phục dữ liệu `testdisk`: #link("https://www.cgsecurity.org/wiki/TestDisk")[TestDisk]
+- Chương trình khôi phục dữ liệu `testdisk`: #link("https://www.cgsecurity.org/wiki/TestDisk")[TestDisk].
 - Một quá trình khôi phục dữ liệu dùng `testdisk`.
   - (Sử dụng một USB FAT32, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
+- Dùng `fdisk` để kiểm tra và xem thông số của phân vùng. Dùng `mk.fs` để định dạng phân vùng.
 
 
 #pagebreak()
