@@ -184,14 +184,49 @@ Member:
 
 == Tính năng tìm kiếm
 
+Để tìm kiếm hiệu quả trong vô số email, Gmail cung cấp các tính năng sau.
+
 === Thanh tìm kiếm thông minh
+
+- #strong[Tìm kiếm ngữ cảnh:] Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn g#strong[õ.]
+- #strong[Tìm kiếm nhanh:] Gõ từ khóa và Gmail tìm kiếm trong Chủ đề, Nội dung thư, Tên người gửi/người nhận, và cả Nội dung tệp đính kèm (đối với các định dạng phổ biến như PDF, Docx).
 
 === Toán tử Tìm kiếm (Search Operators)
 
+Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
+
+- #strong[Kết hợp điều kiện:]
+  - Sử dụng khoảng trắng (Space) hoặc `AND` để tìm thư khớp với tất cả các điều kiện.
+  - Sử dụng `OR` để tìm thư khớp với một trong các điều kiện.
+- #strong[Tìm kiếm chính xác cụm từ:] Đặt cụm từ khóa trong dấu ngoặc kép (`"..."`).
+  - #emph[Ví dụ:] `"Báo cáo tài chính Q3"`
+- #strong[Tìm kiếm thời gian:]
+  - `after:YYYY/MM/DD` và `before:YYYY/MM/DD`: Lọc theo ngày.
+  - `older_than:3d` hoặc `newer_than:2m`: Lọc theo khoảng thời gian tương đối (#strong[ngày 'd', tháng 'm', năm 'y'];).
+- #strong[Tìm kiếm theo kích thước:]
+  - `size:10m`: Tìm thư có kích thước lớn hơn 10MB.
+  - `larger:5m` hoặc `smaller:20k`.
+
 == "Filter messages like this"
+
+Tính năng "#strong[Filter messages like this];" được thiết kế để tạo bộ lọc nhanh dựa trên email hiện tại, nhằm #strong[Tự động hóa việc quản lý email];.
 
 === Cơ chế Tạo Bộ lọc
 
+- Bạn chọn một #strong[email] và kích hoạt tính năng này từ Menu.
+- #strong[Gmail] tự động điền các #strong[tiêu chí tìm kiếm] vào công cụ
+  #strong[Tìm kiếm Nâng cao];.
+  - #strong[Ví dụ:] Nếu bạn chọn thư từ `john.doe@email.com`, Gmail sẽ điền ngay `from:john.doe@email.com` vào tiêu chí tìm kiếm#strong[.]
+  - Bạn có thể thay đổi hoặc thêm các tiêu chí khác #strong[(ví dụ: chỉ lọc thư từ John có kèm tệp đính kèm).]
+
 === Các Hành động Tự động của Bộ lọc (Quan trọng)
 
+Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều hành động để áp dụng cho các email mới và (tùy chọn) các email cũ khớp với tiêu chí:
 
+- #strong[Lưu trữ (Archive):] Bỏ qua Hộp thư đến (#strong[Skip the
+  Inbox];).
+  - Thư sẽ không hiển thị trong hộp thư chính nhưng vẫn có thể tìm thấy.
+- #strong[Gán Nhãn:] Tự động áp dụng một nhãn cụ thể (#strong[Label];) để phân loại.
+- #strong[Đánh dấu quan trọng:] Đánh dấu là đã đọc, đã gắn sao, hoặc qua#strong[n trọng.]
+- #strong[Chuyển tiếp (Forward):] Tự động gửi bản sao email đó đến một địa chỉ khác.
+- #strong[Xóa:] Tự động chuyển thư vào thùng rác.
