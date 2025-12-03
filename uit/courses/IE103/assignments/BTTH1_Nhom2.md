@@ -22,7 +22,7 @@
 
 ## Mục Lục
 
-[TOC] 
+[TOC]
 
 ## Câu 1 (Gmail)
 
@@ -30,7 +30,7 @@
 
 Trong Gmail, anh/chị hãy cho biết:
 
-1. Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các mails?    
+1. Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các mails?
 2. Cấu trúc đầy đủ của một email.
 3. Phân loại mails.
 4. Khái niệm mailgroup.
@@ -67,13 +67,9 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 ###### Các phần khác:
 
 - **Salutation:** Lời chào.
-
 - **Body:** Nội dung chính.
-
 - **Closing:** Lời kết.
-
 - **Signature:** Chữ ký.
-
 - **Attachments:** Tệp đính kèm.
 
 ##### Phân loại mails
@@ -114,8 +110,8 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 * **Truy cập: groups.google.com** và đăng nhập bằng tài khoản Google của bạn.
 * **Tạo nhóm:** Nhấp vào **"Create group"**.
 * **Thiết lập cơ bản:**
-  * **Tên nhóm:** Tên hiển thị (**ví dụ: "Ban Phát triển Sản phẩm"**).  
-  * **Địa chỉ Email Nhóm:** Địa chỉ email độc nhất (ví dụ: `pds@googlegroups.com`).  
+  * **Tên nhóm:** Tên hiển thị (**ví dụ: "Ban Phát triển Sản phẩm"**).
+  * **Địa chỉ Email Nhóm:** Địa chỉ email độc nhất (ví dụ: `pds@googlegroups.com`).
   * **Mô tả:** Giải thích mục đích của nhóm.
 * **Thiết lập quyền riêng tư:** Chọn giữa các loại nhóm:
   * **Công khai (Public):** Bất kỳ ai cũng có thể tìm kiếm và xem cuộc hội thoại.
@@ -124,13 +120,13 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 ##### Lợi ích
 
 - **Giao tiếp Tập trung:**
-    - Chỉ cần gửi thư đến một địa chỉ nhóm để tiếp cận tất cả thành viên, lý tưởng cho thông báo toàn công ty, phòng ban, hoặc dự án.  
+    - Chỉ cần gửi thư đến một địa chỉ nhóm để tiếp cận tất cả thành viên, lý tưởng cho thông báo toàn công ty, phòng ban, hoặc dự án.
 
 - **Kho lưu trữ Thảo luận:**
-    - Tất cả email gửi đến nhóm được tự động lưu trữ trong Kho lưu trữ (Archive) của Google Groups, tạo một cơ sở kiến thức có thể tìm kiếm.  
+    - Tất cả email gửi đến nhóm được tự động lưu trữ trong Kho lưu trữ (Archive) của Google Groups, tạo một cơ sở kiến thức có thể tìm kiếm.
 
 - **Quản lý Quyền truy cập:**
-    - Dùng địa chỉ nhóm làm đối tượng cấp quyền truy cập vào các tài nguyên khác của Google (Google Drive, Calendar, Sites) thay vì cấp quyền cho từng cá nhân.  
+    - Dùng địa chỉ nhóm làm đối tượng cấp quyền truy cập vào các tài nguyên khác của Google (Google Drive, Calendar, Sites) thay vì cấp quyền cho từng cá nhân.
 
 - **Tính linh hoạt:**
     - Thành viên có thể tùy chỉnh cách họ nhận thư (nhận ngay lập tức, tổng hợp hàng ngày, tổng hợp ngắn gọn, hoặc không nhận qua email mà chỉ đọc trên web).
@@ -164,18 +160,32 @@ Tổng quan:
 
 #### Tính năng tìm kiếm
 
-- **Thanh tìm kiếm thông minh:** Gợi ý từ khóa, người gửi.
-- **Tìm trong nội dung:** Quét cả nội dung file đính kèm (PDF, Docx).
-- **Toán tử tìm kiếm (Operators):**
-    - `AND`, `OR`, `""` (cụm từ chính xác).
-    - `after:YYYY/MM/DD`, `older_than:3d` (theo thời gian).
-    - `size:10m`, `larger:5m` (theo kích thước).
+Để tìm kiếm hiệu quả trong vô số email, Gmail cung cấp các tính năng sau:
+
+- Thanh tìm kiếm thông minh
+
+    * **Tìm kiếm ngữ cảnh:** Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn g**õ.**
+    * **Tìm kiếm nhanh:** Gõ từ khóa và Gmail tìm kiếm trong Chủ đề, Nội dung thư, Tên người gửi/người nhận, và cả Nội dung tệp đính kèm (đối với các định dạng phổ biến như PDF, Docx).
+
+* Toán tử Tìm kiếm Chính xác (Search Operators).
+  * Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
+  * Kết hợp điều kiện:
+      * Sử dụng khoảng trắng (Space) hoặc `AND` để tìm thư khớp với tất cả các điều kiện.
+      * Sử dụng `OR` để tìm thư khớp với một trong các điều kiện.
+  * **Tìm kiếm chính xác cụm từ:** Đặt cụm từ khóa trong dấu ngoặc kép (`"..."`).
+      * *Ví dụ:* `"Báo cáo tài chính Q3"`
+  * **Tìm kiếm thời gian:**
+      * `after:YYYY/MM/DD` và `before:YYYY/MM/DD`: Lọc theo ngày.
+      * `older_than:3d` hoặc `newer_than:2m`: Lọc theo khoảng thời gian tương đối (**ngày 'd', tháng 'm', năm 'y'**).
+  * **Tìm kiếm theo kích thước:**
+      * `size:10m`: Tìm thư có kích thước lớn hơn 10MB.
+      * `larger:5m` hoặc `smaller:20k`.
 
 #### Tính năng "Filter messages like this"
 
 Đây là tính năng tạo bộ lọc tự động dựa trên mẫu email đang mở.
 
-- **Cơ chế:** Tự động điền tiêu chí (người gửi, tiêu đề...) vào khung tìm kiếm.    
+- **Cơ chế:** Tự động điền tiêu chí (người gửi, tiêu đề...) vào khung tìm kiếm.
 - **Hành động tự động:**
     - Tự động _Archive_ (Bỏ qua inbox)
     - _Gán nhãn_ (Label)
@@ -190,7 +200,7 @@ Tổng quan:
 
 Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
-1. Explorer dùng mô hình gì để tổ chức dữ liệu?    
+1. Explorer dùng mô hình gì để tổ chức dữ liệu?
 2. Explorer mô tả một ổ đĩa, folder, file bằng những thuộc tính gì? Ích lợi?
 3. Phân biệt sự giống và khác nhau giữa các thuộc tính?
 4. Read-only và hidden.
@@ -347,11 +357,11 @@ Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh. HĐH d
 Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
 
 - **Gốc:** Ổ đĩa logic (C:, D:).
-  
+
 - **Nhánh:** Thư mục (Folder).
-  
+
 - **Lá:** Tệp tin (File).
-  
+
 
 #### So sánh FAT32 và NTFS
 
@@ -392,9 +402,9 @@ Vai trò của Trigger, View? Phân loại Trigger? Tất cả hệ quản trị
 View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 
 - **Trừu tượng hóa:** Ẩn sự phức tạp của các câu lệnh `JOIN`.
-  
+
 - **Bảo mật:** Giới hạn dữ liệu người dùng được xem (ẩn các cột nhạy cảm).
-  
+
 - **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
 
 #### Vai trò của Trigger
@@ -402,23 +412,23 @@ View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (`INSERT`, `UPDATE`, `DELETE`).
 
 - **Toàn vẹn dữ liệu:** Kiểm tra ràng buộc phức tạp (VD: Số lượng tồn kho `< 0` thì chặn thao tác bán hàng).
-  
+
 - **Tự động hóa:** Tự động cập nhật dữ liệu liên quan.
-  
+
 - **Kiểm toán (Audit):** Ghi log chứa thông tin ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
 
 #### Phân loại Trigger
 
 - **Theo thời điểm (Timing):**
   - `BEFORE`: Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
-    
+
     - `AFTER`: Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
-      
+
     - `INSTEAD OF`: Thay thế lệnh gốc (Thường dùng cho View).
-  
+
 - **Theo cấp độ (Scope):**
   - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
-    
+
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
@@ -426,9 +436,9 @@ Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có s�
 KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 
 - **Enterprise (Oracle, SQL Server, PostgreSQL):** Hỗ trợ mạnh mẽ, đầy đủ.
-  
+
 - **Lightweight (SQLite):** Hỗ trợ hạn chế, ít tính năng hơn để tối ưu hiệu năng.
-  
+
 - **Desktop/Legacy (Access cũ, FoxPro):** Thường không hỗ trợ hoặc hỗ trợ qua cơ chế khác (Macro).
-  
+
 
