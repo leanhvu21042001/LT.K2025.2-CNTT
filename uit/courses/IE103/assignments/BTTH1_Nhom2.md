@@ -80,19 +80,27 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc tiêu chí nhất định để dễ quản lý.
 
-> **[Hình ảnh minh họa giao diện Gmail và danh sách Label]**
+- Công Việc
+
+![image-20251203125837221](assets/image-20251203125837221.png)
+
+- Quan Trọng
+
+![image-20251203125853421](assets/image-20251203125853421.png)
 
 ##### Khái niệm Mail Group
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
-> **[Hình ảnh minh họa gửi thư cho Group]**
+![image-20251203125912555](assets/image-20251203125912555.png)
+
+![image-20251203125917826](assets/image-20251203125917826.png)
 
 #### Tạo thư mục (Label) và di chuyển mail
 
 Đã thực hiện tạo các nhãn: Giải Trí, Sức Khỏe, Thể Thao, Học Tập và di chuyển mail tương ứng.
 
-> **[Hình ảnh minh họa các Label đã tạo: Học tập, Giải trí...]**
+![image-20251203125939560](assets/image-20251203125939560.png)
 
 #### Dung lượng tối đa
 
