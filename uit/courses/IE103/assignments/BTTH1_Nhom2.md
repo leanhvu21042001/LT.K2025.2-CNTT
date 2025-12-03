@@ -456,7 +456,7 @@ Trigger là một thủ tục lưu trữ đặc biệt (special stored procedure
 
 Trong chuẩn SQL và các hệ quản trị lớn (Oracle, SQL Server, PostgreSQL), Trigger được phân loại dựa trên thời điểm kích hoạt và cấp độ tác động.
 
-### **Phân loại theo thời điểm (Timing)**
+##### Phân loại theo thời điểm (Timing)
 
 1. **`BEFORE` Trigger:**
     - Cơ chế: Chạy *trước* khi dữ liệu thực sự được ghi vào bảng.
@@ -468,6 +468,17 @@ Trong chuẩn SQL và các hệ quản trị lớn (Oracle, SQL Server, PostgreS
 3. **`INSTEAD OF` Trigger:**
     - Cơ chế: Thay thế hoàn toàn câu lệnh SQL gốc bằng logic được định nghĩa trong Trigger.
     - Mục đích: Thường dùng cho View. Vì View là bảng ảo nên ta không thể INSERT trực tiếp vào View phức tạp. `INSTEAD OF` Trigger sẽ đón nhận dữ liệu đó và phân phối chúng vào các bảng gốc tương ứng một cách chính xác.
+
+##### Phân loại theo cấp độ (Scope)
+
+1. **Row-Level Trigger** (Kích hoạt theo dòng):
+    - Thực thi một lần cho *mỗi dòng* dữ liệu bị ảnh hưởng.
+    - Ví dụ: Nếu bạn UPDATE 1000 dòng lương nhân viên, Trigger này sẽ chạy 1000 lần. Nó cho phép truy cập vào giá trị cũ (OLD) và giá trị mới (NEW) của từng dòng.
+2. **Statement-Level Trigger** (Kích hoạt theo câu lệnh):
+    - Thực thi đúng một lần cho *mỗi câu lệnh* SQL, bất kể câu lệnh đó ảnh hưởng đến bao nhiêu dòng (thậm chí là 0 dòng).
+    - Mục đích: Thường dùng cho các tác vụ quản trị hoặc kiểm tra tổng quát.
+
+**Lưu ý chuyên sâu:** Ngoài ra, một số hệ quản trị như Oracle còn hỗ trợ DDL Triggers (bắt sự kiện `CREATE`, `DROP`, `ALTER` bảng) hoặc System Triggers (bắt sự kiện đăng nhập/đăng xuất database), mở rộng khả năng quản trị hệ thống.
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
 
