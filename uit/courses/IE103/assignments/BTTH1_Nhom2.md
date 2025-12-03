@@ -321,54 +321,51 @@ Ví dụ:
 
 - `testdisk`: https://www.cgsecurity.org/wiki/TestDisk
 
-## 4. Câu 4 (Trigger & View)
+## Câu 4 (Trigger & View)
 
-### 4.1. Câu Hỏi
+### Câu Hỏi
 
 Vai trò của Trigger, View? Phân loại Trigger? Tất cả hệ quản trị CSDL quan hệ có hỗ trợ Trigger không?
 
-### 4.2. Bài Làm
+### Bài Làm
 
-#### a. Vai trò của View (Khung nhìn)
+#### Vai trò của View (Khung nhìn)
 
 View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 
-- **Trừu tượng hóa:** Ẩn sự phức tạp của các câu lệnh JOIN.
+- **Trừu tượng hóa:** Ẩn sự phức tạp của các câu lệnh `JOIN`.
   
 - **Bảo mật:** Giới hạn dữ liệu người dùng được xem (ẩn các cột nhạy cảm).
   
 - **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
   
 
-#### b. Vai trò của Trigger
+#### Vai trò của Trigger
 
-Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (INSERT, UPDATE, DELETE).
+Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (`INSERT`, `UPDATE`, `DELETE`).
 
-- **Toàn vẹn dữ liệu:** Kiểm tra ràng buộc phức tạp (VD: Số lượng tồn kho < 0 thì chặn bán).
+- **Toàn vẹn dữ liệu:** Kiểm tra ràng buộc phức tạp (VD: Số lượng tồn kho `< 0` thì chặn thao tác bán hàng).
   
 - **Tự động hóa:** Tự động cập nhật dữ liệu liên quan.
   
-- **Kiểm toán (Audit):** Ghi log ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
-  
+- **Kiểm toán (Audit):** Ghi log chứa thông tin ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
 
-#### c. Phân loại Trigger
+#### Phân loại Trigger
 
 - **Theo thời điểm (Timing):**
-  
-    - **BEFORE:** Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
+  - `BEFORE`: Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
       
-    - **AFTER:** Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
+    - `AFTER`: Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
       
-    - **INSTEAD OF:** Thay thế lệnh gốc (Thường dùng cho View).
+    - `INSTEAD OF`: Thay thế lệnh gốc (Thường dùng cho View).
     
 - **Theo cấp độ (Scope):**
-  
-    - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
+  - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
       
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
       
 
-#### d. Mức độ hỗ trợ của các Hệ quản trị CSDL
+#### Mức độ hỗ trợ của các Hệ quản trị CSDL
 
 KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 
