@@ -367,40 +367,48 @@ Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh. HĐH d
 
 #### Cách tổ chức dữ liệu (Windows)
 
-Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
+Hệ điều hành Windows tổ chức dữ liệu theo mô hình **Cấu trúc cây phân cấp (Hierarchical Tree Structure)**.
 
-- **Gốc:** Ổ đĩa logic (C:, D:).
-
-- **Nhánh:** Thư mục (Folder).
-
-- **Lá:** Tệp tin (File).
-
+- **Gốc (Root):** Là các ổ đĩa logic (C:, D:, E:).
+- **Nhánh (Branches):** Là các thư mục (Folders/Directories). Thư mục đóng vai trò là vật chứa logic để nhóm các tệp tin lại với nhau.
+- **Lá (Leaves):** Là các tệp tin (Files), đơn vị lưu trữ thông tin cơ bản chứa dữ liệu thực tế.
 
 #### So sánh FAT32 và NTFS
 
-|**Đặc điểm**|**FAT32 (File Allocation Table 32)**|**NTFS (New Technology File System)**|
-|---|---|---|
-|**Kích thước tệp tối đa**|**4 GB** (Không lưu được file ISO lớn, Video 4K lớn).|**16 Exabytes** (Gần như vô hạn).|
-|**Kích thước phân vùng**|Giới hạn phổ biến 2TB (Windows format giới hạn 32GB).|Hỗ trợ phân vùng cực lớn (8 Petabytes).|
-|**Bảo mật**|Không hỗ trợ phân quyền/mã hóa.|Hỗ trợ **ACL** (Phân quyền) và mã hóa **EFS**.|
-|**An toàn dữ liệu**|Dễ lỗi khi mất điện đột ngột.|Có **Journaling** (Ghi nhật ký) giúp phục hồi lỗi hệ thống.|
-|**Tương thích**|Cao (Windows, Mac, Linux, USB, Console).|Tối ưu cho Windows (Mac/Linux thường cần phần mềm riêng để ghi).|
+FAT32 và NTFS là hai hệ thống tệp tin (File System) quy định cách dữ liệu được ghi và quản lý trên đĩa vật lý.
+
+| Đặc điểm                  | FAT32 (File Allocation Table 32)                             | NTFS (New Technology File System)                            |
+| ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Kích thước tệp tối đa** | Giới hạn ở **4 GB**. Không thể lưu các file video 4K hay file ISO lớn. | Lý thuyết lên tới **16 Exabytes** (gần như vô hạn với nhu cầu hiện tại). |
+| **Kích thước phân vùng**  | Giới hạn phổ biến là 2TB (Windows thường giới hạn format ở 32GB). | Hỗ trợ phân vùng cực lớn (lên tới 8 Petabytes).              |
+| **Bảo mật**               | Không hỗ trợ phân quyền truy cập hay mã hóa.                 | Hỗ trợ **ACL (Access Control List)** để phân quyền người dùng và mã hóa tệp tin (EFS). |
+| **Độ an toàn**            | Dễ bị lỗi dữ liệu khi mất điện đột ngột.                     | Có tính năng **Journaling (Ghi nhật ký)**: Tự động ghi lại thay đổi trước khi thực hiện để phục hồi nếu gặp lỗi hệ thống. |
+| **Tương thích**           | Cao (Windows, Mac, Linux, Game Consoles, USB).               | Tối ưu cho Windows; Mac/Linux có thể chỉ đọc được mà không ghi được (cần phần mềm hỗ trợ). |
 
 #### Nguyên lý khôi phục tệp tin đã xóa
 
-Khi xóa file (khỏi thùng rác), dữ liệu vật lý không mất đi ngay lập tức.
+Khi xóa một tệp tin (và dọn sạch Thùng rác), hệ điều hành **không** xóa dữ liệu vật lý khỏi ổ cứng ngay lập tức. Quá trình diễn ra như sau:
 
-1. **Đánh dấu:** Hệ điều hành chỉ sửa trạng thái trong bảng quản lý file (MFT trong NTFS) từ "Đang dùng" sang "Trống" (Free).
+-  **Đánh dấu trong MFT:**
+    - Đối với NTFS, hệ thống sử dụng **Master File Table (MFT)** để quản lý tệp.
+    - Khi xóa, HĐH chỉ đơn giản là thay đổi trạng thái của bản ghi tệp đó trong MFT từ "In-Use" (Đang dùng) sang **"Free" (Trống)**.
+- **Dữ liệu vẫn tồn tại:**
+    - Các bit dữ liệu thực tế của tệp tin vẫn nằm nguyên vẹn trên bề mặt đĩa từ hoặc chip nhớ.
+-  **Cơ chế khôi phục:**
+    - Các phần mềm khôi phục dữ liệu sẽ quét bảng MFT để tìm các mục được đánh dấu là "Free" này.
+    - Nếu vùng không gian đĩa chứa dữ liệu cũ chưa bị tệp tin mới ghi đè lên, phần mềm có thể khôi phục lại tệp tin đó hoàn toàn.
 
-2. **Tồn tại:** Các bit dữ liệu vẫn nằm trên ổ cứng.
+**Lưu ý quan trọng:**
 
-3. **Khôi phục:** Phần mềm chuyên dụng quét tìm các vùng được đánh dấu là "Free" này để phục hồi.
-
-4. **Lưu ý:** Nếu ghi dữ liệu mới đè lên vùng "Free" đó (**Overwritten**), dữ liệu cũ sẽ mất vĩnh viễn.
+- Nguyên lý này dẫn đến việc dữ liệu sẽ bị mất vĩnh viễn nếu bị **ghi đè (Overwritten)**.
+- Nếu bạn chép dữ liệu mới vào ổ đĩa, HĐH sẽ thấy vùng "Free" đó và ghi dữ liệu mới lên, lúc này cấu trúc từ tính cũ bị thay đổi và không thể khôi phục bằng phần mềm thông thường.
 
 Ví dụ:
 
-- `testdisk`: https://www.cgsecurity.org/wiki/TestDisk
+- Chương trình khôi phục dữ liệu `testdisk`: [TestDisk](https://www.cgsecurity.org/wiki/TestDisk)
+- Một quá trình khôi phục dữ liệu dùng `testdisk`.
+    - (Sử dụng một USB FAT32, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
+
 
 ## Câu 4 (Trigger & View)
 
