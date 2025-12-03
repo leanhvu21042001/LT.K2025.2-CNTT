@@ -5,7 +5,7 @@
 - Giảng Viên: ThS. Nguyễn Thành Luân
 - Nhóm: 2 (Omega)
 
-## Thành viên nhóm 2 (Omega)
+## Nhóm 2 (Omega)
 
 | **No** | **MSSV** | **Họ và Tên**         |
 | ------ | -------- | --------------------- |
@@ -272,8 +272,9 @@ Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ li�
     - Quản lý dung lượng.
     - Bảo vệ dữ liệu (phân quyền).
 
-
 #### Thuộc tính của Ổ đĩa, Thư mục và File
+
+Bảng so sánh nhanh các thuộc tính của các đối tượng khác nhau.
 
 | **Thuộc tính**          | **Ổ đĩa (Volume/Drive)**          | **Thư mục (Folder)**             | **Tập tin (File)**                   |
 | ----------------------- | --------------------------------- | -------------------------------- | ------------------------------------ |
