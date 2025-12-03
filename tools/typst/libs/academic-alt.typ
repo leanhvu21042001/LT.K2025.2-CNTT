@@ -27,6 +27,13 @@
   set page(margin: 2cm)
   // set text(font: "CMU Concrete", size: 12pt, weight: "regular")
   set text(font: "Lora", size: 12pt, weight: "regular")
+
+  // Paragraph
+  set par(
+    leading: 0.8em, // Controls space between lines WITHIN a paragraph
+    justify: true,   // Recommended for assignments to align text edges
+    spacing: 1.5em
+  )
   set heading(numbering: "1.")
   // Indent for List
   set list(indent: 1em)
