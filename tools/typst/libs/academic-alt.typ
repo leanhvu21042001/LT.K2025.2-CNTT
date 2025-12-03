@@ -176,7 +176,7 @@
       stroke: 1pt,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
-        #title
+        #smallcaps[#title]
       ]
       #if subtitle != none [
         #v(0.5em)
