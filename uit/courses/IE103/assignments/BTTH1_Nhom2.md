@@ -43,74 +43,82 @@ Trong Gmail, anh/chị hãy cho biết:
 
 ### 1.2. Bài Làm
 
-#### a. Các tính năng tổ chức mail
+#### Các tính năng tổ chức mail
 
-Gmail cung cấp các tính năng hỗ trợ công việc như: tổ chức email bằng bộ lọc (Filter) và nhãn (Label), tìm kiếm nhanh, chặn spam hiệu quả và lưu trữ an toàn. Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
+Gmail cung cấp các tính năng hỗ trợ công việc như:
 
-##### a1. Cấu trúc đầy đủ của một email
+- Tổ chức email bằng bộ lọc (Filter) và nhãn (Label),
+- Tìm kiếm nhanh,
+- Chặn spam hiệu quả và lưu trữ an toàn.
+- Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
 
-1) Header (Phần đầu)
+##### Cấu trúc đầy đủ của một email
 
-|   |   |   |
-|---|---|---|
+###### Header (Phần tiêu đề)
+
 |**Thành phần**|**Mục đích**|**Lưu ý**|
+|---|---|---|
 |**From**|Địa chỉ người gửi.|Nên dùng email chuyên nghiệp (ví dụ: `ten.ho@congty.com`).|
 |**To**|Địa chỉ người nhận chính.|Kiểm tra kỹ lưỡng để tránh gửi nhầm.|
 |**Cc** (Carbon Copy)|Gửi bản sao cho người cần biết tin.|Dùng để thông báo cho sếp/đồng nghiệp liên quan.|
 |**Bcc** (Blind Carbon Copy)|Gửi bản sao bí mật (người khác không thấy).|Dùng để bảo mật danh sách nhận (VD: gửi email marketing).|
 |**Subject** (Tiêu đề)|Tóm tắt nội dung ngắn gọn.|Quan trọng nhất! Tối đa 5-7 từ, rõ ràng.|
 
-**2) Các phần khác:**
+###### Các phần khác:
 
 - **Salutation:** Lời chào.
+
 - **Body:** Nội dung chính.
+
 - **Closing:** Lời kết.
+
 - **Signature:** Chữ ký.
+
 - **Attachments:** Tệp đính kèm.
 
-##### a2. Phân loại mails
+##### Phân loại mails
 
 Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc tiêu chí nhất định để dễ quản lý.
 
 > **[Hình ảnh minh họa giao diện Gmail và danh sách Label]**
 
-##### a3. Khái niệm Mail Group
+##### Khái niệm Mail Group
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
 > **[Hình ảnh minh họa gửi thư cho Group]**
 
-#### b & c. Tạo thư mục (Label) và di chuyển mail
+#### Tạo thư mục (Label) và di chuyển mail
 
 Đã thực hiện tạo các nhãn: Giải Trí, Sức Khỏe, Thể Thao, Học Tập và di chuyển mail tương ứng.
 
 > **[Hình ảnh minh họa các Label đã tạo: Học tập, Giải trí...]**
 
-#### d. Dung lượng tối đa
+#### Dung lượng tối đa
 
 - **Gmail miễn phí:** 15 GB (dùng chung cho Gmail, Drive, Photos).
 - **Google Workspace (Trả phí):** Từ 30 GB đến 5 TB hoặc không giới hạn tùy gói.
 
-#### e. Mail Group (Lợi ích và Vai trò)
+#### Mail Group (Lợi ích và Vai trò)
 
-##### e.1. Cách tạo
+##### Cách tạo
 
 - Truy cập [groups.google.com](groups.google.com) > Create group > Thiết lập tên, email nhóm, quyền riêng tư.
 
-##### e.2. Lợi ích
+##### Lợi ích
 
 - **Giao tiếp tập trung:** Gửi 1 email tới cả nhóm.
 - **Kho lưu trữ:** Tự động lưu trữ lịch sử thảo luận.
 - **Quản lý quyền:** Dùng email nhóm để cấp quyền truy cập Drive/Docs thay vì add từng người.
 
-##### e.3. Vai trò Admin vs Member:
+##### Vai trò Admin vs Member:
 
 | **Vai trò** | Diễn Giải     | **Tính năng chính**                                                                                     |
 | ----------- | ------------- | ------------------------------------------------------------------------------------------------------- |
 | **Admin**   | Manager/Owner | Quản lý thành viên (Thêm/Xóa/Ban), Kiểm duyệt bài đăng, Cài đặt footer/auto-reply, Phân quyền truy cập. |
 | **Member**  | Thành viên    | Đăng bài (Post), Truy cập kho lưu trữ (Archive), Tùy chỉnh tần suất nhận mail (Tóm tắt/Từng thư).       |
 
-#### f. Tính năng tìm kiếm
+#### Tính năng tìm kiếm
 
 - **Thanh tìm kiếm thông minh:** Gợi ý từ khóa, người gửi.
 - **Tìm trong nội dung:** Quét cả nội dung file đính kèm (PDF, Docx).
@@ -119,12 +127,18 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
     - `after:YYYY/MM/DD`, `older_than:3d` (theo thời gian).
     - `size:10m`, `larger:5m` (theo kích thước).
 
-#### g. Tính năng "Filter messages like this"
+#### Tính năng "Filter messages like this"
 
 Đây là tính năng tạo bộ lọc tự động dựa trên mẫu email đang mở.
 
 - **Cơ chế:** Tự động điền tiêu chí (người gửi, tiêu đề...) vào khung tìm kiếm.    
-- **Hành động tự động:** Tự động _Archive_ (Bỏ qua inbox), _Gán nhãn_ (Label), _Đánh dấu sao_, _Chuyển tiếp_ (Forward) hoặc _Xóa_ các thư khớp điều kiện trong tương lai.
+- **Hành động tự động:**
+    - Tự động _Archive_ (Bỏ qua inbox)
+    - _Gán nhãn_ (Label)
+    - _Đánh dấu sao_
+    - _Chuyển tiếp_ (Forward) hoặc
+    - _Xóa_ các thư khớp điều kiện trong tương lai.
+
 
 ## Câu 2 (Explorer/Finder)
 
