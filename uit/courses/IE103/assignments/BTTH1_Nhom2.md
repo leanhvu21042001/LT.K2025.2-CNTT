@@ -420,15 +420,23 @@ Ví dụ:
 
 ### Bài Làm
 
+Trong kiến trúc CSDL hiện đại, việc lưu trữ dữ liệu (trong các bảng - Table) chỉ là phần nổi của tảng băng chìm. Để đảm bảo tính bảo mật, hiệu năng và toàn vẹn dữ liệu, View và Trigger đóng vai trò như những công cụ kiểm soát và điều hướng logic nghiệp vụ ngay tại tầng dữ liệu (Data Tier).
+
 #### Vai trò của View (Khung nhìn)
 
-View là "bảng ảo", lưu trữ câu lệnh truy vấn.
+View thực chất là một "bảng ảo" (virtual table). Nó không lưu trữ dữ liệu vật lý (trừ Materialized View) mà chỉ lưu trữ câu lệnh truy vấn định nghĩa nên nó.
 
-- **Trừu tượng hóa:** Ẩn sự phức tạp của các câu lệnh `JOIN`.
-
-- **Bảo mật:** Giới hạn dữ liệu người dùng được xem (ẩn các cột nhạy cảm).
-
-- **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
+- Tính trừu tượng hóa và đơn giản hóa (Abstraction & Simplification):
+    - View giúp che giấu sự phức tạp của cấu trúc bảng bên dưới.
+    - Thay vì yêu cầu lập trình viên viết những câu lệnh `JOIN` phức tạp giữa 5-6 bảng mỗi lần truy xuất, ta có thể gói gọn logic đó vào một View.
+    - Ví dụ: `CREATE VIEW v_BaoCaoDoanhThu AS...` giúp tầng ứng dụng chỉ cần `SELECT * FROM v_BaoCaoDoanhThu` mà không cần quan tâm đến các bảng hóa đơn chi tiết bên dưới.
+- Cơ chế bảo mật (Security Layer):
+    - Đây là vai trò quan trọng nhất.
+    - View cho phép quản trị viên (DBA) giới hạn quyền truy cập. Bạn có thể cho phép người dùng xem dữ liệu qua View nhưng không cấp quyền truy cập trực tiếp vào bảng gốc (Base Table).
+    - Điều này giúp ẩn đi các cột nhạy cảm (như lương, mật khẩu, thông tin cá nhân).
+- Tính độc lập logic (Logical Data Independence):
+    - Khi cấu trúc bảng vật lý thay đổi (ví dụ: tách bảng), ta chỉ cần sửa lại định nghĩa View.
+    - Các ứng dụng đang gọi View đó sẽ không bị ảnh hưởng (không bị gãy code).
 
 #### Vai trò của Trigger
 
