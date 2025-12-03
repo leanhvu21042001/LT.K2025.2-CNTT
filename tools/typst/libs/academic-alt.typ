@@ -141,51 +141,20 @@
       row-gutter: 1em,
       // Left column
       [
-        *Mục Lục:*
-        #v(0.8em)
-        #outline(
-          title: none,
-          indent: auto,
-          depth: 2,
-        )
+        - *Mã Môn:*
+        - *Tên Môn:*
+        - *Giảng Viên:*
+        - *Thực Hiện:*
       ],
       // Right column
       [
-        *Chi Tiết:*
-        #v(0.8em)
-        #if "course" in details [
-          - *Môn:* #details.course
-        ]
-        #if "supervisor" in details [
-          - *Giảng Viên:* #details.supervisor
-        ]
-        #if "instructor" in details [
-          - *Giảng Viên:* #details.instructor
-        ]
-        #if "professor" in details [
-          - *Professor:* #details.professor
-        ]
-        #if "due-date" in details [
-          - *Thời Hạn:* #details.due-date
-        ]
-        #if "hardware" in details [
-          - *Hardware:* #details.hardware
-        ]
-        #if "software" in details [
-          - *Software:* #details.software
-        ]
-        #if "duration" in details [
-          - *Thời Gian:* #details.duration
-        ]
-        #if "lab-number" in details [
-          - *Bài Tập:* #details.lab-number
-        ]
-        #if "partner" in details [
-          - *Lab Partner:* #details.partner
-        ]
-        #if "section" in details [
-          - *Section:* #details.section
-        ]
+        #list(
+          marker: none,
+          [IE103],
+          [Quản Lý Thông Tin],
+          [Ths. Nguyễn Thành Luân],
+          [Nhóm 2 (Omega)]
+        )
       ],
     )
   ]
