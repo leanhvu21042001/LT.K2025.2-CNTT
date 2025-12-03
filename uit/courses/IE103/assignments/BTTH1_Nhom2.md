@@ -138,11 +138,24 @@ Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
 #### Giới thiệu
 
-Trong bài làm này, nhóm xin phép sử dụng macOS Finder để trình bày (tương đương với File Explorer trên Windows). Finder là trình quản lý file mặc định của macOS, giúp tương tác với hệ thống tập tin và quản lý giao diện Desktop.
+File Explorer (Trình quản lý files) là một chương trình có chức năng làm việc với Files System (Hệ Thống Files) để giúp người dùng quản lý files nói chung và dữ liệu trên một hệ điều hành cụ thể.
+
+Explorer hay File Explorer (Trình quản lý files) là một chương trình đồ họa của Windows, nằm trong bộ Desktop Experience. Explorer là một phần không tách rời của Hệ Điều Hành Windows Desktop, phục vụ mục đích quản lý file, tức là tương tác với Hệ Thống Files (Files System). Ngoài ra, Explorer còn có một số chức năng khác như Desktop Management (Quản lý các tiến trình liên quan đến giao diện đồ họa của Windows), Window Manager (Quản lý cửa sổ).
+
+Các chương trình tương tự như:
+
+- Finder (macOS)
+- Nautilus (GNOME, Linux)
+- Dolphin (KDE, Linux).
+- [ranger.fm](http://ranger.fm) (Python, Terminal, Curses, Linux)
+
+Tuy nhiên, có thể có vài khác biệt, ví dụ như Nautilus trên GNOME chỉ là một File Manager (Trình quản lý File) thuần túy, không có chức năng Window Manager hay Desktop Management, nên có thể được gỡ bỏ, thay thế tùy ý. Explorer (Windows), hay Finder (macOS) thì không.
+
+Trong bài này, xin phép được trình bày các câu trả lời sử dụng Finder của macOS, một chương trình tương đương về chức năng và nhiệm vụ, chỉ khác hệ điều hành.
 
 #### a. Mô hình tổ chức dữ liệu
 
-Finder sử dụng mô hình Cây thư mục (Directory Tree) hay Hệ Thống File Phân Cấp để tổ chức dữ liệu, bắt đầu từ thư mục gốc (root /).
+Finder sử dụng mô hình Cây thư mục (Directory Tree) hay Hệ Thống File Phân Cấp để tổ chức dữ liệu, bắt đầu từ thư mục gốc (root `/`).
 
 - **Ví dụ đường dẫn:** `/System/Volumes/Data/Users/Username/...`    
 
@@ -191,18 +204,18 @@ Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh. HĐH d
 
 ### 3.2. Bài Làm
 
-a. Cách tổ chức dữ liệu (Windows)
+#### a. Cách tổ chức dữ liệu (Windows)
 
 Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
 
 - **Gốc:** Ổ đĩa logic (C:, D:).
-    
+  
 - **Nhánh:** Thư mục (Folder).
-    
+  
 - **Lá:** Tệp tin (File).
-    
+  
 
-**b. So sánh FAT32 và NTFS**
+#### b. So sánh FAT32 và NTFS
 
 |   |   |   |
 |---|---|---|
@@ -213,18 +226,18 @@ Hệ điều hành tổ chức theo Cấu trúc cây phân cấp:
 |**An toàn dữ liệu**|Dễ lỗi khi mất điện đột ngột.|Có **Journaling** (Ghi nhật ký) giúp phục hồi lỗi hệ thống.|
 |**Tương thích**|Cao (Windows, Mac, Linux, USB, Console).|Tối ưu cho Windows (Mac/Linux thường cần phần mềm để ghi).|
 
-c. Nguyên lý khôi phục tệp tin đã xóa
+#### c. Nguyên lý khôi phục tệp tin đã xóa
 
 Khi xóa file (khỏi thùng rác), dữ liệu vật lý không mất đi ngay lập tức.
 
 1. **Đánh dấu:** Hệ điều hành chỉ sửa trạng thái trong bảng quản lý file (MFT trong NTFS) từ "Đang dùng" sang "Trống" (Free).
-    
+   
 2. **Tồn tại:** Các bit dữ liệu vẫn nằm trên ổ cứng.
-    
+   
 3. **Khôi phục:** Phần mềm chuyên dụng quét tìm các vùng được đánh dấu là "Free" này để phục hồi.
-    
+   
 4. **Lưu ý:** Nếu ghi dữ liệu mới đè lên vùng "Free" đó (**Overwritten**), dữ liệu cũ sẽ mất vĩnh viễn.
-    
+   
 
 ## 4. Câu 4 (Trigger & View)
 
@@ -239,49 +252,49 @@ a. Vai trò của View (Khung nhìn)
 View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 
 - **Trừu tượng hóa:** Ẩn sự phức tạp của các câu lệnh JOIN.
-    
+  
 - **Bảo mật:** Giới hạn dữ liệu người dùng được xem (ẩn các cột nhạy cảm).
-    
+  
 - **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
-    
+  
 
 b. Vai trò của Trigger
 
 Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (INSERT, UPDATE, DELETE).
 
 - **Toàn vẹn dữ liệu:** Kiểm tra ràng buộc phức tạp (VD: Số lượng tồn kho < 0 thì chặn bán).
-    
+  
 - **Tự động hóa:** Tự động cập nhật dữ liệu liên quan.
-    
+  
 - **Kiểm toán (Audit):** Ghi log ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
-    
+  
 
 **c. Phân loại Trigger**
 
 - **Theo thời điểm (Timing):**
-    
+  
     - **BEFORE:** Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
-        
+      
     - **AFTER:** Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
-        
+      
     - **INSTEAD OF:** Thay thế lệnh gốc (Thường dùng cho View).
-        
-- **Theo cấp độ (Scope):**
     
+- **Theo cấp độ (Scope):**
+  
     - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
-        
+      
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
-        
+      
 
 d. Mức độ hỗ trợ của các Hệ quản trị CSDL
 
 KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 
 - **Enterprise (Oracle, SQL Server, PostgreSQL):** Hỗ trợ mạnh mẽ, đầy đủ.
-    
+  
 - **Lightweight (SQLite):** Hỗ trợ hạn chế, ít tính năng hơn để tối ưu hiệu năng.
-    
+  
 - **Desktop/Legacy (Access cũ, FoxPro):** Thường không hỗ trợ hoặc hỗ trợ qua cơ chế khác (Macro).
-    
+  
 
 _Hết._
