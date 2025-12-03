@@ -482,11 +482,28 @@ Trong chuẩn SQL và các hệ quản trị lớn (Oracle, SQL Server, PostgreS
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
 
-KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
+- Câu trả lời là: **KHÔNG.**
 
-- **Enterprise (Oracle, SQL Server, PostgreSQL):** Hỗ trợ mạnh mẽ, đầy đủ.
+Mặc dù Trigger là một phần của chuẩn SQL (SQL:1999), nhưng mức độ hỗ trợ và việc có hỗ trợ hay không phụ thuộc hoàn toàn vào nhà phát triển của RDBMS đó và mục đích sử dụng của hệ quản trị.
 
-- **Lightweight (SQLite):** Hỗ trợ hạn chế, ít tính năng hơn để tối ưu hiệu năng.
+Phân tích chi tiết sự khác biệt:
 
-- **Desktop/Legacy (Access cũ, FoxPro):** Thường không hỗ trợ hoặc hỗ trợ qua cơ chế khác (Macro).
+1. **Nhóm Enterprise RDBMS** (Oracle, SQL Server, PostgreSQL, MySQL, DB2):
+    - Hỗ trợ: Có, hỗ trợ đầy đủ và mạnh mẽ.
+    - Đây là các hệ thống được thiết kế cho các ứng dụng phức tạp, yêu cầu tính toàn vẹn dữ liệu cao. Trigger là thành phần bắt buộc trong các hệ thống này.
+2. **Nhóm Lightweight/Embedded RDBMS** (SQLite):
+    - Hỗ trợ: Có, nhưng hạn chế.
+    - SQLite hỗ trợ Trigger, nhưng cú pháp và chức năng giới hạn hơn nhiều so với các "đàn anh". Ví dụ, SQLite Trigger chỉ có thể thực thi các câu lệnh SQL đơn giản, không thể gọi các thủ tục lưu trữ (Stored Procedures) phức tạp hay thực hiện các logic điều khiển dòng (IF/ELSE, LOOPS) mạnh mẽ như PL/SQL của Oracle hay T-SQL của Microsoft.
+    - Lý do: Giữ cho bộ máy database nhỏ gọn, nhanh và nhẹ.
+3. **Nhóm Desktop/Legacy Databases** (Microsoft Access, FoxPro cũ):
+    - Hỗ trợ: Không hoặc rất khác biệt.
+    - Microsoft Access (các phiên bản cũ) không hỗ trợ Trigger theo chuẩn SQL. Đến các phiên bản mới hơn (từ Access 2010), nó giới thiệu khái niệm "Data Macros" có chức năng tương tự Trigger, nhưng không phải là SQL Trigger chuẩn mực.
+    - Các hệ thống cũ như dBase, FoxPro thời đầu hoàn toàn không có khái niệm Trigger tại tầng CSDL; việc kiểm tra logic hoàn toàn phụ thuộc vào code của ứng dụng (Application Level).
+4. **Các hệ thống NewSQL/NoSQL** (Mở rộng):
+    - Dù câu hỏi tập trung vào RDBMS, nhưng cần lưu ý rằng nhiều hệ thống dữ liệu phân tán hiện đại (như Google Cloud Spanner hay CockroachDB - vốn tương thích SQL) có hỗ trợ Trigger nhưng đi kèm khuyến cáo hạn chế sử dụng do ảnh hưởng nghiêm trọng đến hiệu năng trong môi trường phân tán (Distributed Systems).
 
+Kết luận:
+
+- Không phải mọi RDBMS đều hỗ trợ Trigger.
+- Sự hỗ trợ này tỷ lệ thuận với quy mô và mục đích của hệ quản trị: Hệ thống càng lớn, càng hướng tới doanh nghiệp (Enterprise) thì hỗ trợ Trigger càng mạnh.
+- Các hệ thống nhúng hoặc hướng người dùng cá nhân thường cắt giảm hoặc thay thế tính năng này để tối ưu tài nguyên.
