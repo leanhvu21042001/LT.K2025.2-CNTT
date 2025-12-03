@@ -194,7 +194,14 @@
   // v(2em)
   
   pagebreak()
-  // TODO: Page number
+
+  // --- PAGE NUMBERING SETUP ---
+  set page(
+    numbering: "1", 
+    number-align: right
+  )
+  // counter(page).update(1) // Optional: Resets count so this page starts at 1
+
   // Document body
   body
 }
