@@ -19,7 +19,7 @@
 #let rounded-table(..args) = {
   block(
     radius: 8pt, // Adjust this for more/less roundness
-    stroke: 1pt + luma(200), // The outer border color
+    stroke: 1pt + luma(220), // The outer border color
     clip: true,  // This cuts off the square corners
     width: 100%, // Ensures it fits the page
     inset: 0pt,  // No gap between border and table
@@ -38,7 +38,7 @@
 
 #let rounded-table-lined(..args) = block(
   radius: 8pt,
-  stroke: 1pt + luma(150), // Outer Border
+  stroke: 1pt + luma(220), // Outer Border
   clip: true,
   width: 100%,
   inset: 0pt,
@@ -48,7 +48,7 @@
     stroke: (x, y) => (
       bottom: 1pt + luma(230), 
       // thick white line for vertical separation looks nice on gray backgrounds:
-      right: none 
+      right: none
     )
   )
 )
