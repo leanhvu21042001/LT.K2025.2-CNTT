@@ -106,6 +106,7 @@ ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
 
 DBMS: PostgreSQL:
 
+#figure(
 ```sql
 -- Create an after-insert trigger for UserLogs
 CREATE FUNCTION after_insert_trigger_function()
@@ -123,4 +124,6 @@ CREATE TRIGGER after_insert_trigger
 AFTER INSERT ON BankAccounts
 FOR EACH ROW
 EXECUTE PROCEDURE after_insert_trigger_function();
-```
+```,
+caption: "Bài 4. AFTER Trigger"
+)
