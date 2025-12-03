@@ -320,6 +320,10 @@
   )
   counter(page).update(1)
 
+  // --- LINK STYLING ---
+  // We put this HERE so it only affects the actual content, not the TOC.
+  show link: set text(fill: rgb("#0000EE"))
+
   // Document body
   body
 }
