@@ -128,78 +128,60 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
-1. Explorer dùng mô hình gì để tổ chức dữ liệu?
-    
+1. Explorer dùng mô hình gì để tổ chức dữ liệu?    
 2. Explorer mô tả một ổ đĩa, folder, file bằng những thuộc tính gì? Ích lợi?
-    
 3. Phân biệt sự giống và khác nhau giữa các thuộc tính?
-    
 4. Read-only và hidden.
-    
 5. Các chức năng xử lý một folder, file.
-    
 
 ### 2.2. Bài Làm
 
-Giới thiệu:
+#### Giới thiệu
 
 Trong bài làm này, nhóm xin phép sử dụng macOS Finder để trình bày (tương đương với File Explorer trên Windows). Finder là trình quản lý file mặc định của macOS, giúp tương tác với hệ thống tập tin và quản lý giao diện Desktop.
 
-a. Mô hình tổ chức dữ liệu
+#### a. Mô hình tổ chức dữ liệu
 
 Finder sử dụng mô hình Cây thư mục (Directory Tree) hay Hệ Thống File Phân Cấp để tổ chức dữ liệu, bắt đầu từ thư mục gốc (root /).
 
-- **Ví dụ đường dẫn:** `/System/Volumes/Data/Users/Username/...`
-    
+- **Ví dụ đường dẫn:** `/System/Volumes/Data/Users/Username/...`    
 
 > **[Hình ảnh minh họa Cây thư mục trên Finder]**
 
-b. Thuộc tính và Ý nghĩa
+#### b. Thuộc tính và Ý nghĩa
 
 Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ liệu).
 
 - **Ý nghĩa:** Giúp định danh, quản lý vị trí, xác định ứng dụng mở mặc định và kiểm soát bảo mật.
-    
 - **Lợi ích:** Hỗ trợ tìm kiếm (theo ngày, loại), quản lý dung lượng và bảo vệ dữ liệu (phân quyền).
-    
 
-**c. Thuộc tính của Ổ đĩa, Thư mục và File**
+#### c. Thuộc tính của Ổ đĩa, Thư mục và File
 
-|   |   |   |   |
-|---|---|---|---|
-|**Thuộc tính**|**Ổ đĩa (Volume/Drive)**|**Thư mục (Folder)**|**Tập tin (File)**|
-|**Tên (Name)**|Tên phân vùng (VD: Macintosh HD).|Tên thư mục.|Tên file + Đuôi mở rộng (Extension).|
-|**Loại (Kind)**|Định dạng (APFS, NTFS...).|Folder.|Định dạng (PDF, JPG, Docx...).|
-|**Kích thước (Size)**|Dung lượng tổng / Khả dụng.|Tổng kích thước nội dung.|Kích thước thực của file.|
-|**Ngày tháng**|Ngày tạo phân vùng.|Ngày tạo, ngày sửa đổi nội dung.|Ngày tạo, sửa đổi, mở gần nhất.|
-|**Quyền (Permissions)**|Quản trị hệ thống (System R/W).|Read/Write/Execute (truy cập).|Read/Write/Execute (thao tác).|
-|**Khác**|Mount point, thông tin phần cứng.|Số lượng mục con (items count).|App mặc định (Open with).|
+| **Thuộc tính**          | **Ổ đĩa (Volume/Drive)**          | **Thư mục (Folder)**             | **Tập tin (File)**                   |
+| ----------------------- | --------------------------------- | -------------------------------- | ------------------------------------ |
+| **Tên (Name)**          | Tên phân vùng (VD: Macintosh HD). | Tên thư mục.                     | Tên file + Đuôi mở rộng (Extension). |
+| **Loại (Kind)**         | Định dạng (APFS, NTFS...).        | Folder.                          | Định dạng (PDF, JPG, Docx...).       |
+| **Kích thước (Size)**   | Dung lượng tổng / Khả dụng.       | Tổng kích thước nội dung.        | Kích thước thực của file.            |
+| **Ngày tháng**          | Ngày tạo phân vùng.               | Ngày tạo, ngày sửa đổi nội dung. | Ngày tạo, sửa đổi, mở gần nhất.      |
+| **Quyền (Permissions)** | Quản trị hệ thống (System R/W).   | Read/Write/Execute (truy cập).   | Read/Write/Execute (thao tác).       |
+| **Khác**                | Mount point, thông tin phần cứng. | Số lượng mục con (items count).  | App mặc định (Open with).            |
 
-**d. Read-only và Hidden**
+#### d. Read-only và Hidden
 
-- **Read-only (Chỉ đọc / Locked):** Người dùng chỉ có thể xem, không thể sửa hoặc xóa. Trên macOS, tính năng này gọi là "Locked" trong cửa sổ _Get Info_.
-    
+- **Read-only (Chỉ đọc / Locked):** Người dùng chỉ có thể xem, không thể sửa hoặc xóa. Trên macOS, tính năng này gọi là "Locked" trong cửa sổ **Get Info**.
 - **Hidden (Ẩn):** Các file/folder dùng cho hệ thống hoặc cấu hình, thường bị ẩn để tránh xóa nhầm. Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
-    
 
-e. Các thao tác trên Folder, File
+#### e. Các thao tác trên Folder, File
 
 Finder cung cấp các nhóm chức năng chính:
 
 1. **Cơ bản:** Open (Mở), New Folder (Tạo mới), Rename (Đổi tên - phím Enter).
-    
 2. **Tổ chức:** Move (Di chuyển), Copy (Sao chép), Delete (Chuyển vào thùng rác), Duplicate (Nhân bản).
-    
 3. **Nâng cao:**
-    
     - **Get Info (`Cmd + I`):** Xem thuộc tính chi tiết.
-        
     - **Quick Look (`Space`):** Xem trước nội dung nhanh không cần mở app.
-        
     - **Tags:** Gán thẻ màu để tìm kiếm.
-        
     - **Compress:** Nén file/folder thành `.zip`.
-        
 
 ## 3. Câu 3 (Hệ thống tập tin)
 
