@@ -15,6 +15,24 @@
 //   date: datetime.today()
 // )
 
+// Wrapper function for rounded tables
+#let rounded-table(..args) = {
+  block(
+    radius: 8pt, // Adjust this for more/less roundness
+    stroke: 1pt + luma(200), // The outer border color
+    clip: true,  // This cuts off the square corners
+    width: 100%, // Ensures it fits the page
+    inset: 0pt,  // No gap between border and table
+    
+    // The inner table
+    table(
+      ..args,
+      stroke: none, // We turn off the default grid to avoid double borders
+      // We add horizontal lines between rows for a clean look
+      align: (x, y) => if y == 0 { center } else { left },
+    )
+  )
+}
 #let university-assignment(
   title: "Bài Tập Thực Hành",
   subtitle: none,
