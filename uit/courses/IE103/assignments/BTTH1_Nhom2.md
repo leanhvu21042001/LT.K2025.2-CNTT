@@ -357,7 +357,7 @@ Ví dụ:
 
 ![macos-fhs-file-operations](assets/macos-fhs-file-operations.png)
 
-## Câu 3 (Hệ thống tập tin)
+## Câu 3 (Hệ Thống Tập Tin)
 
 ### Câu Hỏi
 
