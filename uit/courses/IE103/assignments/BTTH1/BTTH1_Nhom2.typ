@@ -1,6 +1,7 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
-// MARK THE TARGET for BACK TO TOP
+// MARK: THE TARGET for BACK TO TOP
+
 #metadata("top") <top>
 
 #show: university-assignment.with(
@@ -16,37 +17,13 @@
   )
 )
 
-// Giới Thiệu Nhóm
+// MARK: AUTHOR
 
-#align(center)[
-  #text(font: "Montserrat", size: 28pt, weight: "regular")[
-  NHÓM 2
-  ]
-]
-
-#figure(
-  align(center)[
-  #rounded-table-lined(
-    columns: (10%, 20%, 70%),
-    align: (right,left,left,),
-    table.header([#strong[No];], [#strong[MSSV];], [#strong[Họ và Tên];],),
-    table.hline(),
-    [1], [25410291], [Đinh Xuân Sâm],
-    [2], [25410319], [Đặng Hữu Toàn],
-    [3], [25410321], [Nguyễn Điền Triết],
-    [4], [25410204], [Trương Xuân Hậu],
-    [5], [25410338], [Lê Anh Vũ],
-    [6], [25410176], [Trần Sơn Bình],
-    [7], [25410247], [Lê Kim Long],
-    [8], [25410337], [La Anh Vũ],
-    [9], [25410209], [Lê Ngọc Hiệp],
-    [10], [25410271], [Nguyễn Thị Ngọc Nhung],
-  )]
-  , kind: table,
-  caption: [Nhóm 2 (Omega)]
-  )
+#include "author.typ"
 
 #pagebreak()
+
+// MARK: MAIN CONTENT
 
 = Bài 1. GMail & Mail Group.
 
