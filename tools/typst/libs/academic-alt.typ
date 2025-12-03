@@ -25,7 +25,8 @@
 ) = {
   // Page setup
   set page(margin: 2cm)
-  set text(font: "Palatino", size: 12pt, weight: "regular")
+  // set text(font: "CMU Concrete", size: 12pt, weight: "regular")
+  set text(font: "Lora", size: 12pt, weight: "regular")
   set heading(numbering: "1.")
   // Indent for List
   set list(indent: 1em)
@@ -56,14 +57,19 @@
   // MARK: Custom heading styles
   show heading.where(level: 1): it => [
     #set align(left)
-    #set text(font: "Helvetica Neue", size: 20pt, weight: 200)
+    #set text(font: "Montserrat", size: 20pt, weight: "regular")
     #block()[#it.body]
-    #line(length: 100%, stroke: 0.5pt + rgb("#000000"))
+    #line(length: 100%, stroke: 0.5pt + rgb("#808080"))
     #v(0.5em)
   ]
   
   show heading.where(level: 2): it => [
-    #set text(font: "Helvetica Neue", size: 18pt, weight: 200, fill: rgb(50, 50, 50))
+    #set text(font: "Montserrat", size: 18pt, weight: "regular", fill: rgb(50, 50, 50))
+    #block(above: 1.2em, below: 0.8em)[#it.body]
+  ]
+
+  show heading.where(level: 3): it => [
+    #set text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(50, 50, 50))
     #block(above: 1.2em, below: 0.8em)[#it.body]
   ]
   
@@ -94,7 +100,7 @@
       inset: 2em,
       stroke: 1pt,
     )[
-      #text(font: "Helvetica Neue", size: 28pt, weight: 300)[
+      #text(font: "Montserrat", size: 28pt, weight: "regular")[
         #title
       ]
       #if subtitle != none [
@@ -108,7 +114,7 @@
     #stack(
       dir: ltr,
       spacing: 1em,
-      text(size: 20pt, weight: "bold")[#author],
+      text(font: "Montserrat", size: 20pt, weight: "regular")[#author],
       // text(size: 20pt, fill: rgb(100, 100, 100))[#date.display("[month repr:long] [day], [year]")],
     )
     #v(1em)
@@ -123,7 +129,7 @@
     width: 100%,
   )[
     #align(center)[
-      #text(font: "Helvetica Neue", size: 16pt, weight: 200, fill: rgb(30, 70, 120))[
+      #text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(30, 70, 120))[
         Thông Tin Chung
       ]
     ]
@@ -146,7 +152,6 @@
       [
         *Chi Tiết:*
         #v(0.8em)
-        // TODO: Indent 2 spaces
         #if "course" in details [
           - *Môn:* #details.course
         ]
