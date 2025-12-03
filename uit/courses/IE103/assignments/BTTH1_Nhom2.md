@@ -159,11 +159,25 @@ Trong bài này, xin phép được trình bày các câu trả lời sử dụn
 
 #### a. Mô hình tổ chức dữ liệu
 
-Finder sử dụng mô hình Cây thư mục (Directory Tree) hay Hệ Thống File Phân Cấp để tổ chức dữ liệu, bắt đầu từ thư mục gốc (root `/`).
+Finder sử dụng mô hình Cây thư mục (Directory Tree) hay đầy đủ hơn là Hệ Thống File Phân Cấp (Filesystem Hierarchy Standard (FHS)) để tổ chức dữ liệu, với gốc là thư mục `/` (root).
 
-- **Ví dụ đường dẫn:** `/System/Volumes/Data/Users/Username/...`    
+Lưu ý: root trong trường hợp này là tên của thư mục gốc/rễ, không phải là tên của người dùng tối cao trong hệ thống Unix-based/Unix-like.
 
-> **[Hình ảnh minh họa Cây thư mục trên Finder]**
+Ví dụ:
+
+- Finder với giao diện đồ họa, biểu diễn Cây thư mục như dưới đây, bắt đầu từ `/` tới `System` > `Volumes`.
+
+    ```ini
+    /System/Volumes/
+    ```
+
+![macos-fhs-root-system-finder](assets/macos-fhs-root-system-finder.png)
+
+- Để đối chiếu, đây là đường dẫn khi ở chế độ dòng lệnh (CLI).
+
+![macos-fhs-root-system](assets/macos-fhs-root-system.png)
+
+- Lưu ý: macOS hay bất kỳ hệ điều hành POSIX (Unix-like/Unix-based) nào đều phân biệt HOA/thường trong đường dẫn, vì vậy hãy đảm bảo các ký tự luôn chính xác, vì HOA/Hoa/hoa là các từ hoàn toàn khác nhau.
 
 #### b. Thuộc tính và Ý nghĩa
 
