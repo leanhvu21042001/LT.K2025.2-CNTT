@@ -23,25 +23,13 @@ FAT32 và NTFS là hai hệ thống tệp tin (File System) quy định cách d�
   align(center)[#table(
     columns: 3,
     align: (left,left,left,),
-    table.header([Đặc điểm], [FAT32 (File Allocation Table 32)], [NTFS
-      (New Technology File System)],),
+    table.header([Đặc điểm], [FAT32 (File Allocation Table 32)], [NTFS (New Technology File System)],),
     table.hline(),
-    [#strong[Kích thước tệp tối đa];], [Giới hạn ở #strong[4 GB];. Không
-    thể lưu các file video 4K hay file ISO lớn.], [Lý thuyết lên tới
-    #strong[16 Exabytes] (gần như vô hạn với nhu cầu hiện tại).],
-    [#strong[Kích thước phân vùng];], [Giới hạn phổ biến là 2TB (Windows
-    thường giới hạn format ở 32GB).], [Hỗ trợ phân vùng cực lớn (lên tới
-    8 Petabytes).],
-    [#strong[Bảo mật];], [Không hỗ trợ phân quyền truy cập hay mã
-    hóa.], [Hỗ trợ #strong[ACL (Access Control List)] để phân quyền
-    người dùng và mã hóa tệp tin (EFS).],
-    [#strong[Độ an toàn];], [Dễ bị lỗi dữ liệu khi mất điện đột
-    ngột.], [Có tính năng #strong[Journaling (Ghi nhật ký)];: Tự động
-    ghi lại thay đổi trước khi thực hiện để phục hồi nếu gặp lỗi hệ
-    thống.],
-    [#strong[Tương thích];], [Cao (Windows, Mac, Linux, Game Consoles,
-    USB).], [Tối ưu cho Windows; Mac/Linux có thể chỉ đọc được mà không
-    ghi được (cần phần mềm hỗ trợ).],
+    [Kích thước tệp tối đa], [Giới hạn ở #strong[4 GB];. Không thể lưu các file video 4K hay file ISO lớn.], [Lý thuyết lên tới #strong[16 Exabytes] (gần như vô hạn với nhu cầu hiện tại).],
+    [Kích thước phân vùng], [Giới hạn phổ biến là 2TB (Windows thường giới hạn format ở 32GB).], [Hỗ trợ phân vùng cực lớn (lên tới 8 Petabytes).],
+    [Bảo mật], [Không hỗ trợ phân quyền truy cập hay mã hóa.], [Hỗ trợ #strong[ACL (Access Control List)] để phân quyền người dùng và mã hóa tệp tin (EFS).],
+    [Độ an toàn], [Dễ bị lỗi dữ liệu khi mất điện đột ngột.], [Có tính năng #strong[Journaling (Ghi nhật ký)];: Tự động ghi lại thay đổi trước khi thực hiện để phục hồi nếu gặp lỗi hệ thống.],
+    [Tương thích], [Cao (Windows, Mac, Linux, Game Consoles, USB).], [Tối ưu cho Windows; Mac/Linux có thể chỉ đọc được mà không ghi được (cần phần mềm hỗ trợ).],
   )]
   , kind: table
   , caption: [Bài 3. So Sánh FAT32 vs NTFS]
