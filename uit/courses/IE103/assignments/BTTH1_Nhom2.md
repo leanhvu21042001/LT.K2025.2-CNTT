@@ -126,9 +126,9 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 - **Cơ chế:** Tự động điền tiêu chí (người gửi, tiêu đề...) vào khung tìm kiếm.    
 - **Hành động tự động:** Tự động _Archive_ (Bỏ qua inbox), _Gán nhãn_ (Label), _Đánh dấu sao_, _Chuyển tiếp_ (Forward) hoặc _Xóa_ các thư khớp điều kiện trong tương lai.
 
-## 2. Câu 2 (Explorer/Finder)
+## Câu 2 (Explorer/Finder)
 
-### 2.1. Câu Hỏi
+### Câu Hỏi
 
 Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
@@ -138,7 +138,7 @@ Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 4. Read-only và hidden.
 5. Các chức năng xử lý một folder, file.
 
-### 2.2. Bài Làm
+### Bài Làm
 
 #### Giới thiệu
 
@@ -157,7 +157,7 @@ Tuy nhiên, có thể có vài khác biệt, ví dụ như Nautilus trên GNOME 
 
 Trong bài này, xin phép được trình bày các câu trả lời sử dụng Finder của macOS, một chương trình tương đương về chức năng và nhiệm vụ, chỉ khác hệ điều hành.
 
-#### a. Mô hình tổ chức dữ liệu
+#### Mô hình tổ chức dữ liệu
 
 Finder sử dụng mô hình Cây thư mục (Directory Tree) hay đầy đủ hơn là Hệ Thống File Phân Cấp (Filesystem Hierarchy Standard (FHS)) để tổ chức dữ liệu, với gốc là thư mục `/` (root).
 
@@ -179,14 +179,14 @@ Ví dụ:
 
 - Lưu ý: macOS hay bất kỳ hệ điều hành POSIX (Unix-like/Unix-based) nào đều phân biệt HOA/thường trong đường dẫn, vì vậy hãy đảm bảo các ký tự luôn chính xác, vì HOA/Hoa/hoa là các từ hoàn toàn khác nhau.
 
-#### b. Thuộc tính và Ý nghĩa
+#### Thuộc tính và Ý nghĩa
 
 Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ liệu).
 
 - **Ý nghĩa:** Giúp định danh, quản lý vị trí, xác định ứng dụng mở mặc định và kiểm soát bảo mật.
 - **Lợi ích:** Hỗ trợ tìm kiếm (theo ngày, loại), quản lý dung lượng và bảo vệ dữ liệu (phân quyền).
 
-#### c. Thuộc tính của Ổ đĩa, Thư mục và File
+#### Thuộc tính của Ổ đĩa, Thư mục và File
 
 | **Thuộc tính**          | **Ổ đĩa (Volume/Drive)**          | **Thư mục (Folder)**             | **Tập tin (File)**                   |
 | ----------------------- | --------------------------------- | -------------------------------- | ------------------------------------ |
@@ -197,12 +197,12 @@ Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ li�
 | **Quyền (Permissions)** | Quản trị hệ thống (System R/W).   | Read/Write/Execute (truy cập).   | Read/Write/Execute (thao tác).       |
 | **Khác**                | Mount point, thông tin phần cứng. | Số lượng mục con (items count).  | App mặc định (Open with).            |
 
-#### d. Read-only và Hidden
+#### Read-only và Hidden
 
 - **Read-only (Chỉ đọc / Locked):** Người dùng chỉ có thể xem, không thể sửa hoặc xóa. Trên macOS, tính năng này gọi là "Locked" trong cửa sổ **Get Info**.
 - **Hidden (Ẩn):** Các file/folder dùng cho hệ thống hoặc cấu hình, thường bị ẩn để tránh xóa nhầm. Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
 
-#### e. Các thao tác trên Folder, File
+#### Các thao tác trên Folder, File
 
 Finder cung cấp các nhóm chức năng chính:
 
