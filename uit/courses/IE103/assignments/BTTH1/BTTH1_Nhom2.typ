@@ -39,7 +39,7 @@
 
 #pagebreak()
 
-= Bài 1
+= Bài 1. GMail & Mail Group
 
 Trong Gmail, anh/chị hãy cho biết:
 
@@ -134,7 +134,9 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 
 
-= Bài 2
+= Bài 2. Explorer/Finder
+
+#include "quiz2.typ"
 
 
 = Bài 3
