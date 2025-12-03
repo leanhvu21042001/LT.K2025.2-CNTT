@@ -26,7 +26,7 @@
 
 ## Câu 1 (Gmail)
 
-### 1.1. Câu Hỏi
+### Câu Hỏi
 
 Trong Gmail, anh/chị hãy cho biết:
 
@@ -41,7 +41,7 @@ Trong Gmail, anh/chị hãy cho biết:
 9. Các tính năng tìm kiếm mail.
 10. Tìm hiểu tính năng: Filter message like this.
 
-### 1.2. Bài Làm
+### Bài Làm
 
 #### Các tính năng tổ chức mail
 
