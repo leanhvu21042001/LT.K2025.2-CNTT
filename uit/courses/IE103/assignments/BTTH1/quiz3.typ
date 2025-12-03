@@ -44,7 +44,7 @@ FAT32 và NTFS là hai hệ thống tệp tin (File System) quy định cách d�
     ghi được (cần phần mềm hỗ trợ).],
   )]
   , kind: table
-  , caption: [So Sánh FAT32 vs NTFS]
+  , caption: [Bài 3. So Sánh FAT32 vs NTFS]
   )
 
 == Khôi phục tệp tin đã xóa
