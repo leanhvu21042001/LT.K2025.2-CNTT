@@ -185,15 +185,26 @@ Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
 
 #### Tính năng "Filter messages like this"
 
-Đây là tính năng tạo bộ lọc tự động dựa trên mẫu email đang mở.
+Tính năng "**Filter messages like this**" được thiết kế để tạo bộ lọc nhanh dựa trên email hiện tại, nhằm **Tự động hóa việc quản lý email**.
 
-- **Cơ chế:** Tự động điền tiêu chí (người gửi, tiêu đề...) vào khung tìm kiếm.
-- **Hành động tự động:**
-    - Tự động _Archive_ (Bỏ qua inbox)
-    - _Gán nhãn_ (Label)
-    - _Đánh dấu sao_
-    - _Chuyển tiếp_ (Forward) hoặc
-    - _Xóa_ các thư khớp điều kiện trong tương lai.
+##### Cơ chế Tạo Bộ lọc
+
+- Bạn chọn một **email** và kích hoạt tính năng này từ Menu.
+- **Gmail** tự động điền các **tiêu chí tìm kiếm** vào công cụ **Tìm kiếm Nâng cao**.
+    - **Ví dụ:** Nếu bạn chọn thư từ `john.doe@email.com`, Gmail sẽ điền ngay `from:john.doe@email.com` vào tiêu chí tìm kiếm**.**
+    - Bạn có thể thay đổi hoặc thêm các tiêu chí khác **(ví dụ: chỉ lọc thư từ John có kèm tệp đính kèm).**
+
+#### Các Hành động Tự động của Bộ lọc (Quan trọng)
+
+Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều hành động để áp dụng cho các email mới và (tùy chọn) các email cũ khớp với tiêu chí:
+
+- **Lưu trữ (Archive):** Bỏ qua Hộp thư đến (**Skip the Inbox**).
+    - Thư sẽ không hiển thị trong hộp thư chính nhưng vẫn có thể tìm thấy.
+- **Gán Nhãn:** Tự động áp dụng một nhãn cụ thể (**Label**) để phân loại.
+- **Đánh dấu quan trọng:** Đánh dấu là đã đọc, đã gắn sao, hoặc qua**n trọng.**
+- **Chuyển tiếp (Forward):** Tự động gửi bản sao email đó đến một địa chỉ khác.
+
+**Xóa:** Tự động chuyển thư vào thùng rác.
 
 
 ## Câu 2 (Explorer/Finder)
