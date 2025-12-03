@@ -31,21 +31,12 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
     align: (left,left,left,left,),
     table.header([Thành phần], [Ý Nghĩa], [Mục đích], [Lưu ý],),
     table.hline(),
-    [From], [Người gửi], [Địa chỉ email của bạn.], [Nên sử dụng một địa
-    chỉ email chuyên nghiệp (ví dụ: `[tên].[họ]@congty.com`).],
-    [To], [Người nhận], [Địa chỉ email của người/tổ chức bạn muốn gửi
-    thư.], [Kiểm tra kỹ lưỡng, tránh gửi nhầm hoặc thiếu người quan
+    [From], [Người gửi], [Địa chỉ email của bạn.], [Nên sử dụng một địa chỉ email chuyên nghiệp (ví dụ: `[tên].[họ]@congty.com`).],
+    [To], [Người nhận], [Địa chỉ email của người/tổ chức bạn muốn gửi thư.], [Kiểm tra kỹ lưỡng, tránh gửi nhầm hoặc thiếu người quan
     trọng.],
-    [Cc], [Carbon Copy], [Gửi bản sao cho những người cần nắm thông tin
-    nhưng không cần phản hồi trực tiếp.], [Sử dụng khi cần thông báo cho
-    cấp trên, đồng nghiệp liên quan.],
-    [Bcc], [Blind Carbon Copy], [Gửi bản sao bí mật. Người nhận trong
-    mục To và Cc sẽ không thấy danh sách email trong mục Bcc.], [Sử dụng
-    để bảo mật danh sách người nhận (ví dụ: gửi email marketing).],
-    [Subject], [Tiêu đề], [Tóm tắt nội dung email một cách ngắn gọn, rõ
-    ràng, và thu hút.], [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví
-    dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc "#emph[Đề xuất
-    họp khẩn về chiến lược kinh doanh];".],
+    [Cc], [Carbon Copy], [Gửi bản sao cho những người cần nắm thông tin nhưng không cần phản hồi trực tiếp.], [Sử dụng khi cần thông báo cho cấp trên, đồng nghiệp liên quan.],
+    [Bcc], [Blind Carbon Copy], [Gửi bản sao bí mật. Người nhận trong mục To và Cc sẽ không thấy danh sách email trong mục Bcc.], [Sử dụng để bảo mật danh sách người nhận (ví dụ: gửi email marketing).],
+    [Subject], [Tiêu đề], [Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút.], [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc "#emph[Đề xuất họp khẩn về chiến lược kinh doanh];".],
   )]
   , kind: table
   , caption: [Bài 1. Header (Phần tiêu đề)]
@@ -144,17 +135,12 @@ Admin:
   align(center)[#table(
     columns: (30%, 70%),
     align: (left,left,),
-    table.header([#strong[Tính năng];], [Miêu Tả],),
+    table.header([Tính năng], [Miêu Tả],),
     table.hline(),
-    [#strong[Quản lý Thành viên];], [Thêm/Xóa thành viên, Cấm (Ban)
-    người dùng, Đặt vai trò (Owner, Manager, Member), Duyệt yêu cầu tham
-    gia.],
-    [#strong[Kiểm duyệt (Moderation)];], [Đặt cài đặt cho phép/không cho
-    phép thành viên đăng bài, Phê duyệt/Từ chối các bài đăng đang chờ.],
-    [#strong[Quản lý Cài đặt Thư];], [Đặt chân chữ ký (footer) chung cho
-    tất cả email của nhóm, cấu hình phản hồi tự động (auto-reply).],
-    [#strong[Cài đặt Quyền];], [Quyết định ai có thể Xem thành viên, ai
-    có thể Đăng bài, ai có thể Xem Kho lưu trữ.],
+    [Quản lý Thành viên], [Thêm/Xóa thành viên, Cấm (Ban) người dùng, Đặt vai trò (Owner, Manager, Member), Duyệt yêu cầu tham gia.],
+    [Kiểm duyệt (Moderation)], [Đặt cài đặt cho phép/không cho phép thành viên đăng bài, Phê duyệt/Từ chối các bài đăng đang chờ.],
+    [Quản lý Cài đặt Thư], [Đặt chân chữ ký (footer) chung cho tất cả email của nhóm, cấu hình phản hồi tự động (auto-reply).],
+    [Cài đặt Quyền], [Quyết định ai có thể Xem thành viên, ai có thể Đăng bài, ai có thể Xem Kho lưu trữ.],
   )]
   , kind: table
   , caption: [Bài 1. Vai trò của Admin]
@@ -166,15 +152,11 @@ Member:
   align(center)[#table(
     columns: (30%, 70%),
     align: (left,left,),
-    table.header([#strong[Tính năng];], [Miêu Tả],),
+    table.header([Tính năng], [Miêu Tả],),
     table.hline(),
-    [#strong[Đăng bài (Post)];], [Gửi email đến địa chỉ nhóm để bắt đầu
-    cuộc thảo luận mới hoặc trả lời các cuộc thảo luận hiện có.],
-    [#strong[Truy cập Kho lưu trữ];], [Tìm kiếm và xem lại toàn bộ lịch
-    sử thảo luận của nhóm trên giao diện web của Google Groups (nếu được
-    phép).],
-    [#strong[Tùy chọn Email];], [Thay đổi tần suất nhận thư (mỗi thư,
-    tóm tắt, tổng hợp), Rời nhóm (Leave group).],
+    [Đăng bài (Post)], [Gửi email đến địa chỉ nhóm để bắt đầu cuộc thảo luận mới hoặc trả lời các cuộc thảo luận hiện có.],
+    [Truy cập Kho lưu trữ], [Tìm kiếm và xem lại toàn bộ lịch sử thảo luận của nhóm trên giao diện web của Google Groups (nếu được phép).],
+    [Tùy chọn Email], [Thay đổi tần suất nhận thư (mỗi thư, tóm tắt, tổng hợp), Rời nhóm (Leave group).],
   )]
   , kind: table
   , caption: [Bài 1. Vai trò của Member]
