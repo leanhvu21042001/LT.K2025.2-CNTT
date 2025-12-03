@@ -194,7 +194,7 @@ Tính năng "**Filter messages like this**" được thiết kế để tạo b�
     - **Ví dụ:** Nếu bạn chọn thư từ `john.doe@email.com`, Gmail sẽ điền ngay `from:john.doe@email.com` vào tiêu chí tìm kiếm**.**
     - Bạn có thể thay đổi hoặc thêm các tiêu chí khác **(ví dụ: chỉ lọc thư từ John có kèm tệp đính kèm).**
 
-#### Các Hành động Tự động của Bộ lọc (Quan trọng)
+##### Các Hành động Tự động của Bộ lọc (Quan trọng)
 
 Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều hành động để áp dụng cho các email mới và (tùy chọn) các email cũ khớp với tiêu chí:
 
@@ -203,8 +203,7 @@ Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều
 - **Gán Nhãn:** Tự động áp dụng một nhãn cụ thể (**Label**) để phân loại.
 - **Đánh dấu quan trọng:** Đánh dấu là đã đọc, đã gắn sao, hoặc qua**n trọng.**
 - **Chuyển tiếp (Forward):** Tự động gửi bản sao email đó đến một địa chỉ khác.
-
-**Xóa:** Tự động chuyển thư vào thùng rác.
+- **Xóa:** Tự động chuyển thư vào thùng rác.
 
 
 ## Câu 2 (Explorer/Finder)
