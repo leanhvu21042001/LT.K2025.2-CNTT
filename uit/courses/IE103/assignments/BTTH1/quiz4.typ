@@ -23,6 +23,46 @@ View thực chất là một "bảng ảo" (virtual table). Nó không lưu tr�
   - Khi cấu trúc bảng vật lý thay đổi (ví dụ: tách bảng), ta chỉ cần sửa lại định nghĩa View.
   - Các ứng dụng đang gọi View đó sẽ không bị ảnh hưởng (không bị gãy code).
 
+Ví dụ:
+
+#figure(
+```sql
+-- Tạo mới VIEW (hoặc thay thế)
+CREATE OR REPLACE VIEW account_activity_view AS
+SELECT
+    ba.account_number,
+    ba.account_holder,
+    ba.balance,
+    ul.action AS latest_action,
+    ul.timestamp AS latest_action_time
+FROM
+    BankAccounts ba
+-- Join nhiều bảng
+LEFT JOIN
+    (
+        -- Một truy vấn cụ thể
+        SELECT DISTINCT ON (account_number)
+            account_number,
+            action,
+            timestamp
+        FROM
+            UserLogs
+        ORDER BY
+            account_number,
+            timestamp DESC
+    ) ul ON ba.account_number = ul.account_number;
+```,
+caption: "Bài 4. Khai báo/Khởi tạo VIEW"
+)
+
+#figure(
+```sql
+-- Truy vấn từ VIEW như một bảng bình thường
+SELECT * FROM account_activity_view;
+```,
+caption: "Bài 4. Truy vấn VIEW"
+)
+
 == Trigger
 
 Trigger là một thủ tục lưu trữ đặc biệt (special stored procedure) được hệ thống tự động thực thi khi có một sự kiện thay đổi dữ liệu (`INSERT`, `UPDATE`, `DELETE`) xảy ra.
