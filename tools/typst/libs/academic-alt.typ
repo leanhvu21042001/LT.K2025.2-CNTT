@@ -210,6 +210,20 @@
     )
   ]
 
+  // List of Figures
+  block(
+    radius: 8pt,
+    fill: rgb(248, 250, 252),
+    stroke: 1pt + rgb(200, 220, 240),
+    inset: 1.5em,
+    width: 100%,
+  )[
+    #outline(
+      title: [Danh Sách Hình Ảnh], // Title: "List of Images"
+      target: figure.where(kind: image), // Filter: Only show images
+    )
+  ]
+
   v(2em)
   // line(length: 100%, stroke: 0.5pt + rgb(200, 220, 240))
   v(0.5em)
