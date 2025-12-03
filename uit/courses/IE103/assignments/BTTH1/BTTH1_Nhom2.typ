@@ -16,7 +16,13 @@
   )
 )
 
-= Nhóm 2
+// Giới Thiệu Nhóm
+
+#align(center)[
+  #text(font: "Montserrat", size: 28pt, weight: "regular")[
+  NHÓM 2
+  ]
+]
 
 #figure(
   align(center)[
