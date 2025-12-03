@@ -183,8 +183,15 @@ Ví dụ:
 
 Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ liệu).
 
-- **Ý nghĩa:** Giúp định danh, quản lý vị trí, xác định ứng dụng mở mặc định và kiểm soát bảo mật.
-- **Lợi ích:** Hỗ trợ tìm kiếm (theo ngày, loại), quản lý dung lượng và bảo vệ dữ liệu (phân quyền).
+- **Ý nghĩa:**
+    - Giúp định danh, quản lý vị trí.
+    - Xác định ứng dụng mở mặc định và kiểm soát bảo mật.
+
+- **Lợi ích:**
+    - Hỗ trợ tìm kiếm (theo ngày, loại),
+    - Quản lý dung lượng.
+    - Bảo vệ dữ liệu (phân quyền).
+
 
 #### Thuộc tính của Ổ đĩa, Thư mục và File
 
@@ -196,6 +203,29 @@ Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ li�
 | **Ngày tháng**          | Ngày tạo phân vùng.               | Ngày tạo, ngày sửa đổi nội dung. | Ngày tạo, sửa đổi, mở gần nhất.      |
 | **Quyền (Permissions)** | Quản trị hệ thống (System R/W).   | Read/Write/Execute (truy cập).   | Read/Write/Execute (thao tác).       |
 | **Khác**                | Mount point, thông tin phần cứng. | Số lượng mục con (items count).  | App mặc định (Open with).            |
+
+Ví dụ:
+
+- Thuộc tính của một file được tô đỏ như trong hình, bao gồm:
+
+    - Thể loại (MIME type).
+    - Dung lượng.
+    - Ngày tạo.
+    - Ngày chỉnh sửa.
+    - Lần cuối truy cập.
+
+![macos-fhs-file-properties](assets/macos-fhs-file-properties.png)
+
+- Thuộc tính của một ổ đĩa (Volume):
+    - Loại.
+    - Ngày tạo.
+    - Định dạng.
+    - Dung lượng.
+    - Tên.
+    - Phân quyền.
+    - vv…
+
+![macos-fhs-volume-properties](assets/macos-fhs-volume-properties.png)
 
 #### Read-only và Hidden
 
