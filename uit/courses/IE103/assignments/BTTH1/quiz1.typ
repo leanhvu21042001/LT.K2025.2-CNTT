@@ -230,3 +230,5 @@ Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều
 - #strong[Đánh dấu quan trọng:] Đánh dấu là đã đọc, đã gắn sao, hoặc qua#strong[n trọng.]
 - #strong[Chuyển tiếp (Forward):] Tự động gửi bản sao email đó đến một địa chỉ khác.
 - #strong[Xóa:] Tự động chuyển thư vào thùng rác.
+
+#pagebreak()
