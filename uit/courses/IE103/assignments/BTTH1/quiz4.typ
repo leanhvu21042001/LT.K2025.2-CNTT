@@ -54,6 +54,39 @@ Trong chuẩn SQL và các hệ quản trị lớn (Oracle, SQL Server, PostgreS
   - Cơ chế: Thay thế hoàn toàn câu lệnh SQL gốc bằng logic được định nghĩa trong Trigger.
   - Mục đích: Thường dùng cho View. Vì View là bảng ảo nên ta không thể INSERT trực tiếp vào View phức tạp. `INSTEAD OF` Trigger sẽ đón nhận dữ liệu đó và phân phối chúng vào các bảng gốc tương ứng một cách chính xác.
 
+Ví dụ: `AFTER` Trigger
+
+Miêu tả: Cho mỗi câu lệnh `INSERT` vào bảng `BankAccounts`, tạo một bản
+ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
+
+- Ai thực hiện?
+- Thực hiện gì?
+
+DBMS: PostgreSQL:
+
+#figure(
+```sql
+-- Create an after-insert trigger for UserLogs
+CREATE FUNCTION after_insert_trigger_function()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Perform some action, like logging the insert
+    INSERT INTO UserLogs (account_number, action)
+    VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Attach the trigger to the BankAccounts table
+CREATE TRIGGER after_insert_trigger
+AFTER INSERT ON BankAccounts
+FOR EACH ROW
+EXECUTE PROCEDURE after_insert_trigger_function();
+```,
+caption: "Bài 4. AFTER Trigger"
+)
+
+
 === Theo cấp độ (Scope)
 
 + #strong[Row-Level Trigger] (Kích hoạt theo dòng):
@@ -94,36 +127,3 @@ Kết luận:
 - Sự hỗ trợ này tỷ lệ thuận với quy mô và mục đích của hệ quản trị: Hệ thống càng lớn, càng hướng tới doanh nghiệp (Enterprise) thì hỗ trợ Trigger càng mạnh.
 - Các hệ thống nhúng hoặc hướng người dùng cá nhân thường cắt giảm hoặc thay thế tính năng này để tối ưu tài nguyên.
 
-== Ví Dụ
-
-=== `AFTER` Trigger Example
-
-Miêu tả: Cho mỗi câu lệnh `INSERT` vào bảng `BankAccounts`, tạo một bản
-ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
-
-- Ai thực hiện?
-- Thực hiện gì?
-
-DBMS: PostgreSQL:
-
-#figure(
-```sql
--- Create an after-insert trigger for UserLogs
-CREATE FUNCTION after_insert_trigger_function()
-RETURNS TRIGGER AS $$
-BEGIN
-    -- Perform some action, like logging the insert
-    INSERT INTO UserLogs (account_number, action)
-    VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
-
--- Attach the trigger to the BankAccounts table
-CREATE TRIGGER after_insert_trigger
-AFTER INSERT ON BankAccounts
-FOR EACH ROW
-EXECUTE PROCEDURE after_insert_trigger_function();
-```,
-caption: "Bài 4. AFTER Trigger"
-)
