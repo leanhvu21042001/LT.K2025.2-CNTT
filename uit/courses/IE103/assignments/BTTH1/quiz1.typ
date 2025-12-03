@@ -1,16 +1,13 @@
 Trong Gmail, anh/chị hãy cho biết:
 
-+ Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các
-  mails?
++ Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các mails?
 + Cấu trúc đầy đủ của một email.
 + Phân loại mails.
 + Khái niệm mailgroup.
-+ Hãy tạo thêm các thư mục (Label) sau: Giải Trí, Sức Khỏe, Thể Thao,
-  Học Tập.
++ Hãy tạo thêm các thư mục (Label) sau: Giải Trí, Sức Khỏe, Thể Thao, Học Tập.
 + Hãy đánh dấu và di chuyển các mails vào các thư mục vừa tạo tương ứng.
 + Một account hiện tại có dung lượng tối đa bao nhiêu?
-+ Hãy tạo ra một mailgroup trong gmail và cho biết lợi ích của nó? Tìm
-  hiểu các tính năng admin/member.
++ Hãy tạo ra một mailgroup trong gmail và cho biết lợi ích của nó? Tìm hiểu các tính năng admin/member.
 + Các tính năng tìm kiếm mail.
 + Tìm hiểu tính năng: Filter message like this.
 
@@ -28,7 +25,8 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 === Header (Phần tiêu đề)
 
 #figure(
-  align(center)[#table(
+  align(center)[
+  #table(
     columns: 4,
     align: (left,left,left,left,),
     table.header([Thành phần], [Ý Nghĩa], [Mục đích], [Lưu ý],),
