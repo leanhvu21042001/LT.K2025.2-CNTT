@@ -128,3 +128,60 @@ Ví dụ:
     Thuộc tính của một ổ đĩa (Volume).
   ]
 )
+
+== Read-only và Hidden
+
+- #strong[Read-only (Chỉ đọc / Locked):]
+  - Người dùng chỉ có thể xem, #emph[không thể sửa hoặc xóa];.
+  - Trên macOS, tính năng này gọi là "Locked" trong cửa sổ #strong[Get Info];.
+- #strong[Hidden (Ẩn):]
+  - Các file/folder dùng cho hệ thống hoặc cấu hình, #emph[có thể sửa hoặc xóa];.
+  - Thường chỉ có ý nghĩa về mặt hiển thị, bị ẩn để tránh xóa nhầm.
+  - Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
+
+Ví dụ:
+
+- Read-only.
+
+#figure(image("assets/macos-fhs-volume-readonly.png"),
+  caption: [
+    Thuộc tính: Read-only.
+  ]
+)
+
+- Hidden.
+
+#figure(image("assets/macos-fhs-file-hidden.png"),
+  caption: [
+    Thuộc tính: File ẩn.
+  ]
+)
+
+== Các thao tác trên Folder, File
+
+Finder cung cấp các nhóm chức năng chính:
+
++ #strong[Cơ bản:]
+  - Open (Mở)
+  - New Folder (Tạo mới)
+  - Rename (Đổi tên - phím Enter).
++ #strong[Tổ chức:]
+  - Move (Di chuyển),
+  - Copy (Sao chép),
+  - Delete (Chuyển vào thùng rác),
+  - Duplicate (Nhân bản).
++ #strong[Nâng cao:]
+  - #strong[Get Info (`Cmd + I`):] Xem thuộc tính chi tiết.
+  - #strong[Quick Look (`Space`):] Xem trước nội dung nhanh không cần mở app.
+  - #strong[Tags:] Gán thẻ màu để tìm kiếm.
+  - #strong[Compress:] Nén file/folder thành `.zip` để tiện di chuyển hoặc copy.
+
+Ví dụ:
+
+- Thao tác trên File trong Menu ngữ cảnh.
+
+#figure(image("assets/macos-fhs-file-operations.png"),
+  caption: [
+    Các thao tác trên file.
+  ]
+)
