@@ -247,7 +247,7 @@ Vai trò của Trigger, View? Phân loại Trigger? Tất cả hệ quản trị
 
 ### 4.2. Bài Làm
 
-a. Vai trò của View (Khung nhìn)
+#### a. Vai trò của View (Khung nhìn)
 
 View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 
@@ -258,7 +258,7 @@ View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 - **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
   
 
-b. Vai trò của Trigger
+#### b. Vai trò của Trigger
 
 Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (INSERT, UPDATE, DELETE).
 
@@ -269,7 +269,7 @@ Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có s�
 - **Kiểm toán (Audit):** Ghi log ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
   
 
-**c. Phân loại Trigger**
+#### c. Phân loại Trigger
 
 - **Theo thời điểm (Timing):**
   
@@ -286,7 +286,7 @@ Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có s�
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
       
 
-d. Mức độ hỗ trợ của các Hệ quản trị CSDL
+#### d. Mức độ hỗ trợ của các Hệ quản trị CSDL
 
 KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 
@@ -297,4 +297,3 @@ KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 - **Desktop/Legacy (Access cũ, FoxPro):** Thường không hỗ trợ hoặc hỗ trợ qua cơ chế khác (Macro).
   
 
-_Hết._
