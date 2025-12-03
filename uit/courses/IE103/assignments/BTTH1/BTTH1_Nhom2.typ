@@ -50,6 +50,7 @@
 
 = Bài 3
 
+#include "quiz3.typ"
 
 = Bài 4
 
