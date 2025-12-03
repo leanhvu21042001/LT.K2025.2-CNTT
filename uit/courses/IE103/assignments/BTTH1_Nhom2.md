@@ -138,10 +138,29 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 ##### Vai trò Admin vs Member:
 
+Tổng quan:
+
 | **Vai trò** | Diễn Giải     | **Tính năng chính**                                                                                     |
 | ----------- | ------------- | ------------------------------------------------------------------------------------------------------- |
 | **Admin**   | Manager/Owner | Quản lý thành viên (Thêm/Xóa/Ban), Kiểm duyệt bài đăng, Cài đặt footer/auto-reply, Phân quyền truy cập. |
 | **Member**  | Thành viên    | Đăng bài (Post), Truy cập kho lưu trữ (Archive), Tùy chỉnh tần suất nhận mail (Tóm tắt/Từng thư).       |
+
+###### Admin
+
+| **Tính năng**               | Miêu Tả                                                      |
+| --------------------------- | ------------------------------------------------------------ |
+| **Quản lý Thành viên**      | Thêm/Xóa thành viên, Cấm (Ban) người dùng, Đặt vai trò (Owner, Manager, Member), Duyệt yêu cầu tham gia. |
+| **Kiểm duyệt (Moderation)** | Đặt cài đặt cho phép/không cho phép thành viên đăng bài, Phê duyệt/Từ chối các bài đăng đang chờ. |
+| **Quản lý Cài đặt Thư**     | Đặt chân chữ ký (footer) chung cho tất cả email của nhóm, cấu hình phản hồi tự động (auto-reply). |
+| **Cài đặt Quyền**           | Quyết định ai có thể Xem thành viên, ai có thể Đăng bài, ai có thể Xem Kho lưu trữ. |
+
+###### Member
+
+| **Tính năng**            | Miêu Tả                                                      |
+| ------------------------ | ------------------------------------------------------------ |
+| **Đăng bài (Post)**      | Gửi email đến địa chỉ nhóm để bắt đầu cuộc thảo luận mới hoặc trả lời các cuộc thảo luận hiện có. |
+| **Truy cập Kho lưu trữ** | Tìm kiếm và xem lại toàn bộ lịch sử thảo luận của nhóm trên giao diện web của Google Groups (nếu được phép). |
+| **Tùy chọn Email**       | Thay đổi tần suất nhận thư (mỗi thư, tóm tắt, tổng hợp), Rời nhóm (Leave group). |
 
 #### Tính năng tìm kiếm
 
