@@ -83,6 +83,16 @@
   // Rename "Figure" to "Mã nguồn" for code blocks
   show figure.where(kind: raw): set figure(supplement: "Mã nguồn")
 
+  // Table formatting
+  set table(
+    stroke: 0.5pt + gray,
+    fill: (x, y) =>
+      if x == 0 or y == 0 {
+        gray.lighten(40%)
+      },
+    align: right,
+  )
+
   // Raw: font, and size
   show raw: set text(font: "Iosevka", 1.2em)
 
