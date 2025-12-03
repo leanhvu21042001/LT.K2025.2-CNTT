@@ -141,7 +141,7 @@ caption: "Bài 4. AFTER Trigger"
 
 - Câu trả lời là: #strong[KHÔNG.]
 
-Mặc dù Trigger là một phần của chuẩn SQL (#link("https://en.wikipedia.org/wiki/SQL:1999")[SQL:1999], color=true), nhưng mức độ hỗ trợ và việc có hỗ trợ hay không phụ thuộc hoàn toàn vào nhà phát triển của RDBMS đó và mục đích sử dụng của hệ quản trị.
+Mặc dù Trigger là một phần của chuẩn SQL (#link("https://en.wikipedia.org/wiki/SQL:1999")[SQL:1999]), nhưng mức độ hỗ trợ và việc có hỗ trợ hay không phụ thuộc hoàn toàn vào nhà phát triển của RDBMS đó và mục đích sử dụng của hệ quản trị.
 
 Phân tích chi tiết sự khác biệt:
 
