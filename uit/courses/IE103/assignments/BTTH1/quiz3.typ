@@ -1,7 +1,7 @@
 + Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh.
 + HĐH dùng nguyên lý nào để khôi phục tập tin đã xóa?
 
-== Cách tổ chức dữ liệu (Windows)
+== Windows File System
 
 Hệ điều hành Windows tổ chức dữ liệu theo mô hình #strong[Cấu trúc cây phân cấp (Hierarchical Tree Structure)];.
 
@@ -47,7 +47,7 @@ FAT32 và NTFS là hai hệ thống tệp tin (File System) quy định cách d�
   , caption: [So Sánh FAT32 vs NTFS]
   )
 
-== Nguyên lý khôi phục tệp tin đã xóa
+== Khôi phục tệp tin đã xóa
 
 Khi xóa một tệp tin (và dọn sạch Thùng rác), hệ điều hành #strong[không] xóa dữ liệu vật lý khỏi ổ cứng ngay lập tức. Quá trình diễn ra như sau:
 
