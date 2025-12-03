@@ -111,13 +111,30 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 ##### Cách tạo
 
-- Truy cập [groups.google.com](groups.google.com) > Create group > Thiết lập tên, email nhóm, quyền riêng tư.
+* **Truy cập: groups.google.com** và đăng nhập bằng tài khoản Google của bạn.
+* **Tạo nhóm:** Nhấp vào **"Create group"**.
+* **Thiết lập cơ bản:**
+  * **Tên nhóm:** Tên hiển thị (**ví dụ: "Ban Phát triển Sản phẩm"**).  
+  * **Địa chỉ Email Nhóm:** Địa chỉ email độc nhất (ví dụ: `pds@googlegroups.com`).  
+  * **Mô tả:** Giải thích mục đích của nhóm.
+* **Thiết lập quyền riêng tư:** Chọn giữa các loại nhóm:
+  * **Công khai (Public):** Bất kỳ ai cũng có thể tìm kiếm và xem cuộc hội thoại.
+  * **Đồng bộ riêng tư (Private):** Chỉ các thành viên mới được xem, yêu cầu phải mời hoặc phải duyệt.
 
 ##### Lợi ích
 
-- **Giao tiếp tập trung:** Gửi 1 email tới cả nhóm.
-- **Kho lưu trữ:** Tự động lưu trữ lịch sử thảo luận.
-- **Quản lý quyền:** Dùng email nhóm để cấp quyền truy cập Drive/Docs thay vì add từng người.
+- **Giao tiếp Tập trung:**
+    - Chỉ cần gửi thư đến một địa chỉ nhóm để tiếp cận tất cả thành viên, lý tưởng cho thông báo toàn công ty, phòng ban, hoặc dự án.  
+
+- **Kho lưu trữ Thảo luận:**
+    - Tất cả email gửi đến nhóm được tự động lưu trữ trong Kho lưu trữ (Archive) của Google Groups, tạo một cơ sở kiến thức có thể tìm kiếm.  
+
+- **Quản lý Quyền truy cập:**
+    - Dùng địa chỉ nhóm làm đối tượng cấp quyền truy cập vào các tài nguyên khác của Google (Google Drive, Calendar, Sites) thay vì cấp quyền cho từng cá nhân.  
+
+- **Tính linh hoạt:**
+    - Thành viên có thể tùy chỉnh cách họ nhận thư (nhận ngay lập tức, tổng hợp hàng ngày, tổng hợp ngắn gọn, hoặc không nhận qua email mà chỉ đọc trên web).
+
 
 ##### Vai trò Admin vs Member:
 
@@ -375,14 +392,14 @@ Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có s�
 
 - **Theo thời điểm (Timing):**
   - `BEFORE`: Chạy trước khi ghi dữ liệu (Dùng để kiểm tra/validate).
-      
+    
     - `AFTER`: Chạy sau khi ghi dữ liệu (Dùng để update bảng khác/ghi log).
       
     - `INSTEAD OF`: Thay thế lệnh gốc (Thường dùng cho View).
-    
+  
 - **Theo cấp độ (Scope):**
   - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
-      
+    
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
