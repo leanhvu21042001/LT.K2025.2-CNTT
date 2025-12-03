@@ -123,7 +123,7 @@
   show block.where(fill: rgb("#f0f8ff")): it => align(left, it)
 
   // vspace after/below every heading
-  show heading: set block(below: 1em)
+  show heading: set block(below: 1.2em)
 
   // MARK: Custom heading styles
   show heading.where(level: 1): it => [
