@@ -253,13 +253,24 @@ Ví dụ:
 
 Finder cung cấp các nhóm chức năng chính:
 
-1. **Cơ bản:** Open (Mở), New Folder (Tạo mới), Rename (Đổi tên - phím Enter).
-2. **Tổ chức:** Move (Di chuyển), Copy (Sao chép), Delete (Chuyển vào thùng rác), Duplicate (Nhân bản).
+1. **Cơ bản:**
+    - Open (Mở)
+    - New Folder (Tạo mới)
+    - Rename (Đổi tên - phím Enter).
+
+2. **Tổ chức:**
+    - Move (Di chuyển),
+    - Copy (Sao chép),
+    - Delete (Chuyển vào thùng rác),
+    - Duplicate (Nhân bản).
+
 3. **Nâng cao:**
     - **Get Info (`Cmd + I`):** Xem thuộc tính chi tiết.
     - **Quick Look (`Space`):** Xem trước nội dung nhanh không cần mở app.
     - **Tags:** Gán thẻ màu để tìm kiếm.
-    - **Compress:** Nén file/folder thành `.zip`.
+    - **Compress:** Nén file/folder thành `.zip` để tiện di chuyển hoặc copy.
+
+
 
 ## 3. Câu 3 (Hệ thống tập tin)
 
