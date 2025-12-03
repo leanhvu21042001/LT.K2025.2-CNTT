@@ -42,7 +42,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-root-system-finder.png"),
   caption: [
-    Cây thư mục trong Finder của macOS.
+    Bài 2. Cây thư mục trong Finder của macOS.
   ]
 )
 
@@ -50,7 +50,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-root-system.png"),
   caption: [
-    Cây thư mục trong CLI của macOS.
+    Bài 2. Cây thư mục trong CLI của macOS.
   ]
 )
 
@@ -95,7 +95,7 @@ Bảng so sánh nhanh các thuộc tính của các đối tượng khác nhau.
     con (items count).], [App mặc định (Open with).],
   )]
   , kind: table
-  , caption: [Thuộc tính của Ổ đĩa, Thư mục, và File.]
+  , caption: [Bài 2. Thuộc tính của Ổ đĩa, Thư mục, và File.]
   )
 
 Ví dụ:
@@ -110,7 +110,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-file-properties.png"),
   caption: [
-    Thuộc tính của một file.
+    Bài 2. Thuộc tính của một file.
   ]
 )
 
@@ -125,7 +125,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-volume-properties.png"),
   caption: [
-    Thuộc tính của một ổ đĩa (Volume).
+    Bài 2. Thuộc tính của một ổ đĩa (Volume).
   ]
 )
 
@@ -145,7 +145,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-volume-readonly.png"),
   caption: [
-    Thuộc tính: Read-only.
+    Bài 2. Thuộc tính: Read-only.
   ]
 )
 
@@ -153,7 +153,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-file-hidden.png"),
   caption: [
-    Thuộc tính: File ẩn.
+    Bài 2. Thuộc tính: File ẩn.
   ]
 )
 
@@ -182,7 +182,7 @@ Ví dụ:
 
 #figure(image("assets/macos-fhs-file-operations.png"),
   caption: [
-    Các thao tác trên file.
+    Bài 2. Các thao tác trên file.
   ]
 )
 
