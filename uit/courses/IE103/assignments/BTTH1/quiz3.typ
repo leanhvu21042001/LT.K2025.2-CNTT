@@ -70,3 +70,6 @@ Ví dụ:
 - Chương trình khôi phục dữ liệu `testdisk`: #link("https://www.cgsecurity.org/wiki/TestDisk")[TestDisk]
 - Một quá trình khôi phục dữ liệu dùng `testdisk`.
   - (Sử dụng một USB FAT32, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
+
+
+#pagebreak()
