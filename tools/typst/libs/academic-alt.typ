@@ -324,6 +324,15 @@
   // We put this HERE so it only affects the actual content, not the TOC.
   show link: set text(fill: rgb("#0000EE"))
 
+  // GLOBAL RULE: All tables inside this document get rounded
+  show table: it => block(
+    radius: 8pt,
+    stroke: 1pt + luma(200),
+    clip: true,
+    width: 100%,
+    it
+  )
+
   // Document body
   body
 }
