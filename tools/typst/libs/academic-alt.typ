@@ -196,11 +196,30 @@
   pagebreak()
 
   // --- PAGE NUMBERING SETUP ---
-  set page(
-    numbering: "1", 
-    number-align: right
-  )
+  // set page(
+  //   numbering: "1", 
+  //   number-align: right
+  // )
   // counter(page).update(1) // Optional: Resets count so this page starts at 1
+
+  // SETUP FOOTER WITH BACK-TO-TOP
+  set page(
+    footer: context [
+      // We use a stack or grid to align items
+      #set text(size: 10pt, fill: gray)
+      #grid(
+        columns: (1fr, 1fr),
+        align: (left, right),
+        
+        // LEFT: The clickable link
+        link(<top>)[↑ Back to Top],
+        
+        // RIGHT: The page number
+        counter(page).display("1")
+      )
+    ]
+  )
+  counter(page).update(1)
 
   // Document body
   body
