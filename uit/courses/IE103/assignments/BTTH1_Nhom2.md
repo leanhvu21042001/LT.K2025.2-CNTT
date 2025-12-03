@@ -162,24 +162,26 @@ Tổng quan:
 
 Để tìm kiếm hiệu quả trong vô số email, Gmail cung cấp các tính năng sau:
 
-- Thanh tìm kiếm thông minh
+##### Thanh tìm kiếm thông minh
 
-    * **Tìm kiếm ngữ cảnh:** Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn g**õ.**
-    * **Tìm kiếm nhanh:** Gõ từ khóa và Gmail tìm kiếm trong Chủ đề, Nội dung thư, Tên người gửi/người nhận, và cả Nội dung tệp đính kèm (đối với các định dạng phổ biến như PDF, Docx).
+* **Tìm kiếm ngữ cảnh:** Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn g**õ.**
+* **Tìm kiếm nhanh:** Gõ từ khóa và Gmail tìm kiếm trong Chủ đề, Nội dung thư, Tên người gửi/người nhận, và cả Nội dung tệp đính kèm (đối với các định dạng phổ biến như PDF, Docx).
 
-* Toán tử Tìm kiếm Chính xác (Search Operators).
-  * Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
-  * Kết hợp điều kiện:
-      * Sử dụng khoảng trắng (Space) hoặc `AND` để tìm thư khớp với tất cả các điều kiện.
-      * Sử dụng `OR` để tìm thư khớp với một trong các điều kiện.
-  * **Tìm kiếm chính xác cụm từ:** Đặt cụm từ khóa trong dấu ngoặc kép (`"..."`).
-      * *Ví dụ:* `"Báo cáo tài chính Q3"`
-  * **Tìm kiếm thời gian:**
-      * `after:YYYY/MM/DD` và `before:YYYY/MM/DD`: Lọc theo ngày.
-      * `older_than:3d` hoặc `newer_than:2m`: Lọc theo khoảng thời gian tương đối (**ngày 'd', tháng 'm', năm 'y'**).
-  * **Tìm kiếm theo kích thước:**
-      * `size:10m`: Tìm thư có kích thước lớn hơn 10MB.
-      * `larger:5m` hoặc `smaller:20k`.
+##### Toán tử Tìm kiếm Chính xác (Search Operators)
+
+Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
+
+* **Kết hợp điều kiện:**
+    * Sử dụng khoảng trắng (Space) hoặc `AND` để tìm thư khớp với tất cả các điều kiện.
+    * Sử dụng `OR` để tìm thư khớp với một trong các điều kiện.
+* **Tìm kiếm chính xác cụm từ:** Đặt cụm từ khóa trong dấu ngoặc kép (`"..."`).
+    * *Ví dụ:* `"Báo cáo tài chính Q3"`
+* **Tìm kiếm thời gian:**
+    * `after:YYYY/MM/DD` và `before:YYYY/MM/DD`: Lọc theo ngày.
+    * `older_than:3d` hoặc `newer_than:2m`: Lọc theo khoảng thời gian tương đối (**ngày 'd', tháng 'm', năm 'y'**).
+* **Tìm kiếm theo kích thước:**
+    * `size:10m`: Tìm thư có kích thước lớn hơn 10MB.
+    * `larger:5m` hoặc `smaller:20k`.
 
 #### Tính năng "Filter messages like this"
 
@@ -440,5 +442,4 @@ KHÔNG phải tất cả RDBMS đều hỗ trợ Trigger.
 - **Lightweight (SQLite):** Hỗ trợ hạn chế, ít tính năng hơn để tối ưu hiệu năng.
 
 - **Desktop/Legacy (Access cũ, FoxPro):** Thường không hỗ trợ hoặc hỗ trợ qua cơ chế khác (Macro).
-
 
