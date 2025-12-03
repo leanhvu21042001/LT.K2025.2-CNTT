@@ -229,8 +229,25 @@ Ví dụ:
 
 #### Read-only và Hidden
 
-- **Read-only (Chỉ đọc / Locked):** Người dùng chỉ có thể xem, không thể sửa hoặc xóa. Trên macOS, tính năng này gọi là "Locked" trong cửa sổ **Get Info**.
-- **Hidden (Ẩn):** Các file/folder dùng cho hệ thống hoặc cấu hình, thường bị ẩn để tránh xóa nhầm. Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
+- **Read-only (Chỉ đọc / Locked):**
+    - Người dùng chỉ có thể xem, *không thể sửa hoặc xóa*.
+    - Trên macOS, tính năng này gọi là "Locked" trong cửa sổ **Get Info**.
+
+- **Hidden (Ẩn):**
+    - Các file/folder dùng cho hệ thống hoặc cấu hình, *có thể sửa hoặc xóa*.
+    - Thường chỉ có ý nghĩa về mặt hiển thị, bị ẩn để tránh xóa nhầm.
+    - Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
+
+
+Ví dụ:
+
+- Read-only.
+
+![macos-fhs-volume-readonly](assets/macos-fhs-volume-readonly.png)
+
+- Hidden.
+
+![macos-fhs-file-hidden](assets/macos-fhs-file-hidden.png)
 
 #### Các thao tác trên Folder, File
 
