@@ -39,11 +39,11 @@ Trong Gmail, anh/chị hãy cho biết:
 
 ### 1.2. Bài Làm
 
-### a. Các tính năng tổ chức mail
+#### a. Các tính năng tổ chức mail
 
 Gmail cung cấp các tính năng hỗ trợ công việc như: tổ chức email bằng bộ lọc (Filter) và nhãn (Label), tìm kiếm nhanh, chặn spam hiệu quả và lưu trữ an toàn. Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
 
-a1. Cấu trúc đầy đủ của một email
+##### a1. Cấu trúc đầy đủ của một email
 
 1) Header (Phần đầu)
 
@@ -64,47 +64,49 @@ a1. Cấu trúc đầy đủ của một email
 - **Signature:** Chữ ký.
 - **Attachments:** Tệp đính kèm.
 
-### a2. Phân loại mails
+##### a2. Phân loại mails
 
 Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc tiêu chí nhất định để dễ quản lý.
 
 > **[Hình ảnh minh họa giao diện Gmail và danh sách Label]**
 
-### a3. Khái niệm Mail Group
+##### a3. Khái niệm Mail Group
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
 > **[Hình ảnh minh họa gửi thư cho Group]**
 
-### b & c. Tạo thư mục (Label) và di chuyển mail
+#### b & c. Tạo thư mục (Label) và di chuyển mail
 
 Đã thực hiện tạo các nhãn: Giải Trí, Sức Khỏe, Thể Thao, Học Tập và di chuyển mail tương ứng.
 
 > **[Hình ảnh minh họa các Label đã tạo: Học tập, Giải trí...]**
 
-### d. Dung lượng tối đa
+#### d. Dung lượng tối đa
 
 - **Gmail miễn phí:** 15 GB (dùng chung cho Gmail, Drive, Photos).
 - **Google Workspace (Trả phí):** Từ 30 GB đến 5 TB hoặc không giới hạn tùy gói.
 
-### e. Mail Group (Lợi ích và Vai trò)
+#### e. Mail Group (Lợi ích và Vai trò)
 
-e.1. Cách tạo: Truy cập [groups.google.com](groups.google.com) > Create group > Thiết lập tên, email nhóm, quyền riêng tư.
+##### e.1. Cách tạo
 
-e.2. Lợi ích:
+- Truy cập [groups.google.com](groups.google.com) > Create group > Thiết lập tên, email nhóm, quyền riêng tư.
+
+##### e.2. Lợi ích
 
 - **Giao tiếp tập trung:** Gửi 1 email tới cả nhóm.
 - **Kho lưu trữ:** Tự động lưu trữ lịch sử thảo luận.
 - **Quản lý quyền:** Dùng email nhóm để cấp quyền truy cập Drive/Docs thay vì add từng người.
 
-e.3. Vai trò Admin vs Member:
+##### e.3. Vai trò Admin vs Member:
 
 | **Vai trò** | Diễn Giải     | **Tính năng chính**                                                                                     |
 | ----------- | ------------- | ------------------------------------------------------------------------------------------------------- |
 | **Admin**   | Manager/Owner | Quản lý thành viên (Thêm/Xóa/Ban), Kiểm duyệt bài đăng, Cài đặt footer/auto-reply, Phân quyền truy cập. |
 | **Member**  | Thành viên    | Đăng bài (Post), Truy cập kho lưu trữ (Archive), Tùy chỉnh tần suất nhận mail (Tóm tắt/Từng thư).       |
 
-### f. Tính năng tìm kiếm
+#### f. Tính năng tìm kiếm
 
 - **Thanh tìm kiếm thông minh:** Gợi ý từ khóa, người gửi.
 - **Tìm trong nội dung:** Quét cả nội dung file đính kèm (PDF, Docx).
@@ -113,7 +115,7 @@ e.3. Vai trò Admin vs Member:
     - `after:YYYY/MM/DD`, `older_than:3d` (theo thời gian).
     - `size:10m`, `larger:5m` (theo kích thước).
 
-### g. Tính năng "Filter messages like this"
+#### g. Tính năng "Filter messages like this"
 
 Đây là tính năng tạo bộ lọc tự động dựa trên mẫu email đang mở.
 
