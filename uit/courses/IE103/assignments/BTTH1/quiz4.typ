@@ -66,18 +66,18 @@ DBMS: PostgreSQL:
 
 #figure(
 ```sql
--- Create an after-insert trigger for UserLogs
+-- Tạo một trigger
 CREATE FUNCTION after_insert_trigger_function()
 RETURNS TRIGGER AS $$
 BEGIN
-    -- Perform some action, like logging the insert
+    -- Thực hiện thao tác, thêm bản ghi mới
     INSERT INTO UserLogs (account_number, action)
     VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
--- Attach the trigger to the BankAccounts table
+-- Gán trigger vào một bảng cụ thể
 CREATE TRIGGER after_insert_trigger
 AFTER INSERT ON BankAccounts
 FOR EACH ROW
@@ -85,7 +85,6 @@ EXECUTE PROCEDURE after_insert_trigger_function();
 ```,
 caption: "Bài 4. AFTER Trigger"
 )
-
 
 === Theo cấp độ (Scope)
 
