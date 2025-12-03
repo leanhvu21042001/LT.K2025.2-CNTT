@@ -159,6 +159,35 @@
     )
   ]
   
+  // Table of Contents
+  block(
+    radius: 8pt,
+    fill: rgb(248, 250, 252),
+    stroke: 1pt + rgb(200, 220, 240),
+    inset: 1.5em,
+    width: 100%,
+  )[
+    #outline(
+      title: [Mục Lục],
+      indent: auto,
+      depth: 2,
+    )
+  ]
+
+  // List of Tables
+  block(
+    radius: 8pt,
+    fill: rgb(248, 250, 252),
+    stroke: 1pt + rgb(200, 220, 240),
+    inset: 1.5em,
+    width: 100%,
+  )[
+    #outline(
+      title: [Danh Sách Bảng], // Sets the title of the list
+      target: figure.where(kind: table) // Selects only tables
+    )
+  ]
+
   v(2em)
   // line(length: 100%, stroke: 0.5pt + rgb(200, 220, 240))
   v(0.5em)
