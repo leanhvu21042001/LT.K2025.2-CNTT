@@ -56,3 +56,75 @@ Ví dụ:
 
 - Lưu ý: macOS hay bất kỳ hệ điều hành POSIX (Unix-like/Unix-based) nào đều phân biệt HOA/thường trong đường dẫn, vì vậy hãy đảm bảo các ký tự luôn chính xác, vì HOA/Hoa/hoa là các từ hoàn toàn khác nhau.
 
+== Thuộc tính và Ý nghĩa
+
+Mỗi đối tượng (File, Folder, Volume) đều có metadata (siêu dữ liệu).
+
+- #strong[Ý nghĩa:]
+  - Giúp định danh, quản lý vị trí.
+  - Xác định ứng dụng mở mặc định và kiểm soát bảo mật.
+- #strong[Lợi ích:]
+  - Hỗ trợ tìm kiếm (theo ngày, loại),
+  - Quản lý dung lượng.
+  - Bảo vệ dữ liệu (phân quyền).
+
+== Thuộc tính của Ổ đĩa, Thư mục và File
+
+Bảng so sánh nhanh các thuộc tính của các đối tượng khác nhau.
+
+#figure(
+  align(center)[#table(
+    columns: 4,
+    align: (left,left,left,left,),
+    table.header([#strong[Thuộc tính];], [#strong[Ổ đĩa
+      (Volume/Drive)];], [#strong[Thư mục (Folder)];], [#strong[Tập tin
+      (File)];],),
+    table.hline(),
+    [#strong[Tên (Name)];], [Tên phân vùng (VD: Macintosh HD).], [Tên
+    thư mục.], [Tên file + Đuôi mở rộng (Extension).],
+    [#strong[Loại (Kind)];], [Định dạng (APFS,
+    NTFS…).], [Folder.], [Định dạng (PDF, JPG, Docx…).],
+    [#strong[Kích thước (Size)];], [Dung lượng tổng / Khả dụng.], [Tổng
+    kích thước nội dung.], [Kích thước thực của file.],
+    [#strong[Ngày tháng];], [Ngày tạo phân vùng.], [Ngày tạo, ngày sửa
+    đổi nội dung.], [Ngày tạo, sửa đổi, mở gần nhất.],
+    [#strong[Quyền (Permissions)];], [Quản trị hệ thống (System
+    R/W).], [Read/Write/Execute (truy cập).], [Read/Write/Execute (thao
+    tác).],
+    [#strong[Khác];], [Mount point, thông tin phần cứng.], [Số lượng mục
+    con (items count).], [App mặc định (Open with).],
+  )]
+  , kind: table
+  , caption: [Thuộc tính của Ổ đĩa, Thư mục, và File.]
+  )
+
+Ví dụ:
+
+- Thuộc tính của một file được tô đỏ như trong hình, bao gồm:
+
+  - Thể loại (MIME type).
+  - Dung lượng.
+  - Ngày tạo.
+  - Ngày chỉnh sửa.
+  - Lần cuối truy cập.
+
+#figure(image("assets/macos-fhs-file-properties.png"),
+  caption: [
+    Thuộc tính của một file.
+  ]
+)
+
+- Thuộc tính của một ổ đĩa (Volume):
+  - Loại.
+  - Ngày tạo.
+  - Định dạng.
+  - Dung lượng.
+  - Tên.
+  - Phân quyền.
+  - vv…
+
+#figure(image("assets/macos-fhs-volume-properties.png"),
+  caption: [
+    Thuộc tính của một ổ đĩa (Volume).
+  ]
+)
