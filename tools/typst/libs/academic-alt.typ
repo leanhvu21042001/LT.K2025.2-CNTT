@@ -27,6 +27,11 @@
   set page(margin: 2cm)
   set text(font: "Palatino", size: 12pt, weight: "regular")
   set heading(numbering: "1.")
+  // Indent for List
+  set list(indent: 1em)
+  // Indent for Enum
+  set enum(indent: 1em)
+  // set par()
   
   // Custom code block styling
   // TODO: Line Number
@@ -67,7 +72,7 @@
   show strong: it => text(weight: "bold")[#it.body]
   
   // Simple list styling
-  show list: it => block(above: 0.6em, below: 0.6em)[#it]
+  // show list: it => block(above: 0.6em, below: 0.6em)[#it]
   
   // Simple quote styling
   show quote: it => block(
