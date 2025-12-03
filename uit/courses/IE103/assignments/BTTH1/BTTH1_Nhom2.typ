@@ -66,7 +66,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 - Chặn spam hiệu quả và lưu trữ an toàn.
 - Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
 
-== Cấu trúc đầy đủ của một email
+== Cấu trúc của một email
 
 === Header (Phần tiêu đề)
 
@@ -103,6 +103,36 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 - #strong[Closing:] Lời kết.
 - #strong[Signature:] Chữ ký.
 - #strong[Attachments:] Tệp đính kèm.
+
+== Phân loại mails
+
+== Khái niệm Mail Group
+
+== Sắp xếp Email với Label
+
+== Dung lượng tối đa
+
+== Mail Group
+
+=== Cách tạo
+
+=== Lợi ích
+
+=== Vai trò Admin vs Member
+
+== Tính năng tìm kiếm
+
+=== Thanh tìm kiếm thông minh
+
+=== Toán tử Tìm kiếm (Search Operators)
+
+== "Filter messages like this"
+
+=== Cơ chế Tạo Bộ lọc
+
+=== Các Hành động Tự động của Bộ lọc (Quan trọng)
+
+
 
 = Bài 2
 
