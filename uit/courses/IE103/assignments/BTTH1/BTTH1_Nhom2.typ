@@ -1,5 +1,8 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// MARK THE TARGET for BACK TO TOP
+#metadata("top") <top>
+
 #show: university-assignment.with(
   title: "Bài Tập Thực Hành 1",
   subtitle: "IE103 - Quản Lý Thông Tin",
