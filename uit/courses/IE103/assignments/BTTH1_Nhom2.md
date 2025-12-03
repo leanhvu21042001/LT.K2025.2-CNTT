@@ -56,13 +56,13 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 ###### Header (Phần tiêu đề)
 
-|**Thành phần**|**Mục đích**|**Lưu ý**|
-|---|---|---|
-|**From**|Địa chỉ người gửi.|Nên dùng email chuyên nghiệp (ví dụ: `ten.ho@congty.com`).|
-|**To**|Địa chỉ người nhận chính.|Kiểm tra kỹ lưỡng để tránh gửi nhầm.|
-|**Cc** (Carbon Copy)|Gửi bản sao cho người cần biết tin.|Dùng để thông báo cho sếp/đồng nghiệp liên quan.|
-|**Bcc** (Blind Carbon Copy)|Gửi bản sao bí mật (người khác không thấy).|Dùng để bảo mật danh sách nhận (VD: gửi email marketing).|
-|**Subject** (Tiêu đề)|Tóm tắt nội dung ngắn gọn.|Quan trọng nhất! Tối đa 5-7 từ, rõ ràng.|
+| Thành phần | Ý Nghĩa           | Mục đích                                                     | Lưu ý                                                        |
+| ---------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| From       | Người gửi         | Địa chỉ email của bạn.                                       | Nên sử dụng một địa chỉ email chuyên nghiệp (ví dụ: `[tên].[họ]@congty.com`). |
+| To         | Người nhận        | Địa chỉ email của người/tổ chức bạn muốn gửi thư.            | Kiểm tra kỹ lưỡng, tránh gửi nhầm hoặc thiếu người quan trọng. |
+| Cc         | Carbon Copy       | Gửi bản sao cho những người cần nắm thông tin nhưng không cần phản hồi trực tiếp. | Sử dụng khi cần thông báo cho cấp trên, đồng nghiệp liên quan. |
+| Bcc        | Blind Carbon Copy | Gửi bản sao bí mật. Người nhận trong mục To và Cc sẽ không thấy danh sách email trong mục Bcc. | Sử dụng để bảo mật danh sách người nhận (ví dụ: gửi email marketing). |
+| Subject    | Tiêu đề           | Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút. | Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "*Báo cáo tiến độ dự án A1 – Tuần 3*" hoặc "*Đề xuất họp khẩn về chiến lược kinh doanh*". |
 
 ###### Các phần khác:
 
@@ -352,7 +352,6 @@ View là "bảng ảo", lưu trữ câu lệnh truy vấn.
 - **Bảo mật:** Giới hạn dữ liệu người dùng được xem (ẩn các cột nhạy cảm).
   
 - **Độc lập logic:** Thay đổi cấu trúc bảng gốc không làm ảnh hưởng đến ứng dụng đang gọi View.
-  
 
 #### Vai trò của Trigger
 
@@ -377,7 +376,6 @@ Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có s�
   - **Row-Level:** Chạy trên từng dòng (cho mỗi dòng bị ảnh hưởng).
       
     - **Statement-Level:** Chạy 1 lần cho cả câu lệnh SQL.
-      
 
 #### Mức độ hỗ trợ của các Hệ quản trị CSDL
 
