@@ -36,7 +36,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
     trọng.],
     [Cc], [Carbon Copy], [Gửi bản sao cho những người cần nắm thông tin nhưng không cần phản hồi trực tiếp.], [Sử dụng khi cần thông báo cho cấp trên, đồng nghiệp liên quan.],
     [Bcc], [Blind Carbon Copy], [Gửi bản sao bí mật. Người nhận trong mục To và Cc sẽ không thấy danh sách email trong mục Bcc.], [Sử dụng để bảo mật danh sách người nhận (ví dụ: gửi email marketing).],
-    [Subject], [Tiêu đề], [Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút.], [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc "#emph[Đề xuất họp khẩn về chiến lược kinh doanh];".],
+    [Subject], [Tiêu đề], [Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút.], [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc #emph["Đề xuất họp khẩn về chiến lược kinh doanh"];.],
   )]
   , kind: table
   , caption: [Bài 1. Header (Phần tiêu đề)]
@@ -207,7 +207,7 @@ Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều
   Inbox];).
   - Thư sẽ không hiển thị trong hộp thư chính nhưng vẫn có thể tìm thấy.
 - #strong[Gán Nhãn:] Tự động áp dụng một nhãn cụ thể (#strong[Label];) để phân loại.
-- #strong[Đánh dấu quan trọng:] Đánh dấu là đã đọc, đã gắn sao, hoặc qua#strong[n trọng.]
+- #strong[Đánh dấu quan trọng:] Đánh dấu là đã đọc, đã gắn sao, hoặc #strong[quan trọng.]
 - #strong[Chuyển tiếp (Forward):] Tự động gửi bản sao email đó đến một địa chỉ khác.
 - #strong[Xóa:] Tự động chuyển thư vào thùng rác.
 
