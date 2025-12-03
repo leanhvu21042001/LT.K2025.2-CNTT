@@ -50,7 +50,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
     họp khẩn về chiến lược kinh doanh];".],
   )]
   , kind: table
-  , caption: [Header (Phần tiêu đề)]
+  , caption: [Bài 1. Header (Phần tiêu đề)]
   )
 
 === Các phần khác
@@ -69,7 +69,7 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 #figure(image("assets/1.3.2.1.2_CongViec.png"),
   caption: [
-    Công Việc
+    Bài 1. Công Việc
   ]
 )
 
@@ -77,7 +77,7 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 #figure(image("assets/1.3.2.1.2_QuanTrong.png"),
   caption: [
-    Quan Trọng
+    Bài 1. Quan Trọng
   ]
 )
 
@@ -87,13 +87,13 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 #figure(image("assets/1.3.2.1.3_MailGroup_DanhBa.png"),
   caption: [
-    Danh Bạ Mail Group
+    Bài 1. Danh Bạ Mail Group
   ]
 )
 
 #figure(image("assets/1.3.2.1.3_MailGroup_Send.png"),
   caption: [
-    Gửi Mail tới Mail Group
+    Bài 1. Gửi Mail tới Mail Group
   ]
 )
 
@@ -103,7 +103,7 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 
 #figure(image("assets/1.3.2.2_Email_Folders.png"),
   caption: [
-    Sắp xếp emails với các label/thư mục tương ứng.
+    Bài 1. Sắp xếp emails với các label/thư mục tương ứng.
   ]
 )
 
@@ -159,7 +159,7 @@ Admin:
     có thể Đăng bài, ai có thể Xem Kho lưu trữ.],
   )]
   , kind: table
-  , caption: [Vai trò của Admin]
+  , caption: [Bài 1. Vai trò của Admin]
   )
 
 Member:
@@ -179,7 +179,7 @@ Member:
     tóm tắt, tổng hợp), Rời nhóm (Leave group).],
   )]
   , kind: table
-  , caption: [Vai trò của Member]
+  , caption: [Bài 1. Vai trò của Member]
   )
 
 == Tính năng tìm kiếm
