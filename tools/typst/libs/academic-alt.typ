@@ -85,15 +85,15 @@
     #v(0.5em)
   ]
   
-  show heading.where(level: 2): it => [
-    #set text(font: "Montserrat", size: 18pt, weight: "regular", fill: rgb(50, 50, 50))
-    #block(above: 1.2em, below: 0.8em)[#it.body]
-  ]
+  // show heading.where(level: 2): it => [
+  //   #set text(font: "Montserrat", size: 18pt, weight: "regular", fill: rgb(50, 50, 50))
+  //   #block(above: 1.2em, below: 0.8em)[#it.body]
+  // ]
 
-  show heading.where(level: 3): it => [
-    #set text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(50, 50, 50))
-    #block(above: 1.2em, below: 0.8em)[#it.body]
-  ]
+  // show heading.where(level: 3): it => [
+  //   #set text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(50, 50, 50))
+  //   #block(above: 1.2em, below: 0.8em)[#it.body]
+  // ]
   
   // Simple emphasis and strong styling
   show emph: it => text(style: "italic", weight: "medium")[#it.body]
