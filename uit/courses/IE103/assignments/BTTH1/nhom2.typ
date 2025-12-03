@@ -1,5 +1,11 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+#align(center)[
+  #text(font: "Montserrat", size: 28pt, weight: "regular")[
+  #university-assignment.author
+  ]
+]
+
 Thành viên của nhóm và bảng nhiệm vụ.
 
 #figure(
