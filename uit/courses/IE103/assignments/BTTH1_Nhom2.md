@@ -426,27 +426,31 @@ Trong kiến trúc CSDL hiện đại, việc lưu trữ dữ liệu (trong các
 
 View thực chất là một "bảng ảo" (virtual table). Nó không lưu trữ dữ liệu vật lý (trừ Materialized View) mà chỉ lưu trữ câu lệnh truy vấn định nghĩa nên nó.
 
-- Tính trừu tượng hóa và đơn giản hóa (Abstraction & Simplification):
+- **Tính trừu tượng hóa và đơn giản hóa (Abstraction & Simplification):**
     - View giúp che giấu sự phức tạp của cấu trúc bảng bên dưới.
     - Thay vì yêu cầu lập trình viên viết những câu lệnh `JOIN` phức tạp giữa 5-6 bảng mỗi lần truy xuất, ta có thể gói gọn logic đó vào một View.
     - Ví dụ: `CREATE VIEW v_BaoCaoDoanhThu AS...` giúp tầng ứng dụng chỉ cần `SELECT * FROM v_BaoCaoDoanhThu` mà không cần quan tâm đến các bảng hóa đơn chi tiết bên dưới.
-- Cơ chế bảo mật (Security Layer):
+- **Cơ chế bảo mật (Security Layer):**
     - Đây là vai trò quan trọng nhất.
     - View cho phép quản trị viên (DBA) giới hạn quyền truy cập. Bạn có thể cho phép người dùng xem dữ liệu qua View nhưng không cấp quyền truy cập trực tiếp vào bảng gốc (Base Table).
     - Điều này giúp ẩn đi các cột nhạy cảm (như lương, mật khẩu, thông tin cá nhân).
-- Tính độc lập logic (Logical Data Independence):
+- **Tính độc lập logic (Logical Data Independence):**
     - Khi cấu trúc bảng vật lý thay đổi (ví dụ: tách bảng), ta chỉ cần sửa lại định nghĩa View.
     - Các ứng dụng đang gọi View đó sẽ không bị ảnh hưởng (không bị gãy code).
 
 #### Vai trò của Trigger
 
-Trigger là thủ tục lưu trữ đặc biệt, tự động chạy khi có sự kiện (`INSERT`, `UPDATE`, `DELETE`).
+Trigger là một thủ tục lưu trữ đặc biệt (special stored procedure) được hệ thống tự động thực thi khi có một sự kiện thay đổi dữ liệu (`INSERT`, `UPDATE`, `DELETE`) xảy ra.
 
-- **Toàn vẹn dữ liệu:** Kiểm tra ràng buộc phức tạp (VD: Số lượng tồn kho `< 0` thì chặn thao tác bán hàng).
-
-- **Tự động hóa:** Tự động cập nhật dữ liệu liên quan.
-
-- **Kiểm toán (Audit):** Ghi log chứa thông tin ai đã sửa dữ liệu, sửa cái gì, vào lúc nào.
+- **Đảm bảo toàn vẹn dữ liệu (Data Integrity):**
+    - Trong khi `CONSTRAINT` (ràng buộc) chỉ kiểm tra được các quy tắc tĩnh (ví dụ: số dương, không trùng lặp), Trigger có thể thực thi các quy tắc nghiệp vụ phức tạp liên quan đến nhiều bảng.
+    - Ví dụ: Khi bán một sản phẩm, Trigger tự động kiểm tra kho hàng (bảng Inventory). Nếu số lượng `< 0`, nó sẽ chặn giao dịch (*Rollback*).
+- **Tự động hóa và Đồng bộ hóa (Automation):**
+    - Trigger giúp tự động tính toán hoặc cập nhật dữ liệu liên quan.
+    - Ví dụ: Khi thêm chi tiết hóa đơn, Trigger tự động cộng dồn vào tổng tiền của hóa đơn chính.
+- **Kiểm toán và Giám sát (Auditing & Logging):**
+    - Trigger là công cụ đắc lực để theo dõi "ai làm gì, khi nào".
+    - Khi dữ liệu bị thay đổi, Trigger có thể âm thầm ghi lại giá trị cũ và mới vào một bảng lịch sử (History Log) để phục vụ tra soát sau này.
 
 #### Phân loại Trigger
 
