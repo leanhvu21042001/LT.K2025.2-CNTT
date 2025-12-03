@@ -414,7 +414,9 @@ Ví dụ:
 
 ### Câu Hỏi
 
-Vai trò của Trigger, View? Phân loại Trigger? Tất cả hệ quản trị CSDL quan hệ có hỗ trợ Trigger không?
+- Vai trò của Trigger, View?
+- Phân loại Trigger?
+- Tất cả hệ quản trị CSDL quan hệ có hỗ trợ Trigger không?
 
 ### Bài Làm
 
