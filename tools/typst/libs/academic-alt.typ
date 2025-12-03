@@ -173,7 +173,7 @@
     #block(
       radius: 12pt,
       inset: 2em,
-      stroke: 1pt,
+      stroke: 1pt + gray,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
         #smallcaps[#title]
