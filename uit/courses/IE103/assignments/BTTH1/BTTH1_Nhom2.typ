@@ -1,40 +1,77 @@
-#import "@preview/academic-alt:0.1.0": *
-
+#import "../../../../../tools/typst/libs/academic-alt.typ": *
 
 #show: university-assignment.with(
-  title: "Lab 3: GPIO Control and LED Blinking",
-  subtitle: "Embedded Systems Programming",
-  author: "John Doe",
+  title: "Bài Tập Thực Hành 1",
+  subtitle: "IE103 - Quản Lý Thông Tin",
+  author: "Nhóm 2",
   details: (
-    course: "ECSE 303",
-    instructor: "Prof. Smith",
-    due-date: "September 19, 2025",
-    hardware: "Raspberry Pi 4, LED, 220Ω resistor, breadboard, jumper wires",
-    software: "Python (RPi.GPIO), C (WiringPi)",
+    course: "IE103",
+    instructor: "Ths. Nguyễn Thành Luân",
+    due-date: "Tháng 12, 2025",
     duration: "~3 hours",
-    lab-number: "Lab 3",
+    lab-number: "BTTH1",
   )
 )
 
-= Introduction
+= Nhóm 2
 
-This lab explores the fundamentals of General Purpose Input/Output (GPIO) control on the Raspberry Pi platform. We will implement a simple LED blinking program that demonstrates basic digital output control and timing mechanisms.
+#figure(
+  align(center)[
+  #table(
+    columns: (10%, 20%, 70%),
+    align: (right,left,left,),
+    table.header([#strong[No];], [#strong[MSSV];], [#strong[Họ và Tên];],),
+    table.hline(),
+    [1], [25410291], [Đinh Xuân Sâm],
+    [2], [25410319], [Đặng Hữu Toàn],
+    [3], [25410321], [Nguyễn Điền Triết],
+    [4], [25410204], [Trương Xuân Hậu],
+    [5], [25410338], [Lê Anh Vũ],
+    [6], [25410176], [Trần Sơn Bình],
+    [7], [25410247], [Lê Kim Long],
+    [8], [25410337], [La Anh Vũ],
+    [9], [25410209], [Lê Ngọc Hiệp],
+    [10], [25410271], [Nguyễn Thị Ngọc Nhung],
+  )]
+  , kind: table,
+  caption: [Nhóm 2 (Omega)]
+  )
 
-The objectives of this lab are:
-- Understand GPIO pin configuration and control
-- Implement basic timing functions
-- Compare Python and C implementations
-- Analyze performance differences between programming languages
+#pagebreak()
 
-= Background
+= Bài 1
 
-GPIO pins allow microcontrollers and single-board computers to interface with external devices. The Raspberry Pi provides 40 GPIO pins that can be configured as either inputs or outputs, with configurable pull-up/pull-down resistors and interrupt capabilities.
+Trong Gmail, anh/chị hãy cho biết:
 
-= Methodology
++ Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các
+  mails?
++ Cấu trúc đầy đủ của một email.
++ Phân loại mails.
++ Khái niệm mailgroup.
++ Hãy tạo thêm các thư mục (Label) sau: Giải Trí, Sức Khỏe, Thể Thao,
+  Học Tập.
++ Hãy đánh dấu và di chuyển các mails vào các thư mục vừa tạo tương ứng.
++ Một account hiện tại có dung lượng tối đa bao nhiêu?
++ Hãy tạo ra một mailgroup trong gmail và cho biết lợi ích của nó? Tìm
+  hiểu các tính năng admin/member.
++ Các tính năng tìm kiếm mail.
++ Tìm hiểu tính năng: Filter message like this.
+
+== Các tính năng tổ chức mail
+
+Gmail cung cấp các tính năng hỗ trợ công việc như:
+
++ Tổ chức email bằng bộ lọc (Filter) và nhãn (Label),
++ Tìm kiếm nhanh,
++ Chặn spam hiệu quả và lưu trữ an toàn.
++ Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
+
+= Bài 2
 
 == Hardware Setup
 
 The following components were used:
+
 - Raspberry Pi 4 Model B
 - Red LED (2.1V forward voltage, 20mA forward current)
 - 220Ω current-limiting resistor
@@ -47,7 +84,8 @@ The LED was connected between GPIO pin 18 and ground, with the current-limiting 
 
 Two implementations were developed:
 
-
+1. **Python Implementation**: Using the `RPi.GPIO` library
+2. **C Implementation**: Using the `WiringPi` library
 
 Both programs implement the same functionality: blinking an LED at 1Hz (500ms on, 500ms off).
 
@@ -96,7 +134,7 @@ int main(void) {
 }
 ```
 
-= Results
+= Bài 3
 
 Both implementations successfully controlled the LED with the following observations:
 
@@ -109,25 +147,13 @@ Both implementations successfully controlled the LED with the following observat
 
 Timing measurements were conducted using a logic analyzer:
 
+| Implementation | Average Period | Standard Deviation |
+|----------------|----------------|--------------------|
+| Python         | 1000.2ms       | ±2.1ms             |
+| C              | 999.8ms        | ±0.8ms             |
+
 The C implementation demonstrated more consistent timing, likely due to reduced overhead compared to Python's interpreted execution.
 
-= Discussion
-
-The lab successfully demonstrated basic GPIO control on the Raspberry Pi. Key findings include:
-
-- GPIO configuration is straightforward with both RPi.GPIO and WiringPi libraries
-- Hardware setup requires attention to current-limiting resistors
-- C implementations offer better timing precision for real-time applications
-- Python provides faster development cycles for prototyping
-
-= Conclusion
-
-This lab provided hands-on experience with GPIO control on embedded systems. The successful implementation of LED blinking in both Python and C demonstrates the versatility of the Raspberry Pi platform for embedded programming education.
-
-Future work could explore:
-- PWM control for LED brightness modulation
-- Interrupt-driven input handling
-- Multi-threaded applications
-- Real-time operating system integration
+= Bài 4
 
 
