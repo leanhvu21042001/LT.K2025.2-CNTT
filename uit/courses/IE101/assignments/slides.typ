@@ -13,6 +13,14 @@
     institution: [IE103 - Cơ Sở Hạ Tầng CNTT],
   ),
   lang: "vi",
+  config-colors(
+    primary: rgb("#005bac"),
+    primary-dark: rgb("#004078"),
+    secondary: rgb("#ffffff"),
+    tertiary: rgb("#005bac"),
+    neutral-lightest: rgb("#ffffff"),
+    neutral-darkest: rgb("#000000"),
+  ),
 )
 
 // Set font
