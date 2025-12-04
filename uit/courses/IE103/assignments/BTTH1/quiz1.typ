@@ -131,9 +131,9 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 - #strong[Tính linh hoạt:]
   - Thành viên có thể tùy chỉnh cách họ nhận thư (nhận ngay lập tức, tổng hợp hàng ngày, tổng hợp ngắn gọn, hoặc không nhận qua email mà chỉ đọc trên web).
 
-=== Vai trò Admin vs Member
+=== Vai trò của Admin vs Member
 
-Admin:
+==== Admin
 
 #figure(
   align(center)[#table(
@@ -150,7 +150,7 @@ Admin:
   , caption: [Bài 1. Vai trò của Admin]
   )
 
-Member:
+==== Member
 
 #figure(
   align(center)[#table(
@@ -172,7 +172,7 @@ Member:
 
 === Thanh tìm kiếm thông minh
 
-- #strong[Tìm kiếm ngữ cảnh:] Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn g#strong[õ.]
+- #strong[Tìm kiếm ngữ cảnh:] Tự động đề xuất các từ khóa, người gửi hoặc nhãn liên quan khi bạn gõ.
 - #strong[Tìm kiếm nhanh:] Gõ từ khóa và Gmail tìm kiếm trong Chủ đề, Nội dung thư, Tên người gửi/người nhận, và cả Nội dung tệp đính kèm (đối với các định dạng phổ biến như PDF, Docx).
 
 === Toán tử Tìm kiếm (Search Operators)
@@ -183,7 +183,7 @@ Cách để thu hẹp kết quả tìm kiếm một cách chính xác nhất.
   - Sử dụng khoảng trắng (Space) hoặc `AND` để tìm thư khớp với tất cả các điều kiện.
   - Sử dụng `OR` để tìm thư khớp với một trong các điều kiện.
 - #strong[Tìm kiếm chính xác cụm từ:] Đặt cụm từ khóa trong dấu ngoặc kép (`"..."`).
-  - #emph[Ví dụ:] `"Báo cáo tài chính Q3"`
+  - Ví dụ: `"Báo cáo tài chính Q3"`
 - #strong[Tìm kiếm thời gian:]
   - `after:YYYY/MM/DD` và `before:YYYY/MM/DD`: Lọc theo ngày.
   - `older_than:3d` hoặc `newer_than:2m`: Lọc theo khoảng thời gian tương đối (#strong[ngày 'd', tháng 'm', năm 'y'];).
