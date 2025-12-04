@@ -352,6 +352,26 @@
     )
   ]
 
+  // List of TODOs (Only appears if there are actual TODOs)
+  context {
+    let todos = query(figure.where(kind: "todo"))
+    if todos.len() > 0 {
+       block(
+        radius: 8pt,
+        fill: red.lighten(95%),
+        stroke: 1pt + red.lighten(80%),
+        inset: 1.5em,
+        width: 100%,
+      )[
+        #unheading[Danh Sách Việc Cần Làm]
+        #outline(
+          title: none, 
+          target: figure.where(kind: "todo")
+        )
+      ]
+    }
+  }
+
   v(2em)
   // line(length: 100%, stroke: 0.5pt + rgb(200, 220, 240))
   v(0.5em)
