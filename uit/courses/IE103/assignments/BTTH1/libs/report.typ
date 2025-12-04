@@ -246,7 +246,7 @@
       ]
       #if assignment.subtitle != none [
         #v(0.5em)
-        #text(size: 20pt, weight: "semibold")[
+        #text(size: 20pt, weight: "regular")[
           #assignment.subtitle
         ]
       ]
