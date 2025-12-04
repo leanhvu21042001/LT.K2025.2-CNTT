@@ -1,7 +1,9 @@
 #import "@preview/touying:0.6.1": *
-#import themes.aqua: *
+#import themes.stargazer: *
 
-#show: aqua-theme.with(
+#import "@preview/numbly:0.1.0": numbly
+
+#show: stargazer-theme.with(
   aspect-ratio: "16-9",
   config-info(
     title: [PHÂN TÍCH CƠ SỞ HẠ TẦNG CÔNG NGHỆ THÔNG TIN],
@@ -42,29 +44,61 @@
 
 = Giới thiệu về đề tài
 
-== Giới thiệu & Lý do chọn đề tài
-- Lý do chọn đề tài: Tìm hiểu thực tế hạ tầng tại doanh nghiệp.
-- Tầm quan trọng: Hạ tầng CNTT là xương sống của hoạt động vận hành.
-- Ý nghĩa nghiên cứu: Áp dụng kiến thức vào thực tiễn.
+== Lý do chọn đề tài
 
-== Mục tiêu nghiên cứu
-1. *Phân tích hạ tầng:* Hiểu rõ cấu trúc phần cứng, phần mềm và mạng.
-2. *Đánh giá:* Xác định ưu điểm và nhược điểm của hệ thống hiện tại.
-3. *Đề xuất cải tiến:* Đưa ra các giải pháp tối ưu hóa và khắc phục hạn chế.
+=== Lý do chọn đề tài
+
+- Tìm hiểu thực tế hạ tầng tại doanh nghiệp.
+
+=== Tầm quan trọng
+
+- Hạ tầng CNTT là xương sống của hoạt động vận hành.
+
+=== Ý nghĩa nghiên cứu
+
+- Áp dụng kiến thức vào thực tiễn.
+
+== Mục tiêu
+
+=== Phân tích hạ tầng
+
+- Hiểu rõ cấu trúc phần cứng, phần mềm và mạng.
+
+=== Đánh giá
+
+- Xác định ưu điểm và nhược điểm của hệ thống hiện tại.
+
+=== Đề xuất cải tiến
+
+- Đưa ra các giải pháp tối ưu hóa và khắc phục hạn chế.
 
 == Phạm vi nghiên cứu
-Nghiên cứu tập trung vào 3 khía cạnh chính của Orient Software:
-- Phần cứng (Hardware)
-- Phần mềm (Software)
-- Các quy trình hoạt động (Processes)
+
+=== Phần cứng (Hardware)
+
+=== Phần mềm (Software)
+
+=== Các quy trình hoạt động (Processes)
 
 == Giới thiệu về Orient Software
-- *Tên đầy đủ:* Orient Software Development Corporation.
-- *Lĩnh vực:* Outsourcing phần mềm hàng đầu tại Việt Nam, cung cấp dịch vụ AI, Software, Cloud.
-- *Quy mô:* 350+ nhân sự.
-- *Sứ mệnh:* "Education for a Better Future", tiên phong trong các kiến trúc AWS.
 
-= Thành phần cấu tạo cơ sở hạ tầng
+=== Tên đầy đủ
+
+- Orient Software Development Corporation.
+
+=== Lĩnh vực
+
+- Outsourcing phần mềm hàng đầu tại Việt Nam, cung cấp dịch vụ AI, Software, Cloud.
+
+=== Quy mô
+
+- 350+ nhân sự.
+
+=== Sứ mệnh
+
+- "Education for a Better Future", tiên phong trong các kiến trúc AWS.
+
+= Các Thành Phần Của Hạ Tầng
 
 == Hạ tầng Phần cứng (Hardware)
 === Hệ thống máy chủ (Server)
