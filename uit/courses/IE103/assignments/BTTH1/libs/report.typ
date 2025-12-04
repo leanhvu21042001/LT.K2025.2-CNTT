@@ -237,7 +237,7 @@
 
     #block(
       radius: 12pt,
-      inset: 2em,
+      inset: 4em,
       stroke: (
         bottom: 2pt + gradient.linear(teal, blue, angle: 45deg),
         // left: 2pt + gradient.linear(teal, blue, angle: 45deg),
