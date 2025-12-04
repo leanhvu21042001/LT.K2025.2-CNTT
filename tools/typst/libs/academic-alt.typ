@@ -55,6 +55,8 @@
   )
 )
 
+// MARK: INFO
+
 #let info = (
   title: "Bài Tập Thực Hành 1",
   author: "Nhóm 2 (Omega)",
