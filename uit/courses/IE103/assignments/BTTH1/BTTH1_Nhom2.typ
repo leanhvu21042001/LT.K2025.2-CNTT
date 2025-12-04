@@ -2,8 +2,10 @@
 
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
-// MARK: THE TARGET for BACK TO TOP
+// The ROMAN page number
+#set page(numbering: "i")
 
+// MARK: THE TARGET for BACK TO TOP
 #metadata("top") <top>
 
 // MARK: The Template
@@ -28,6 +30,8 @@
 #pagebreak()
 
 // MARK: MAIN CONTENT
+#set page(numbering: "1")
+#counter(page).update(1)
 
 = Bài 1. GMail & Mail Group.
 <bai-1>
