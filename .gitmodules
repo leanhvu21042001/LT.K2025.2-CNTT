@@ -1,0 +1,3 @@
+[submodule "tools/typst-report-template"]
+	path = tools/typst-report-template
+	url = https://sam-uit@github.com/sam-uit/typst-report-template.git
