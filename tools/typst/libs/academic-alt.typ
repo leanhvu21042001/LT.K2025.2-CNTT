@@ -105,6 +105,8 @@
 ) = {
   // Page setup
   set page(margin: 2cm)
+  // The ROMAN page number
+  set page(numbering: "i")
   // set text(font: "CMU Concrete", size: 12pt, weight: "regular")
   set text(font: "Lora", size: 12pt, weight: "regular")
 

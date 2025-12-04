@@ -2,9 +2,6 @@
 
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
-// The ROMAN page number
-#set page(numbering: "i")
-
 // MARK: THE TARGET for BACK TO TOP
 #metadata("top") <top>
 
