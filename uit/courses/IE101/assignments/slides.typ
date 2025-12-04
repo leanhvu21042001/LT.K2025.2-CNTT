@@ -203,13 +203,16 @@ _"Collaboration, Openness, and Learning Mindset"_.
 
 == Quản Trị Và Bảo Mật
 
-Các lớp bảo mật được triển khai:
+=== Quản Trị
 
-1. Quản trị hệ thống: System Admin.
-2. Quản trị nhân sự: Hệ thống nhân sự.
-3. Bảo mật vật lý: Kiểm soát ra vào, camera.
-4. Bảo mật mạng: Firewall, phân lớp mạng.
-5. Quyền truy cập: Phân quyền người dùng chặt chẽ.
+- System Admin.
+- Nhân Sự.
+
+=== Bảo Mật
+
+- Vật lý: Kiểm soát ra vào, camera.
+- Mạng: Firewall, phân lớp mạng.
+- Quyền truy cập: Phân quyền chặt chẽ.
 
 = Quy Trình Hoạt Động
 
