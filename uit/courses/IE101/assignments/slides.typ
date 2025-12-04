@@ -22,39 +22,42 @@
 
 == Nhóm 1
 
-#align(center)[
-  #show table.cell: current_cell => {
-    if current_cell.x in (0, 1, 3, 4) {
-      text(
-        font: "Iosevka",
-        weight: "light",
-        size: 0.9em,
-        fill: gray,
-      )[#current_cell]
-    } else {
-      current_cell
+#figure(
+  align(center)[
+    #show table.cell: current_cell => {
+      if current_cell.x in (0, 1, 3, 4) {
+        text(
+          font: "Iosevka",
+          weight: "light",
+          size: 0.9em,
+          fill: gray,
+        )[#current_cell]
+      } else {
+        current_cell
+      }
     }
-  }
-  #table(
-    columns: (auto, auto, auto, auto, auto, auto),
-    inset: 0.5em,
-    align: (right, right, left, right, right, left),
-    stroke: (
-      bottom: 0.5pt + gradient.linear(red, blue, green),
-      top: none,
-      left: none,
-      right: none,
-    ),
-    [01], [25410291], [_Đinh Xuân Sâm_], [02], [25410240], [_Nguyễn Tạ Quí Lan_],
-    [03], [25410179], [Giang Hải Chương], [04], [25410171], [Lê Thị Tú Anh],
-    [05], [25410338], [Lê Anh Vũ], [06], [25410183], [Nguyễn Đào Anh Đạt],
-    [07], [25410193], [Nguyễn Minh Duy], [08], [25410204], [Trương Xuân Hậu],
-    [09], [25410213], [Phan Chí Hiếu], [10], [25410220], [Vũ Huy Hoàng],
-    [11], [25410239], [Phạm Tuấn Kiệt], [12], [25410244], [Nguyễn Thành Lộc],
-    [13], [25410319], [Đặng Hữu Toàn], [14], [25410321], [Nguyễn Điền Triết],
-    [15], [25410325], [Nguyễn Văn Trung],
-  )
-]
+    #table(
+      columns: (auto, auto, auto, auto, auto, auto),
+      inset: 0.5em,
+      align: (right, right, left, right, right, left),
+      stroke: (
+        bottom: 0.5pt + gradient.linear(red, blue, green),
+        top: none,
+        left: none,
+        right: none,
+      ),
+      [01], [25410291], [_Đinh Xuân Sâm_], [02], [25410240], [_Nguyễn Tạ Quí Lan_],
+      [03], [25410179], [Giang Hải Chương], [04], [25410171], [Lê Thị Tú Anh],
+      [05], [25410338], [Lê Anh Vũ], [06], [25410183], [Nguyễn Đào Anh Đạt],
+      [07], [25410193], [Nguyễn Minh Duy], [08], [25410204], [Trương Xuân Hậu],
+      [09], [25410213], [Phan Chí Hiếu], [10], [25410220], [Vũ Huy Hoàng],
+      [11], [25410239], [Phạm Tuấn Kiệt], [12], [25410244], [Nguyễn Thành Lộc],
+      [13], [25410319], [Đặng Hữu Toàn], [14], [25410321], [Nguyễn Điền Triết],
+      [15], [25410325], [Nguyễn Văn Trung],
+    )
+  ],
+  caption: "Các Thành Viên",
+)
 
 = Giới Thiệu Đề Tài
 
