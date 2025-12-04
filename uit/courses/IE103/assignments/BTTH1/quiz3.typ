@@ -3,6 +3,8 @@
 + Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh.
 + HĐH dùng nguyên lý nào để khôi phục tập tin đã xóa?
 
+#todo[Giới Thiệu, hoặc Mở Đầu, trước khi vào nội dung chính.]
+
 == Windows File System
 
 Hệ điều hành Windows tổ chức dữ liệu theo mô hình #strong[Cấu trúc cây phân cấp (Hierarchical Tree Structure)];.
