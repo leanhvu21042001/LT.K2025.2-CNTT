@@ -7,10 +7,16 @@
 
 // MARK: The Template
 
-  // Define the author in a variable
+// Define the author in a variable
 #let assignment-author = "Nhóm 1 (Alpha)"
 
 #show: university-assignment.with(
+  university: (
+    name: "Đại Học TP. Hồ Chính Minh",
+    college: "Đại Học Công Nghệ Thông Tin",
+    center: "Trung Tâm Phát Triển Công Nghệ Thông Tin",
+    class: "Lớp IE103",
+  ),
   title: "BTTH1",
   subtitle: "Quản Lý Thông Tin",
   author: assignment-author,
@@ -20,7 +26,7 @@
     due-date: datetime.today(),
     duration: "~3 hours",
     lab-number: lorem(1),
-  )
+  ),
 )
 
 // MARK: AUTHOR
