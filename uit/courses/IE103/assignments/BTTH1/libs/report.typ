@@ -238,7 +238,7 @@
     #block(
       radius: 12pt,
       inset: 2em,
-      stroke: 1pt + gray,
+      stroke: gradient.linear(red, blue, angle: 45deg),
       width: 100%,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
