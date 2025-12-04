@@ -22,7 +22,7 @@
     inset: 10pt,
     align: (right, right, left, right, right, left),
     stroke: 0.5pt + gradient.linear(red, blue, green),
-    [01], [25410291], [*Đinh Xuân Sâm*], [02], [25410240], [_Nguyễn Tạ Quí Lan_],
+    [01], [25410291], [_Đinh Xuân Sâm_], [02], [25410240], [_Nguyễn Tạ Quí Lan_],
     [03], [25410179], [Giang Hải Chương], [04], [25410171], [Lê Thị Tú Anh],
     [05], [25410338], [Lê Anh Vũ], [06], [25410183], [Nguyễn Đào Anh Đạt],
     [07], [25410193], [Nguyễn Minh Duy], [08], [25410204], [Trương Xuân Hậu],
