@@ -331,7 +331,7 @@
     #unheading[Mục Lục]
     #outline(
       title: none,
-      // indent: auto,
+      indent: auto,
       depth: 2,
     )
   ]
