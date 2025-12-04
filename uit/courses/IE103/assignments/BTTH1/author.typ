@@ -77,4 +77,4 @@ Thành viên của nhóm và bảng nhiệm vụ.
   numbering: none, // Hides the "Table X:" prefix (optional)
 )
 
-#co-warn[AUTHOR: Tham chiếu chéo (cross-reference) của bảng hiện tại chưa hoạt động đúng (cột Phụ Trách).]
+#co-warn[Tham chiếu chéo (cross-reference) của bảng hiện tại chưa hoạt động đúng (cột Phụ Trách).]
