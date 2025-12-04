@@ -46,3 +46,5 @@ Thành viên của nhóm và bảng nhiệm vụ.
   , outlined: false // Hides it from the List of Tables
   , numbering: none  // Hides the "Table X:" prefix (optional)
 )
+
+#todo[Sửa lỗi tham chiếu chéo (cross-reference anchors) trong bảng trên.]
