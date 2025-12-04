@@ -15,11 +15,13 @@
 #title-slide()
 
 = Giới Thiệu Nhóm 1
+
 == Nhóm 1
+
 #align(center)[
   #table(
     columns: (auto, auto, auto, auto, auto, auto),
-    inset: 10pt,
+    inset: 0.6em,
     align: (right, right, left, right, right, left),
     stroke: (
       bottom: 0.5pt + gradient.linear(red, blue, green),
