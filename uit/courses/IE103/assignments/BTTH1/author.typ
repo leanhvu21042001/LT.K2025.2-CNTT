@@ -10,6 +10,15 @@ Thành viên của nhóm và bảng nhiệm vụ.
 
 #figure(
   align(center)[
+  // Mono font in column 0
+    #show table.cell.where(x: 0): it => {
+      if it.y == 0 { 
+        it // If it's the header (row 0), leave it alone
+      } else { 
+        // Apply your raw font (e.g., Iosevka or Monospace)
+        text(font: "Iosevka", weight: "regular")[#it] 
+      }
+    }
     #rounded-table-lined(
       columns: (10%, 20%, 40%, 30%),
       align: (right,right,left,left,),
