@@ -1,3 +1,5 @@
+#import "../../../../../tools/typst/libs/academic-alt.typ": *
+
 - Vai trò của Trigger, View?
 - Phân loại Trigger?
 - Tất cả hệ quản trị CSDL quan hệ có hỗ trợ Trigger không?
