@@ -65,15 +65,31 @@
   course: "IE103"
 )
 
-// Simple Red TODO Box
-#let todo(body) = block(
-  fill: red.lighten(95%),
-  stroke: 1pt + red.lighten(60%),
-  inset: 1em,
-  radius: 4pt,
-  width: 100%,
-  [#text(weight: "bold", fill: red.lighten(20%))[TODO:] #body]
-)
+// 2. Upgraded TODO function (Registers as a 'todo' kind figure)
+#let todo(body) = {
+  figure(
+    kind: "todo",
+    supplement: "TODO",
+    caption: body, // The text acts as the caption for the Outline
+    outlined: true,
+    // The visual box (Red Box)
+    block(
+      fill: red.lighten(95%),
+      stroke: 1pt + red.lighten(80%),
+      inset: 1em,
+      radius: 4pt,
+      width: 100%,
+      align(left)[
+        #text(weight: "bold", fill: red.lighten(20%))[TODO:]
+        #body
+      ]
+    )
+  )
+}
+
+#let unheading(body) = {
+  heading(level: 1, numbering: none, outlined: true)[#body]
+}
 
 // TODO: Rounded border image
 
@@ -196,6 +212,9 @@
     #set text(style: "italic")
     #it
   ]
+
+  // Show TODO content/body only
+  show figure.where(kind: "todo"): it => it.body
   
   // Enhanced title page
   align(center)[
