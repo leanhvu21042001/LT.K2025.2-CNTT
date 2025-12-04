@@ -44,5 +44,3 @@ Thành viên của nhóm và bảng nhiệm vụ.
   , outlined: false // Hides it from the List of Tables
   , numbering: none  // Hides the "Table X:" prefix (optional)
 )
-
-#todo[AUTHOR: Sửa lỗi tham chiếu chéo (cross-reference) của bảng.]
