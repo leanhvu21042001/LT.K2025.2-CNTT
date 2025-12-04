@@ -79,12 +79,29 @@
 // MARK: The Template
 
 #let university-assignment(
-  university: (:),
-  title: "",
-  subtitle: "",
-  author: "",
-  details: (:),
-  date: datetime.today(),
+  university: (
+    name: "",
+    college: "",
+    center: "",
+  ),
+  course: (
+    id: "",
+    name: "",
+    class: "",
+  ),
+  instructor: "",
+  author: (
+    name: "",
+    members: (),
+  ),
+  assignment: (
+    title: "",
+    subtitle: "",
+    type: "",
+    date: datetime.today(),
+    duration: "",
+    location: "",
+  ),
   body,
 ) = {
   // Page setup
@@ -204,7 +221,7 @@
   // Enhanced title page
   align(center)[
     // Add the Cover page to TOC
-    #place(hide(unheading[Trang Bìa (#title)]))
+    #place(hide(unheading[Trang Bìa (#assignment.title)]))
 
     #text(font: "Montserrat", size: 20pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
       "name",
@@ -236,12 +253,12 @@
       width: 100%,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
-        #smallcaps[#title]
+        #smallcaps[#assignment.title]
       ]
-      #if subtitle != none [
+      #if assignment.subtitle != none [
         #v(0.5em)
         #text(size: 20pt, weight: "semibold")[
-          #subtitle
+          #assignment.subtitle
         ]
       ]
     ]
@@ -249,7 +266,7 @@
     #stack(
       dir: ltr,
       spacing: 1em,
-      text(font: "Montserrat", size: 20pt, weight: "regular")[#author],
+      text(font: "Montserrat", size: 20pt, weight: "regular")[#author.name],
       // text(size: 20pt, fill: rgb(100, 100, 100))[#date.display("[month repr:long] [day], [year]")],
     )
     #v(1em)
@@ -278,6 +295,7 @@
       [
         - *Mã Môn:*
         - *Tên Môn:*
+        - *Lớp:*
         - *Giảng Viên:*
         - *Thực Hiện:*
       ],
@@ -285,10 +303,11 @@
       [
         #list(
           marker: none,
-          [#details.course],
-          [#subtitle],
-          [#details.instructor],
-          [#author],
+          [#course.id],
+          [#course.name],
+          [#course.class],
+          [#instructor],
+          [#author.name],
         )
       ],
     )
