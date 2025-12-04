@@ -28,7 +28,7 @@
     title: "ASSIGNMENT_TITLE",
     subtitle: "ASSIGNMENT_SUBTITLE",
     type: "ASSIGNMENT_TYPE",
-    date: datetime.today(),
+    date: "Dec, 2025",
     duration: "ASSIGNMENT_DURATION",
   ),
 )
