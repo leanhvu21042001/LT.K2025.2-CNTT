@@ -392,11 +392,10 @@
         link(<top>)[↑ Back to Top],
         
         // RIGHT: The page number
-        counter(page).display("1")
+        counter(page).display(page.numbering)
       )
     ]
   )
-  counter(page).update(1)
 
   // --- LINK STYLING ---
   // We put this HERE so it only affects the actual content, not the TOC.
