@@ -319,7 +319,6 @@ Ví dụ:
     - Thường chỉ có ý nghĩa về mặt hiển thị, bị ẩn để tránh xóa nhầm.
     - Trên macOS, file có tên bắt đầu bằng dấu chấm (`.`) sẽ tự động ẩn (ví dụ: `.Trash`, `.DS_Store`).
 
-
 Ví dụ:
 
 - Read-only.
