@@ -63,7 +63,7 @@
 
 == Lý Do Chọn Đề Tài
 
-=== Lý Do Chọn Đề Tài
+=== Tại Sao?
 
 - Tìm hiểu thực tế hạ tầng tại doanh nghiệp.
 
@@ -79,7 +79,7 @@
 
 === Phân Tích Hạ Tầng
 
-- Hiểu rõ cấu trúc phần cứng, phần mềm và mạng.
+- Hiểu rõ cấu trúc phần cứng, phần mềm và các quy trình hoạt động.
 
 === Đánh Giá
 
