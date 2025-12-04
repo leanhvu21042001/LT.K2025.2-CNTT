@@ -105,6 +105,8 @@
 ) = {
   // Page setup
   set page(margin: 2cm)
+  // The ROMAN page number
+  set page(numbering: "i")
   // set text(font: "CMU Concrete", size: 12pt, weight: "regular")
   set text(font: "Lora", size: 12pt, weight: "regular")
 
@@ -218,6 +220,9 @@
   
   // Enhanced title page
   align(center)[
+    // Add the Cover page to TOC
+    #place(hide(unheading[#info.title (Trang Bìa)]))
+
     #v(1.5em)
     #block(
       radius: 12pt,
@@ -392,11 +397,10 @@
         link(<top>)[#text(fill: gray)[↑ Back to Top]],
         
         // RIGHT: The page number
-        counter(page).display("1")
+        counter(page).display(page.numbering)
       )
     ]
   )
-  counter(page).update(1)
 
   // --- LINK STYLING ---
   // We put this HERE so it only affects the actual content, not the TOC.
