@@ -105,13 +105,15 @@
 
 == Giới Thiệu Về Orient Software
 
+_"Collaboration, Openness, and Learning Mindset"_.
+
 === Tên Đầy Đủ
 
 - Orient Software Development Corporation.
 
 === Lĩnh Vực
 
-- Outsourcing phần mềm hàng đầu tại Việt Nam, cung cấp dịch vụ AI, Software, Cloud.
+- Outsourcing phần mềm hàng đầu tại Việt Nam.
 
 === Quy Mô
 
@@ -119,7 +121,7 @@
 
 === Sứ Mệnh
 
-- "Education for a Better Future", tiên phong trong các kiến trúc AWS.
+- "To provide exceptional software services to the world.".
 
 = Các Thành Phần Của Hạ Tầng
 
