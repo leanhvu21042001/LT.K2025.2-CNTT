@@ -280,23 +280,27 @@
     inset: 1.5em,
     width: 100%,
   )[
-    #align(center)[
-      #text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(30, 70, 120))[
-        Thông Tin Chung
-      ]
-    ]
-    #v(0.8em)
+    // #align(center)[
+    //   #text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(30, 70, 120))[
+    //     Thông Tin Chung
+    //   ]
+    // ]
+    // #v(0.8em)
     #grid(
-      columns: (1fr, 1fr),
-      column-gutter: 2em,
+      columns: (40%, 60%),
+      column-gutter: 1em,
       row-gutter: 1em,
+      align: (right, left),
       // Left column
       [
-        - *Mã Môn:*
-        - *Tên Môn:*
-        - *Lớp:*
-        - *Giảng Viên:*
-        - *Thực Hiện:*
+        #list(
+          marker: none,
+          [Mã Môn:],
+          [Tên Môn:],
+          [Lớp:],
+          [Giảng Viên:],
+          [Thực Hiện:],
+        )
       ],
       // Right column
       [
