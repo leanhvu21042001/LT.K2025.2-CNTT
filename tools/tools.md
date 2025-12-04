@@ -7,6 +7,12 @@
 - [https://obsidian.md/](https://obsidian.md/)
 - A Personal Knowledge Base (PKB) software.
 
+## Typora
+
+- A Markdown Editor.
+- https://typora.io/
+- Theme: [Newsprint (default) with Lora font](Typora/themes)
+
 ## MarkMap
 
 - Homepage: https://markmap.js.org/
