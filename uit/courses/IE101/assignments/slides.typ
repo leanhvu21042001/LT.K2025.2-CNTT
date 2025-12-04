@@ -44,47 +44,53 @@
   )
 ]
 
-= Giới thiệu về đề tài
+= Giới Thiệu Đề Tài
 
-== Lý do chọn đề tài
+== Lý Do Chọn Đề Tài
 
-=== Lý do chọn đề tài
+=== Lý Do Chọn Đề Tài
 
 - Tìm hiểu thực tế hạ tầng tại doanh nghiệp.
 
-=== Tầm quan trọng
+=== Tầm Quan Trọng
 
 - Hạ tầng CNTT là xương sống của hoạt động vận hành.
 
-=== Ý nghĩa nghiên cứu
+=== Ý Nghĩa Nghiên Cứu
 
 - Áp dụng kiến thức vào thực tiễn.
 
-== Mục tiêu
+== Mục Tiêu
 
-=== Phân tích hạ tầng
+=== Phân Tích Hạ Tầng
 
 - Hiểu rõ cấu trúc phần cứng, phần mềm và mạng.
 
-=== Đánh giá
+=== Đánh Giá
 
 - Xác định ưu điểm và nhược điểm của hệ thống hiện tại.
 
-=== Đề xuất cải tiến
+=== Đề Xuất Cải Tiến
 
 - Đưa ra các giải pháp tối ưu hóa và khắc phục hạn chế.
 
-== Phạm vi nghiên cứu
+== Phạm Vi Nghiên Cứu
 
-=== Phần cứng (Hardware)
+=== Phần Cứng (Hardware)
 
-=== Phần mềm (Software)
+- Hệ thống máy chủ (Server), thiết bị đầu cuối, thiết bị mạng.
 
-=== Các quy trình hoạt động (Processes)
+=== Phần Mềm (Software)
 
-== Giới thiệu về Orient Software
+- Phần mềm nền tảng, phần mềm quản lý, phần mềm ứng dụng và dịch vụ.
 
-=== Tên đầy đủ
+=== Các Quy Trình Hoạt Động (Processes)
+
+- Quy trình quản trị và bảo mật, vận hành.
+
+== Giới Thiệu Về Orient Software
+
+=== Tên Đầy Đủ
 
 - Orient Software Development Corporation.
 
