@@ -28,7 +28,7 @@ Thành viên của nhóm và bảng nhiệm vụ.
       align: (right,right,left,left,),
       table.header([No], [MSSV], [Họ và Tên], [Phụ Trách],),
       table.hline(),
-      [01], [25410291], [Đinh Xuân Sâm], [@bai-1[Bài]],
+      [01], [25410291], [Đinh Xuân Sâm], [@bai-2[Bài]],
       [02], [25410319], [Đặng Hữu Toàn], [],
       [03], [25410321], [Nguyễn Điền Triết], [],
       [04], [25410204], [Trương Xuân Hậu], [],
