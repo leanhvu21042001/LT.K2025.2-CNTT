@@ -23,7 +23,7 @@
 
 // MARK: AUTHOR
 
-#include "author.typ"
+#include info.author_filename + ".typ"
 
 #pagebreak()
 
