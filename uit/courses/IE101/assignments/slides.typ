@@ -6,15 +6,13 @@
   config-info(
     title: [PHÂN TÍCH CƠ SỞ HẠ TẦNG CÔNG NGHỆ THÔNG TIN],
     subtitle: [CỦA ORIENT SOFTWARE DEVELOPMENT CORPORATION],
-    author: [Nhóm 1 - Lớp LT.K2025.2-CNTT],
+    author: [Nhóm 1],
     date: datetime.today(),
     institution: [TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN - ĐHQG-HCM],
   ),
 )
 
 #title-slide()
-
-#outline-slide()
 
 = Giới Thiệu Nhóm 1
 
