@@ -11,16 +11,17 @@ Thành viên của nhóm và bảng nhiệm vụ.
 #figure(
   align(center)[
   // Mono font in column 0, 1
-    #show table.cell: it => {
+    #show table.cell: current_cell => {
       // Check if row (y > 0) AND the column is (0, 1, or 3)
-      if it.y > 0 and it.x in (0, 1) {
+      if current_cell.y > 0 and current_cell.x in (0, 1) {
+        // Use a monofont: Iosevka
         text(
           font: "Iosevka",
           weight: "regular"
-          )[#it]
+          )[#current_cell]
       } else {
         // Return normal formatting for other columns
-        it
+        current_cell
       }
     }
     // TODO: Span full width automatically
