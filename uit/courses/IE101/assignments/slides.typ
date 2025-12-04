@@ -216,6 +216,8 @@ _"Collaboration, Openness, and Learning Mindset"_.
 
 == Tài Nguyên Mạng
 
+=== Tổng Quan
+
 - Phân quyền tài nguyên mạng.
 - Hệ thống các lớp IP.
 - Hệ thống mạng nội bộ (LAN).
@@ -322,19 +324,19 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 == Đánh Giá Chung
 
-Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.
+*Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.*
 
 == Kết Quả Nghiên Cứu
 
-Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
+- Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
 
 == Định Hướng
 
-Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
+- Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
 
 == Bài Học Kinh Nghiệm
 
-Hiểu rõ bản chất, định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp Outsourcing.
+- Nắm bắt định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp nói chung và Orient Software nói riêng.
 
 = Q&A
 
