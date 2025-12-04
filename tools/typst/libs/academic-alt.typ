@@ -65,6 +65,16 @@
   course: "IE103"
 )
 
+// Simple Red TODO Box
+#let todo(body) = block(
+  fill: red.lighten(95%),
+  stroke: 1pt + red.lighten(60%),
+  inset: 1em,
+  radius: 4pt,
+  width: 100%,
+  [#text(weight: "bold", fill: red.lighten(20%))[TODO:] #body]
+)
+
 // TODO: Rounded border image
 
 // MARK: The Template
