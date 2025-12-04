@@ -1,4 +1,9 @@
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
+
+// YOUR CONTENT HERE
+
+= Bài 3. FAT32 vs NTFS. Windows File System.
+<bai-3>
 
 + Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh.
 + HĐH dùng nguyên lý nào để khôi phục tập tin đã xóa?
@@ -26,18 +31,28 @@ FAT32 và NTFS là hai hệ thống tệp tin (File System) quy định cách d�
 #figure(
   align(center)[#table(
     columns: 3,
-    align: (left,left,left,),
-    table.header([Đặc điểm], [FAT32 (File Allocation Table 32)], [NTFS (New Technology File System)],),
+    align: (left, left, left),
+    table.header([Đặc điểm], [FAT32 (File Allocation Table 32)], [NTFS (New Technology File System)]),
     table.hline(),
-    [Kích thước tệp tối đa], [Giới hạn ở #strong[4 GB];. Không thể lưu các file video 4K hay file ISO lớn.], [Lý thuyết lên tới #strong[16 Exabytes] (gần như vô hạn với nhu cầu hiện tại).],
-    [Kích thước phân vùng], [Giới hạn phổ biến là 2TB (Windows thường giới hạn format ở 32GB).], [Hỗ trợ phân vùng cực lớn (lên tới 8 Petabytes).],
-    [Bảo mật], [Không hỗ trợ phân quyền truy cập hay mã hóa.], [Hỗ trợ #strong[ACL (Access Control List)] để phân quyền người dùng và mã hóa tệp tin (EFS).],
-    [Độ an toàn], [Dễ bị lỗi dữ liệu khi mất điện đột ngột.], [Có tính năng #strong[Journaling (Ghi nhật ký)];: Tự động ghi lại thay đổi trước khi thực hiện để phục hồi nếu gặp lỗi hệ thống.],
-    [Tương thích], [Cao (Windows, Mac, Linux, Game Consoles, USB).], [Tối ưu cho Windows; Mac/Linux có thể chỉ đọc được mà không ghi được (cần phần mềm hỗ trợ).],
-  )]
-  , kind: table
-  , caption: [Bài 3. So Sánh FAT32 vs NTFS]
-  )
+    [Kích thước tệp tối đa],
+    [Giới hạn ở #strong[4 GB];. Không thể lưu các file video 4K hay file ISO lớn.],
+    [Lý thuyết lên tới #strong[16 Exabytes] (gần như vô hạn với nhu cầu hiện tại).],
+    [Kích thước phân vùng],
+    [Giới hạn phổ biến là 2TB (Windows thường giới hạn format ở 32GB).],
+    [Hỗ trợ phân vùng cực lớn (lên tới 8 Petabytes).],
+    [Bảo mật],
+    [Không hỗ trợ phân quyền truy cập hay mã hóa.],
+    [Hỗ trợ #strong[ACL (Access Control List)] để phân quyền người dùng và mã hóa tệp tin (EFS).],
+    [Độ an toàn],
+    [Dễ bị lỗi dữ liệu khi mất điện đột ngột.],
+    [Có tính năng #strong[Journaling (Ghi nhật ký)];: Tự động ghi lại thay đổi trước khi thực hiện để phục hồi nếu gặp lỗi hệ thống.],
+    [Tương thích],
+    [Cao (Windows, Mac, Linux, Game Consoles, USB).],
+    [Tối ưu cho Windows; Mac/Linux có thể chỉ đọc được mà không ghi được (cần phần mềm hỗ trợ).],
+  )],
+  kind: table,
+  caption: [Bài 3. So Sánh FAT32 vs NTFS],
+)
 
 == Khôi phục tệp tin đã xóa
 
@@ -52,10 +67,10 @@ Khi xóa một tệp tin (và dọn sạch Thùng rác), hệ điều hành #str
   - Các phần mềm khôi phục dữ liệu sẽ quét bảng MFT để tìm các mục được đánh dấu là "Free" này.
   - Nếu vùng không gian đĩa chứa dữ liệu cũ chưa bị tệp tin mới ghi đè lên, phần mềm có thể khôi phục lại tệp tin đó hoàn toàn.
 
-#strong[Lưu ý quan trọng:]
-
-- Nguyên lý này dẫn đến việc dữ liệu sẽ bị mất vĩnh viễn nếu bị #strong[ghi đè (Overwritten)];.
-- Nếu bạn chép dữ liệu mới vào ổ đĩa, HĐH sẽ thấy vùng "Free" đó và ghi dữ liệu mới lên, lúc này cấu trúc từ tính cũ bị thay đổi và không thể khôi phục bằng phần mềm thông thường.
+#co-warn[
+  - Nguyên lý này dẫn đến việc dữ liệu sẽ bị mất vĩnh viễn nếu bị #strong[ghi đè (Overwritten)];.
+  - Nếu bạn chép dữ liệu mới vào ổ đĩa, HĐH sẽ thấy vùng "Free" đó và ghi dữ liệu mới lên, lúc này cấu trúc từ tính cũ bị thay đổi và không thể khôi phục bằng phần mềm thông thường.
+]
 
 Ví dụ:
 
@@ -63,8 +78,8 @@ Ví dụ:
 
 - Một quá trình khôi phục dữ liệu dùng `testdisk`.
   - (Sử dụng một USB FAT32/NTFS, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
+
 #todo[Bài 3. Dùng `fdisk` để kiểm tra và xem thông số của phân vùng.]
 #todo[Bài 3. Dùng `mk.fs` để định dạng phân vùng.]
-
 
 #pagebreak()

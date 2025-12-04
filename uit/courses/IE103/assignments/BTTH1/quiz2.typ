@@ -1,4 +1,9 @@
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
+
+// YOUR CONTENT HERE
+
+= Bài 2. Cách tổ chức dữ liệu của Explorer/Finder
+<bai-2>
 
 Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
@@ -42,19 +47,15 @@ Ví dụ:
 
 Đồ họa:
 
-#figure(image("assets/macos-fhs-root-system-finder.png"),
-  caption: [
-    Bài 2. Cây thư mục trong Finder của macOS.
-  ]
-)
+#figure(image("assets/macos-fhs-root-system-finder.png"), caption: [
+  Bài 2. Cây thư mục trong Finder của macOS.
+])
 
 - Để đối chiếu, đây là đường dẫn khi ở chế độ dòng lệnh (CLI).
 
-#figure(image("assets/macos-fhs-root-system.png"),
-  caption: [
-    Bài 2. Cây thư mục trong CLI của macOS.
-  ]
-)
+#figure(image("assets/macos-fhs-root-system.png"), caption: [
+  Bài 2. Cây thư mục trong CLI của macOS.
+])
 
 - Lưu ý: macOS hay bất kỳ hệ điều hành POSIX (Unix-like/Unix-based) nào đều phân biệt HOA/thường trong đường dẫn, vì vậy hãy đảm bảo các ký tự luôn chính xác, vì HOA/Hoa/hoa là các từ hoàn toàn khác nhau.
 
@@ -77,19 +78,22 @@ Bảng so sánh nhanh các thuộc tính của các đối tượng khác nhau.
 #figure(
   align(center)[#table(
     columns: 4,
-    align: (left,left,left,left,),
-    table.header([Thuộc tính], [Ổ đĩa (Volume/Drive)], [Thư mục (Folder)], [Tập tin (File)],),
+    align: (left, left, left, left),
+    table.header([Thuộc tính], [Ổ đĩa (Volume/Drive)], [Thư mục (Folder)], [Tập tin (File)]),
     table.hline(),
     [Tên (Name)], [Tên phân vùng (VD: Macintosh HD).], [Tên thư mục.], [Tên file + Đuôi mở rộng (Extension).],
     [Loại (Kind)], [Định dạng (APFS, NTFS…).], [Folder.], [Định dạng (PDF, JPG, Docx…).],
     [Kích thước (Size)], [Dung lượng tổng / Khả dụng.], [Tổng kích thước nội dung.], [Kích thước thực của file.],
     [Ngày tháng], [Ngày tạo phân vùng.], [Ngày tạo, ngày sửa đổi nội dung.], [Ngày tạo, sửa đổi, mở gần nhất.],
-    [Quyền (Permissions)], [Quản trị hệ thống (System R/W).], [Read/Write/Execute (truy cập).], [Read/Write/Execute (thao tác).],
+    [Quyền (Permissions)],
+    [Quản trị hệ thống (System R/W).],
+    [Read/Write/Execute (truy cập).],
+    [Read/Write/Execute (thao tác).],
     [Khác], [Mount point, thông tin phần cứng.], [Số lượng mục con (items count).], [App mặc định (Open with).],
-  )]
-  , kind: table
-  , caption: [Bài 2. Thuộc tính của Ổ đĩa, Thư mục, và File.]
-  )
+  )],
+  kind: table,
+  caption: [Bài 2. Thuộc tính của Ổ đĩa, Thư mục, và File.],
+)
 
 Ví dụ:
 
@@ -101,11 +105,9 @@ Ví dụ:
   - Ngày chỉnh sửa.
   - Lần cuối truy cập.
 
-#figure(image("assets/macos-fhs-file-properties.png"),
-  caption: [
-    Bài 2. Thuộc tính của một file.
-  ]
-)
+#figure(image("assets/macos-fhs-file-properties.png"), caption: [
+  Bài 2. Thuộc tính của một file.
+])
 
 - Thuộc tính của một ổ đĩa (Volume):
   - Loại.
@@ -116,11 +118,9 @@ Ví dụ:
   - Phân quyền.
   - vv…
 
-#figure(image("assets/macos-fhs-volume-properties.png"),
-  caption: [
-    Bài 2. Thuộc tính của một ổ đĩa (Volume).
-  ]
-)
+#figure(image("assets/macos-fhs-volume-properties.png"), caption: [
+  Bài 2. Thuộc tính của một ổ đĩa (Volume).
+])
 
 == Read-only và Hidden
 
@@ -136,19 +136,15 @@ Ví dụ:
 
 - Read-only.
 
-#figure(image("assets/macos-fhs-volume-readonly.png"),
-  caption: [
-    Bài 2. Thuộc tính: Read-only.
-  ]
-)
+#figure(image("assets/macos-fhs-volume-readonly.png"), caption: [
+  Bài 2. Thuộc tính: Read-only.
+])
 
 - Hidden.
 
-#figure(image("assets/macos-fhs-file-hidden.png"),
-  caption: [
-    Bài 2. Thuộc tính: File ẩn.
-  ]
-)
+#figure(image("assets/macos-fhs-file-hidden.png"), caption: [
+  Bài 2. Thuộc tính: File ẩn.
+])
 
 == Các thao tác quản lý
 
@@ -173,10 +169,8 @@ Ví dụ:
 
 - Thao tác trên File trong Menu ngữ cảnh.
 
-#figure(image("assets/macos-fhs-file-operations.png"),
-  caption: [
-    Bài 2. Các thao tác trên file.
-  ]
-)
+#figure(image("assets/macos-fhs-file-operations.png"), caption: [
+  Bài 2. Các thao tác trên file.
+])
 
 #pagebreak()

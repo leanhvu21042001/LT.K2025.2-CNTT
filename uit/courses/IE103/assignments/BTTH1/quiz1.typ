@@ -1,4 +1,9 @@
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
+
+// YOUR CONTENT
+
+= Bài 1. GMail và Mail Group
+<bai-1>
 
 Trong Gmail, anh/chị hãy cho biết:
 
@@ -32,21 +37,36 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 
 #figure(
   align(center)[
-  #table(
-    columns: 4,
-    align: (left,left,left,left,),
-    table.header([Thành phần], [Ý Nghĩa], [Mục đích], [Lưu ý],),
-    table.hline(),
-    [From], [Người gửi], [Địa chỉ email của bạn.], [Nên sử dụng một địa chỉ email chuyên nghiệp (ví dụ: `[tên].[họ]@congty.com`).],
-    [To], [Người nhận], [Địa chỉ email của người/tổ chức bạn muốn gửi thư.], [Kiểm tra kỹ lưỡng, tránh gửi nhầm hoặc thiếu người quan
-    trọng.],
-    [Cc], [Carbon Copy], [Gửi bản sao cho những người cần nắm thông tin nhưng không cần phản hồi trực tiếp.], [Sử dụng khi cần thông báo cho cấp trên, đồng nghiệp liên quan.],
-    [Bcc], [Blind Carbon Copy], [Gửi bản sao bí mật. Người nhận trong mục To và Cc sẽ không thấy danh sách email trong mục Bcc.], [Sử dụng để bảo mật danh sách người nhận (ví dụ: gửi email marketing).],
-    [Subject], [Tiêu đề], [Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút.], [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc #emph["Đề xuất họp khẩn về chiến lược kinh doanh"];.],
-  )]
-  , kind: table
-  , caption: [Bài 1. Header (Phần tiêu đề)]
-  )
+    #table(
+      columns: 4,
+      align: (left, left, left, left),
+      table.header([Thành phần], [Ý Nghĩa], [Mục đích], [Lưu ý]),
+      table.hline(),
+      [From],
+      [Người gửi],
+      [Địa chỉ email của bạn.],
+      [Nên sử dụng một địa chỉ email chuyên nghiệp (ví dụ: `[tên].[họ]@congty.com`).],
+      [To],
+      [Người nhận],
+      [Địa chỉ email của người/tổ chức bạn muốn gửi thư.],
+      [Kiểm tra kỹ lưỡng, tránh gửi nhầm hoặc thiếu người quan
+        trọng.],
+      [Cc],
+      [Carbon Copy],
+      [Gửi bản sao cho những người cần nắm thông tin nhưng không cần phản hồi trực tiếp.],
+      [Sử dụng khi cần thông báo cho cấp trên, đồng nghiệp liên quan.],
+      [Bcc],
+      [Blind Carbon Copy],
+      [Gửi bản sao bí mật. Người nhận trong mục To và Cc sẽ không thấy danh sách email trong mục Bcc.],
+      [Sử dụng để bảo mật danh sách người nhận (ví dụ: gửi email marketing).],
+      [Subject],
+      [Tiêu đề],
+      [Tóm tắt nội dung email một cách ngắn gọn, rõ ràng, và thu hút.],
+      [Quan trọng nhất! Cần rõ ràng, tối đa 5-7 từ, ví dụ: "#emph[Báo cáo tiến độ dự án A1 -- Tuần 3];" hoặc #emph["Đề xuất họp khẩn về chiến lược kinh doanh"];.],
+    )],
+  kind: table,
+  caption: [Bài 1. Header (Phần tiêu đề)],
+)
 
 === Các phần khác
 
@@ -63,46 +83,36 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 
 - Công Việc
 
-#figure(image("assets/1.3.2.1.2_CongViec.png"),
-  caption: [
-    Bài 1. Công Việc
-  ]
-)
+#figure(image("assets/1.3.2.1.2_CongViec.png"), caption: [
+  Bài 1. Công Việc
+])
 
 - Quan Trọng
 
-#figure(image("assets/1.3.2.1.2_QuanTrong.png"),
-  caption: [
-    Bài 1. Quan Trọng
-  ]
-)
+#figure(image("assets/1.3.2.1.2_QuanTrong.png"), caption: [
+  Bài 1. Quan Trọng
+])
 
 == Mail Group
 <mailgroup>
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
-#figure(image("assets/1.3.2.1.3_MailGroup_DanhBa.png"),
-  caption: [
-    Bài 1. Danh Bạ Mail Group
-  ]
-)
+#figure(image("assets/1.3.2.1.3_MailGroup_DanhBa.png"), caption: [
+  Bài 1. Danh Bạ Mail Group
+])
 
-#figure(image("assets/1.3.2.1.3_MailGroup_Send.png"),
-  caption: [
-    Bài 1. Gửi Mail tới Mail Group
-  ]
-)
+#figure(image("assets/1.3.2.1.3_MailGroup_Send.png"), caption: [
+  Bài 1. Gửi Mail tới Mail Group
+])
 
 == Sắp xếp Email với Label
 
 Đã thực hiện tạo các nhãn: Giải Trí, Sức Khỏe, Thể Thao, Học Tập và di chuyển mail tương ứng.
 
-#figure(image("assets/1.3.2.2_Email_Folders.png"),
-  caption: [
-    Bài 1. Sắp xếp emails với các label/thư mục tương ứng.
-  ]
-)
+#figure(image("assets/1.3.2.2_Email_Folders.png"), caption: [
+  Bài 1. Sắp xếp emails với các label/thư mục tương ứng.
+])
 
 == Dung lượng tối đa Gmail
 
@@ -142,33 +152,38 @@ Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới
 #figure(
   align(center)[#table(
     columns: (30%, 70%),
-    align: (left,left,),
-    table.header([Tính năng], [Miêu Tả],),
+    align: (left, left),
+    table.header([Tính năng], [Miêu Tả]),
     table.hline(),
-    [Quản lý Thành viên], [Thêm/Xóa thành viên, Cấm (Ban) người dùng, Đặt vai trò (Owner, Manager, Member), Duyệt yêu cầu tham gia.],
-    [Kiểm duyệt (Moderation)], [Đặt cài đặt cho phép/không cho phép thành viên đăng bài, Phê duyệt/Từ chối các bài đăng đang chờ.],
-    [Quản lý Cài đặt Thư], [Đặt chân chữ ký (footer) chung cho tất cả email của nhóm, cấu hình phản hồi tự động (auto-reply).],
+    [Quản lý Thành viên],
+    [Thêm/Xóa thành viên, Cấm (Ban) người dùng, Đặt vai trò (Owner, Manager, Member), Duyệt yêu cầu tham gia.],
+    [Kiểm duyệt (Moderation)],
+    [Đặt cài đặt cho phép/không cho phép thành viên đăng bài, Phê duyệt/Từ chối các bài đăng đang chờ.],
+    [Quản lý Cài đặt Thư],
+    [Đặt chân chữ ký (footer) chung cho tất cả email của nhóm, cấu hình phản hồi tự động (auto-reply).],
     [Cài đặt Quyền], [Quyết định ai có thể Xem thành viên, ai có thể Đăng bài, ai có thể Xem Kho lưu trữ.],
-  )]
-  , kind: table
-  , caption: [Bài 1. Vai trò của Admin]
-  )
+  )],
+  kind: table,
+  caption: [Bài 1. Vai trò của Admin],
+)
 
 ==== Member
 
 #figure(
   align(center)[#table(
     columns: (30%, 70%),
-    align: (left,left,),
-    table.header([Tính năng], [Miêu Tả],),
+    align: (left, left),
+    table.header([Tính năng], [Miêu Tả]),
     table.hline(),
-    [Đăng bài (Post)], [Gửi email đến địa chỉ nhóm để bắt đầu cuộc thảo luận mới hoặc trả lời các cuộc thảo luận hiện có.],
-    [Truy cập Kho lưu trữ], [Tìm kiếm và xem lại toàn bộ lịch sử thảo luận của nhóm trên giao diện web của Google Groups (nếu được phép).],
+    [Đăng bài (Post)],
+    [Gửi email đến địa chỉ nhóm để bắt đầu cuộc thảo luận mới hoặc trả lời các cuộc thảo luận hiện có.],
+    [Truy cập Kho lưu trữ],
+    [Tìm kiếm và xem lại toàn bộ lịch sử thảo luận của nhóm trên giao diện web của Google Groups (nếu được phép).],
     [Tùy chọn Email], [Thay đổi tần suất nhận thư (mỗi thư, tóm tắt, tổng hợp), Rời nhóm (Leave group).],
-  )]
-  , kind: table
-  , caption: [Bài 1. Vai trò của Member]
-  )
+  )],
+  kind: table,
+  caption: [Bài 1. Vai trò của Member],
+)
 
 == Tính năng tìm kiếm
 
@@ -212,7 +227,7 @@ Tính năng "#strong[Filter messages like this];" được thiết kế để t�
 Sau khi định nghĩa tiêu chí tìm kiếm, bạn chọn một hoặc nhiều hành động để áp dụng cho các email mới và (tùy chọn) các email cũ khớp với tiêu chí:
 
 - #strong[Lưu trữ (Archive):] Bỏ qua Hộp thư đến (#strong[Skip the
-  Inbox];).
+    Inbox];).
   - Thư sẽ không hiển thị trong hộp thư chính nhưng vẫn có thể tìm thấy.
 - #strong[Gán Nhãn:] Tự động áp dụng một nhãn cụ thể (#strong[Label];) để phân loại.
 - #strong[Đánh dấu quan trọng:] Đánh dấu là đã đọc, đã gắn sao, hoặc #strong[quan trọng.]

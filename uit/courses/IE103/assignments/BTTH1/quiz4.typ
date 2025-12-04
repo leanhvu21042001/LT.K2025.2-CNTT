@@ -1,4 +1,9 @@
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
+
+// YOUR CONTENT HERE
+
+= Bài 4. Trigger & Views trong DBMS.
+<bai-4>
 
 - Vai trò của Trigger, View?
 - Phân loại Trigger?
@@ -28,41 +33,41 @@ View thực chất là một "bảng ảo" (virtual table). Nó không lưu tr�
 Ví dụ:
 
 #figure(
-```sql
--- Tạo mới VIEW (hoặc thay thế)
-CREATE OR REPLACE VIEW account_activity_view AS
-SELECT
-    ba.account_number,
-    ba.account_holder,
-    ba.balance,
-    ul.action AS latest_action,
-    ul.timestamp AS latest_action_time
-FROM
-    BankAccounts ba
--- Join nhiều bảng
-LEFT JOIN
-    (
-        -- Một truy vấn cụ thể
-        SELECT DISTINCT ON (account_number)
-            account_number,
-            action,
-            timestamp
-        FROM
-            UserLogs
-        ORDER BY
-            account_number,
-            timestamp DESC
-    ) ul ON ba.account_number = ul.account_number;
-```,
-caption: "Bài 4. Khai báo/Khởi tạo VIEW"
+  ```sql
+  -- Tạo mới VIEW (hoặc thay thế)
+  CREATE OR REPLACE VIEW account_activity_view AS
+  SELECT
+      ba.account_number,
+      ba.account_holder,
+      ba.balance,
+      ul.action AS latest_action,
+      ul.timestamp AS latest_action_time
+  FROM
+      BankAccounts ba
+  -- Join nhiều bảng
+  LEFT JOIN
+      (
+          -- Một truy vấn cụ thể
+          SELECT DISTINCT ON (account_number)
+              account_number,
+              action,
+              timestamp
+          FROM
+              UserLogs
+          ORDER BY
+              account_number,
+              timestamp DESC
+      ) ul ON ba.account_number = ul.account_number;
+  ```,
+  caption: "Bài 4. Khai báo/Khởi tạo VIEW",
 )
 
 #figure(
-```sql
--- Truy vấn từ VIEW như một bảng bình thường
-SELECT * FROM account_activity_view;
-```,
-caption: "Bài 4. Truy vấn VIEW"
+  ```sql
+  -- Truy vấn từ VIEW như một bảng bình thường
+  SELECT * FROM account_activity_view;
+  ```,
+  caption: "Bài 4. Truy vấn VIEW",
 )
 
 == Trigger
@@ -107,25 +112,25 @@ ghi tương ứng trong `UserLogs` ghi lại các thay đổi bao gồm:
 DBMS: PostgreSQL:
 
 #figure(
-```sql
--- Tạo một trigger
-CREATE FUNCTION after_insert_trigger_function()
-RETURNS TRIGGER AS $$
-BEGIN
-    -- Thực hiện thao tác, thêm bản ghi mới
-    INSERT INTO UserLogs (account_number, action)
-    VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
-    RETURN NEW;
-END;
-$$ LANGUAGE plpgsql;
+  ```sql
+  -- Tạo một trigger
+  CREATE FUNCTION after_insert_trigger_function()
+  RETURNS TRIGGER AS $$
+  BEGIN
+      -- Thực hiện thao tác, thêm bản ghi mới
+      INSERT INTO UserLogs (account_number, action)
+      VALUES (NEW.account_number, CONCAT('New record inserted for ', NEW.account_holder));
+      RETURN NEW;
+  END;
+  $$ LANGUAGE plpgsql;
 
--- Gán trigger vào một bảng cụ thể
-CREATE TRIGGER after_insert_trigger
-AFTER INSERT ON BankAccounts
-FOR EACH ROW
-EXECUTE PROCEDURE after_insert_trigger_function();
-```,
-caption: "Bài 4. AFTER Trigger"
+  -- Gán trigger vào một bảng cụ thể
+  CREATE TRIGGER after_insert_trigger
+  AFTER INSERT ON BankAccounts
+  FOR EACH ROW
+  EXECUTE PROCEDURE after_insert_trigger_function();
+  ```,
+  caption: "Bài 4. AFTER Trigger",
 )
 
 === Theo cấp độ (Scope)
