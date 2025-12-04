@@ -223,20 +223,19 @@
     // Add the Cover page to TOC
     #place(hide(unheading[Trang Bìa (#assignment.title)]))
 
-    #text(font: "Montserrat", size: 20pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
-      "name",
-      default: "",
-    ))] \
-    #v(0.2em)
-    #text(font: "Montserrat", size: 18pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
-      "college",
-      default: "",
-    ))] \
-    #v(0.2em)
-    #text(font: "Montserrat", size: 16pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
-      "center",
-      default: "",
-    ))] \
+    // MARK: University Name
+    #if university.name != "" [
+      #text(font: "Montserrat", size: 20pt, weight: "regular", fill: black.lighten(50%))[#upper(university.name)] \
+      #v(0.2em)
+    ]
+    #if university.college != "" [
+      #text(font: "Montserrat", size: 18pt, weight: "regular", fill: black.lighten(50%))[#upper(university.college)] \
+      #v(0.2em)
+    ]
+    #if university.center != "" [
+      #text(font: "Montserrat", size: 16pt, weight: "regular", fill: black.lighten(50%))[#upper(university.center)] \
+      #v(0.2em)
+    ]
 
     #block(
       width: 80%,
