@@ -38,16 +38,6 @@
   ),
 )
 
-// MARK: INFO
-
-#let info = (
-  title: "Bài Tập Thực Hành 1",
-  author: "Nhóm 2 (Omega)",
-  author_filename: "author",
-  id: "25410000",
-  course: "IE103",
-)
-
 // 2. Upgraded TODO function (Registers as a 'todo' kind figure)
 #let todo(body) = {
   figure(
