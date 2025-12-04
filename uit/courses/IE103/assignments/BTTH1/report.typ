@@ -13,6 +13,7 @@
     name: "UNIVERSITY_NAME",
     college: "COLLEGE_NAME",
     center: "CENTER_NAME",
+    logo: "",
   ),
   course: (
     id: "COURSE_ID",
