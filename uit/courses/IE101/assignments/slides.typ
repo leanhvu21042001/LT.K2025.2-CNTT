@@ -7,12 +7,14 @@
   aspect-ratio: "16-9",
   config-info(
     title: [PHÂN TÍCH CƠ SỞ HẠ TẦNG CÔNG NGHỆ THÔNG TIN],
-    subtitle: [CỦA ORIENT SOFTWARE DEVELOPMENT CORPORATION],
+    subtitle: [ORIENT SOFTWARE DEVELOPMENT CORPORATION],
     author: [Nhóm 1],
     date: datetime.today(),
-    institution: [TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN - ĐHQG-HCM],
+    institution: [IE103 - Cơ Sở Hạ Tầng CNTT],
   ),
 )
+
+#set text(font: "Lora", weight: "regular")
 
 #title-slide()
 
@@ -23,7 +25,7 @@
 #align(center)[
   #table(
     columns: (auto, auto, auto, auto, auto, auto),
-    inset: 0.6em,
+    inset: 0.5em,
     align: (right, right, left, right, right, left),
     stroke: (
       bottom: 0.5pt + gradient.linear(red, blue, green),
