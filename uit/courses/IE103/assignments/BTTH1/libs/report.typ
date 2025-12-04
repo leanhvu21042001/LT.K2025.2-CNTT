@@ -38,7 +38,7 @@
   ),
 )
 
-// 2. Upgraded TODO function (Registers as a 'todo' kind figure)
+// MARK: Upgraded TODO function (Registers as a 'todo' kind figure)
 #let todo(body) = {
   figure(
     kind: "todo",
