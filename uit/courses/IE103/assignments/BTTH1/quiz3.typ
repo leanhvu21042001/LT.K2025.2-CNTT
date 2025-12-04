@@ -60,7 +60,7 @@ Ví dụ:
 #todo[Chương trình khôi phục dữ liệu `testdisk`: #link("https://www.cgsecurity.org/wiki/TestDisk")[TestDisk].]
 
 - Một quá trình khôi phục dữ liệu dùng `testdisk`.
-  - (Sử dụng một USB FAT32, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
+  - (Sử dụng một USB FAT32/NTFS, format, copy file vào, xóa, và chạy testdisk để thử tìm kiếm/khôi phục lại, vv..)
 #todo[Dùng `fdisk` để kiểm tra và xem thông số của phân vùng.]
 #todo[Dùng `mk.fs` để định dạng phân vùng.]
 
