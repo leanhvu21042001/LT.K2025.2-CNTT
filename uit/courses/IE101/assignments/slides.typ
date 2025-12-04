@@ -201,7 +201,14 @@ _"Collaboration, Openness, and Learning Mindset"_.
 - Dịch vụ Internet (ISP).
 - Hệ thống tên miền (Domain).
 
+= Quy Trình Hoạt Động
+
 == Quản Trị Và Bảo Mật
+
+=== Tiêu Chuẩn Quốc Tế
+
+- ISO/IEC 27001: Hệ thống quản lý an toàn thông tin.
+- ISO 9001: Hệ thống quản lý chất lượng.
 
 === Quản Trị
 
@@ -213,15 +220,6 @@ _"Collaboration, Openness, and Learning Mindset"_.
 - Vật lý: Kiểm soát ra vào, camera.
 - Mạng: Firewall, phân lớp mạng.
 - Quyền truy cập: Phân quyền chặt chẽ.
-
-= Quy Trình Hoạt Động
-
-== Quy Trình Quản Trị Và Bảo Mật
-
-Áp dụng các tiêu chuẩn quốc tế:
-
-- ISO/IEC 27001: Hệ thống quản lý an toàn thông tin.
-- ISO 9001: Hệ thống quản lý chất lượng.
 
 == Quy Trình Tuyển Dụng Nhân Sự
 
