@@ -66,6 +66,8 @@
 
 // TODO: Rounded border image
 
+// MARK: The Template
+
 #let university-assignment(
   title: "Bài Tập Thực Hành",
   subtitle: none,
