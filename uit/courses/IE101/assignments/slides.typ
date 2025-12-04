@@ -127,12 +127,28 @@ _"Collaboration, Openness, and Learning Mindset"_.
 
 == Hạ Tầng Phần Cứng (Hardware)
 
+=== Thông Tin Cơ Bản
+
+- Server.
+- Storage.
+- Network Devices.
+- End Device.
+
+#pagebreak()
+
 === Hệ Thống Máy Chủ (Server)
 
 - Máy chủ ảo hóa (Hyper-V).
-- Máy chủ lưu trữ.
-- DNS Server.
-- Active Directory Server.
+- Máy chủ lưu trữ (NAS).
+
+=== Thiết Bị Mạng (Network Devices)
+
+- Firewall (Tường lửa).
+- Access Point (Wifi).
+- Switch (Bộ chuyển mạch).
+- Router (Bộ định tuyến).
+
+#pagebreak()
 
 === Thiết Bị Đầu Cuối (End Devices)
 
@@ -143,14 +159,15 @@ _"Collaboration, Openness, and Learning Mindset"_.
 - VoIP Phone.
 - FingerPrint (Máy chấm công).
 
-=== Thiết Bị Mạng (Network Devices)
-
-- Firewall (Tường lửa).
-- Access Point (Wifi).
-- Switch (Bộ chuyển mạch).
-- Router (Bộ định tuyến).
-
 == Hạ Tầng Phần Mềm (Software)
+
+=== Thông Tin Cơ Bản
+
+- Hệ Điều Hành.
+- Phần mềm Quản Lý.
+- Phần mềm ứng dụng và dịch vụ.
+
+#pagebreak()
 
 === Phần Mềm Nền Tảng
 
@@ -158,14 +175,18 @@ _"Collaboration, Openness, and Learning Mindset"_.
 - Hệ Điều Hành Linux.
 - Nền Tảng Container Docker.
 
-=== Phần mềm Quản Lý
+#pagebreak()
+
+=== Phần Mềm Quản Lý
 
 - Quản lý dự án: Jira.
 - ServiceDesk: GLPI.
 - Quản lý tài sản: Snipe-IT.
 - Công cụ khác: CCM, Patch Manage Engine, Admin by Request.
 
-=== Phần mềm ứng dụng và dịch vụ
+#pagebreak()
+
+=== Phần Mềm Ứng Dụng Và Dịch Vụ
 
 - Giao tiếp: Voice Cloud.
 - Văn phòng: Microsoft Office 365.
