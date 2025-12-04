@@ -12,6 +12,7 @@
     date: datetime.today(),
     institution: [IE103 - Cơ Sở Hạ Tầng CNTT],
   ),
+  lang: "vi",
 )
 
 #set text(font: "Lora", weight: "regular")
