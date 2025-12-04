@@ -223,10 +223,10 @@ _"Collaboration, Openness, and Learning Mindset"_.
 
 == Quy Trình Tuyển Dụng Nhân Sự
 
-Quy trình gồm 6 bước khép kín:
+6 bước:
 
 1. Ứng viên nộp CV (Email/Job Site).
-2. Sàng lọc hồ sơ (Bộ phận Talent Acquisition - TA).
+2. Sàng lọc hồ sơ (Talent Acquisition).
 3. Phỏng vấn kỹ thuật (Team Lead/Senior Dev).
 4. Phỏng vấn quản lý (PM/Director).
 5. Phỏng vấn nhân sự (Thương lượng lương, phúc lợi).
