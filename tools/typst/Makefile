@@ -1,10 +1,10 @@
-all: report.pdf
+all: main.pdf
 
-report.pdf: report.typ
-	typst compile report.typ
+main.pdf: main.typ
+	typst compile main.typ
 
 watch:
-	typst watch report.typ
+	typst watch main.typ
 
 clean:
-	rm -f report.pdf
+	rm -f main.pdf
