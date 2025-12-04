@@ -1,6 +1,6 @@
 // MARR: imports
 
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
 
 // MARK: THE TARGET for BACK TO TOP
 #metadata("top") <top>

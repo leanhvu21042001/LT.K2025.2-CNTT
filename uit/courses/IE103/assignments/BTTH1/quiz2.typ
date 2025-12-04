@@ -1,4 +1,4 @@
-#import "../../../../../tools/typst/libs/academic-alt.typ": *
+#import "libs/report.typ": *
 
 // YOUR CONTENT
 
