@@ -230,7 +230,7 @@ _"Collaboration, Openness, and Learning Mindset"_.
 3. Phỏng vấn kỹ thuật (Team Lead/Senior Dev).
 4. Phỏng vấn quản lý (PM/Director).
 5. Phỏng vấn nhân sự (Thương lượng lương, phúc lợi).
-6. Nhận Offer Letter -> Kết thúc.
+6. Nhận Offer Letter và Ký Hợp đồng.
 
 == Quy Trình Quản Lý Tài Chính
 
