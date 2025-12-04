@@ -1,3 +1,5 @@
+#import "../../../../../tools/typst/libs/academic-alt.typ": *
+
 Trong Gmail, anh/chị hãy cho biết:
 
 + Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các mails?
@@ -10,6 +12,8 @@ Trong Gmail, anh/chị hãy cho biết:
 + Hãy tạo ra một mailgroup trong gmail và cho biết lợi ích của nó? Tìm hiểu các tính năng admin/member.
 + Các tính năng tìm kiếm mail.
 + Tìm hiểu tính năng: Filter message like this.
+
+#todo[Giới Thiệu, hoặc Mở Đầu, trước khi vào nội dung chính.]
 
 == Các tính năng tổ chức mail
 <chuc-nang-gmail>
