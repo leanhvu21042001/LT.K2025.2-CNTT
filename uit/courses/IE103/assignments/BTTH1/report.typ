@@ -8,36 +8,42 @@
 // MARK: The Template
 
 // Define the author in a variable
-#let assignment-author = "Nhóm 1 (Alpha)"
-
-#show: university-assignment.with(
+#let details = (
   university: (
-    name: "Đại Học TP. Hồ Chính Minh",
-    college: "Đại Học Công Nghệ Thông Tin",
-    center: "Trung Tâm Phát Triển Công Nghệ Thông Tin",
+    name: "UNIVERSITY_NAME",
+    college: "COLLEGE_NAME",
+    center: "CENTER_NAME",
   ),
   course: (
-    id: "IE103",
-    name: "Quản Lý Thông Tin",
-    class: "Lớp IE103",
+    id: "COURSE_ID",
+    name: "COURSE_NAME",
+    class: "CLASS_NAME",
   ),
-  instructor: lorem(3),
+  instructor: "INSTRUCTOR_NAME",
   author: (
-    name: assignment-author,
+    name: "AUTHOR_NAME",
     members: (),
   ),
   assignment: (
-    title: "BTTH1",
-    subtitle: "Quản Lý Thông Tin",
-    type: "Bài Tập Thực Hành",
+    title: "ASSIGNMENT_TITLE",
+    subtitle: "ASSIGNMENT_SUBTITLE",
+    type: "ASSIGNMENT_TYPE",
     date: datetime.today(),
-    duration: "~3 hours",
+    duration: "ASSIGNMENT_DURATION",
   ),
+)
+
+#show: university-assignment.with(
+  university: details.university,
+  course: details.course,
+  author: details.author,
+  instructor: details.instructor,
+  assignment: details.assignment,
 )
 
 // MARK: AUTHOR
 
-#unheading[#assignment-author]
+#unheading[#details.author.name]
 #include "author.typ"
 
 #pagebreak()
