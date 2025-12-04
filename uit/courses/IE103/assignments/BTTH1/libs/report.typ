@@ -229,7 +229,7 @@
 
     #block(
       width: 80%,
-      stroke: (bottom: 0.5pt + rgb("#808080")),
+      stroke: (bottom: 0.5pt + gradient.linear(red, blue, angle: 45deg)),
       inset: (bottom: 0.5em),
     )
 
@@ -238,7 +238,12 @@
     #block(
       radius: 12pt,
       inset: 2em,
-      stroke: gradient.linear(red, blue, angle: 45deg),
+      stroke: (
+        bottom: 2pt + gradient.linear(teal, blue, angle: 45deg),
+        // left: 2pt + gradient.linear(teal, blue, angle: 45deg),
+        // right: 2pt + gradient.linear(teal, blue, angle: 45deg),
+        top: 2pt + gradient.linear(teal, blue, angle: 45deg),
+      ),
       width: 100%,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
@@ -274,7 +279,7 @@
   block(
     radius: 8pt,
     fill: rgb(248, 250, 252),
-    stroke: 1pt + rgb(200, 220, 240),
+    stroke: 1pt + gradient.linear(teal, blue, angle: 45deg),
     inset: 1.5em,
     width: 100%,
   )[
