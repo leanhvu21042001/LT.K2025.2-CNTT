@@ -271,12 +271,20 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 - Tính bảo mật cao: Đa lớp từ vật lý đến mạng.
 - Khả năng mở rộng: Linh hoạt theo quy mô dự án.
 
+#pagebreak()
+
 === Nhược Điểm
 
-- Chi phí vận hành cao: Do đầu tư thiết bị và bản quyền phần mềm lớn.
-- Hệ thống phức tạp: Đòi hỏi nhân sự quản trị trình độ cao.
-- Phụ thuộc Internet: Rủi ro khi mất kết nối diện rộng.
-- Quy trình cứng nhắc: Có thể gây chậm trễ trong một số trường hợp khẩn cấp.
+- Chi phí vận hành cao
+  - Do đầu tư thiết bị và bản quyền phần mềm lớn.
+- Hệ thống phức tạp
+  - Đòi hỏi nhân sự quản trị trình độ cao.
+- Phụ thuộc Internet
+  - Rủi ro khi mất kết nối diện rộng.
+- Quy trình cứng nhắc
+  - Có thể gây chậm trễ trong một số trường hợp khẩn cấp.
+
+#pagebreak()
 
 === Giải Pháp Hoàn Thiện
 
