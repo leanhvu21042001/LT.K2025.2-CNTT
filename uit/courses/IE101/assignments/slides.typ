@@ -80,20 +80,18 @@
   caption: "Các Thành Viên",
 )
 
-= Giới Thiệu Đề Tài
+= Đề Tài
 
 == Lý Do Chọn Đề Tài
 
-=== Tại Sao?
+=== Động Lực
 
 - Tìm hiểu thực tế hạ tầng tại doanh nghiệp.
-
-=== Tầm Quan Trọng
-
 - Hạ tầng CNTT là xương sống của hoạt động vận hành.
 
 === Ý Nghĩa Nghiên Cứu
 
+- Hiểu rõ một hạ tầng CNTT thông qua thực tế.
 - Áp dụng kiến thức vào thực tiễn.
 
 == Mục Tiêu
@@ -106,9 +104,13 @@
 
 - Xác định ưu điểm và nhược điểm của hệ thống hiện tại.
 
+=== Bài Học Kinh Nghiệm
+
+- Phát huy ưu điểm, hạn chế nhược điểm khi xây dựng, vận hành.
+
 === Đề Xuất Cải Tiến
 
-- Đưa ra các giải pháp tối ưu hóa và khắc phục hạn chế.
+- Đưa ra các giải pháp tận dụng ưu điểm, khắc phục các hạn chế.
 
 == Phạm Vi Nghiên Cứu
 
