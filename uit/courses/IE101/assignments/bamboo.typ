@@ -63,8 +63,9 @@
 #let new-section-slide(self: none, body) = touying-slide-wrapper(self => {
   let main-body = {
     set align(center + horizon)
-    set text(size: 2em, fill: self.colors.primary, weight: "bold", style: "italic")
+    set text(size: 3em, fill: self.colors.primary, weight: "bold", style: "normal")
     utils.display-current-heading(level: 1)
+    line()
   }
   touying-slide(self: self, main-body)
 })
