@@ -26,10 +26,11 @@
 
 #pagebreak()
 
-// MARK: MAIN CONTENT
+// IMPORTANT Switch page number style and reset its counter
 #set page(numbering: "1")
 #counter(page).update(1)
 
+// MARK: MAIN CONTENT
 = Bài 1. GMail & Mail Group.
 <bai-1>
 
