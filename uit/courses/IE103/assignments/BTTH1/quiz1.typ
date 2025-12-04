@@ -12,6 +12,7 @@ Trong Gmail, anh/chị hãy cho biết:
 + Tìm hiểu tính năng: Filter message like this.
 
 == Các tính năng tổ chức mail
+<chuc-nang-gmail>
 
 Gmail cung cấp các tính năng hỗ trợ công việc như:
 
@@ -21,6 +22,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 - Ngoài ra còn tích hợp Drive/Meet để chia sẻ tài liệu và trao đổi thuận tiện.
 
 == Cấu trúc của một email
+<cau-truc-email>
 
 === Header (Phần tiêu đề)
 
@@ -51,6 +53,7 @@ Gmail cung cấp các tính năng hỗ trợ công việc như:
 - #strong[Attachments:] Tệp đính kèm.
 
 == Phân loại Mails
+<phan-loai-mails>
 
 Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc tiêu chí nhất định để dễ quản lý.
 
@@ -71,6 +74,7 @@ Phân loại mail là sắp xếp email theo nhãn (Label), thư mục hoặc ti
 )
 
 == Mail Group
+<mailgroup>
 
 Mail group là nhóm gồm nhiều địa chỉ email được gom lại dưới một tên chung. Khi gửi email đến mail group, hệ thống sẽ tự động gửi cho tất cả các thành viên trong nhóm.
 
