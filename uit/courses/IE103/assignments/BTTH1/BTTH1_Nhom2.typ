@@ -1,8 +1,12 @@
+// MARR: imports
+
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
 // MARK: THE TARGET for BACK TO TOP
 
 #metadata("top") <top>
+
+// MARK: The Template
 
 #show: university-assignment.with(
   title: "Bài Tập Thực Hành 1",
