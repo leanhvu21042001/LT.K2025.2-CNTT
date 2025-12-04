@@ -270,7 +270,7 @@
   ]
 
   // TODO: Truncate long headings in the outline
-  // Assignment Summary Box
+  // MARK: Assignment Summary Box
   block(
     radius: 8pt,
     fill: rgb(248, 250, 252),
