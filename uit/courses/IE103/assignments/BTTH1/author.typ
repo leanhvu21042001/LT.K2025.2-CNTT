@@ -1,8 +1,6 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
-#heading(level: 1, numbering: none, outlined: true)[
-  #info.author
-]
+#unheading[#info.author]
 
 Thành viên của nhóm và bảng nhiệm vụ.
 
