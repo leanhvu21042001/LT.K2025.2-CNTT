@@ -45,4 +45,4 @@ Thành viên của nhóm và bảng nhiệm vụ.
   , numbering: none  // Hides the "Table X:" prefix (optional)
 )
 
-#todo[Sửa lỗi tham chiếu chéo (cross-reference anchors) trong bảng trên.]
+#todo[AUTHOR: Sửa lỗi tham chiếu chéo (cross-reference) của bảng.]
