@@ -96,8 +96,8 @@
 // MARK: The Template
 
 #let university-assignment(
-  title: "Bài Tập Thực Hành",
-  subtitle: none,
+  title: "",
+  subtitle: "",
   author: "",
   details: (:),
   date: datetime.today(),
@@ -221,7 +221,7 @@
   // Enhanced title page
   align(center)[
     // Add the Cover page to TOC
-    #place(hide(unheading[#info.title (Trang Bìa)]))
+    #place(hide(unheading[#title (Trang Bìa)]))
 
     #v(1.5em)
     #block(
@@ -279,10 +279,10 @@
       [
         #list(
           marker: none,
-          [IE103],
-          [Quản Lý Thông Tin],
-          [Ths. Nguyễn Thành Luân],
-          [Nhóm 2 (Omega)]
+          [#details.course],
+          [#subtitle],
+          [#details.instructor],
+          [#author]
         )
       ],
     )
