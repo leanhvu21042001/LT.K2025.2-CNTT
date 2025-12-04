@@ -420,27 +420,3 @@
   // Document body
   body
 }
-
-// Example usage:
-/*
-#show: university-assignment.with(
-  title: "Lab 3: GPIO and LED Control",
-  subtitle: "Embedded Systems",
-  author: "Your Name",
-  details: (
-    course: "ECSE 303",
-    supervisor: "Michael Goldberg",
-    due-date: "September 19, 2025",
-    hardware: "Raspberry Pi, LED, resistor",
-    software: "C (WiringPi), Python (RPi.GPIO)",
-    duration: "~3 hours",
-  ),
-  date: datetime.today()
-)
-
-= Introduction
-Your content here...
-*/
-
-// MARK: TODO
-// TODO: Fix cross-referrence anchors
