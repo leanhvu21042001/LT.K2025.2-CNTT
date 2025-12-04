@@ -126,17 +126,13 @@
 
 - Quy trình quản trị và bảo mật, vận hành.
 
-== Giới Thiệu Về Orient Software
+== Orient Software Development Corporation.
 
-_"Collaboration, Openness, and Learning Mindset"_.
-
-=== Tên Đầy Đủ
-
-- Orient Software Development Corporation.
+_"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và Cầu Thị).
 
 === Lĩnh Vực
 
-- Outsourcing phần mềm hàng đầu tại Việt Nam.
+- Outsourcing phần mềm hàng đầu tại Việt Nam và khu vực.
 
 === Quy Mô
 
@@ -144,7 +140,7 @@ _"Collaboration, Openness, and Learning Mindset"_.
 
 === Sứ Mệnh
 
-- "To provide exceptional software services to the world.".
+- "To provide exceptional software services to the world".
 
 = Các Thành Phần Của Hạ Tầng
 
