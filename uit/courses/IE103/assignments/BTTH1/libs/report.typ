@@ -255,7 +255,15 @@
     #stack(
       dir: ltr,
       spacing: 1em,
-      text(font: "Montserrat", size: 20pt, weight: "regular")[#author.name],
+      if university.logo != "" {
+        image(university.logo, width: 3cm)
+      } else {
+        box(height: 3cm, width: 3cm, stroke: 0.5pt + black.lighten(90%), radius: 50%, fill: none)[
+          #align(center + horizon)[
+            #text(size: 40pt, fill: black.lighten(80%))[🏛️]
+          ]
+        ]
+      },
       // text(size: 20pt, fill: rgb(100, 100, 100))[#date.display("[month repr:long] [day], [year]")],
     )
     #v(1em)
@@ -304,7 +312,7 @@
     // Place & Date
 
     #align(center)[
-        #assignment.date
+      #assignment.date
     ]
     #v(0.8em)
   ]
