@@ -90,6 +90,16 @@
 
 #pagebreak()
 
+#unheading[Callout Examples]
+
+#co-note[This is a note.]
+#co-info[This is some information.]
+#co-warn[This is a warning.]
+#co-err[This is an error.]
+#co-succ[This is a success message.]
+
+#pagebreak()
+
 // IMPORTANT Switch page number style and reset its counter
 #set page(numbering: "1")
 #counter(page).update(1)
