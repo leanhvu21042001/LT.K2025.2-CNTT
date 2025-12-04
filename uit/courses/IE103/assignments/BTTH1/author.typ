@@ -1,9 +1,7 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
-#align(center)[
-  #text(font: "Montserrat", size: 28pt, weight: "regular")[
+#heading(level: 1, numbering: none, outlined: true)[
   #info.author
-  ]
 ]
 
 Thành viên của nhóm và bảng nhiệm vụ.
