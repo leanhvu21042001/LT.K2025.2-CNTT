@@ -272,9 +272,12 @@
     inset: 1.5em,
     width: 100%,
   )[
+    #heading(
+      level: 1,
+      numbering: none)[Mục Lục]
     #outline(
-      title: [Mục Lục],
-      indent: auto,
+      title: none,
+      // indent: auto,
       depth: 2,
     )
   ]
@@ -287,8 +290,11 @@
     inset: 1.5em,
     width: 100%,
   )[
+    #heading(
+      level: 1,
+      numbering: none)[Danh Sách Bảng]
     #outline(
-      title: [Danh Sách Bảng], // Sets the title of the list
+      title: none, // Sets the title of the list
       target: figure.where(kind: table) // Selects only tables
     )
   ]
@@ -301,8 +307,11 @@
     inset: 1.5em,
     width: 100%,
   )[
+    #heading(
+    level: 1,
+    numbering: none)[Danh Sách Hình Ảnh]
     #outline(
-      title: [Danh Sách Hình Ảnh], // Title: "List of Images"
+      title: none, // Title: "List of Images"
       target: figure.where(kind: image), // Filter: Only show images
     )
   ]
@@ -315,8 +324,11 @@
     inset: 1.5em,
     width: 100%,
   )[
-    #outline(
-      title: [Danh Sách Mã Nguồn], 
+    #heading(
+      level: 1,
+      numbering: none)[Danh Sách Mã Nguồn]
+      #outline(
+      title: none, 
       target: figure.where(kind: raw), // Targets figures containing code
     )
   ]
