@@ -15,7 +15,22 @@
   lang: "vi",
 )
 
+// Set font
 #set text(font: "Lora", weight: "regular")
+
+// Set heading level 3
+#show heading.where(level: 3): it => [
+  #set align(left)
+  #set text(font: "Montserrat", size: 20pt, weight: "regular")
+  #block(
+    width: 100%,
+    stroke: (bottom: 0.5pt + rgb("#808080")),
+    inset: (bottom: 0.5em),
+    below: 0.8em,
+  )[
+    #smallcaps[#it.body]
+  ]
+]
 
 #title-slide()
 
