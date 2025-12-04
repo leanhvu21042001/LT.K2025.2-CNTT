@@ -13,7 +13,7 @@ Trong Gmail, anh/chị hãy cho biết:
 + Các tính năng tìm kiếm mail.
 + Tìm hiểu tính năng: Filter message like this.
 
-#todo[Giới Thiệu, hoặc Mở Đầu, trước khi vào nội dung chính.]
+#todo[Bài 1. Giới Thiệu, hoặc Mở Đầu, trước khi vào nội dung chính.]
 
 == Các tính năng tổ chức mail
 <chuc-nang-gmail>
