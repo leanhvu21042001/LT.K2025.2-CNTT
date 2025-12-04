@@ -288,10 +288,14 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 === Giải Pháp Hoàn Thiện
 
-1. Tối ưu chi phí: Rà soát tài nguyên cloud, license.
-2. Tự động hóa và tích hợp: Tăng cường DevOps, CI/CD.
-3. Nâng cao dự phòng: Backup định kỳ, phương án DR (Disaster Recovery).
-4. Phát triển đội ngũ: Đào tạo nội bộ (Team Training) để làm chủ công nghệ.
+- Rà soát tài nguyên phần cứng, license phần mềm.
+  - Tối ưu chi phí.
+- Tăng cường DevOps, CI/CD.
+  - Tự động hóa và tích hợp
+- Backup định kỳ, phương án DR (Disaster Recovery).
+  - Nâng cao dự phòng
+- Đào tạo nội bộ (Team Training) để làm chủ công nghệ.
+  - Phát triển đội ngũ
 
 = Kết Luận
 
