@@ -1,38 +1,21 @@
 // University Assignment Template
-// Usage: #import "template.typ": *
-// Then call: #show: university-assignment.with(
-//   title: "Your Title",
-//   subtitle: "Your Subtitle",
-//   author: "Your Name",
-//   details: (
-//     course: "ECSE 303",
-//     supervisor: "Prof. Smith",
-//     due-date: "September 19, 2025",
-//     hardware: "Raspberry Pi, LED, resistor",
-//     software: "C (WiringPi), Python (RPi.GPIO)",
-//     duration: "~3 hours",
-//   ),
-//   date: datetime.today()
-// )
-
-// TODO: Roman page number for non-main content pages
 
 // Wrapper function for rounded tables
 #let rounded-table(..args) = {
   block(
     radius: 8pt, // Adjust this for more/less roundness
     stroke: 1pt + luma(220), // The outer border color
-    clip: true,  // This cuts off the square corners
+    clip: true, // This cuts off the square corners
     width: 100%, // Ensures it fits the page
-    inset: 0pt,  // No gap between border and table
-    
+    inset: 0pt, // No gap between border and table
+
     // The inner table
     table(
       ..args,
       stroke: none, // We turn off the default grid to avoid double borders
       // We add horizontal lines between rows for a clean look
       align: (x, y) => if y == 0 { center } else { left },
-    )
+    ),
   )
 }
 
@@ -48,11 +31,11 @@
     ..args,
     // Define stroke: Only draw bottom lines, and NOT on the last row
     stroke: (x, y) => (
-      bottom: 1pt + luma(230), 
+      bottom: 1pt + luma(230),
       // thick white line for vertical separation looks nice on gray backgrounds:
-      right: none
+      right: none,
     )
-  )
+  ),
 )
 
 // MARK: INFO
@@ -62,7 +45,7 @@
   author: "Nhóm 2 (Omega)",
   author_filename: "author",
   id: "25410000",
-  course: "IE103"
+  course: "IE103",
 )
 
 // 2. Upgraded TODO function (Registers as a 'todo' kind figure)
@@ -82,8 +65,8 @@
       align(left)[
         #text(weight: "bold", fill: red.lighten(20%))[TODO:]
         #body
-      ]
-    )
+      ],
+    ),
   )
 }
 
@@ -96,12 +79,13 @@
 // MARK: The Template
 
 #let university-assignment(
+  university: (:),
   title: "",
   subtitle: "",
   author: "",
   details: (:),
   date: datetime.today(),
-  body
+  body,
 ) = {
   // Page setup
   set page(margin: 2cm)
@@ -113,8 +97,8 @@
   // Paragraph
   set par(
     leading: 0.8em, // Controls space between lines WITHIN a paragraph
-    justify: true,   // Recommended for assignments to align text edges
-    spacing: 1.5em
+    justify: true, // Recommended for assignments to align text edges
+    spacing: 1.5em,
   )
   set heading(numbering: "1.")
   // Indent for List
@@ -122,7 +106,7 @@
   // Indent for Enum
   set enum(indent: 1em)
   // set par()
-  
+
   // Custom code block styling
   // TODO: Line Number
 
@@ -132,10 +116,9 @@
   // Table formatting
   set table(
     stroke: 0.5pt + gray,
-    fill: (x, y) =>
-      if x == 0 or y == 0 {
-        gray.lighten(40%)
-      },
+    fill: (x, y) => if x == 0 or y == 0 {
+      gray.lighten(40%)
+    },
     align: right,
   )
 
@@ -160,12 +143,12 @@
       breakable: false,
       width: 100%,
     )[
-    #text(font: "Iosevka")[
-      #it
+      #text(font: "Iosevka")[
+        #it
       ]
     ]
   ]
-  
+
   show block.where(fill: rgb("#f0f8ff")): it => align(left, it)
 
   // vspace after/below every heading
@@ -180,12 +163,12 @@
       width: 100%,
       stroke: (bottom: 0.5pt + rgb("#808080")),
       inset: (bottom: 0.5em),
-      below: 0.8em
+      below: 0.8em,
     )[
       #smallcaps[#it.body]
     ]
   ]
-  
+
   // show heading.where(level: 2): it => [
   //   #set text(font: "Montserrat", size: 18pt, weight: "regular", fill: rgb(50, 50, 50))
   //   #block(above: 1.2em, below: 0.8em)[#it.body]
@@ -195,14 +178,14 @@
   //   #set text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(50, 50, 50))
   //   #block(above: 1.2em, below: 0.8em)[#it.body]
   // ]
-  
+
   // Simple emphasis and strong styling
   show emph: it => text(style: "italic", weight: "medium")[#it.body]
   show strong: it => text(weight: "bold")[#it.body]
-  
+
   // Simple list styling
   // show list: it => block(above: 0.6em, below: 0.6em)[#it]
-  
+
   // Simple quote styling
   show quote: it => block(
     align(center),
@@ -217,18 +200,40 @@
 
   // Show TODO content/body only
   show figure.where(kind: "todo"): it => it.body
-  
+
   // Enhanced title page
   align(center)[
     // Add the Cover page to TOC
     #place(hide(unheading[Trang Bìa (#title)]))
 
-    #v(1.5em)
+    #text(font: "Montserrat", size: 20pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
+      "name",
+      default: "",
+    ))] \
+    #v(0.2em)
+    #text(font: "Montserrat", size: 18pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
+      "college",
+      default: "",
+    ))] \
+    #v(0.2em)
+    #text(font: "Montserrat", size: 16pt, weight: "regular", fill: black.lighten(50%))[#upper(university.at(
+      "center",
+      default: "",
+    ))] \
+
+    #block(
+      width: 80%,
+      stroke: (bottom: 0.5pt + rgb("#808080")),
+      inset: (bottom: 0.5em),
+    )
+
+    #v(3.5em)
+
     #block(
       radius: 12pt,
       inset: 2em,
       stroke: 1pt + gray,
-      width: 100%
+      width: 100%,
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
         #smallcaps[#title]
@@ -249,7 +254,7 @@
     )
     #v(1em)
   ]
-  
+
   // TODO: Truncate long headings in the outline
   // Assignment Summary Box
   block(
@@ -283,12 +288,14 @@
           [#details.course],
           [#subtitle],
           [#details.instructor],
-          [#author]
+          [#author],
         )
       ],
     )
   ]
-  
+
+  pagebreak()
+
   // Table of Contents
   block(
     radius: 8pt,
@@ -316,7 +323,7 @@
     #unheading[Danh Sách Bảng]
     #outline(
       title: none, // Sets the title of the list
-      target: figure.where(kind: table) // Selects only tables
+      target: figure.where(kind: table), // Selects only tables
     )
   ]
 
@@ -344,8 +351,8 @@
     width: 100%,
   )[
     #unheading[Danh Sách Mã Nguồn]
-      #outline(
-      title: none, 
+    #outline(
+      title: none,
       target: figure.where(kind: raw), // Targets figures containing code
     )
   ]
@@ -354,7 +361,7 @@
   context {
     let todos = query(figure.where(kind: "todo"))
     if todos.len() > 0 {
-       block(
+      block(
         radius: 8pt,
         fill: red.lighten(95%),
         stroke: 1pt + red.lighten(80%),
@@ -363,8 +370,8 @@
       )[
         #unheading[Danh Sách Việc Cần Làm]
         #outline(
-          title: none, 
-          target: figure.where(kind: "todo")
+          title: none,
+          target: figure.where(kind: "todo"),
         )
       ]
     }
@@ -374,12 +381,12 @@
   // line(length: 100%, stroke: 0.5pt + rgb(200, 220, 240))
   v(0.5em)
   // v(2em)
-  
+
   pagebreak()
 
   // --- PAGE NUMBERING SETUP ---
   // set page(
-  //   numbering: "1", 
+  //   numbering: "1",
   //   number-align: right
   // )
   // counter(page).update(1) // Optional: Resets count so this page starts at 1
@@ -392,15 +399,15 @@
       #grid(
         columns: (1fr, 1fr),
         align: (left, right),
-        
+
         // TODO: Un-blue the link here
         // LEFT: The clickable link
         link(<top>)[#text(fill: gray)[↑ Back to Top]],
-        
+
         // RIGHT: The page number
-        counter(page).display(page.numbering)
+        counter(page).display(page.numbering),
       )
-    ]
+    ],
   )
 
   // --- LINK STYLING ---
@@ -413,7 +420,7 @@
     stroke: 1pt + luma(200),
     clip: true,
     width: 100%,
-    it
+    it,
   )
 
   // MARK: The BODY
