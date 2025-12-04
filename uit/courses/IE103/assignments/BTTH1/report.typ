@@ -92,11 +92,11 @@
 
 #unheading[Callout Examples]
 
-#co-note[This is a note.]
-#co-info[This is some information.]
-#co-warn[This is a warning.]
-#co-err[This is an error.]
-#co-succ[This is a success message.]
+#co-note[Đây là một chú ý.]
+#co-info[Đây là một thông tin.]
+#co-warn[Đây là một cảnh báo.]
+#co-err[Đây là một lỗi.]
+#co-succ[Đây là một thông báo thành công.]
 
 #pagebreak()
 
