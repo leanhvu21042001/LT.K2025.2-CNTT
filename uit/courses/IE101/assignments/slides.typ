@@ -299,18 +299,29 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 = Kết Luận
 
-== Kết Quả Nghiên Cứu & Đánh Giá Chung
+== Đánh Giá Chung
 
-- Kết quả: Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
-- Đánh giá: Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.
+Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.
 
-== Định Hướng & Bài Học Kinh Nghiệm
+== Kết Quả Nghiên Cứu
 
-- Định hướng: Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
-- Bài học: Hiểu rõ bản chất, định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp Outsourcing.
+Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
+
+== Định Hướng
+
+Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
+
+== Bài Học Kinh Nghiệm
+
+Hiểu rõ bản chất, định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp Outsourcing.
+
+= Q&A
 
 #slide[
   #align(center + horizon)[
-    *CẢM ƠN THẦY VÀ CÁC BẠN ĐÃ LẮNG NGHE*
+    *XIN CẢM ƠN!*
+  ]
+  #align(center + horizon)[
+    *Q&A*
   ]
 ]
