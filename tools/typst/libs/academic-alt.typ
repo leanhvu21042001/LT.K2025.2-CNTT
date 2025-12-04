@@ -147,9 +147,15 @@
   show heading.where(level: 1): it => [
     #set align(left)
     #set text(font: "Montserrat", size: 20pt, weight: "regular")
-    #block()[#it.body]
-    #line(length: 100%, stroke: 0.5pt + rgb("#808080"))
-    #v(0.5em)
+
+    #block(
+      width: 100%,
+      stroke: (bottom: 0.5pt + rgb("#808080")),
+      inset: (bottom: 0.5em),
+      below: 0.8em
+    )[
+      #smallcaps[#it.body]
+    ]
   ]
   
   // show heading.where(level: 2): it => [
@@ -378,3 +384,6 @@
 = Introduction
 Your content here...
 */
+
+// MARK: TODO
+// TODO: Fix cross-referrence anchors
