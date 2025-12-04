@@ -98,7 +98,7 @@
     title: "",
     subtitle: "",
     type: "",
-    date: datetime.today(),
+    date: "",
     duration: "",
     location: "",
   ),
@@ -280,12 +280,6 @@
     inset: 1.5em,
     width: 100%,
   )[
-    // #align(center)[
-    //   #text(font: "Montserrat", size: 16pt, weight: "regular", fill: rgb(30, 70, 120))[
-    //     Thông Tin Chung
-    //   ]
-    // ]
-    // #v(0.8em)
     #grid(
       columns: (40%, 60%),
       column-gutter: 1em,
@@ -314,11 +308,21 @@
         )
       ],
     )
+
+    #v(2em)
+
+    // Place & Date
+
+    #align(center)[
+        #assignment.date
+    ]
+    #v(0.8em)
   ]
 
+  // Page Break, end of the Title Page
   pagebreak()
 
-  // Table of Contents
+  // MARK: Table of Contents
   block(
     radius: 8pt,
     fill: rgb(248, 250, 252),
