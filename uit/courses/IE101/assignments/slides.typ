@@ -21,7 +21,12 @@
     columns: (auto, auto, auto, auto, auto, auto),
     inset: 10pt,
     align: (right, right, left, right, right, left),
-    stroke: 0.5pt + gradient.linear(red, blue, green),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
     [01], [25410291], [_Đinh Xuân Sâm_], [02], [25410240], [_Nguyễn Tạ Quí Lan_],
     [03], [25410179], [Giang Hải Chương], [04], [25410171], [Lê Thị Tú Anh],
     [05], [25410338], [Lê Anh Vũ], [06], [25410183], [Nguyễn Đào Anh Đạt],
