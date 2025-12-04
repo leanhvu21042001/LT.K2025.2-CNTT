@@ -389,7 +389,7 @@
         
         // TODO: Un-blue the link here
         // LEFT: The clickable link
-        link(<top>)[↑ Back to Top],
+        link(<top>)[#text(fill: gray)[↑ Back to Top]],
         
         // RIGHT: The page number
         counter(page).display("1")
