@@ -14,6 +14,8 @@
 
 #title-slide()
 
+#outline-slide()
+
 = Giới Thiệu Nhóm 1
 
 == Nhóm 1
@@ -39,8 +41,6 @@
     [15], [25410325], [Nguyễn Văn Trung],
   )
 ]
-
-#outline-slide()
 
 = Giới thiệu về đề tài
 
