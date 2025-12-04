@@ -218,6 +218,9 @@
   
   // Enhanced title page
   align(center)[
+    // Add the Cover page to TOC
+    #place(hide(unheading[#info.title (Trang Bìa)]))
+
     #v(1.5em)
     #block(
       radius: 12pt,
