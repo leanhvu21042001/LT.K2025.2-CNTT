@@ -70,7 +70,7 @@ Thành viên của nhóm và bảng nhiệm vụ.
       [],
     )],
   kind: table,
-  caption: [#info.author],
+  // caption: [#author.name],
   outlined: false, // Hides it from the List of Tables
   numbering: none, // Hides the "Table X:" prefix (optional)
 )
