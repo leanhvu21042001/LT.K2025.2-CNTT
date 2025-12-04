@@ -228,6 +228,7 @@
       radius: 12pt,
       inset: 2em,
       stroke: 1pt + gray,
+      width: 100%
     )[
       #text(font: "Montserrat", size: 28pt, weight: "regular")[
         #smallcaps[#title]
