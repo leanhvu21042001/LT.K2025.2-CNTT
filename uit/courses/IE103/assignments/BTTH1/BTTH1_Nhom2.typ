@@ -31,24 +31,10 @@
 #counter(page).update(1)
 
 // MARK: MAIN CONTENT
-= Bài 1. GMail & Mail Group.
-<bai-1>
 
 #include "quiz1.typ"
-
-= Bài 2. Explorer/Finder.
-<bai-2>
-
 #include "quiz2.typ"
-
-= Bài 3. FAT32 vs NTFS. Windows File System.
-<bai-3>
-
 #include "quiz3.typ"
-
-= Bài 4. Trigger & Views trong DBMS.
-<bai-4>
-
 #include "quiz4.typ"
 
 // THE END

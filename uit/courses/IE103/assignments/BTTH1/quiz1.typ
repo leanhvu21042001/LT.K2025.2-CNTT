@@ -1,5 +1,10 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// YOUR CONTENT
+
+= Bài 1. GMail & Mail Group.
+<bai-1>
+
 Trong Gmail, anh/chị hãy cho biết:
 
 + Gmail đã cung cấp các tính năng gì để phục vụ cho việc tổ chức tốt các mails?

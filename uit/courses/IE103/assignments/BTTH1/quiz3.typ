@@ -1,5 +1,10 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// YOUR CONTENT
+
+= Bài 3. FAT32 vs NTFS. Windows File System.
+<bai-3>
+
 + Tìm hiểu cách tổ chức dữ liệu của FAT32, NTFS và so sánh.
 + HĐH dùng nguyên lý nào để khôi phục tập tin đã xóa?
 

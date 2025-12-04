@@ -1,5 +1,10 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// YOUR CONTENT
+
+= Bài 4. Trigger & Views trong DBMS.
+<bai-4>
+
 - Vai trò của Trigger, View?
 - Phân loại Trigger?
 - Tất cả hệ quản trị CSDL quan hệ có hỗ trợ Trigger không?

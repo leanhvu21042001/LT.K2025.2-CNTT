@@ -1,5 +1,10 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// YOUR CONTENT
+
+= Bài 2. Explorer/Finder.
+<bai-2>
+
 Tìm hiểu cách thức tổ chức dữ liệu của Explorer/Finder:
 
 + Explorer dùng mô hình gì để tổ chức dữ liệu?

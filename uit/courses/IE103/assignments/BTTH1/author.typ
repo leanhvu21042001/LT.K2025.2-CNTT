@@ -1,5 +1,7 @@
 #import "../../../../../tools/typst/libs/academic-alt.typ": *
 
+// YOUR CONTENT
+
 #unheading[#info.author]
 
 Thành viên của nhóm và bảng nhiệm vụ.
