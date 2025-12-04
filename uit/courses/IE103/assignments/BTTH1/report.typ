@@ -10,27 +10,68 @@
 // Define the author in a variable
 #let details = (
   university: (
-    name: "UNIVERSITY_NAME",
-    college: "COLLEGE_NAME",
-    center: "CENTER_NAME",
+    name: "Trường Đại Học TP. Hồ Chí Minh",
+    college: "Đại Học Công Nghệ Thông Tin",
+    center: "Trung Tâm Phát Triển Công Nghệ Thông Tin",
     logo: "",
   ),
   course: (
-    id: "COURSE_ID",
-    name: "COURSE_NAME",
-    class: "CLASS_NAME",
+    id: "IE103",
+    name: "Quản Lý Thông Tin (Data Management)",
+    class: "LT.K2025.2.CNTT",
   ),
-  instructor: "INSTRUCTOR_NAME",
+  instructor: "Ths. Nguyễn Thành Luân",
   author: (
-    name: "AUTHOR_NAME",
-    members: (),
+    name: "Nhóm 1",
+    members: (
+      (
+        name: "Đinh Xuân Sâm",
+        id: "25410291",
+      ),
+      (
+        name: "Đặng Hữu Toàn",
+        id: "25410319",
+      ),
+      (
+        name: "Nguyễn Điền Triết",
+        id: "25410321",
+      ),
+      (
+        name: "Trương Xuân Hậu",
+        id: "25410204",
+      ),
+      (
+        name: "Lê Anh Vũ",
+        id: "25410338",
+      ),
+      (
+        name: "Trần Sơn Bình",
+        id: "25410176",
+      ),
+      (
+        name: "Lê Kim Long",
+        id: "25410247",
+      ),
+      (
+        name: "La Anh Vũ",
+        id: "25410337",
+      ),
+      (
+        name: "Lê Ngọc Hiệp",
+        id: "25410209",
+      ),
+      (
+        name: "Nguyễn Thị Ngọc Nhung",
+        id: "25410271",
+      ),
+    ),
   ),
   assignment: (
-    title: "ASSIGNMENT_TITLE",
-    subtitle: "ASSIGNMENT_SUBTITLE",
-    type: "ASSIGNMENT_TYPE",
+    title: "Bài Tập Thực Hành 1",
+    subtitle: "Thiết Kế Cơ Sở Dữ Liệu",
+    type: "Bài Tập Thực Hành",
     date: "Dec, 2025",
-    duration: "ASSIGNMENT_DURATION",
+    duration: "15 phút",
   ),
 )
 
