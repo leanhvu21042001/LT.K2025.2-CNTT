@@ -15,17 +15,23 @@
     name: "Đại Học TP. Hồ Chính Minh",
     college: "Đại Học Công Nghệ Thông Tin",
     center: "Trung Tâm Phát Triển Công Nghệ Thông Tin",
+  ),
+  course: (
+    id: "IE103",
+    name: "Quản Lý Thông Tin",
     class: "Lớp IE103",
   ),
-  title: "BTTH1",
-  subtitle: "Quản Lý Thông Tin",
-  author: assignment-author,
-  details: (
-    course: lorem(1),
-    instructor: lorem(3),
-    due-date: datetime.today(),
+  instructor: lorem(3),
+  author: (
+    name: assignment-author,
+    members: (),
+  ),
+  assignment: (
+    title: "BTTH1",
+    subtitle: "Quản Lý Thông Tin",
+    type: "Bài Tập Thực Hành",
+    date: datetime.today(),
     duration: "~3 hours",
-    lab-number: lorem(1),
   ),
 )
 
