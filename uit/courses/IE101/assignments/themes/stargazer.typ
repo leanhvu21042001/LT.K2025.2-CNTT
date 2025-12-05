@@ -2,6 +2,8 @@
 // Authors: Coekjan, QuadnucYard, OrangeX4
 // Inspired by https://github.com/Coekjan/touying-buaa and https://github.com/QuadnucYard/touying-theme-seu
 
+// TODO: Set page number to monofont, Iosevka, for example.
+
 #import "@preview/touying:0.6.1": *
 
 #let _tblock(self: none, title: none, it) = {
