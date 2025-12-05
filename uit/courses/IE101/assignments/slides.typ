@@ -3,6 +3,8 @@
 
 #import "@preview/numbly:0.1.0": numbly
 
+// MARK: - Theme
+
 #show: stargazer-theme.with(
   aspect-ratio: "16-9",
   config-info(
@@ -22,6 +24,8 @@
     neutral-darkest: rgb("#003255"),
   ),
 )
+
+// MARK: - Style Customization
 
 // TODO: Thay đổi style của list
 #set list(
@@ -46,6 +50,29 @@
   ]
 ]
 
+// MARK: - Title Slide
+
 #title-slide()
 
+// TODO:
+// forewords
+// acknowledgments
+// table of contents
+// table of figures
+// table of tables
+// table of codes/listing
+
+// MARK: - Nội Dung Chính
 #include "contents.typ"
+
+// MARK: - Kết Thúc
+= Kết Thúc
+
+#slide[
+  #align(center + horizon)[
+    *XIN CẢM ƠN!*
+  ]
+  #align(center + horizon)[
+    *Q&A*
+  ]
+]
