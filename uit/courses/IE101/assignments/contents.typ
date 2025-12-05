@@ -414,30 +414,20 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 == Đánh Giá Chung
 
-#align(center)[
-  #grid(
-    columns: 100%,
-    inset: 0.5em,
-    align: (left),
-    stroke: (
-      bottom: 0.5pt + gradient.linear(red, blue, green),
-      top: none,
-      left: none,
-      right: none,
-    ),
-    [
-      Hệ Thống CNTT trong đó có Hạ Tầng đóng vai trò là "xương sống" của vận hành doanh nghiệp, giúp mọi doanh nghiệp nói chung và Orient Software nói riêng hoạt động hiệu quả và an toàn.
-    ],
-  )
+#tblock(title: "Nhận Xét")[
+  Hệ Thống CNTT trong đó có Hạ Tầng đóng vai trò là "xương sống" của vận hành doanh nghiệp, giúp mọi doanh nghiệp nói chung và Orient Software nói riêng hoạt động hiệu quả và an toàn.
 ]
 
 == Kết Quả Nghiên Cứu
 
-- Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
+- Phân tích chi tiết hạ tầng kỹ thuật (HW/SW).
+- Phân tích các quy trình vận hành cốt lõi.
 
 == Định Hướng
 
-- Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
+- Tự động hóa toàn diện
+- Tối ưu hóa chi phí
+- Tăng cường khả năng phục hồi hệ thống.
 
 == Bài Học Kinh Nghiệm
 
