@@ -81,13 +81,10 @@
 #include "contents.typ"
 
 // MARK: - Kết Thúc
-= Kết Thúc
+= Q&A
 
-#slide[
-  #align(center + horizon)[
-    *XIN CẢM ƠN!*
-  ]
-  #align(center + horizon)[
-    *Q&A*
-  ]
+#focus-slide[
+  XIN CẢM ƠN!
+
+  Q&A
 ]
