@@ -414,7 +414,22 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 == Đánh Giá Chung
 
-*Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.*
+#align(center)[
+  #grid(
+    columns: 100%,
+    inset: 0.5em,
+    align: (left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [
+      Hệ Thống CNTT trong đó có Hạ Tầng đóng vai trò là "xương sống" của vận hành doanh nghiệp, giúp mọi doanh nghiệp nói chung và Orient Software nói riêng hoạt động hiệu quả và an toàn.
+    ],
+  )
+]
 
 == Kết Quả Nghiên Cứu
 
