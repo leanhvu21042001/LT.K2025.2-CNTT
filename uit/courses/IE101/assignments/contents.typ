@@ -129,11 +129,11 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Hệ Thống Máy Chủ (Server)
 
-- Máy chủ ảo hóa (Hyper-V).
+- Chạy Hyper-V.
 
 === Hệ Thống Lưu Trữ (Storage)
 
-- Máy chủ lưu trữ (NAS).
+- NAS (Network Attached Storage).
 
 === Hệ Thống Mạng (Network Devices)
 
