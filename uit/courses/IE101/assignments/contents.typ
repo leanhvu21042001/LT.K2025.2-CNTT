@@ -132,11 +132,11 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Hệ Thống Máy Chủ (Server)
 
-- Chạy Hyper-V.
+- Dell PowerEdge R750.
 
 === Hệ Thống Lưu Trữ (Storage)
 
-- NAS (Network Attached Storage).
+- Synology RackStation RS3621xs+ (Network Attached Storage).
 
 === Hệ Thống Mạng (Network Devices)
 
@@ -151,8 +151,8 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
       left: none,
       right: none,
     ),
-    [- Firewall (Tường lửa)], [- Access Point (Wifi)],
-    [- Switch (Bộ chuyển mạch)], [- Router (Bộ định tuyến)],
+    [- Firewall (Sonicwall TZ670)], [- Access Point (Meraki MR38)],
+    [- L2 Switch (Cisco C1200-48)], [- L3 Switch (Cisco Catalyst 9300)],
   )
 ]
 
