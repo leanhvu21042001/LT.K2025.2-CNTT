@@ -160,12 +160,22 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Thiết Bị Đầu Cuối (End Devices)
 
-- Laptop/PC.
-- Printer (Máy in).
-- Mobile (Thiết bị di động).
-- Camera giám sát.
-- VoIP Phone.
-- FingerPrint (Máy chấm công).
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Laptop/PC], [- Printer (Máy in)],
+    [- Mobile (Thiết bị di động)], [- Camera giám sát],
+    [- VoIP Phone], [- FingerPrint (Máy chấm công)],
+  )
+]
 
 == Hạ Tầng Phần Mềm (Software)
 
