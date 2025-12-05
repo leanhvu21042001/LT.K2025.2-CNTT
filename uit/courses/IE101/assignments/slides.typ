@@ -52,9 +52,17 @@
 
 == Lời Cảm Ơn
 
-- Giảng Viên: Ths. Đỗ Minh Tiến, IE103
-- Nhà Trường: Trung Tâm Phát Triển Công Nghệ Thông Tin - UIT
-- Công Ty: Orient Software Development Corporation
+=== Giảng Viên
+
+- Ths. Đỗ Minh Tiến, IE103
+
+=== Nhà Trường
+
+- Trung Tâm Phát Triển Công Nghệ Thông Tin - UIT
+
+=== Công Ty
+
+- Orient Software Development Corporation
 
 == Nhóm 1
 
