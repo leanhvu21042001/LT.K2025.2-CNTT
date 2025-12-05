@@ -65,6 +65,20 @@
   ]
 ]
 
+// Set heading level 4
+#show heading.where(level: 4): it => [
+  #set align(left)
+  #set text(font: "Montserrat", size: 16pt, weight: "regular")
+  #block(
+    width: 100%,
+    stroke: (bottom: 0.5pt + rgb("#808080")),
+    inset: (bottom: 0.5em),
+    below: 0.8em,
+  )[
+    #smallcaps[#it.body]
+  ]
+]
+
 // MARK: - Title Slide
 
 #title-slide()
