@@ -23,6 +23,12 @@
   ),
 )
 
+// TODO: Thay đổi style của list
+#set list(
+  marker: circle(radius: 0.2em, stroke: 0.2pt + rgb("#b51d69")),
+  indent: 0.5em,
+)
+
 // Set font
 #set text(font: "Lora", weight: "regular")
 
@@ -341,7 +347,7 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 - Nắm bắt định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp nói chung và Orient Software nói riêng.
 
-= Q&A
+= The End
 
 #slide[
   #align(center + horizon)[
