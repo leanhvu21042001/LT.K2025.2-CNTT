@@ -162,9 +162,20 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Phần Mềm Nền Tảng
 
-- Hệ Điều Hành Windows.
-- Hệ Điều Hành Linux.
-- Nền Tảng Container Docker.
+==== Hệ Điều Hành Windows.
+
+- Active Directory.
+- Exchange Server.
+
+==== Hệ Điều Hành Linux.
+
+- Web Server: Apache, Nginx.
+- Database Server: MySQL, PostgreSQL.
+
+==== Nền Tảng Container Docker.
+
+- Docker Engine.
+- Docker Compose.
 
 #pagebreak()
 
