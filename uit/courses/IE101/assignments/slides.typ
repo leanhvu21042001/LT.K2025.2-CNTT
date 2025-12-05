@@ -35,7 +35,7 @@
 )
 
 // Set font
-#set text(font: "Lora", weight: "regular")
+#set text(font: "Montserrat", weight: "light")
 
 // Set heading level 2
 #show heading.where(level: 2): it => [
