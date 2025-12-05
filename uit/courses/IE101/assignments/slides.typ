@@ -159,7 +159,7 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Sứ Mệnh
 
-- "To provide exceptional software services to the world".
+- _"To provide exceptional software services to the world"_.
 
 = Các Thành Phần Của Hạ Tầng
 
