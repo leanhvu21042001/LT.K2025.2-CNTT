@@ -140,10 +140,21 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Hệ Thống Mạng (Network Devices)
 
-- Firewall (Tường lửa).
-- Access Point (Wifi).
-- Switch (Bộ chuyển mạch).
-- Router (Bộ định tuyến).
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Firewall (Tường lửa)], [- Access Point (Wifi)],
+    [- Switch (Bộ chuyển mạch)], [- Router (Bộ định tuyến)],
+  )
+]
 
 #pagebreak()
 
