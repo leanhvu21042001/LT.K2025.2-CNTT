@@ -27,7 +27,8 @@
 
 // MARK: - Style Customization
 
-// TODO: Thay đổi style của list
+// List: Dùng marker là vòng tròn nhỏ có vòng.
+// TODO: Dùng gradient cho marker.
 #set list(
   marker: move(dy: 0.15em, box(circle(radius: 0.2em, stroke: 0.2pt + rgb("#b51d69")))),
   indent: 0.5em,
@@ -35,6 +36,20 @@
 
 // Set font
 #set text(font: "Lora", weight: "regular")
+
+// Set heading level 2
+#show heading.where(level: 2): it => [
+  #set align(left)
+  #set text(font: "Montserrat", size: 24pt, weight: "regular")
+  #block(
+    width: 100%,
+    stroke: (bottom: 0.5pt + rgb("#808080")),
+    inset: (bottom: 0.5em),
+    below: 0.8em,
+  )[
+    #smallcaps[#it.body]
+  ]
+]
 
 // Set heading level 3
 #show heading.where(level: 3): it => [
