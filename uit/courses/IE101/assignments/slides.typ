@@ -25,7 +25,7 @@
 
 // TODO: Thay đổi style của list
 #set list(
-  marker: circle(radius: 0.2em, stroke: 0.2pt + rgb("#b51d69")),
+  marker: move(dy: 0.15em, box(circle(radius: 0.2em, stroke: 0.2pt + rgb("#b51d69")))),
   indent: 0.5em,
 )
 
