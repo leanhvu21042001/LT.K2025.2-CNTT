@@ -132,11 +132,11 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Hệ Thống Máy Chủ (Server)
 
-- Dell PowerEdge R750.
+- Dell PowerEdge R750 (2U Server).
 
 === Hệ Thống Lưu Trữ (Storage)
 
-- Synology RackStation RS3621xs+ (Network Attached Storage).
+- Synology RackStation RS3621xs+ (2U Storage).
 
 === Hệ Thống Mạng (Network Devices)
 
@@ -156,7 +156,15 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
   )
 ]
 
-#pagebreak()
+// #pagebreak()
+
+=== Rack
+
+- Dell 48U Rack.
+
+=== Power Supply (UPS)
+
+- APC SRT3000RMXLI.
 
 === Thiết Bị Đầu Cuối (End Devices)
 
