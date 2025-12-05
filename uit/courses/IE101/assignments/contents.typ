@@ -154,9 +154,11 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Thông Tin Cơ Bản
 
-- Hệ Điều Hành.
-- Phần Mềm Quản Lý.
-- Phần Mềm Ứng Dụng Và Dịch Vụ.
+==== Hệ Điều Hành
+
+==== Phần Mềm Quản Lý
+
+==== Phần Mềm Ứng Dụng Và Dịch Vụ
 
 #pagebreak()
 
