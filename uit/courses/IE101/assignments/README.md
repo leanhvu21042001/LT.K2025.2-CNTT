@@ -13,14 +13,15 @@
 - File chính: `main.md`
 - File khung nội dung: `contents.md`
   - Đây cũng chính là file nguyên liệu để tạo slides.
-- Chapters/Sections: `chapters/chap01.md`, `chapters/chap02.md`, ...
+- Chapters/Sections: `chapters/chapter01.md`, `chapters/chapter02.md`, ...
   - Đây là các file chứa nội dung chi tiết từng chương.
 
 ### Typst - Báo Cáo
 
 - Sử dụng template tại [https://github.com/lt20252cnttalpha/typst-report-template](https://github.com/lt20252cnttalpha/typst-report-template)
 - File chính: `main.typ`
-- Chapters/Sections: `chapters/chap01.typ`, `chapters/chap02.typ`, ...
+  - File này chứa `#include` các file `chapters/chapter01.typ`, `chapters/chapter02.typ`, ...
+- Chapters/Sections: `chapters/chapter01.typ`, `chapters/chapter02.typ`, ...
 
 ### Typst - Slides
 
@@ -67,4 +68,29 @@ Nếu đổi/cập nhật nội dung từ Markdown:
 
 ```bash
 pandoc -s contents.md -o contents.typ
+```
+
+## Makefile
+
+- Chuyển định dạng các file nội dung từ Markdown sang Typst.
+- Chuyển định dạng từ Typst sang PDF tương ứng báo cáo/slides.
+
+```Makefile
+.PHONY: all clean
+
+all: main.pdf slides.pdf
+
+main.pdf: main.typ
+	# For each chapter in chapters, convert md to typst
+	for chapter in $(wildcard chapters/*.md):
+		pandoc -s $chapter -o $(chapter).typ
+	typst compile main.typ
+
+slides.pdf: slides.typ
+	pandoc -s contents.md -o contents.typ
+	typst compile slides.typ
+
+.PHONY: clean
+clean:
+	rm -f main.pdf slides.pdf
 ```
