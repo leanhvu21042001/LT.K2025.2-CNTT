@@ -332,14 +332,3 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 == Bài Học Kinh Nghiệm
 
 - Nắm bắt định nghĩa và giá trị thực tiễn mà một hệ thống hạ tầng CNTT bài bản mang lại cho doanh nghiệp nói chung và Orient Software nói riêng.
-
-= Kết Thúc
-
-#slide[
-  #align(center + horizon)[
-    *XIN CẢM ƠN!*
-  ]
-  #align(center + horizon)[
-    *Q&A*
-  ]
-]
