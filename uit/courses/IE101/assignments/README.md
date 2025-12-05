@@ -1,24 +1,32 @@
 # IE103 - Project
 
-## Nội Dung
-
-- Soạn thảo từ Markdown.
-- Chuyển định dạng sang Typst.
-- Tạo Báo Cáo từ Typst.
-- Tạo Slides từ Typst.
-
-## Báo Cáo
-
-- Sử dụng template tại [https://github.com/lt20252cnttalpha/typst-report-template](https://github.com/lt20252cnttalpha/typst-report-template)
-
-## Slides
-
-### Ý tưởng
+## Ý tưởng
 
 - Tạo nội dung từ Markdown.
-- Chuyển định dạng sang Typst.
-- Tạo Slides từ Typst.
-- Bố cục, trình bày của slides được tạo từ Typst.
+- Chuyển định dạng sang Typst để tạo báo cáo.
+- Chuyển định dạng sang Typst để tạo slides.
+
+## Cách Tổ Chức
+
+### Markdown - Nội Dung
+
+- File chính: `main.md`
+- Chapters/Sections: `chapters/chap01.md`, `chapters/chap02.md`, ...
+
+### Typst - Báo Cáo
+
+- Sử dụng template tại [https://github.com/lt20252cnttalpha/typst-report-template](https://github.com/lt20252cnttalpha/typst-report-template)
+- File chính: `main.typ`
+- Chapters/Sections: `chapters/chap01.typ`, `chapters/chap02.typ`, ...
+
+### Typst - Slides
+
+- File chính: `slides.typ`
+  - File này chỉ chứa cấu hình, trình bày, bố cục, không chứa nội dung.
+- File nội dung: `contents.typ`
+  - File này chỉ chứa các nội dung chính, hay các heading.
+
+## Slides
 
 ### Công cụ
 
