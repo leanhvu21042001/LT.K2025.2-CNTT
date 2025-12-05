@@ -118,12 +118,15 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 == Hạ Tầng Phần Cứng (Hardware)
 
-=== Thông Tin Cơ Bản
+=== Tổng Quan
 
-- Server.
-- Storage.
-- Network Devices.
-- End Device.
+==== Hệ Thống Máy Chủ (Server)
+
+==== Hệ Thống Lưu Trữ (Storage)
+
+==== Hệ Thống Mạng (Network Devices)
+
+==== Thiết Bị Đầu Cuối (End Devices)
 
 #pagebreak()
 
@@ -155,7 +158,7 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 == Hạ Tầng Phần Mềm (Software)
 
-=== Thông Tin Cơ Bản
+=== Tổng Quan
 
 ==== Hệ Điều Hành
 
