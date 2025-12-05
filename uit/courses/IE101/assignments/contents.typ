@@ -136,7 +136,7 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
     [- Power Supply (UPS)], [- End Devices],
     [- Air Conditioner], [- Security Room],
     [- CCTV], [- FingerPrint],
-    [- And more...],
+    [- Và các thành phần khác...],
   )
 ]
 
