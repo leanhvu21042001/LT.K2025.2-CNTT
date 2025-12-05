@@ -172,19 +172,19 @@
         }
       },
     )
+    // institution
+    if info.institution != none {
+      parbreak()
+      text(size: 1.5em, info.institution)
+    }
     // authors
     grid(
       columns: (1fr,) * calc.min(info.authors.len(), 3),
       column-gutter: 1em,
       row-gutter: 1em,
-      ..info.authors.map(author => text(fill: black, author)),
+      ..info.authors.map(author => text(size: 1.2em, fill: black, author)),
     )
     v(0.5em)
-    // institution
-    if info.institution != none {
-      parbreak()
-      text(size: 0.7em, info.institution)
-    }
     // date
     if info.date != none {
       parbreak()
