@@ -11,7 +11,10 @@
 ### Markdown - Nội Dung
 
 - File chính: `main.md`
+- File khung nội dung: `contents.md`
+  - Đây cũng chính là file nguyên liệu để tạo slides.
 - Chapters/Sections: `chapters/chap01.md`, `chapters/chap02.md`, ...
+  - Đây là các file chứa nội dung chi tiết từng chương.
 
 ### Typst - Báo Cáo
 
@@ -25,6 +28,7 @@
   - File này chỉ chứa cấu hình, trình bày, bố cục, không chứa nội dung.
 - File nội dung: `contents.typ`
   - File này chỉ chứa các nội dung chính, hay các heading.
+  - Được chuyển định dạng từ `contents.md`.
 
 ## Slides
 
