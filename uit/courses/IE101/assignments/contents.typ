@@ -221,11 +221,15 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Tổng Quan
 
-- Phân quyền tài nguyên mạng.
-- Hệ thống các lớp IP.
-- Hệ thống mạng nội bộ (LAN).
-- Dịch vụ Internet (ISP).
-- Hệ thống tên miền (Domain).
+==== Phân Quyền Tài Nguyên Mạng
+
+==== Hệ Thống Các Lớp IP
+
+==== Hệ Thống Mạng Nội Bộ (LAN)
+
+==== Dịch Vụ Internet (ISP)
+
+==== Hệ Thống Tên Miền (Domain)
 
 = Quy Trình Hoạt Động
 
