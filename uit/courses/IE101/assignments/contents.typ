@@ -130,9 +130,12 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 === Hệ Thống Máy Chủ (Server)
 
 - Máy chủ ảo hóa (Hyper-V).
+
+=== Hệ Thống Lưu Trữ (Storage)
+
 - Máy chủ lưu trữ (NAS).
 
-=== Thiết Bị Mạng (Network Devices)
+=== Hệ Thống Mạng (Network Devices)
 
 - Firewall (Tường lửa).
 - Access Point (Wifi).
