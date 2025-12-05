@@ -120,13 +120,22 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Tổng Quan
 
-==== Hệ Thống Máy Chủ (Server)
-
-==== Hệ Thống Lưu Trữ (Storage)
-
-==== Hệ Thống Mạng (Network Devices)
-
-==== Thiết Bị Đầu Cuối (End Devices)
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Server], [- Storage],
+    [- Network Devices], [- Rack],
+    [- Power Supply (UPS)], [- End Devices],
+  )
+]
 
 #pagebreak()
 
