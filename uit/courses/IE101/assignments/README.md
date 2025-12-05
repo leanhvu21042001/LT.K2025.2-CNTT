@@ -11,17 +11,22 @@
 ### Markdown - Nội Dung
 
 - File chính: `main.md`
+  - Markdown không chứa style, theme, metadata.
+  - File này chỉ thông báo hoặc miêu tả cấu trúc nội dung.
 - File khung nội dung: `contents.md`
   - Đây cũng chính là file nguyên liệu để tạo slides.
 - Chapters/Sections: `chapters/chapter01.md`, `chapters/chapter02.md`, ...
   - Đây là các file chứa nội dung chi tiết từng chương.
+  - CẬP NHẬP NỘI DUNG Ở CÁC FILE NÀY.
 
 ### Typst - Báo Cáo
 
 - Sử dụng template tại [https://github.com/lt20252cnttalpha/typst-report-template](https://github.com/lt20252cnttalpha/typst-report-template)
 - File chính: `main.typ`
+  - CHỈ CHỈNH SỬA NẾU THAY ĐỔI STYLE, THEME, METADATA.
   - File này chứa `#include` các file `chapters/chapter01.typ`, `chapters/chapter02.typ`, ...
 - Chapters/Sections: `chapters/chapter01.typ`, `chapters/chapter02.typ`, ...
+  - CẬP NHẬP NỘI DUNG Ở CÁC FILE NÀY hoặc tốt nhất chuyển đổi thẳng từ Markdown sang Typst.
 
 ### Typst - Slides
 
