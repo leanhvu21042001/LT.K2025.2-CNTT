@@ -294,40 +294,65 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 - *Giám sát:* Kiểm soát thay đổi, báo cáo hiệu suất.
 - *Kết thúc:* Nghiệm thu dự án, giải phóng nguồn lực.
 
-== Đánh Giá
+= Đánh Giá
 
-=== Ưu Điểm
+== Ưu Điểm
 
-- Hạ tầng hiện đại: Đầu tư công nghệ mới (Cloud, AI).
-- Quy trình chuẩn hóa: Áp dụng ISO, quy trình 5 bước rõ ràng.
-- Tính bảo mật cao: Đa lớp từ vật lý đến mạng.
-- Khả năng mở rộng: Linh hoạt theo quy mô dự án.
+=== Hạ tầng hiện đại
 
-#pagebreak()
+- Đầu tư công nghệ mới (Cloud, AI).
 
-=== Nhược Điểm
+=== Quy trình chuẩn hóa
 
-- Chi phí vận hành cao
-  - Do đầu tư thiết bị và bản quyền phần mềm lớn.
-- Hệ thống phức tạp
-  - Đòi hỏi nhân sự quản trị trình độ cao.
-- Phụ thuộc Internet
-  - Rủi ro khi mất kết nối diện rộng.
-- Quy trình cứng nhắc
-  - Có thể gây chậm trễ trong một số trường hợp khẩn cấp.
+- Áp dụng ISO, quy trình 5 bước rõ ràng.
+
+=== Tính bảo mật cao
+
+- Đa lớp từ vật lý đến mạng.
+
+=== Khả năng mở rộng
+
+- Linh hoạt theo quy mô dự án.
 
 #pagebreak()
 
-=== Giải Pháp Hoàn Thiện
+== Nhược Điểm
+
+=== Chi phí vận hành cao
+
+- Do đầu tư thiết bị và bản quyền phần mềm lớn.
+
+=== Hệ thống phức tạp
+
+- Đòi hỏi nhân sự quản trị trình độ cao.
+
+=== Phụ thuộc Internet
+
+- Rủi ro khi mất kết nối diện rộng.
+
+=== Quy trình cứng nhắc
+
+- Có thể gây chậm trễ trong một số trường hợp khẩn cấp.
+
+#pagebreak()
+
+== Giải Pháp Hoàn Thiện
+
+=== Tối ưu chi phí
 
 - Rà soát tài nguyên phần cứng, license phần mềm.
-  - Tối ưu chi phí.
+
+=== Tự động hóa và tích hợp
+
 - Tăng cường DevOps, CI/CD.
-  - Tự động hóa và tích hợp
+
+=== Nâng cao dự phòng
+
 - Backup định kỳ, phương án DR (Disaster Recovery).
-  - Nâng cao dự phòng
+
+=== Phát triển đội ngũ
+
 - Đào tạo nội bộ (Team Training) để làm chủ công nghệ.
-  - Phát triển đội ngũ
 
 = Kết Luận
 
