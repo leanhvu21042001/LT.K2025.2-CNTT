@@ -27,9 +27,12 @@
 
 - File chính: `slides.typ`
   - File này chỉ chứa cấu hình, trình bày, bố cục, không chứa nội dung.
+  - Chứa Tiêu Đề (Title, Intro Slide), và Outro Slide.
+  - CHỈ CHỈNH SỬA NẾU THAY ĐỔI STYLE, THEME, METADATA.
 - File nội dung: `contents.typ`
-  - File này chỉ chứa các nội dung chính, hay các heading.
+  - CHỈ CHỨA NỘI DUNG CHÍNH, hay các heading.
   - Được chuyển định dạng từ `contents.md`.
+  - CHỈ CHỈNH SỬA NẾU THAY ĐỔI NỘI DUNG.
 
 ## Slides
 
