@@ -155,8 +155,8 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 === Thông Tin Cơ Bản
 
 - Hệ Điều Hành.
-- Phần mềm Quản Lý.
-- Phần mềm ứng dụng và dịch vụ.
+- Phần Mềm Quản Lý.
+- Phần Mềm Ứng Dụng Và Dịch Vụ.
 
 #pagebreak()
 
@@ -181,19 +181,41 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 === Phần Mềm Quản Lý
 
-- Quản lý dự án: Jira.
-- ServiceDesk: GLPI.
-- Quản lý tài sản: Snipe-IT.
-- Công cụ khác: CCM, Patch Manage Engine, Admin by Request.
+==== Quản Lý Dự Án.
+
+- Jira.
+
+==== ServiceDesk
+
+- GLPI.
+
+==== Quản Lý Tài Sản
+
+- Snipe-IT.
+
+==== Công Cụ Khác
+
+- CCM, Patch Manage Engine, Admin by Request.
 
 #pagebreak()
 
 === Phần Mềm Ứng Dụng Và Dịch Vụ
 
-- Giao tiếp: Voice Cloud.
-- Văn phòng: Microsoft Office 365.
-- Kế toán: MISA.
-- Quản trị doanh nghiệp: SAP.
+==== Giao Tiếp
+
+- Voice Cloud.
+
+==== Văn Phòng
+
+- Microsoft Office 365.
+
+==== Kế Toán
+
+- MISA.
+
+==== Quản Trị Doanh Nghiệp
+
+- SAP.
 
 == Tài Nguyên Mạng
 
