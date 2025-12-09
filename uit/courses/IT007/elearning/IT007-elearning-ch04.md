@@ -74,6 +74,7 @@ int main() {
         return 1;
     }
     
+    // Chiếm nhiều I/O
     while ((ch = fgetc(fp)) != EOF) {
         total++;
     }
