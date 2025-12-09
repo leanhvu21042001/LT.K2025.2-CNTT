@@ -312,7 +312,7 @@ gantt
     axisFormat %S
 
     section Timeline
-    Arrival (r) : milestone, m1, 1, 0s
+    P1 Added : milestone, m1, 1, 0s
     P1        : done, w1, after m1, 2s
     P2        : active, p1, after w1, 2s
     P3         : crit, g1, after p1, 2s
