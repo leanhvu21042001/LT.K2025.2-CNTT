@@ -125,9 +125,26 @@ flowchart TB
 
 ### Long-term scheduling
 
+- Định thời dài
+- Xác định chươing trình nào được nạp vào hệ thống để thực thi
+    - *Điều khiển mức độ đa chương của hệ thống.*
+- Cố gắng duy trì xen lẫn giữa tiến tình CPU-bound và I/O bound.
+
 ### Medium-term scheduling
+
+- Định thời vừa/trung.
+- Quyết định tiến trình nào được đưa vào (*swap in*) và đưa ra khỏi (*swap out*) bộ nhớ chính trong quá trình thực thi.
+- Được thực hiện bởi bộ phận quản lý bộ nhớ (Main Memory Management).
 
 ### Short-term scheduling
 
-
+- Định thời ngắn/cục bộ.
+- CPU scheduling (Định thời CPU).
+- Xác định tiến trình nào trong hàng đợi sẵn sàng (*ready queue*) sẽ được chiếm CPU để thực thi tiếp theo.
+- Multithreaded kernel: việc định thời CPU là do OS chọn *kernel thread* được chiếm CPU.
+- Được gọi khi lệnh ngắt (*interupt*) xẩy ra:
+    - Ngắt thời gian: *clock interrupt*.
+    - Ngắt ngoại vi: *I/O interrupt*.
+    - Lời gọi hệ thống: *sys call*.
+    - Tín hiệu đồng bộ hóa (Chương 5).
 
