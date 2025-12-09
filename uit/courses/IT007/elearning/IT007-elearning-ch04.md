@@ -86,3 +86,48 @@ int main() {
     return 0;
 }
 ```
+
+## Các Loại Định Thời
+
+- Long-term scheduling
+- Medium-term scheduling
+- Short-term scheduling
+
+```mermaid
+---
+config:
+  layout: fixed
+  look: classic
+  theme: default
+---
+flowchart TB
+    A(("New"))
+   subgraph s1["status"]
+       B("suspended/ready")
+    C("ready")
+    D("suspended/blocked")
+    E("blocked")
+   end
+    F("running")
+    G(("terminated"))
+    
+    A -- Long-term --> B
+    A -- Long-term --> C
+    B -- Medium-term --> C
+    C -- Short-term --> F
+    B -.- D -- Medium-term --> E
+    B -.- F
+    C -.- E
+    E -.- F
+    F -.- G
+    
+```
+
+### Long-term scheduling
+
+### Medium-term scheduling
+
+### Short-term scheduling
+
+
+
