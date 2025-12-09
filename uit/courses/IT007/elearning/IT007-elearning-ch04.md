@@ -101,15 +101,15 @@ config:
   theme: default
 ---
 flowchart TB
-    A(("New"))
+    A(("0\. New"))
    subgraph s1["status"]
-       B("suspended/ready")
-    C("ready")
-    D("suspended/blocked")
-    E("blocked")
+       B("1\. suspended/ready")
+    C("2\. ready")
+    D("3\. suspended/blocked")
+    E("4\. blocked")
    end
-    F("running")
-    G(("terminated"))
+    F("5\. running")
+    G(("6\. terminated"))
     
     A -- Long-term --> B
     A -- Long-term --> C
@@ -126,7 +126,7 @@ flowchart TB
 ### Long-term scheduling
 
 - Định thời dài
-- Xác định chươing trình nào được nạp vào hệ thống để thực thi
+- Xác định chươing trình nào được nạp vào hệ thống để thực thi.
     - *Điều khiển mức độ đa chương của hệ thống.*
 - Cố gắng duy trì xen lẫn giữa tiến tình CPU-bound và I/O bound.
 
@@ -158,5 +158,15 @@ flowchart TB
 
 ## Các Tiêu Chuẩn Định Thời CPU
 
+### Hướng Người Dùng (User-Oriented)
 
+- Thời gian đáp ứng (*Response Time*):
+    - từ lúc tiến trình gửi yêu cầu thực thi đến khi được đáp ứng yêu cầu.
+    - time-sharing, interactive system: cực tiểu (min)
+- Thời gian hoàn thành (*Turnaround Time*):
+    - từ lúc một tiến trình được nạp vào hệ thống cho đến khi kết thúc.
+    - Mục tiêu: min
+- Thời gian đợi (*Waiting Time*):
+    - TỔNG thời gian một tiến trình đợi trong *ready queue*
+    - Lưu ý: tiến trình có thể được chuyển trạng thái *ready*/*running*/*suspended* nhiều lần.
 
