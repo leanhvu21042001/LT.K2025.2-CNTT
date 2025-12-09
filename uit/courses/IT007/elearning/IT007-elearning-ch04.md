@@ -173,6 +173,8 @@ flowchart TB
 
 ### Cách Xác Định Các Thông Số Định Thời
 
+![ch03-cpu-scheduling-parameters](assets/ch03-cpu-scheduling-parameters.png)
+
 ```mermaid
 ---
 config:
@@ -195,6 +197,28 @@ gantt
     P (E3)      : active, p3, after g2, 3s
     Finish (f)  : milestone, m2, after p3, 0s
 ```
+
+- **$r$ (Release/Arrival Time):**
+  - The moment the process enters the system (ready queue).
+- **$t_0$ (Start Time):**
+  - The moment the CPU actually begins executing the process for the first time.
+- **$f$ (Finish Time):**
+  - The moment the process completes its execution and exits the system.
+- **$P$ (Process):**
+  - The orange blocks represent the CPU bursts (execution time).
+- **$E_1, E_2, E_3$:**
+  - These are "Execution chunks".
+  - The gaps between them imply the process was **preempted** (paused) to let another process run, or it was waiting for I/O.
+  - $E = E_1 + E_2 + E_3 + \ldots + E_n$
+- **$R$ (Response Time):**
+  - The time duration from arrival ($r$) to the first execution ($t_0$).
+  - $R = t_0 - r$.
+- **$F$ (Flow Time / Turnaround Time):**
+  - The total time spent in the system, from arrival to completion.
+  - $F = f - r$.
+- *W* (**Waiting Time**):
+  - Total waiting time.
+  - $W = f - r - E = F - E$
 
 
 
