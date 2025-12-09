@@ -93,33 +93,35 @@ int main() {
 - Medium-term scheduling
 - Short-term scheduling
 
+![ch04-scheduling](assets/ch04-scheduling.png)
+
+Mermaid:
+
 ```mermaid
 ---
 config:
-  layout: fixed
+  layout: elk
   look: classic
-  theme: default
+  theme: neutral
+  themeVariables:
+    fontFamily: Iosevka
 ---
-flowchart TB
-    A(("0\. New"))
-   subgraph s1["status"]
-       B("1\. suspended/ready")
-    C("2\. ready")
-    D("3\. suspended/blocked")
-    E("4\. blocked")
-   end
-    F("5\. running")
-    G(("6\. terminated"))
-    
-    A -- Long-term --> B
-    A -- Long-term --> C
-    B -- Medium-term --> C
-    C -- Short-term --> F
-    B -.- D -- Medium-term --> E
-    B -.- F
+flowchart LR
+ subgraph s1["Scheduling"]
+        B("1 suspended/ready")
+        C("2 ready")
+        D("3 suspended/blocked")
+        E("4 blocked")
+        F("5 running")
+  end
+    A(("0 New")) -- "Long-term" --> B & C
+    B -- "Medium-term" --> C
+    C -- "Short-term" --> F
+    B -.- D & F
+    D -- "Medium-term" --> E
     C -.- E
     E -.- F
-    F -.- G
+    F -.- G(("6 terminated"))
     
 ```
 
@@ -232,3 +234,37 @@ gantt
   - Số tiến trình hoàn tất trong một đơn vị thời gian.
   - Mục tiêu: *max*
 
+## Các Giải Thuật Định Thời
+
+### Giải Thuật Định Thời
+
+Thường bao gồm 2 yếu tố:
+
+1. Hàm chọn lựa (*selection function*):
+   - Mô tả cách thức (căn cứ) để lựa chọn tiến trình nào trong *ready queue* được thực thi.
+   - Ví dụ: độ ưu tiên, yêu cầu về tài nguyên, đặc điểm thực thi, vv..
+2. Chế độ quyết định (*decision mode*):
+   - Quyết định thời điểm thực hiện hàm chọn lựa để định thời.
+
+### Các Chế Độ Quyết Định
+
+Thường có 2 chế độ:
+
+- Không trưng dụng (*non-preemptive*):
+  - Khi ở trạng thái *running* (5), tiến trình sẽ được thực thi cho đến khi kết thúc (6. terminated), hoặc bị ngắt (*blocked*) (4) do yêu cầu I/O.
+- Trưng dụng (*preemptive*):
+  - Tiến trình đang thực thi (*running*) có thể bị ngắt giữa chừng, và chuyển về trạng thái *ready* (2).
+  - Chi phí cao hơn chế động non-preemptive.
+  - Nhưng có thời gian đáp ứng ($r_0$) tốt hơn.
+    - Không có trường hợp một tiến trình độc chiếm CPU quá lâu.
+
+### Thời Điểm Thực Thi Hàm Chọn Lựa
+
+1. Có tiến trình chuyển trạng thái từ *running* sang *waiting*.
+2. Có tiến trình chuyển trạng thái từ *running* sang *ready*.
+3. Có tiến trình chuyển từ trạng thái *waiting*, *new* sang *ready*.
+4. Kết thúc thực thi của một tiến trình (*6. terminated*).
+
+Đánh giá:
+
+- 1 và 4: không cần lựa chọn loại định thời 
