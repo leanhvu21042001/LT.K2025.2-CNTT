@@ -287,3 +287,53 @@ Thường có 2 chế độ:
 - Multilevel Queue
 - Multilevel Feedback Queue
 
+### First-Come, First-Served (FCFS)
+
+- **Hàm Lựa Chọn**
+  - Tiến trình nào yêu cầu CPU trước sẽ được cấp phát trước.
+  - Tiến trình sẽ thực thi đến khi kết thúc hoặc bị *blocked* bởi I/O
+- **Chế Độ Quyết Định**
+  - Không trưng dụng.
+- Hiện thực:
+  - Sử dụng hàng đợi FIFO (First In, First Out queues)
+  - Tiến trình mới xuất hiện được thêm vào cuối hàng đợi.
+  - Tiến trình được lựa chọn để xử lý được lấy từ đầu của hàng đợi.
+
+```mermaid
+---
+config:
+  theme: default
+  themeVariables:
+    fontFamily: "Iosevka"
+---
+gantt
+    title FCFS
+    dateFormat S
+    axisFormat %S
+
+    section Timeline
+    Arrival (r) : milestone, m1, 1, 0s
+    P1        : done, w1, after m1, 2s
+    P2        : active, p1, after w1, 2s
+    P3         : crit, g1, after p1, 2s
+    P4      : active, p2, after g1, 2s
+    P5       : crit, g2, after p2, 2s
+    P6      : active, p3, after g2, 3s
+    Finish (f)  : milestone, m2, after p3, 0s
+```
+
+
+
+### Shortest Job First (SJF)
+
+### Shortest Remaining Time First (SRTF)
+
+### Round-Robin (RR)
+
+### Priority Scheduling.
+
+### Highest Response Ratio Next (HRRN)
+
+### Multilevel Queue
+
+### Multilevel Feedback Queue
