@@ -275,3 +275,15 @@ Thường có 2 chế độ:
   - Thường áp dụng chế độ trưng dụng.
 
 *Thực hiện cơ chế nào khó hơn? Tại sao?*
+
+### Các Giải Thuật Định Thời
+
+- First-Come, First-Served (FCFS)
+- Shortest Job First (SJF)
+- Shortest Remaining Time First (SRTF)
+- Round-Robin (RR)
+- Priority Scheduling.
+- Highest Response Ratio Next (HRRN)
+- Multilevel Queue
+- Multilevel Feedback Queue
+
