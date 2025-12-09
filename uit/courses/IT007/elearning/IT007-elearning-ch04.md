@@ -55,3 +55,33 @@ int main() {
 }
 ```
 
+### Tiến Trình Hướng I/O (I/O-bound)
+
+- Thời gian thực thi nhiều trên I/O (đọc/ghi, ngoại vi, vv...)
+- Thời gian hoàn thành phụ thuộc vào chu kỳ đợi cho thao tác I/O
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char filename[] = "example.txt";
+    int total = 0, ch;
+    fp = fopen(filename, "r");
+    
+    if (fp == NULL) {
+        printf("Failed to open file %s\n", filename);
+        return 1;
+    }
+    
+    while ((ch = fgetc(fp)) != EOF) {
+        total++;
+    }
+    
+    fclose(fp);
+    
+    printf("Total number of characters in file %s is %d\n", filename, total);
+    
+    return 0;
+}
+```
