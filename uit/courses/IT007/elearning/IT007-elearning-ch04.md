@@ -220,5 +220,15 @@ gantt
   - Total waiting time.
   - $W = f - r - E = F - E$
 
+### Hướng Hệ Thống (System-Oriented)
 
+- Hiệu năng sử dụng (*processor utilization*):
+  - Định thời sao cho CPU càng bận càng tốt.
+  - Mục tiêu: *max*.
+  - $min_{idle}$
+- Tính công bằng (*fairness*):
+  - Tất cả các tiến trình phải được *đối xử như nhau*.
+- Thông lượng (*throughput*):
+  - Số tiến trình hoàn tất trong một đơn vị thời gian.
+  - Mục tiêu: *max*
 
