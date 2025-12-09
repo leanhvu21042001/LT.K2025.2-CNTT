@@ -312,7 +312,7 @@ gantt
     axisFormat %S
 
     section Timeline
-    P1 ready : milestone, m1, 0, 0s
+    P1 ready : milestone, m1, 0, 1s
     P1        : active, w1, after m1, 2s
     P2 ready : milestone, m2, after m1, 2s
     P2        : active, p1, after w1, 3s
@@ -324,6 +324,13 @@ gantt
     P5       : active, g2, after p2, 2s
     Finish (f)  : milestone, f1, after p3, 0s
 ```
+
+Công thức:
+
+- Gantt: $P_1 r + P_1 E + P_2 E + P_3 E + P_4 E \ldots$
+- ART: $t_0 - r$
+- ATaT: $F = f - r$
+- AWT: $F - E = f - r - E = f - (r + E)$
 
 ### Shortest Job First (SJF)
 
