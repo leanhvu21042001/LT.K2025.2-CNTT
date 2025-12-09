@@ -312,14 +312,16 @@ gantt
     axisFormat %S
 
     section Timeline
-    P1 Added : milestone, m1, 1, 0s
-    P1        : done, w1, after m1, 2s
-    P2        : active, p1, after w1, 2s
-    P3         : crit, g1, after p1, 2s
+    P1 arrived : milestone, m1, 0, 0s
+    P1        : active, w1, after m1, 2s
+    P2 arrived : milestone, m2, after m1, 2s
+    P2        : active, p1, after w1, 3s
+    P3 arrived : milestone, m3, after m2, 2s
+    P3         : active, g1, after p1, 2s
     P4      : active, p2, after g1, 2s
-    P5       : crit, g2, after p2, 2s
+    P5       : active, g2, after p2, 2s
     P6      : active, p3, after g2, 3s
-    Finish (f)  : milestone, m2, after p3, 0s
+    Finish (f)  : milestone, f1, after p3, 0s
 ```
 
 
