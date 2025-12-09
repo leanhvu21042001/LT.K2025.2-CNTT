@@ -162,11 +162,39 @@ flowchart TB
 
 - Thời gian đáp ứng (*Response Time*):
     - từ lúc tiến trình gửi yêu cầu thực thi đến khi được đáp ứng yêu cầu.
-    - time-sharing, interactive system: cực tiểu (min)
+    - time-sharing, interactive system: cực tiểu (*min*)
 - Thời gian hoàn thành (*Turnaround Time*):
     - từ lúc một tiến trình được nạp vào hệ thống cho đến khi kết thúc.
-    - Mục tiêu: min
+    - Mục tiêu: *min*.
 - Thời gian đợi (*Waiting Time*):
     - TỔNG thời gian một tiến trình đợi trong *ready queue*
     - Lưu ý: tiến trình có thể được chuyển trạng thái *ready*/*running*/*suspended* nhiều lần.
+    - Mục tiêu: *min*.
+
+### Cách Xác Định Các Thông Số Định Thời
+
+```mermaid
+---
+config:
+  theme: default
+  themeVariables:
+    fontFamily: "Iosevka"
+---
+gantt
+    title CPU Scheduling (Process P)
+    dateFormat S
+    axisFormat %S
+
+    section Timeline
+    Arrival (r) : milestone, m1, 1, 0s
+    Wait        : done, w1, after m1, 2s
+    P (E1)      : active, p1, after w1, 2s
+    Gap         : crit, g1, after p1, 2s
+    P (E2)      : active, p2, after g1, 2s
+    Gap 2       : crit, g2, after p2, 2s
+    P (E3)      : active, p3, after g2, 3s
+    Finish (f)  : milestone, m2, after p3, 0s
+```
+
+
 
