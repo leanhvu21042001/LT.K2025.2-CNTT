@@ -267,4 +267,11 @@ Thường có 2 chế độ:
 
 Đánh giá:
 
-- 1 và 4: không cần lựa chọn loại định thời 
+- 1 và 4: không cần lựa chọn loại định thời.
+  - Không phụ thuộc vào loại giải thuật định thời.
+  - Thường áp dụng chế độ không trưng dụng (non-preemptive).
+- 2 và 3 cần:
+  - Phục thuộc vào loại giải thuật định thời.
+  - Thường áp dụng chế độ trưng dụng.
+
+*Thực hiện cơ chế nào khó hơn? Tại sao?*
