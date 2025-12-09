@@ -147,4 +147,16 @@ flowchart TB
     - Ngắt ngoại vi: *I/O interrupt*.
     - Lời gọi hệ thống: *sys call*.
     - Tín hiệu đồng bộ hóa (Chương 5).
+- Bộ định thời (scheduler) chuyển CPU cho tiến trình được lựa chọn thực thi.
+- Quá trình chuyển đổi:
+    - Chuyển ngữ cảnh (*context switch*): sử dụng thông tin ngữ cảnh trong FCB.
+    - Chuyển chế độ người dùng.
+    - Nhảy đến vị trí thích hơp trong chương trình úng dụng để khởi động lại chương trình.
+        - Sử dụng thông tin địa chỉ tại *program counter* trong FCB.
+- Overhead (tổn phí):
+    - *Dispatch latency*: thời gian mà bộ định thời dừng một tiến trình và khởi động một tiến trình khác.
+
+## Các Tiêu Chuẩn Định Thời CPU
+
+
 
