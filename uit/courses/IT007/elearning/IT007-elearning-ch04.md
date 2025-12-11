@@ -222,6 +222,30 @@ gantt
   - Total waiting time.
   - $W = f - r - E = F - E$
 
+Gantt:
+
+```asciiarmor
+Trục thời gian (Time Axis) --->
+
+      (r) Arrival        (t0) First Start                                    (f) Finish
+       |                  |                                                   |
+       v                  v                                                   v
+-------|..................|//////////|..................|//////////|//////////|---->
+       <--- Wait 1 ------> <--Exec1--> <-- Wait 2 -----> <--Exec2--> <--Exec3-->
+
+       |__________________|
+          Response Time
+             (R)
+
+       |______________________________________________________________________|
+                            Turnaround / Flow Time (F)
+
+Wait Time (W) = (Wait 1) + (Wait 2)
+              = Total Flow (F) - Total Exec (E)
+```
+
+
+
 ### Hướng Hệ Thống (System-Oriented)
 
 - Hiệu năng sử dụng (*processor utilization*):
@@ -333,6 +357,21 @@ Công thức:
 - AWT: $F - E = f - r - E = f - (r + E)$
 
 ### Shortest Job First (SJF)
+
+- Hàm chọn lựa:
+  - Tiến trình có yêu cầu thực thi (*burst time*) ngắn nhất.
+  - Sử dụng chiều dài (lượng) thời gian thực thi của tiến trình làm căn cứ để chọn lựa.
+- Chế độ quyết định:
+  - Trưng dụng (preemptive)
+  - Không trưng dụng (non-preemptive)
+
+#### Non-Preemptive
+
+- Hàm chọn lựa được thực thi khi CPU trống.
+- Khi tiến trình được cấp CPU thì sẽ được thực thi cho đến khi kết thúc.
+- Khi một tiến trình kết thúc, chọn một tiến trình đã sẵn sàng khác có thời gian thực thi ngắn nhất.
+
+
 
 ### Shortest Remaining Time First (SRTF)
 
