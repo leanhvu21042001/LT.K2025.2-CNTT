@@ -118,81 +118,176 @@ _"Collaboration, Openness, and Learning Mindset"_. (Hợp Tác, Cởi Mở và C
 
 == Hạ Tầng Phần Cứng (Hardware)
 
-=== Thông Tin Cơ Bản
+=== Tổng Quan
 
-- Server.
-- Storage.
-- Network Devices.
-- End Device.
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Server], [- Storage],
+    [- Network Devices], [- Rack],
+    [- Power Supply (UPS)], [- End Devices],
+    [- Air Conditioner], [- Security Room],
+    [- CCTV], [- FingerPrint],
+    [- Và các thành phần khác...],
+  )
+]
 
 #pagebreak()
 
 === Hệ Thống Máy Chủ (Server)
 
-- Máy chủ ảo hóa (Hyper-V).
-- Máy chủ lưu trữ (NAS).
+- Dell PowerEdge R750 (2U Server).
 
-=== Thiết Bị Mạng (Network Devices)
+=== Hệ Thống Lưu Trữ (Storage)
 
-- Firewall (Tường lửa).
-- Access Point (Wifi).
-- Switch (Bộ chuyển mạch).
-- Router (Bộ định tuyến).
+- Synology RackStation RS3621xs+ (2U Storage).
 
-#pagebreak()
+=== Hệ Thống Mạng (Network Devices)
+
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Firewall (Sonicwall TZ670)], [- Access Point (Meraki MR38)],
+    [- L2 Switch (Cisco C1200-48)], [- L3 Switch (Cisco Catalyst 9300)],
+  )
+]
+
+// #pagebreak()
+
+=== Rack
+
+- Dell 48U Rack.
+
+=== Power Supply (UPS)
+
+- APC SRT3000RMXLI.
 
 === Thiết Bị Đầu Cuối (End Devices)
 
-- Laptop/PC.
-- Printer (Máy in).
-- Mobile (Thiết bị di động).
-- Camera giám sát.
-- VoIP Phone.
-- FingerPrint (Máy chấm công).
+#align(center)[
+  #grid(
+    columns: (50%, 50%),
+    inset: 0.5em,
+    align: (left, left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Laptop/PC], [- Printer (Máy in)],
+    [- Mobile (Thiết bị di động)], [- Camera giám sát],
+    [- VoIP Phone], [- FingerPrint (Máy chấm công)],
+  )
+]
 
 == Hạ Tầng Phần Mềm (Software)
 
-=== Thông Tin Cơ Bản
+=== Tổng Quan
 
-- Hệ Điều Hành.
-- Phần mềm Quản Lý.
-- Phần mềm ứng dụng và dịch vụ.
+#align(center)[
+  #grid(
+    columns: 100%,
+    inset: 0.5em,
+    align: (left),
+    stroke: (
+      bottom: 0.5pt + gradient.linear(red, blue, green),
+      top: none,
+      left: none,
+      right: none,
+    ),
+    [- Phần Mềm Nền Tảng], [- Phần Mềm Quản Lý], [- Phần Mềm Ứng Dụng Và Dịch Vụ],
+  )
+]
 
 #pagebreak()
 
 === Phần Mềm Nền Tảng
 
-- Hệ Điều Hành Windows.
-- Hệ Điều Hành Linux.
-- Nền Tảng Container Docker.
+==== Hệ Điều Hành Windows.
+
+- Active Directory.
+- Exchange Server.
+
+==== Hệ Điều Hành Linux.
+
+- Web Server: Apache, Nginx.
+- Database Server: MySQL, PostgreSQL.
+
+==== Nền Tảng Container Docker.
+
+- Docker Engine.
+- Docker Compose.
 
 #pagebreak()
 
 === Phần Mềm Quản Lý
 
-- Quản lý dự án: Jira.
-- ServiceDesk: GLPI.
-- Quản lý tài sản: Snipe-IT.
-- Công cụ khác: CCM, Patch Manage Engine, Admin by Request.
+==== Quản Lý Dự Án.
+
+- Jira.
+
+==== ServiceDesk
+
+- GLPI.
+
+==== Quản Lý Tài Sản
+
+- Snipe-IT.
+
+==== Công Cụ Khác
+
+- CCM, Patch Manage Engine, Admin by Request.
 
 #pagebreak()
 
 === Phần Mềm Ứng Dụng Và Dịch Vụ
 
-- Giao tiếp: Voice Cloud.
-- Văn phòng: Microsoft Office 365.
-- Kế toán: MISA.
-- Quản trị doanh nghiệp: SAP.
+==== Giao Tiếp
+
+- Voice Cloud.
+
+==== Văn Phòng
+
+- Microsoft Office 365.
+
+==== Kế Toán
+
+- MISA.
+
+==== Quản Trị Doanh Nghiệp
+
+- SAP.
 
 == Tài Nguyên Mạng
 
 === Tổng Quan
 
-- Phân quyền tài nguyên mạng.
-- Hệ thống các lớp IP.
-- Hệ thống mạng nội bộ (LAN).
-- Dịch vụ Internet (ISP).
-- Hệ thống tên miền (Domain).
+==== Phân Quyền Tài Nguyên Mạng
+
+==== Hệ Thống Các Lớp IP
+
+==== Hệ Thống Mạng Nội Bộ (LAN)
+
+==== Dịch Vụ Internet (ISP)
+
+==== Hệ Thống Tên Miền (Domain)
 
 = Quy Trình Hoạt Động
 
@@ -319,15 +414,20 @@ Tương tự quy trình phát triển nhưng tập trung vào quản lý:
 
 == Đánh Giá Chung
 
-*Hệ thống CNTT đóng vai trò là "xương sống" của doanh nghiệp, giúp Orient Software vận hành trơn tru và bảo mật.*
+#tblock(title: "Nhận Xét")[
+  Hệ Thống CNTT trong đó có Hạ Tầng đóng vai trò là "xương sống" của vận hành doanh nghiệp, giúp mọi doanh nghiệp nói chung và Orient Software nói riêng hoạt động hiệu quả và an toàn.
+]
 
 == Kết Quả Nghiên Cứu
 
-- Đã phân tích chi tiết hạ tầng kỹ thuật (HW/SW) và các quy trình vận hành cốt lõi.
+- Phân tích chi tiết hạ tầng kỹ thuật (HW/SW).
+- Phân tích các quy trình vận hành cốt lõi.
 
 == Định Hướng
 
-- Hướng tới tự động hóa toàn diện, tối ưu hóa chi phí và tăng cường khả năng phục hồi hệ thống.
+- Tự động hóa toàn diện
+- Tối ưu hóa chi phí
+- Tăng cường khả năng phục hồi hệ thống.
 
 == Bài Học Kinh Nghiệm
 

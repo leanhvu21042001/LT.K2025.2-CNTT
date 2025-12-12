@@ -1,11 +1,11 @@
 {
-  "theme": "moonstone",
+  "theme": "system",
   "accentColor": "",
-  "cssTheme": "Blue Topaz",
+  "cssTheme": "Things",
   "monospaceFontFamily": "Iosevka",
   "enabledCssSnippets": [
     "callout-checklist"
   ],
-  "interfaceFontFamily": "Lora",
-  "textFontFamily": "Lora"
+  "interfaceFontFamily": "Google Sans",
+  "textFontFamily": "Google Sans"
 }
