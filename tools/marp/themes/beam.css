@@ -37,7 +37,7 @@ header {
   width: 100%;
   right: 0;
   left: -51%;
-  color: #E5E9C5;
+  color: #cccccc;
   font-family: var(--cover-font);
 }
 
@@ -50,7 +50,7 @@ footer {
   width: 100%;
   right: 0;
   left: 50.8%;
-  color: #E5E9C5;
+  color: #cccccc;
   font-family: var(--cover-font);
 }
 
@@ -99,7 +99,7 @@ section::after {
   width: 100%;
   right: 0;
   left: -0.5em;
-  color: white;
+  color: #cccccc;
 }
 
 /* inline math was too large wrt text */
