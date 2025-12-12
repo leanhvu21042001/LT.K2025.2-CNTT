@@ -6,11 +6,11 @@
 @import "default";
 
 :root {
-  font-family: "Lora", "Segoe UI", Helvetica, sans-serif;
-  --body-font: "Lora";
+  font-family: "Google Sans", "Segoe UI", Helvetica, sans-serif;
+  --body-font: "Google Sans";
   --main: #138CE8;
   --secondary: #cceeff;
-  --cover-font: "Be Vietnam Pro";
+  --cover-font: "Google Sans";
 }
 
 section {
