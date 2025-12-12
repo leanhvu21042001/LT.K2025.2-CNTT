@@ -19,7 +19,7 @@
     primary: rgb("#D5724A"),
     primary-dark: rgb("#004078"),
     secondary: rgb("#ffffff"),
-    tertiary: rgb("#005bac"),
+    tertiary: rgb("#D5724A"),
     // Body text color
     neutral-lightest: rgb("#ffffff"),
     neutral-darkest: rgb("#20293F"),
@@ -96,10 +96,12 @@
 #include "contents.typ"
 
 // MARK: - Kết Thúc
+
 = Q&A
 
 #focus-slide[
-  XIN CẢM ƠN!
-
-  Q&A
+  ĐI TỪ THẤP TỚI CAO.
 ]
+
+#ending-slide(title: [Thank You!])[  Questions?]
+
