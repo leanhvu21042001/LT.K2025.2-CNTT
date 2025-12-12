@@ -16,12 +16,13 @@
   ),
   lang: "vi",
   config-colors(
-    primary: rgb("#5E8B65"),
+    primary: rgb("#D5724A"),
     primary-dark: rgb("#004078"),
     secondary: rgb("#ffffff"),
     tertiary: rgb("#005bac"),
+    // Body text color
     neutral-lightest: rgb("#ffffff"),
-    neutral-darkest: rgb("#003255"),
+    neutral-darkest: rgb("#20293F"),
   ),
 )
 
@@ -35,12 +36,12 @@
 )
 
 // Set font
-#set text(font: "Montserrat", weight: "light")
+#set text(font: "Google Sans", weight: "light")
 
 // Set heading level 2
 #show heading.where(level: 2): it => [
   #set align(left)
-  #set text(font: "Montserrat", size: 24pt, weight: "regular")
+  #set text(font: "Google Sans", size: 24pt, weight: "regular")
   #block(
     width: 100%,
     stroke: (bottom: 0.5pt + rgb("#808080")),
@@ -54,7 +55,7 @@
 // Set heading level 3
 #show heading.where(level: 3): it => [
   #set align(left)
-  #set text(font: "Montserrat", size: 20pt, weight: "regular")
+  #set text(font: "Google Sans", size: 20pt, weight: "regular")
   #block(
     width: 100%,
     stroke: (bottom: 0.5pt + rgb("#808080")),
@@ -68,7 +69,7 @@
 // Set heading level 4
 #show heading.where(level: 4): it => [
   #set align(left)
-  #set text(font: "Montserrat", size: 16pt, weight: "regular")
+  #set text(font: "Google Sans", size: 16pt, weight: "regular")
   #block(
     width: 100%,
     stroke: (bottom: 0.5pt + rgb("#808080")),
