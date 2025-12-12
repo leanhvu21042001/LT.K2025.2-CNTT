@@ -1,4 +1,4 @@
-zz# HOW TO
+# HOW TO
 
 ## Fonts
 
