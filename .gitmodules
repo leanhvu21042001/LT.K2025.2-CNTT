@@ -1,3 +1,6 @@
 [submodule "tools/typst-report-template"]
 	path = tools/typst-report-template
 	url = https://sam-uit@github.com/sam-uit/typst-report-template.git
+[submodule "BTTH2-Report"]
+	path = uit/courses/IE103/assignments/BTTH2-Report
+	url = https://github.com/lt20252cnttalpha/typst-report-template.git
