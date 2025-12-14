@@ -26,6 +26,39 @@ Nội dung:
 
 ## Khái niệm cơ bản
 
+### Quiz 1
+
+Tiến trình KHÔNG bao gồm thành phần nào sau đây?
+
+- [ ] Địa chỉ trả về sau hoàn tất hàm
+- [x] Đoạn mã khởi động máy tính
+- [ ] Con trỏ chỉ câu lệnh thực thi tiếp theo
+- [ ] Các thanh ghi
+
+Biết đoạn chương trình trên là source code của chương trình tên là `test`. Nếu thực thi lệnh
+
+```bash
+./test He Dieu Hanh
+```
+
+```
+Hello, He
+```
+
+NHỮNG phát biểu nào sau đây là đúng khi nói về tiến trình?
+
+- [x] Tiến trình là thực thể chủ động
+- [ ] Tiến trình không gây ra thay đổi gì trên hệ thống máy tính
+- [ ] Sau khi cài đặt xong, chương trình sẽ trở thành tiến trình
+- [x] Tiến trình được lưu trên bộ nhớ chinh
+
+Trong các vùng nhớ sau, vùng nhớ nào có khả năng thay đổi kích thước khi tiến trình thực thi?
+
+- [ ] Data section
+- [ ] Text section
+- [x] Heap section
+- [x] Stack section
+
 ## Trạng thái của tiến trình
 
 ## Khối điều khiển tiến trình
