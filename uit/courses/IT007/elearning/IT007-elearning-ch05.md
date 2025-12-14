@@ -75,5 +75,84 @@ Knowledge Check 1
 
 Knowledge Check 2
 
+Sử dụng công thức đã cho `index = (index + 1)%BS`, với `BS = 8`, index ban đầu bằng 0, hãy hoàn thành chuỗi index bên dưới:
 
+```
+0 --> 1 --> 2 --> 3 --> 4 --> 5 --> 6 --> 7 --> 0 --> 1 --> 2 --> ...
+```
 
+- Công thức `index = (index + 1) % 8` là công thức tính toán cho **hàng đợi vòng (circular buffer)**. Khi giá trị đạt đến 7, phép chia lấy dư cho 8 sẽ đưa nó quay trở lại 0.
+- "Nó cứ cộng lên dần dần, hễ đụng trần (bằng BS) thì nó nhảy về 0".
+
+`buffer_index_calculator.c`:
+
+```c
+#include <stdio.h>
+
+/* Dinh nghia kich thuoc Buffer Size */
+#define BS 8
+
+int main() {
+    int n;
+    int index = 0;
+    int i;
+    
+    /* Yeu cau nguoi dung nhap n */
+    printf("Nhap so luong phan tu n (mac dinh n = %d): ", BS);
+    
+    /* Kiem tra dau vao: Neu khong phai so hoac n <= 0 thi dung mac dinh */
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        n = BS;
+        printf("\n=> Dau vao khong hop le hoac bi bo qua.");
+        printf(" Su dung gia tri mac dinh n = %d\n", n);
+    }
+
+    printf("\nChuoi gia tri index:\n");
+    
+    for (i = 0; i < n; i++) {
+        /* In ra gia tri hien tai */
+        printf("%d", index);
+        
+        /* In dau mui ten neu chua phai phan tu cuoi cung */
+        if (i < n - 1) {
+            printf(" --> ");
+        }
+        
+        /* Tinh toan index tiep theo theo cong thuc vong */
+        index = (index + 1) % BS;
+    }
+    
+    printf("\n");
+    
+    return 0;
+}
+```
+
+#### Các giải pháp khác
+
+- Giải pháp "Cờ hiệu" (Branching / If-Else)
+
+```c
+index++;
+if (index == BS) {
+    index = 0;
+}
+```
+
+- Bitwise
+    - Đây là cách **nhanh nhất**, ít overhead nhất, nhưng có **một điều kiện nghiêm ngặt**: **`BS` phải là lũy thừa của 2** (2, 4, 8, 16, 32, 64...).
+    - Phép `&` (AND) là lệnh cơ bản của CPU, chỉ tốn **1 chu kỳ máy (clock cycle)**. Trong khi đó phép chia lấy dư `%` (thực chất là phép chia `DIV`) có thể tốn từ **15-40 chu kỳ máy** tùy kiến trúc CPU.
+
+```c
+/* Thay vì: index = (index + 1) % 8; */
+/* Hãy dùng: */
+index = (index + 1) & 7;
+```
+
+#### So sánh tổng quan (Tại sao người ta vẫn dùng Modulo?)
+
+|**Giải thuật**|**Tốc độ CPU**|**Ưu điểm**|**Nhược điểm**|
+|---|---|---|---|
+|**Modulo (%)**|Chậm (do dùng phép chia)|Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn).|Tốn tài nguyên CPU nhất.|
+|**If-Else**|Trung bình|Dễ đọc, dễ debug.|Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.|
+|**Bitwise (&)**|**Siêu nhanh**|Tối ưu tuyệt đối cho phần cứng.|**Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$).|
