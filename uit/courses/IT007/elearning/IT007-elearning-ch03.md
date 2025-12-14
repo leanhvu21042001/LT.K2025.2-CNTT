@@ -28,52 +28,59 @@ Nội dung:
 
 ### Quiz 1
 
-Tiến trình KHÔNG bao gồm thành phần nào sau đây?
+> [!NOTE]
+> Tiến trình KHÔNG bao gồm thành phần nào sau đây?
+> 
+> - [ ] Địa chỉ trả về sau hoàn tất hàm
+> - [x] Đoạn mã khởi động máy tính
+> - [ ] Con trỏ chỉ câu lệnh thực thi tiếp theo
+> - [ ] Các thanh ghi
 
-- [ ] Địa chỉ trả về sau hoàn tất hàm
-- [x] Đoạn mã khởi động máy tính
-- [ ] Con trỏ chỉ câu lệnh thực thi tiếp theo
-- [ ] Các thanh ghi
+> [!NOTE]
+> Biết đoạn chương trình trên là source code của chương trình tên là `test`. Nếu thực thi lệnh
+> 
+> ```bash
+> ./test He Dieu Hanh
+> ```
+> 
+> ```
+> Hello, He
+> ```
+> 
 
-Biết đoạn chương trình trên là source code của chương trình tên là `test`. Nếu thực thi lệnh
+> [!NOTE]
+> NHỮNG phát biểu nào sau đây là đúng khi nói về tiến trình?
+> 
+> - [x] Tiến trình là thực thể chủ động
+> - [ ] Tiến trình không gây ra thay đổi gì trên hệ thống máy tính
+> - [ ] Sau khi cài đặt xong, chương trình sẽ trở thành tiến trình
+> - [x] Tiến trình được lưu trên bộ nhớ chinh
 
-```bash
-./test He Dieu Hanh
-```
-
-```
-Hello, He
-```
-
-NHỮNG phát biểu nào sau đây là đúng khi nói về tiến trình?
-
-- [x] Tiến trình là thực thể chủ động
-- [ ] Tiến trình không gây ra thay đổi gì trên hệ thống máy tính
-- [ ] Sau khi cài đặt xong, chương trình sẽ trở thành tiến trình
-- [x] Tiến trình được lưu trên bộ nhớ chinh
-
-Trong các vùng nhớ sau, vùng nhớ nào có khả năng thay đổi kích thước khi tiến trình thực thi?
-
-- [ ] Data section
-- [ ] Text section
-- [x] Heap section
-- [x] Stack section
+> [!NOTE]
+> Trong các vùng nhớ sau, vùng nhớ nào có khả năng thay đổi kích thước khi tiến trình thực thi?
+> 
+> - [ ] Data section
+> - [ ] Text section
+> - [x] Heap section
+> - [x] Stack section
 
 ### Quiz 2
 
-Phát biểu sau Đúng (True) hay Sai (False)?
+> [!NOTE]
+> Phát biểu sau Đúng (True) hay Sai (False)?
+> 
+> Một chương trình chỉ có thể tạo ra một tiến trình.
+> 
+> - [ ] True
+> - [x] False
 
-Một chương trình chỉ có thể tạo ra một tiến trình.
-
-- [ ] True
-- [x] False
-
-Để tạo một tiến trình, KHÔNG cần phải trải qua bước nào sau đây?
-
-- [ ] Cấp phát không gian nhớ để nạp tiến trình
-- [x] Khởi tạo khối thanh ghi cho tiến trình
-- [ ] Khởi tạo khối dữ liệu Process Control Block (PCB)
-- [ ] Cấp phát một định danh duy nhất cho tiến trình
+> [!NOTE]
+> Để tạo một tiến trình, KHÔNG cần phải trải qua bước nào sau đây?
+> 
+> - [ ] Cấp phát không gian nhớ để nạp tiến trình
+> - [x] Khởi tạo khối thanh ghi cho tiến trình
+> - [ ] Khởi tạo khối dữ liệu Process Control Block (PCB)
+> - [ ] Cấp phát một định danh duy nhất cho tiến trình
 
 ## Trạng thái của tiến trình
 
