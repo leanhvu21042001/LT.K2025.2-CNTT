@@ -59,6 +59,22 @@ Trong các vùng nhớ sau, vùng nhớ nào có khả năng thay đổi kích t
 - [x] Heap section
 - [x] Stack section
 
+### Quiz 2
+
+Phát biểu sau Đúng (True) hay Sai (False)?
+
+Một chương trình chỉ có thể tạo ra một tiến trình.
+
+- [ ] True
+- [x] False
+
+Để tạo một tiến trình, KHÔNG cần phải trải qua bước nào sau đây?
+
+- [ ] Cấp phát không gian nhớ để nạp tiến trình
+- [x] Khởi tạo khối thanh ghi cho tiến trình
+- [ ] Khởi tạo khối dữ liệu Process Control Block (PCB)
+- [ ] Cấp phát một định danh duy nhất cho tiến trình
+
 ## Trạng thái của tiến trình
 
 ## Khối điều khiển tiến trình
