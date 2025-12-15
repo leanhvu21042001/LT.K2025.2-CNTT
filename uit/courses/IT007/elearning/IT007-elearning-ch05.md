@@ -855,3 +855,22 @@ typedef struct{
 > - [x] Tác vụ đặc biệt dùng để block tiến trình gọi nó
 > - [ ] Tác vụ đặc biệt dùng để block tiến trình từ một tiến trình khác
 > - [ ] Tác vụ đặc biệt dùng để tiến trình tự hồi phục
+
+## Ứng dụng của Semaphores
+
+Trong video này, ThS. Trần Hoàng Lộc sẽ trình bày cụ thể các trường hợp ứng dụng của semaphore. Việc sử dụng semaphore đòi hỏi lập trình viên cần phân tích rõ bài toán, đặt các hàm wait và signal đúng chỗ và gán đúng giá trị khởi tạo cho semaphore. Nếu sử dụng sai cách, semaphore có thể phản tác dụng và gây ra hiện tượng deadlock.
+
+#### Đảm bảo loại trừ tương hỗ
+
+> [!NOTE]
+> Khi khởi tạo giá trị semaphore bằng 1 thì NHỮNG phát biểu nào sau đây là đúng?
+> 
+> - [x] Chỉ có tối đa 01 tiến trình bị block khi yêu cầu được vào vùng tranh chấp
+> - [ ] Chỉ có tối đa 01 tiến trình được vào vùng tranh chấp cùng lúc
+> - [ ] Tiến trình cuối cùng gọi hàm wait() sẽ được vào vùng tranh chấp trước
+> - [x] Tiến trình gọi hàm wait() đầu tiên sẽ được vào vùng tranh chấp
+
+- Chính xác! Do giá trị khởi tạo của semaphore là 1, sau khi tiến trình gọi lệnh wait(), giá trị này sẽ giảm xuống 0. Các tiến trình tới sau gọi lệnh wait() khi giá trị semaphore không dương đều sẽ bị block => Chỉ có 1 tiến trình được vào vùng tranh chấp cùng lúc.
+- Chính xác! Do giá trị khởi tạo của semaphore là 1, tiến trình đầu tiên gọi lệnh wait() sẽ giảm giá trị này sẽ xuống 0. Các tiến trình tới sau gọi lệnh wait() khi giá trị semaphore không dương đều sẽ bị block. Khi tiến trình đầu tiên kia ra khỏi vùng tranh chấp và gọi hàm signal() thì lúc này những tiến trình bị block kia mới có thể được unblock và thực hiện vùng tranh chấp
+
+
