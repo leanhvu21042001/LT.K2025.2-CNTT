@@ -609,3 +609,29 @@ x = 100;
 memory_barrier();
 flag = true;
 ```
+
+### Slide: Memory Barrier
+
+### Quiz: Memory Barrier
+
+> [!NOTE]
+> Memory Barrier được chia thành các loại nào?
+> 
+> - [ ] Exclusive barrier và Inclusive barrier
+> - [ ] Static ordered memory model và Dynamic ordered memory model
+> - [x] Strongly ordered memory model và Weakly ordered memory model
+> - [ ] Atomic barrier và Non-atomic barrier
+
+> [!NOTE]
+> Mục đích chính của Memory Barrier là gì?
+> 
+> - [ ] Ngăn chặn truy cập không đồng bộ vào bộ nhớ.
+> - [ ] Loại bỏ các lỗi thời gian thực thi
+> - [ ] Tăng hiệu suất thực thi của chương trình
+> - [x] Đảm bảo thứ tự thực thi các câu lệnh
+
+> [!NOTE]
+> Nhận định sau đúng (True) hay sai (False): Sử dụng memory barrier có thể là giảm hiệu suất của chương trình?
+> 
+> - [x] True
+> - [ ] False
