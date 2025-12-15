@@ -424,4 +424,73 @@ $P_1$:
 
 Giải pháp phần mềm 1 đã đưa ra ý tưởng về cách đảm bảo mutual exclusion tuy vẫn chưa thực hiện tốt việc đảm bảo progress và bounded waiting. Khắc phục các nhược điểm của giải pháp trên, Peterson đã đề xuất một giải pháp đảm bảo được cả 03 yêu cầu về lời giải của bài toán vùng tranh chấp.
 
+- $P_i$, $P_j$
+- `load`, `store`
+- `turn`, `flag`
+    - `int turn`
+    - `boolean flag[2]`
 
+$P_i$:
+
+```c
+{
+    while (true) {
+        flag[i] = true;
+        turn = j;
+        while (flag[j] && turn == j);
+        
+        /* critical section */
+        
+        flag[j] = false;
+        
+        /*remainder section */
+    }
+}
+```
+
+$P_0$:
+
+```c
+{
+    while (true) {
+        flag[0] = true;
+        turn = 1;
+        while (flag[1] && turn == 1);
+        
+        /* critical section */
+        
+        flag[0] = false;
+        
+        /*remainder section */
+    }
+}
+```
+
+$P_1$:
+
+```c
+{
+    while (true) {
+        flag[1] = true;
+        turn = 0;
+        while (flag[0] && turn == 0);
+        
+        /* critical section */
+        
+        flag[1] = false;
+        
+        /*remainder section */
+    }
+}
+```
+
+Kiểm tra yêu cầu Mutual Exclusion với giải pháp Peterson.
+
+GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 cùng lúc tiến vào vùng tranh chấp.
+
+- P0 tiến vào vùng tranh chấp khi turn = `0` HOẶC `flag[1] = false`
+- P1 tiến vào vùng tranh chấp khi turn =  `1` HOẶC `flag[0] = false`
+
+P0 và P1 cùng tiến vào vùng tranh chấp, có nghĩa 2 tiến trình đã phải thực hiện `entry` section trước đó, do đó, ta có thể loại bỏ khả năng `flag[0] = false` và `flag[1] = false`, như vậy chỉ còn điều kiện turn = `0` = `1`  => `vô lý` 
+
+Như vậy, GIẢ ĐỊNH đặt ra là `sai` => Mutual Exclusion `thỏa mãn`.
