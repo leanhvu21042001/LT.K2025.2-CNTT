@@ -509,3 +509,10 @@ $P_1$:
 > 
 > Như vậy, GIẢ ĐỊNH đặt ra là `sai` => Progress `thỏa mãn`.
 
+**Kiểm tra Bounded Waiting **
+
+- Đảm bảo.
+
+### Slide: Giải pháp Peterson
+
+
