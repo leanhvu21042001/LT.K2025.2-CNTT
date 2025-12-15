@@ -920,4 +920,106 @@ Trong video này, ThS. Trần Hoàng Lộc sẽ trình bày cụ thể các trư
 > ```
 > 
 
+### Slide: Ứng dụng của semaphores
 
+### Quiz: Ứng dụng của semaphores
+
+Cho 2 tiến trình như sau:
+
+```c
+processA()
+{ A1; A2; }
+```
+
+```c
+processB()
+{ B1; B2; }
+```
+
+Sắp xếp các mã giả sau để đảm bảo được điều kiện A1, B1, thực hiện trước A2, B2, biết rằng:
+
+- s1 là semaphore đồng bộ cho điều kiện A1 thực hiện trước A2, B2
+- s2 là semaphore đồng bộ cho điều kiện B1 thực hiện trước A2, B2
+
+```c
+processA()
+{
+    A1;
+    signal(s1);
+    wait(s2);
+    A2;
+}
+```
+
+```c
+processB()
+{
+    B1;
+    signal(s2);
+    wait(s1);
+    B2;
+}
+```
+
+> [!NOTE]
+> Semaphore là một công cụ đồng bộ rất mạnh mẽ, ta có thể sử dụng semaphore để thực hiện CÁC mục đích nào sau đây?
+> 
+> - [x] Đảm bảo loại trừ tương hỗ
+> - [x] Kiểm soát thứ tự thực thi của các tiến trình
+> - [x] Kiểm soát số lần thực thi một thao tác bất kỳ của tiến trình
+> - [ ] Kiểm soát thời gian thực thi của các tiến trình
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Để cho phép 5 tiến trình cùng lúc thực thi thao tác `wait()` mà không bị `block`, cần khởi tạo giá trị của semaphore là `5`.
+
+### VIDEO: LƯU Ý KHI SỬ DỤNG SEMAPHORES
+
+#### Một số nhận xét về semaphore
+
+- Khi `s >= 0`: số lần mà các tiến trình/tiểu trình có thể thực thi `wait(S)` mà không bị blocked.
+- Khi `s <5`: số tiến trình/tiểu trình đang đợi trên S là `|S|`
+- Atomic và mutual exclusion: `wait(S)` và `signal(S)` là CS.
+    - Uniprocessor: disable interrupt.
+    - Multiprocessor: Dekker, Peterson (software); TestAndSet, Swap (hardware)
+    - CS rất nhỏ.
+
+#### Các vấn đề khi sử dụng semaphore
+
+- Giá trị của S phải có ý nghĩa và chính xác.
+
+```c
+// P1
+wait(S);
+wait(Q);
+...
+signal(S);
+signal(Q);
+
+// P2
+wait(Q);
+wait(S);
+...
+signal(Q);
+signal(S);
+```
+
+Giải pháp:
+
+```c
+// P1
+// Đảo vị trí của wait()
+wait(Q);
+wait(S);
+...
+signal(S);
+signal(Q);
+
+// P2
+wait(Q);
+wait(S);
+...
+signal(Q);
+signal(S);
+```
