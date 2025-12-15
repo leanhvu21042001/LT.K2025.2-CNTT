@@ -770,4 +770,55 @@ signal(S) {
     - 0
     - 1
 
+### Slide: Semaphores
+
+### Quiz: Semaphores
+
+> [!NOTE]
+> Semaphore kiểm soát việc thực thi của tiến trình bằng cách nào?
+> 
+> - [ ] Nếu tiến trình tạo ra/trả lại tài nguyên thì tăng semaphore lên một đơn vị
+> - [ ] Nếu semaphore không dương thì tiến trình phải chờ
+> - [x] Tất cả đều đúng
+> - [ ] Nếu tiến trình sử dụng tài nguyên thì giảm semaphore đi một đơn vị
+
+> [!NOTE]
+> Về mặt bản chất, semaphore là?
+> 
+> - [ ] Biến số thực
+> - [ ] Biến nhị phân
+> - [ ] Hằng số
+> - [x] Biến số nguyên
+
+### VIDEO: HIỆN THỰC SEMAPHORES
+
+Ý tưởng của semaphore tưởng chừng như đơn giản nhưng để hiện thực một cách hiệu quả, chúng ta vẫn cần đến sự hỗ trợ của hệ điều hành tương như với mutex. Video sau sẽ giúp người học hình dung rõ hơn về cách mà semaphore được hiện thực, từ đó hiểu rõ cách sử dụng của công cụ đồng bộ này.
+
+#### Không Busy Waiting
+
+- Hàng đợi
+- Mỗi phần tử trong hàng đợi có 2 phần:
+    - Giá trị của semaphore
+    - Con trỏ đến phần tử tiếp theo
+- Thao tác:
+    - `block`
+    - `wakeup`
+
+`waiting queue`:
+
+```c
+typedef struct{
+
+}
+```
+
+> [!NOTE]
+> Danh sách liên kết đơn trong cấu trúc của semaphore có NHỮNG vai trò nào sau đây?
+> 
+> - [x] Quản lý danh sách các tiến trình bị `block`
+> - [ ] Lựa chọn tiến trình bị block
+> - [ ] Quản lý danh sách các tiến trình đã tiến vào vùng tranh chấp
+> - [x] Kiểm soát thứ tự các tiến trình muốn sử dụng tài nguyên
+
+
 
