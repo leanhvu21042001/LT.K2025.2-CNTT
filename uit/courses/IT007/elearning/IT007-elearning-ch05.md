@@ -539,3 +539,24 @@ Trong giải thuật Peterson, nếu muốn vào vùng tranh chấp, tiến trì
 
 - `1`
 
+### Giải pháp Peterson và kiến trúc hiện đại
+
+Mặc dù giải pháp Peterson đã được chứng minh là hiệu quả ở trên, tuy nhiên trên các kiến trúc hiện đại thì việc này chưa chắc. Trên các hệ thống hiện đại, để cải thiện hiệu suất của hệ thống thì bộ vi xử lý và/hoặc trình biên dịch có thể sắp xếp lại các thao tác độc lập với nhau. Hãy cùng quan sát xem liệu việc này sẽ tác động như thế nào đến giải pháp Peterson trong phần này.
+
+Ví dụ:
+
+- `boolean flag = false;`
+- `int x = 0;`
+
+Điền vào chỗ trống?
+
+Giá trị kỳ vọng của x được in ra sau khi chương trình thực thi là `___`?
+
+- `100`
+
+Xét giải pháp Peterson được thực hiện trong kiến trúc hiện đại với các thao tác được sắp xếp lại như hình trên, ta thấy:
+
+- Khi P1 muốn vào CS thì turn = `0`, flag[0] = `false`, flag[1] = `true` . Kiểm tra điều kiện, ta thấy P1 `được phép` tiến vào CS.
+- Khi P0 muốn vào CS thì turn = `0`, flag[0] = `true`, flag[1] = `true`. Kiểm tra điều kiện, ta thấy P0 `được phép` tiến vào CS.
+
+=> Mutual Exclustion `không được` đảm bảo.
