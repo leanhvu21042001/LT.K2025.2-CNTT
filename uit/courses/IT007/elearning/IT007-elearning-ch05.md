@@ -258,3 +258,21 @@ Bài toán Cấp phát PID
 
 ![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=12)
 
+### Quiz: Race Condition là gì?
+
+> [!NOTE]
+> Chọn phát biểu đúng khi nói về race condition?
+> 
+> - [ ] Race condition là hiện tượng xảy ra khi dữ liệu chia sẻ không thay đổi dưới tác động của các tiến trình.
+> - [ ] Race condition là hiện tượng xảy ra khi các tiến trình không thể truy cập vào dữ liệu được chia sẻ cùng một lúc.
+> - [ ] Race condition là hiện tượng xảy ra khi các tiến trình chỉ truy cập vào dữ liệu được chia sẻ một cách tuần tự.
+> - [x] Race condition là hiện tượng xảy ra khi các tiến trình cùng truy cập đồng thời vào dữ liệu được chia sẻ, kết quả cuối cùng phụ thuộc vào thứ tự thực thi của các tiến trình.
+
+> [!NOTE]
+> Race condition có thể dẫn đến:
+> 
+> - [ ] Dữ liệu được cập nhật chính xác và nhất quán
+> - [x] Dữ liệu bị sai và không nhất quán
+> - [ ] Các tiến trình không thể hoạt động đồng thời
+> - [ ] Dữ liệu được chia sẻ không bị ảnh hưởng bởi race condition
+
