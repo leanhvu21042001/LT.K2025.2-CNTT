@@ -515,4 +515,27 @@ $P_1$:
 
 ### Slide: Giải pháp Peterson
 
+### Quiz: Giải pháp Peterson
+
+> [!NOTE]
+> Phát biểu nào sau đây là sai khi nói về giải thuật Peterson?
+> 
+> - [ ] Biến `turn` đóng vai trò kiểm tra lượt của tiến trình và cờ `flag[]` thể hiện sự sẵn sàng của tiến trình khi muốn tiến vào vùng tranh chấp
+> - [ ] Giải thuật Peterson có thể gây ra hiện tượng deadlock
+> - [ ] Giải thuật Peterson có thể gây ra hiện tượng starvation
+> - [x] Giải thuật Peterson có thể áp dụng cho `n` tiến trình
+
+> [!NOTE]
+> Giải thuật Peterson thỏa mãn CÁC yêu cầu nào dành cho lời giải bài toán đồng bộ?
+> 
+> - [x] Bounded Waiting
+> - [x] Progress
+> - [x] Mutual Exclusion
+> - [ ] Không yêu cầu nào cả
+
+Điền vào chỗ trống.
+
+Trong giải thuật Peterson, nếu muốn vào vùng tranh chấp, tiến trình P1 phải chờ tối đa là `____` lần P0 vào CS.
+
+- `1`
 
