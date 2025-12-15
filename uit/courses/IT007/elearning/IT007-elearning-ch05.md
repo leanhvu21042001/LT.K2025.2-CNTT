@@ -635,3 +635,7 @@ flag = true;
 > 
 > - [x] True
 > - [ ] False
+
+### Slide: Các giải pháp phần cứng
+
+
