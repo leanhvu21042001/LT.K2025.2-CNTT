@@ -392,11 +392,36 @@ $P_1$:
 }
 ```
 
-GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 `đồng thời` tiến vào vùng tranh chấp.
+> [!NOTE]
+> GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 `đồng thời` tiến vào vùng tranh chấp.
+> 
+> - P0 tiến vào vùng tranh chấp khi và chỉ khi turn = `0`
+> - P1 tiến vào vùng tranh chấp khi và chỉ khi turn = `1`
+> - => `turn =  1 = 0` => `vô lý`
+> 
+> Như vậy, GIẢ ĐỊNH đặt ra là `sai` $\to$ Mutual Exclusion `thỏa mãn`.
 
-- P0 tiến vào vùng tranh chấp khi và chỉ khi turn = `0`
-- P1 tiến vào vùng tranh chấp khi và chỉ khi turn = `1`
-- => `turn =  1 = 0` => `vô lý`
+### Slide: Giải pháp phần mềm số 01
 
-Như vậy, GIẢ ĐỊNH đặt ra là `sai` $\to$ Mutual Exclusion `thỏa mãn`.
+### Quiz: Giải pháp phần mềm số 01
+
+> [!NOTE]
+> Trong giải pháp phần mềm số 1, CÁC yêu cầu nào không được đáp ứng?
+> 
+> - [ ] Mutual Exclusion, Bounded waiting, và Progress
+> - [x] Progress và Bounded waiting
+> - [ ] Mutual Exclusion và Progress
+> - [ ] Mutual Exclusion và Bounded waiting
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Để hiện thực giải pháp phần mềm số 1, các thao tác load và store phải là những thao tác `____`.
+> 
+> - đơn nguyên
+
+### VIDEO 5.4.2: GIẢI PHÁP PETERSON
+
+Giải pháp phần mềm 1 đã đưa ra ý tưởng về cách đảm bảo mutual exclusion tuy vẫn chưa thực hiện tốt việc đảm bảo progress và bounded waiting. Khắc phục các nhược điểm của giải pháp trên, Peterson đã đề xuất một giải pháp đảm bảo được cả 03 yêu cầu về lời giải của bài toán vùng tranh chấp.
+
 
