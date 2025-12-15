@@ -655,5 +655,91 @@ Tiếp nối nội dung phần 1, trong phần này, các công cụ đồng b�
 
 Mutex locks (hay "khoá mutex") là công cụ do hệ điều hành cung cấp, được sử dụng đơn giản để bảo loại trừ tương hỗ khi tác tiến trình thực hiện vùng tranh chấp. Các đặc điểm và cách hiện thực khoá mutex sẽ được ThS. Trần Hoàng Lộc trình bày trong video sau.
 
+```c
+acccquire()
+
+release()
+```
+
+> [!NOTE]
+> Mutex lock đảm bảo loại trừ tương hỗ bằng cách nào?
+> 
+> - [x] Đảm bảo khoá mutex chỉ có thể được khoá bởi một tiến trình tại mọi thời điểm, các tiến trình yêu cầu sau sẽ bị block
+> - [ ] Các tiến trình phải vào trạng thái ngủ trước khi vào vùng tranh chấp, tiến trình nào thức dậy trước sẽ được tiến vào vùng tranh chấp trước
+> - [ ] Tiến trình bị block bởi mutex sẽ được đánh thức sau một quãng thời thời gian q, sau đó trưng dụng CPU của tiến trình đang thực thi vùng tranh chấp trước đó
+
+### Slide: Mutex Locks
+
+### Quiz: Mutex Locks
+
+Code:
+
+```c
+int var1 = 0, var2, var3;
+
+processA()
+{
+    var1++;
+    var2 = var1 / 2;
+
+}
+
+processB()
+{
+    if (var1 < 100)
+        var3 = var1 / 2;
+    else
+        var1 = 0;
+}
+```
+
+> [!NOTE]
+> Cho đoạn mã giả như hình trên, hãy xác định những dòng nào thuộc vùng tranh chấp của tiến trình A và tiến trình B?
+> 
+> Điền các số dòng vào trong chỗ trống bên dưới, mỗi số dòng cách nhau bởi dấu phẩy và **không** có khoảng trắng giữa chúng. Ví dụ: 1,2,3,4
+> 
+> - Vùng tranh chấp của tiến trình processA gồm (các) dòng: 5,6
+> - Vùng tranh chấp của tiến trình processB gồm (các) dòng: 11,12,13,14
+
+Đọc phần Reading về chương trình mẫu sử dụng mutex và điền vào chỗ trống bên dưới:
+
+Trong thư viện POSIX thread, để khai báo một mutex có tên là spinlock thì ta dùng lệnh:
+
+```c
+pthread_mutex_t spinlock;
+
+int main() {
+    pthread_mutex_init(&spinlock, NULL);
+}
+
+pthread_mutex_lock(&spinlock);
+
+pthread_mutex_unlock(&spinlock);
+
+```
+
+Cho đoạn mã giả như hình trên, mutex _mut_ được sử dụng để đồng bộ cho 2 tiến trình processA và processB. Giả sử mutex mut đã được khai báo và khởi tạo, hãy kéo thả các dòng code vào đúng vị trí để đảm bảo loại trừ tương hỗ giữa 2 tiến trình?
+
+```c
+int var1 = 0, var2, var3;
+
+processA()
+{
+    pthread_mutex_lock(&mut);
+    var1++;
+    var2 = var1 / 2;
+    pthread_mutex_unlock(&mut);
+
+}
+
+processB()
+{
+    pthread_mutex_lock(&mut);
+    if (var1 < 100)
+        var3 = var1 / 2;
+    else
+        var1 = 0;
+}
+```
 
 
