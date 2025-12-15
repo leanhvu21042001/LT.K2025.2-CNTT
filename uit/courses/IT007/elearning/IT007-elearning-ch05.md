@@ -156,3 +156,48 @@ index = (index + 1) & 7;
 |**Modulo (%)**|Chậm (do dùng phép chia)|Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn).|Tốn tài nguyên CPU nhất.|
 |**If-Else**|Trung bình|Dễ đọc, dễ debug.|Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.|
 |**Bitwise (&)**|**Siêu nhanh**|Tối ưu tuyệt đối cho phần cứng.|**Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$).|
+### Slide: Producer vs. Consumer
+
+![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=5-9)
+
+### Quiz: Producer vs. Consumer
+
+> [!NOTE]
+> Trong chương trình `ProdvsCons.c`, khi chạy chương trình, vấn đề gì đã phát sinh?
+> 
+> - [ ] Tất cả đều đúng
+> - [x] Các giá trị count của tiến trình Producer và Consumer không tăng/giảm theo logic
+> - [ ] Mảng `buffer[in]` bị ghi sai vị trí
+> - [ ] Tiến trình Producer và Consumer không thực thi xen kẽ nhau làm biến count bị tăng liên tục hoặc giảm liên tục
+
+> [!NOTE]
+> Trong bài toán Producer vs. Consumer, chúng ta sử dụng bounded buffer để lưu các giá trị, đặc điểm của bounded buffer là gì?
+> 
+> - [ ] Khi ghi giá trị liên tục vào bounded buffer, mảng sẽ bị tràn
+> - [ ] Tất cả đều đúng
+> - [ ] Các chỉ số được tạo ra ngẫu nhiên
+> - [x] Khi mảng đầy, phần tử tiếp theo sẽ được ghi lại vào đầu mảng
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Trong bài toán Producer vs. Consumer, biến  `____` được chia sẻ chung giữa hai tiến trình và được gọi là dữ liệu được chia sẻ - shared data.
+> 
+> - `count`
+
+### VIDEO: PHÂN TÍCH BÀI TOÁN PRODUCER VS. CONSUMER
+
+Trong video này, ta sẽ đi phân tích lý do dẫn đến việc biến count không nhất quán giữa hai tiến trình Producer và Consumer.
+
+> [!NOTE]
+> Giả sử giá trị ban đầu `count = 5`, mỗi thao tác load, gán, store tốn 01 chu kỳ lệnh. Nếu quantum `time = 03` chu kỳ lệnh, biết tiến trình Producer (`count++`) được thực thi trước Consumer (`count--`), hãy sắp xếp thứ tự thực thi của các thao tác dưới đây?
+> 
+> - CHU KỲ I: `reg1=count`
+> - CHU KỲ II: `reg1 = reg1 + 1`
+> - CHU KỲ III: `count = reg1`
+> - CHU KỲ IV: `reg2 = count`
+> - CHU KỲ V: `reg2 = reg2 - 1`
+> - CHU KỲ VI: `count = reg2`
+
+Vì **Quantum time (3) $\ge$ số lệnh cần thiết của tiến trình (3)**, nên Producer đã thực hiện trọn vẹn quá trình cập nhật biến (Atomic Operation) trước khi bị ngắt. Do đó, không xảy ra hiện tượng **Race Condition** (Điều kiện đua), và dữ liệu vẫn đảm bảo tính toàn vẹn (đúng đắn).
+
