@@ -1023,3 +1023,29 @@ wait(S);
 signal(Q);
 signal(S);
 ```
+
+### Slide: Lưu ý khi sử dụng semaphores
+
+### Quiz: Lưu ý khi sử dụng semaphores
+
+> [!NOTE]
+> Tình trạng nào sau đây có thể xảy ra khi sử dụng semaphore sai cách?
+> 
+> - [x] Cả 2 vấn đề được nêu 
+> - [ ] Deadlock
+> - [ ] Trì hoãn vô hạn định
+
+> [!NOTE]
+> Hai thao tác wait() và signal() cần được đảm bảo loại trừ tương hỗ vì?
+> 
+> - [ ] Thao tác signal() có thể chuyển trạng thái tiến trình từ waiting sang running và xung đột với các tiến trình khác
+> - [ ] Thao tác wait() có thể block tiến trình, từ đó dẫn đến tiến trình bị chờ đợi không giới hạn
+> - [x] Đoạn mã của hai thao tác này sử dụng chung giá trị của semaphore dẫn đến đây cũng là vùng tranh chấp
+
+> [!NOTE]
+> Khi cài đặt semaphore, cần lưu ý những vấn đề nào sau đây?
+> 
+> - [x] Tất cả các vấn đề được nêu
+> - [ ] Số lượng semaphore sử dụng
+> - [ ] Vị trí đặt thao tác wait() và signal()
+> - [ ] Giá trị khởi tạo của semaphore
