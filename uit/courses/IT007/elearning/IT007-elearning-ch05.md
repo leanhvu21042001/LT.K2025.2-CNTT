@@ -189,6 +189,8 @@ index = (index + 1) & 7;
 
 Trong video này, ta sẽ đi phân tích lý do dẫn đến việc biến count không nhất quán giữa hai tiến trình Producer và Consumer.
 
+Quantum Time = 3:
+
 > [!NOTE]
 > Giả sử giá trị ban đầu `count = 5`, mỗi thao tác load, gán, store tốn 01 chu kỳ lệnh. Nếu quantum `time = 03` chu kỳ lệnh, biết tiến trình Producer (`count++`) được thực thi trước Consumer (`count--`), hãy sắp xếp thứ tự thực thi của các thao tác dưới đây?
 > 
@@ -200,4 +202,17 @@ Trong video này, ta sẽ đi phân tích lý do dẫn đến việc biến coun
 > - CHU KỲ VI: `count = reg2`
 
 Vì **Quantum time (3) $\ge$ số lệnh cần thiết của tiến trình (3)**, nên Producer đã thực hiện trọn vẹn quá trình cập nhật biến (Atomic Operation) trước khi bị ngắt. Do đó, không xảy ra hiện tượng **Race Condition** (Điều kiện đua), và dữ liệu vẫn đảm bảo tính toàn vẹn (đúng đắn).
+
+Quantum Time = 2:
+
+> [!NOTE]
+> Giả sử giá trị ban đầu `count = 5`, mỗi thao tác load, gán, store tốn 01 chu kỳ lệnh. Nếu quantum `time = 02` chu kỳ lệnh, biết tiến trình Producer (`count++`) được thực thi trước Consumer (`count--`), hãy sắp xếp thứ tự thực thi của các thao tác dưới đây?
+> 
+> - CHU KỲ I: `reg1=count`
+> - CHU KỲ II: `reg1 = reg1 + 1`
+> - CHU KỲ III: `reg2 = count`
+> - CHU KỲ IV: `reg2 = reg2 - 1`
+> - CHU KỲ V:  `count = reg1`
+> - CHU KỲ VI: `count = reg2`
+
 
