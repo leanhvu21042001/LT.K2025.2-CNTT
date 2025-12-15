@@ -221,4 +221,26 @@ Quantum Time = 2:
 
 ### Quiz: Phân tích Bài toán Producer vs. Consumer
 
+> [!NOTE]
+> Thuật ngữ nào sau đây được sử dụng để chỉ vấn đề xảy ra ra bởi việc không đồng bộ tiến trình?
+> 
+> - [ ] Data consistency
+> - [ ] Data missing
+> - [ ] Process confliction
+> - [x] Data inconsistency
 
+> [!NOTE]
+> CÁC yếu tố nào sau đây gây ra giá trị biến count của bài toán Producer - Consumer trở nên không nhất quán?
+> 
+> - [ ] Consumer thực hiện các lệnh sau Producer
+> - [x] Mã máy của các lệnh thao tác lên biến count bị thực thi xen kẽ
+> - [x] Biến count được chia sẻ cho 02 tiến trình
+> - [ ] Các lệnh thao tác lên biến count là đơn nguyên
+
+> [!NOTE]
+> Nhận định sau đúng (True) hay sai (False)?
+> 
+> Giá trị cuối cùng của biến count không phụ thuộc vào việc tiến trình nào thực thi trước.
+> 
+> - [ ] True
+> - [x] False
