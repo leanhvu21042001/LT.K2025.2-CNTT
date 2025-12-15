@@ -298,3 +298,27 @@ while(1) {
 > - Critical section: Truy cập và thao tác
 > - Exit section: Cài đặt các điều kiện sau khi truy cập
 > - Remainder section: Thực hiện các thao tác bình thường
+
+Methods:
+
+- Mutual exclusion (loại trừ tương hỗ).
+- Progress (tính tiến triển).
+    - deadlock (tắc nghẽn)
+- Bounded waiting (chờ đợi giới hạn).
+    - Bao lâu.
+        - ms
+        - count
+
+### Slide: Vấn đề vùng tranh chấp
+
+### Đọc thêm: Starvation vs. Deadlock
+
+If you write a program in which several concurrent threads are competing for resources, you must take precautions to ensure fairness. A system is fair when each thread gets enough access to limited resources to make reasonable progress. A fair system prevents starvation and deadlock. 
+
+|Starvation|Deadlock|
+|---|---|
+|occurs when one or more threads in your program are blocked from gaining access to a resource and, as a result, cannot make progress.|the ultimate form of starvation, occurs when two or more threads are waiting on a condition that cannot be satisfied. Deadlock most often occurs when two (or more) threads are each waiting for the other(s) to do something.|
+
+### Quiz: Vấn đề vùng tranh chấp
+
+
