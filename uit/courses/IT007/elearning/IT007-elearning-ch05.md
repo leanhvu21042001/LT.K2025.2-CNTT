@@ -870,7 +870,37 @@ Trong video này, ThS. Trần Hoàng Lộc sẽ trình bày cụ thể các trư
 > - [ ] Tiến trình cuối cùng gọi hàm wait() sẽ được vào vùng tranh chấp trước
 > - [x] Tiến trình gọi hàm wait() đầu tiên sẽ được vào vùng tranh chấp
 
-- Chính xác! Do giá trị khởi tạo của semaphore là 1, sau khi tiến trình gọi lệnh wait(), giá trị này sẽ giảm xuống 0. Các tiến trình tới sau gọi lệnh wait() khi giá trị semaphore không dương đều sẽ bị block => Chỉ có 1 tiến trình được vào vùng tranh chấp cùng lúc.
-- Chính xác! Do giá trị khởi tạo của semaphore là 1, tiến trình đầu tiên gọi lệnh wait() sẽ giảm giá trị này sẽ xuống 0. Các tiến trình tới sau gọi lệnh wait() khi giá trị semaphore không dương đều sẽ bị block. Khi tiến trình đầu tiên kia ra khỏi vùng tranh chấp và gọi hàm signal() thì lúc này những tiến trình bị block kia mới có thể được unblock và thực hiện vùng tranh chấp
+- Chính xác! Do giá trị khởi tạo của semaphore là 1, sau khi tiến trình gọi lệnh `wait()`, giá trị này sẽ giảm xuống 0. Các tiến trình tới sau gọi lệnh `wait()` khi giá trị semaphore không dương đều sẽ bị block => Chỉ có 1 tiến trình được vào vùng tranh chấp cùng lúc.
+- Chính xác! Do giá trị khởi tạo của semaphore là 1, tiến trình đầu tiên gọi lệnh `wait()` sẽ giảm giá trị này sẽ xuống 0. Các tiến trình tới sau gọi lệnh `wait()` khi giá trị semaphore không dương đều sẽ bị block. Khi tiến trình đầu tiên kia ra khỏi vùng tranh chấp và gọi hàm `signal()` thì lúc này những tiến trình bị block kia mới có thể được unblock và thực hiện vùng tranh chấp
 
+> [!NOTE]
+> Phát biểu sau Đúng (True) hay Sai (False)?
+> 
+> Sử dụng semaphore sẽ luôn đảm bảo được loại trừ tương hỗ giữa các tiến trình.
+> 
+> - [ ] True
+> - [x] False
+
+- Việc đảm bảo loại trừ tương hỗ chỉ đúng khi semaphore được cài đặt là 1 kết hợp với việc đặt hàm `wait()` và `signal()` đúng vị trí. Mặt khác nếu giá trị của semaphore lớn hơn 1, đồng nghĩa với việc có nhiều hơn 1 tiến trình có thể thực hiên thao tác `wait()` mà không bị block, từ đó có thể truy cập vùng tranh chấp --> Loại trừ tương hỗ không đảm bảo.
+
+#### Đảm bảo thứ tự thực thi
+
+- S1, S2.
+- S1 luôn thực thi trước.
+- `synch = 0`
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Để đồng bộ được bài toán này, ta cần đảm bảo:
+> 
+> - Nếu S2 (P2) chạy trước S1 (P1) thì sẽ bị chặn lại => Cần có một lệnh ĐỨNG TRƯỚC lệnh S2 để đảm bảo điều kiện này => Sử dụng lệnh: `wait(synch)`
+> - Khi S1(P1) chạy xong => Cần có một lệnh ĐỨNG SAU lệnh S1 để báo hiệu cho S2 (P2) để lệnh này được phép chạy => Sử dụng lệnh: `signal(synch)`
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Hàm wait(synch) sẽ block tiến trình P2 khi và chỉ khi semaphore synch = `0`.
+
+#### Đảm bảo điều kiện
 
