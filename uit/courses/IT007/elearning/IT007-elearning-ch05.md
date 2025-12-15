@@ -820,5 +820,11 @@ typedef struct{
 > - [ ] Quản lý danh sách các tiến trình đã tiến vào vùng tranh chấp
 > - [x] Kiểm soát thứ tự các tiến trình muốn sử dụng tài nguyên
 
-
+> [!NOTE]
+> Biết rằng khi tiến trình bị `block` thì nó sẽ vào trạng thái `waiting`, vậy sau khi tiến trình được `wake up` thì nó sẽ chuyển sang trạng thái nào?
+> 
+> - [ ] Terminated
+> - [ ] New
+> - [ ] Running
+> - [x] Ready
 
