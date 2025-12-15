@@ -484,13 +484,28 @@ $P_1$:
 }
 ```
 
-Kiểm tra yêu cầu Mutual Exclusion với giải pháp Peterson.
+**Kiểm tra yêu cầu Mutual Exclusion với giải pháp Peterson.**
 
-GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 cùng lúc tiến vào vùng tranh chấp.
+> [!NOTE]
+> GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 cùng lúc tiến vào vùng tranh chấp.
+> 
+> - P0 tiến vào vùng tranh chấp khi turn = `0` HOẶC `flag[1] = false`
+> - P1 tiến vào vùng tranh chấp khi turn =  `1` HOẶC `flag[0] = false`
+> 
+> P0 và P1 cùng tiến vào vùng tranh chấp, có nghĩa 2 tiến trình đã phải thực hiện `entry` section trước đó, do đó, ta có thể loại bỏ khả năng `flag[0] = false` và `flag[1] = false`, như vậy chỉ còn điều kiện turn = `0` = `1`  => `vô lý` 
+> 
+> Như vậy, GIẢ ĐỊNH đặt ra là `sai` => Mutual Exclusion `thỏa mãn`.
 
-- P0 tiến vào vùng tranh chấp khi turn = `0` HOẶC `flag[1] = false`
-- P1 tiến vào vùng tranh chấp khi turn =  `1` HOẶC `flag[0] = false`
+**Kiểm tra yêu cầu Progress với giải pháp Peterson.**
 
-P0 và P1 cùng tiến vào vùng tranh chấp, có nghĩa 2 tiến trình đã phải thực hiện `entry` section trước đó, do đó, ta có thể loại bỏ khả năng `flag[0] = false` và `flag[1] = false`, như vậy chỉ còn điều kiện turn = `0` = `1`  => `vô lý` 
+> [!NOTE]
+> GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Progress, như vậy ta có P0 không thực hiện CS nhưng lại ngăn cản P1 vào CS.
+> 
+> - P1 bị ngăn cản vào CS khi và chỉ khi: flag[0] = `true`  VÀ turn = `0` 
+> - P0 không thực hiện CS thì có 2 khả năng xảy ra:
+>     - P0 đang thực hiện Entry section => turn =  `1`
+>     - P0 đã/đang thực hiện Exit section => flag[0] = `false`
+>     - P0 không vào CS thì `không thể`  ngăn cản P1 vào CS.
+> 
+> Như vậy, GIẢ ĐỊNH đặt ra là `sai` => Progress `thỏa mãn`.
 
-Như vậy, GIẢ ĐỊNH đặt ra là `sai` => Mutual Exclusion `thỏa mãn`.
