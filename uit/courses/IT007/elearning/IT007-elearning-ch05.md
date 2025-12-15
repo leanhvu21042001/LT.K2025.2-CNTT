@@ -828,3 +828,30 @@ typedef struct{
 > - [ ] Running
 > - [x] Ready
 
+### Slide: Hiện thực semaphores
+
+### Quiz: Hiện thực semaphores
+
+> [!NOTE]
+> Hàng chờ trên semaphore hoạt động theo cơ chế nào?
+> 
+> - [x] First-in, First-out
+> - [ ] First-in, Last-out
+> - [ ] Tiến trình được chọn ngẫu nhiên
+> - [ ] Cơ chế stack
+
+> [!NOTE]
+> Chọn phát biểu SAI về semaphore?
+> 
+> - [ ] Thao tác signal(S) làm tăng giá trị của semaphore
+> - [x] Tiến trình gọi lệnh wait(S) sẽ bị chặn nếu giá trị của semaphore dương
+> - [ ] Thao tác signal(S) sẽ khôi phục tiến trình đã bị chặn bởi lệnh wait(S) trước đó nếu giá trị của semaphore S sau khi tăng nhưng vẫn âm
+> - [ ] Thao tác wait(S) làm giảm giá trị của semaphore S
+
+> [!NOTE]
+> Để hiện thực semaphore, hê điều hành cần cung cấp NHỮNG tác vụ nào sau đây?
+> 
+> - [x] Tác vụ đặc biệt dùng để hồi phục một tiến trình
+> - [x] Tác vụ đặc biệt dùng để block tiến trình gọi nó
+> - [ ] Tác vụ đặc biệt dùng để block tiến trình từ một tiến trình khác
+> - [ ] Tác vụ đặc biệt dùng để tiến trình tự hồi phục
