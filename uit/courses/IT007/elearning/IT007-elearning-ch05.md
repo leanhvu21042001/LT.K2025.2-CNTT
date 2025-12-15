@@ -904,3 +904,20 @@ Trong video này, ThS. Trần Hoàng Lộc sẽ trình bày cụ thể các trư
 
 #### Đảm bảo điều kiện
 
+- Đồng bộ tiến trình `Produce` và `Consume` sao cho: `sells <= products`.
+    - Số đơn vị mà `sells` được tăng lên.
+    - Số lượng semaphore
+    - `wait()` và `signal()`
+    - Xác định giá trị của semaphore: `stocks`
+
+> [!NOTE]
+> Điền vào chỗ trống:
+> 
+> Số lượng hàng hoá có thể được tính dựa trên độ chênh lệch giữa tổng số hàng đã bán và tổng số hàng đã sản xuất, tức là:
+> 
+> ```c
+> stocks =  products - sells
+> ```
+> 
+
+
