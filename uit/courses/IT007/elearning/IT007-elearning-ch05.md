@@ -638,4 +638,22 @@ flag = true;
 
 ### Slide: Các giải pháp phần cứng
 
+## Mutex Locks
+
+### VIDEO: GIỚI THIỆU CHƯƠNG 5 - PHẦN 2
+
+Tiếp nối nội dung phần 1, trong phần này, các công cụ đồng bộ cấp cao do hệ điều hành hỗ trợ sẽ được giới thiệu. Lập trình viên có thể dễ dàng sử dụng các công cụ này để thực hiện việc đảm bảo loại trừ tương hỗ, kiểm soát thứ tự thực thi của tiến trình.
+
+6. Mutex Locks
+7. Semaphore
+8. Monitor
+9. Liveness
+
+### Slide: Review
+
+### VIDEO: MUTEX LOCKS
+
+Mutex locks (hay "khoá mutex") là công cụ do hệ điều hành cung cấp, được sử dụng đơn giản để bảo loại trừ tương hỗ khi tác tiến trình thực hiện vùng tranh chấp. Các đặc điểm và cách hiện thực khoá mutex sẽ được ThS. Trần Hoàng Lộc trình bày trong video sau.
+
+
 
