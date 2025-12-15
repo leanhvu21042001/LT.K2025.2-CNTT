@@ -215,4 +215,10 @@ Quantum Time = 2:
 > - CHU KỲ V:  `count = reg1`
 > - CHU KỲ VI: `count = reg2`
 
+### Slide: Phân tích Bài toán Producer vs. Consumer
+
+![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=11)
+
+### Quiz: Phân tích Bài toán Producer vs. Consumer
+
 
