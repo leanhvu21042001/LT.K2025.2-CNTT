@@ -554,9 +554,33 @@ Giá trị kỳ vọng của x được in ra sau khi chương trình thực thi
 
 - `100`
 
-Xét giải pháp Peterson được thực hiện trong kiến trúc hiện đại với các thao tác được sắp xếp lại như hình trên, ta thấy:
+> [!NOTE]
+> Xét giải pháp Peterson được thực hiện trong kiến trúc hiện đại với các thao tác được sắp xếp lại như hình trên, ta thấy:
+> 
+> - Khi P1 muốn vào CS thì turn = `0`, flag[0] = `false`, flag[1] = `true` . Kiểm tra điều kiện, ta thấy P1 `được phép` tiến vào CS.
+> - Khi P0 muốn vào CS thì turn = `0`, flag[0] = `true`, flag[1] = `true`. Kiểm tra điều kiện, ta thấy P0 `được phép` tiến vào CS.
+> 
+> => Mutual Exclustion `không được` đảm bảo.
 
-- Khi P1 muốn vào CS thì turn = `0`, flag[0] = `false`, flag[1] = `true` . Kiểm tra điều kiện, ta thấy P1 `được phép` tiến vào CS.
-- Khi P0 muốn vào CS thì turn = `0`, flag[0] = `true`, flag[1] = `true`. Kiểm tra điều kiện, ta thấy P0 `được phép` tiến vào CS.
+- Phải sử dụng **Memory Barrier**.
 
-=> Mutual Exclustion `không được` đảm bảo.
+### Slide: Giải pháp Peterson và kiến trúc hiện đại
+
+### Quiz: Giải pháp Peterson và kiến trúc hiện đại
+
+> [!NOTE]
+> Chọn phát biểu sai khi phát biểu về kiến trúc hiện đại?
+> 
+> - [ ] Các tiến trình đơn tiểu trình không bị ảnh hưởng bởi viêc sắp xếp lại các thao tác
+> - [x] Vi xử lý/trình biên dịch sắp xếp lại tất cả thao tác trong mã nguồn để gia tăng hiệu suất xử lý
+> - [ ] Các kết quả không dự đoán được có thể xuất hiện trên các tiến trình đa tiểu trình
+> - [ ] Các thao tác độc lập với nhau có khả năng bị sắp xếp lại thứ tự thực hiện
+
+> [!NOTE]
+> Cơ chế nào sau đây được đề xuất để có thể hiện thực được giải pháp Peterson trên kiến trúc hiện đại?
+> 
+> - [x] Memory Barrier
+> - [ ] Signaling
+> - [ ] Interrupts
+> - [ ] Exception handling
+
