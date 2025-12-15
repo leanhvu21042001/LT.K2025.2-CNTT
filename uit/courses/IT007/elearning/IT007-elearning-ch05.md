@@ -321,4 +321,36 @@ If you write a program in which several concurrent threads are competing for res
 
 ### Quiz: Vấn đề vùng tranh chấp
 
+> [!NOTE]
+> Mutual exclusion (loại trừ tương hỗ) trong bài toán vùng tranh chấp đảm bảo điều gì?
+> 
+> - [ ] Tiến trình chỉ được phép vào vùng tranh chấp sau khi đã thực thi trong vùng khác.
+> - [ ] Mỗi tiến trình chỉ được phép thực thi trong vùng tranh chấp của nó.
+> - [ ] Không có tiến trình nào được ngăn cản vào vùng tranh chấp.
+> - [x] Không có tiến trình nào cùng thực thi trong vùng tranh chấp.
+
+> [!NOTE]
+> Progress (tính tiến triển) trong bài toán vùng tranh chấp đảm bảo điều gì?
+> 
+> - [x] Tiến trình không bị chặn trong vùng tranh chấp khi không có tiến trình khác thực thi vùng tranh chấp.
+> - [ ] Tiến trình không bị ngăn cản vào vùng tranh chấp.
+> - [ ] Tiến trình chỉ được thực thi trong vùng tranh chấp.
+> - [ ] Mỗi tiến trình phải chờ đợi trong vùng tranh chấp.
+
+> [!NOTE]
+> Bounded waiting (chờ đợi giới hạn) trong bài toán vùng tranh chấp đảm bảo điều gì?
+> 
+> - [ ] Tiến trình chỉ được phép vào vùng tranh chấp sau khi đã thực thi trong vùng khác trong một khoảng thời gian xác định.
+> - [ ] Mỗi tiến trình phải chờ đợi vô thời hạn để vào vùng tranh chấp.
+> - [ ] Tiến trình không bị ngăn cản vào vùng tranh chấp.
+> - [x] Mỗi tiến trình chỉ phải chờ đợi trong một khoảng thời gian xác định để vào vùng tranh chấp.
+
+> [!NOTE]
+> Chọn CÁC phát biểu đúng khi nói về starvation và deadlock?
+> 
+> - [x] Starvation xảy ra khi tiến trình bị ngăn cản nhận tài nguyên, từ đó dẫn đến việc tiến trình không thể thực thi
+> - [ ] Deadlock và starvation đều bị gây ra bởi hiện tượng tiến trình có độ ưu tiên thấp bị các tiến trình có độ ưu tiên cao trưng dụng tài nguyên
+> - [x] Deadlock thường xảy ra khi hai hay nhiều tiến trình chờ đợi lẫn nhau các điều kiện nào đó
+> - [x] Deadlock và starvation đều làm cho tiến trình bị chờ vô hạn định
+
 
