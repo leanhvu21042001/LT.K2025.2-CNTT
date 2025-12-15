@@ -584,3 +584,28 @@ Giá trị kỳ vọng của x được in ra sau khi chương trình thực thi
 > - [ ] Interrupts
 > - [ ] Exception handling
 
+## Các giải pháp phần cứng
+
+Bên cạnh các giải pháp phần mềm, phần cứng cũng đóng vai trò rất quan trọng trọng việc cũng cấp các cơ chế, các lệnh nhằm đảm bảo việc hiện thực các giải pháp cho bài toán vùng tranh chấp. Trong video này, ta sẽ đi tìm hiểu chi tiết về cơ chế Memory Barrier (rào chắn bộ nhớ).
+
+- Memory model
+    - Strongly ordered memory model: instantly
+    - Weakly ordered memory model: may not be instantly
+- Memory barrier
+    - `load` và `store` hoàn thành trước khi các `load` và `store` khác thực hiện.
+
+Thread1:
+
+```c
+while (!flag)
+    memory_barier();
+print(x)
+```
+
+Thread2:
+
+```c
+x = 100;
+memory_barrier();
+flag = true;
+```
