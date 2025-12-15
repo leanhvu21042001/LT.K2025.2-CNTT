@@ -244,3 +244,17 @@ Quantum Time = 2:
 > 
 > - [ ] True
 > - [x] False
+
+### VIDEO: RACE CONDITION LÀ GÌ?
+
+*Qua các ví dụ trước đó, ta thấy việc tranh chấp dữ liệu được chia sẻ đã gây nên vấn đề bất đồng bộ. Việc tranh chấp này còn được gọi là Race Condition? Video này sẽ giúp bạn hiểu rõ hơn về Race Condition.*
+
+Bài toán Cấp phát PID
+
+- `fork()`
+- `next_available_pid`
+
+### Slide: Race Condition là gì?
+
+![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=12)
+
