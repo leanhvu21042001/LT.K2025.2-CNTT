@@ -742,4 +742,32 @@ processB()
 }
 ```
 
+## Semaphores
+
+Nếu mutex locks chỉ có thể đảm bảo loại trừ tương hỗ, semaphores lại cung cấp cơ chế đồng bộ mạnh mẽ và linh hoạt hơn với khả năng kiểm soát thứ tự thực thi của tiến trình, thậm chí của từng thao tác bên trong tiến trình. Hãy cùng đi tìm hiểu về khái niệm và đặc điểm của semaphores trong video sau.
+
+```c
+wait(S) {
+    while (S <= 0) {
+        // busy wait
+    }
+    S--;
+}
+
+signal(S) {
+    S++;
+}
+```
+
+> [!NOTE]
+> Điền vào chỗ trống
+> 
+> Mỗi vị khách vào nhà hàng sẽ phải thực hiện thao tác `wait(freeTable)` và số lượng bàn trống sẽ tương ứng với giá trị của `freetable = 5`.
+
+- Counting semaphore
+    - integer
+- Binary semaphore
+    - 0
+    - 1
+
 
