@@ -353,4 +353,50 @@ If you write a program in which several concurrent threads are competing for res
 > - [x] Deadlock thường xảy ra khi hai hay nhiều tiến trình chờ đợi lẫn nhau các điều kiện nào đó
 > - [x] Deadlock và starvation đều làm cho tiến trình bị chờ vô hạn định
 
+## Các giải pháp dựa trên ngắt (giải pháp phần mềm)
+
+### VIDEO 5.4.1: GIẢI PHÁP PHẦN MỀM SỐ 01
+
+Ý tưởng của giải pháp này sử dụng biến một biến `turn` để kiểm tra xem tiến trình tới lượt thực hiện của tiến trình nào với sự hỗ trợ của 2 thao tác đơn nguyên là `load` và `store`.
+
+- $P_i$, $P_j$
+- `load`, `store`
+- `turn`
+    - `int turn`
+
+Kiểm tra yêu cầu Mutual Exclusion với giải pháp phần mềm số 1.
+
+$P_0$:
+
+```c
+{
+    while (true) {
+        while (turn = = 1);
+            /* critical section */
+        turn = 1;
+            /* remainder section */
+    }
+}
+```
+
+$P_1$:
+
+```c
+{
+    while (true) {
+        while (turn = = 0);
+            /* critical section */
+        turn = 0;
+            /* remainder section */
+    }
+}
+```
+
+GIẢ ĐỊNH giải pháp KHÔNG THỎA MÃN yêu cầu Mutual Exclusion, như vậy ta có P0 và P1 `đồng thời` tiến vào vùng tranh chấp.
+
+- P0 tiến vào vùng tranh chấp khi và chỉ khi turn = `0`
+- P1 tiến vào vùng tranh chấp khi và chỉ khi turn = `1`
+- => `turn =  1 = 0` => `vô lý`
+
+Như vậy, GIẢ ĐỊNH đặt ra là `sai` $\to$ Mutual Exclusion `thỏa mãn`.
 
