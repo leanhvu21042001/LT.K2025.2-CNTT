@@ -276,3 +276,25 @@ Bài toán Cấp phát PID
 > - [ ] Các tiến trình không thể hoạt động đồng thời
 > - [ ] Dữ liệu được chia sẻ không bị ảnh hưởng bởi race condition
 
+## Vấn đề vùng tranh chấp
+
+Vùng tranh chấp (hay còn gọi là critical section) là vùng code mà ở đó các tiến trình thực hiện tác động lên dữ liệu được chia sẻ. Vấn đề vùng tranh chấp là một vấn đề phức tạp, do đó, ta cần có những yêu cầu cụ thể để đảm bảo rằng lời giải cho bài toán này có thể đáp ứng được các tiêu chuẩn như các tiến trình đều phải được thực thi, không bị xảy ra hiện tượng đói, dữ liệu không bị thiếu nhất quán hay không để xảy ra tình trạng deadlock.
+
+### VIDEO 5.2 - 5.3: VẤN ĐỀ VÙNG TRANH CHẤP
+
+```c
+while(1) {
+    entry section
+        critical section
+    exit section
+        remainder section
+}
+```
+
+> [!NOTE]
+> Kéo thả các mô tả chức năng sau vào các section tương ứng?
+> 
+> - Entry section: Kiểm tra điều kiện
+> - Critical section: Truy cập và thao tác
+> - Exit section: Cài đặt các điều kiện sau khi truy cập
+> - Remainder section: Thực hiện các thao tác bình thường
