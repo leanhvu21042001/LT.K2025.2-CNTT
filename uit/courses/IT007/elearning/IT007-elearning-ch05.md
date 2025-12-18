@@ -1079,3 +1079,14 @@ signal(S);
 > - [ ] Biến cục bộ chỉ có thể được truy xuất bởi các thủ tục của monitor
 > - [ ] Tiến trình vào monitor bằng cách gọi một trong các thủ tục của nó
 
+## Liveness
+
+### VIDEO: LIVENESS
+
+Liveness là thuật ngữ dùng để chỉ trạng thái còn hoạt động của tiến trình. Một tiến trình bị xem là không đảm bảo liveness nếu nó không tạo hoạt động hay tạo ra tiến triển gì mới. Thể hiện cơ bản nhất của việc không đảm bảo liveness chính là "chờ đợi không giới hạn" và deadlock. Hãy theo dõi video sau để hiểu rõ hơn về liveness.
+
+### Slide: Liveness
+
+## Bài kiểm tra Tiểu kết Chương 5
+
+
