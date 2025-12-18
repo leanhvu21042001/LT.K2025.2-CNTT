@@ -1049,3 +1049,33 @@ signal(S);
 > - [ ] Số lượng semaphore sử dụng
 > - [ ] Vị trí đặt thao tác wait() và signal()
 > - [ ] Giá trị khởi tạo của semaphore
+
+## Monitors
+
+### VIDEO: MONITORS
+
+> [!NOTE]
+> **Điền vào chỗ trống:**
+> 
+> Việc cài đặt semaphore _mutex_ như trong mã giả sẽ đảm bảo được yêu cầu `loại trừ tương hỗ` cho từng thủ tục.
+
+### Slide: Monitors
+
+### Quiz: Monitors
+
+> [!NOTE]
+> Điểm khác biệt khi sử dụng thêm biến điều kiện (condition variable) so với với monitor gốc là gì?
+> 
+> - [ ] Tiến trình truy cập vào monitor thông qua việc gọi các thủ tục    
+> - [ ] Tiến trình truy cập vào monitor thông qua việc truy xuất biến điều kiện
+> - [x] Tiến trình có thể chờ thêm trong hàng chờ của biến điều kiện
+> - [ ] Tất cả đều đúng
+
+> [!NOTE]
+> Đặc điểm nào sau đây KHÔNG phải là của monitor?
+> 
+> - [ ] Là một cấu trúc cấp cao, bên trong có chứa các biến cục bộ, các thủ tục và một đoạn mã nguồn khởi tạo
+> - [x] Có thể cho phép nhiều hơn 1 tiến trình vào monitor tại cùng một thời điểm
+> - [ ] Biến cục bộ chỉ có thể được truy xuất bởi các thủ tục của monitor
+> - [ ] Tiến trình vào monitor bằng cách gọi một trong các thủ tục của nó
+
