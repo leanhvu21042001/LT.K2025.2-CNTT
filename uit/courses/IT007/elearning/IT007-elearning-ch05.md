@@ -974,6 +974,46 @@ processB()
 > 
 > Để cho phép 5 tiến trình cùng lúc thực thi thao tác `wait()` mà không bị `block`, cần khởi tạo giá trị của semaphore là `5`.
 
+Cho P1, P2, cài đặt để S1 -> S2 -> S3 -> S4:
+
+```c
+P1 {
+    S1;
+    S3;
+}
+
+P3 {
+    S2;
+    S4;
+}
+```
+
+Bài làm:
+
+```c
+int s1, s2, s3 = 0;
+// int s4 = 0;
+
+P1 {
+    S1;
+    signal(s1);
+    wait(s2);
+    S3;
+    signal(s3);
+    wait(s4)
+}
+
+P3 {
+    wait(s1);
+    S2;
+    signal(s2);
+    wait(s3);
+    S4;
+    // signal(s4);
+}
+
+```
+
 ### VIDEO: LƯU Ý KHI SỬ DỤNG SEMAPHORES
 
 #### Một số nhận xét về semaphore
