@@ -64,6 +64,9 @@
   <ItemGroup>
     <None Include=".vscode\tasks.json" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="00-CREATE-DB.sql" />
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
