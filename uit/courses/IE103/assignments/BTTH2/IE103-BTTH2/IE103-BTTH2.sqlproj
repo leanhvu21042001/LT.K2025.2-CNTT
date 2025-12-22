@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".vscode\tasks.json" />
+    <None Include="IE103-BTTH2.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\CHUYENNGANH.sql" />
