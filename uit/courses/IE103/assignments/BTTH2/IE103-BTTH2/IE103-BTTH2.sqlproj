@@ -79,6 +79,7 @@
     <Build Include="dbo\Tables\HOIDONG_DT.sql" />
     <Build Include="dbo\Tables\HOIDONG_GV.sql" />
     <Build Include="dbo\Tables\SINHVIEN.sql" />
+    <Build Include="dbo\Tables\SV_DETAI.sql" />
   </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
