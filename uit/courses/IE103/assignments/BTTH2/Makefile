@@ -36,7 +36,7 @@ down:
 	-docker stop $(DB_NAME)
 	@echo "💤 Stopping Colima VM..."
 	colima stop
-	@echo "👋 Lab closed."
+	@echo "Lab closed."
 
 # 3. UTILITIES
 restart: down up
