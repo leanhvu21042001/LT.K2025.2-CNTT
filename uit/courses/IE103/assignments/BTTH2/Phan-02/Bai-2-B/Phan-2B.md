@@ -46,25 +46,27 @@ SELECT N'Số GV Tiến sĩ: ' AS KetQua, @KETQUA AS SoLuong;
 ## 2. Đưa vào MSDT cho biết: Điểm trung bình của đề tài, nếu không tìm thấy trả về 0
 
 ```sql
-Create procedure sp_CountGVTheoHocVi
-    @TenHV NVARCHAR(20),
-    @SOGV INT OUTPUT
+CREATE PROCEDURE SP_DiemTBDeTai
+    @MSDT CHAR(6),
+    @DIEMTRUNGBINH FLOAT OUTPUT
 AS
+BEGIN
+    SET @DIEMTRUNGBINH = 0;
+
+    SELECT @DIEMTRUNGBINH = AVG(DIEM)
+    FROM (
+        SELECT DIEM FROM GV_HDDT WHERE MSDT = @MSDT
+        UNION ALL
+        SELECT DIEM FROM GV_PBDT WHERE MSDT = @MSDT
+        UNION ALL
+        SELECT DIEM FROM GV_UVDT WHERE MSDT = @MSDT
+    ) AS ALLDIEM;
+
+    IF @DIEMTRUNGBINH IS NULL
     BEGIN
-        SET @SOGV = 0;
-
-        DECLARE @MSHV_HOCVI INT;
-        SELECT @MSHV_HOCVI = MSHV
-        FROM HOCVI
-        WHERE TENHV = @TenHV;
-
-        IF @MSHV_HOCVI IS NOT NULL
-        BEGIN
-            SELECT @SOGV = COUNT(DISTINCT MSGV)
-            FROM GV_HV_CN
-            WHERE MSHV = @MSHV_HOCVI;
-        end;
-    end;
+        SET @DIEMTRUNGBINH = 0;
+    END
+END
 GO
 ```
 
