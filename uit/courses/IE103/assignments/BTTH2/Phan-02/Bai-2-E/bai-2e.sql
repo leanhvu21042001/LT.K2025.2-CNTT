@@ -1,10 +1,16 @@
-----tạo table detai_diem
-CREATE TABLE DETAI_DIEM ( 
-MSDT char(6) PRIMARY KEY, 
-DIEMTB FLOAT, 
-CONSTRAINT FK_DETAI_DIEM_DETAI FOREIGN KEY (MSDT) REFERENCES DETAI(MSDT) );
---- 1. Viết Cursor tính điểm trung bình cho từng đề tài. Sau đó lưu kết quả vào
-bảng DETAI_DIEM.
+-- IE103
+-- BTTH2
+-- Phần 2
+
+-- 0. Tạo table detai_diem
+CREATE TABLE DETAI_DIEM (
+    MSDT char(6) PRIMARY KEY,
+    DIEMTB FLOAT,
+    CONSTRAINT FK_DETAI_DIEM_DETAI FOREIGN KEY (MSDT) REFERENCES DETAI(MSDT)
+);
+
+-- 1. Viết Cursor tính điểm trung bình cho từng đề tài. Sau đó lưu kết quả vào bảng DETAI_DIEM.
+
 -- Khai báo biến
 DECLARE @MSDT CHAR(6);
 DECLARE @DIEMTB FLOAT;
@@ -26,7 +32,7 @@ FETCH NEXT FROM CUR_TINH_DIEM INTO @MSDT;
 WHILE @@FETCH_STATUS = 0
 BEGIN
     -- Tính điểm trung bình cho đề tài
-    SELECT @DIEMTB = AVG(DIEM)
+    SELECT @DIEMTB = ROUND(AVG(DIEM), 2)
     FROM (
         SELECT DIEM FROM GV_HDDT WHERE MSDT = @MSDT
         UNION ALL
@@ -48,7 +54,9 @@ CLOSE CUR_TINH_DIEM;
 DEALLOCATE CUR_TINH_DIEM;
 ----- Kiểm tra bảng đã nhập được chưa.
 SELECT * FROM DETAI_DIEM;
----2. Gom các bước xử lý của Cursor ở câu 1 vào một Stored Procedure.
+
+-- 2. Gom các bước xử lý của Cursor ở câu 1 vào một Stored Procedure.
+
 CREATE OR ALTER PROCEDURE SP_TINH_DIEMTB_DETAI
 AS
 BEGIN
@@ -71,7 +79,7 @@ BEGIN
     WHILE @@FETCH_STATUS = 0
     BEGIN
         -- Tính điểm trung bình của đề tài
-        SELECT @DIEMTB = AVG(DIEM)
+        SELECT @DIEMTB = ROUND(AVG(DIEM), 2)
         FROM (
             SELECT DIEM FROM GV_HDDT WHERE MSDT = @MSDT
             UNION ALL
@@ -92,21 +100,25 @@ BEGIN
 END;
 GO
 EXEC SP_TINH_DIEMTB_DETAI;
----3.Tạo thêm cột XEPLOAI có kiểu là NVARCCHAR(20) trong bảng
-DETAI_DIEM, viết Cursor cập nhật kết quả xếp loại cho mỗi đề tài 
------ Thêm cột XEPLOAI vào bảng DETAI_DIEM để lưu kết quả xếp loại
+
+-- 3.Tạo thêm cột XEPLOAI có kiểu là NVARCCHAR(20) trong bảng DETAI_DIEM, viết Cursor cập nhật kết quả xếp loại cho mỗi đề tài
+-- Thêm cột XEPLOAI vào bảng DETAI_DIEM để lưu kết quả xếp loại
+
 ALTER TABLE DETAI_DIEM
 ADD XEPLOAI NVARCHAR(20);
 GO
--- Khai báo biến 
+
+-- Khai báo biến
 DECLARE @MSDT CHAR(6);
 DECLARE @DIEMTB FLOAT;
 DECLARE @XEPLOAI NVARCHAR(20);
----Khai báo Cursor và Lấy mã đề tài và điểm trung bình
+
+-- Khai báo Cursor và Lấy mã đề tài và điểm trung bình
 DECLARE CUR_XEPLOAI CURSOR FOR
 SELECT MSDT, DIEMTB
 FROM DETAI_DIEM;
----Mở Cursor
+
+-- Mở Cursor
 OPEN CUR_XEPLOAI;
 FETCH NEXT FROM CUR_XEPLOAI INTO @MSDT, @DIEMTB;
 
