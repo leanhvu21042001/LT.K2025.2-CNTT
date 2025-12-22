@@ -34,7 +34,7 @@ up: check-colima start-container
 down:
 	@echo "Stopping SQL Container..."
 	-docker stop $(DB_NAME)
-	@echo "💤 Stopping Colima VM..."
+	@echo "Stopping Colima VM..."
 	colima stop
 	@echo "Lab closed."
 
