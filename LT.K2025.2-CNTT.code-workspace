@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
-		"files.autoSave": "onFocusChange"
+		"files.autoSave": "onFocusChange",
+		"notebook.defaultTextEditMode": "Markdown",
+		"notebook.showFoldingControls": "always"
 	}
 }
