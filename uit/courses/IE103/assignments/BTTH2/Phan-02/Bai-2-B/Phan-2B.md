@@ -41,7 +41,6 @@ EXEC sp_CountGVTheoHocVi N'Tiến sĩ', @KETQUA output ;
 SELECT N'Số GV Tiến sĩ: ' AS KetQua, @KETQUA AS SoLuong;
 ```
 ![Ket Qua 2](./images/2b-1-2.png)
----------
 
 ## 2. Đưa vào MSDT cho biết: Điểm trung bình của đề tài, nếu không tìm thấy trả về 0
 
@@ -85,7 +84,6 @@ EXEC sp_DiemTBDeTai '97007', @KETQUA OUTPUT;
 SELECT 'Diem TB De Tai 97007 ' AS KetQua, @KETQUA AS DiemTB;
 ```
 ![Ket Qua 1](./images/2b-2-2.png)
----------
 
 ## 3. Đưa vào TENGV trả ra: SDT của giáo viên đó, nếu không tìm thấy trả về 0. Nếu trùng tên thì có báo lỗi không? Tại sao? Làm sao để hiện thông báo có bao nhiêu giáo viên trùng tên và trả về các SDT
 
@@ -185,7 +183,6 @@ EXEC sp_DiemTBTheoHD 2, @DiemTB output;
 SELECT @DiemTB as 'Diem Trung Binh'
 ```
 ![Vi du 1](./images/2b-4-2.png)
--------
 
 ## Đưa vào TENGV cho biết: Số đề tài hướng dẫn, số đề tài phản biện do giáo viên đó phụ trách. Nếu trùng tên thì có báo lỗi không hay hệ thống sẽ đếm tất cả các đề tài của những giáo viên trùng tên đó?
 
