@@ -99,6 +99,8 @@ BEGIN
     DEALLOCATE CUR_DETAI;
 END;
 GO
+
+-- Chạy SP vừa tạo để cho kết quả mới
 EXEC SP_TINH_DIEMTB_DETAI;
 
 -- 3.Tạo thêm cột XEPLOAI có kiểu là NVARCCHAR(20) trong bảng DETAI_DIEM, viết Cursor cập nhật kết quả xếp loại cho mỗi đề tài
