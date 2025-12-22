@@ -67,6 +67,22 @@
   <ItemGroup>
     <PostDeploy Include="00-CREATE-DB.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\CHUYENNGANH.sql" />
+    <Build Include="dbo\Tables\DETAI.sql" />
+    <Build Include="dbo\Tables\GIAOVIEN.sql" />
+    <Build Include="dbo\Tables\GV_HDDT.sql" />
+    <Build Include="dbo\Tables\GV_HV_CN.sql" />
+    <Build Include="dbo\Tables\GV_PBDT.sql" />
+    <Build Include="dbo\Tables\GV_UVDT.sql" />
+    <Build Include="dbo\Tables\HOCHAM.sql" />
+    <Build Include="dbo\Tables\HOCVI.sql" />
+    <Build Include="dbo\Tables\HOIDONG.sql" />
+    <Build Include="dbo\Tables\HOIDONG_DT.sql" />
+    <Build Include="dbo\Tables\HOIDONG_GV.sql" />
+    <Build Include="dbo\Tables\SINHVIEN.sql" />
+    <Build Include="SV_DETAI.sql" />
+  </ItemGroup>
   <Target Name="BeforeBuild">
     <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
