@@ -1,4 +1,7 @@
+# P2
+
 ## FUNCTION
+
 ## 1. Viết hàm tính trung bình của một đề tài. Giá trị trả về là điểm trung bình ứng với mã số đề tài nhập vào.
 
 ```sql
@@ -35,11 +38,11 @@ GO
 ### Ví dụ gọi và thực thi (tính điểm tất cả đề tài trong bảng DETAI)
 
 ```sql
-    SELECT 
-        MSDT, 
-        TENDT, 
-        dbo.f_TinhDiemTB(MSDT) AS DiemTrungBinh
-    FROM DETAI;
+SELECT 
+    MSDT,
+    TENDT,
+    dbo.f_TinhDiemTB(MSDT) AS DiemTrungBinh
+FROM DETAI;
 ```
 ![Ví dụ 1](./images/2d-1-1.png)
 
@@ -47,7 +50,7 @@ GO
 ### Ví dụ gọi và thực thi (tính điểm của 1 đề tài nhập vào)
 
 ```sql
-    SELECT dbo.f_TinhDiemTB('97001') AS DiemTrungBinh_97001;
+SELECT dbo.f_TinhDiemTB('97001') AS DiemTrungBinh_97001;
 ```
 ![Ví dụ 2](./images/2d-1-2.png)
 
@@ -125,12 +128,12 @@ GO
 
 ### Ví dụ gọi và thực thi
 ```sql
-    SELECT * FROM dbo.f_DanhSachSVThucHienDeTai('97001');
+SELECT * FROM dbo.f_DanhSachSVThucHienDeTai('97001');
 ```
 ![Ví dụ 6](./images/2d-3-1.png)
 
 ```sql
-    SELECT * FROM dbo.f_DanhSachSVThucHienDeTai('97006');
+SELECT * FROM dbo.f_DanhSachSVThucHienDeTai('97006');
 ```
 ![Ví dụ 7](./images/2d-3-2.png)
 
