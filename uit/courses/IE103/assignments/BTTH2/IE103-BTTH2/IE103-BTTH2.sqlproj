@@ -66,6 +66,11 @@
     <None Include="IE103-BTTH2.publish.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSGV.sql" />
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH.sql" />
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH_MSGV.sql" />
+    <Build Include="dbo\StoredProcedures\SP_UPD_DETAI_KT_MSDT.sql" />
+    <Build Include="dbo\StoredProcedures\SP_UPD_SINHVIEN_KT_MSSV.sql" />
     <Build Include="dbo\Tables\CHUYENNGANH.sql" />
     <Build Include="dbo\Tables\DETAI.sql" />
     <Build Include="dbo\Tables\GIAOVIEN.sql" />
