@@ -1,0 +1,8 @@
+CREATE USER U1 WITHOUT LOGIN;
+CREATE USER U2 WITHOUT LOGIN;
+CREATE USER U3 WITHOUT LOGIN;
+GO
+
+SELECT name, type_desc FROM sys.database_principals 
+WHERE name IN ('U1', 'U2', 'U3');
+GO
