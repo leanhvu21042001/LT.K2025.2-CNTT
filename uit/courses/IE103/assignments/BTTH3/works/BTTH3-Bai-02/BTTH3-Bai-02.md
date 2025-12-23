@@ -1,44 +1,44 @@
 ## A. IMPORT - EXPORT
-  
+
 ### **A.1 Chọn 1 file dữ liệu (SV) từ excel, và import vào SQLServer.**
 
-  ---
+---
   ##### Buớc 1
   ![Demo Import A.1](./imgs/import-001.jpg)
 
-  ---
+---
   ##### Buớc 2
   ![Demo Import A.2](./imgs/import-002.jpg)
 
-  ---
+---
   ##### Buớc 3
   ![Demo Import A.3](./imgs/import-003.jpg)
 
-  ---
+---
   ##### Buớc 4
   ![Demo Import A.4](./imgs/import-004.jpg)
 
-  ---
+---
 
 ### **A.2 Chọn 1 table trong SQL Server, và export tới file Excel.**
 
-  ---
+---
   ##### Buớc 1
   ![Demo Export A.1](./imgs/export-001.jpg)
 
-  ---
+---
   ##### Buớc 2
   ![Demo Export A.2](./imgs/export-002.jpg)
 
-  ---
+---
   ##### Buớc 3
   ![Demo Export A.3](./imgs/export-003.jpg)
 
-  ---
+---
   ##### Buớc 4
   ![Demo Export A.4](./imgs/export-004.jpg)
 
-  ---
+---
 
 ## B. XÁC THỰC NGƯỜI DÙNG
 
@@ -176,7 +176,7 @@ Tạo các user **U1, U2, U3** và phân quyền theo yêu cầu.
 
 ---
 
-### **C.1 Tạo User**
+### C.1 Tạo User
 
 ```sql
 CREATE USER U1 WITHOUT LOGIN;
@@ -250,7 +250,6 @@ REVERT;
 ```
 
 ![Test Script](./imgs/C2-U2-Update-HoiDong.jpg)
----
 
 #### U3 có quyền INSERT trên T1, T2, T3
 
