@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[SINHVIEN] (
+    [MSSV]   CHAR (8)      NOT NULL,
+    [TENSV]  NVARCHAR (30) NOT NULL,
+    [SODT]   VARCHAR (10)  NOT NULL,
+    [LOP]    CHAR (10)     NOT NULL,
+    [DIACHI] NCHAR (50)    NULL,
+    PRIMARY KEY CLUSTERED ([MSSV] ASC)
+);
+GO
+

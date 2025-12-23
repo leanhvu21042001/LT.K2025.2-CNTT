@@ -1,0 +1,19 @@
+
+--2A.5
+-- Tham số đưa vào MSSV, TENSV mới, DIACHI mới. Hãy cập nhật sinh viên trên với MSSV không đổi, nếu không tìm thấy trả về 0, ngược lại cập nhật và trả về 1
+CREATE PROC SP_UPD_SINHVIEN_KT_MSSV
+    @MSSV char(8), 
+	@TENSV NVARCHAR(30),
+	@DIACHI nvarchar(50)
+AS
+BEGIN
+    IF NOT EXISTS (SELECT MSSV FROM SINHVIEN WHERE MSSV = @MSSV)
+	BEGIN
+        RETURN 0; -- Nếu không tìm thấy trả về 0,
+	END
+
+    UPDATE SINHVIEN
+	SET TENSV = @TENSV, DIACHI = @DIACHI
+	WHERE MSSV = @MSSV
+	RETURN 1
+END;

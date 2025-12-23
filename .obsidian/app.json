@@ -15,5 +15,6 @@
   "newLinkFormat": "relative",
   "attachmentFolderPath": "./assets",
   "tabSize": 4,
-  "promptDelete": false
+  "promptDelete": false,
+  "vimMode": true
 }

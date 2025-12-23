@@ -6,11 +6,11 @@
 @import "default";
 
 :root {
-  font-family: "Lora", "Segoe UI", Helvetica, sans-serif;
-  --body-font: "Lora";
-  --main: #138CE8;
+  font-family: "Google Sans", "Segoe UI", Helvetica, sans-serif;
+  --body-font: "Google Sans";
+  --main: #D5724A;
   --secondary: #cceeff;
-  --cover-font: "Be Vietnam Pro";
+  --cover-font: "Google Sans";
 }
 
 section {
@@ -20,7 +20,7 @@ section {
   /*Decoder: https://base64.guru/converter/decode/image*/
   /*TODO: Update the background image to use the main color*/
   /*TOOD: Insert the UIT logo into the background image*/
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NTAiIGhlaWdodD0iMjAiPjxyZWN0IHdpZHRoPSI0NzUiIGhlaWdodD0iMjAiIGZpbGw9IiMxNzQxNDMiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHJ4PSIwIiByeT0iMCIgc3Ryb2tlPSIjZmZmIi8+PHJlY3Qgd2lkdGg9IjQ3NSIgaGVpZ2h0PSIyMCIgeD0iNDc1IiBmaWxsPSIjNDI3YTc2IiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2U9IiNmZmYiIHJ4PSIwIiByeT0iMCIgc3Ryb2tlLW9wYWNpdHk9IjEiLz48L3N2Zz4=);
+  background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" viewBox="0 0 950 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(0.927106,0,0,0.9,33.625005,1)"><path d="M475,1.61C474.892,4.259 473.721,10.898 472.896,15.895C472.718,16.971 472.561,17.847 472.443,18.39C472.289,19.097 471.711,19.998 470.988,20C392.917,20.268 4.017,20 4.017,20C3.214,20 2.562,19.279 2.562,18.39L2.562,1.61C2.562,0.721 3.214,0 4.017,0C4.017,0 395.048,-0.268 473.545,0C474.268,0.002 475.03,0.887 475,1.61Z" style="fill:rgb(23,65,67);"/></g><g transform="matrix(0.991579,0,0,0.9,5,1)"><g transform="matrix(0.930299,0,0,1,32.935865,0)"><path d="M950,1.609L950,18.391C950,19.279 949.346,20 948.54,20C948.54,20 553.327,20.268 473.992,20C473.268,19.998 472.491,19.114 472.531,18.391C472.699,15.326 474.345,4.674 475,1.609C475.151,0.901 475.736,0.002 476.46,0C555.383,-0.268 948.54,0 948.54,0C949.346,0 950,0.721 950,1.609Z" style="fill:rgb(213,114,74);"/></g><g transform="matrix(0.836414,0,0,0.908719,78.761048,0.606195)"><path d="M950,1.609L950,18.391C950,19.279 949.346,20 948.54,20C948.54,20 553.327,20.268 473.992,20C473.268,19.998 472.491,19.114 472.531,18.391C472.699,15.326 474.345,4.674 475,1.609C475.151,0.901 475.736,0.002 476.46,0C555.383,-0.268 948.54,0 948.54,0C949.346,0 950,0.721 950,1.609Z" style="fill:rgb(204,204,204);"/></g></g></svg>');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 150% 1em;
@@ -37,7 +37,7 @@ header {
   width: 100%;
   right: 0;
   left: -51%;
-  color: #E5E9C5;
+  color: #cccccc;
   font-family: var(--cover-font);
 }
 
@@ -50,7 +50,7 @@ footer {
   width: 100%;
   right: 0;
   left: 50.8%;
-  color: #E5E9C5;
+  color: #D5724A;
   font-family: var(--cover-font);
 }
 
@@ -99,7 +99,7 @@ section::after {
   width: 100%;
   right: 0;
   left: -0.5em;
-  color: white;
+  color: #cccccc;
 }
 
 /* inline math was too large wrt text */

@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[HOCVI] (
+    [MSHV]  INT           NOT NULL,
+    [TENHV] NVARCHAR (20) NOT NULL,
+    PRIMARY KEY CLUSTERED ([MSHV] ASC)
+);
+GO
+

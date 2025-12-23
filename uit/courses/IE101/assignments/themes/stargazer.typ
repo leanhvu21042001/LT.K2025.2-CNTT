@@ -490,7 +490,7 @@
           height: 1.8em,
           fill: gradient.linear(
             self.colors.primary,
-            self.colors.neutral-darkest,
+            self.colors.primary.lighten(60%),
           ),
           place(
             left + horizon,

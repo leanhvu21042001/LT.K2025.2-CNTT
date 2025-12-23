@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "jebbs.plantuml",
-        "myriad-dreamin.tinymist"
+        "myriad-dreamin.tinymist",
+        "microsoft.sql-database-projects"
     ]
 }

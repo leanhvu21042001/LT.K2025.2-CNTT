@@ -1,5 +1,13 @@
 # HOW TO
 
+## Fonts
+
+- Google Sans: https://fonts.google.com/specimen/Google+Sans
+- This is the font for both Obsidian UI font and document font.
+- You're free to pick any other font you want actually.
+
+![Obsidian Fonts](assets/obsidian-fonts.png)
+
 ## Getting Started
 
 1. Clone this repo.
