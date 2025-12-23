@@ -66,13 +66,23 @@
     <None Include="IE103-BTTH2.publish.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="dbo\Functions\f_DanhSachSVThucHienDeTai.sql" />
+    <Build Include="dbo\Functions\f_KetQuaDeTai.sql" />
+    <Build Include="dbo\Functions\f_TinhDiemTB.sql" />
+    <Build Include="dbo\StoredProcedures\sp_CountGVTheoHocVi.sql" />
+    <Build Include="dbo\StoredProcedures\SP_DiemTBDeTai.sql" />
+    <Build Include="dbo\StoredProcedures\sp_DiemTBTheoHD.sql" />
     <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSGV.sql" />
     <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH.sql" />
     <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH_MSGV.sql" />
+    <Build Include="dbo\StoredProcedures\sp_ThongTinDeTaiGV.sql" />
+    <Build Include="dbo\StoredProcedures\sp_TimGVTheoTen.sql" />
+    <Build Include="dbo\StoredProcedures\SP_TINH_DIEMTB_DETAI.sql" />
     <Build Include="dbo\StoredProcedures\SP_UPD_DETAI_KT_MSDT.sql" />
     <Build Include="dbo\StoredProcedures\SP_UPD_SINHVIEN_KT_MSSV.sql" />
     <Build Include="dbo\Tables\CHUYENNGANH.sql" />
     <Build Include="dbo\Tables\DETAI.sql" />
+    <Build Include="dbo\Tables\DETAI_DIEM.sql" />
     <Build Include="dbo\Tables\GIAOVIEN.sql" />
     <Build Include="dbo\Tables\GV_HDDT.sql" />
     <Build Include="dbo\Tables\GV_HV_CN.sql" />
