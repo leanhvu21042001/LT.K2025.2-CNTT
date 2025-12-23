@@ -1,6 +1,8 @@
-**A. TỔ CHỨC DỮ LIỆU**
+# Bài 1
 
-**1. Các kiểu dữ liệu (data type) dùng cho các trường (field) và cách sử dụng nó.**
+## **A. TỔ CHỨC DỮ LIỆU**
+
+### 1. Các kiểu dữ liệu (data type) dùng cho các trường (field) và cách sử dụng nó.
 
 SQL Server chia các kiểu dữ liệu thành các nhóm chính:
 
@@ -19,18 +21,16 @@ SQL Server chia các kiểu dữ liệu thành các nhóm chính:
 - DATETIME: Ngày và giờ chính xác đến mili-giây.
 - DATE: Chỉ lưu ngày (YYYY-MM-DD).
 
-**2. Dung lượng (KB) tối đa của 1 row trong 1 table mà SQL Server.
+### 2. Dung lượng (KB) tối đa của 1 row trong 1 table mà SQL Server.
 
 - Dung lượng tối đa của một dòng (row) trong SQL Server được giới hạn bởi kích thước của một trang dữ liệu (Page).
 - Giới hạn này là **8.060 bytes** (xấp xỉ 8KB).
 
-**3. Dung lượng (KB) tối đa của 1 table mà SQL Server cho phép.
-l
-
+### 3. Dung lượng (KB) tối đa của 1 table mà SQL Server cho phép.
 - Về lý thuyết, kích thước bảng chỉ bị giới hạn bởi dung lượng lưu trữ của hệ điều hành và phiên bản SQL Server.
 - Dung lượng tối đa của Database là **524,272 Terabytes**. Do đó, 1 table có thể chứa lượng dữ liệu khổng lồ gần như không giới hạn trong thực tế, miễn là ổ cứng còn chỗ trống.
 
-**4. Tìm hiểu ý nghĩa các table hệ thống (System tables) trong CSDL Master như: Sysusers; Syssserver; Sysxlogin.
+### 4. Tìm hiểu ý nghĩa các table hệ thống (System tables) trong CSDL Master như: Sysusers; Syssserver; Sysxlogin.
 
 - **Sysusers:** Chứa thông tin về mỗi người dùng (user) hoặc nhóm (role) được phép truy cập trong cơ sở dữ liệu.
 - **Sysservers:** Chứa thông tin về các server liên kết (Linked Servers) hoặc remote servers mà SQL Server này có thể giao tiếp.
