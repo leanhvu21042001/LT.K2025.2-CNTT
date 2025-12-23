@@ -3,8 +3,7 @@
 -- Phần 2
 -- C. TRIGGER
 
-/*1. Tạo Trigger thỏa mãn điều kiện khi xóa một đề tài sẽ xóa các thông tin liên
-quan.*/
+/*1. Tạo Trigger thỏa mãn điều kiện khi xóa một đề tài sẽ xóa các thông tin liên quan.*/
 
 CREATE TRIGGER trg_C1_CheckSoLuongSVDeTai
 ON SV_DETAI
@@ -26,8 +25,7 @@ BEGIN
 END
 GO
 
-/*2. Tạo Trigger thỏa mãn ràng buộc là khi đổi 1 mã số giáo viên (MSGV) thì sẽ
-thay đổi các thông tin liên quan.*/
+/*2. Tạo Trigger thỏa mãn ràng buộc là khi đổi 1 mã số giáo viên (MSGV) thì sẽ thay đổi các thông tin liên quan.*/
 
 CREATE TRIGGER trg_C2_CheckGVHVCN
 ON GV_HV_CN
@@ -76,8 +74,7 @@ BEGIN
 END
 GO
 
-/*3. Tạo Trigger thỏa mãn ràng buộc là một hội đồng không quá 10 đề tài. Dùng
-“Group by” có được không? Giải thích.*/
+/*3. Tạo Trigger thỏa mãn ràng buộc là một hội đồng không quá 10 đề tài. Dùng “Group by” có được không? Giải thích.*/
 
 CREATE TRIGGER trg_C3_CheckGvInHoiDong
 ON HOIDONG_GV
@@ -119,8 +116,7 @@ BEGIN
 END
 GO
 
-/*5. Tạo Trigger thỏa mãn ràng buộc là một giáo viên muốn có học hàm PGS
-phải là tiến sĩ.*/
+/*5. Tạo Trigger thỏa mãn ràng buộc là một giáo viên muốn có học hàm PGS phải là tiến sĩ.*/
 
 CREATE TRIGGER trg_C5_CheckNamHocHam
 ON GIAOVIEN
