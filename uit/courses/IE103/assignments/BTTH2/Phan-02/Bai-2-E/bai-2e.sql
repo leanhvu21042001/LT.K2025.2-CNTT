@@ -1,8 +1,13 @@
+-- NHOM 2
 -- IE103
 -- BTTH2
 -- Phần 2
-
+-- E: CURSOR
+-- NOTE: A Batch/Top-Down processing Script.
+-- ================================================================
 -- 0. Tạo table detai_diem
+-- ================================================================
+
 DROP TABLE IF EXISTS DETAI_DIEM;
 GO
 
@@ -12,7 +17,12 @@ CREATE TABLE DETAI_DIEM (
     CONSTRAINT FK_DETAI_DIEM_DETAI FOREIGN KEY (MSDT) REFERENCES DETAI(MSDT)
 );
 GO
--- 1. Viết Cursor tính điểm trung bình cho từng đề tài. Sau đó lưu kết quả vào bảng DETAI_DIEM.
+
+-- ================================================================
+-- 1.
+-- Viết Cursor tính điểm trung bình cho từng đề tài.
+--- Sau đó lưu kết quả vào bảng DETAI_DIEM.
+-- ================================================================
 
 -- Khai báo biến
 DECLARE @MSDT CHAR(6);
@@ -55,10 +65,15 @@ END
 -- Ðóng và hủy Cursor
 CLOSE CUR_TINH_DIEM;
 DEALLOCATE CUR_TINH_DIEM;
------ Kiểm tra bảng đã nhập được chưa.
+GO
+-- Kiểm tra bảng đã nhập được chưa.
 SELECT * FROM DETAI_DIEM;
+GO
 
--- 2. Gom các bước xử lý của Cursor ở câu 1 vào một Stored Procedure.
+-- ================================================================
+-- 2.
+-- Gom các bước xử lý của Cursor ở câu 1 vào một Stored Procedure.
+-- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_TINH_DIEMTB_DETAI
 AS
@@ -105,9 +120,14 @@ GO
 
 -- Chạy SP vừa tạo để cho kết quả mới
 EXEC SP_TINH_DIEMTB_DETAI;
+GO
 
--- 3.Tạo thêm cột XEPLOAI có kiểu là NVARCCHAR(20) trong bảng DETAI_DIEM, viết Cursor cập nhật kết quả xếp loại cho mỗi đề tài
+-- ================================================================
+-- 3.
+-- Tạo thêm cột XEPLOAI có kiểu là NVARCCHAR(20) trong bảng DETAI_DIEM
+-- Viết Cursor cập nhật kết quả xếp loại cho mỗi đề tài.
 -- Thêm cột XEPLOAI vào bảng DETAI_DIEM để lưu kết quả xếp loại
+-- ================================================================
 
 ALTER TABLE DETAI_DIEM
 ADD XEPLOAI NVARCHAR(20);
@@ -155,4 +175,11 @@ CLOSE CUR_XEPLOAI;
 -- Đóng Cursor sau khi duyệt xong dữ liệu
 DEALLOCATE CUR_XEPLOAI;
 GO
+
+-- Kiểm tra kết quả
 SELECT * FROM DETAI_DIEM;
+GO
+
+-- ================================================================
+-- THE END
+-- ================================================================
