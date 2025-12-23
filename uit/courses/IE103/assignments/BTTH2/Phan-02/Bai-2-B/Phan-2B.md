@@ -27,6 +27,7 @@ GO
 ```
 
 ### Ví dụ gọi và thực thi (Học vị: Thạc sĩ)
+
 ```sql
 DECLARE @KETQUA INT;
 EXEC sp_CountGVTheoHocVi N'Thạc sĩ', @KETQUA output ;
@@ -35,6 +36,7 @@ SELECT N'Số GV Thạc sĩ: ' AS KetQua, @KETQUA AS SoLuong;
 ![Ket Qua 1](./images/2b-1-1.png)
 
 ### Ví dụ gọi và thực thi (Học vị không tồn tại)
+
 ```sql
 DECLARE @KETQUA INT;
 EXEC sp_CountGVTheoHocVi N'Tiến sĩ', @KETQUA output ;
@@ -70,19 +72,23 @@ GO
 ```
 
 ### Ví dụ gọi và thực thi (Đề tài 97001)
+
 ```sql
 DECLARE @KETQUA FLOAT;
 EXEC SP_DiemTBDeTai '97001', @KETQUA output ;
 SELECT 'Diem TB De Tai 97001 ' AS KETQUA, @KETQUA AS DiemTB;
 ```
+
 ![Ket Qua 1](./images/2b-2-1.png)
 
 ### Ví dụ gọi và thực thi (Đề tài không có điểm - 97007)
+
 ```sql
 DECLARE @KETQUA FLOAT;
 EXEC sp_DiemTBDeTai '97007', @KETQUA OUTPUT;
 SELECT 'Diem TB De Tai 97007 ' AS KetQua, @KETQUA AS DiemTB;
 ```
+
 ![Ket Qua 1](./images/2b-2-2.png)
 
 ## 3. Đưa vào TENGV trả ra: SDT của giáo viên đó, nếu không tìm thấy trả về 0. Nếu trùng tên thì có báo lỗi không? Tại sao? Làm sao để hiện thông báo có bao nhiêu giáo viên trùng tên và trả về các SDT
@@ -119,35 +125,41 @@ GO
 ```
 
 ### Dữ liệu bảng GIAO VIEN (Đã thêm một record Nguyễn Văn An)
+
 ![Du lieu dau vao](./images/2b-3-1.png)
 
 ### Ví dụ 1: Trường hợp trùng tên (Nguyễn Văn An)
+
 ```sql
 DECLARE @SoLuong INT, @DS_SDT NVARCHAR(100);
 EXEC sp_TimGVTheoTen N'Nguyễn Văn An', @SoLuong OUTPUT, @DS_SDT OUTPUT;
 SELECT N'Tong so giao vien trung ten: ' AS ThongBao, @SoLuong AS SoLuong, @DS_SDT AS 'Danh sach so dien thoai';
 ```
+
 ![Vi du 1](./images/2b-3-2.png)
 
 ### Ví dụ 2: Trường hợp không trùng tên (Trần Trung)
+
 ```sql
 DECLARE @SoLuong INT, @DS_SDT NVARCHAR(100);
 EXEC sp_TimGVTheoTen N'Trần Trung', @SoLuong OUTPUT, @DS_SDT OUTPUT;
 SELECT N'Tong so giao vien trung ten: ' AS ThongBao, @SoLuong AS SoLuong, @DS_SDT AS 'Danh sach so dien thoai';
 ```
+
 ![Vi du 2](./images/2b-3-3.png)
 
 ### Ví dụ 3: Trường hợp không tìm thấy (Lê Kim Long)
+
 ```sql
 DECLARE @SoLuong INT, @DS_SDT NVARCHAR(100);
 EXEC sp_TimGVTheoTen N'Lê Kim Long', @SoLuong OUTPUT, @DS_SDT OUTPUT;
 SELECT N'Tong so giao vien trung ten: ' AS ThongBao, @SoLuong AS SoLuong, @DS_SDT AS 'Danh sach so dien thoai';
 ```
+
 ![Vi du 3](./images/2b-3-4.png)
 
--------
-
 ## 4. Đưa vào MSHD cho biết: Điểm trung bình các đề tài của hội đồng đó
+
 ```sql
 CREATE PROCEDURE sp_DiemTBTheoHD @MSHD INT,
                                  @DIEM_TB FLOAT OUTPUT
@@ -168,20 +180,24 @@ end
 go
 ```
 
-### -- Ví dụ gọi và thực thi (Hội đồng 1)
+### Ví dụ gọi và thực thi (Hội đồng 1)
+
 ```sql
 DECLARE @DiemTB FLOAT;
 EXEC sp_DiemTBTheoHD 1, @DiemTB output;
 SELECT @DiemTB as 'Diem Trung Binh'
 ```
+
 ![Vi du 1](./images/2b-4-1.png)
 
-### -- Ví dụ gọi và thực thi (Hội đồng 2)
+### Ví dụ gọi và thực thi (Hội đồng 2)
+
 ```sql
 DECLARE @DiemTB FLOAT;
 EXEC sp_DiemTBTheoHD 2, @DiemTB output;
 SELECT @DiemTB as 'Diem Trung Binh'
 ```
+
 ![Vi du 1](./images/2b-4-2.png)
 
 ## Đưa vào TENGV cho biết: Số đề tài hướng dẫn, số đề tài phản biện do giáo viên đó phụ trách. Nếu trùng tên thì có báo lỗi không hay hệ thống sẽ đếm tất cả các đề tài của những giáo viên trùng tên đó?
@@ -239,11 +255,13 @@ go
     ![Table 3](./images/2b-5-3.png)
 
 ### Ví dụ 1: không tìm thấy giáo viên (Lê Kim Long)
+
 ```sql
 DECLARE @SoDT_HD INT, @SoDT_PB INT
 EXEC sp_ThongTinDeTaiGV N'Lê Kim Long', @SoDT_HD OUTPUT ,@SoDT_PB OUTPUT ;
 SELECT @SoDT_HD AS N'Số lượng đề tài hướng dẫn', @SoDT_PB AS N'Số lượng đề tài phản biện'
 ```
+
 ![Vi du 1](./images/2b-5-4.png)
 
 ### Ví dụ 2: trùng tên giáo viên (Nguyễn Văn An)
