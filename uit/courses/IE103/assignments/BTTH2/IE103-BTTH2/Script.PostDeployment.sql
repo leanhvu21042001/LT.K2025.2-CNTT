@@ -111,5 +111,3 @@ INSERT INTO HOIDONG_DT (MSHD, MSDT, QUYETDINH) VALUES
 (1, '97005', N'Được'),
 (3, '97001', N'Không'),
 (3, '97002', N'Được');
-
--- Phan 2.A
