@@ -1,3 +1,10 @@
+-- NHOM 2
+-- IE103
+-- BTTH2
+-- Phần 2
+-- 2. INSERT dữ liệu
+-- NOTE: A Batch/Top-Down processing Script.
+
 INSERT INTO SINHVIEN (MSSV, TENSV, SODT, LOP, DIACHI) VALUES
 ('13520001', N'Nguyễn Văn An', '0906762255', 'SE103.U32', N'THỦ ĐỨC'),
 ('13520002', N'Phan Tấn Đạt', '0975672350', 'IE204.T21', N'QUẬN 1'),
@@ -107,3 +114,4 @@ INSERT INTO HOIDONG_DT (MSHD, MSDT, QUYETDINH) VALUES
 (1, '97005', N'Được'),
 (3, '97001', N'Không'),
 (3, '97002', N'Được');
+GO
