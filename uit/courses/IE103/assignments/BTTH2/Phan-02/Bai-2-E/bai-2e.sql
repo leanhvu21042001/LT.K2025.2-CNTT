@@ -3,12 +3,15 @@
 -- Phần 2
 
 -- 0. Tạo table detai_diem
+DROP TABLE IF EXISTS DETAI_DIEM;
+GO
+
 CREATE TABLE DETAI_DIEM (
     MSDT char(6) PRIMARY KEY,
     DIEMTB FLOAT,
     CONSTRAINT FK_DETAI_DIEM_DETAI FOREIGN KEY (MSDT) REFERENCES DETAI(MSDT)
 );
-
+GO
 -- 1. Viết Cursor tính điểm trung bình cho từng đề tài. Sau đó lưu kết quả vào bảng DETAI_DIEM.
 
 -- Khai báo biến
