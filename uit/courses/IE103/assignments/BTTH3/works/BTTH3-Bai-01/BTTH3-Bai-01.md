@@ -36,29 +36,32 @@ SQL Server chia các kiểu dữ liệu thành các nhóm chính:
 - **Sysservers:** Chứa thông tin về các server liên kết (Linked Servers) hoặc remote servers mà SQL Server này có thể giao tiếp.
 - **Sysxlogins:** Chứa thông tin về tài khoản đăng nhập (Login account) và mật khẩu (đã mã hóa) cấp server. Hiện nay thường dùng sys.server_principals hoặc sys.sql_logins.
 
-**5. Khi người dùng tạo 1 CSDL, SQL Server yêu cầu tạo ra tối thiểu bao nhiêu file? Ý nghĩa mỗi file? Chú ý câu lệnh: CREATE DATABASE AAA.
+### 5. Khi người dùng tạo 1 CSDL, SQL Server yêu cầu tạo ra tối thiểu bao nhiêu file? Ý nghĩa mỗi file? Chú ý câu lệnh: CREATE DATABASE AAA.
 
 Khi tạo một CSDL (lệnh CREATE DATABASE AAA), SQL Server yêu cầu tạo ra tối thiểu 2 file:
 ![](assets/Pasted%20image%2020251222210109.png)
-1. **File dữ liệu chính (Primary Data File - đuôi** **.mdf****):
 
-- _Ý nghĩa:_ Chứa thông tin khởi tạo database và lưu trữ dữ liệu chính của các bảng, view, index...
-- Mỗi database bắt buộc phải có 1 file này.
+1. **File dữ liệu chính (Primary Data File - đuôi** **.mdf****):
+   - _Ý nghĩa:_ Chứa thông tin khởi tạo database và lưu trữ dữ liệu chính của các bảng, view, index...
+   - Mỗi database bắt buộc phải có 1 file này.
+
 
 2. **File nhật ký giao dịch (Transaction Log File - đuôi** **.ldf****):
+   - _Ý nghĩa:_ Ghi lại tất cả các giao dịch (insert, update, delete) và các sửa đổi CSDL.
+   - Dùng để khôi phục dữ liệu (restore) khi có sự cố, đảm bảo tính toàn vẹn (ACID).
 
-- _Ý nghĩa:_ Ghi lại tất cả các giao dịch (insert, update, delete) và các sửa đổi CSDL. Dùng để khôi phục dữ liệu (restore) khi có sự cố, đảm bảo tính toàn vẹn (ACID).
 
 Ngoài ra có thể có Secondary Data Files (.ndf) nếu cần chia nhỏ ra (optional).
 
-**6. Số user có thể connect cùng 1 thời điểm là bao nhiêu?
+### 6. Số user có thể connect cùng 1 thời điểm là bao nhiêu?
 
-Số lượng kết nối tối đa (user connections) mà SQL Server hỗ trợ là **32.767** kết nối
+Số lượng kết nối tối đa (user connections) mà SQL Server hỗ trợ là **32.767** kết nối.
 
-**B. AN TOÀN DỮ LIỆU**
+## B. AN TOÀN DỮ LIỆU
 
 **7. Hãy backup CSDL AAA thành 1 file AAA.BAK, sau đó xóa CSDL AAA và hãy khôi phục AAA nhờ vào AAA.BAK. 
 Thực hiện bằng 2 cách: 
+
 - Cách 1: Dùng giao diện. Yêu cầu: Chụp màn hình các bước thực hiện (Chụp đúng phần cần thiết và rõ nét, có thể dùng công cụ Snipping Tool). 
 - Cách 2: Dùng câu lệnh. Yêu cầu: Dùng các lệnh SQL để thực hiện.
 
@@ -95,6 +98,7 @@ TO DISK = 'C:\Users\Admin\Desktop\Backup\AAA.BAK'
 WITH FORMAT;
 GO
 ![](assets/Pasted%20image%2020251222224625.png)
+
 - **Xóa (Delete):**
 
 ALTER DATABASE AAA SET SINGLE_USER WITH ROLLBACK IMMEDIATE; -- để đảm bảo không có ai đang dùng Database
@@ -157,4 +161,4 @@ Có thể thấy mũi tên từ bộ phận điều khiển ADO.NET (phía ứng
 
 **Data at rest (Trạng thái nghỉ):
 
- Ở phía bên phải (Database), hình ảnh biểu diễn dữ liệu được lưu trong ổ cứng (hình trụ) là "Encrypted Data" (Dữ liệu đã mã hóa). Ngay cả DBA (người quản trị cơ sở dữ liệu) khi truy xuất vào bảng cũng chỉ thấy chuỗi mã hóa vô nghĩa (ví dụ: 0x823ksk...). Điều này chứng tỏ dữ liệu nằm trên đĩa cứng của server luôn ở trạng thái được mã hóa.
+Ở phía bên phải (Database), hình ảnh biểu diễn dữ liệu được lưu trong ổ cứng (hình trụ) là "Encrypted Data" (Dữ liệu đã mã hóa). Ngay cả DBA (người quản trị cơ sở dữ liệu) khi truy xuất vào bảng cũng chỉ thấy chuỗi mã hóa vô nghĩa (ví dụ: 0x823ksk...). Điều này chứng tỏ dữ liệu nằm trên đĩa cứng của server luôn ở trạng thái được mã hóa.
