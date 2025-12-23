@@ -1,6 +1,10 @@
---2A.1
---Tham số vào là MSGV, TENGV, SODT, DIACHI, MSHH, NAMHH.
---Trước khi insert dữ liệu cần kiểm tra MSHH đã tồn tại trong table HOCHAM chưa, nếu chưa thì trả về giá trị 0.
+-- ================================================================
+-- 2A.1
+-- Tham số vào là MSGV, TENGV, SODT, DIACHI, MSHH, NAMHH.
+-- Trước khi insert dữ liệu cần kiểm tra MSHH đã tồn tại trong table HOCHAM chưa,
+-- nếu chưa thì trả về giá trị 0.
+-- ================================================================
+
 CREATE PROC SP_INS_GV_KT_MSHH
     @MSGV INT, 
 	@TENGV NVARCHAR(30), 
