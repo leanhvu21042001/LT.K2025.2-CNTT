@@ -13,11 +13,11 @@
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH
-    @MSGV INT, 
-    @TENGV NVARCHAR(30), 
+    @MSGV INT,
+    @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
-    @DIACHI NVARCHAR(50), 
-    @MSHH INT, 
+    @DIACHI NVARCHAR(50),
+    @MSHH INT,
     @NAMHH SMALLDATETIME
 AS
 BEGIN
@@ -65,11 +65,11 @@ GO
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH_MSGV
-    @MSGV INT, 
-    @TENGV NVARCHAR(30), 
+    @MSGV INT,
+    @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
-    @DIACHI NVARCHAR(50), 
-    @MSHH INT, 
+    @DIACHI NVARCHAR(50),
+    @MSHH INT,
     @NAMHH SMALLDATETIME
 AS
 BEGIN
@@ -118,7 +118,7 @@ GO
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_UPD_SINHVIEN_KT_MSSV
-    @MSSV char(8), 
+    @MSSV char(8),
     @TENSV NVARCHAR(30),
     @DIACHI nvarchar(50)
 AS
