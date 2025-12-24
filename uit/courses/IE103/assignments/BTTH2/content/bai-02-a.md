@@ -7,7 +7,7 @@
     - Nếu chưa thì trả về giá trị `0`.
 
 ```sql
-CREATE PROC SP_INS_GV_KT_MSHH
+CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH
     @MSGV INT,
     @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
@@ -21,6 +21,7 @@ BEGIN
     INSERT INTO GIAOVIEN VALUES (@MSGV, @TENGV, @DIACHI, @SODT, @MSHH, @NAMHH)
     RETURN 1
 END;
+GO
 ```
 
 ### Kiểm Tra `MSGV` Trong Table `GIAOVIEN`
@@ -30,7 +31,7 @@ END;
     - Nếu trùng thì trả về giá trị `0`.
 
 ```sql
-CREATE PROC SP_INS_GV_KT_MSGV
+CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSGV
     @MSGV INT,
     @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
@@ -50,6 +51,7 @@ BEGIN
     INSERT INTO GIAOVIEN VALUES (@MSGV, @TENGV, @DIACHI, @SODT, @MSHH, @NAMHH)
     RETURN 1
 END;
+GO
 ```
 
 ### Kiểm Tra `MSGV` và `MSHH`
@@ -60,7 +62,7 @@ END;
     - Ngược lại cho `INSERT` dữ liệu
 
 ```sql
-CREATE PROC SP_INS_GV_KT_MSHH_MSGV
+CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH_MSGV
     @MSGV INT,
     @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
@@ -71,7 +73,7 @@ AS
 BEGIN
     IF NOT EXISTS (SELECT MSHH FROM HOCHAM WHERE MSHH = @MSHH)
     BEGIN
-        RETURN 1; -- Nếu MSHH chưa tồn tại trả về 1
+        RETURN 1; --Nếu MSHH chưa tồn tại trả về 1
     END
     IF EXISTS (SELECT 1 FROM GIAOVIEN WHERE MSGV = @MSGV)
     BEGIN
@@ -79,6 +81,7 @@ BEGIN
     END
     INSERT INTO GIAOVIEN VALUES (@MSGV, @TENGV, @DIACHI, @SODT, @MSHH, @NAMHH)
 END;
+GO
 ```
 
 ### Thao Tác với `MSDT` và `TENDT`
@@ -89,7 +92,7 @@ END;
     - Ngược lại cập nhật và trả về `1`.
 
 ```sql
-CREATE PROC SP_UPD_DETAI_KT_MSDT
+CREATE OR ALTER PROCEDURE SP_UPD_DETAI_KT_MSDT
     @MSDT char(6),
     @TENDT NVARCHAR(30)
 AS
@@ -104,6 +107,7 @@ BEGIN
     WHERE MSDT = @MSDT
     RETURN 1
 END;
+GO
 ```
 
 ### Thao Tác với `MSSV`, `TENSV`, `DIACHI`
@@ -114,8 +118,8 @@ END;
     - Ngược lại cập nhật và trả về `1`.
 
 ```sql
-CREATE PROC SP_UPD_SINHVIEN_KT_MSSV
-    @MSSV char(8), 
+CREATE OR ALTER PROCEDURE SP_UPD_SINHVIEN_KT_MSSV
+    @MSSV char(8),
     @TENSV NVARCHAR(30),
     @DIACHI nvarchar(50)
 AS
@@ -130,4 +134,5 @@ BEGIN
     WHERE MSSV = @MSSV
     RETURN 1
 END;
+GO
 ```
