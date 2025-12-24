@@ -36,4 +36,32 @@ Trình bày giới thiệu quản lý bộ nhớ, trình bày mục tiêu và n�
     - Chia sẻ: cho phép các tiến trình chia sẻ vùng nhớ chung
     - Kết gán địa chỉ nhớ luận lý của user vào địa chỉ thực
 
+### Slide: Khái niệm cơ sở về bộ nhớ
 
+### Quiz: Khái niệm cơ sở về bộ nhớ
+
+> [!NOTE]
+> Chọn phát biểu đúng khi nói về việc quản lý bộ nhớ?
+> 
+> - [ ] Chương trình ứng dụng chỉ làm việc với địa chỉ luận lý và không bao giờ nhìn thấy địa chỉ vật lý thực sự
+> - [x] Tất cả các đáp án đều đúng
+> - [ ] Địa chỉ bộ nhớ trong mã nguồn được biểu diễn dưới dạng ký hiệu (symbolic)
+> - [ ] Việc liên kết địa chỉ sẽ được thực hiện trong giai đoạn thực thi nếu chương trình cần truy cập đến một vị trí nào đó trong bộ nhớ chính
+
+> [!NOTE]
+> Chọn phát biểu đúng trong các phát biểu sau?
+> 
+> - [ ] Tất cả đều đúng
+> - [ ] Input queue là một tập các tiến trình trên RAM đang chờ được cấp CPU
+> - [x] Chương trình cần phải được nạp vào bộ nhớ chính và được cấp phát CPU cùng với các tài nguyên khác thì mới có thể được thực thi
+> - [ ] Chương trình chỉ cần được cấp CPU là có thể được thực thi
+
+> [!NOTE]
+> Những yêu cầu nào sau đây KHÔNG phải là yêu cầu dành cho quản lý bộ nhớ?
+> 
+> - [ ] Kiểm tra việc truy xuất bộ nhớ có hợp lệ không
+> - [ ] Cấp phát/thu hồi bộ nhớ cho các tiến trình
+> - [ ] Cho phép các tiến trình chia sẻ vùng nhớ chung
+> - [ ] Tái định vị
+> - [ ] Chuyển địa chỉ luận lý thành địa chỉ thực
+> - [x] Cho phép các tiến trình được tự chia sẻ vùng nhớ chung
