@@ -14,7 +14,6 @@ ON HOIDONG_DT
 FOR INSERT, UPDATE
 AS
 BEGIN
-
     IF EXISTS (
         SELECT HOIDONG_DT.MSHD
         FROM HOIDONG_DT
@@ -28,6 +27,8 @@ BEGIN
     END
 END;
 GO
+
+-- == VÍ DỤ
 
 -- Thêm số lượng đề tài trước khi kiểm thử: với các đề tài bổ sung, và một hội đồng giả định.
 INSERT INTO DETAI (MSDT, TENDT) VALUES 
