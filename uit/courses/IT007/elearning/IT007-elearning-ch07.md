@@ -65,3 +65,15 @@ Trình bày giới thiệu quản lý bộ nhớ, trình bày mục tiêu và n�
 > - [ ] Tái định vị
 > - [ ] Chuyển địa chỉ luận lý thành địa chỉ thực
 > - [x] Cho phép các tiến trình được tự chia sẻ vùng nhớ chung
+
+## Các kiểu địa chỉ nhớ
+
+## Chuyển đổi địa chỉ nhớ
+
+## Mô hình quản lý bộ nhớ
+
+## Cơ chế phân trang
+
+## Cơ chế hoán vị
+
+## Bài kiểm tra tiểu kết
