@@ -2,6 +2,7 @@
 -- IE103
 -- BTTH3
 -- Bài 2
+-- A. IMPORT và EXPORT (Bỏ qua, không có code)
 -- B. XÁC THỰC NGƯỜI DÙNG
 -- C. PHÂN QUYỀN NGƯỜI DÙNG
 -- NOTE: A Batch/Top-Down processing Script.
