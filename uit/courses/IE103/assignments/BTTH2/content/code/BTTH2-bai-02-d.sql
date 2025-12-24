@@ -1,7 +1,7 @@
--- NHOM 2
--- IE103
--- BTTH2
--- Phần 2
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
+-- BTTH3
+-- PHẦN 2
 -- D. FUNCTION
 -- NOTE: A Batch/Top-Down processing Script.
 
