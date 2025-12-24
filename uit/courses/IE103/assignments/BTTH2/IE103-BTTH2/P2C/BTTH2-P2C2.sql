@@ -1,3 +1,5 @@
+
+-- Xóa trigger nếu đã tồn tại
 IF OBJECT_ID('BTTH2_TRG_CapNhatMSGV', 'TR') IS NOT NULL
     DROP TRIGGER BTTH2_TRG_CapNhatMSGV;
 GO
@@ -51,6 +53,8 @@ BEGIN
     END
 END;
 GO
+
+-- == VÍ DỤ
 
 -- Bước 1: Kiểm tra thông tin TRƯỚC khi đổi
 -- GV 202 đang hướng dẫn đề tài 97002
