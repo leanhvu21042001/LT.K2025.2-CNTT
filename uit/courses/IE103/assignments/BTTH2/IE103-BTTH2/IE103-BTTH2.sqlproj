@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>IE103-BTTH2</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{555B7A89-F74F-4554-BBF7-4E999D0C975D}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>IE103-BTTH2</RootNamespace>
+    <AssemblyName>IE103-BTTH2</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(NetCoreBuild)' == 'true'" Project="$(NETCoreTargetsPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <PackageReference Condition="'$(NetCoreBuild)' == 'true'" Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vscode\tasks.json" />
+    <None Include="IE103-BTTH2.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Functions\f_DanhSachSVThucHienDeTai.sql" />
+    <Build Include="dbo\Functions\f_KetQuaDeTai.sql" />
+    <Build Include="dbo\Functions\f_TinhDiemTB.sql" />
+    <Build Include="dbo\StoredProcedures\sp_CountGVTheoHocVi.sql" />
+    <Build Include="dbo\StoredProcedures\SP_DiemTBDeTai.sql" />
+    <Build Include="dbo\StoredProcedures\sp_DiemTBTheoHD.sql" />
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSGV.sql" />
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH.sql" />
+    <Build Include="dbo\StoredProcedures\SP_INS_GV_KT_MSHH_MSGV.sql" />
+    <Build Include="dbo\StoredProcedures\sp_ThongTinDeTaiGV.sql" />
+    <Build Include="dbo\StoredProcedures\sp_TimGVTheoTen.sql" />
+    <Build Include="dbo\StoredProcedures\SP_TINH_DIEMTB_DETAI.sql" />
+    <Build Include="dbo\StoredProcedures\SP_UPD_DETAI_KT_MSDT.sql" />
+    <Build Include="dbo\StoredProcedures\SP_UPD_SINHVIEN_KT_MSSV.sql" />
+    <Build Include="dbo\Tables\CHUYENNGANH.sql" />
+    <Build Include="dbo\Tables\DETAI.sql" />
+    <Build Include="dbo\Tables\DETAI_DIEM.sql" />
+    <Build Include="dbo\Tables\GIAOVIEN.sql" />
+    <Build Include="dbo\Tables\GV_HDDT.sql" />
+    <Build Include="dbo\Tables\GV_HV_CN.sql" />
+    <Build Include="dbo\Tables\GV_PBDT.sql" />
+    <Build Include="dbo\Tables\GV_UVDT.sql" />
+    <Build Include="dbo\Tables\HOCHAM.sql" />
+    <Build Include="dbo\Tables\HOCVI.sql" />
+    <Build Include="dbo\Tables\HOIDONG.sql" />
+    <Build Include="dbo\Tables\HOIDONG_DT.sql" />
+    <Build Include="dbo\Tables\HOIDONG_GV.sql" />
+    <Build Include="dbo\Tables\SINHVIEN.sql" />
+    <Build Include="dbo\Tables\SV_DETAI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment.sql" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
+  </Target>
+</Project>

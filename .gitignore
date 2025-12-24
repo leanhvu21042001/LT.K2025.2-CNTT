@@ -5,7 +5,14 @@
 .obsidian/workspace.json
 .obsidian/graph.json
 
-# Objects/Build
+# C/C++ Objects/Build
 *.o
 *.out
 
+# ADS (Azure Database Studio)
+*.dacpac
+*.dll
+*.pdb
+obj/
+bin/
+*.swp

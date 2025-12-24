@@ -1,0 +1,7 @@
+CREATE TABLE [dbo].[HOCHAM] (
+    [MSHH]  INT           NOT NULL,
+    [TENHH] NVARCHAR (20) NOT NULL,
+    PRIMARY KEY CLUSTERED ([MSHH] ASC)
+);
+GO
+
