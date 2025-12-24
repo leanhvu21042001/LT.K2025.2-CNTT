@@ -1,8 +1,8 @@
--- NHOM 2
--- IE103
--- BTTH2
--- Phần 1
--- 1. Tạo các Quan Hệ
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
+-- BTTH3
+-- PHẦN 1
+-- Mục 1. Tạo các Quan Hệ
 -- NOTE: A Batch/Top-Down processing Script with GO.
 
 CREATE TABLE SINHVIEN (
