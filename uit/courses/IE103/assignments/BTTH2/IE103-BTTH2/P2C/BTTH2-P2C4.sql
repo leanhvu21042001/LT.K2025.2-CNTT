@@ -1,7 +1,12 @@
+-- == TRIGGER
+
+-- Xóa trigger nếu đang tồn tại
+
 IF OBJECT_ID('BTTH2_TRG_KiemTraSoLuongSinhVien', 'TR') IS NOT NULL
     DROP TRIGGER BTTH2_TRG_KiemTraSoLuongSinhVien;
 GO
 
+-- Tạo trigger mới
 CREATE TRIGGER BTTH2_TRG_KiemTraSoLuongSinhVien
 ON SV_DETAI
 FOR INSERT, UPDATE
@@ -21,6 +26,9 @@ BEGIN
 END;
 GO
 
+-- == VÍ DỤ
+
+-- Thêm đề tài để kiểm thử
 IF NOT EXISTS (SELECT * FROM DETAI WHERE MSDT = '99999')
 INSERT INTO DETAI (MSDT, TENDT) VALUES ('99999', N'Đề tài kiểm thử Trigger SV');
 GO
@@ -37,11 +45,13 @@ GO
 INSERT INTO SV_DETAI (MSSV, MSDT) VALUES ('13520002', '99999');
 GO
 
+-- Xem số lượng Sinh Viên của đề tài kiểm thử
 SELECT MSDT, COUNT(MSSV) AS SoLuongSV 
 FROM SV_DETAI 
 WHERE MSDT = '99999' 
 GROUP BY MSDT;
 GO
 
+-- Cố gắng thêm sinh viên và gặp lỗi
 INSERT INTO SV_DETAI (MSSV, MSDT) VALUES ('13520003', '99999');
 GO
