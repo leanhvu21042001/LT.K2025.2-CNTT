@@ -1,0 +1,57 @@
+-- == TRIGGER
+
+-- Xóa trigger nếu đang tồn tại
+
+IF OBJECT_ID('BTTH2_TRG_KiemTraSoLuongSinhVien', 'TR') IS NOT NULL
+    DROP TRIGGER BTTH2_TRG_KiemTraSoLuongSinhVien;
+GO
+
+-- Tạo trigger mới
+CREATE TRIGGER BTTH2_TRG_KiemTraSoLuongSinhVien
+ON SV_DETAI
+FOR INSERT, UPDATE
+AS 
+BEGIN
+    IF EXISTS (
+        SELECT SV_DETAI.MSDT
+        FROM SV_DETAI
+        JOIN INSERTED ON SV_DETAI.MSDT = INSERTED.MSDT
+        GROUP BY SV_DETAI.MSDT
+        HAVING COUNT(SV_DETAI.MSSV) > 2
+    )
+    BEGIN
+        RAISERROR(N'Lỗi: Một đề tài không được quá 2 sinh viên thực hiện.', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+END;
+GO
+
+-- == VÍ DỤ
+
+-- Thêm đề tài để kiểm thử
+IF NOT EXISTS (SELECT * FROM DETAI WHERE MSDT = '99999')
+INSERT INTO DETAI (MSDT, TENDT) VALUES ('99999', N'Đề tài kiểm thử Trigger SV');
+GO
+
+-- Xóa dữ liệu cũ của đề tài 99999 trong bảng SV_DETAI nếu có để test lại từ đầu
+DELETE FROM SV_DETAI WHERE MSDT = '99999';
+GO
+
+-- Thêm sinh viên thứ 1
+INSERT INTO SV_DETAI (MSSV, MSDT) VALUES ('13520001', '99999');
+GO
+
+-- Thêm sinh viên thứ 2
+INSERT INTO SV_DETAI (MSSV, MSDT) VALUES ('13520002', '99999');
+GO
+
+-- Xem số lượng Sinh Viên của đề tài kiểm thử
+SELECT MSDT, COUNT(MSSV) AS SoLuongSV 
+FROM SV_DETAI 
+WHERE MSDT = '99999' 
+GROUP BY MSDT;
+GO
+
+-- Cố gắng thêm sinh viên và gặp lỗi
+INSERT INTO SV_DETAI (MSSV, MSDT) VALUES ('13520003', '99999');
+GO

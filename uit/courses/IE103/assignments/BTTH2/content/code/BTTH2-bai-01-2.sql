@@ -1,9 +1,9 @@
--- NHOM 2
--- IE103
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
 -- BTTH2
--- Phần 2
--- 2. INSERT dữ liệu
--- NOTE: A Batch/Top-Down processing Script.
+-- PHẦN 1
+-- Mục 2. INSERT dữ liệu
+-- NOTE: A Batch/Top-Down processing Script with GO.
 
 INSERT INTO SINHVIEN (MSSV, TENSV, SODT, LOP, DIACHI) VALUES
 ('13520001', N'Nguyễn Văn An', '0906762255', 'SE103.U32', N'THỦ ĐỨC'),

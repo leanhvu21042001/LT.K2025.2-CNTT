@@ -1,7 +1,7 @@
--- NHOM 2
--- IE103
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
 -- BTTH2
--- Phần 2
+-- PHẦN 2
 -- A. STORED PROCEDURES
 -- NOTE: A Batch/Top-Down processing Script.
 
@@ -13,18 +13,18 @@
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH
-    @MSGV INT, 
-    @TENGV NVARCHAR(30), 
+    @MSGV INT,
+    @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
-    @DIACHI NVARCHAR(50), 
-    @MSHH INT, 
+    @DIACHI NVARCHAR(50),
+    @MSHH INT,
     @NAMHH SMALLDATETIME
 AS
 BEGIN
     IF NOT EXISTS (SELECT MSHH FROM HOCHAM WHERE MSHH = @MSHH)
         RETURN 0
     INSERT INTO GIAOVIEN VALUES (@MSGV, @TENGV, @DIACHI, @SODT, @MSHH, @NAMHH)
-    RETURN 1
+        RETURN 1
 END;
 GO
 
@@ -65,11 +65,11 @@ GO
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_INS_GV_KT_MSHH_MSGV
-    @MSGV INT, 
-    @TENGV NVARCHAR(30), 
+    @MSGV INT,
+    @TENGV NVARCHAR(30),
     @SODT VARCHAR(10),
-    @DIACHI NVARCHAR(50), 
-    @MSHH INT, 
+    @DIACHI NVARCHAR(50),
+    @MSHH INT,
     @NAMHH SMALLDATETIME
 AS
 BEGIN
@@ -118,7 +118,7 @@ GO
 -- ================================================================
 
 CREATE OR ALTER PROCEDURE SP_UPD_SINHVIEN_KT_MSSV
-    @MSSV char(8), 
+    @MSSV char(8),
     @TENSV NVARCHAR(30),
     @DIACHI nvarchar(50)
 AS

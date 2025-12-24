@@ -1,7 +1,7 @@
--- NHOM 2
--- IE103
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
 -- BTTH2
--- Phần 2
+-- PHẦN 2
 -- E: CURSOR
 -- NOTE: A Batch/Top-Down processing Script.
 

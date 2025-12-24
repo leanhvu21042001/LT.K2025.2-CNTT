@@ -1,14 +1,5 @@
 # Phụ Lục: Thiết Lập Môi Trường Lab
 
-## Các Tài Nguyên
-
-Các tài nguyên (tài liệu, code, vv...) của lab này được lưu tại:
-
-- [LT.K2025.2-CNTT > IE103 > assignments > BTTH2](https://github.com/lt20252cnttalpha/LT.K2025.2-CNTT/tree/main/uit/courses/IE103/assignments/BTTH2)
-    - `content`: Thư mục chứa các file nội dung của báo cáo.
-    - `content/code`: Thư mục chứa các script `.sql` để thực thi.
-    - `IE103-BTTH2`: Thư mục chứa file dự án `.sqlproj` cho SQL Projects.
-
 ## Thiết bị
 
 - macOS, M4 Pro (`arm64`).

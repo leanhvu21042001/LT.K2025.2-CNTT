@@ -1,7 +1,7 @@
--- NHOM 2
--- IE103
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
 -- BTTH2
--- Phần 2
+-- PHẦN 2
 -- B. STORED PROCEDURES với tham số VÀO và RA
 -- NOTE: A Batch/Top-Down processing Script.
 
