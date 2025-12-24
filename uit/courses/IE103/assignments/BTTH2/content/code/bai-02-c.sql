@@ -8,6 +8,8 @@
 -- Câu 1. Khi xóa một đề tài (MSDT) sẽ xóa các thông tin liên quan.
 -- ==================================================================
 
+-- == TRIGGER
+
 -- Sử dụng DB đúng, đặc biệt nếu triển khai từ SQL Projects của ADS
 -- USE "IE103-BTTH2";
 -- GO
@@ -53,6 +55,8 @@ BEGIN
 END;
 GO
 
+-- == VÍ DỤ
+
 -- Ví dụ: Xóa đề tài '97001' (Quản lý thư viện)
 DELETE FROM DETAI WHERE MSDT = '97001';
 GO
@@ -61,3 +65,9 @@ GO
 SELECT * FROM DETAI;
 SELECT * FROM SV_DETAI;
 GO
+
+-- ==================================================================
+-- Câu 2. Khi xóa một đề tài (MSDT) sẽ xóa các thông tin liên quan.
+-- ==================================================================
+
+
