@@ -1,6 +1,6 @@
 -- NHÓM 2
 -- MÔN: IE103 - Quản Lý Thông Tin
--- BTTH3
+-- BTTH2
 -- PHẦN 1
 -- Mục 2. INSERT dữ liệu
 -- NOTE: A Batch/Top-Down processing Script with GO.

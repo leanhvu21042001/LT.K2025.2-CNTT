@@ -1,6 +1,6 @@
 -- NHÓM 2
 -- MÔN: IE103 - Quản Lý Thông Tin
--- BTTH3
+-- BTTH2
 -- PHẦN 1
 -- Mục 1. Tạo các Quan Hệ
 -- NOTE: A Batch/Top-Down processing Script with GO.

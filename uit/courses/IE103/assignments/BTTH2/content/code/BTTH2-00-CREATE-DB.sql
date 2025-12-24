@@ -1,3 +1,6 @@
+-- NHÓM 2
+-- MÔN: IE103 - Quản Lý Thông Tin
+-- BTTH2
 -- NOTE: This query runs under Azure Database Studio (ADS)
 -- Use the master database explicitly.
 USE master;
