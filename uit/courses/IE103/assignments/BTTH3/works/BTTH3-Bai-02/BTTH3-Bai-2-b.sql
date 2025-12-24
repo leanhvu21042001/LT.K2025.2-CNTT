@@ -10,7 +10,7 @@
 -- B. XÁC THỰC NGƯỜI DÙNG
 -- ==================================================================
 
----- TẠO LOGIN Ở CẤP SERVER 
+-- TẠO LOGIN Ở CẤP SERVER
 
 CREATE LOGIN L1 WITH PASSWORD = 'L1@12345678';
 CREATE LOGIN L2 WITH PASSWORD = 'L2@12345678';
@@ -20,7 +20,7 @@ CREATE LOGIN L5 WITH PASSWORD = 'L5@12345678';
 CREATE LOGIN L6 WITH PASSWORD = 'L6@12345678';
 GO
 
-----TẠO USER TRONG DATABASE
+-- TẠO USER TRONG DATABASE
 
 CREATE USER U1 FOR LOGIN L1;
 CREATE USER U2 FOR LOGIN L2;
@@ -29,12 +29,15 @@ CREATE USER U4 FOR LOGIN L4;
 CREATE USER U5 FOR LOGIN L5;
 CREATE USER U6 FOR LOGIN L6;
 GO
- ----TẠO ROLE TÙY CHỈNH - GOM NHÓM, PHÂN QUYỀN USER---
+
+-- TẠO ROLE TÙY CHỈNH - GOM NHÓM, PHÂN QUYỀN USER---
+
 CREATE ROLE r1;
 CREATE ROLE r2;
 CREATE ROLE r3;
 GO
----GÁN USER VÀO ROLE TÙY CHỈNH
+
+-- GÁN USER VÀO ROLE TÙY CHỈNH
 
 ALTER ROLE r1 ADD MEMBER U1;
 ALTER ROLE r2 ADD MEMBER U2;
@@ -43,7 +46,8 @@ ALTER ROLE r3 ADD MEMBER U4;
 ALTER ROLE r3 ADD MEMBER U5;
 ALTER ROLE r3 ADD MEMBER U6;
 GO
- ---GÁN QUYỀN SERVER ROLE VÀ DATABASE
+
+-- GÁN QUYỀN SERVER ROLE VÀ DATABASE
 
 ALTER SERVER ROLE sysadmin ADD MEMBER L1;
 GO
@@ -70,27 +74,31 @@ ALTER SERVER ROLE sysadmin ADD MEMBER L6;
 ALTER ROLE db_owner ADD MEMBER U6;
 ALTER ROLE db_accessadmin ADD MEMBER U6;
 GO
- ---KIỂM TRA LOGIN ĐÃ ĐƯỢC TẠO (SERVER LEVEL)
+
+-- KIỂM TRA LOGIN ĐÃ ĐƯỢC TẠO (SERVER LEVEL)
 
 SELECT [name], [principal_id], [type], [type_desc], [is_disabled]
 FROM [master].[sys].[sql_logins]
 WHERE name LIKE 'L%';
 GO
-----KIỂM TRA USER TRONG DATABASE
+
+-- KIỂM TRA USER TRONG DATABASE
 
 SELECT [uid], [name], [hasdbaccess], [islogin], [issqluser]
 FROM [master].[sys].[sysusers]
 WHERE name LIKE 'U%';
 GO
----KIỂM TRA ROLE TRONG DATABASE
+
+-- KIỂM TRA ROLE TRONG DATABASE
 
 SELECT [uid], [name], [issqlrole]
 FROM [master].[sys].[sysusers]
 WHERE name LIKE 'r%';
 GO
---KIỂM TRA USER THUỘC ROLE TÙY CHỈNH
 
-SELECT 
+-- KIỂM TRA USER THUỘC ROLE TÙY CHỈNH
+
+SELECT
     DP1.name AS [Role],
     DP2.name AS [User]
 FROM sys.database_role_members DRM
@@ -101,8 +109,8 @@ JOIN sys.database_principals DP2
 WHERE DP2.name LIKE 'U%' AND DP1.name LIKE 'r%'
 ORDER BY DP1.name;
 GO
----KIỂM TRA LOGIN THUỘC SYSADMIN
 
+-- KIỂM TRA LOGIN THUỘC SYSADMIN
 
 SELECT
     ServerRole.name AS [Server Role],
@@ -115,9 +123,10 @@ JOIN sys.server_principals ServerLogin
 WHERE ServerRole.name = 'sysadmin'
   AND ServerLogin.name LIKE 'L%';
 GO
----KIỂM TRA USER THUỘC db_accessadmin
 
-SELECT 
+-- KIỂM TRA USER THUỘC db_accessadmin
+
+SELECT
     RoleP.name AS [Role],
     UserP.name AS [User]
 FROM sys.database_role_members RoleMem
@@ -129,9 +138,9 @@ WHERE RoleP.name = 'db_accessadmin'
   AND UserP.name LIKE 'U%';
 GO
 
----KIỂM TRA USER THUỘC db_owner
+-- KIỂM TRA USER THUỘC db_owner
 
-SELECT 
+SELECT
     RoleP.name AS [Role],
     UserP.name AS [User]
 FROM sys.database_role_members RoleMem
@@ -154,10 +163,10 @@ CREATE USER U2_2 WITHOUT LOGIN;
 CREATE USER U3_2 WITHOUT LOGIN;
 GO
 
--- Kiểm tra các USER vừa tạo trong database 
+-- Kiểm tra các USER vừa tạo trong database
 
-SELECT name, type_desc 
-FROM sys.database_principals 
+SELECT name, type_desc
+FROM sys.database_principals
 WHERE name IN ('U1_2', 'U2_2', 'U3_2');
 GO
 -- U1_2: SELECT, DELETE trên bảng DETAI, GV_HDDT
@@ -173,7 +182,7 @@ SELECT * FROM DETAI;
 -- Kết thúc giả lập, quay lại ngữ cảnh user ban đầu
 REVERT;
 GO
--- U2_2: UPDATE và DELETE trên bảng HOIDONG  
+-- U2_2: UPDATE và DELETE trên bảng HOIDONG
 
 GRANT UPDATE, DELETE ON HOIDONG TO U2_2;
 GO
