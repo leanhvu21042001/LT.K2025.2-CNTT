@@ -1,3 +1,4 @@
+-- == TRIGGER
 
 -- Xóa trigger nếu đã tồn tại
 IF OBJECT_ID('BTTH2_TRG_CapNhatMSGV', 'TR') IS NOT NULL
@@ -8,7 +9,7 @@ GO
 CREATE TRIGGER BTTH2_TRG_CapNhatMSGV
 ON GIAOVIEN
 INSTEAD OF UPDATE
-AS 
+AS
 BEGIN
     -- Khai báo biến để giữ giá trị cũ và mới
     DECLARE @OldMSGV INT;
@@ -16,7 +17,7 @@ BEGIN
 
     -- Lấy MSGV cũ từ bảng DELETED (dữ liệu trước khi update)
     SELECT @OldMSGV = MSGV FROM DELETED;
-    
+
     -- Lấy MSGV mới từ bảng INSERTED (dữ liệu người dùng muốn update)
     SELECT @NewMSGV = MSGV FROM INSERTED;
 
@@ -25,7 +26,7 @@ BEGIN
     BEGIN
         -- 1. Thêm dòng giáo viên mới với thông tin từ bảng INSERTED
         INSERT INTO GIAOVIEN (MSGV, TENGV, DIACHI, SODT, MSHH, NAMHH)
-        SELECT MSGV, TENGV, DIACHI, SODT, MSHH, NAMHH 
+        SELECT MSGV, TENGV, DIACHI, SODT, MSHH, NAMHH
         FROM INSERTED;
 
         -- 2. Cập nhật các bảng con đang giữ MSGV cũ thành MSGV mới
@@ -60,17 +61,21 @@ GO
 -- GV 202 đang hướng dẫn đề tài 97002
 SELECT * FROM GIAOVIEN WHERE MSGV = 202;
 SELECT * FROM GV_HDDT WHERE MSGV = 202;
+GO
 
 -- Bước 2: Thực hiện đổi mã số (Kích hoạt Trigger)
-UPDATE GIAOVIEN 
-SET MSGV = 2020 
+UPDATE GIAOVIEN
+SET MSGV = 2020
 WHERE MSGV = 202;
+GO
 
 -- Bước 3: Kiểm tra thông tin SAU khi đổi
 -- Kiểm tra xem 202 còn không (nên là không)
 SELECT * FROM GIAOVIEN WHERE MSGV = 202;
+GO
 
 -- Kiểm tra xem 2020 đã xuất hiện chưa và thông tin liên quan đã chuyển qua chưa
 SELECT MSGV, TENGV, MSHH FROM GIAOVIEN;
-SELECT * FROM GV_HDDT; 
--- Kết quả kỳ vọng ở GV_HDDT: MSGV phải là 2020, vẫn giữ nguyên đề tài 97002 và điểm số cũ.
+SELECT * FROM GV_HDDT;
+GO
+
