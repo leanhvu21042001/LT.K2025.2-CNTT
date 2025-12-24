@@ -1,18 +1,19 @@
 -- NHÓM 2
 -- MÔN: IE103 - Quản Lý Thông Tin
 -- BTTH2
--- NOTE: This query runs under Azure Database Studio (ADS)
--- Use the master database explicitly.
+-- NOTE: Script này chạy trên Azure Database Studio (ADS)
+
+-- Sử dụng master
 USE master;
 GO
 
--- Check if the database 'BTTH2' does NOT exist in the system records.
+-- Nếu DB BTTH2 chưa tồn tại, hãy tạo mới
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'BTTH2')
 BEGIN
     CREATE DATABASE BTTH2;
 END
 GO
 
--- Use the newly created db.
+-- Chuyển qua sử dụng DB mới này
 USE BTTH2;
 GO
