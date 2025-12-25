@@ -173,6 +173,25 @@ Trình bày về các vấn đề liên quan đến chuyển đổi địa chỉ
         - Thông thường, user chịu trách nhiệm thiết kế và hiện thực các chương trình có dynamic loading.
         - Hệ điều hành chủ yếu cung cấp một số thủ tục thư viện hỗ trợ, tạo điều kiện dễ dàng hơn cho lập trình viên.
 
+### Slide: Chuyển đổi địa chỉ nhớ
+
+### Quiz: Các kiểu địa chỉ nhớ
+
+> [!NOTE]
+> Khi trong quá trình thực thi, process có thể được di chuyển từ segment này sang segment khác trong bộ nhớ thì quá trình chuyển đổi địa chỉ được trì hoãn đến?
+> 
+> - [ ] Compile time
+> - [ ] Load time
+> - [x] Execution time
+
+> [!NOTE]
+> Quá trình ánh xạ một địa chỉ từ không gian địa chỉ này sang không gian địa chỉ khác là?
+> 
+> - [ ] Phân tích địa chỉ nhớ
+> - [ ] Biểu diễn địa chỉ nhớ
+> - [ ] Tính toán địa chỉ
+> - [x] Chuyển đổi địa chỉ
+
 ## Mô hình quản lý bộ nhớ
 
 ## Cơ chế phân trang
