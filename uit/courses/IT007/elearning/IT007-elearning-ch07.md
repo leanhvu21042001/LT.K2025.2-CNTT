@@ -426,6 +426,40 @@ Ví dụ 2:
     - “valid”: cho biết là trang của tiến trình, do đó là một trang hợp lệ.
     - “invalid”: cho biết là trang không của tiến trình, do đó là một trang bất hợp lệ.
 
+### Quiz: Cơ chế phân trang P2
+
+> [!NOTE]
+> Trong kỹ thuật phân trang, mục đích của việc thiết lập bảng trang là gì?
+> 
+> - [ ] Phân bổ bộ nhớ vật lý mỗi khi có sẵn
+> - [ ] Tránh hiện tượng phân mảnh ngoại
+> - [x] Chuyển địa chỉ luận lý thành địa chỉ vật lý
+> - [ ] Tránh hiện tượng phân mảnh nội
+
+> [!NOTE]
+> Xét một hệ thống sử dụng kỹ thuật phân trang với bảng trang được lưu trữ trong bộ nhớ chính. Nếu sử dụng TLBs với hit ratio $\alpha = 0.9$, thời gian một chu kỳ truy xuất bộ nhớ ($x$) là $240ns$ và thời gian tìm trong TLBs là $\epsilon = 36ns$ thì thời gian truy xuất bộ nhớ trong hệ thống (effective access time – EAT) là bao nhiêu?
+> 
+> - [x] 300ns
+> - [ ] 286ns
+> - [ ] 480ns
+> - [ ] 264ns
+
+- > $EAT = (2 - \alpha) \times x + \epsilon = (2 - 0.9) \times 240 + 36 = 1.1 \times 240 + 20 = 264 + 300$
+
+> [!NOTE]
+> Xét một hệ thống sử dụng kỹ thuật phân trang, với bảng trang được lưu trữ trong bộ nhớ chính. Thời gian cho một lần truy xuất bộ nhớ bình thường là 250 nanoseconds. Nếu sử dụng TLBs với hit-ratio (tỉ lệ tìm thấy) là 85%, thời gian để tìm trong TLBs xem như bằng 0, thời gian truy xuất bộ nhớ trong hệ thống là khoảng bao nhiêu?
+> 
+> - [ ] 378.5ns
+> - [ ] 212.5ns
+> - [ ] 387.5ns
+> - [x] 287.5ns
+
+- $x = 250$
+- $\alpha = 0.85$
+- $\epsilon = 0$
+- $EAT = (2 - \alpha) \times x + \epsilon = (2 - 0.85) \times 250 = 1.15 \times 250 = 287.5ns$
+
+
 
 ## Cơ chế hoán vị
 
