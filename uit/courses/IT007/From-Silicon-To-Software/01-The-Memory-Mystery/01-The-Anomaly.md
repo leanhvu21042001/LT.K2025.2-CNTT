@@ -1,5 +1,24 @@
 # Chapter 1: The Anomaly
 
+```c
+#include <stdio.h>
+
+int main() {
+    int soNguyen = 10;
+    int soNguyen2 = 10;
+    printf("Vị trí của soNguyen trong bộ nhớ: %p\n", &soNguyen);
+    printf("Vị trí của soNguyen2 trong bộ nhớ: %p\n", &soNguyen2);
+    return 0;
+    
+    // TODO: Đây là địa chỉ vật lý hay logic hay tương đối?
+}
+```
+
+```ini
+Vị trí của soNguyen trong bộ nhớ: 0x7ffcfcf9ff5c
+Vị trí của soNguyen2 trong bộ nhớ: 0x7ffcfcf9ff58
+```
+
 ## 1. Lời nói dối ngọt ngào
 
 Khi bắt đầu học lập trình, đặc biệt là C, chúng ta thường hình dung bộ nhớ máy tính (RAM) giống như một dải băng dài vô tận, hoặc một mảng (array) khổng lồ.
