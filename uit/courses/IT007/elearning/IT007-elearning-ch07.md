@@ -93,6 +93,8 @@ int main() {
     printf("Giá trị của soNguyen: %d\n", soNguyen);
     printf("Vị trí của soNguyen trong bộ nhớ: %p\n", &soNguyen);
     return 0;
+    
+    // TODO: Đây là địa chỉ vật lý hay logic hay tương đối?
 }
 ```
 
@@ -123,8 +125,53 @@ int main() {
 > - [x] Địa chỉ tương đối
 > - [ ] Địa chỉ tuyệt đối
 
-
 ## Chuyển đổi địa chỉ nhớ
+
+### VIDEO: CHUYỂN ĐỔI ĐỊA CHỈ NHỚ
+
+Trình bày về các vấn đề liên quan đến chuyển đổi địa chỉ nhớ khi biên dịch và thực thi chương trình.
+
+#### Chuyển đổi địa chỉ
+
+- Là quá trình ánh xạ một địa chỉ từ không gian địa chỉ này sang không gian địa chỉ khác
+- Biểu diễn địa chỉ nhớ:
+    - Trong source code: symbolic (các biến, hằng, pointer,…)
+    - Trong thời điểm biên dịch: thường là địa chỉ khả tái định vị.
+        - Ví dụ: a ở vị trí 12 byte so với vị trí bắt đầu module.
+    - Thời điểm linking/loading: có thể là địa chỉ thực.
+        - Ví dụ: dữ liệu nằm tại địa chỉ bộ nhớ thực 2030.
+- Địa chỉ lệnh và dữ liệu được chuyển đổi thành địa chỉ thực có thể xảy ra tại ba thời điểm khác nhau.
+    - **Compile time:** nếu biết trước địa chỉ bộ nhớ của chương trình thì có thể kết gán địa chỉ tuyệt đối lúc biên dịch.
+        - Ví dụ: chương trình `.COM` của MS-DOS.
+        - Khuyết điểm: phải biên dịch lại nếu thay đổi địa chỉ nạp chương trình.
+    - **Load time:** vào thời điểm loading, loader phải chuyển đổi địa chỉ khả tái định vị thành địa chỉ thực dựa trên một địa chỉ nền.
+        - Địa chỉ thực được tính toán vào thời điểm nạp chương trình.
+        - Phải tiến hành reload nếu địa chỉ nền thay đổi.
+    - Sinh địa chỉ tuyệt đối vào thời điểm dịch
+    - Sinh địa chỉ tuyệt đối vào thời điểm nạp
+- **Execution time:** khi trong quá trình thực thi, tiến trình có thể được di chuyển từ segment này sang segment khác trong bộ nhớ thì quá trình chuyển đổi địa chỉ được trì hoãn đến thời điểm thực thi.
+    - Cần sự hỗ trợ của phần cứng cho việc ánh xạ địa chỉ
+        - Ví dụ: Trường hợp địa chỉ luận lý là relocatable thì có thể dùng thanh ghi base và limit, …
+    - Sử dụng trong đa số các OS đa dụng trong đó có các cơ chế swapping, paging, segmentation, …
+
+#### Dynamic linking
+
+- Quá trình link đến một module ngoài (external module) được thực hiện sau khi đã tạo xong load module (i.e. file có thể thực thi, executable).
+    - Ví dụ trong Windows: module ngoài là các file `.DLL` còn trong Unix, các module ngoài là các file `.so` (shared library).
+- Load module chứa các stub tham chiếu (refer) đến routine của external module.
+    - Lúc thực thi, khi stub được thực thi lần đầu (do process gọi routine lần đầu), stub nạp routine vào bộ nhớ, tự thay thế bằng địa chỉ của routine và routine được thực thi.
+    - Các lần gọi routine sau sẽ xảy ra bình thường.
+- Stub cần sự hỗ trợ của OS (như kiểm tra xem routine đã được nạp vào bộ nhớ chưa).
+- Ưu điểm:
+    - Thông thường, external module là một thư viện cung cấp các tiện ích của OS. Các chương trình thực thi có thể dùng các phiên bản khác nhau của external module mà không cần sửa đổi, biên dịch lại.
+    - Chia sẻ mã (code sharing): một external module chỉ cần nạp vào bộ nhớ một lần. Các tiến trình cần dùng external module này thì cùng chia sẻ đoạn mã của external module ⇒ tiết kiệm không gian nhớ và đĩa.
+    - Phương pháp dynamic linking cần sự hỗ trợ của OS trong việc kiểm tra xem một thủ tục nào đó có thể được chia sẻ giữa các tiến trình hay là phần mã của riêng một tiến trình (bởi vì chỉ có OS mới có quyền thực hiện việc kiểm tra này).
+- Cơ chế:
+    - chỉ khi nào cần được gọi đến thì một thủ tục mới được nạp vào bộ nhớ chính ⇒ tăng độ hiệu dụng của bộ nhớ bởi vì các thủ tục không được gọi đến sẽ không chiếm chỗ trong bộ nhớ.
+    - Rất hiệu quả trong trường hợp tồn tại khối lượng lớn mã chương trình có tần suất sử dụng thấp, không được sử dụng thường xuyên (ví dụ các thủ tục xử lý lỗi).
+    - Hỗ trợ từ hệ điều hành
+        - Thông thường, user chịu trách nhiệm thiết kế và hiện thực các chương trình có dynamic loading.
+        - Hệ điều hành chủ yếu cung cấp một số thủ tục thư viện hỗ trợ, tạo điều kiện dễ dàng hơn cho lập trình viên.
 
 ## Mô hình quản lý bộ nhớ
 
