@@ -367,6 +367,45 @@ Giải thích:
 > - [x] 1028
 > - [ ] 4100
 
+### Cài đặt bảng trang (paging hardware)
+
+- Bảng phân trang thường được lưu giữ trong bộ nhớ chính:
+    - Thanh ghi page-table base (PTBR) trỏ đến bảng phân trang.
+    - Thanh ghi page-table length (PTLR) biểu thị kích thước của bảng phân trang (có thể được dùng trong cơ chế bảo vệ bộ nhớ).
+- Theo cơ chế cài đặt này thì một thao tác truy cập lệnh hoặc dữ liệu cần đến **2 lần truy cập bộ nhớ chính**.
+    - Lần 1 cho bảng trang.
+    - Lần 2 cho lệnh hoặc dữ liệu
+- Thường dùng một bộ phận cache phần cứng có tốc độ truy xuất và tìm kiếm cao, gọi là thanh ghi kết hợp (associative register) hoặc translation look-aside buffers (TLBs).
+
+#### Dùng thanh ghi Page-Table Base Register (PTBR)
+
+#### Dùng TLB
+
+### Effective Access Time (EAT)
+
+- Tính thời gian truy xuất hiệu dụng (effective access time - EAT)
+- Thời gian tìm kiếm trong TLB (associative lookup): $\epsilon$
+- Thời gian một chu kỳ truy xuất bộ nhớ: $x$
+- Hit ratio ($\alpha$): tỉ số giữa số lần chỉ số trang được tìm thấy (hit) trong TLB và số lần truy xuất khởi nguồn từ CPU.
+- Thời gian cần thiết để có được chỉ số frame:
+    - Khi chỉ số trang có trong TLB (hit): $\epsilon + x$
+    - Khi chỉ số trang không có trong TLB (miss): $\epsilon + x + x$
+- Thời gian truy xuất hiệu dụng:
+
+$$
+EAT = (\epsilon + x) \alpha + (\epsilon + 2x)(1 - \alpha) = (2 - \alpha) x + \epsilon
+$$
+Ví dụ 1:
+- Associate lookup = 20
+- Memory access = 100
+- Hit ratio: 0.8
+- $EAT = (100 + 20) \times 0.8 + (200 + 20) \times 0.2 = 1.2 \times 100 + 20 = 140$
+
+Ví dụ 2:
+- Associate lookup = 20
+- Memory access = 100
+- Hit ratio: 0.98
+- $EAT = (2 - 0.98) \times 100 + 20 = 1.02 \times 100 + 20 = 102 + 20 = 122$
 
 ## Cơ chế hoán vị
 
