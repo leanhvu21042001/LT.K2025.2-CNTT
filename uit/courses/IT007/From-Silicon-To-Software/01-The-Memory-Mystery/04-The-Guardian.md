@@ -8,7 +8,7 @@ Nếu bạn đã từng viết code C, chắc chắn bạn đã gặp thông bá
 Segmentation fault (core dumped)
 ```
 
-Đa số sinh viên nghĩ rằng: "Máy tính bị lỗi rồi" hoặc "Code mình sai cú pháp".
+Đa số mọi người sẽ nghĩ rằng: "Máy tính bị lỗi rồi" hoặc "Code mình sai cú pháp".
 
 Nhưng thực tế, đây là Hệ thống phòng thủ đang hoạt động.
 
@@ -20,7 +20,7 @@ Nó đứng gác ngay cổng RAM. Mọi yêu cầu truy cập (`READ`, `WRITE`, 
 
 Làm sao MMU biết được đâu là hành vi hợp lệ?
 
-Quay lại Bảng trang (Page Table) ở Chapter 3. Bên cạnh cột "Số khung" (Frame Number), Bảng trang thực tế còn chứa các cột siêu dữ liệu (Metadata) cực kỳ quan trọng gọi là Protection Bits (Các bit bảo vệ)1.
+Quay lại Bảng trang (Page Table) ở Chapter 3. Bên cạnh cột "Số khung" (Frame Number), Bảng trang thực tế còn chứa các cột siêu dữ liệu (Metadata) cực kỳ quan trọng gọi là Protection Bits (Các bit bảo vệ).
 
 Theo tài liệu lý thuyết hệ điều hành, các thuộc tính này bao gồm:
 
