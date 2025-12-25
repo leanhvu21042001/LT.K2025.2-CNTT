@@ -194,6 +194,12 @@ Trình bày về các vấn đề liên quan đến chuyển đổi địa chỉ
 
 ## Mô hình quản lý bộ nhớ
 
+### VIDEO: MÔ HÌNH QUẢN LÝ BỘ NHỚ
+
+Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về cơ chế phân chia cố định, cơ chế phân chia động và các chiến lược placement một tiến trình vào vùng nhớ tương ứng với từng cơ chế trên. Đồng thời, phần này cũng trình bày những khái niệm liên quan đến phân mảnh nội, phân mảnh ngoại
+
+- [[Hệ điều hành] Chương 7.4: Mô hình quản lý bộ nhớ](https://www.youtube.com/watch?v=sg7O2-XXJ_k)
+
 ## Cơ chế phân trang
 
 ## Cơ chế hoán vị
