@@ -100,7 +100,12 @@ int main() {
 }
 ```
 
-Nếu chạy đoạn code này trên hầu hết các máy Linux/macOS, bạn sẽ nhận được con số **4096 bytes**. Đó là đơn vị cơ bản mà MMU làm việc.
+**Kết quả quan sát:**
+
+- Nếu bạn chạy trên PC/Server: Thường thấy `x86_64` và `4096 bytes`.
+- Nếu bạn chạy local trên máy Mac M-series (gcc thuần): Thường thấy `arm64` và `16384 bytes`.
+
+Sự khác biệt này nhắc nhở chúng ta rằng: **Paging là một thỏa thuận giữa Phần cứng và Hệ điều hành.**
 
 ```ini
 === SYSTEM INFO ===
@@ -108,6 +113,11 @@ Architecture: x86_64 (Intel/Rosetta)
 Page Size : 4096 bytes
 Tương đương : 4 KB
 ```
+
+> [!tip]
+> **The Apple Silicon Anomaly**
+> 
+> Ngay cả khi phần cứng dùng trang 16KB, Hệ điều hành vẫn có thể "ảo hóa" kích thước trang thành 4KB cho các ứng dụng cũ để đảm bảo chúng không bị sập. Đây là quyền năng tối thượng của "The Illusionist".
 
 ## 5. Vấn đề phát sinh: Cái giá của sự tiện lợi
 
@@ -121,7 +131,5 @@ Cơ chế này rất hay, nhưng nó có một điểm yếu chết người đ�
 Truy cập RAM rất chậm so với tốc độ CPU. Làm thế nào để giải quyết?
 
 Câu trả lời là TLB (Translation Look-aside Buffer) - một bộ nhớ đệm cực nhanh nằm ngay trong MMU để "học thuộc lòng" các trang vừa truy cập. Nhưng đó là câu chuyện tối ưu hóa chúng ta sẽ bàn sau.
-
-**Note: The Apple Silicon Anomaly** Ngay cả khi phần cứng dùng trang 16KB, Hệ điều hành vẫn có thể "ảo hóa" kích thước trang thành 4KB cho các ứng dụng cũ để đảm bảo chúng không bị sập. Đây là quyền năng tối thượng của "The Illusionist".
 
 Trong chương tới, chúng ta sẽ xem xét khía cạnh quan trọng nhất của quản lý bộ nhớ hiện đại: **Sự An Toàn**. Làm sao MMU ngăn chặn Hacker?
