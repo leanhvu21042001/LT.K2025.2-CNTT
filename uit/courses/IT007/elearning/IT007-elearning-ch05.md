@@ -252,10 +252,6 @@ index = (index + 1) & 7;
 | **If-Else**     | Trung bình               | Dễ đọc, dễ debug.                                                              | Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.                    |
 | **Bitwise (&)** | **Siêu nhanh**           | Tối ưu tuyệt đối cho phần cứng.                                                | **Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$). |
 
-### Slide: Producer vs. Consumer
-
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=5-9)
-
 ### Quiz: Producer vs. Consumer
 
 > [!NOTE]
@@ -280,8 +276,6 @@ index = (index + 1) & 7;
 > Trong bài toán Producer vs. Consumer, biến  `____` được chia sẻ chung giữa hai tiến trình và được gọi là dữ liệu được chia sẻ - shared data.
 > 
 > - `count`
-
-### VIDEO: PHÂN TÍCH BÀI TOÁN PRODUCER VS. CONSUMER
 
 Trong video này, ta sẽ đi phân tích lý do dẫn đến việc biến count không nhất quán giữa hai tiến trình Producer và Consumer.
 
@@ -310,10 +304,6 @@ Quantum Time = 2:
 > - CHU KỲ IV: `reg2 = reg2 - 1`
 > - CHU KỲ V:  `count = reg1`
 > - CHU KỲ VI: `count = reg2`
-
-### Slide: Phân tích Bài toán Producer vs. Consumer
-
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=11)
 
 ### Quiz: Phân tích Bài toán Producer vs. Consumer
 
