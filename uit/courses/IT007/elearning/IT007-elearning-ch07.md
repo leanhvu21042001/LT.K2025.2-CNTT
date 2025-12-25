@@ -70,6 +70,10 @@ Trình bày giới thiệu quản lý bộ nhớ, trình bày mục tiêu và n�
 
 ### VIDEO: CÁC KIỂU ĐỊA CHỈ NHỚ
 
+- [[Hệ điều hành] Chương 7.2: Các kiểu địa chỉ nhớ](https://www.youtube.com/watch?v=Cy_G0zSfJLU)
+
+#### Các kiểu địa chỉ nhớ
+
 Trình bày về các kiểu địa chỉ nhớ bao gồm địa chỉ vật lý, địa chỉ luận lý, các khái niệm liên quan đến linking và địa chỉ bộ nhớ khi linking.
 
 - Địa chỉ vật lý (**physical address**) (địa chỉ thực): là một vị trí thực trong bộ nhớ chính.
@@ -91,6 +95,15 @@ int main() {
     return 0;
 }
 ```
+
+#### Nạp chương trình vào bộ nhớ 
+
+- Linker: kết hợp các object module thành một file nhị phân khả thực thi gọi là load module.
+- Loader: nạp (load) module vào bộ nhớ chính.
+
+#### Cơ chế thực hiện linking
+
+
 
 ## Chuyển đổi địa chỉ nhớ
 
