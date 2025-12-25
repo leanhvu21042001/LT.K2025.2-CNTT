@@ -207,11 +207,12 @@ index = (index + 1) & 7;
 
 #### So sánh tổng quan (Tại sao người ta vẫn dùng Modulo?)
 
-|**Giải thuật**|**Tốc độ CPU**|**Ưu điểm**|**Nhược điểm**|
-|---|---|---|---|
-|**Modulo (%)**|Chậm (do dùng phép chia)|Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn).|Tốn tài nguyên CPU nhất.|
-|**If-Else**|Trung bình|Dễ đọc, dễ debug.|Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.|
-|**Bitwise (&)**|**Siêu nhanh**|Tối ưu tuyệt đối cho phần cứng.|**Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$).|
+| **Giải thuật**  | **Tốc độ CPU**           | **Ưu điểm**                                                                    | **Nhược điểm**                                                     |
+| --------------- | ------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| **Modulo (%)**  | Chậm (do dùng phép chia) | Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn). | Tốn tài nguyên CPU nhất.                                           |
+| **If-Else**     | Trung bình               | Dễ đọc, dễ debug.                                                              | Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.                    |
+| **Bitwise (&)** | **Siêu nhanh**           | Tối ưu tuyệt đối cho phần cứng.                                                | **Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$). |
+
 ### Slide: Producer vs. Consumer
 
 ![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=5-9)
