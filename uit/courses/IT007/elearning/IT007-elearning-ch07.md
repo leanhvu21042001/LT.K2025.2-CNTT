@@ -279,6 +279,20 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
 
 "One solution to the problem of external fragmentation is **compaction**. The goal is to shuffle the memory contents so as to place all free memory together in one large block. Compaction is not always possible, however. If relocation is static and is done at assembly or load time, compaction cannot be done. It is possible only if relocation is dynamic and is done at execution time. If addresses are relocated dynamically, relocation requires only moving the program and data and then changing the base register to reflect the new base address. When compaction is possible, we must determine its cost. The simplest compaction algorithm is to move all processes toward one end of memory; all holes move in the other direction, producing one large hole of available memory. This scheme can be expensive."
 
+> [!NOTE]
+> Cho process P1 có kích thước là 240 KByte, cấp phát trong bộ nhớ theo phân hoạch có thứ tự như sau:
+> - 1 (250 KByte),
+> - 2 (100 KByte),
+> - 3 (200 KByte),
+> - 4 (400 KByte).
+> 
+> Biết con trỏ đang nằm ở vùng nhớ thứ 2, vùng nhớ thứ 2 đã được cấp phát và vùng nhớ 1, 3 và 4 vẫn còn trống. Hỏi process P1 sẽ được cấp phát trong vùng nhớ nào, nếu dùng giải thuật **next-fit**?
+> 
+> - [ ] 3
+> - [ ] 1
+> - [x] 4
+> - [ ] 2
+
 ## Cơ chế phân trang
 
 ## Cơ chế hoán vị
