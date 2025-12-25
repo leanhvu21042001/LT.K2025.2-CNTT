@@ -61,6 +61,17 @@ Nội Dung:
 
 Bài toán Producer vs. Consumer mô tả về 02 tiến trình bao gồm: “Sản xuất” và “Bán hàng”. Nếu gọi biến count mô tả số lượng hàng hóa, thì tiến trình “Sản xuất” sẽ làm tăng giá trị của count; ngược lại, tiến trình “Bán hàng” sẽ làm giảm giá trị này. Khi ”Sản xuất” và “Bán hang” diễn ra đồng thời, biến count sẽ chịu tác động của việc tăng và giảm cùng lúc. Khi đó, liệu rằng giá trị của count có còn đúng với logic?
 
+- Gồm 02 tiến trình diễn ra đồng thời với nhau:
+    - Producer: liên tục tạo ra hàng hóa → tăng biến `count`
+    - Consumer: liên tục bán hàng → giảm biến `count`
+- Thông thường các tiến trình đều sẽ được đặt trong vòng `while(1)` để thực thi liên tục.
+- Khi các tiến trình thực thi đồng thời, các dữ kiện sau sẽ **KHÔNG** thể xác định được:
+    - Tiến trình nào thực thi trước?
+    - Tiến trình nào thực thi lâu hơn (do giải thuật định thời CPU)?
+    - Tiến trình sẽ hết quantum time khi nào?
+
+
+
 `ProdvsCons.c`:
 
 ```c
