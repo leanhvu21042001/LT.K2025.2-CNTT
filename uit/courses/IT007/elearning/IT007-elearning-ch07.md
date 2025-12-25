@@ -257,7 +257,27 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
     - First-fit: chọn khối nhớ trống phù hợp đầu tiên kể từ đầu bộ nhớ.
     - Next-fit: chọn khối nhớ trống phù hợp đầu tiên kể từ vị trí cấp phát cuối cùng.
     - Worst-fit: chọn khối nhớ trống lớn nhất.
+### Slide: Mô hình quản lý bộ nhớ
 
+### Quiz: Mô hình quản lý bộ nhớ
+
+> [!NOTE]
+> Chọn phát biểu đúng khi nói về hiện tượng phân mảnh nội?
+> 
+> - [x] Bộ nhớ cấp phát lớn hơn một ít so với yêu cầu cấp phát bộ nhớ
+> - [ ] Chênh lệch kích thước giữa vùng nhớ được cấp phát và yêu cầu cấp phát
+> - [ ] Tất cả đều sai
+> - [ ] Tổng dung lượng còn lại trong không gian bộ nhớ đủ để thỏa mãn yêu cầu cấp phát nhưng lại không liên tục
+
+> [!NOTE]
+> Hiện tượng phân mảnh ngoại có thể được giải quyết bằng phương pháp kết khối (compaction). Chọn phát biểu khi nói về phương pháp này?
+> 
+> - [ ] Phương pháp kết khối chỉ khả thi chỉ khi hệ thống có thể linh hoạt việc tái định vị địa chỉ
+> - [ ] Việc kết khối được thực hiện trong giai đoạn thực thi
+> - [x] Tất cả đều đúng
+> - [ ] Các vùng nhớ được trộn để gom tất cả vùng nhớ trống lại với nhau để hình thành một vùng nhớ trống lớn
+
+"One solution to the problem of external fragmentation is **compaction**. The goal is to shuffle the memory contents so as to place all free memory together in one large block. Compaction is not always possible, however. If relocation is static and is done at assembly or load time, compaction cannot be done. It is possible only if relocation is dynamic and is done at execution time. If addresses are relocated dynamically, relocation requires only moving the program and data and then changing the base register to reflect the new base address. When compaction is possible, we must determine its cost. The simplest compaction algorithm is to move all processes toward one end of memory; all holes move in the other direction, producing one large hole of available memory. This scheme can be expensive."
 
 ## Cơ chế phân trang
 
