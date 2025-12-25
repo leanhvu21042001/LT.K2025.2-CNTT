@@ -1,4 +1,45 @@
 # Đồng Bộ Tiến Trình
+
+Một hệ thống thông thường sẽ bao gồm nhiều (có thể là hàng trăm, thậm chí là hàng ngàn) các tiểu trình thực thi đồng thời hoặc song song với nhau. Các tiểu trình này thường sẽ chia sẻ dữ liệu của người dùng. Trong khi đó, hệ điều hành sẽ thường xuyên cập nhật các cấu trúc dữ liệu để hỗ trợ việc thực thi đa tiểu trình. Hiện tượng *race condition* sẽ xuất hiện khi việc truy cập đến dữ liệu được chia sẻ không được kiểm soát, và có thể dẫn đến việc làm hỏng giá trị các dữ liệu.
+
+*Đồng bộ hóa tiến trình* là việc sử dụng các công cụ để kiểm soát việc truy cập đến các dữ liệu được chia sẻ để tránh hiện tượng race condition. Các công cụ này phải được sử dụng cẩn thận, bởi nếu xảy ra sai sót thì có thể dẫn đến tình trạng giảm sút nghiêm trọng của hệ thống, bao gồm cả hiện tượng deadlock.
+
+Mục tiêu:
+
+- PHẦN 1
+    - Mô tả được các vấn đề liên quan đến vùng tranh chấp (critical section) và phát biểu được điều kiện tranh chấp
+    - Mô tả được các giải pháp được đề xuất để xử lý tranh chấp
+    - Phát biểu được các yêu cầu đối với các giải pháp xử lý tranh chấp
+    - Mô tả và phân tích được các giải pháp đồng bộ dựa trên ngắt (giải pháp phần mềm)
+    - Mô tả được các giải pháp hỗ trợ từ phần cứng
+- PHẦN 2
+    - Diễn tả được cơ chế hoạt động của mutex lock, semaphore và monitor trong việc giải quyết bài toán vùng tranh chấp
+    - Phân tích chương trình ứng dụng mutex lock và semaphore
+    - Viết được chương trình sử dụng mutex lock và semaphore để thực hiện đồng bộ thứ tự hoạt động của tiến trình/tiểu trình
+    - Trình bày được vấn đề Liveness trong hoạt động đồng bộ tiến trình
+- PHẦN 3
+    - Giải thích được bài toán đồng bộ bounded-buffer
+    - Giải thích được bài toán đồng bộ readers-writers
+    - Phân tích các vấn đề thường gặp khi thực hiện đồng bộ tiến trình/tiểu trình
+
+Nội dung:
+
+- PHẦN 1
+    - Race Condition
+    - Vấn đề vùng tranh chấp
+    - Lời giải cho vấn đề vùng tranh chấp
+    - Các giải pháp dựa trên ngắt (giải pháp phần mềm)
+    - Các giải pháp phần cứng
+- PHẦN 2
+    - Mutex
+    - Semaphore
+    - Monitor
+    - Các vấn đề khi đồng bộ
+- PHẦN 3
+    - Bài toán Bounded Buffer
+    - Bài toán Readers - Writers
+    - Bài toán Dining Philosophers
+
 ## Race Condition
 
 ### VIDEO: BÀI TOÁN PRODUCER VS. CONSUMER
