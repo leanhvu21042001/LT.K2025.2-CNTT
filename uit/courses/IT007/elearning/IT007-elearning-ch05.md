@@ -70,7 +70,35 @@ Bài toán Producer vs. Consumer mô tả về 02 tiến trình bao gồm: “S�
     - Tiến trình nào thực thi lâu hơn (do giải thuật định thời CPU)?
     - Tiến trình sẽ hết quantum time khi nào?
 
+Producer:
 
+```c
+item nextProduce;
+
+while (1) {
+    while (count == BUFFER_SIZE);
+        /* Khong lafm gi */
+    buffer[in] = nextProducer;
+    count++;
+    in = (in+1) %BUFFER_SIZE;
+}
+```
+
+Consumer:
+
+```c
+item nextConsumer;
+
+while (1) {
+    while (count == 0) {
+        /* Khong lam gi */
+    }
+    
+    nextConsumer = buffer[out];
+    count--;
+    out = (out+1) %BUFFER_SIZE;
+}
+```
 
 `ProdvsCons.c`:
 
@@ -313,18 +341,25 @@ Quantum Time = 2:
 > - [ ] True
 > - [x] False
 
-### VIDEO: RACE CONDITION LÀ GÌ?
+### Race Condition
 
-*Qua các ví dụ trước đó, ta thấy việc tranh chấp dữ liệu được chia sẻ đã gây nên vấn đề bất đồng bộ. Việc tranh chấp này còn được gọi là Race Condition? Video này sẽ giúp bạn hiểu rõ hơn về Race Condition.*
+Qua các ví dụ trước đó, ta thấy việc tranh chấp dữ liệu được chia sẻ đã gây nên vấn đề bất đồng bộ. Việc tranh chấp này còn được gọi là Race Condition? Video này sẽ giúp bạn hiểu rõ hơn về Race Condition.
+
+**Race condition** là hiện tượng xảy ra khi các tiến trình cùng truy cập đồng thời vào dữ liệu được chia sẻ. Kết quả cuối cùng sẽ phụ thuộc vào thứ tự thực thi của các tiến trình đang chạy đồng thời với nhau.
+
+Trong bài toán Producer vs. Consumer dữ liệu được chia sẻ là biến `count` bị tác động đồng thời bởi cả 02 tiến trình Producer và Consumer.
+
+Trong bài toán cấp phát PID, dữ liệu được chia sẻ là biến `next_available_pid` bị tranh giành bởi tiến trình thực thi đồng thời là P0 và P1.
+
+> Race condition có thể dẫn đến việc dữ liệu bị sai và không nhất quán (inconsistency).
+
+Để dữ liệu chia sẻ được nhất quán, cần bảo đảm sao cho tại mỗi thời điểm chỉ có một tiến trình được thao tác lên dữ liệu chia sẻ. Do đó, cần có cơ chế đồng bộ hoạt động của các tiến trình này.
 
 Bài toán Cấp phát PID
 
 - `fork()`
 - `next_available_pid`
 
-### Slide: Race Condition là gì?
-
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=12)
 
 ### Quiz: Race Condition là gì?
 
