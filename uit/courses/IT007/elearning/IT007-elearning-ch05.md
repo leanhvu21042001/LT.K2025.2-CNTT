@@ -341,11 +341,16 @@ Quantum Time = 2:
 > - [ ] True
 > - [x] False
 
-Bài toán Cấp phát PID
+### Bài toán Cấp phát PID
 
-- `fork()`
-- `next_available_pid`
+Khi một tiến trình P gọi hàm `fork()`, một tiến trình con sẽ được tạo ra, hệ điều hành sẽ cấp cho tiến trình con một số định danh gọi là PID. Như vậy nếu có 2 tiến trình P0 và P1 cùng gọi hàm `fork()` đồng thời với nhau thì chuyện gì sẽ xảy ra?
 
+- 02 tiến trình P0 và P1 đang tạo tiến trình con bằng cách gọi hàm `fork()`.
+- Biến `next_available_pid()` được kernel sử dụng để tạo ra PID cho tiến trình mới.
+- Tiến trình con của P0 và P1 đồng thời yêu cầu PID và nhận được kết quả như nhau.
+- Cần có cơ chế để ngăn P0 và P1 truy cập biến `next_available_pid` cùng lúc, để tránh tình trạng một PID được cấp cho 2 tiến trình.
+
+![Bài toán cấp phát PID](assets/fork-pid-problem.png)
 
 ### Race Condition
 
