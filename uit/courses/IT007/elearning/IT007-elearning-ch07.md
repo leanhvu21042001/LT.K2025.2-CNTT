@@ -200,6 +200,24 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
 
 - [[Hệ điều hành] Chương 7.4: Mô hình quản lý bộ nhớ](https://www.youtube.com/watch?v=sg7O2-XXJ_k)
 
+#### Mô hình quản lý bộ nhớ
+
+- Trong chương này, mô hình quản lý bộ nhớ là một mô hình đơn giản, không có bộ nhớ ảo.
+- Một tiến trình phải được nạp hoàn toàn vào bộ nhớ thì mới được thực thi.
+- Các cơ chế quản lý bộ nhớ:
+    - Phân chia cố định (fixed partitioning)
+    - Phân chia động (dynamic partitioning)
+    - Phân trang đơn giản (simple paging)
+    - Phân đoạn đơn giản (simple segmentation)
+
+#### Fixed Partitioning
+
+- Khi khởi động hệ thống, bộ nhớ chính được chia thành nhiều phần rời nhau gọi là các partition có kích thước bằng nhau hoặc khác nhau.
+- Tiến trình nào có kích thước nhỏ hơn hoặc bằng kích thước partition thì có thể được nạp vào partition đó.
+- Nếu chương trình có kích thước lớn hơn partition thì phải dùng cơ chế overlay.
+- Nhận xét
+    - Không hiệu quả do bị phân mảnh nội: một chương trình dù lớn hay nhỏ đều được cấp phát trọn một partition.
+
 ## Cơ chế phân trang
 
 ## Cơ chế hoán vị
