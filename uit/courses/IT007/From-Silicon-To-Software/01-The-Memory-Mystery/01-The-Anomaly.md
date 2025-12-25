@@ -61,7 +61,7 @@ int main() {
 
 Khi chạy đoạn code trên (trên kiến trúc x86-64, ví dụ như Linux hoặc macOS), bạn sẽ nhận được một kết quả tương tự như sau (địa chỉ cụ thể sẽ thay đổi mỗi lần chạy, nhưng _mô hình_ thì không):
 
-```
+```ini
 === BẢN ĐỒ BỘ NHỚ ===
 [Global] globalVar : 0x601040
 ----------------------------------------
