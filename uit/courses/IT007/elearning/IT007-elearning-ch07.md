@@ -295,6 +295,21 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
 
 ## Cơ chế phân trang
 
+Trình bày về cơ chế phân trang trong quản lý bộ nhớ, các chuyển đổi địa chỉ trong cơ chế phân trang.
+
+- [[Hệ điều hành] Chương 7.5.1: Cơ chế phân trang (Phần 1/2)](https://www.youtube.com/watch?v=aJkxtT2qQ2c)
+
+### Cơ chế phân trang
+
+- Cơ chế cấp phát bộ nhớ không liên tục.
+- Chia bộ nhớ vật lý thành các khối cố định gọi là các khung trang (frames).
+    - Kích thước của frame là lũy thừa của 2, từ khoảng 512 byte đến 16MB.
+- Chia bộ nhớ luận lý thành các khối nhớ bằng nhau gọi là các trang (pages).
+    - Kích thước của page bằng kích thước của frame.
+- Chương trình có N trang cần N khung trống (free frames) trong bộ nhớ để nạp vào.
+- Thiết lập bảng phân trang (page table) để ánh xạ địa chỉ luận lý thành địa chỉ thực.
+
+
 ## Cơ chế hoán vị
 
 ## Bài kiểm tra tiểu kết
