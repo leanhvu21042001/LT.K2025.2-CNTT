@@ -79,11 +79,22 @@ Làm sao chúng ta biết máy tính dùng trang 4KB? Hãy hỏi Hệ điều h�
 #include <unistd.h>
 
 int main() {
-    // Hàm sysconf trả về cấu hình hệ thống
+    // 1. Kiểm tra Kiến trúc (Architecture)
+    printf("=== SYSTEM INFO ===\n");
+    #if defined(__x86_64__)
+        printf("Architecture: x86_64 (Intel/Rosetta)\n");
+    #elif defined(__aarch64__)
+        printf("Architecture: arm64 (Apple Silicon)\n");
+    #else
+        printf("Architecture: Unknown\n");
+    #endif
+
+    // 2. Kiểm tra Kích thước Trang (Page Size)
+    // Hàm sysconf trả về cấu hình runtime của hệ thống
     long pageSize = sysconf(_SC_PAGESIZE); 
     
-    printf("Kích thước một trang (Page Size): %ld bytes\n", pageSize);
-    printf("Tương đương: %ld KB\n", pageSize / 1024);
+    printf("Page Size   : %ld bytes\n", pageSize);
+    printf("Tương đương : %ld KB\n", pageSize / 1024);
     
     return 0;
 }
@@ -92,8 +103,10 @@ int main() {
 Nếu chạy đoạn code này trên hầu hết các máy Linux/macOS, bạn sẽ nhận được con số **4096 bytes**. Đó là đơn vị cơ bản mà MMU làm việc.
 
 ```ini
-Kích thước một trang (Page Size): 4096 bytes
-Tương đương: 4 KB
+=== SYSTEM INFO ===
+Architecture: x86_64 (Intel/Rosetta)
+Page Size : 4096 bytes
+Tương đương : 4 KB
 ```
 
 ## 5. Vấn đề phát sinh: Cái giá của sự tiện lợi
@@ -108,5 +121,7 @@ Cơ chế này rất hay, nhưng nó có một điểm yếu chết người đ�
 Truy cập RAM rất chậm so với tốc độ CPU. Làm thế nào để giải quyết?
 
 Câu trả lời là TLB (Translation Look-aside Buffer) - một bộ nhớ đệm cực nhanh nằm ngay trong MMU để "học thuộc lòng" các trang vừa truy cập. Nhưng đó là câu chuyện tối ưu hóa chúng ta sẽ bàn sau.
+
+**Note: The Apple Silicon Anomaly** Ngay cả khi phần cứng dùng trang 16KB, Hệ điều hành vẫn có thể "ảo hóa" kích thước trang thành 4KB cho các ứng dụng cũ để đảm bảo chúng không bị sập. Đây là quyền năng tối thượng của "The Illusionist".
 
 Trong chương tới, chúng ta sẽ xem xét khía cạnh quan trọng nhất của quản lý bộ nhớ hiện đại: **Sự An Toàn**. Làm sao MMU ngăn chặn Hacker?
