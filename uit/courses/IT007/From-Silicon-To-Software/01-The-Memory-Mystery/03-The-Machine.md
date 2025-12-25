@@ -123,7 +123,7 @@ Tương đương : 4 KB
 
 Cơ chế này rất hay, nhưng nó có một điểm yếu chết người được gọi là "Vấn đề 2 lần truy cập":
 
-Để lấy một biến soNguyen, máy tính phải truy cập RAM hai lần:
+Để lấy một biến `soNguyen`, máy tính phải truy cập RAM hai lần:
 
 1. Lần 1: Truy cập Bảng trang (trên RAM) để dịch địa chỉ.
 2. Lần 2: Truy cập địa chỉ vật lý thực sự để lấy dữ liệu.
