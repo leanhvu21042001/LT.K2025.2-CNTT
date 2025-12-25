@@ -397,6 +397,7 @@ Giải thích:
 $$
 EAT = (\epsilon + x) \alpha + (\epsilon + 2x)(1 - \alpha) = (2 - \alpha) x + \epsilon
 $$
+
 Ví dụ 1:
 - Associate lookup = 20
 - Memory access = 100
