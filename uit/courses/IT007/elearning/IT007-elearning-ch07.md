@@ -444,7 +444,7 @@ Ví dụ 2:
 > - [ ] 480ns
 > - [ ] 264ns
 
-- > $EAT = (2 - \alpha) \times x + \epsilon = (2 - 0.9) \times 240 + 36 = 1.1 \times 240 + 20 = 264 + 300$
+- $EAT = (2 - \alpha) \times x + \epsilon = (2 - 0.9) \times 240 + 36 = 1.1 \times 240 + 20 = 264 + 300$
 
 > [!NOTE]
 > Xét một hệ thống sử dụng kỹ thuật phân trang, với bảng trang được lưu trữ trong bộ nhớ chính. Thời gian cho một lần truy xuất bộ nhớ bình thường là 250 nanoseconds. Nếu sử dụng TLBs với hit-ratio (tỉ lệ tìm thấy) là 85%, thời gian để tìm trong TLBs xem như bằng 0, thời gian truy xuất bộ nhớ trong hệ thống là khoảng bao nhiêu?
