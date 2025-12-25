@@ -357,14 +357,16 @@ Giải thích:
 > - [ ] Các mảnh bộ nhớ có kích thước thay đổi
 > - [x] Phân mảnh nội
 
-Cho biết kích thước của page và frame là 1KB. Hỏi địa chỉ ảo là bao nhiêu để có được địa chỉ vật lý là 4100 sau khi ánh xạ (bảng ánh xạ như hình vẽ)?
+> [!NOTE]
+> Cho biết kích thước của page và frame là 1KB. Hỏi địa chỉ ảo là bao nhiêu để có được địa chỉ vật lý là 4100 sau khi ánh xạ (bảng ánh xạ như hình vẽ)?
+> 
+> ![](assets/Pasted%20image%2020251225105514.png)
+> 
+> - [ ] 1024
+> - [ ] 5124
+> - [x] 1028
+> - [ ] 4100
 
-![](assets/Pasted%20image%2020251225105514.png)
-
-- [ ] 1024
-- [ ] 5124
-- [ ] 1028
-- [ ] 4100
 
 ## Cơ chế hoán vị
 
