@@ -407,6 +407,26 @@ Ví dụ 2:
 - Hit ratio: 0.98
 - $EAT = (2 - 0.98) \times 100 + 20 = 1.02 \times 100 + 20 = 102 + 20 = 122$
 
+### Tổ chức bảng trang
+
+- Các hệ thống hiện đại đều hỗ trợ không gian địa chỉ ảo rất lớn ($2^{32}$ đến $2^{64}$), ở đây giả sử là $2^{32}$.
+    - Giả sử kích thước trang nhớ là 4KB ($= 2^{12}$)
+        - $\to$ bảng phân trang sẽ có $2^{32} / 2^{12} = 2^{20} = 1M$ mục
+    - Giả sử mỗi mục gồm 4 byte thì mỗi tiến trình cần 4MB cho bảng phân trang.
+- Bảng phân trang nghịch đảo (IBM system/38, IBM RISC, IBM RT): sử dụng cho tất cả các tiến trình.
+    - `<IDP,p,d>`
+
+### Bảo vệ bộ nhớ
+
+- Việc bảo vệ bộ nhớ được hiện thực bằng cách gắn với frame các bit bảo vệ (protection bits) được giữ trong bảng phân trang. Các bit này biểu thị các thuộc tính sau:
+    - read-only,
+    - read-write,
+    - execute-only
+- Ngoài ra, còn có một valid/invalid bit gắn với mỗi mục trong bảng phân trang:
+    - “valid”: cho biết là trang của tiến trình, do đó là một trang hợp lệ.
+    - “invalid”: cho biết là trang không của tiến trình, do đó là một trang bất hợp lệ.
+
+
 ## Cơ chế hoán vị
 
 ## Bài kiểm tra tiểu kết
