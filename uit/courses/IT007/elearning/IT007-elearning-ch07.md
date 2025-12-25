@@ -103,6 +103,25 @@ int main() {
 
 #### Cơ chế thực hiện linking
 
+### Slide: Các kiểu địa chỉ nhớ
+
+### Quiz: Các kiểu địa chỉ nhớ
+
+> [!NOTE]
+> Không gian địa chỉ luận lý là gì?
+> 
+> - [x] Tập hợp tất cả các địa chỉ luận lý được tạo ra bởi một chương trình
+> - [ ] Địa chỉ được tạo ra bởi CPU, còn được gọi là địa chỉ ảo
+> - [ ] Địa chỉ được tạo ra bởi RAM, còn được gọi là địa chỉ ảo
+> - [ ] Tập hợp tất cả các địa chỉ vật lý được tạo ra bởi một chương trình
+
+> [!NOTE]
+> Một kiểu địa chỉ trong đó các địa chỉ được biểu diễn tương đối so với một vị trí xác định nào đó trong chương trình là?
+> 
+> - [ ] Địa chỉ luận lý
+> - [ ] Địa chỉ vật lý
+> - [x] Địa chỉ tương đối
+> - [ ] Địa chỉ tuyệt đối
 
 
 ## Chuyển đổi địa chỉ nhớ
