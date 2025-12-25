@@ -68,6 +68,30 @@ Trình bày giới thiệu quản lý bộ nhớ, trình bày mục tiêu và n�
 
 ## Các kiểu địa chỉ nhớ
 
+### VIDEO: CÁC KIỂU ĐỊA CHỈ NHỚ
+
+Trình bày về các kiểu địa chỉ nhớ bao gồm địa chỉ vật lý, địa chỉ luận lý, các khái niệm liên quan đến linking và địa chỉ bộ nhớ khi linking.
+
+- Địa chỉ vật lý (**physical address**) (địa chỉ thực): là một vị trí thực trong bộ nhớ chính.
+- Địa chỉ luận lý (**logical address**): là một vị trí nhớ được diễn tả trong một chương trình (còn gọi là địa chỉ ảo - virtual address).
+    - Các trình biên dịch (compiler) tạo ra mã lệnh chương trình mà trong đó mọi tham chiếu bộ nhớ đều là địa chỉ luận lý.
+- Địa chỉ tuyệt đối (**absolute address**): địa chỉ tương đương với địa chỉ thực.
+- Địa chỉ tương đối (**relative address**) (địa chỉ khả tái định vị, relocatable address) là một kiểu địa chỉ luận lý trong đó các địa chỉ được biểu diễn tương đối so với một vị trí xác định nào đó trong chương trình.
+    - Ví dụ: 12 byte so với vị trí bắt đầu chương trình,…
+
+Ví dụ:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int soNguyen = 10;
+    printf("Giá trị của soNguyen: %d\n", soNguyen);
+    printf("Vị trí của soNguyen trong bộ nhớ: %p\n", &soNguyen);
+    return 0;
+}
+```
+
 ## Chuyển đổi địa chỉ nhớ
 
 ## Mô hình quản lý bộ nhớ
