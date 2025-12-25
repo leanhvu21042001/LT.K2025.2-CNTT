@@ -210,6 +210,16 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
     - Phân trang đơn giản (simple paging)
     - Phân đoạn đơn giản (simple segmentation)
 
+#### Phân mảnh (fragmentation)
+
+- Phân mảnh ngoại (external fragmentation)
+    - Kích thước không gian nhớ còn trống đủ để thỏa mãn một yêu cầu cấp phát, tuy nhiên không gian nhớ này không liên tục ⇒ có thể dùng cơ chế kết khối (compaction) để gom lại thành vùng nhớ liên tục.
+- Phân mảnh nội (internal fragmentation)
+    - Kích thước vùng nhớ được cấp phát có thể hơi lớn hơn vùng nhớ yêu cầu.
+        - Ví dụ: cấp một khoảng trống 18,464 bytes cho một tiến trình yêu cầu 18,462 bytes.
+    - Hiện tượng phân mảnh nội thường xảy ra khi bộ nhớ thực được chia thành các khối kích thước cố định (fixed-sized block) và các tiến trình được cấp phát theo đơn vị khối.
+        - Ví dụ: cơ chế phân trang (paging).
+
 #### Fixed Partitioning
 
 - Khi khởi động hệ thống, bộ nhớ chính được chia thành nhiều phần rời nhau gọi là các partition có kích thước bằng nhau hoặc khác nhau.
@@ -217,6 +227,20 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
 - Nếu chương trình có kích thước lớn hơn partition thì phải dùng cơ chế overlay.
 - Nhận xét
     - Không hiệu quả do bị phân mảnh nội: một chương trình dù lớn hay nhỏ đều được cấp phát trọn một partition.
+
+#### Fixed Partitioning - Placement Strategy
+
+- Partition có kích thước bằng nhau
+    - Nếu còn partition trống ⇒ tiến trình mới sẽ được nạp vào partition đó.
+    - Nếu không còn partition trống, nhưng trong đó có tiến trình đang bị blocked ⇒ swap tiến trình đó ra bộ nhớ phụ nhường chỗ cho tiến trình mới
+- Partition có kích thước không bằng nhau: giải pháp 1
+    - Gán mỗi tiến trình vào partition nhỏ nhất phù hợp với nó.
+    - Có hàng đợi cho mỗi partition.
+    - Giảm thiểu phân mảnh nội.
+    - Vấn đề: có thể có một số hàng đợi trống không (vì không có tiến trình với kích thước tương ứng) và hàng đợi dày đặc
+- Partition có kích thước không bằng nhau: giải pháp 2
+    - Chỉ có một hàng đợi chung cho mọi partition.
+    - Khi cần nạp một tiến trình vào bộ nhớ chính ⇒ chọn partition nhỏ nhất còn trống.
 
 ## Cơ chế phân trang
 
