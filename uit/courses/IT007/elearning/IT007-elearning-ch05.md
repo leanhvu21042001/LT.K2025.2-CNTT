@@ -42,6 +42,21 @@ Nội dung:
 
 ## Race Condition
 
+Mục Tiêu:
+
+- Trình bày được khái niệm race condition và mô tả được vấn đề vùng tranh chấp
+- Mô tả được các yêu cầu dành cho lời giải của bài toán vùng tranh chấp
+- Liệt kê được các giải pháp đồng bộ dựa trên ngắt (giải pháp phần mềm) và vấn đề của chúng
+- Trình bày được giải pháp đồng bộ dựa trên phần cứng bao gồm `test_and_set`, `compare_and_swap`, và biến đơn nguyên
+
+Nội Dung:
+
+1. Race condition
+2. Vấn đề vùng tranh chấp
+3. Lời giải cho vấn đề vùng tranh chấp
+4. Các giải pháp dựa trên ngắt (giải pháp phần mềm)
+5. Giải pháp phần cứng
+
 ### VIDEO: BÀI TOÁN PRODUCER VS. CONSUMER
 
 > Bài toán Producer vs. Consumer mô tả về 02 tiến trình bao gồm: “Sản xuất” và “Bán hàng”. Nếu gọi biến count mô tả số lượng hàng hóa, thì tiến trình “Sản xuất” sẽ làm tăng giá trị của count; ngược lại, tiến trình “Bán hàng” sẽ làm giảm giá trị này. Khi ”Sản xuất” và “Bán hang” diễn ra đồng thời, biến count sẽ chịu tác động của việc tăng và giảm cùng lúc. Khi đó, liệu rằng giá trị của count có còn đúng với logic?
