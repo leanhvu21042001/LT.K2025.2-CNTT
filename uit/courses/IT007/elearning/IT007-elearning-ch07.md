@@ -210,7 +210,7 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
     - Phân trang đơn giản (simple paging)
     - Phân đoạn đơn giản (simple segmentation)
 
-#### Phân mảnh (fragmentation)
+#### Phân mảnh (Fragmentation)
 
 - Phân mảnh ngoại (external fragmentation)
     - Kích thước không gian nhớ còn trống đủ để thỏa mãn một yêu cầu cấp phát, tuy nhiên không gian nhớ này không liên tục ⇒ có thể dùng cơ chế kết khối (compaction) để gom lại thành vùng nhớ liên tục.
@@ -241,6 +241,23 @@ Trình bày về các mô hình quản lý bộ nhớ, đi sâu trình bày về
 - Partition có kích thước không bằng nhau: giải pháp 2
     - Chỉ có một hàng đợi chung cho mọi partition.
     - Khi cần nạp một tiến trình vào bộ nhớ chính ⇒ chọn partition nhỏ nhất còn trống.
+
+#### Dynamic Partitioning
+
+- Số lượng partition không cố định và partition có thể có kích thước khác nhau.
+- Mỗi tiến trình được cấp phát chính xác dung lượng bộ nhớ cần thiết.
+- Gây ra hiện tượng phân mảnh ngoại.
+
+#### Dynamic Partitioning - Placement Strategy
+
+- Dùng để quyết định cấp phát khối bộ nhớ trống nào cho một tiến trình.
+- Mục tiêu: giảm chi phí compaction.
+- Các chiến lược placement
+    - Best-fit: chọn khối nhớ trống nhỏ nhất.
+    - First-fit: chọn khối nhớ trống phù hợp đầu tiên kể từ đầu bộ nhớ.
+    - Next-fit: chọn khối nhớ trống phù hợp đầu tiên kể từ vị trí cấp phát cuối cùng.
+    - Worst-fit: chọn khối nhớ trống lớn nhất.
+
 
 ## Cơ chế phân trang
 
