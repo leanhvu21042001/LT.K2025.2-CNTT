@@ -326,20 +326,26 @@ Quantum Time = 2:
 > - [x] Data inconsistency
 
 > [!NOTE]
-> CÁC yếu tố nào sau đây gây ra giá trị biến count của bài toán Producer - Consumer trở nên không nhất quán?
+> CÁC yếu tố nào sau đây gây ra giá trị biến `count` của bài toán Producer - Consumer trở nên không nhất quán?
 > 
 > - [ ] Consumer thực hiện các lệnh sau Producer
-> - [x] Mã máy của các lệnh thao tác lên biến count bị thực thi xen kẽ
-> - [x] Biến count được chia sẻ cho 02 tiến trình
+> - [x] Mã máy của các lệnh thao tác lên biến `count` bị thực thi xen kẽ
+> - [x] Biến `count` được chia sẻ cho 02 tiến trình
 > - [ ] Các lệnh thao tác lên biến count là đơn nguyên
 
 > [!NOTE]
 > Nhận định sau đúng (True) hay sai (False)?
 > 
-> Giá trị cuối cùng của biến count không phụ thuộc vào việc tiến trình nào thực thi trước.
+> Giá trị cuối cùng của biến `count` không phụ thuộc vào việc tiến trình nào thực thi trước.
 > 
 > - [ ] True
 > - [x] False
+
+Bài toán Cấp phát PID
+
+- `fork()`
+- `next_available_pid`
+
 
 ### Race Condition
 
@@ -354,12 +360,6 @@ Trong bài toán cấp phát PID, dữ liệu được chia sẻ là biến `nex
 > Race condition có thể dẫn đến việc dữ liệu bị sai và không nhất quán (inconsistency).
 
 Để dữ liệu chia sẻ được nhất quán, cần bảo đảm sao cho tại mỗi thời điểm chỉ có một tiến trình được thao tác lên dữ liệu chia sẻ. Do đó, cần có cơ chế đồng bộ hoạt động của các tiến trình này.
-
-Bài toán Cấp phát PID
-
-- `fork()`
-- `next_available_pid`
-
 
 ### Quiz: Race Condition là gì?
 
