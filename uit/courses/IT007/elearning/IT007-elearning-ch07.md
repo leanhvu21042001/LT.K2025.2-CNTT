@@ -472,5 +472,31 @@ Trình bày về cơ chế hoán vị, tóm tắc lại nội dung buổi học 
         - Tiến trình có độ ưu tiên thấp hơn sẽ bị swap out nhường chỗ cho tiến trình có độ ưu tiên cao hơn mới đến được nạp vào bộ nhớ để thực thi.
 - Hiện nay, ít hệ thống sử dụng cơ chế swapping trên.
 
+### Bài Tập
+
+#### Bài Tập 1
+
+Giả sử bộ nhớ chính được phân chia thành các phân vùng có kích thước là 600K, 500K, 200K, 300K (theo thứ tự). Các tiến trình có kích thước 212K, 417K, 112K, 426K (theo thứ tự) sẽ được cấp phát bộ nhớ như thế nào, nếu sử dụng:
+- First fit,
+- Best fit,
+- Next fit,
+- Worst fit?
+
+Thuật toán nào cho phép sử dụng bộ nhớ hiệu quả nhất trong trường hợp trên?
+
+#### Bài Tập 2
+
+Xét một không gian địa chỉ có 12 trang, mỗi trang có kích thước 2K, ánh xạ vào bộ nhớ vật lý có 32 khung trang.
+
+a. Địa chỉ logic gồm bao nhiêu bit?
+b. Địa chỉ physic gồm bao nhiêu bit?
+
+#### Bài Tập 3
+
+Xét một hệ thống sử dụng kỹ thuật phân trang, với bảng trang được lưu trữ trong bộ nhớ chính.
+
+a. Nếu thời gian cho một lần truy xuất bộ nhớ bình thường là $200ns$ thì mất bao nhiêu thời gian cho một thao tác truy xuất bộ nhớ trong hệ thống này?
+b. Nếu sử dụng TLBs với hit-ratio là 75%, thời gian để tìm trong TLBs xem như bằng 0, tính thời gian truy xuất bộ nhớ (EAT) trong hệ thống.
+
 
 ## Bài kiểm tra tiểu kết
