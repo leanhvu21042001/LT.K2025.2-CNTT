@@ -309,6 +309,30 @@ Trình bày về cơ chế phân trang trong quản lý bộ nhớ, các chuyể
 - Chương trình có N trang cần N khung trống (free frames) trong bộ nhớ để nạp vào.
 - Thiết lập bảng phân trang (page table) để ánh xạ địa chỉ luận lý thành địa chỉ thực.
 
+### Chuyển đổi địa chỉ trong paging
+
+- Địa chỉ luận lý gồm có:
+    - Số hiệu trang (Page number): $p$
+    - Địa chỉ tương đối trong trang (Page offset): $d$
+- Nếu kích thước của không gian địa chỉ ảo là $2^m$, và kích thước của trang là $2^n$ (đơn vị là byte hay word tùy theo kiến trúc) thì:
+    - $d$: $n$ bits (định vị từ $0$ đến $2^{n} - 1$)
+    - $p$: $m - n$ bits (định vị từ $0$ đến $2^{m - n} - 1$)
+
+```mermaid
+---
+config:
+  layout: fixed
+  look: classic
+  theme: forest
+---
+packet-beta
+title Cấu trúc địa chỉ luận lý (Logical Address)
+0-19: "Số hiệu trang (Page number) p"
+20-31: "Địa chỉ tương đối trong trang (Page offset) d"
+```
+
+- Bảng trang sẽ có tổng cộng: $\frac{2^m}{2^n} = 2^{m - n}$ mục (entry)
+
 
 ## Cơ chế hoán vị
 
