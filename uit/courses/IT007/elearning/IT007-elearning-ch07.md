@@ -459,8 +459,18 @@ Ví dụ 2:
 - $\epsilon = 0$
 - $EAT = (2 - \alpha) \times x + \epsilon = (2 - 0.85) \times 250 = 1.15 \times 250 = 287.5ns$
 
-
-
 ## Cơ chế hoán vị
+
+Trình bày về cơ chế hoán vị, tóm tắc lại nội dung buổi học và hướng dẫn giải một số bài tập mẫu liên quan đến quản lý bộ nhớ
+
+### Cơ chế hoán vị (swapping)
+
+- Một tiến trình có thể tạm thời bị swap ra khỏi bộ nhớ chính và lưu trên một hệ thống lưu trữ phụ. Sau đó, tiến trình có thể được nạp lại vào bộ nhớ để tiếp tục quá trình thực thi.
+- Swapping policy: hai ví dụ
+    - Round-robin: swap out P1 (vừa tiêu thụ hết quantum của nó), swap in P2 , thực thi P3 ,…
+    - Roll out, roll in: dùng trong cơ chế định thời theo độ ưu tiên (priority-based scheduling)
+        - Tiến trình có độ ưu tiên thấp hơn sẽ bị swap out nhường chỗ cho tiến trình có độ ưu tiên cao hơn mới đến được nạp vào bộ nhớ để thực thi.
+        - Hiện nay, ít hệ thống sử dụng cơ chế swapping trên.
+
 
 ## Bài kiểm tra tiểu kết
