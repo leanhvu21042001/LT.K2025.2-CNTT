@@ -472,6 +472,15 @@ Trình bày về cơ chế hoán vị, tóm tắc lại nội dung buổi học 
         - Tiến trình có độ ưu tiên thấp hơn sẽ bị swap out nhường chỗ cho tiến trình có độ ưu tiên cao hơn mới đến được nạp vào bộ nhớ để thực thi.
 - Hiện nay, ít hệ thống sử dụng cơ chế swapping trên.
 
+### Quiz: Cơ chế hoán vị
+
+> [!NOTE]
+> Đáp án nào KHÔNG phải là chính sách thực hiện cơ chế hoán vị?
+> 
+> - [ ] Round-robin
+> - [ ] Roll out, roll in.
+> - [x] FIFO
+
 ### Bài Tập
 
 #### Bài Tập 1
