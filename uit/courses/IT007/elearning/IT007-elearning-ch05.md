@@ -974,6 +974,46 @@ processB()
 > 
 > Để cho phép 5 tiến trình cùng lúc thực thi thao tác `wait()` mà không bị `block`, cần khởi tạo giá trị của semaphore là `5`.
 
+Cho P1, P2, cài đặt để S1 -> S2 -> S3 -> S4:
+
+```c
+P1 {
+    S1;
+    S3;
+}
+
+P3 {
+    S2;
+    S4;
+}
+```
+
+Bài làm:
+
+```c
+int s1, s2, s3 = 0;
+// int s4 = 0;
+
+P1 {
+    S1;
+    signal(s1);
+    wait(s2);
+    S3;
+    signal(s3);
+    wait(s4)
+}
+
+P3 {
+    wait(s1);
+    S2;
+    signal(s2);
+    wait(s3);
+    S4;
+    // signal(s4);
+}
+
+```
+
 ### VIDEO: LƯU Ý KHI SỬ DỤNG SEMAPHORES
 
 #### Một số nhận xét về semaphore
@@ -1049,3 +1089,44 @@ signal(S);
 > - [ ] Số lượng semaphore sử dụng
 > - [ ] Vị trí đặt thao tác wait() và signal()
 > - [ ] Giá trị khởi tạo của semaphore
+
+## Monitors
+
+### VIDEO: MONITORS
+
+> [!NOTE]
+> **Điền vào chỗ trống:**
+> 
+> Việc cài đặt semaphore _mutex_ như trong mã giả sẽ đảm bảo được yêu cầu `loại trừ tương hỗ` cho từng thủ tục.
+
+### Slide: Monitors
+
+### Quiz: Monitors
+
+> [!NOTE]
+> Điểm khác biệt khi sử dụng thêm biến điều kiện (condition variable) so với với monitor gốc là gì?
+> 
+> - [ ] Tiến trình truy cập vào monitor thông qua việc gọi các thủ tục    
+> - [ ] Tiến trình truy cập vào monitor thông qua việc truy xuất biến điều kiện
+> - [x] Tiến trình có thể chờ thêm trong hàng chờ của biến điều kiện
+> - [ ] Tất cả đều đúng
+
+> [!NOTE]
+> Đặc điểm nào sau đây KHÔNG phải là của monitor?
+> 
+> - [ ] Là một cấu trúc cấp cao, bên trong có chứa các biến cục bộ, các thủ tục và một đoạn mã nguồn khởi tạo
+> - [x] Có thể cho phép nhiều hơn 1 tiến trình vào monitor tại cùng một thời điểm
+> - [ ] Biến cục bộ chỉ có thể được truy xuất bởi các thủ tục của monitor
+> - [ ] Tiến trình vào monitor bằng cách gọi một trong các thủ tục của nó
+
+## Liveness
+
+### VIDEO: LIVENESS
+
+Liveness là thuật ngữ dùng để chỉ trạng thái còn hoạt động của tiến trình. Một tiến trình bị xem là không đảm bảo liveness nếu nó không tạo hoạt động hay tạo ra tiến triển gì mới. Thể hiện cơ bản nhất của việc không đảm bảo liveness chính là "chờ đợi không giới hạn" và deadlock. Hãy theo dõi video sau để hiểu rõ hơn về liveness.
+
+### Slide: Liveness
+
+## Bài kiểm tra Tiểu kết Chương 5
+
+
