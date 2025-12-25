@@ -28,3 +28,16 @@
 
 ## Khóa học
 
+- **Nand2Tetris (Build a Modern Computer from First Principles):**
+    - **Nền tảng:** Coursera hoặc website Nand2Tetris.org.
+    - **Nội dung:** Bạn tự tay xây dựng một máy tính từ cổng NAND (logic thấp nhất) cho đến khi viết được game Tetris chạy trên đó.
+    
+- **CS50: Introduction to Computer Science (Harvard University):**
+    
+    - **Nền tảng:** edX.
+    - **Nội dung:** Cách tư duy về thuật toán và quản lý bộ nhớ ở mức thấp (C pointer) cực kỳ trực quan.
+
+- **Missing Semester of Your CS Education (MIT):**
+    
+    - **Nền tảng:** missing.csail.mit.edu.
+    - **Nội dung:** Các kỹ năng thực tế như Shell scripting, Vim, và cách máy tính thực sự vận hành mà giáo trình thường bỏ quên.
