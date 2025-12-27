@@ -119,13 +119,14 @@ Ví dụ:
 
 ```yaml
 ---
-id: IE005
-type: Course
-provider: UIT
-subject: Giới Thiệu Nghành Công Nghệ Thông Tin
-title: Bài 1. Giới Thiệu Nghành Công Nghệ Thông Tin
+id: IE005-L01
+type: Lecture
+status: finished
+created: 2025-10-25
+updated: 2025-10-26
 tags:
-  - CNTT
+  - UIT/IE005
+  - Topic/Intro
 ---
 ```
 
