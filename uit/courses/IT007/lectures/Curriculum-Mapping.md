@@ -1,5 +1,81 @@
 # Hệ Điều Hành
 
+Dưới đây là bảng ánh xạ nội dung các chương còn lại trong chương trình Hệ điều hành của UIT (dựa trên các slide bài giảng được cung cấp) sang giáo trình **Operating System Concepts, 10th Edition**.
+
+Tài liệu được sắp xếp theo thứ tự chương trong đề cương môn học của UIT.
+
+## Chương 1: Tổng Quan về Hệ Điều Hành
+
+_(Tương ứng với slide: Week01-Chapter1)_
+
+### Phần 1: Giới Thiệu & Cấu Trúc Máy Tính
+
+| Nội dung trong Slide UIT                                                                 | Nội dung tương ứng trong Textbook (10th Ed.)                                                               | Vị trí tham chiếu              |
+| :--------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- | :----------------------------- |
+| **Hệ điều hành là gì?** Định nghĩa, mục tiêu (quản lý tài nguyên, giao diện người dùng). | **1.1 What Operating Systems Do** Vai trò của OS, góc nhìn người dùng và hệ thống.                         | **Chương 1.1** Trang 4 - 7     |
+| **Cấu trúc hệ thống máy tính** Phần cứng, CPU, Memory, I/O devices, Interrupts (ngắt).   | **1.2 Computer-System Organization** Ngắt, cấu trúc lưu trữ (storage structure), cấu trúc nhập xuất (I/O). | **Chương 1.2** Trang 7 - 15    |
+| **Cấu trúc lưu trữ** Phân cấp bộ nhớ (Hierarchy): thanh ghi, cache, main memory, disk.   | **1.2.2 Storage Structure** Phân cấp bộ nhớ, tốc độ, tính biến động (volatility).                          | **Chương 1.2.2** Trang 11 - 14 |
+
+### Phần 2: Kiến Trúc & Các Thao Tác
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Kiến trúc hệ thống máy tính** Đơn xử lý, Đa xử lý (SMP), Gom cụm (Clustered).|**1.3 Computer-System Architecture** Single-processor, Multiprocessor (SMP, Multicore), Clustered Systems.|**Chương 1.3** Trang 15 - 21|
+|**Các thao tác trong hệ điều hành** Đa chương (Multiprogramming), Đa nhiệm (Multitasking).|**1.4 Operating-System Operations** Multiprogramming, Multitasking.|**Chương 1.4** Trang 21 - 24|
+|**Chế độ hoạt động (Modes)** User mode vs Kernel mode, Dual-mode operation.|**1.4.2 Dual-Mode and Multimode Operation** Bit mode, chuyển đổi giữa user và kernel mode.|**Chương 1.4.2** Trang 24 - 26|
+
+## Chương 2: Cấu Trúc Hệ Điều Hành
+
+_(Tương ứng với slide: Week02-Chapter2)_
+
+### Phần 1: Thành Phần & Dịch Vụ
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Các dịch vụ của OS** Giao diện người dùng, thực thi chương trình, I/O, quản lý file.|**2.1 Operating-System Services** Các dịch vụ cung cấp cho người dùng và hệ thống.|**Chương 2.1** Trang 55 - 58|
+|**Giao diện người dùng** CLI (Command Line), GUI, Touch-screen.|**2.2 User and Operating-System Interface** Command Interpreters, GUI, Touch-Screen Interface.|**Chương 2.2** Trang 58 - 62|
+|**Lời gọi hệ thống (System Calls)** Cơ chế, API, truyền tham số.|**2.3 System Calls** Cách hoạt động, API (POSIX, Win32), các loại system calls.|**Chương 2.3** Trang 62 - 74|
+
+### Phần 2: Cấu Trúc Hệ Thống
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Cấu trúc Monolithic** UNIX truyền thống.|**2.8.1 Monolithic Structure** Cấu trúc đơn khối, ví dụ UNIX, Linux.|**Chương 2.8.1** Trang 82|
+|**Cấu trúc Phân lớp (Layered)**|**2.8.2 Layered Approach** Chia hệ thống thành các lớp từ phần cứng (0) đến người dùng (N).|**Chương 2.8.2** Trang 83 - 84|
+|**Vi nhân (Microkernels)** Mach OS, chuyển dịch vụ sang user space.|**2.8.3 Microkernels** Cấu trúc vi nhân, ví dụ Mach, QNX.|**Chương 2.8.3** Trang 84 - 86|
+|**Cấu trúc Modules** Loadable Kernel Modules (LKM).|**2.8.4 Modules** Các mô-đun hạt nhân có thể nạp được (Linux, Solaris).|**Chương 2.8.4** Trang 86|
+|**Cấu trúc Lai (Hybrid)** macOS, iOS, Android.|**2.8.5 Hybrid Systems** Kết hợp nhiều cấu trúc (macOS, iOS, Android).|**Chương 2.8.5** Trang 86 - 91|
+
+## Chương 3: Quản Lý Tiến Trình
+
+_(Tương ứng với slide: Week03-Chapter3-1 & Week04-Chapter3-2)_
+
+Lưu ý: Chương 3 của UIT bao hàm nội dung của cả **Chương 3 (Processes)** và **Chương 4 (Threads)** trong sách giáo khoa.
+
+### Phần 1: Khái Niệm & Trạng Thái
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Khái niệm Tiến trình** Định nghĩa, Layout bộ nhớ (Text, Data, Heap, Stack).|**3.1 Process Concept** Process in memory, Stack, Heap.|**Chương 3.1** Trang 106 - 108|
+|**Trạng thái Tiến trình** New, Ready, Running, Waiting, Terminated.|**3.1.2 Process State** Biểu đồ chuyển trạng thái.|**Chương 3.1.2** Trang 108 - 109|
+|**Process Control Block (PCB)** Cấu trúc dữ liệu quản lý tiến trình.|**3.1.3 Process Control Block** Thông tin lưu trong PCB (PC, Registers, Scheduling info...).|**Chương 3.1.3** Trang 109 - 110|
+
+### Phần 2: Thao Tác & Giao Tiếp (IPC)
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Tạo và hủy tiến trình** `fork()`, `exec()`, `wait()`, `exit()`.|**3.3 Operations on Processes** Process Creation (fork/exec) & Termination.|**Chương 3.3** Trang 116 - 123|
+|**Giao tiếp liên tiến trình (IPC)** Tổng quan Shared Memory vs Message Passing.|**3.4 Interprocess Communication** So sánh hai mô hình IPC.|**Chương 3.4** Trang 123 - 125|
+|**Shared Memory** Bài toán Producer-Consumer.|**3.5 IPC in Shared-Memory Systems** Bounded-buffer problem sử dụng shared memory.|**Chương 3.5** Trang 125 - 127|
+|**Message Passing** Direct/Indirect communication, Blocking/Non-blocking.|**3.6 IPC in Message-Passing Systems** Gửi nhận thông điệp, đồng bộ hóa.|**Chương 3.6** Trang 127 - 132|
+
+### Phần 3: Tiểu Trình (Threads)
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Khái niệm Tiểu trình** Đơn vị sử dụng CPU, chia sẻ tài nguyên.|**4.1 Overview** Định nghĩa luồng, lợi ích (Responsiveness, Resource sharing...).|**Chương 4.1** Trang 160 - 162|
+|**Các mô hình đa tiểu trình** Many-to-One, One-to-One, Many-to-Many.|**4.3 Multithreading Models** Mô tả các mô hình ánh xạ giữa user thread và kernel thread.|**Chương 4.3** Trang 166 - 168|
+
 ## Chương 4: Định thời CPU
 
 Dưới đây là bảng ánh xạ chi tiết nội dung từ slide bài giảng **Chương 4: Định thời CPU** của UIT sang giáo trình **Operating System Concepts, 10th Edition**.
@@ -101,3 +177,95 @@ Trong sách giáo khoa, các bài toán này được chuyển sang đầu **Ch�
 
 - **Java Synchronization:** Trong các slide UIT phần Monitor thường có ví dụ về Java. Trong sách, nội dung cụ thể về Java (Java Monitors, Reentrant Locks) nằm ở **Chương 7.4 (Synchronization in Java)**, trang 303,.
 - **Linux/Windows:** Nếu slide có đề cập đến cách Linux hoặc Windows thực hiện đồng bộ hóa, bạn xem tại **Chương 7.2 (Synchronization within the Kernel)**, trang 295,.
+
+## Chương 6: Tắc Nghẽn (Deadlock)
+
+_(Tương ứng với slide: Week11-Chapter6)_
+
+Lưu ý: Nội dung này tương ứng với **Chương 8 (Deadlocks)** trong sách giáo khoa.
+
+### Phần 1: Đặc Điểm & Điều Kiện
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Định nghĩa Deadlock** Tình trạng chờ đợi vòng tròn, ví dụ tắc nghẽn giao thông.|**8.1 System Model** Mô hình hệ thống tài nguyên và tiến trình.|**Chương 8.1** Trang 318|
+|**4 Điều kiện cần** Mutual exclusion, Hold and wait, No preemption, Circular wait.|**8.3.1 Necessary Conditions** 4 điều kiện bắt buộc để xảy ra deadlock.|**Chương 8.3.1** Trang 321|
+|**Đồ thị cấp phát tài nguyên** Resource-Allocation Graph (RAG).|**8.3.2 Resource-Allocation Graph** Sử dụng đồ thị để phát hiện chu trình.|**Chương 8.3.2** Trang 323 - 326|
+
+### Phần 2: Các Phương Pháp Xử Lý
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Ngăn chặn (Prevention)** Phủ định 1 trong 4 điều kiện cần.|**8.5 Deadlock Prevention** Các chiến lược ngăn chặn Mutual exclusion, Hold and wait, v.v.|**Chương 8.5** Trang 327 - 330|
+|**Tránh (Avoidance)** Trạng thái an toàn (Safe state), Banker's Algorithm.|**8.6 Deadlock Avoidance** Giải thuật Banker, Resource-Allocation-Graph Algorithm.|**Chương 8.6** Trang 330 - 337|
+|**Phát hiện (Detection)** Wait-for graph, giải thuật phát hiện.|**8.7 Deadlock Detection** Phát hiện khi có 1 hoặc nhiều instance tài nguyên.|**Chương 8.7** Trang 337 - 341|
+|**Phục hồi (Recovery)** Chấm dứt tiến trình hoặc trưng dụng tài nguyên.|**8.8 Recovery from Deadlock** Process Termination, Resource Preemption.|**Chương 8.8** Trang 341 - 343|
+
+## Chương 7: Quản Lý Bộ Nhớ
+
+_(Tương ứng với slide: Week12-Chapter7)_
+
+Lưu ý: Nội dung này tương ứng với **Chương 9 (Main Memory)** trong sách giáo khoa.
+
+### Phần 1: Khái Niệm Cơ Bản
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Địa chỉ Logic vs Vật lý** Logical/Virtual address, Physical address, MMU.|**9.1.3 Logical Versus Physical Address Space** Khái niệm không gian địa chỉ, vai trò của MMU.|**Chương 9.1.3** Trang 353 - 355|
+|**Liên kết địa chỉ** Compile time, Load time, Execution time.|**9.1.2 Address Binding** Quá trình binding tại các thời điểm khác nhau.|**Chương 9.1.2** Trang 352 - 353|
+|**Dynamic Loading/Linking**|**9.1.4 Dynamic Loading & 9.1.5 Dynamic Linking**|**Chương 9.1.4 - 9.1.5** Trang 355 - 356|
+
+### Phần 2: Cấp Phát & Phân Trang
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Cấp phát liên tục** Fixed/Dynamic partitioning, First-fit, Best-fit, Worst-fit.|**9.2 Contiguous Memory Allocation** Memory allocation, Fragmentation (Nội/Ngoại).|**Chương 9.2** Trang 356 - 360|
+|**Phân trang (Paging)** Frames, Pages, Page Table, PTBR, TLB.|**9.3 Paging** Cơ chế phân trang cơ bản, phần cứng hỗ trợ (TLB).|**Chương 9.3** Trang 360 - 371|
+|**Cấu trúc bảng trang** Phân trang phân cấp (Hierarchical), Hashed, Inverted.|**9.4 Structure of the Page Table** Hierarchical Paging, Hashed Page Tables, Inverted Page Tables.|**Chương 9.4** Trang 371 - 375|
+|**Swapping** Cơ chế tráo đổi tiến trình.|**9.5 Swapping** Standard swapping, Swapping with paging.|**Chương 9.5** Trang 376 - 378|
+
+## Chương 8: Bộ Nhớ Ảo
+
+_(Tương ứng với slide: Week13-Chapter8)_
+
+Lưu ý: Nội dung này tương ứng với **Chương 10 (Virtual Memory)** trong sách giáo khoa.
+
+### Phần 1: Cơ Chế Cơ Bản
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Tổng quan bộ nhớ ảo** Lợi ích, không gian địa chỉ ảo.|**10.1 Background** Virtual memory concept.|**Chương 10.1** Trang 389 - 392|
+|**Phân trang theo yêu cầu** Demand Paging, Page Fault, Lazy swapper.|**10.2 Demand Paging** Cơ chế xử lý lỗi trang (Page Fault).|**Chương 10.2** Trang 392 - 399|
+|**Copy-on-Write**|**10.3 Copy-on-Write** Tối ưu hóa khi tạo tiến trình (fork).|**Chương 10.3** Trang 399 - 401|
+
+### Phần 2: Thay Thế Trang & Cấp Phát
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Giải thuật thay thế trang** FIFO, Optimal (OPT), LRU, Second-chance.|**10.4 Page Replacement** Basic Page Replacement, FIFO, Optimal, LRU, LRU-Approximation.|**Chương 10.4** Trang 401 - 413|
+|**Cấp phát khung trang** Fixed/Priority allocation, Global vs Local allocation.|**10.5 Allocation of Frames** Minimum frames, Allocation algorithms.|**Chương 10.5** Trang 413 - 419|
+|**Thrashing (Trì trệ)** Nguyên nhân, Mô hình tập làm việc (Working-Set Model).|**10.6 Thrashing** Cause of Thrashing, Working-Set Model, Page-Fault Frequency.|**Chương 10.6** Trang 419 - 425|
+
+## Chương 9: Hệ Điều Hành Linux và Windows
+
+_(Tương ứng với slide: Week14-Chapter9)_
+
+Lưu ý: Nội dung này được tách thành hai chương riêng biệt trong sách giáo khoa: **Chương 20 (The Linux System)** và **Chương 21 (Windows 10)**.
+
+### Phần 1: Hệ Điều Hành Linux
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Lịch sử & Thiết kế** Lịch sử phát triển, Nguyên tắc thiết kế.|**20.1 History & 20.2 Design Principles**|**Chương 20.1 - 20.2** Trang 775 - 783|
+|**Quản lý tiến trình & Định thời** Process identity, fork/clone, CFS scheduler.|**20.4 Process Management & 20.5 Scheduling**|**Chương 20.4 - 20.5** Trang 786 - 795|
+|**Quản lý bộ nhớ** Physical memory, Virtual memory, Slab allocator.|**20.6 Memory Management**|**Chương 20.6** Trang 795 - 803|
+|**Hệ thống tập tin** VFS, ext3/ext4, procfs.|**20.7 File Systems**|**Chương 20.7** Trang 803 - 810|
+
+### Phần 2: Hệ Điều Hành Windows
+
+|Nội dung trong Slide UIT|Nội dung tương ứng trong Textbook (10th Ed.)|Vị trí tham chiếu|
+|:--|:--|:--|
+|**Lịch sử & Thiết kế** Lịch sử các phiên bản, Nguyên tắc thiết kế (Security, Reliability...).|**21.1 History & 21.2 Design Principles**|**Chương 21.1 - 21.2** Trang 821 - 838|
+|**Thành phần hệ thống** HAL, Kernel, Executive (Object manager, VM manager...).|**21.3 System Components**|**Chương 21.3** Trang 838 - 858|
+|**Hệ thống tập tin (NTFS)** Cấu trúc NTFS, Recovery.|**21.5 File System**|**Chương 21.5** Trang 875 - 880|
+|**Networking** Giao thức mạng, NDIS.|**21.6 Networking**|**Chương 21.6** Trang 880 - 884|
