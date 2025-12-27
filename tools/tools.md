@@ -2,6 +2,19 @@
 
 * Tools that support to create/modify/manage the materials.
 
+## Thông Tin Chung
+
+**Obsidian Plugins (Essential)**
+
+- **Dataview:** Biến kho dữ liệu thành cơ sở dữ liệu. Giúp tạo bảng danh sách các bài học, bài tập dựa trên YAML header đã quy định.
+- **Templater:** Tự động chèn YAML header mẫu và ngày giờ khi tạo file mới, đảm bảo đúng format của `CONTRIBUTION.md`.
+- **Linter:** Tự động format file (chuẩn hóa YAML, xóa khoảng trắng thừa) mỗi khi lưu, giúp tuân thủ quy tắc EOL/EOF.
+
+**Development Tools**
+
+- **VS Code:** Editor mạnh mẽ thay thế Typora khi cần chỉnh sửa hàng loạt hoặc code. Cài extension `EditorConfig for VS Code`.
+- **Git Graph (VS Code Ext):** Để trực quan hóa các nhánh `courses/...` như mô tả trong file HOWTO.
+
 ## Obsidian
 
 - [https://obsidian.md/](https://obsidian.md/)
