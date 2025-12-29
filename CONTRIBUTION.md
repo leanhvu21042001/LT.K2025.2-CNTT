@@ -96,6 +96,14 @@ Ví dụ bổ sung:
 - `ch01a`, `ch01b`, `ch01c`, …
 - Thư mục thông báo và các file bên trong được sắp xếp theo `yymmdd`.
 
+### Quy Tắc File Đính Kèm (Images/Assets)
+
+- Đặt tất cả ảnh/tài liệu đính kèm vào thư mục `assets` nằm cùng cấp với file Markdown đang soạn thảo.
+- **Đặt tên ảnh:** Tương tự quy tắc đặt tên file, mô tả ngắn gọn nội dung ảnh.
+    - Tốt: `assets/251025-so-do-git-flow.png`
+    - Tệ: `assets/image1.png`, `assets/Pasted image 20251025.png`
+- Lý do: tương tự quy tắc chung của đặt tên file; tránh trùng lặp, dễ dàng tìm kiếm, đường dẫn chặt chẽ.
+
 ## Git và Phân Nhánh
 
 - Luôn phân nhánh khi cần thiết, có thể cân nhắc sử dụng git-flow.
@@ -119,13 +127,14 @@ Ví dụ:
 
 ```yaml
 ---
-id: IE005
-type: Course
-provider: UIT
-subject: Giới Thiệu Nghành Công Nghệ Thông Tin
-title: Bài 1. Giới Thiệu Nghành Công Nghệ Thông Tin
+id: IE005-L01
+type: Lecture
+status: finished
+created: 2025-10-25
+updated: 2025-10-26
 tags:
-  - CNTT
+  - UIT/IE005
+  - Topic/Intro
 ---
 ```
 

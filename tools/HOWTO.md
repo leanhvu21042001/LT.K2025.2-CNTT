@@ -16,6 +16,33 @@
 4. Install necessary [tools](tools.md) if needed.
 5. Enjoy.
 
+## Quick Start Templates
+
+Copy đoạn này vào đầu mỗi file note mới để đảm bảo đúng chuẩn:
+
+```yaml
+---
+id:
+type: Note
+created: 2025-MM-DD
+tags:
+  - UIT/
+---
+
+# Tiêu đề
+
+(Nội dung...)
+
+```
+
+## Setup Môi trường (Automated)
+
+Để không phải chỉnh tay các thông số Tab/EOL:
+
+1. Cài đặt VS Code (hoặc Editor hỗ trợ EditorConfig).
+2. Đảm bảo file `.editorconfig` đã có trong thư mục gốc (nếu chưa, hãy pull về).
+3. Editor sẽ tự động format theo chuẩn Unix (`\n`) và 4 spaces tab.
+
 ## Contribution
 
 1. Fork this repo.
