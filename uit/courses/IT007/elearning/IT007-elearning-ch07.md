@@ -15,6 +15,10 @@ Nội dung:
 5. Cơ chế phân trang.
 6. Cơ chế swapping.
 
+Resources:
+
+- [How a Single Bit Inside Your Processor Shields Your Operating System's Integrity](https://www.youtube.com/watch?v=H4SDPLiUnv4)
+
 ## Khái niệm cơ sở về bộ nhớ
 
 ### VIDEO: KHÁI NIỆM CƠ SỞ VỀ BỘ NHỚ
