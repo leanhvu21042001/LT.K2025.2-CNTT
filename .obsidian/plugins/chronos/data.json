@@ -1,0 +1,13 @@
+{
+  "selectedLocale": "en",
+  "align": "left",
+  "clickToUse": false,
+  "roundRanges": false,
+  "useUtc": true,
+  "useAI": true,
+  "aiModels": {
+    "openai": "gpt-4o-mini",
+    "gemini": "gemini-2.5-flash"
+  },
+  "aiProvider": "gemini"
+}
