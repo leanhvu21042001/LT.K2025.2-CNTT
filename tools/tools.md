@@ -1,3 +1,7 @@
+---
+updated: 2025-12-31T23:25:00
+---
+
 # Tools
 
 * Tools that support to create/modify/manage the materials.
@@ -77,3 +81,16 @@ In action:
 * Check out a sample here:
     * The Markdown file: [l01](marp/samples/l01.md)
     * The generated PDF file: [l01](marp/samples/l01.pdf)
+
+## Diagram
+
+- Dot/Graphviz
+    - https://rsms.me/graphviz/
+    - https://edotor.net/
+    - https://www.devtoolsdaily.com/graphviz/
+    - https://magjac.com/graphviz-visual-editor
+- D2
+    - https://play.d2lang.com/
+- PlantUML
+    - [https://www.planttext.com/](https://www.planttext.com/)
+    - https://editor.plantuml.com/
