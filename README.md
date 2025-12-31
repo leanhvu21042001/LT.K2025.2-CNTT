@@ -1,3 +1,8 @@
+---
+created: 2025-10-20T08:33:00
+updated: 2025-12-31T08:32:00
+---
+
 # LT.K2025.2-CNTT
 
 - A repo that stores all the LT.K2025.2-CNTT's materials.
@@ -49,6 +54,26 @@ Truy cập các kế hoạch đào tạo của kỳ học tương ứng tại:
 1. [2025 - 2026: Học Kỳ 1](2025-2026-HK1.md) (Bấm để xem chi tiết)
 2. 2025 - 2026: Học Kỳ 2 (Chưa bổ sung)
 3. 2025 - 2026: Học Kỳ 3 (Chưa bổ sung)
+
+[Timeline](https://clairefro.github.io/chronos-timeline-md/):
+
+```chronos
+> ORDERBY color|start
+
+@ [2025-10-01~2026-02-01] #yellow {HK1} Học Kỳ 1
+- [2025-10-21~2026-02-01] IE005 Giới Thiệu Ngành CNTT
+- [2025-10-23~2026-02-01] #orange IT007 Hệ Điều Hành
+- [2025-10-24~2026-02-01] IT101 Quản Lý Hạ Tầng Thông Tin
+- [2025-10-27~2026-02-01] #orange MA003 Đại Số Tuyến Tính
+- [2025-10-29~2026-02-01] IE103 Quản Lý Thông Tin
+= [2026-01-24] Thi Cuối Kỳ
+* [2026-01-09] #red Dealine Đồ Án IE101
+
+@ [2026-02-02~2026-06-21] #orange {HK2} Học Kỳ 2
+
+@ [2026-06-22~2026-10-02] #purple {HK3} Học Kỳ 3
+
+```
 
 ## Chương Trình Đào Tạo Cử Nhân Liên Thông
 
