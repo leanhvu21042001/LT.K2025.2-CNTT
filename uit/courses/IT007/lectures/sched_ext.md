@@ -1,0 +1,79 @@
+# Lộ trình cho Linux Kernel & sched_ext Developer
+
+Tài liệu này ánh xạ nội dung từ các slide bài giảng môn Hệ Điều Hành (UIT) sang hai giáo trình tham khảo chính:
+
+1. **OSC 10th**: _Operating System Concepts, 10th Edition_ (Silberschatz, Galvin, Gagne).
+2. **OSTEP**: _Operating Systems: Three Easy Pieces_ (Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau).
+
+## Phần mở rộng: Lộ trình cho Linux Kernel & sched_ext Developer
+
+Nếu mục tiêu của bạn là phát triển **Linux Kernel** (đặc biệt là **sched_ext** trên Linux 6.12+), đây là nhận định so sánh:
+
+| **Tiêu chí**             | **OSTEP (Three Easy Pieces)**                                                                                                                                           | **OSC (Dinosaur Book)**                                                                                                |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Ngôn ngữ & Code**      | **C thuần túy & Assembly**. Các ví dụ code rất sát với cách Kernel thực sự hoạt động (con trỏ, quản lý bộ nhớ thủ công).                                                | Mã giả (Pseudo-code), Java, hoặc C++ mức cao. Ít giá trị cho việc viết Kernel module.                                  |
+| **Tiếp cận**             | **Mechanism-first** (Cơ chế): Đi sâu vào việc _"Làm thế nào để CPU switch từ process A sang B?"_ (lưu thanh ghi, stack pointer...). Đây là cốt lõi để hiểu `sched_ext`. | **Concept-first** (Khái niệm): Tập trung vào lý thuyết hàng đợi, các mô hình toán học.                                 |
+| **Độ phù hợp sched_ext** | **Rất cao**. Bạn cần hiểu rõ _Direct Execution, Context Switch, Runqueue_ để viết BPF scheduler.                                                                        | **Trung bình**. Chỉ hữu ích để đọc hiểu về thuật toán CFS (Completely Fair Scheduler) mặc định của Linux (Chương 5.7). |
+
+### Các chương OSTEP "Bắt buộc" cho sched_ext
+
+Để làm việc với `sched_ext`, bạn cần nắm vững cơ chế định thời. Hãy cày sâu các chương sau trong OSTEP thay vì đọc dàn trải:
+
+1. **Chapter 6: Direct Execution:** Hiểu về _User mode_ vs _Kernel mode_, và điều gì thực sự xảy ra khi _Trap/Return-from-trap_. Đây là nền tảng của mọi scheduler.
+2. **Chapter 7, 8 (Scheduling & MLFQ):** `sched_ext` thường được dùng để implement các thuật toán custom. Hiểu cách MLFQ (Multi-Level Feedback Queue) hoạt động là bài học vỡ lòng tốt nhất về việc ưu tiên task.
+3. **Chapter 10: Multiprocessor Scheduling:** Kernel hiện đại chạy trên Multi-core. Bạn **phải** hiểu về _Per-CPU runqueues, _Cache Affinity_, và _Locking_ trong scheduler. OSC nói về cái này rất sơ sài, nhưng OSTEP giải thích rất kỹ về vấn đề cache/performance.
+
+## Chương 3: Tiến trình & Tiểu trình (Process & Thread)
+
+_(Nguồn: Week03-Chapter3-1, Week04-Chapter3-2)_
+
+Trong sách OSC, nội dung này được tách thành 2 chương (Ch 3: Processes và Ch 4: Threads).
+
+| **Nội dung trong Slide UIT**                                                                                                                                               | **Nội dung tương ứng trong OSC (10th Ed.)**                                                                           | **Nội dung tương ứng trong OSTEP (Khuyên dùng cho C/Linux Dev)**                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Khái niệm Tiến trình (Process)**<br><br>- Định nghĩa, Trạng thái (New, Running, Waiting...), PCB (Process Control Block).<br><br>- Context Switch (Chuyển ngữ cảnh).     | **3.1 Process Concept**<br><br>**3.2 Process Scheduling** (Context Switch)<br><br>_(Trang 106 - 116)_                 | - **Chapter 4: The Abstraction: The Process**<br><br>- **Chapter 6: Direct Execution** (Context Switch/Mechanism) - _Chương này cực quan trọng để hiểu low-level kernel._ |
+| **Các tác vụ trên Tiến trình**<br><br>- Tạo tiến trình (`fork()`), kết thúc tiến trình (`exit()`, `wait()`).<br><br>- Cây tiến trình trên Linux/Windows.                   | **3.3 Operations on Processes**<br><br>Mô tả chi tiết `fork()`, `exec()`, `wait()`.<br><br>_(Trang 116 - 124)_        | **Chapter 5: Interlude: Process API**<br><br>Giải thích rất kỹ về `fork()` và `wait()` kèm code C mẫu.                                                                    |
+| **Giao tiếp liên tiến trình (IPC)**<br><br>- Shared Memory (Bộ nhớ chia sẻ).<br><br>- Message Passing (Trao đổi thông điệp).<br><br>- Client-Server (Sockets, RPC, Pipes). | **3.4 Interprocess Communication**<br><br>**3.5 - 3.6 IPC Systems / Communication**<br><br>_(Trang 124 - 146)_        | **N/A**<br><br>(OSTEP tập trung vào Concurrency threads hơn là IPC truyền thống ở phần đầu).                                                                              |
+| **Tiểu trình (Threads)**<br><br>- Đơn luồng vs Đa luồng.<br><br>- Mô hình đa luồng (Many-to-One, One-to-One, Many-to-Many).<br><br>- User Threads vs Kernel Threads.       | **4.1 Overview**<br><br>**4.2 Multicore Programming**<br><br>**4.3 Multithreading Models**<br><br>_(Trang 160 - 176)_ | **Chapter 26: Concurrency: An Introduction**<br><br>Giới thiệu why threads, user threads.                                                                                 |
+
+## Chương 4: Định thời CPU (CPU Scheduling)
+
+_(Nguồn: Week05-Chapter4-1, Week06-Chapter4-2, Week06-Chapter4-3)_
+
+_Lưu ý: Slide UIT gọi là Chương 4, tương ứng Chương 5 trong OSC._
+
+| **Nội dung trong Slide UIT**                                                                                                                                                        | **Nội dung tương ứng trong OSC (10th Ed.)**                                                                 | **Nội dung tương ứng trong OSTEP**                                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Các khái niệm cơ bản**<br><br>- Chu kỳ CPU-I/O Burst.<br>- Preemptive vs Non-preemptive scheduling.<br>- Dispatcher.                                                              | **5.1 Basic Concepts**<br><br>_(Trang 199 - 204)_                                                           | **Chapter 7: Scheduling: Introduction**<br><br>Các metric cơ bản và giả định.                                                                     |
+| **Tiêu chuẩn định thời (Criteria)**<br><br>- CPU utilization, Throughput.<br>- Turnaround time, Waiting time, Response time.                                                        | **5.2 Scheduling Criteria**<br><br>_(Trang 204 - 205)_                                                      | **Chapter 7**<br><br>Đề cập đến Turnaround Time và Response Time như 2 chỉ số chính.                                                              |
+| **Các giải thuật định thời cơ bản**<br><br>- FCFS (First-Come, First-Served).<br>- SJF (Shortest Job First) & SRTF.<br>- RR (Round Robin) & Time Quantum.<br>- Priority Scheduling. | **5.3 Scheduling Algorithms**<br><br>Chi tiết FCFS, SJF, RR, Priority.<br><br>_(Trang 205 - 218)_           | - **Chapter 7** (FCFS, SJF)<br>- **Chapter 8: Scheduling: The Multi-Level Feedback Queue** (Giải thích rất hay về cách RR hoạt động trong MLFQ).  |
+| **Hàng đợi đa cấp (Multi-level Queue)**<br><br>- Multilevel Queue.<br>- Multilevel Feedback Queue (MLFQ).                                                                           | **5.3.5 Multilevel Queue Scheduling**<br><br>**5.3.6 Multilevel Feedback Queue**<br><br>_(Trang 218 - 221)_ | **Chapter 8: Scheduling: The Multi-Level Feedback Queue**<br><br>Dành cả 1 chương để nói về MLFQ. Đây là kiến thức nền tảng để tự viết scheduler. |
+| **Định thời đa luồng (Thread Scheduling)**<br><br>- Contention Scope (PCS vs SCS).<br>- Pthread Scheduling.                                                                         | **5.4 Thread Scheduling**<br><br>_(Trang 221 - 224)_                                                        | **N/A**                                                                                                                                           |
+| **Định thời đa bộ xử lý (Multi-Processor)**<br><br>- Asymmetric vs Symmetric (SMP).<br>- Load Balancing (Cân bằng tải).<br>- Processor Affinity (NUMA).                             | **5.5 Multi-Processor Scheduling**<br><br>_(Trang 224 - 231)_                                               | **Chapter 10: Multiprocessor Scheduling** (Advanced)<br><br>Bàn về Caches, Cache Affinity và Locking - _Kiến thức cốt lõi cho sched_ext_.         |
+| **Định thời thời gian thực (Real-Time)**<br><br>- Soft vs Hard real-time.<br>- Rate Monotonic & EDF.                                                                                | **5.6 Real-Time CPU Scheduling**<br><br>_(Trang 231 - 238)_                                                 | **N/A**                                                                                                                                           |
+
+## Chương 5: Đồng bộ tiến trình (Process Synchronization)
+
+_(Nguồn: Week07-Chapter5-1, Week09-Chapter5-2, Week10-Chapter5-3)_
+
+_Lưu ý: Trong OSC 10th, phần này được chia thành Chương 6 (Công cụ) và Chương 7 (Ví dụ)._
+
+| **Nội dung trong Slide UIT**                                                                                                                                 | **Nội dung tương ứng trong OSC (10th Ed.)**                                                                                                                | **Nội dung tương ứng trong OSTEP**                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Vấn đề Vùng tranh chấp (Critical Section)**<br><br>- Race Condition.<br>- 3 Yêu cầu: Mutual Exclusion, Progress, Bounded Waiting.                          | **6.1 Background**<br><br>**6.2 The Critical-Section Problem**<br><br>_(Trang 257 - 262)_                                                                  | - **Chapter 26** (Race Conditions)<br>- **Chapter 28: Locks** (Định nghĩa Critical Section).                                                                       |
+| **Giải pháp phần mềm & Peterson**<br><br>- Peterson's Solution.                                                                                              | **6.3 Peterson's Solution**<br><br>_(Trang 262 - 264)_                                                                                                     | **Chapter 28**<br><br>Bàn về các nỗ lực ban đầu (software-only solutions).                                                                                         |
+| **Hỗ trợ phần cứng (Hardware Support)**<br><br>- Memory Barriers.<br>- Hardware Instructions: `test_and_set()`, `compare_and_swap()`.<br>- Atomic Variables. | **6.4 Hardware Support for Synchronization**<br><br>_(Trang 264 - 271)_                                                                                    | **Chapter 28: Locks**<br><br>Giải thích cực kỳ chi tiết về `TestAndSet`, `CompareAndSwap` và `LoadLinked/StoreConditional`. Rất quan trọng cho lập trình hệ thống. |
+| **Mutex Locks & Semaphores**<br><br>- Spinlock vs Sleeping lock.<br>- Semaphore usage (Counting vs Binary).<br>- Cài đặt Semaphore (wait/signal).            | **6.5 Mutex Locks**<br><br>**6.6 Semaphores**<br><br>_(Trang 271 - 279)_                                                                                   | **Chapter 28** (Locks/Mutex)<br>**Chapter 31: Semaphores**<br><br>Hướng dẫn chi tiết cách dùng Semaphores cho cả lock và ordering.                                 |
+| **Monitors**<br><br>- Khái niệm Monitor type.<br>- Condition Variables (`wait`, `signal`, `broadcast`).<br>- Ví dụ Java Monitor.                             | **6.7 Monitors**<br><br>**7.4 Synchronization in Java** (Chi tiết về Java Monitor)<br>_(Trang 279 - 287)_                                                  | **Chapter 30: Condition Variables**<br><br>Giải thích cơ chế Monitor pattern dùng Locks + CVs trong C (Pthreads).                                                  |
+| **Liveness & Deadlock (Cơ bản)**<br>- Deadlock, Starvation, Priority Inversion.                                                                              | **6.8 Liveness**<br><br>_(Trang 287 - 289)_<br><br>_(Chi tiết về Deadlock nằm ở OSC Chương 8)_                                                             | **Chapter 32: Common Concurrency Problems**<br><br>Bàn về Deadlock (Livelock, Starvation).                                                                         |
+| **Các bài toán đồng bộ kinh điển**<br>- Bounded-Buffer (Sản xuất - Tiêu thụ).<br>- Readers-Writers (Đọc - Ghi).<br>- Dining Philosophers (Triết gia ăn tối). | **7.1 Classic Problems of Synchronization**<br>- 7.1.1 Bounded-Buffer<br>- 7.1.2 Readers-Writers<br>- 7.1.3 Dining-Philosophers<br><br>_(Trang 299 - 308)_ | **Chapter 30 & 31**<br><br>Producer/Consumer (Ch 30)<br>Reader-Writer & Philosophers (Ch 31).                                                                      |
+
+### Ghi chú sử dụng tài liệu
+
+1. **Thứ tự đọc:**
+    - **Cho người học hàn lâm/thi cử:** Đọc slide UIT + tham khảo OSC 10th.
+    - **Cho Kernel/Systems Developer:** Đọc **OSTEP** thật kỹ, code lại các ví dụ trong sách bằng C trên máy ảo Linux. Sau đó đọc source code Linux Kernel (bắt đầu từ thư mục `kernel/sched/`).
+
+2. **Khác biệt chính:**    
+    - **OSC:** Dùng mã giả (pseudo-code) hoặc C++ mix Java.
+    - **OSTEP:** Thuần túy C và Pthreads (POSIX threads), rất sát với các bài thực hành Lab và môi trường thực tế của Linux.

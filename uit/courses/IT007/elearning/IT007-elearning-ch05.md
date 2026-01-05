@@ -1,9 +1,104 @@
 # Đồng Bộ Tiến Trình
+
+Một hệ thống thông thường sẽ bao gồm nhiều (có thể là hàng trăm, thậm chí là hàng ngàn) các tiểu trình thực thi đồng thời hoặc song song với nhau. Các tiểu trình này thường sẽ chia sẻ dữ liệu của người dùng. Trong khi đó, hệ điều hành sẽ thường xuyên cập nhật các cấu trúc dữ liệu để hỗ trợ việc thực thi đa tiểu trình. Hiện tượng *race condition* sẽ xuất hiện khi việc truy cập đến dữ liệu được chia sẻ không được kiểm soát, và có thể dẫn đến việc làm hỏng giá trị các dữ liệu.
+
+*Đồng bộ hóa tiến trình* là việc sử dụng các công cụ để kiểm soát việc truy cập đến các dữ liệu được chia sẻ để tránh hiện tượng race condition. Các công cụ này phải được sử dụng cẩn thận, bởi nếu xảy ra sai sót thì có thể dẫn đến tình trạng giảm sút nghiêm trọng của hệ thống, bao gồm cả hiện tượng deadlock.
+
+Mục tiêu:
+
+- PHẦN 1
+    - Mô tả được các vấn đề liên quan đến vùng tranh chấp (critical section) và phát biểu được điều kiện tranh chấp
+    - Mô tả được các giải pháp được đề xuất để xử lý tranh chấp
+    - Phát biểu được các yêu cầu đối với các giải pháp xử lý tranh chấp
+    - Mô tả và phân tích được các giải pháp đồng bộ dựa trên ngắt (giải pháp phần mềm)
+    - Mô tả được các giải pháp hỗ trợ từ phần cứng
+- PHẦN 2
+    - Diễn tả được cơ chế hoạt động của mutex lock, semaphore và monitor trong việc giải quyết bài toán vùng tranh chấp
+    - Phân tích chương trình ứng dụng mutex lock và semaphore
+    - Viết được chương trình sử dụng mutex lock và semaphore để thực hiện đồng bộ thứ tự hoạt động của tiến trình/tiểu trình
+    - Trình bày được vấn đề Liveness trong hoạt động đồng bộ tiến trình
+- PHẦN 3
+    - Giải thích được bài toán đồng bộ bounded-buffer
+    - Giải thích được bài toán đồng bộ readers-writers
+    - Phân tích các vấn đề thường gặp khi thực hiện đồng bộ tiến trình/tiểu trình
+
+Nội dung:
+
+- PHẦN 1
+    - Race Condition
+    - Vấn đề vùng tranh chấp
+    - Lời giải cho vấn đề vùng tranh chấp
+    - Các giải pháp dựa trên ngắt (giải pháp phần mềm)
+    - Các giải pháp phần cứng
+- PHẦN 2
+    - Mutex
+    - Semaphore
+    - Monitor
+    - Các vấn đề khi đồng bộ
+- PHẦN 3
+    - Bài toán Bounded Buffer
+    - Bài toán Readers - Writers
+    - Bài toán Dining Philosophers
+
 ## Race Condition
 
-### VIDEO: BÀI TOÁN PRODUCER VS. CONSUMER
+Mục Tiêu:
 
-> Bài toán Producer vs. Consumer mô tả về 02 tiến trình bao gồm: “Sản xuất” và “Bán hàng”. Nếu gọi biến count mô tả số lượng hàng hóa, thì tiến trình “Sản xuất” sẽ làm tăng giá trị của count; ngược lại, tiến trình “Bán hàng” sẽ làm giảm giá trị này. Khi ”Sản xuất” và “Bán hang” diễn ra đồng thời, biến count sẽ chịu tác động của việc tăng và giảm cùng lúc. Khi đó, liệu rằng giá trị của count có còn đúng với logic?
+- Trình bày được khái niệm race condition và mô tả được vấn đề vùng tranh chấp
+- Mô tả được các yêu cầu dành cho lời giải của bài toán vùng tranh chấp
+- Liệt kê được các giải pháp đồng bộ dựa trên ngắt (giải pháp phần mềm) và vấn đề của chúng
+- Trình bày được giải pháp đồng bộ dựa trên phần cứng bao gồm `test_and_set`, `compare_and_swap`, và biến đơn nguyên
+
+Nội Dung:
+
+1. Race condition
+2. Vấn đề vùng tranh chấp
+3. Lời giải cho vấn đề vùng tranh chấp
+4. Các giải pháp dựa trên ngắt (giải pháp phần mềm)
+5. Giải pháp phần cứng
+
+### Bài toán Producer vs. Consumer
+
+Bài toán Producer vs. Consumer mô tả về 02 tiến trình bao gồm: “Sản xuất” và “Bán hàng”. Nếu gọi biến count mô tả số lượng hàng hóa, thì tiến trình “Sản xuất” sẽ làm tăng giá trị của count; ngược lại, tiến trình “Bán hàng” sẽ làm giảm giá trị này. Khi ”Sản xuất” và “Bán hang” diễn ra đồng thời, biến count sẽ chịu tác động của việc tăng và giảm cùng lúc. Khi đó, liệu rằng giá trị của count có còn đúng với logic?
+
+- Gồm 02 tiến trình diễn ra đồng thời với nhau:
+    - Producer: liên tục tạo ra hàng hóa → tăng biến `count`
+    - Consumer: liên tục bán hàng → giảm biến `count`
+- Thông thường các tiến trình đều sẽ được đặt trong vòng `while(1)` để thực thi liên tục.
+- Khi các tiến trình thực thi đồng thời, các dữ kiện sau sẽ **KHÔNG** thể xác định được:
+    - Tiến trình nào thực thi trước?
+    - Tiến trình nào thực thi lâu hơn (do giải thuật định thời CPU)?
+    - Tiến trình sẽ hết quantum time khi nào?
+
+Producer:
+
+```c
+item nextProduce;
+
+while (1) {
+    while (count == BUFFER_SIZE);
+        /* Khong lafm gi */
+    buffer[in] = nextProducer;
+    count++;
+    in = (in+1) %BUFFER_SIZE;
+}
+```
+
+Consumer:
+
+```c
+item nextConsumer;
+
+while (1) {
+    while (count == 0) {
+        /* Khong lam gi */
+    }
+    
+    nextConsumer = buffer[out];
+    count--;
+    out = (out+1) %BUFFER_SIZE;
+}
+```
 
 `ProdvsCons.c`:
 
@@ -151,14 +246,11 @@ index = (index + 1) & 7;
 
 #### So sánh tổng quan (Tại sao người ta vẫn dùng Modulo?)
 
-|**Giải thuật**|**Tốc độ CPU**|**Ưu điểm**|**Nhược điểm**|
-|---|---|---|---|
-|**Modulo (%)**|Chậm (do dùng phép chia)|Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn).|Tốn tài nguyên CPU nhất.|
-|**If-Else**|Trung bình|Dễ đọc, dễ debug.|Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.|
-|**Bitwise (&)**|**Siêu nhanh**|Tối ưu tuyệt đối cho phần cứng.|**Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$).|
-### Slide: Producer vs. Consumer
-
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=5-9)
+| **Giải thuật**  | **Tốc độ CPU**           | **Ưu điểm**                                                                    | **Nhược điểm**                                                     |
+| --------------- | ------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| **Modulo (%)**  | Chậm (do dùng phép chia) | Code ngắn, logic toán học đẹp, dùng được cho **mọi kích thước** BS (lẻ, chẵn). | Tốn tài nguyên CPU nhất.                                           |
+| **If-Else**     | Trung bình               | Dễ đọc, dễ debug.                                                              | Bị lỗi "dự đoán rẽ nhánh" làm chậm luồng xử lý.                    |
+| **Bitwise (&)** | **Siêu nhanh**           | Tối ưu tuyệt đối cho phần cứng.                                                | **Chỉ dùng được** khi kích thước Buffer là lũy thừa của 2 ($2^n$). |
 
 ### Quiz: Producer vs. Consumer
 
@@ -184,8 +276,6 @@ index = (index + 1) & 7;
 > Trong bài toán Producer vs. Consumer, biến  `____` được chia sẻ chung giữa hai tiến trình và được gọi là dữ liệu được chia sẻ - shared data.
 > 
 > - `count`
-
-### VIDEO: PHÂN TÍCH BÀI TOÁN PRODUCER VS. CONSUMER
 
 Trong video này, ta sẽ đi phân tích lý do dẫn đến việc biến count không nhất quán giữa hai tiến trình Producer và Consumer.
 
@@ -215,10 +305,6 @@ Quantum Time = 2:
 > - CHU KỲ V:  `count = reg1`
 > - CHU KỲ VI: `count = reg2`
 
-### Slide: Phân tích Bài toán Producer vs. Consumer
-
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=11)
-
 ### Quiz: Phân tích Bài toán Producer vs. Consumer
 
 > [!NOTE]
@@ -230,33 +316,45 @@ Quantum Time = 2:
 > - [x] Data inconsistency
 
 > [!NOTE]
-> CÁC yếu tố nào sau đây gây ra giá trị biến count của bài toán Producer - Consumer trở nên không nhất quán?
+> CÁC yếu tố nào sau đây gây ra giá trị biến `count` của bài toán Producer - Consumer trở nên không nhất quán?
 > 
 > - [ ] Consumer thực hiện các lệnh sau Producer
-> - [x] Mã máy của các lệnh thao tác lên biến count bị thực thi xen kẽ
-> - [x] Biến count được chia sẻ cho 02 tiến trình
+> - [x] Mã máy của các lệnh thao tác lên biến `count` bị thực thi xen kẽ
+> - [x] Biến `count` được chia sẻ cho 02 tiến trình
 > - [ ] Các lệnh thao tác lên biến count là đơn nguyên
 
 > [!NOTE]
 > Nhận định sau đúng (True) hay sai (False)?
 > 
-> Giá trị cuối cùng của biến count không phụ thuộc vào việc tiến trình nào thực thi trước.
+> Giá trị cuối cùng của biến `count` không phụ thuộc vào việc tiến trình nào thực thi trước.
 > 
 > - [ ] True
 > - [x] False
 
-### VIDEO: RACE CONDITION LÀ GÌ?
+### Bài toán Cấp phát PID
 
-*Qua các ví dụ trước đó, ta thấy việc tranh chấp dữ liệu được chia sẻ đã gây nên vấn đề bất đồng bộ. Việc tranh chấp này còn được gọi là Race Condition? Video này sẽ giúp bạn hiểu rõ hơn về Race Condition.*
+Khi một tiến trình P gọi hàm `fork()`, một tiến trình con sẽ được tạo ra, hệ điều hành sẽ cấp cho tiến trình con một số định danh gọi là PID. Như vậy nếu có 2 tiến trình P0 và P1 cùng gọi hàm `fork()` đồng thời với nhau thì chuyện gì sẽ xảy ra?
 
-Bài toán Cấp phát PID
+- 02 tiến trình P0 và P1 đang tạo tiến trình con bằng cách gọi hàm `fork()`.
+- Biến `next_available_pid()` được kernel sử dụng để tạo ra PID cho tiến trình mới.
+- Tiến trình con của P0 và P1 đồng thời yêu cầu PID và nhận được kết quả như nhau.
+- Cần có cơ chế để ngăn P0 và P1 truy cập biến `next_available_pid` cùng lúc, để tránh tình trạng một PID được cấp cho 2 tiến trình.
 
-- `fork()`
-- `next_available_pid`
+![Bài toán cấp phát PID](assets/fork-pid-problem.png)
 
-### Slide: Race Condition là gì?
+### Race Condition
 
-![Week07-Chapter5-1-2024](../lectures/Week07-Chapter5-1-2024.pdf#page=12)
+Qua các ví dụ trước đó, ta thấy việc tranh chấp dữ liệu được chia sẻ đã gây nên vấn đề bất đồng bộ. Việc tranh chấp này còn được gọi là Race Condition? Video này sẽ giúp bạn hiểu rõ hơn về Race Condition.
+
+**Race condition** là hiện tượng xảy ra khi các tiến trình cùng truy cập đồng thời vào dữ liệu được chia sẻ. Kết quả cuối cùng sẽ phụ thuộc vào thứ tự thực thi của các tiến trình đang chạy đồng thời với nhau.
+
+Trong bài toán Producer vs. Consumer dữ liệu được chia sẻ là biến `count` bị tác động đồng thời bởi cả 02 tiến trình Producer và Consumer.
+
+Trong bài toán cấp phát PID, dữ liệu được chia sẻ là biến `next_available_pid` bị tranh giành bởi tiến trình thực thi đồng thời là P0 và P1.
+
+> Race condition có thể dẫn đến việc dữ liệu bị sai và không nhất quán (inconsistency).
+
+Để dữ liệu chia sẻ được nhất quán, cần bảo đảm sao cho tại mỗi thời điểm chỉ có một tiến trình được thao tác lên dữ liệu chia sẻ. Do đó, cần có cơ chế đồng bộ hoạt động của các tiến trình này.
 
 ### Quiz: Race Condition là gì?
 

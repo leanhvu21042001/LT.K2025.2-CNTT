@@ -7,6 +7,8 @@ tags:
 
 # Thông Báo
 
+- Link: [https://www.citd.edu.vn/](https://www.citd.edu.vn/)
+
 ## 2025-2026, HK1
 
 - 240105: [HƯỚNG DẪN SINH VIÊN RA VÀO TRƯỜNG TẠI CƠ SỞ CHÍNH THỦ ĐỨC](240105-huong-dan-sinh-vien-ra-vao-tai-thu-duc.md)

@@ -1,6 +1,23 @@
+---
+updated: 2025-12-31T23:25:00
+---
+
 # Tools
 
 * Tools that support to create/modify/manage the materials.
+
+## Thông Tin Chung
+
+**Obsidian Plugins (Essential)**
+
+- **Dataview:** Biến kho dữ liệu thành cơ sở dữ liệu. Giúp tạo bảng danh sách các bài học, bài tập dựa trên YAML header đã quy định.
+- **Templater:** Tự động chèn YAML header mẫu và ngày giờ khi tạo file mới, đảm bảo đúng format của `CONTRIBUTION.md`.
+- **Linter:** Tự động format file (chuẩn hóa YAML, xóa khoảng trắng thừa) mỗi khi lưu, giúp tuân thủ quy tắc EOL/EOF.
+
+**Development Tools**
+
+- **VS Code:** Editor mạnh mẽ thay thế Typora khi cần chỉnh sửa hàng loạt hoặc code. Cài extension `EditorConfig for VS Code`.
+- **Git Graph (VS Code Ext):** Để trực quan hóa các nhánh `courses/...` như mô tả trong file HOWTO.
 
 ## Obsidian
 
@@ -64,3 +81,16 @@ In action:
 * Check out a sample here:
     * The Markdown file: [l01](marp/samples/l01.md)
     * The generated PDF file: [l01](marp/samples/l01.pdf)
+
+## Diagram
+
+- Dot/Graphviz
+    - https://rsms.me/graphviz/
+    - https://edotor.net/
+    - https://www.devtoolsdaily.com/graphviz/
+    - https://magjac.com/graphviz-visual-editor
+- D2
+    - https://play.d2lang.com/
+- PlantUML
+    - [https://www.planttext.com/](https://www.planttext.com/)
+    - https://editor.plantuml.com/
