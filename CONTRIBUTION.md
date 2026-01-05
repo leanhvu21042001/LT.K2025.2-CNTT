@@ -1,3 +1,8 @@
+---
+created: 2025-10-22T10:00:00
+updated: 2025-10-22T10:17:00
+---
+
 # CONTRIBUTION - ĐÓNG GÓP
 
 Chào mừng, rất vui nếu bạn tham gia đóng góp!
