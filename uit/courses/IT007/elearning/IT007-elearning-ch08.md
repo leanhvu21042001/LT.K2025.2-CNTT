@@ -62,7 +62,7 @@ Nội dung:
     - swap partition trong Linux.
     - `pagefile.sys` trong Windows.
 
-#### Quiz: Tổng Quan Về Bộ Nhớ Ảo
+### Quiz: Tổng Quan Về Bộ Nhớ Ảo
 
 > [!NOTE]
 > Phát biểu sau đúng hay sai? “Nếu như hệ thống không cần nạp toàn bộ tiến trình vào bộ nhớ vật lý để thực thi, hệ thống có thể tận dụng dung lượng bộ nhớ còn lại để chạy nhiều tiến trình khác?
@@ -86,4 +86,6 @@ Nội dung:
 > - [x] Một tiến trình không được nạp toàn bộ vào bộ nhớ vật lý
 > - [ ] Tất cả đều đúng
 
-### Cài Đặt Bộ Nhớ Ảo
+## Cài Đặt Bộ Nhớ Ảo - Demand Paging
+
+
