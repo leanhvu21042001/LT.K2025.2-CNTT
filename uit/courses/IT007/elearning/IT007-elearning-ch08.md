@@ -32,6 +32,32 @@ Nội dung:
 
 ### Tổng Quan Về Bộ Nhớ Ảo
 
-### Dynamic Loading
+#### Nhắc Lại Cơ Chế Dynamic Loading
 
+- Cơ chế:
+    - Chỉ khi nào cần được gọi đến thì một thủ tục mới được nạp vào bộ nhớ chính.
+    - Tăng độ hiệu dụng của bộ nhớ bởi vì các thủ tục không được gọi đến sẽ không chiếm chỗ trong bộ nhớ.
+- Rất hiệu quả trong trường hợp:
+    - Tồn tại khối lượng mã lớn
+    - Có tần suất sử dụng thấp
+    - Không được sử dụng thường xuyên.
+- Hỗ trợ từ hệ điều hành:
+    - Thông thường, user chịu trách nhiệm thiết kế và thực hiện các chương trình có dynamic loading.
+    - Hệ điều hành chủ yếu cung cấp một số thủ tục thư viện hỗ trợ, tạo điều kiện dễ dàng hơn cho lập trình viên.
 
+#### Tổng Quan Về Bộ Nhớ Ảo
+
+- Nhận xét:
+    - Không phải tất cả các phần của một process cần thiết phải được nạp vào bộ nhớ chính tại cùng một thời điểm.
+- Ví dụ:
+    - Đoạn mã điều khiển các lỗi hiếm khi xẩy ra.
+    - Các arrays, list, table được cấp phát bộ bộ nhớ (tĩnh) nhiều hơn yêu cầu thực sự.
+    - Các tính năng ít khi được dùng của một chương trình.
+    - Cả chương trình thì cũng có đoạn chưa được dùng.
+- Ưu điểm:
+    - Số lượng process trong bộ nhớ nhiều hơn.
+    - Một process có thể thực thi ngay cả khi kích thước của nó lớn hơn bộ nhớ thực.
+    - Giảm nhẹ công việc của lập trình viên.
+- Không gian tráo đổi giữa bộ nhớ chính và bộ nhớ phụ (swap space)
+    - swap partition trong Linux.
+    - `pagefile.sys` trong Windows.
