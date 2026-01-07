@@ -61,3 +61,29 @@ Nội dung:
 - Không gian tráo đổi giữa bộ nhớ chính và bộ nhớ phụ (swap space)
     - swap partition trong Linux.
     - `pagefile.sys` trong Windows.
+
+#### Quiz: Tổng Quan Về Bộ Nhớ Ảo
+
+> [!NOTE]
+> Phát biểu sau đúng hay sai? “Nếu như hệ thống không cần nạp toàn bộ tiến trình vào bộ nhớ vật lý để thực thi, hệ thống có thể tận dụng dung lượng bộ nhớ còn lại để chạy nhiều tiến trình khác?
+> 
+> - [x] True
+> - [ ] False
+
+> [!NOTE]
+> Những yêu cầu nào sau đây KHÔNG phải là ưu điểm của bộ nhớ ảo?
+> 
+> - [ ] Giảm nhẹ công việc của lập trình viên
+> - [ ] Một process có thể thực thi ngay cả khi kích thước của nó lớn hơn bộ nhớ thực
+> - [ ] Số lượng process trong bộ nhớ nhiều hơn
+> - [x] Cho phép các tiến trình được tự chia sẻ vùng nhớ chung
+
+> [!NOTE]
+> Bộ nhớ ảo là một kỹ thuật cho phép xử lý?
+> 
+> - [ ] Một tiến trình phải được nạp toàn bộ vào bộ nhớ vật lý
+> - [ ] Chương trình chỉ cần nằm trên ổ cứng là có thể thực thi
+> - [x] Một tiến trình không được nạp toàn bộ vào bộ nhớ vật lý
+> - [ ] Tất cả đều đúng
+
+### Cài Đặt Bộ Nhớ Ảo
