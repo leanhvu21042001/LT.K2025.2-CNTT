@@ -1,0 +1,5 @@
+SELECT
+   CAST(MSDH AS VARCHAR) + ' ' + TenDH AS ChiTietSV
+FROM QuanLySV
+FOR XML PATH('QuanLySV')
+GO
