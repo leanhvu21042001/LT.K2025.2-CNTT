@@ -92,6 +92,8 @@ Nội dung:
 
 ## Cài Đặt Bộ Nhớ Ảo - Demand Paging
 
+- [[Hệ điều hành] Chương 8.2: Cài đặt bộ nhớ ảo](https://www.youtube.com/watch?v=pVdtFsBKB24)
+
 - Có 2 kỹ thuật:
     - Phân trang theo yêu cầu: Demand Paging.
     - Phân đoạn theo yêu cầu: Demand Segmentation.
@@ -101,8 +103,6 @@ Nội dung:
     - Demand Paging.
     - Phần cứng hỗ trợ thực hiện bộ nhớ ảo.
     - Các giải thuật của hệ điều hành.
-
-[[Hệ điều hành] Chương 8.2: Cài đặt bộ nhớ ảo](https://www.youtube.com/watch?v=pVdtFsBKB24)
 
 ### Cơ Chế Phân Trang
 
@@ -158,7 +158,51 @@ Hai vấn đề chủ yếu:
 
 Trình bày về các giải thuật thay thế trang phổ biến trong kỹ thuật phân trang theo yêu cầu bao gồm giải thuật thay trang FIFO, OPT và LRU.
 
-[[Hệ điều hành] Chương 8.3: Các giải thuật thay trang](https://www.youtube.com/watch?v=UiLPxEu1Plg)
+- [[Hệ điều hành] Chương 8.3: Các giải thuật thay trang](https://www.youtube.com/watch?v=UiLPxEu1Plg)
+
+Các giải thuật thay thế trang
+
+- Các giải thuật
+    - FIFO
+    - OPT
+    - LRU
+- Các dữ liệu ban đầu:
+    - Số khung trang.
+    - Trình trạng ban đầu.
+    - Chuỗi tham chiếu.
+
+### FIFO
+
+- Thay thế trang nhớ có thời gian sớm nhất trong các trang nhớ trong 3 khung trang.
+
+Ví dụ:
+- Một tiến trình có 8 trang, chuỗi tham chiếu:
+    - 7, 0, 1, 2, 0, 3, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1
+- Số khung trang: 3 frames
+- Tình trạng ban đầu: các khung trang đều trống.
+
+![Figure 10.12 FIFO page-replacement algorithm.](assets/ch08-FIFO.png)
+
+#### Nghịch Lý Belady
+
+- 3 khung trang: 9 lỗi.
+- 4 khung trang: 10 lỗi.
+
+![Figure 10.13 Page-fault curve for FIFO replacement on a reference string.](assets/ch08-Belady.png)
+
+### OPT
+
+- Thay thế trang nhớ sẽ được tham chiếu trễ nhất trong tương lai
+    - Cần biết trước các trang sẽ được tham chiếu trong tương lai.
 
 
+### LRU
+
+- Mỗi trang được ghi nhận (trong bảng phân trang) thời điểm được tham chiếu
+    - Trang LRU là trang nhớ có thời điểm tham chiếu nhỏ nhất
+    - OS tốn chi phí tìm kiếm trang nhớ LRU này mỗi khi có page fault.
+- Do vậy, LRU cần sự hỗ trợ của phần cứng và chi phí cho việc tìm kiếm.
+    - Ít CPU cung cấp đủ sự hỗ trợ phần cứng cho giải thuật LRU.
+
+### So sánh LRU vs FIFO
 
