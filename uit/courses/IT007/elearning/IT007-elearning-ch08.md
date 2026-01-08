@@ -206,3 +206,47 @@ Ví dụ:
 
 ### So sánh LRU vs FIFO
 
+### Quiz: Các Giải Thuật Thay Thế Trang
+
+> [!NOTE]
+> Giả sử một tiến trình được cấp 4 khung trang trong bộ nhớ vật lý và 8 trang trong bộ nhớ ảo. Tại thời điểm nạp tiến trình vào, 4 khung trang trên bộ nhớ vật lý này đang trống. Tiến trình truy xuất 8 trang (`1, 2, 3, 4, 5, 6, 7, 8`) trong bộ nhớ ảo theo thứ tự như sau:
+> 
+> - `1 4 2 6 8 8 7 1 5 2 3 5 1 4 2 1 3 4 8 7`
+> 
+> Tại thời điểm tiến trình truy xuất trang nhớ số 3 lần đầu tiên, có tất cả bao nhiêu lỗi trang đã xảy ra (không tính lỗi trang xảy ra khi nạp trang nhớ số 3 vào), nếu sử dụng giải thuật thay thế trang OPT?
+> 
+> - [x] 7 lỗi trang
+> - [ ] 6 lỗi trang
+> - [ ] 8 lỗi trang
+> - [ ] 9 lỗi trang
+
+> [!NOTE]
+> Hoàn thiện câu sau bằng cách điền vào chỗ trống?
+> 
+> Giả sử một tiến trình được cấp 4 khung trang trong bộ nhớ vật lý và 8 trang trong bộ nhớ ảo. Tại thời điểm nạp tiến trình vào, 4 khung trang trên bộ nhớ vật lý này đang trống. Tiến trình truy xuất 8 trang (1, 2, 3, 4, 5, 6, 7, 8) trong bộ nhớ ảo theo thứ tự như sau:
+> 
+> `1 4 2 6 8 8 7 1 5 2 3 5 1 4 2 1 3 4 8 7`
+> 
+> Nếu áp dụng chiến lược OPT, có tổng cộng `____`  lỗi trang sẽ xuất hiện.
+> - 11
+
+> [!NOTE]
+> Trong kỹ thuật phân trang theo yêu cầu, số lượng lỗi trang sẽ bị ảnh hưởng bởi CÁC yếu tố nào sau đây?
+> 
+> - [x] Số khung trang tiến trình được cấp phát
+> - [x] Chiến lược thay thế trang
+> - [ ] Tốc độ truy xuất của bộ nhớ chính 
+> - [ ] Tốc độ xử lý của CPU
+> 
+> Hoàn thiện câu sau bằng cách điền vào chỗ trống?
+
+> [!NOTE]
+> Giả sử một tiến trình được cấp 4 khung trang trong bộ nhớ vật lý và 8 trang trong bộ nhớ ảo. Tại thời điểm nạp tiến trình vào, 4 khung trang trên bộ nhớ vật lý này đang trống. Tiến trình truy xuất 8 trang (1, 2, 3, 4, 5, 6, 7, 8) trong bộ nhớ ảo theo thứ tự như sau:
+> 
+> 1 4 2 6 8 8 7 1 5 2 3 5 1 4 2 1 3 4 8 7
+> 
+> Nếu áp dụng chiến lược OPT, trang nhớ số `____` là trang nhớ tồn tại trong bộ nhớ chính ngắn nhất.
+> 
+> - 6
+
+
