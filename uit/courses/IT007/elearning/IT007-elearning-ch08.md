@@ -387,7 +387,6 @@ Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing
     - Hệ thống nhập xuất.
     - Hệ thống phân tán.
 
-
 ### Quiz: Vấn Đề Thrashing
 
 > [!NOTE]
@@ -412,5 +411,3 @@ Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing
 > - [ ] Mô hình cục bộ mô tả một tập các trang nhớ nằm gần nhau trong không gian địa chỉ luận lý
 > - [x] Mô hình cục bộ mô tả một tập các trang nhớ được tham chiếu gần nhau
 > - [ ] Mô hình cục bộ mô tả một tập các trang nhớ nằm gần nhau trong khung trang
-
-
