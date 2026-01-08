@@ -302,3 +302,25 @@ $$
     - $a_2 = \frac{127}{137} \times 64 \approx 59$
 
 - Cấp phát theo độ ưu tiên.
+
+### Quiz: Vấn Đề Cấp Phát Frames
+
+> [!NOTE]
+> Phát biểu “Số frame cấp cho mỗi process không đổi, được xác định vào thời điểm loading và có thể tùy thuộc vào từng ứng dụng (kích thước của nó)” là chiến lược cấp phát frame theo phương pháp?
+> 
+> - [ ] Chiến lược cấp phát động
+> - [ ] Chiến lược cấp phát tùy chọn
+> - [x] Chiến lược cấp phát tĩnh
+> - [ ] Tất cả đều sai
+
+> [!NOTE]
+> Giả sử một hệ thống có bộ nhớ chính được chia thành 120 frames chứa 3 tiến trình theo chiến lược cấp phát tĩnh theo tỷ lệ. Trong đó kích thước các tiến trình lần lược là P1 - 50 pages, P2 - 100 pages, P3 - 90 pages, hỏi tiến trình P3 sẽ được cấp bao nhiêu frames?
+> 
+> - [ ] 50
+> - [ ] 40
+> - [x] 45
+> - [ ] 25
+
+- $a_3 = \frac{90}{240} x 120 = 45$
+
+
