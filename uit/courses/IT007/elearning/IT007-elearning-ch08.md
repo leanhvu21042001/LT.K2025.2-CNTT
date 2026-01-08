@@ -12,6 +12,10 @@ provider: UIT
 
 # Chương 8. Bộ Nhớ Ảo
 
+Trong chương trước, chúng ta đã thảo luận về các chiến lượng quản lý bộ nhớ trong hệ thống máy tính. Tất cả những chiến lược này đều có một mục tiêu chung: giữ càng nhiều tiến trình chạy đồng thời trong bộ nhớ chính càng tốt để cho phép đa chương (multiprogramming). Dù vậy, những chiến lược này có xu hướng nạp toàn bộ tiến trình vào trong bộ nhớ chính trước khi nó được thực thi.
+
+Bộ nhớ ảo là một kỹ thuật cho phép tiến trình được thực thi mà không cần được nạp toàn bộ vào trong bộ nhớ chính. Ưu điểm chính của mô hình này là các chương trình có thể có dung lượng lớn hơn cả bộ nhớ vật lý. Hơn nữa, bộ nhớ ảo trừu tượng hóa bộ nhớ chính thành một mảng lưu trữ thống nhất, cực kỳ lớn, tách bộ nhớ luận lý dưới góc độ của lập trình viên khỏi bộ nhớ vật lý. Kỹ thuật này giải phóng các lập trình viên khỏi lo lắng về vấn đề giới hạn dung lượng của bộ nhớ chính. Bộ nhớ ảo cũng cho phép các tiến trình chia sẻ các file, thư viện và hiện thực mô hình bộ nhớ chia sẻ. Ngoài ra, nó cũng cung cấp một cơ chể hiệu quả để tạo tiến trình. Tuy vậy, việc hiện thực bộ nhớ ảo không hề dễ dàng và có thể gây giảm hiệu suất nghiêm trọng nếu như được dùng không cẩn thẩn. Trong chương này, chúng ta sẽ thảo luận chi tiết về bộ nhớ ảo, cách hiện thực nó và tìm hiểu về độ phức tạp dũng như các lợi ích của mô hình này.
+
 ## Tổng Quan Về Bộ Nhớ Ảo
 
 Ôn tập các chương trước và dẫn nhập giới thiệu bộ nhớ ảo, trình bày mục tiêu và nội dung chương 8 - Bộ nhớ ảo và trình bày giới thiệu tổng quan về bộ nhớ ảo.
