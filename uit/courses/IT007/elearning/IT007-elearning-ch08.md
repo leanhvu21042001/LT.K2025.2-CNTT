@@ -323,4 +323,9 @@ $$
 
 - $a_3 = \frac{90}{240} x 120 = 45$
 
+### Vấn Đề Thrashing
+
+Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing) khi mà các trrang nhớ của một process bị hoán chuyển vào/ra liên tục. Sau đó trình bày về mô hình cục bộ để hạn chế tình trạng thrashing.
+
+
 
