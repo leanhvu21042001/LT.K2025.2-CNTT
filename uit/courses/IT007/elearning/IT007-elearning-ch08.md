@@ -386,3 +386,31 @@ Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing
     - Hệ thống tập tin.
     - Hệ thống nhập xuất.
     - Hệ thống phân tán.
+
+
+### Quiz: Vấn Đề Thrashing
+
+> [!NOTE]
+> Phát biểu nào sau đây mô tả đúng nhất về thrashing?
+> 
+> - [ ] Thrashing xảy ra khi tần số xung clock của hệ thống quá cao
+> - [ ] Thrashing xảy ra khi hiệu năng CPU rất thấp
+> - [x] Thrashing xảy ra khi việc thay thế trang diễn ra liên tục
+> - [ ] Thrashing xảy ra do bộ nhớ chính bị phân mảnh.
+
+> [!NOTE]
+> Thrashing ảnh hưởng đến hệ thống như thế nào?
+> 
+> - [ ] Gia tăng mức độ phản hồi của hệ thống
+> - [ ] Gây suy giảm đáng kể dung lượng bộ nhớ chính
+> - [x] Gây giảm hiệu năng của hệ thống một cách đáng kể do hoạt động thay thế trang quá mức
+
+> [!NOTE]
+> Phát biểu nào sau đây mô tả đúng về mô hình cục bộ (locality model)?
+> 
+> - [ ] Mô hình cục bộ mô tả một tập các trang nhớ nằm gần nhau trong bộ nhớ chính
+> - [ ] Mô hình cục bộ mô tả một tập các trang nhớ nằm gần nhau trong không gian địa chỉ luận lý
+> - [x] Mô hình cục bộ mô tả một tập các trang nhớ được tham chiếu gần nhau
+> - [ ] Mô hình cục bộ mô tả một tập các trang nhớ nằm gần nhau trong khung trang
+
+
