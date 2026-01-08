@@ -259,3 +259,10 @@ Bài giải:
 | 4     |     |     |     |     | 6   | 8   | 8   | 7   | 7   | 5   | 5   | 5   | 5   | 5   | 4   | 4   | 4   | 4   | 4   | 8   | 8   |
 | Total | 11  | *   | *   | *   | *   | *   |     | *   |     | *   |     | *   |     |     | *   |     |     |     |     | *   | *   |
 
+## Vấn Đề Cấp Phát Frames
+
+Trình bày về vấn đề cấp phát Frames trong kỹ thuật phân trang theo yêu cầu như số lượng Frames và các chiến lược cấp phát
+
+- [[Hệ điều hành] Chương 8.4: Vấn đề cấp phát Frames](https://www.youtube.com/watch?v=6AgN-w2XLAY)
+
+
