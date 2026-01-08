@@ -88,4 +88,30 @@ Nội dung:
 
 ## Cài Đặt Bộ Nhớ Ảo - Demand Paging
 
+- Có 2 kỹ thuật:
+    - Phân trang theo yêu cầu: Demand Paging.
+    - Phân đoạn theo yêu cầu: Demand Segmentation.
+- Phần cứng memory management phải hỗ trợ paging và/hoặc segmentation.
+- OS phải quản lý sự di chuyển của trang/đoạn giữa bộ nhớ chính và bộ nhớ thứ cấp.
+- Trong chương này:
+    - Demand Paging.
+    - Phần cứng hỗ trợ thực hiện bộ nhớ ảo.
+    - Các giải thuật của hệ điều hành.
 
+### Cơ Chế Phân Trang
+
+- Demand Paging:
+    - các trang của tiến trình chỉ được nạp vào bộ nhớ chính khi được yêu cầu.
+    - Khi có một tham chiếu đến một trang mà không có trong bộ nhớ chính (valid bit) thì phần cứng sẽ gây ra một ngắt (page-fault trap) kích khởi page-fault service routing (PFSR) của hệ điều hành.
+    - PFSR:
+        - 1. Chuyển process về trạng thái `blockd`.
+        - 2. Phát ra một yêu cầu đọc đĩa để nạp trang được tham chiếu vào một frame trống; trong khi đợi I/O, một process khác được cấp CPU để thực thi.
+            - Xác định vị trí trên đĩa của trang đang cần.
+            - Tìm một frame trống:
+                - Nếu có frame trống thì dùng nó.
+                - Nếu không có frame trống thì dùng một giải thuật thay trang để chọn một trang hi sinh (victim page).
+                - Ghi victim page ra đĩa, cập nhật page table và frame table tương ứng.
+            - Đọc trang đang cần vào frame trống vừa tìm ra/tạo ra.
+        - 3. Sau khi I/O hoàn tất, đĩa gây ra một ngắt đến hệ điều hành; PFSR cập nhật page table và chuyển process và trạng thái `ready`.
+
+![PFSR (Figure 10.5 Steps in handling a page fault.)](assets/ch08-PFSR.png)
