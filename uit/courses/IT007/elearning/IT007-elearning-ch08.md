@@ -265,4 +265,40 @@ Trình bày về vấn đề cấp phát Frames trong kỹ thuật phân trang t
 
 - [[Hệ điều hành] Chương 8.4: Vấn đề cấp phát Frames](https://www.youtube.com/watch?v=6AgN-w2XLAY)
 
+### Số Lượng Frame Cấp Cho Process
 
+- OS phải quyết định cấp cho mỗi process bao nhiêu frame.
+    - Cấp ít frame => nhiều page fault.
+    - Cấp nhiều frame => giảm mức độ multiprogramming.
+- Chiến lượng cấp phát tĩnh (fixed-allocation)
+    - Số frame cấp cho mỗi process không đổi.
+    - Được xác định vào thời điểm loading.
+    - Có thể phụ thuộc vào từng ứng dụng.
+- Chiến lược cấp phát động (variable-allocation)
+    - Số frame cấp cho mỗi process có thể thay đổi trong khi nó chạy.
+        - Nếu tỉ lệ page fault cao: cấp thêm frame.
+        - Nếu tỉ lệ page fault thấp: giảm bớt frame.
+- OS phải mất chi phí để ước định các process.
+
+### Cấp Phát Tĩnh
+
+- Cấp phát bằng nhau:
+    - Tổng frames / tổng tiến trình.
+    - Ví dụ có 1000 frames và 5 process -> mỗi process 20 frames.
+- Cấp phát theo tỉ lệ:
+    - dựa vào kích thước process.
+    - $s_i$ : kích thước của process $p_i$
+    - $S = \Sigma S_i$
+    - $m$: tổng số lượng frames
+    - $a_i$: số lượng cấp cho $p_i$
+
+$$
+a_i = \frac{s_i}{S} \times m
+$$
+
+- Ví dụ:
+    - $m = 64; s_i = 10; s_2 = 127$
+    - $a_1 = \frac{10}{137} \times 64 \approx 5$
+    - $a_2 = \frac{127}{137} \times 64 \approx 59$
+
+- Cấp phát theo độ ưu tiên.
