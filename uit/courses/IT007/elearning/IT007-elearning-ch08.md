@@ -153,3 +153,12 @@ Hai vấn đề chủ yếu:
 > 
 > - [ ] True    
 > - [x] False
+
+### Các Giải Thuật Thay Thế Trang
+
+Trình bày về các giải thuật thay thế trang phổ biến trong kỹ thuật phân trang theo yêu cầu bao gồm giải thuật thay trang FIFO, OPT và LRU.
+
+[[Hệ điều hành] Chương 8.3: Các giải thuật thay trang](https://www.youtube.com/watch?v=UiLPxEu1Plg)
+
+
+
