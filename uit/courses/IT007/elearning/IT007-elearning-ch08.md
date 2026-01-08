@@ -323,9 +323,66 @@ $$
 
 - $a_3 = \frac{90}{240} x 120 = 45$
 
-### Vấn Đề Thrashing
+## Vấn Đề Thrashing
 
-Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing) khi mà các trrang nhớ của một process bị hoán chuyển vào/ra liên tục. Sau đó trình bày về mô hình cục bộ để hạn chế tình trạng thrashing.
+Trình bày về vấn đề trì trệ trên toàn bộ hệ thống (thrashing) khi mà các trang nhớ của một process bị hoán chuyển vào/ra liên tục. Sau đó trình bày về mô hình cục bộ để hạn chế tình trạng thrashing.
 
+### Trì trệ trên toàn bộ hệ thống
 
+- Nếu một process không có đủ số frame cần thiết thì tỉ lệ page fault/sec rất cao.
+- Thrashing: hiện tượng các trang nhớ của một process bị hoán chuyển vào/ra liên tục.
 
+![Figure 10.20 Thrashing.](assets/ch09-thrashing.png)
+
+### Mô hình cục bộ
+
+- Để hạn chế thrashing:
+    - OS phải cung cấp cho process càng "đủ" frame càng tốt.
+    - Bao nhiêu là đủ cho một process cụ thể để thực thi hiệu quả?
+- Nguyên lý locality (locality principle)
+    - Locality là tập các trang được tham chiếu gần nhau.
+    - Một process gồm nhiều locality, và trong quá trình thực thi, process sẽ chuyển từ locality này sang locality khác.
+- Vì sao xuất hiện thrashing
+    - Khi $\Sigma ~size~of~locality > memory~size$
+
+### Giải pháp tập làm việc (working-set)
+
+- Được thiết kế dựa trên nguyên lý locality.
+- Xác định xem process thực sự sử dụng bao nhiêu frame.
+- Định nghĩa:
+    - $WS(t)$: các tham chiếu trang nhớ của process gần đây nhất được quan sát.
+    - $\Delta$: khoảng thời giant ham chiếu.
+- Ví dụ:
+    - $\Delta = 10$
+    - $P_i$: Tiến trình $i$
+    - $WS(i)$: Working set của $P_i$
+        - $WS(t_1) = {1, 2, 5, 6, 7}$
+        - $WS(t_2) = {3, 4}$
+
+![Figure 10.22 Working-set model.](assets/ch08-working-set-model.png)
+
+- Nhận xét:
+    - Nếu $\Delta$ quá nhỏ: không đủ bao phủ toàn bộ locality.
+    - Nếu $\Delta$ quá lớn: bao phủ nhiều locality khác nhau.
+    - Nếu $\Delta = \infty$ : bao gồm tất cả các trang được sử dụng; có nghĩa không có locality.
+- Dùng một working set của một process để xấp xỉ locality của nó.
+- Định nghĩa:
+    - $WSSi$: kích thước của working set của $P_i$.
+    - $WSSi$ = số lượng các trang trong $WSi$.
+    - $WS(i)$: Working set của $P_i$
+        - $WS(t_1) = {1, 2, 5, 6, 7}$
+            - $WSSi = 5$
+        - $WS(t_2) = {3, 4}$
+            - $WSSi = 2$
+- Đặt $D = \Sigma WSSi$ = tổng các working-set size của mọi process trong hệ thống:
+    - Nếu $D > m$: sẽ xảy ra thrashing.
+- Giải pháp working set:
+    - Khi khởi tạo một tiến trình: cung cấp cho tiến trình số lượng frame thỏa mãn working-set size của nó.
+    - Nếu $D > m \Rightarrow$ tạm dựng một trong các process.
+        - Các trang của tiến trình được chuyển ra đĩa cứng và các frame của nó được thu hồi.
+- WS loại trừ được tình trạng trì trệ mà vẫn đảm bảo mức độ đa chương.
+    - Theo vết các $WSx \Rightarrow WS~xấp~xỉ$.
+- Đọc thêm:
+    - Hệ thống tập tin.
+    - Hệ thống nhập xuất.
+    - Hệ thống phân tán.
