@@ -127,3 +127,25 @@ Hai vấn đề chủ yếu:
     - Mục tiêu: số lượng page-fault nhỏ nhất.
     - Được đánh giá bằng cách thực thi giải thuật đối với một chuỗi tham chiếu bộ nhớ (memory reference string) và xác định số lần xảy ra page fault.
 
+### Quiz: Cài đặt bộ nhớ ảo - Demand Paging
+
+> [!NOTE]
+> Hoàn thiện câu sau bằng cách điền vào chỗ trống?
+> 
+> Ở bước 3 khi thực hiện page-fault service routine, sau khi I/O hoàn tất, đĩa gây ra một `____` đến hệ điều hành; PFSR cập nhật page table và chuyển process về trạng thái ready
+> 
+> - ngắt
+
+> [!NOTE]
+> Công việc nào KHÔNG phải là một công việc của Page-fault service routine?
+> 
+> - [x] Chuyển tất cả các trang của tiến trình ra khỏi bộ nhớ chính
+> - [ ] Chuyển tiến trình về trạng thái blocked.
+> - [ ] Phát ra một yêu cầu đọc đĩa để nạp trang được tham chiếu vào một frame trống
+> - [ ] Sau khi I/O hoàn tất, đĩa gây ra một ngắt đến hệ điều hành; PFSR cập nhật page table và chuyển process về trạng thái ready
+
+> [!NOTE]
+> Hệ điều hành phải hỗ trợ cả 2 cơ chế Demand Paging (phân trang theo yêu cầu) và Demand Segmentation (phân đoạn theo yêu cầu) để có thể hiện thực được bộ nhớ ảo?
+> 
+> - [ ] True    
+> - [x] False
