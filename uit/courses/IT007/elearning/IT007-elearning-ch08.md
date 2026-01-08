@@ -2,7 +2,7 @@
 created: 2026-01-08T07:39:00
 updated:
 type: Course
-id:
+id: IE007-elearning-ch08
 title: Bộ Nhớ Ảo
 subject: Operating Systems
 tags:
