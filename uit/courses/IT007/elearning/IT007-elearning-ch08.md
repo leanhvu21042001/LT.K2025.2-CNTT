@@ -98,6 +98,8 @@ Nội dung:
     - Phần cứng hỗ trợ thực hiện bộ nhớ ảo.
     - Các giải thuật của hệ điều hành.
 
+[[Hệ điều hành] Chương 8.2: Cài đặt bộ nhớ ảo](https://www.youtube.com/watch?v=pVdtFsBKB24)
+
 ### Cơ Chế Phân Trang
 
 - Demand Paging:
@@ -115,3 +117,13 @@ Nội dung:
         - 3. Sau khi I/O hoàn tất, đĩa gây ra một ngắt đến hệ điều hành; PFSR cập nhật page table và chuyển process và trạng thái `ready`.
 
 ![PFSR (Figure 10.5 Steps in handling a page fault.)](assets/ch08-PFSR.png)
+
+Hai vấn đề chủ yếu:
+
+- Frame-allocation algorithm
+    - Cấp phát cho process bao nhiêu frame của bộ nhớ thực
+- Page-replacement algorithm
+    - Chọn frame của process sẽ được thay thế trang nhớ.
+    - Mục tiêu: số lượng page-fault nhỏ nhất.
+    - Được đánh giá bằng cách thực thi giải thuật đối với một chuỗi tham chiếu bộ nhớ (memory reference string) và xác định số lần xảy ra page fault.
+
