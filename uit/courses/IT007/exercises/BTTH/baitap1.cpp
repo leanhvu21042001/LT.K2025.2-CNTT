@@ -4,24 +4,26 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <semaphore.h>
-#include <unistd.h>
-
-volatile int keep_running = 1;
 
 // 4 số cuối của Mã Số Sinh Viên: 0291
+// Đây chính là lượng tồn kho tối đa theo yêu cầu.
 #define MSSV 291
 
-int buffer[MSSV];
-
+// Khai báo các semaphore tương ứng; bài toán bounded buffer
 sem_t full, empty;
+
+// Khai báo mutex để đảm bảo loại trừ tương hỗ
 pthread_mutex_t mutex;
 
+// Khai báo các biến products/sells
 int products = 0;
 int sells = 0;
 
 // Công việc của Producer
+// Đây là Bước 1. trong Tạo tiểu trình
+// Con trỏ hàm mô tả công việc của tiểu trình producer
 void* producer(void* arg) {
-    while(keep_running) {
+    while(1) {
         sem_wait(&empty);
         pthread_mutex_lock(&mutex);
         products++;
@@ -29,14 +31,14 @@ void* producer(void* arg) {
         pthread_mutex_unlock(&mutex);
         sem_post(&full);
     }
-
-    printf("[Producer] Tôi Thoát Đây!");
-    pthread_exit(NULL);
+    return NULL;
 }
 
 // Công việc của Consumer
+// Đây là Bước 1. trong Tạo tiểu trình
+// Con trỏ hàm mô tả công việc của tiểu trình consumer
 void* consumer(void* arg) {
-    while(keep_running) {
+    while(1) {
         sem_wait(&full);
         pthread_mutex_lock(&mutex);
         sells++;
@@ -44,32 +46,40 @@ void* consumer(void* arg) {
         pthread_mutex_unlock(&mutex);
         sem_post(&empty);
     }
-
-    printf("[Consumer] Tôi Thoát Đây!");
-    pthread_exit(NULL);
+    return NULL;
 }
 
 int main()
 {
-    // Khai báo tiểu trình
-    pthread_t tproducer, tconsumer;
-
+    // Khởi tạo biến mutex
     pthread_mutex_init(&mutex, NULL);
 
-    // semaphore 'full' cục bộ giữa các tiểu trình, bắt đầu với 0 sản phẩm có sẵn
+    // Khai báo tiểu trình
+    // Đây là Bước 2 trong Tạo tiểu trình
+    pthread_t tproducer, tconsumer;
+
+    // Khởi tạo semaphore full;
+    // tham số thứ 2 = 0 => đây là semaphore cục bộ giữa các tiến trình
+    // tham số thứ 3 = 0 => đây là giá trị khởi tạo ban đầu của full
     sem_init(&full, 0, 0);
-    // semaphore 'empty' cục bộ, bắt đầu với số lượng 'mssv' tồn kho tối đa
+
+    // Khởi tạo semaphore empty;
+    // tham số thứ 2 = 0 => đây là semaphore cục bộ giữa các tiến trình
+    // tham số thứ 3 = MSSV => đây là giá trị khởi tạo ban đầu của empty
     sem_init(&empty, 0, MSSV);
 
-    // Khởi tạo tiểu trình Produce.
+    // Khởi tạo tiểu trình Producer.
+    // Đây là Bước 2. trong Tạo tiểu trình
     pthread_create(
+        // tham số 1. tiểu trình đã khai báo
         &tproducer,
         NULL,
+        // tham số 3. công việc của tiểu trình tương ứng
         &producer,
         NULL
     );
 
-    // Khởi tạo tiểu trình Consume.
+    // Khởi tạo tiểu trình Consumer.
     pthread_create(
         &tconsumer,
         NULL,
@@ -77,19 +87,8 @@ int main()
         NULL
     );
 
-    // Giữ cho tiểu trình main tồn tại để quan sát idthreadA và idthreadB
-    sleep(5); // Chạy trong 1 giây để quan sát kết quả
-
-    // main thức dậy và tắt cờ running
-    keep_running = 0;
-
-    // Hợp các tiểu trình con để chúng "hấp thụ" giá trị của cờ vừa thay đổi
-    pthread_join(tproducer, NULL);
-    pthread_join(tconsumer, NULL);
-
-    pthread_mutex_destroy(&mutex);
-    sem_destroy(&full);
-    sem_destroy(&empty);
+    // Giữ cho main chạy để quan sát.
+    while (1) {}
 
     return 0;
 }
