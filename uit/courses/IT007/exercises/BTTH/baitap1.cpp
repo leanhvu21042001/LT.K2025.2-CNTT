@@ -55,7 +55,7 @@ int main()
     pthread_mutex_init(&mutex, NULL);
 
     // Khai báo tiểu trình
-    // Đây là Bước 2 trong Tạo tiểu trình
+    // Đây là Bước 2. trong Tạo tiểu trình
     pthread_t tproducer, tconsumer;
 
     // Khởi tạo semaphore full;
@@ -69,7 +69,7 @@ int main()
     sem_init(&empty, 0, MSSV);
 
     // Khởi tạo tiểu trình Producer.
-    // Đây là Bước 2. trong Tạo tiểu trình
+    // Đây là Bước 3. trong Tạo tiểu trình
     pthread_create(
         // tham số 1. tiểu trình đã khai báo
         &tproducer,
