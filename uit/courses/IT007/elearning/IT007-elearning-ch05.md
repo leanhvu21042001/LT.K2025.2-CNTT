@@ -905,9 +905,10 @@ signal(S) {
 `waiting queue`:
 
 ```c
-typedef struct{
-
-}
+typedef struct __process_list{
+    int value;
+    struct process_list *list;
+} process_list;
 ```
 
 > [!NOTE]
