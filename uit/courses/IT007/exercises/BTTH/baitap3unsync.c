@@ -2,15 +2,14 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-// Hằng số N, mục đích kiểm thử bài toán
-#define N 10
-
 // Khai báo mảng a
 int *a;
-int n = N;
+// Biến n
+int n;
+// Biến count để dại diện độ lớn của mảng tại một thời điểm nhất định
 int count = 0;
 
-// Hàm in ra mảng
+// Hàm in ra mảng a
 void print_array() {
     printf(" | ");
     for (int i = 0; i < count; i++) {
@@ -39,6 +38,11 @@ void* remover(void* arg) {
             count--;
             printf("REMOVING | Count = %d", count);
             print_array();
+            if (count == 0) {
+                printf(" | Khong con phan tu trong mang\n");
+            } else {
+                print_array();
+            }
         } else {
             printf("REMOVING | Count = %d | Khong con phan tu trong mang\n", count);
         }
@@ -50,7 +54,11 @@ int main() {
     // Khai báo các tiểu trình.
     pthread_t adder_id, remover_id;
 
-    // Khởi tạo mảng a
+    // Yêu cầu người dùng nhập giá trị của n.
+    printf("Moi nhap so luong phan tu toi da: ");
+    scanf("%d", &n);
+
+    // Khởi tạo mảng a, và lấp đầy bằng 0
     a = (int*)malloc(n * sizeof(int));
     for (int i = 0; i < n; i++) {
         a[i] = 0;
