@@ -17,37 +17,37 @@ void print_array() {
 
 void* adder(void* arg) {
     while (1) {
-        if (count < n) {
-            // Khóa mutex, đảm bảo loại trừ tương hỗ.
-            pthread_mutex_lock(&mutex);
-            a[count] = rand() % 10;
-            count++;
-            printf("ADDING   | Count = %d", count);
-            print_array();
-            // Mở khóa mutex, nhường lượt cho tiểu trình khác
-            pthread_mutex_unlock(&mutex);
-        }
+        // Khóa mutex, đảm bảo loại trừ tương hỗ.
+        pthread_mutex_lock(&mutex);
+            if (count < n) {
+                a[count] = rand() % 10;
+                count++;
+                printf("ADDING   | Count = %d", count);
+                print_array();
+            }
+        // Mở khóa mutex, nhường lượt cho tiểu trình khác
+        pthread_mutex_unlock(&mutex);
     }
     return NULL;
 }
 
 void* remover(void* arg) {
     while (1) {
-        if (count > 0) {
-            // Khóa mutex, đảm bảo loại trừ tương hỗ.
-            pthread_mutex_lock(&mutex);
-            count--;
-            printf("REMOVING | Count = %d", count);
-            if (count == 0) {
-                printf(" | Khong con phan tu trong mang\n");
+        // Khóa mutex, đảm bảo loại trừ tương hỗ.
+        pthread_mutex_lock(&mutex);
+            if (count > 0) {
+                count--;
+                printf("REMOVING | Count = %d", count);
+                if (count == 0) {
+                    printf(" | Khong con phan tu trong mang\n");
+                } else {
+                    print_array();
+                }
             } else {
-                print_array();
+                printf("REMOVING | Count = %d | Khong con phan tu trong mang\n", count);
             }
-            // Mở khóa mutex, nhường lượt cho tiểu trình khác
-            pthread_mutex_unlock(&mutex);
-        } else {
-            printf("REMOVING | Count = %d | Khong con phan tu trong mang\n", count);
-        }
+        // Mở khóa mutex, nhường lượt cho tiểu trình khác
+        pthread_mutex_unlock(&mutex);
     }
     return NULL;
 }
@@ -63,13 +63,8 @@ int main() {
     printf("Moi nhap so luong phan tu toi da: ");
     scanf("%d", &n);
 
-    // Tạm thời lấp đầy mảng a với 0
-    // Và nâng giá trị của count tới n
+    // Khởi tạo mảng a
     a = (int*)malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++) {
-        a[i] = 0;
-        count++;
-    }
 
     // Tạo các tiểu trình tương ứng
     pthread_create(&adder_id, NULL, adder, NULL);
