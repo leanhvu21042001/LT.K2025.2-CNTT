@@ -1,25 +1,23 @@
-# IE103 – Quản lý Thông tin
+-- BTTH5-Nhom2.sql
+-- A. CHUẨN BỊ
 
-## Bài tập thực hành môn Quản lý thông tin tuần 5 - XPATH, XQUERY
-
-### A. Chuẩn bị
-
-```sql
+-- Tao CSDL
 CREATE DATABASE TEST_XML
 GO
+
+-- Su Dung CSDL
 USE TEST_XML
 GO
 
--- KhoaHoc
+-- Tao Bang KhoaHoc
 CREATE TABLE KhoaHoc
 (
     MaKhoaHoc INT IDENTITY(1,1) NOT NULL,
     TenKhoaHoc VARCHAR(200) NOT NULL,
     CONSTRAINT PK_KhoaHoc PRIMARY KEY(MaKhoaHoc)
 )
-INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Mang May Tinh Truyen Thong'
-INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Khoa Hoc May Tinh'
-INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Ky Thuat May Tinh'
+GO
+
 -- SinhVien
 CREATE TABLE SinhVien
 (
@@ -28,15 +26,59 @@ CREATE TABLE SinhVien
     MaKhoaHoc INT NOT NULL CONSTRAINT FK_SinhVien_MaKhoaHoc FOREIGN KEY
     REFERENCES KhoaHoc(MaKhoaHoc)
 )
-INSERT INTO SinhVien SELECT 'Anh',1
-INSERT INTO SinhVien SELECT 'Son',2
-INSERT INTO SinhVien SELECT 'Thuy',3
+GO
+
 -- MonHoc
 CREATE TABLE MonHoc
 (
     MaMonHoc INT IDENTITY NOT NULL CONSTRAINT PK_MonHoc PRIMARY KEY(MaMonHoc),
     TenMonHoc VARCHAR(200)
 )
+GO
+
+-- KhoaHocMonHoc
+CREATE TABLE KhoaHocMonHoc
+(
+    MaKhoaHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaKhoaHoc FOREIGN KEY REFERENCES
+    KhoaHoc(MaKhoaHoc),
+    MaMonHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaMonHoc FOREIGN KEY REFERENCES
+    MonHoc(MaMonHoc)
+)
+GO
+
+-- Diem
+CREATE TABLE Diem
+(
+    MSSV BIGINT CONSTRAINT FK_Diem_MSSV FOREIGN KEY REFERENCES SinhVien(MSSV),
+    MaMonHoc INT CONSTRAINT FK_Diem_MaMonHoc FOREIGN KEY REFERENCES
+    MonHoc(MaMonHoc),
+    Diem INT
+)
+GO
+
+-- QuanLySV
+CREATE TABLE QuanLySV
+(
+    MSDH INT NOT NULL,
+    TenDH VARCHAR(20),
+    ChiTietSV XML
+)
+GO
+
+-- INSERT DỮ LIỆU
+-- Insert KhoaHoc
+INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Mang May Tinh Truyen Thong'
+INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Khoa Hoc May Tinh'
+INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Ky Thuat May Tinh'
+GO
+
+-- Insert SinhVien
+INSERT INTO SinhVien SELECT 'Anh',1
+INSERT INTO SinhVien SELECT 'Son',2
+INSERT INTO SinhVien SELECT 'Thuy',3
+GO
+
+-- Insert MonHoc
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Co So Du Lieu')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Cau Truc Du Lieu')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Lap Trinh Di Dong')
@@ -46,14 +88,9 @@ INSERT INTO MonHoc (TenMonHoc) SELECT ('He Quan Tri CSDL')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Anh Van')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Thiet Ke Web ')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('An Toan Thong Tin')
--- KhoaHocMonHoc
-CREATE TABLE KhoaHocMonHoc
-(
-    MaKhoaHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaKhoaHoc FOREIGN KEY REFERENCES
-    KhoaHoc(MaKhoaHoc),
-    MaMonHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaMonHoc FOREIGN KEY REFERENCES
-    MonHoc(MaMonHoc)
-)
+GO
+
+-- Insert KhoaHocMonHoc
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,1
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,2
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,3
@@ -63,14 +100,9 @@ INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 2,6
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 3,7
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 3,8
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 3,9
--- Diem
-CREATE TABLE Diem
-(
-    MSSV BIGINT CONSTRAINT FK_Diem_MSSV FOREIGN KEY REFERENCES SinhVien(MSSV),
-    MaMonHoc INT CONSTRAINT FK_Diem_MaMonHoc FOREIGN KEY REFERENCES
-    MonHoc(MaMonHoc),
-    Diem INT
-)
+GO
+
+-- Insert Diem
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,1,75
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,2,80
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,3,70
@@ -80,14 +112,9 @@ INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 2,6,90
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 3,7,80
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 3,8,80
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 3,9,90
--- QuanLySV
-CREATE TABLE QuanLySV
-(
-    MSDH INT NOT NULL,
-    TenDH VARCHAR(20),
-    ChiTietSV XML
-)
+GO
 
+-- Insert QuanLySV
 INSERT INTO QuanLySV VALUES (
     1,
     'DH CNTT',
@@ -109,6 +136,9 @@ INSERT INTO QuanLySV VALUES (
         </sinhvien>
     </THONGTINSV>'
 )
+GO
+
+-- Insert QuanLySV
 INSERT INTO QuanLySV VALUES (
     2,
     'DH KHTN',
@@ -130,71 +160,31 @@ INSERT INTO QuanLySV VALUES (
         </sinhvien>
     </THONGTINSV>'
 )
-```
+GO
 
-### B. Thực hành
+-- B. THỰC HÀNH
+-- Câu 1.
 
-Hãy sử dụng Xpath, Xquery để thực hiện các yêu cầu sau:
-
-- Câu 1: Viết lệnh Xpath lấy Sinh viên có `ID=10` và Lệnh Xpath lấy sinh viên ở vị trí cuối cùng ở trường CNTT.
-- Câu 2: Viết lệnh trả về tất cả các nút từ nút gốc là `THONGTINSV`.
-- Câu 3: Viết lệnh Xquery trả về danh sách sinh viên có `ID < 12` với `MSDH = 1`.
-- Câu 4: Viết lệnh Xquery trả về danh sách sinh viên sắp xếp theo tên với `MSDH=2`.
-- Câu 5: Viết lệnh Xquery trả về `MSDH` và `TenDH` theo định dạng sau:
-
-    ```xml
-    <!-- Dữ liệu mẫu -->
-    <QuanLySV>
-    <ChiTietSV>1 DH CNTT</ChiTietSV>
-    </QuanLySV>
-    ```
-
-- Câu 6: Viết lệnh Xquery xóa tên các sinh viên trường DH KHTN.
-- Câu 7: Viết lệnh Xquery trả về thông tin các sinh viên có tên là '`Nam`' hoặc '`Thanh`'.
-- Câu 8: Viết lệnh Xquery thay đổi tên sinh viên thứ 2 thành tên '`Binh`' trong trường `CNTT`.
-- Câu 9: Viết lệnh Xquery kiểm tra xem có tồn tại sinh viên có `ID` là 12 trong trường `KHTN` không? (Nếu có trả về 1, nếu không thì trả về 0).
-- Câu 10: Viết lệnh Xquery kiểm tra xem có tồn tại sinh viên tên '`Lan`' trong trường `CNTT` không? (Nếu có trả về 1, nếu không thì trả về 0). Và `INSERT` thêm vào `THONGTINSV`:
-
-    ```xml
-    <!-- Dữ liệu mẫu -->
-    <sinhvien ID="15" Ten="Lan">
-    <monhoc ID="10" Ten="Toan Roi Rac" />
-    <monhoc ID="11" Ten="Lap Trinh C#" />
-    <monhoc ID="12" Ten="CSDL Nang Cao" />
-    </sinhvien>
-    ```
-
-- Câu 11: Thực hiện phép nối bằng các lệnh Xquery như một câu truy vấn trong SQL để trả về thông tin là sinh viên nào học khóa học tên là gì, sinh viên nào học môn học gì?
-
-### Bài Làm
-
-- Câu 1: Viết lệnh Xpath lấy Sinh viên có ID=10 và Lệnh Xpath lấy sinh viên ở vị trí cuối cùng ở trường CNTT.
-
-```sql
 -- Xpath lấy Sinh viên có ID=10
 SELECT ChiTietSV.query('/THONGTINSV/sinhvien[@ID="10"]') AS KetQua
 FROM QuanLySV WHERE TenDH = 'DH CNTT'
 GO
-```
 
-```sql
 -- Xpath lấy sinh viên ở vị trí cuối cùng ở trường CNTT
 SELECT ChiTietSV.query('/THONGTINSV/sinhvien[last()]') AS KetQua
 FROM QuanLySV WHERE TenDH = 'DH CNTT'
 GO
-```
 
-- Câu 2: Viết lệnh trả về tất cả các nút từ nút gốc là THONGTINSV.
+-- Câu 2.
 
-```sql
+-- Lấy tất cả các nút từ nút gốc là THONGTINSV
 SELECT ChiTietSV.query('/THONGTINSV/*') as KetQua
 FROM QuanLySV
 GO
-```
 
-- Câu 3: Viết lệnh Xquery trả về danh sách sinh viên có ID < 12 với MSDH = 1.
+-- Câu 3.
 
-```sql
+-- Trả về danh sách sinh viên có ID < 12
 SELECT ChiTietSV.query('
   for $sv in /THONGTINSV/sinhvien
   where $sv/@ID < 12
@@ -202,11 +192,10 @@ SELECT ChiTietSV.query('
 ') AS KetQua
 FROM QuanLySV WHERE MSDH = 1
 GO
-```
 
-- Câu 4: Viết lệnh Xquery trả về danh sách sinh viên sắp xếp theo tên với MSDH=2.
+-- Câu 4.
 
-```sql
+-- Trả về danh sách sinh viên sắp xếp theo tên với MSDH = 2
 SELECT ChiTietSV.query('
   for $sv in /THONGTINSV/sinhvien
   order by $sv/@Ten
@@ -214,37 +203,32 @@ SELECT ChiTietSV.query('
 ') as KetQua
 FROM QuanLySV WHERE MSDH = 2
 GO
-```
 
-- Câu 5: Viết lệnh Xquery trả về MSDH và TenDH theo định dạng sau:
+-- Câu 5.
 
- ```xml
- <!-- Dữ liệu mẫu -->
- <QuanLySV>
-  <ChiTietSV>1 DH CNTT</ChiTietSV>
- </QuanLySV>
- ```
-
- ```sql
+-- Câu 5. Định dạng MSDH và TenDH
 SELECT
-    CAST(MSDH AS VARCHAR) + ' ' + TenDH AS ChiTietSV
+   CAST(MSDH AS VARCHAR) + ' ' + TenDH AS ChiTietSV
 FROM QuanLySV
 FOR XML PATH('QuanLySV')
 GO
- ```
 
-- Câu 6: Viết lệnh Xquery xóa tên các sinh viên trường DH KHTN.
+-- Câu 6.
 
-```sql
+-- Câu 6. Xóa tên các sinh viên trường DH KHTN
 UPDATE QuanLySV
 SET ChiTietSV.modify('delete /THONGTINSV/sinhvien/@Ten')
 WHERE TenDH = 'DH KHTN'
 GO
-```
 
-- Câu 7: Viết lệnh Xquery trả về thông tin các sinh viên có tên là ‘Nam’ hoặc ‘Thanh’.
+-- Câu 6. Kiểm tra kết quả, thuộc tính Ten đã bị xóa
+SELECT ChiTietSV.query('/THONGTINSV/sinhvien') AS KetQua
+FROM QuanLySV WHERE TenDH = 'DH KHTN'
+GO
 
-```sql
+-- Câu 7.
+
+-- Câu 7. Thông tin sinh viên có tên Nam hoặc Thanh
 SELECT ChiTietSV.query('
   for $s in /THONGTINSV/sinhvien
   where $s/@Ten = "Nam" or $s/@Ten = "Thanh"
@@ -252,44 +236,45 @@ SELECT ChiTietSV.query('
 ') as KetQua
 FROM QuanLySV
 GO
-```
 
-- Câu 8: Viết lệnh Xquery thay đổi tên sinh viên thứ 2 thành tên ‘Binh’ trong trường CNTT.
+-- Câu 8.
 
-```sql
+-- Câu 8. Thay đổi tên sinh viên thứ 2 thành tên 'Binh' trong trường CNTT
 UPDATE QuanLySV
-SET ChiTietSV.modify('replace value of [/THONGTINSV/sinhvien](2)/@Ten with "Binh"')
+SET ChiTietSV.modify('replace value of (/THONGTINSV/sinhvien)[2]/@Ten with "Binh"')
 WHERE TenDH = 'DH CNTT'
 GO
-```
 
-- Câu 9: Viết lệnh Xquery kiểm tra xem có tồn tại sinh viên có ID là 12 trong trường KHTN không? (Nếu có trả về 1, nếu không thì trả về 0).
+-- Câu 8. Kiểm tra kết quả, tên sinh viên thứ 2 đổi thành 'Binh'
+SELECT ChiTietSV.query('/THONGTINSV/sinhvien') AS KetQua
+FROM QuanLySV
+WHERE TenDH = 'DH CNTT'
+GO
 
-```sql
+-- Câu 9.
+
+-- Câu 9. Kiểm tra xem có tồn tại sinh viên có ID là 12 trong trường KHTN không?
 SELECT ChiTietSV.exist('/THONGTINSV/sinhvien[@ID="12"]') as KetQua
 FROM QuanLySV WHERE TenDH = 'DH KHTN'
 GO
-```
 
-- Câu 10: Viết lệnh Xquery kiểm tra xem có tồn tại sinh viên tên ‘Lan’ trong trường CNTT không? (Nếu có trả về 1, nếu không thì trả về 0). Và INSERT thêm vào THONGTINSV:
+-- Câu 9. Kiểm tra sinh viên có ID = 12
+SELECT ChiTietSV.query('
+  for $sv in /THONGTINSV/sinhvien
+  where $sv/@ID = 12
+  return $sv
+') AS KetQua
+FROM QuanLySV WHERE MSDH = 2
+GO
 
-```xml
-<!-- Dữ liệu mẫu -->
-<sinhvien ID="15" Ten="Lan">
-<monhoc ID="10" Ten="Toan Roi Rac" />
-<monhoc ID="11" Ten="Lap Trinh C#" />
-<monhoc ID="12" Ten="CSDL Nang Cao" />
-</sinhvien>
-```
+-- Câu 10.
 
-```sql
--- Xquery kiểm tra xem có tồn tại sinh viên tên ‘Lan’ trong trường CNTT
+-- Câu 10. Xquery kiểm tra xem có tồn tại sinh viên tên ‘Lan’ trong trường CNTT
 SELECT ChiTietSV.exist('/THONGTINSV/sinhvien[@Ten="Lan"]') as KetQua
 FROM QuanLySV WHERE TenDH = 'DH CNTT'
-```
+GO
 
-```sql
--- INSERT dữ liệu mẫu vào THONGTINSV
+-- Câu 10b. INSERT dữ liệu mẫu vào THONGTINSV
 UPDATE QuanLySV
 SET ChiTietSV.modify('
   insert <sinhvien ID="15" Ten="Lan">
@@ -297,15 +282,19 @@ SET ChiTietSV.modify('
             <monhoc ID="11" Ten="Lap Trinh C#" />
             <monhoc ID="12" Ten="CSDL Nang Cao" />
          </sinhvien>
-  as last into [/THONGTINSV](1)
+  as last into (/THONGTINSV)[1]
 ')
 WHERE TenDH = 'DH CNTT'
 GO
-```
 
-- Câu 11: Thực hiện phép nối bằng các lệnh Xquery như một câu truy vấn trong SQL để trả về thông tin là sinh viên nào học khóa học tên là gì, sinh viên nào học môn học gì?
+-- Câu 10d. Xquery kiểm tra xem có tồn tại sinh viên tên ‘Lan’ trong trường CNTT
+SELECT ChiTietSV.query('/THONGTINSV/sinhvien[@Ten="Lan"]') as KetQua
+FROM QuanLySV WHERE TenDH = 'DH CNTT'
+GO
 
-```sql
+-- Câu 11.
+
+-- Câu 11. Thực hiện phép nối bằng Xquery
 SELECT ChiTietSV.query('
   for $sv in /THONGTINSV/sinhvien
   for $mh in $sv/monhoc
@@ -317,4 +306,4 @@ SELECT ChiTietSV.query('
     </row>
 ') AS KetQua
 FROM QuanLySV
-```
+GO

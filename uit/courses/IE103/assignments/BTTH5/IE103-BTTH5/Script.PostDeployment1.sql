@@ -1,45 +1,18 @@
-CREATE DATABASE TEST_XML
-GO
-USE TEST_XML
-GO
-
--- KhoaHoc
-CREATE TABLE KhoaHoc
-(
-    MaKhoaHoc INT IDENTITY(1,1) NOT NULL,
-    TenKhoaHoc VARCHAR(200) NOT NULL,
-    CONSTRAINT PK_KhoaHoc PRIMARY KEY(MaKhoaHoc)
-)
-GO
-
+-- This file contains SQL statements that will be executed after the build script.
+-- INSERT DỮ LIỆU
+-- Insert KhoaHoc
 INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Mang May Tinh Truyen Thong'
 INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Khoa Hoc May Tinh'
 INSERT INTO KhoaHoc (TenKhoaHoc) SELECT 'Ky Thuat May Tinh'
 GO
 
--- SinhVien
-CREATE TABLE SinhVien
-(
-    MSSV BIGINT IDENTITY(1,1)NOT NULL CONSTRAINT PK_SinhVien PRIMARY KEY(MSSV),
-    TenSV VARCHAR(200) NOT NULL,
-    MaKhoaHoc INT NOT NULL CONSTRAINT FK_SinhVien_MaKhoaHoc FOREIGN KEY
-    REFERENCES KhoaHoc(MaKhoaHoc)
-)
-GO
-
+-- Insert SinhVien
 INSERT INTO SinhVien SELECT 'Anh',1
 INSERT INTO SinhVien SELECT 'Son',2
 INSERT INTO SinhVien SELECT 'Thuy',3
 GO
 
--- MonHoc
-CREATE TABLE MonHoc
-(
-    MaMonHoc INT IDENTITY NOT NULL CONSTRAINT PK_MonHoc PRIMARY KEY(MaMonHoc),
-    TenMonHoc VARCHAR(200)
-)
-GO
-
+-- Insert MonHoc
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Co So Du Lieu')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Cau Truc Du Lieu')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('Lap Trinh Di Dong')
@@ -51,16 +24,7 @@ INSERT INTO MonHoc (TenMonHoc) SELECT ('Thiet Ke Web ')
 INSERT INTO MonHoc (TenMonHoc) SELECT ('An Toan Thong Tin')
 GO
 
--- KhoaHocMonHoc
-CREATE TABLE KhoaHocMonHoc
-(
-    MaKhoaHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaKhoaHoc FOREIGN KEY REFERENCES
-    KhoaHoc(MaKhoaHoc),
-    MaMonHoc INT CONSTRAINT FK_KhoaHocMonHoc_MaMonHoc FOREIGN KEY REFERENCES
-    MonHoc(MaMonHoc)
-)
-GO
-
+-- Insert KhoaHocMonHoc
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,1
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,2
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 1,3
@@ -72,16 +36,7 @@ INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 3,8
 INSERT INTO KhoaHocMonHoc (MaKhoaHoc,MaMonHoc) SELECT 3,9
 GO
 
--- Diem
-CREATE TABLE Diem
-(
-    MSSV BIGINT CONSTRAINT FK_Diem_MSSV FOREIGN KEY REFERENCES SinhVien(MSSV),
-    MaMonHoc INT CONSTRAINT FK_Diem_MaMonHoc FOREIGN KEY REFERENCES
-    MonHoc(MaMonHoc),
-    Diem INT
-)
-GO
-
+-- Insert Diem
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,1,75
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,2,80
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 1,3,70
@@ -93,15 +48,7 @@ INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 3,8,80
 INSERT INTO Diem (MSSV,MaMonHoc,Diem) SELECT 3,9,90
 GO
 
--- QuanLySV
-CREATE TABLE QuanLySV
-(
-    MSDH INT NOT NULL,
-    TenDH VARCHAR(20),
-    ChiTietSV XML
-)
-GO
-
+-- Insert QuanLySV
 INSERT INTO QuanLySV VALUES (
     1,
     'DH CNTT',
@@ -123,6 +70,9 @@ INSERT INTO QuanLySV VALUES (
         </sinhvien>
     </THONGTINSV>'
 )
+GO
+
+-- Insert QuanLySV
 INSERT INTO QuanLySV VALUES (
     2,
     'DH KHTN',
