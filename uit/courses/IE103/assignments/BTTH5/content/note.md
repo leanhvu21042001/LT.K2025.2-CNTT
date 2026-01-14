@@ -133,7 +133,7 @@ INSERT INTO QuanLySV VALUES (
 
 ### B. Thực hành
 
-`Hãy sử dụng Xpath, Xquery để thực hiện các yêu cầu sau:`
+Hãy sử dụng Xpath, Xquery để thực hiện các yêu cầu sau:
 
 - Câu 1: Viết lệnh Xpath lấy Sinh viên có ID=10 và Lệnh Xpath lấy sinh viên ở vị trí cuối cùng ở trường CNTT.
 
@@ -198,7 +198,7 @@ SELECT
 FROM QuanLySV
 FOR XML PATH('QuanLySV')
 GO
-```
+ ```
 
 - Câu 6: Viết lệnh Xquery xóa tên các sinh viên trường DH KHTN.
 
@@ -270,7 +270,7 @@ WHERE TenDH = 'DH CNTT'
 GO
 ```
 
-- Câu 11*: Thực hiện phép nối bằng các lệnh Xquery như một câu truy vấn trong SQL để trả về thông tin là sinh viên nào học khóa học tên là gì, sinh viên nào học môn học gì?
+- Câu 11: Thực hiện phép nối bằng các lệnh Xquery như một câu truy vấn trong SQL để trả về thông tin là sinh viên nào học khóa học tên là gì, sinh viên nào học môn học gì?
 
 ```sql
 SELECT ChiTietSV.query('
